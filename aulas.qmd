@@ -1,0 +1,19 @@
+---
+title: "Aulas"
+---
+
+<!-- -   [Conceitos iniciais](aulas/Conceitos%20básicos/index.html "Conceitos básicos"){aria-label="Conceitos básicos"} -->
+
+<!-- -   [Planejamento na área de saúde](aulas/Planejamento/index.html "Planejamento na área de saúde"){aria-label="Planejamento na área de saúde"} -->
+
+<!-- -   [Medidas de acurácia de testes diagnósticos](/aulas/Testes%20diagnósticos/testesDiagnosticos.html "Medidas e acurácia de testes de diagnósticos"){aria-label="Medidas e acurácia de testes de diagnósticos"} -->
+
+- Conceitos iniciais
+
+- Análise preditiva
+
+- Reconhecimento de padrões
+
+- Regras de associação
+
+- Detecção de anomalias

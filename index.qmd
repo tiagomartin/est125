@@ -1,0 +1,59 @@
+---
+title: "Introdução à Mineração de Dados"
+page-layout: full
+title-block-banner: false
+comments: false
+toc: FALSE
+bibliography: references.bib
+---
+
+::: {#hero-heading}
+Página dedicada à disciplina **EST125 - Introdução à Mineração de Dados**
+:::
+
+------------------------------------------------------------------------
+
+A mineração de dados é o processo de explorar grandes conjuntos de dados para extrair informações valiosas e úteis. Essa técnica é utilizada em diversas áreas, como negócios, saúde, ciência e governo, para identificar padrões, prever comportamentos e tomar decisões informadas.
+
+![](images/mineracao_dados.jpeg){width="1000"}
+
+
+
+# Ementa
+
+Definição. Relação com a descoberta de conhecimento, estatística e inteligência computacional. Obtenção, normalização e limpeza de dados. Seleção, transformação e mineração. Classificação e regressão. Modelos e algoritmos para mineração de dados. Extração de informações e síntese. Classificação supervisionada, não-supervisionada e algoritmos híbridos. Arvores de decisão e sua criação. Algoritmos e técnicas de regressão. Interação entre técnicas de mineração de dados e outras técnicas computacionais.
+
+
+
+
+# Conteúdo Programático
+
+1. **Conceitos iniciais:** Definição de Mineração de Dados. Relação do processo de mineração de dados com descoberta de conhecimento, estatística, inteligência computacional. Fases de um processo de descoberta de conhecimento: obtenção e normalização de dados, limpeza de dados, seleção e transformação, mineração, avaliação do conhecimento.
+
+
+2. **Análise preditiva:** Tarefas de mineração de dados: classificação e regressão.
+
+3. **Análise de agrupamentos:** A tarefa de agrupamento. Avaliação de modelos para análise de agrupamento. 
+
+4. **Regras de associação:** Processo de mineração de regras de Associação. Algoritmos para mineração de regras de associação.
+
+5. **Detecção de anomalias:** Introdução. Processo de detecção de anomalias. Métodos
+estatísticos. Métodos algorítmicos. 
+
+
+# Horário de Aulas
+
+Neste semestre, as aulas da disciplina serão ministradas no LABEST III.
+
+| Dia           | Horário         | Local        |
+|---------------|-----------------|--------------|
+| Segunda-feira | 17:10 - 18:50   | LABEST III   |
+| Quarta-feira  | 17:10 - 18:50   | LABEST III   |
+
+
+# Referências Bibliográficas
+
+---
+nocite: |
+  @castro16, @silva17, @kumar09, @han2011data, @carvalho05, @hastie2001elements, @goldschmidt2005data, @amaral01, @morettin2017estat, @johnson2007applied
+---
