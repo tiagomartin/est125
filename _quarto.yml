@@ -1,0 +1,54 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  page-navigation: true
+  title: "EST125 - Introdução à Mineração de Dados"
+  description: "Homepage da disciplina EST125 - Introdução à Mineração de Dados, 2025/1."
+  site-url: "http://professortp.com.br/est1125/"
+
+  repo-url: "https://github.com/tiagomartin/est125"
+  repo-actions: [edit, issue]
+
+  open-graph: true
+  
+  page-footer:
+    right: "Página construída usando [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2025, Tiago Pereira"
+
+
+  sidebar:
+    tools: 
+    - icon: github
+      text: github
+      href: https://github.com/tiagomartin/est125
+    background: "#F2F2F2"
+    logo: "images/logo.png"
+    pinned: true
+    align: center
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - aulas.qmd
+      - estudos.qmd
+      - exercicios.qmd
+      - analises.qmd
+      - plano.qmd
+      - cronograma.qmd
+      
+
+      
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo, theme-dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+freeze: auto
+
