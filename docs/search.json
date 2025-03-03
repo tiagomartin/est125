@@ -7,84 +7,11 @@
     "text": "Página dedicada à disciplina EST125 - Introdução à Mineração de Dados\n\n\nA mineração de dados é o processo de explorar grandes conjuntos de dados para extrair informações valiosas e úteis. Essa técnica é utilizada em diversas áreas, como negócios, saúde, ciência e governo, para identificar padrões, prever comportamentos e tomar decisões informadas.\n\n\nEmenta\nDefinição. Relação com a descoberta de conhecimento, estatística e inteligência computacional. Obtenção, normalização e limpeza de dados. Seleção, transformação e mineração. Classificação e regressão. Modelos e algoritmos para mineração de dados. Extração de informações e síntese. Classificação supervisionada, não-supervisionada e algoritmos híbridos. Arvores de decisão e sua criação. Algoritmos e técnicas de regressão. Interação entre técnicas de mineração de dados e outras técnicas computacionais.\n\n\nConteúdo Programático\n\nConceitos iniciais: Definição de Mineração de Dados. Relação do processo de mineração de dados com descoberta de conhecimento, estatística, inteligência computacional. Fases de um processo de descoberta de conhecimento: obtenção e normalização de dados, limpeza de dados, seleção e transformação, mineração, avaliação do conhecimento.\nAnálise preditiva: Tarefas de mineração de dados: classificação e regressão.\nAnálise de agrupamentos: A tarefa de agrupamento. Avaliação de modelos para análise de agrupamento.\nRegras de associação: Processo de mineração de regras de Associação. Algoritmos para mineração de regras de associação.\nDetecção de anomalias: Introdução. Processo de detecção de anomalias. Métodos estatísticos. Métodos algorítmicos.\n\n\n\nHorário de Aulas\nNeste semestre, as aulas da disciplina serão ministradas no LABEST III.\n\n\n\nDia\nHorário\nLocal\n\n\n\n\nSegunda-feira\n17:10 - 18:50\nLABEST III\n\n\nQuarta-feira\n17:10 - 18:50\nLABEST III\n\n\n\n\n\n\n\n\n\n\n\nReferências Bibliográficas\n\nAmaral, F. C. N. 2001. Data Mining: Técnicas e Aplicações Para o Marketing Direto. Berkeley.\n\n\nCarvalho, L. A. V. 2005. Datamining - a Mineracao de Dados No Marketing, Medicina, Economia, Engenharia e Administracao. Ed. Ciência Moderna.\n\n\nDe Castro, Leandro, and Daniel Ferrari. 2016. Introdução à Mineração de Dados: Conceitos Básicos, Algoritmos e Aplicações.\n\n\nGoldschmidt, R., and E. Passos. 2005. Data Mining: Um Guia Prático. Elsevier Editora.\n\n\nHan, J., M. Kamber, and J. Pei. 2011. Data Mining: Concepts and Techniques. The Morgan Kaufmann Series in Data Management Systems. Morgan Kaufmann.\n\n\nHastie, T., R. Tibshirani, and J. H. Friedman. 2001. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. Springer Series in Statistics. Springer.\n\n\nJohnson, R. A., and D. W. Wichern. 2007. Applied Multivariate Statistical Analysis. Applied Multivariate Statistical Analysis. Pearson Prentice Hall.\n\n\nKumar, V., P. TAM, and M. Steinbach. 2009. Introdução Ao Data Mining; Mineração de Dados.\n\n\nMorettin, P. A., and W. O. Bussab. 2017. ESTATÍSTICA bÁSICA. Editora Saraiva.\n\n\nSilva, Leandro, Sarajane Peres, and Clodis Boscarioli. 2017. Introdução a Mineração de Dados Com Aplicações Em r."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "aulas.html",
-    "href": "aulas.html",
-    "title": "Aulas",
-    "section": "",
-    "text": "Conceitos iniciais\n\n\n\n\nConceitos iniciais\nAnálise preditiva\nReconhecimento de padrões\nRegras de associação\nDetecção de anomalias",
-    "crumbs": [
-      "Aulas"
-    ]
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados",
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#motivação-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#motivação-1",
     "title": "Conceitos Iniciais",
-    "section": "O que é mineração de dados?",
-    "text": "O que é mineração de dados?\n\n\nA mineração de dados é o processo de descobrir conhecimentos ocultos e padrões em grandes volumes de dados.\nTem como objetivo transformar dados brutos em informações úteis e conhecimentos para a tomada de decisão."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria",
-    "title": "Conceitos Iniciais",
-    "section": "Dado, informação, conhecimento e sabedoria",
-    "text": "Dado, informação, conhecimento e sabedoria\n\n\n\n\n\n\n\n\n\n\n\nInformação, e não dados, valem dinheiro, tempo, conhecimento!"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM, SEMMA e KDD",
-    "text": "CRISP-DM, SEMMA e KDD\n\nGerenciamento de projetos é um campo estabelecido focado no planejamento, entrega, controle e monitoramento de um projeto.\n\n\n\nExistem várias metodologias para gerenciar projetos de mineração de dados.\n\n\n\n\nTrês das metodologias mais comuns são CRISP-DM, SEMMA e KDD."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\n\nCRISP-DM (CRoss Industry Standard Process for Data Mining) é uma metodologia de mineração de dados amplamente utilizada.\n\n\n\nEnvolve seis etapas: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.\n\n\n\n\nÉ uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA",
-    "text": "SEMMA\n\nSEMMA (Sample, Explore, Modify, Model, Assess) é uma metodologia de mineração de dados desenvolvida pela SAS.\n\n\n\nEnvolve cinco etapas: amostragem, exploração, modificação, modelagem e avaliação.\n\n\n\n\nSEMMA é uma abordagem focada no modelo e pode ser usada em conjunção com outras metodologias de gerenciamento de projetos."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
-    "title": "Conceitos Iniciais",
-    "section": "KDD",
-    "text": "KDD\n\nKDD (Knowledge Discovery in Databases) é uma metodologia mais ampla que CRISP-DM e SEMMA.\n\n\n\nEnvolve basicamente três etapas: pré-processamento, mineração de dados e pós-processamento.\n\nPré-processamento inclui limpeza, integração e transformação de dados.\nA mineração de dados inclui seleção, pré-processamento e modelagem de dados.\nO pós-processamento inclui interpretação e avaliação dos resultados."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
-    "title": "Conceitos Iniciais",
-    "section": "Qual metodologia utilizar?",
-    "text": "Qual metodologia utilizar?"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#nós-estamos-nos-afogando-em-informação-mas-sedentos-por-conhecimento.",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#nós-estamos-nos-afogando-em-informação-mas-sedentos-por-conhecimento.",
-    "title": "Conceitos Iniciais",
-    "section": "“Nós estamos nos afogando em informação, mas sedentos por conhecimento.”",
-    "text": "“Nós estamos nos afogando em informação, mas sedentos por conhecimento.”\n\n\n\n\n\nA quantidade de dados gerados diariamente vem aumentando exponencialmente, tornando a análise de dados cada vez mais importante"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#nós-estamos-nos-afogando-em-informação-mas-sedentos-por-conhecimento",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#nós-estamos-nos-afogando-em-informação-mas-sedentos-por-conhecimento",
-    "title": "Conceitos Iniciais",
-    "section": "“Nós estamos nos afogando em informação, mas sedentos por conhecimento”",
-    "text": "“Nós estamos nos afogando em informação, mas sedentos por conhecimento”"
+    "section": "Motivação",
+    "text": "Motivação\n\n\n\n“Nós estamos nos afogando em informação, mas sedentos por conhecimento”.\n\n\nNaisbitt (1982)\n\n\n\n\n\n\n\n\n\nSão os dados, o novo petróleo?"
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento",
@@ -94,46 +21,11 @@
     "text": "Muitos dados, pouco conhecimento!\nA quantidade de dados gerados diariamente vem aumentando exponencialmente, tornando a análise de dados cada vez mais importante\n\n\n\nFonte: statista\n\n\n\n👉 Um zettabyte é igual a 1 trilhão de gigabytes 😲"
   },
   {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#motivação-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#motivação-1",
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento-1",
     "title": "Conceitos Iniciais",
-    "section": "Motivação",
-    "text": "Motivação\n\n\n\n“Nós estamos nos afogando em informação, mas sedentos por conhecimento”.\n\n\nNaisbitt (1982)\n\n\n\n\n\n\n\n\n\nSão os dados, o novo petróleo?"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#references",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#references",
-    "title": "Conceitos Iniciais",
-    "section": "References",
-    "text": "References\n\n\nNaisbitt, J. 1982. Megatrends: Ten New Directions Transforming Our Lives. Megatrends: Ten New Directions Transforming Our Lives, Nr. 158. Warner Books."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#section",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#section",
-    "title": "Conceitos Iniciais",
-    "section": "",
-    "text": "Compreensão do negócio\n\nNesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.\n\n \n\nÉ importante definir claramente o escopo do projeto e entender os recursos disponíveis."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#section-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#section-1",
-    "title": "Conceitos Iniciais",
-    "section": "",
-    "text": "Segurança: prever e prevenir crimes e ameaças"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#section-2",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#section-2",
-    "title": "Conceitos Iniciais",
-    "section": "",
-    "text": "Marketing: segmentação de clientes e personalização de produtos/serviços"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#section-3",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#section-3",
-    "title": "Conceitos Iniciais",
-    "section": "",
-    "text": "{{}}"
+    "section": "Muitos dados, pouco conhecimento!",
+    "text": "Muitos dados, pouco conhecimento!"
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento",
@@ -164,11 +56,25 @@
     "text": "Como usar o conhecimento?\nMarketing: segmentação de clientes e personalização de produtos/serviços"
   },
   {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados",
+    "title": "Conceitos Iniciais",
+    "section": "O que é mineração de dados?",
+    "text": "O que é mineração de dados?\n\n\nA mineração de dados é o processo de descobrir conhecimentos ocultos e padrões em grandes volumes de dados.\nTem como objetivo transformar dados brutos em informações úteis e conhecimentos para a tomada de decisão."
+  },
+  {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados-1",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados-1",
     "title": "Conceitos Iniciais",
     "section": "O que é mineração de dados?",
     "text": "O que é mineração de dados?\n\n\n\n\n\n\n\n\n\nEla usa técnicas de aprendizado de máquina, estatística e inteligência artificial para analisar dados e extrair insights.\n\n\nEssas técnicas transformam, de maneira inteligente e automática, os dados disponíveis em informações úteis, que representem o conhecimento para ser usado com sabedoria."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria",
+    "title": "Conceitos Iniciais",
+    "section": "Dado, informação, conhecimento e sabedoria",
+    "text": "Dado, informação, conhecimento e sabedoria\n\n\n\n\n\n\n\n\n\n\n\nInformação, e não dados, valem dinheiro, tempo, conhecimento!"
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-1",
@@ -206,53 +112,25 @@
     "text": "Dado, informação, conhecimento e sabedoria\nSabedoria: é a habilidade de usar o conhecimento de forma ética e eficaz para tomar decisões sábias."
   },
   {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM, SEMMA e KDD",
+    "text": "CRISP-DM, SEMMA e KDD\n\nGerenciamento de projetos é um campo estabelecido focado no planejamento, entrega, controle e monitoramento de um projeto.\n\n\n\nExistem várias metodologias para gerenciar projetos de mineração de dados.\n\n\n\n\nTrês das metodologias mais comuns são CRISP-DM, SEMMA e KDD."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM",
+    "text": "CRISP-DM\n\nCRISP-DM (CRoss Industry Standard Process for Data Mining) é uma metodologia de mineração de dados amplamente utilizada.\n\n\n\nEnvolve seis etapas: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.\n\n\n\n\nÉ uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto."
+  },
+  {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM",
     "text": "CRISP-DM"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-2",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-2",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\nCompreensão do negócio\n\nNesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.\n\n. . .\n\nÉ importante definir claramente o escopo do projeto e entender os recursos disponíveis."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-3",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-3",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\nCompreensão dos Dados\n\nNesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.\n\n. . .\n\nÉ importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-4",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-4",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\nPreparação dos Dados\n\nNesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.\n\n. . .\n\nÉ importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-5",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-5",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\nModelagem\n\nNesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.\n\n. . .\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-6",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-6",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\nAvaliação\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.\n\n. . .\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-7",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-7",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\nImplantação\n\nNesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.\n\n. . .\n\nÉ importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
@@ -297,11 +175,11 @@
     "text": "CRISP-DM: Implantação\n\nNesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.\n\n\n\nÉ importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários."
   },
   {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento-1",
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
     "title": "Conceitos Iniciais",
-    "section": "Muitos dados, pouco conhecimento!",
-    "text": "Muitos dados, pouco conhecimento!"
+    "section": "SEMMA",
+    "text": "SEMMA\n\nSEMMA (Sample, Explore, Modify, Model, Assess) é uma metodologia de mineração de dados desenvolvida pela SAS.\n\n\n\nEnvolve cinco etapas: amostragem, exploração, modificação, modelagem e avaliação.\n\n\n\n\nSEMMA é uma abordagem focada no modelo e pode ser usada em conjunção com outras metodologias de gerenciamento de projetos."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
@@ -344,6 +222,13 @@
     "title": "Conceitos Iniciais",
     "section": "SEMMA: Avaliação",
     "text": "SEMMA: Avaliação\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de amostragem.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
+    "title": "Conceitos Iniciais",
+    "section": "KDD",
+    "text": "KDD\n\nKDD (Knowledge Discovery in Databases) é uma metodologia mais ampla que CRISP-DM e SEMMA.\n\n\n\nEnvolve basicamente três etapas: pré-processamento, mineração de dados e pós-processamento.\n\nPré-processamento inclui limpeza, integração e transformação de dados.\nA mineração de dados inclui seleção, pré-processamento e modelagem de dados.\nO pós-processamento inclui interpretação e avaliação dos resultados."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-1",
@@ -393,6 +278,13 @@
     "title": "Conceitos Iniciais",
     "section": "KDD: Interpretação e avaliação",
     "text": "KDD: Interpretação e avaliação\n\nNesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.\n\n\n\nÉ importante avaliar a eficácia dos modelos gerados e determinar se as descobertas são significativas e úteis."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
+    "title": "Conceitos Iniciais",
+    "section": "Qual metodologia utilizar?",
+    "text": "Qual metodologia utilizar?"
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar-1",
@@ -493,13 +385,6 @@
     "text": "Importância de entender o problema\n\n\nEntenda o problema e depois pense em como resolvê-lo"
   },
   {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#entenda-o-problema-e-depois-pense-em-como-resolvê-lo",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#entenda-o-problema-e-depois-pense-em-como-resolvê-lo",
-    "title": "Conceitos Iniciais",
-    "section": "Entenda o problema e depois pense em como resolvê-lo",
-    "text": "Entenda o problema e depois pense em como resolvê-lo\n\nQual o problema nessa foto?"
-  },
-  {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-1",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-1",
     "title": "Conceitos Iniciais",
@@ -561,5 +446,29 @@
     "title": "Conceitos Iniciais",
     "section": "Exemplo do uso da técnica dos cinco porquês",
     "text": "Exemplo do uso da técnica dos cinco porquês\n👉 Com essa análise, a causa raiz do problema do faturamento da empresa ter diminuído no último trimestre foi identificada: a falta de atualização dos equipamentos de produção.\n\n\nDe posse dessa informação, a empresa pode agora tomar medidas para atualizar seus equipamentos de produção e aumentar sua eficiência para voltar a ter um faturamento maior."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#references",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#references",
+    "title": "Conceitos Iniciais",
+    "section": "References",
+    "text": "References\n\n\nNaisbitt, J. 1982. Megatrends: Ten New Directions Transforming Our Lives. Megatrends: Ten New Directions Transforming Our Lives, Nr. 158. Warner Books."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "aulas.html",
+    "href": "aulas.html",
+    "title": "Aulas",
+    "section": "",
+    "text": "Conceitos iniciais\nAnálise preditiva\nReconhecimento de padrões\nRegras de associação\nDetecção de anomalias",
+    "crumbs": [
+      "Aulas"
+    ]
   }
 ]
