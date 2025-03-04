@@ -1,0 +1,1430 @@
+---
+title: "Pré-processamento de dados"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+---
+
+
+# Introdução
+
+
+## Pré-processamento de dados
+
+
+&#128161; **Pré-processamento** de dados se define como um conjunto de técnicas e procedimentos aplicados aos dados **antes** de sua utilização em um modelo ou algoritmo de análise. 
+
+
+. . .
+
+
+É uma etapa fundamental na análise de dados, pois visa garantir que os dados estejam **corretos**, **completos**, **coerentes** e em um **formato** apropriado para serem analisados. 
+
+## Pré-processamento de dados
+
+
+:::: {.columns}
+::: {.column width="40%"}
+![](/images/preprocess.jpeg){fig-align="center"}
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+<p align="center"> 
+O pré-processamento de dados inclui diversas atividades, como **limpeza de dados**, **transformação de dados**, **redução de dimensão**, **seleção de recursos**, **normalização** e **amostragem**. 
+</p>
+:::
+::::
+
+<p align="center"> 
+&#128073; O **objetivo geral** do pré-processamento de dados é **aumentar a qualidade** e a **precisão da análise** de dados, **minimizando a influência de ruídos** e **inconsistências** nos resultados finais.
+</p>
+
+
+## Importância do pré-processamento
+
+
+
+O pré-processamento de dados é uma etapa importante e crítica no processo de análise de dados. Algumas razões pelas quais é importante realizar o pré-processamento são:
+
+
+. . .
+
+
+
+&#128073; **Melhoria da qualidade dos dados:** O pré-processamento de dados pode ajudar a melhorar a qualidade dos dados, eliminando dados duplicados, ausentes ou inconsistentes. Isso resulta em dados mais precisos e confiáveis para análise.
+
+
+. . .
+
+
+&#128073; **Ajuste dos dados para a análise:** Muitos modelos e algoritmos de análise de dados requerem que os dados estejam em um formato específico. Na etapa do pré-processamento de dados ajusta-se os dados para que estejam em um formato adequado para a análise.
+
+  
+## Importância do pré-processamento
+
+
+
+&#128073; **Eliminação de ruídos:** Os dados geralmente contêm ruídos, como outliers e valores extremos, que podem afetar negativamente a precisão dos resultados finais. Nesta etapa, elimina-se esses ruídos, tornando os resultados mais precisos.
+  
+
+
+. . .
+
+
+&#128073; **Redução da complexidade dos dados:** Podemos reduzir a complexidade dos dados, eliminando variáveis desnecessárias e reduzindo o número de dimensões do conjunto de dados. Isso torna mais fácil a análise e interpretação dos dados.
+
+
+. . .
+
+
+
+&#128073; **Melhoria do desempenho do modelo:** O pré-processamento de dados pode ajudar a melhorar o desempenho do modelo, ao remover dados redundantes, normalizar os dados e selecionar os recursos mais importantes. Isso resulta em modelos mais precisos e confiáveis.
+  
+
+
+## Importância do pré-processamento
+
+
+
+![[Fonte: Forbes](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/?sh=34ce9abe6f63)](/images/time.jpg){fig-align="center" .r-stretch}
+
+
+
+## Importância do pré-processamento
+
+![[Fonte: Giphy](https://gph.is/g/Eq2rpxa)](https://media3.giphy.com/media/9u514UZd57mRhnBCEk/giphy.gif){fig-align="center" .r-stretch}
+
+
+## O que há de errado nessa base?
+
+<br>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-34fe{background-color:#c0c0c0;border-color:inherit;text-align:center;vertical-align:top; font-size:30px}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top; font-size:30px}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-34fe">Usuário</th>
+    <th class="tg-34fe">Idade</th>
+    <th class="tg-34fe">Cidade</th>
+    <th class="tg-34fe">Data</th>
+    <th class="tg-34fe">Salário</th>
+    <th class="tg-34fe">Npáginas</th>
+    <th class="tg-34fe">Nsessões</th>
+    <th class="tg-34fe">Nprodutos</th>
+    <th class="tg-34fe">Clique</th>
+    <th class="tg-34fe">Comprou</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">user1</td>
+    <td class="tg-c3ow">22</td>
+    <td class="tg-c3ow">Belo Horizonte</td>
+    <td class="tg-c3ow">22/10/21</td>
+    <td class="tg-c3ow">1200</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">no</td>
+    <td class="tg-c3ow">no</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">user2</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">São paulo</td>
+    <td class="tg-c3ow">20/09/22</td>
+    <td class="tg-c3ow">5000</td>
+    <td class="tg-c3ow">21</td>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">11</td>
+    <td class="tg-c3ow">yes</td>
+    <td class="tg-c3ow">yes</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">user3</td>
+    <td class="tg-c3ow">41</td>
+    <td class="tg-c3ow">BH</td>
+    <td class="tg-c3ow">23 de dezembro 2022</td>
+    <td class="tg-c3ow">12000</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">NA</td>
+    <td class="tg-c3ow">yes</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">user4</td>
+    <td class="tg-c3ow">32</td>
+    <td class="tg-c3ow">Miami</td>
+    <td class="tg-c3ow">22/10/01</td>
+    <td class="tg-c3ow">50000</td>
+    <td class="tg-c3ow">NA</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">yes</td>
+    <td class="tg-c3ow">no</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">user5</td>
+    <td class="tg-c3ow">20</td>
+    <td class="tg-c3ow">Tokyo</td>
+    <td class="tg-c3ow">23/01/25</td>
+    <td class="tg-c3ow">12220</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">no</td>
+    <td class="tg-c3ow">yes</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">user6</td>
+    <td class="tg-c3ow">28</td>
+    <td class="tg-c3ow">NY</td>
+    <td class="tg-c3ow">March 14, 2018</td>
+    <td class="tg-c3ow">250000</td>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">NA</td>
+    <td class="tg-c3ow">NA</td>
+    <td class="tg-c3ow">no</td>
+    <td class="tg-c3ow">yes</td>
+  </tr>
+  <tr>
+  </tr>
+</tbody>
+</table>
+
+
+
+
+## Principais problemas com dados reais
+
+<br>
+
+
+![](/images/tipos.png){fig-align="center" .r-stretch}
+
+
+## Tipos de dados
+
+Os dados podem ser classificados em três tipos principais: **estruturados**, **semiestruturados** e **não estruturados**
+
+
+&#128073; **Estruturados**
+
+São dados organizados em uma estrutura definida, como tabelas, colunas e linhas em um banco de dados. 
+
+- **Exemplos:** informações de vendas, cadastros de clientes, registros de transações financeiras, entre outros.
+
+
+. . .
+
+&#128187; Para dados estruturados, a técnica de pré-processamento mais comum é a **limpeza de dados**, além da **seleção de atributos relevantes**, **normalização** e **transformação** de dados.
+
+
+
+## Tipos de dados
+
+&#128073; **Semiestruturados**
+
+São dados que não possuem uma estrutura rígida como os dados estruturados, mas possuem algumas formas de organização, como marcadores, tags ou atributos. 
+
+- **Exemplos:** arquivos XML, JSON, HTML, entre outros.
+
+
+
+ . . .
+ 
+
+&#128187; Para dados semiestruturados, a técnica de pré-processamento mais comum é a **extração de informações relevantes**, que envolve a identificação de padrões e estruturas em dados como XML, JSON ou HTML, além da **extração de dados** a partir dessas estruturas. 
+
+
+
+## Tipos de dados
+
+&#128073; **Não estruturados**
+
+São dados que não possuem uma estrutura definida e estão em formato livre, como texto, imagens, vídeos, áudios, e-mails, redes sociais, entre outros. 
+
+. . .
+
+&#128187; Exigem o uso de técnicas mais avançadas de **processamento de linguagem natural**, **reconhecimento de padrões** e **aprendizado de máquina**. 
+
+
+. . .
+
+Com o aumento da quantidade de dados gerados diariamente, a análise de **dados semiestruturados** e **não estruturados** tem se tornado cada vez mais importante para empresas que desejam obter insights valiosos sobre seus clientes, mercado e tendências. 
+
+
+
+## Processo de preparação da base de dados
+
+<br>
+
+![](/images/pre.png){fig-align="center" .r-stretch}
+
+
+
+## Limpeza de dados
+  
+
+&#129300; O que é limpeza de dados? &#129529;
+  
+
+- **Limpeza de dados** é o processo de **identificar**, **remover** ou **corrigir dados imprecisos**, **incompletos**, **inconsistentes**, **duplicados** ou **irrelevantes** em um conjunto de dados. 
+
+. . .
+
+
+- É uma etapa **importante** no processo de análise de dados, uma vez que **dados sujos** podem **afetar negativamente** a **qualidade** e **confiabilidade** dos resultados da análise.
+
+
+
+
+
+## Identificação de problemas
+  
+&#128073; Existem várias técnicas para identificar problemas de limpeza de dados em um conjunto de dados. Algumas das técnicas mais comuns incluem:
+  
+  
+  - **Análise visual:** pode-se inspecionar o conjunto de dados para identificar erros óbvios, como valores ausentes, valores que não fazem sentido ou valores extremos.
+  
+  
+  
+![[Fonte:Nagwa](https://www.nagwa.com/en/explainers/845148137695/)](/images/outlier.png){fig-align="center" .r-stretch}  
+  
+  
+
+## Identificação de problemas
+
+  
+  - **Estatística descritiva:** realizar uma boa análise descritiva. Valores extremos ou valores que estão muito longe do intervalo interquartil, por exemplo, podem ser indicativos de problemas de limpeza de dados.
+
+
+![[Fonte:Statistics Cartoons by Ben Shabad](https://davidmlane.com/ben/cartoons.html)](/images/outlier2.png){fig-align="center" .r-stretch}  
+
+
+## Identificação de problemas
+
+  - **Gráficos de distribuição:** analisar os gráficos de distribuição para cada variável e observar padrões incomuns na distribuição dos valores, como bimodalidade, assimetria ou outliers.
+
+
+![](/images/assimetrica.png){fig-align="center" .r-stretch}  
+
+## Identificação de problemas
+
+  
+  - **Análise de correlação:** analisar as correlações entre as variáveis e procurar relações que não fazem sentido ou que não deveriam existir.
+
+
+![[Fonte:Medium](https://euleralencar.medium.com/o-que-é-a-correlação-espúria-819b77482764)](/images/espurias.png){fig-align="center" .r-stretch}  
+
+
+
+
+
+## Identificação de problemas
+
+  - **Análise de consistência:** comparar valores em diferentes variáveis para ver se eles são consistentes entre si. 
+      - Por exemplo, se uma pessoa é descrita como tendo 2 metros de altura e 30 kg de peso, pode haver um problema de limpeza de dados.
+
+
+
+![](/images/inconsistentes.png){fig-align="center"}  
+
+
+
+
+## Tratamento de dados faltantes
+
+
+![[Fonte: Giphy](https://gph.is/2Tz7gn7)](https://media2.giphy.com/media/3s0OTExhi8qzSC3nHC/giphy.gif){fig-align="center" .r-stretch}
+
+
+## Tratamento de dados faltantes
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<br>
+
+> “The idea of imputation is both seductive and dangerous”. 
+
+<p align="center"> @madow1983incomplete </p>
+:::
+
+::: {.column width="50%"}
+![](/images/missing.jpeg){fig-align="center" width="700"}
+:::
+::::
+
+
+<p align="center">
+A escolha do método de tratamento de valor ausente **depende do tipo de valor ausente** identificado. Basicamente, existem dois tipos de valores ausentes: **aleatórios** e **não aleatórios**
+</p>
+
+
+
+## Mecanismo gerador dos dados faltantes
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![](/images/dice.png){fig-align="center" width="400"}
+:::
+
+::: {.column width="50%"}
+<br>
+<p align="center">
+**MCAR (missing completely at random):** ocorrem de forma **completamente aleatória** e **não estão relacionados** com as outras variáveis do conjunto de dados.
+</p>
+:::
+::::
+
+
+<p align="center">
+&#128073; Por exemplo, em uma pesquisa por telefone algumas das respostas não foram registradas devido a problemas técnicos que ocorreram aleatoriamente durante a coleta dos dados.
+</p>
+
+
+## Mecanismo gerador dos dados faltantes
+
+
+:::: {.columns}
+::: {.column width="50%"}
+<br>
+<p align="center">
+**MNAR (missing not at random):** são valores ausentes que **estão relacionados** com outras variáveis do conjunto de dados e podem levar a **enviesamento** na análise dos dados.
+</p>
+
+:::
+
+::: {.column width="50%"}
+![](/images/not_randon.jpeg){fig-align="center" width="700"}
+:::
+::::
+
+
+<p align="center">
+&#128073; Por exemplo, em uma pesquisa sobre saúde mental, as pessoas que sofrem de depressão tendem a não responder perguntas sobre sua condição de saúde mental.
+</p>
+
+
+
+
+## Como identificar o mecanismo gerador dos dados faltantes?
+
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![](/images/margin_plot.png){fig-align="center" width="600"}
+:::
+
+::: {.column width="50%"}
+<br>
+<p align="center">
+Para identificar **valores ausentes MCAR**, uma técnica é analisar a **distribuição de valores ausentes** em relação às **outras variáveis** do conjunto de dados.
+</p>
+:::
+::::
+
+
+<p align="center">
+&#128073; Se **não houver correlação** entre a **ausência de valores** e outras variáveis, é provável que os valores ausentes **sejam MCAR**.
+</p>
+  
+
+
+
+
+## Como identificar o mecanismo gerador dos dados faltantes?
+
+
+&#128073; Também é possível realizar testes estatísticos para verificar se a distribuição dos valores ausentes é aleatória ou não.
+
+
+. . .
+
+  
+&#128577; Já a identificação de **valores ausentes MNAR** é mais complexa, pois eles estão relacionados a outras variáveis do conjunto de dados e, portanto, é mais difícil determinar se eles são **completamente aleatórios** ou **não**. 
+
+
+## Como identificar o mecanismo gerador dos dados faltantes?
+
+&#128073; Algumas técnicas para identificar valores ausentes MNAR incluem:
+  
+. . .
+  
+  - **Análise de padrões de resposta:** é possível analisar como objetos com valores ausentes se diferenciam daqueles que não têm valores ausentes, em termos dos atributos. 
+  
+  
+:::: {.columns}
+::: {.column width="50%"}
+
+![](/images/margin_plot_2.png){fig-align="center" width="600"}
+:::
+
+::: {.column width="50%"}
+<br>
+<p align="center">
+Se os indivíduos com **valores ausentes** são **significativamente diferentes** em relação a essas variáveis, é provável que os **valores ausentes sejam MNAR**.
+</p>
+:::
+::::
+  
+  
+  
+
+## Como identificar o mecanismo gerador dos dados faltantes?
+
+<br>
+  
+  - **Análise de correlação:** é possível analisar a correlação entre as variáveis com valores ausentes e outras variáveis no conjunto de dados. 
+      - Se houver uma correlação significativa entre as variáveis, é possível que os valores ausentes sejam MNAR.
+
+
+
+## Como identificar o mecanismo gerador dos dados faltantes?
+
+<br>
+  
+  - **Análise visual:** é possível realizar análises gráficas para verificar se há algum padrão de valores ausentes que sugira que eles não são aleatórios. 
+
+    - Por exemplo, pode-se criar um gráfico de dispersão de uma variável em relação a outra, marcando as observações com valores ausentes. Se houver um padrão na localização dos valores ausentes no gráfico, é possível que eles sejam MNAR.
+
+
+
+## Tratamento de valores ausentes completamente aleatórios
+  
+<br>
+
+<p></p>
+
+
+O tratamento de **valores ausentes completamente aleatórios (MCAR)** é relativamente simples, pois os valores ausentes são **independentes** das demais variáveis e podem ser tratados **sem viés**.
+
+
+## Tratamento de valores ausentes completamente aleatórios
+
+
+:::: {.columns}
+::: {.column width="50%"}
+<p align="center">
+**Exclusão de registros com valores ausentes:** Se a proporção de valores ausentes é pequena em relação ao tamanho do conjunto de dados, é possível excluir os registros que contêm valores ausentes sem comprometer a análise.
+</p>
+
+:::
+
+::: {.column width="50%"}
+<p></p>
+![](/images/delete.jpeg){fig-align="center" width="600"}
+:::
+::::
+  
+<p align="center">
+No entanto, isso pode levar a uma **perda de informações valiosas** e **reduzir o tamanho** do conjunto de dados.
+</p> 
+
+  
+
+## Tratamento de valores ausentes completamente aleatórios
+
+:::: {.columns}
+::: {.column width="50%"}
+<p align="center">
+**Imputação de valores:** Se o número de valores ausentes é grande, é possível imputar os valores ausentes usando métodos estatísticos, como a média, mediana ou regressão.
+</p>
+
+:::
+
+::: {.column width="50%"}
+<p></p>
+![](/images/imputacao.png){fig-align="center" width="600"}
+:::
+::::
+  
+<p align="center">
+Esses métodos são **simples** e **rápidos**, mas podem **introduzir um viés nos resultados**, dependendo da **distribuição dos valores ausentes** e da escolha do método de imputação.
+</p> 
+
+
+
+## Tratamento de valores ausentes completamente aleatórios
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<p></p>
+![](/images/imput_ML.png){fig-align="center" width="600"}
+
+
+:::
+
+::: {.column width="50%"}
+<p align="center">
+**Modelagem com técnicas de aprendizado de máquina:** As técnicas de aprendizado de máquina podem ajudar a prever valores ausentes com base em outros dados disponíveis.
+</p>
+:::
+::::
+  
+<p align="center">
+**Mais precisa** do que a imputação de valores, mas também pode ser **mais complexa** e exigir um **conjunto de dados de treinamento grande** o suficiente para o **modelo aprender a relação entre as variáveis**.
+</p> 
+  
+
+  
+  
+## Tratamento de valores ausentes não aleatórios
+  
+<br>
+<p></p>
+
+O tratamento de **valores ausentes não aleatórios (MNAR)** é **mais complexo** do que o tratamento de **valores ausentes completamente aleatórios (MCAR)**, pois os valores ausentes estão **relacionados** a outras variáveis do conjunto de dados e podem levar a um **viés na análise** se não forem tratados adequadamente.
+
+
+  
+## Tratamento de valores ausentes não aleatórios  
+
+  
+  - **Modelagem com técnicas de aprendizado de máquina:** Como os valores ausentes MNAR estão relacionados a outras variáveis do conjunto de dados, a modelagem com técnicas de aprendizado de máquina pode ser uma abordagem útil para prever os valores ausentes com base nas informações disponíveis. 
+
+. . . 
+  
+  - **Imputação baseada em modelos:** A imputação baseada em modelos é uma técnica que envolve a construção de um modelo estatístico para prever os valores ausentes com base nas informações disponíveis. 
+
+    - Essa abordagem requer um conhecimento prévio da relação entre as variáveis e pode ser mais complexa do que outros métodos de imputação.
+
+  
+## Tratamento de valores ausentes não aleatórios
+
+<br>
+
+  - **Análise de sensibilidade:** A análise de sensibilidade é uma técnica que envolve testar diferentes cenários e valores de imputação para avaliar o impacto nos resultados da análise. 
+
+    - Essa abordagem pode ajudar a identificar os valores mais plausíveis para a imputação e a avaliar a robustez dos resultados.
+
+
+## Tratamento de valores ausentes não aleatórios
+
+Uma vez que os valores ausentes estão **relacionados** a outras variáveis do conjunto de dados, há um **padrão de ausência** definido em MNAR, que pode ser importante. 
+
+:::: {.columns}
+::: {.column width="50%"}
+
+<p></p>
+Uma maneira de **reter esse padrão de ausência** é adicionando uma **variável binária**, indicando se a **característica foi imputada**.
+
+:::
+
+::: {.column width="50%"}
+<p></p>
+![](/images/imput_bin.png){fig-align="center" width="800"}
+:::
+::::
+
+
+
+  
+## Tratamento de valores inconsistentes
+  
+
+O tratamento de valores inconsistentes é importante para garantir a qualidade e a confiabilidade dos dados <span style='font-size:50px;'>&#8594;</span> podem afetar negativamente a análise e a interpretação dos resultados.
+
+
+  
+![](/images/inconsistente.jpg){fig-align="center" width="600"}
+
+## Tratamento de valores inconsistentes
+
+Algumas técnicas comuns para lidar com valores inconsistentes incluem:
+  
+  - **Identificação de valores inconsistentes:** Verifica-se os valores em cada variável, comparando-os com os valores esperados ou com outras fontes de dados. Também é possível usar técnicas de detecção de outliers para identificar valores inconsistentes automaticamente.
+
+. . .
+  
+  - **Correção manual:** Para valores inconsistentes que podem ser facilmente corrigidos, a correção manual pode ser uma abordagem eficaz. 
+
+    - Isso pode incluir a revisão manual dos dados e a correção de erros, como erros de digitação ou valores fora do intervalo esperado.
+
+
+## Tratamento de valores inconsistentes
+  
+  - **Imputação de valores:** Para valores inconsistentes que não podem ser facilmente corrigidos, a imputação de valores pode ser uma abordagem útil. 
+
+    - Isso envolve a substituição de valores inconsistentes por valores estimados com base em outras informações disponíveis no conjunto de dados.
+
+. . .
+  
+  - **Exclusão de registros:** Para valores inconsistentes que não podem ser corrigidos e não podem ser imputados com precisão, a exclusão de registros pode ser uma abordagem apropriada. 
+
+    - Isso envolve a remoção dos registros com valores inconsistentes do conjunto de dados.
+
+
+## Tratamento de ruídos
+
+![[Fonte: Giphy](https://gph.is/g/ZPBYYOp)](https://media2.giphy.com/media/QFuBzoQdijNFztFEp6/giphy.gif){fig-align="center" .r-stretch}
+
+
+## Tratamento de ruídos
+
+**Ruído**, no contexto da **estatística e análise de dados**, refere-se a qualquer tipo de **interferência** ou **distorção** que pode obscurecer ou alterar a interpretação dos dados coletados. 
+
+
+. . .
+
+Esse fenômeno pode surgir de **diversas fontes**, como erros de entrada de dados, erros de medição, valores atípicos, variabilidade aleatória ou viés e influências externas que **não estão diretamente relacionadas ao fenômeno em estudo**.
+
+. . .
+
+O ruído pode ser considerado um **fator indesejado** que compromete a **precisão** e a **confiabilidade** das análises estatísticas.
+
+## Tratamento de ruídos
+
+
+
+![](/images/ruido2.png){fig-align="center" width="600"}
+
+## Tratamento de ruídos
+
+<br>
+- **Identificação e remoção de valores atípicos:** valores que são muito diferentes dos outros valores no conjunto de dados podem ser identificados como valores atípicos. 
+
+    - Esses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise.
+
+. . .
+  
+  - **Correção de erros de entrada de dados:** erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros.
+
+## Tratamento de ruídos
+
+<br>
+  - **Normalização ou padronização de dados:** a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes.
+
+. . .
+  
+
+  - **Utilização de técnicas de agrupamento:** técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído.
+
+
+
+
+## Tratamento de ruídos
+
+  - **Utilização de técnicas de suavização de dados:** técnicas de suavização, como média móvel ou suavização exponencial, podem ser usadas para reduzir o impacto do ruído nos dados.
+  
+  
+![](/images/suavizacao.png){fig-align="center" width="400"}  
+  
+## Como identificar um valor atípico?
+  
+  
+  - **Gráfico box-plot**
+  
+. . .
+  
+  - **Z-score:** valores com um z-score maior do que um limite (geralmente 3) são considerados valores atípicos.
+
+. . .
+  
+  - **Intervalo interquartil (IQR):** valores abaixo de Q1 - 1,5 x IQR ou acima de Q3 + 1,5 x IQR são considerados valores atípicos.
+
+
+. . .
+
+  - **Método de DBSCAN:** é um algoritmo de clusterização que agrupa pontos de dados que estão próximos uns dos outros e identifica valores que não estão próximos a nenhum cluster, o que pode ser um sinal de valores atípicos.
+
+
+
+## Como identificar um valor atípico?
+
+<br>
+
+Quaisquer que sejam as técnicas empregadas, a **documentação** e o **registro das etapas de limpeza de dados** são **essenciais** para garantir a **reprodutibilidade**, **transparência**, **colaboração**, **auditabilidade** e **controle de qualidade em análises de dados**.
+
+
+  
+## Integração de dados
+  
+:::: {.columns}
+::: {.column width="50%"}
+
+<br>
+<br>
+**Integração de dados** é o processo de **combinar dados de múltiplas fontes** em um **único conjunto de dados** **coerente** e **integrado**. 
+
+:::
+
+::: {.column width="50%"}
+<p></p>
+<p align="center">
+![](/images/Data-Integration.jpg){fig-align="center" width="500"}
+</p>
+:::
+::::
+
+<p align="center">
+O **objetivo da integração de dados** é criar um conjunto de dados mais **completo** e **preciso**, permitindo análises mais **abrangentes** e **informadas**.
+</p> 
+
+  
+## Integração de dados
+  
+  - **Fusão de dados:** é o processo de combinar dois ou mais conjuntos de dados com base em uma chave comum. 
+
+    -  Por exemplo, dados de clientes de uma empresa podem ser fundidos com dados de vendas, com base no número de identificação de cliente.
+
+. . .
+  
+  - **Análise de correspondência:** é uma técnica de integração de dados que permite combinar informações de diferentes fontes, com base em uma análise de correspondência de variáveis. 
+
+    - Por exemplo, dados de vendas de uma empresa podem ser combinados com dados demográficos, com base em correspondências de variáveis, como localização geográfica ou faixa etária.
+
+## Integração de dados
+
+<br>
+<br>
+
+<p align="center">  
+<span style='font-size:100px;'>&#128161;</span> Independentemente da técnica usada, é importante lembrar que a **integração de dados** pode ser **complexa** e **demorada** e pode envolver a **identificação** e **correção de inconsistências nos dados**. 
+</p>
+
+
+
+  
+## Redução de dados
+  
+
+
+
+<br>
+<br>
+<span style='font-size:100px;'>&#128161;</span> A **redução de dados** é uma técnica usada para **diminuir a dimensão** de um conjunto de dados, ou seja, reduzir o número de variáveis ou características que compõem o conjunto de dados. 
+
+
+
+
+
+
+## Redução de dados
+
+
+- Existem várias razões para reduzir os dados:
+  
+  - **Simplificar** a análise de dados, tornando-a mais fácil e mais rápida de ser executada;
+  - **Reduzir** o tempo de processamento e armazenamento dos dados;
+  - **Melhorar** a qualidade dos dados, eliminando variáveis irrelevantes ou redundantes que possam afetar negativamente a análise;
+  - **Preparar** os dados para a entrada em um modelo de aprendizado de máquina.
+
+
+
+## Análise de Componentes Principais
+  
+
+![](/images/pca.png){fig-align="center" width="500"}
+
+## Amostragem
+
+![](/images/sampling.png){fig-align="center" width="500"}
+  
+## Seleção de atributos
+
+- **Seleção de atributos** é um processo de pré-processamento de dados que envolve a **escolha dos atributos** (variáveis) **mais relevantes** para a análise. 
+
+
+. . .
+
+
+- O objetivo da seleção de atributos é **reduzir a dimensionalidade dos dados**, eliminando características **irrelevantes** e **redundantes**, e, assim, melhorar a **precisão** e a **eficiência** da análise.
+
+
+
+## Seleção de atributos
+  
+
+**Seleção baseada em filtro:** Essa técnica usa métricas estatísticas para avaliar a relevância dos atributos e seleciona aqueles que têm maior correlação com a variável de interesse. 
+
+  - **Métodos de filtragem:** coeficiente de correlação, ganho de informação e o teste de qui-quadrado.
+
+![](/images/fig01.png)
+
+## Seleção de atributos
+
+
+**Seleção baseada em wrapper:** Essa técnica envolve a seleção de atributos por meio de um modelo de aprendizado de máquina, que é treinado em um conjunto de atributos selecionados. O modelo é avaliado usando validação cruzada e as atributos são selecionados com base no desempenho do modelo.
+
+  - **Métodos wrapper:** Forward stepwise selection, Backward Elimination, Bi-directional stepwise selection & elimination.
+
+![](/images/fig02.png)
+
+## Seleção de atributos
+
+**Seleção baseada em incorporação:** Essa técnica envolve a seleção de atributos durante o processo de treinamento do modelo de aprendizado de máquina. O modelo é treinado com todas os atributos e, em seguida, os atributos são removidos com base em sua importância para o modelo.
+
+  - **Métodos de incorporação:** Regressão LASSO, Árvores de decisão...
+
+![](/images/fig03.png)
+
+
+## Transformação de dados
+
+![[Fonte: Giphy](http://gph.is/1Vp16TL)](https://media3.giphy.com/media/P4TqKx6NHyLnO/giphy.gif){fig-align="center" .r-stretch}
+
+
+
+## Transformação de dados
+  
+As bases de dados brutas e integradas a partir de **bases distintas** podem sofrer, além de **valores ausentes**, **ruídos** e **inconsistências**, de dados não ou pouco **padronizados**.
+
+. . .
+
+- Por exemplo, pode haver valores de um mesmo atributo escritos em maiúsculo e outros em minúsculo, e os formatos e as unidades podem ser diferentes.
+
+. . .
+  
+- Outro tipo de problema encontrado é a **não uniformidade dos atributos**, ou seja, alguns atributos podem ser **numéricos**, outros **categóricos**, e os **domínios de cada atributo podem ser muito diferentes**.
+
+
+## Transformação de dados
+
+
+Como podemos resolver esses problemas?
+
+. . .  
+
+- **Padronização:** Resolver as diferenças de unidades e escalas dos dados.
+    - **Capitalização:** é usual padronizar as fontes,	normalmente para maiúsculo.
+    - **Padronização de formatos:** observar e padronizar o formato de cada atributo da base, principalmente quando diferentes bases precisam ser integradas.
+    - **Conversão de unidades:** todos os dados devem ser convertidos e padronizados em uma mesma unidade de medida.
+    - **Normalização:** tornar os dados mais apropriados à aplicação de algum algoritmo de mineração.
+
+
+
+## Tipos de normalização
+  
+  - **Normalização Max-Min:** Realiza uma transformação linear nos dados originais
+
+
+$$X' = \dfrac{X - \min(X)}{\max(X) - \min(X)}$$
+
+
+. . .
+
+
+
+  - **Normalização pelo escore-z:** Útil quando os valores máximo e mínimo de um atributo forem desconhecidos ou quando existe outliers.
+      
+$$X' = \dfrac{X - \bar{X}}{s_X}$$ 
+  
+  
+  
+## Tipos de normalização
+
+  
+  - **Normalização pelo escalonamento decimal:** Move a casa decimal de um atributo $X$.
+
+$$X' = \dfrac{X}{10^j}$$
+			
+  em que $j$ é o menor inteiro tal que $\max(|X'|)< 1$.
+
+
+
+. . .
+
+  
+  - **Normalização pela distância interquartilica:** Toma o valor do atributo, subtrai a mediana e divide pela distância interquartílica ($DIQ = Q_3 - Q_1$)	
+
+$$X' =  \dfrac{X - Q_2}{DIQ}$$
+
+
+
+
+## Exemplo de uso das diferentes normalizações
+<br>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:30px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:50px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-34fe{background-color:#c0c0c0;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-34fe">ID</th>
+    <th class="tg-34fe">Valor original</th>
+    <th class="tg-34fe">Max-Min</th>
+    <th class="tg-34fe">Escore-z</th>
+    <th class="tg-34fe">Escalonamento decimal</th>
+    <th class="tg-34fe">Distância interquartílica</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">1</td>
+    <td class="tg-c3ow">67</td>
+    <td class="tg-c3ow">0,85</td>
+    <td class="tg-c3ow">0,73</td>
+    <td class="tg-c3ow">0,67</td>
+    <td class="tg-c3ow">0,40</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">2</td>
+    <td class="tg-c3ow">43</td>
+    <td class="tg-c3ow">0,33</td>
+    <td class="tg-c3ow">-0,92</td>
+    <td class="tg-c3ow">0,43</td>
+    <td class="tg-c3ow">-0,80</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">3</td>
+    <td class="tg-c3ow">58</td>
+    <td class="tg-c3ow">0,65</td>
+    <td class="tg-c3ow">0,11</td>
+    <td class="tg-c3ow">0,58</td>
+    <td class="tg-c3ow">-0,05</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">4</td>
+    <td class="tg-c3ow">28</td>
+    <td class="tg-c3ow">0,00</td>
+    <td class="tg-c3ow">-1,96</td>
+    <td class="tg-c3ow">0,28</td>
+    <td class="tg-c3ow">-1,55</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">5</td>
+    <td class="tg-c3ow">74</td>
+    <td class="tg-c3ow">1,00</td>
+    <td class="tg-c3ow">1,21</td>
+    <td class="tg-c3ow">0,74</td>
+    <td class="tg-c3ow">0,75</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">6</td>
+    <td class="tg-c3ow">65</td>
+    <td class="tg-c3ow">0,80</td>
+    <td class="tg-c3ow">0,59</td>
+    <td class="tg-c3ow">0,65</td>
+    <td class="tg-c3ow">0,30</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">7</td>
+    <td class="tg-c3ow">70</td>
+    <td class="tg-c3ow">0,91</td>
+    <td class="tg-c3ow">0,94</td>
+    <td class="tg-c3ow">0,70</td>
+    <td class="tg-c3ow">0,55</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">8</td>
+    <td class="tg-c3ow">42</td>
+    <td class="tg-c3ow">0,30</td>
+    <td class="tg-c3ow">-0,99</td>
+    <td class="tg-c3ow">0,42</td>
+    <td class="tg-c3ow">-0,85</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">9</td>
+    <td class="tg-c3ow">57</td>
+    <td class="tg-c3ow">0,63</td>
+    <td class="tg-c3ow">0,04</td>
+    <td class="tg-c3ow">0,57</td>
+    <td class="tg-c3ow">-0,10</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">10</td>
+    <td class="tg-c3ow">60</td>
+    <td class="tg-c3ow">0,70</td>
+    <td class="tg-c3ow">0,25</td>
+    <td class="tg-c3ow">0,60</td>
+    <td class="tg-c3ow">0,05</td>
+  </tr>
+  <tr>
+  </tr>
+</tbody>
+</table>
+
+## Transformação de dados
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+&#128073; **Transformação logarítmica:** Usada para reduzir a assimetria e a variância dos dados. 
+
+
+
+:::
+
+::: {.column width="50%"}
+ 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(patchwork)
+library(ggplot2)
+library(ggpubr)
+set.seed(123)
+x = 1:1000
+v <- 0.5 + 0.005*x
+var_het <- rnorm(n = length(x), mean = x, sd = sqrt(v))
+dados_assimetricos <- rgamma(1000, 1, 1)
+
+dados = tibble(dados_assimetricos, var_het)
+p1 = dados %>% 
+  ggplot(aes(x=dados_assimetricos, after_stat(density)))+ 
+  geom_histogram(color = "white", fill = "steelblue")+
+  xlab('Atributo Assimétrico')+
+  theme(legend.position='none')+
+  theme_pubclean()
+
+p2 = dados %>% 
+  mutate(dados_simetricos = log10(dados_assimetricos)) %>% 
+  ggplot(aes(x=dados_simetricos, after_stat(density)))+
+  geom_histogram(color = "white", fill = "steelblue")+
+  xlab('Atributo Transformado')+
+  theme(legend.position='none')+
+  theme_pubclean()
+p1 + p2
+```
+
+:::
+::::
+
+<p align="center"> 
+É especialmente **útil** quando os dados estão distribuídos de **forma exponencial** ou quando há um **grande intervalo de valores** entre as observações.
+</p>
+
+
+
+
+
+
+## Transformação de dados
+
+A **transformação logarítmica** é definida pela seguinte equação:
+
+$$
+y = \log(x)
+$$
+
+onde $x$ é a variável a ser transformada e $y$ é a variável transformada. 
+
+. . .
+
+Trata-se de uma transformação **monotônica**, isto é, não afeta a **ordem dos dados**. Isso é importante para modelos preditivos porque garante que a transformação não afete a capacidade do modelo de capturar a relação entre as variáveis.
+
+
+
+## Transformação de dados
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+&#128073; **Transformação de raiz quadrada:** Similar à transformação logarítmica, com o benefício de manter a escala original dos dados, facilitando a interpretação. 
+
+
+
+:::
+
+::: {.column width="50%"}
+ 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(patchwork)
+library(ggplot2)
+library(ggpubr)
+set.seed(123)
+x = 1:1000
+v <- 0.5 + 0.005*x
+var_het <- rnorm(n = length(x), mean = x, sd = sqrt(v))
+dados_assimetricos <- rgamma(1000, 1, 1)
+
+dados = tibble(dados_assimetricos, var_het)
+p1 = dados %>% 
+  ggplot(aes(x=dados_assimetricos, after_stat(density)))+ 
+  geom_histogram(color = "white", fill = "steelblue")+
+  xlab('Atributo Assimétrico')+
+  theme(legend.position='none')+
+  theme_pubclean()
+
+p2 = dados %>% 
+  mutate(dados_simetricos = sqrt(dados_assimetricos)) %>% 
+  ggplot(aes(x=dados_simetricos, after_stat(density)))+
+  geom_histogram(color = "white", fill = "steelblue")+
+  xlab('Atributo Transformado')+
+  theme(legend.position='none')+
+  theme_pubclean()
+
+p1 + p2
+```
+
+:::
+::::
+
+<p align="center"> 
+A transformação logarítmica é mais adequada para **dados com caudas longas** e **uma grande variação**, enquanto a **transformação da raiz quadrada** é mais adequada para **dados com uma variação moderada**. Além disso, a o uso de logarítmos tem o efeito de estabilizar a variância dos dados, enquanto a o uso da raiz quadrada tem o efeito de reduzir a variância dos dados.
+</p>
+
+
+
+## Transformação de dados
+
+A transformação de raiz quadrada é definida pela seguinte equação:
+
+
+$$
+y = \sqrt x
+$$
+
+
+onde $x$ é a variável a ser transformada e $y$ é a variável transformada. 
+
+
+. . .
+
+Assim como a transformação logarítimica, a transformação de raiz quadrada é uma transformação monotônica, o que significa que não afeta a ordem dos dados.
+
+
+## Transformação de dados
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+&#128073; A **transformação de Box-Cox** é uma técnica para transformar variáveis em modelos preditivos que é amplamente utilizada para melhorar a qualidade da modelagem e a precisão das previsões. 
+
+
+
+:::
+
+::: {.column width="50%"}
+ 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(patchwork)
+library(ggplot2)
+library(ggpubr)
+library(caret)
+library(bestNormalize)
+
+set.seed(123)
+x = 1:1000
+v <- 0.5 + 0.005*x
+var_het <- rnorm(n = length(x), mean = x, sd = sqrt(v))
+dados_assimetricos <- rgamma(1000, 1, 1)
+
+dados = tibble(dados_assimetricos, var_het)
+p1 = dados %>% 
+  ggplot(aes(x=dados_assimetricos, after_stat(density)))+
+  geom_histogram(color = "white", fill = "steelblue")+
+  xlab('Atributo Assimétrico')+
+  theme(legend.position='none')+
+  theme_pubclean()
+
+p2 = dados %>% 
+  mutate(dados_simetricos = predict(boxcox(dados_assimetricos))) %>% 
+  ggplot(aes(x=dados_simetricos, after_stat(density)))+
+  geom_histogram(color = "white", fill = "steelblue")+
+  xlab('Atributo Transformado')+
+  theme(legend.position='none')+
+  theme_pubclean()
+
+p1 + p2
+```
+
+:::
+::::
+
+<p align="center"> 
+É uma **técnica paramétrica** que depende de um **parâmetro lambda** que é estimado a partir dos dados, podendo ser usada apenas com **variáveis não negativas**. 
+</p>
+
+
+
+
+
+## Transformação de dados
+
+A transformação de Box-Cox é definida pela seguinte equação:
+
+
+$$
+y = 
+  \begin{cases}
+      \dfrac{(x^\lambda - 1)}{\lambda}, & se \ \lambda \neq  0 \\
+      \log(x), & se \ \lambda = 0 
+  \end{cases}
+$$
+
+
+onde $x$ é a variável a ser transformada e $y$ é a variável transformada. 
+
+. . .
+
+Esta é uma técnica de transformação de dados útil usada para estabilizar a variância, tornar os dados mais semelhantes à distribuição normal.
+  
+  - Por exemplo, quando um atributo tem a aparência de uma curva normal mas está descolado para a direita ou esquerda. 
+  
+  
+
+
+## Transformação de dados
+
+
+:::: {.columns}
+::: {.column width="50%"}
+<br>
+&#128073; A **transformação Yeo-Johnson** é uma técnica de transformação semelhante à transformação de Box-Cox. 
+:::
+::: {.column width="50%"}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(patchwork)
+library(ggplot2)
+library(ggpubr)
+library(caret)
+library(bestNormalize)
+
+set.seed(123)
+x = 1:1000
+v <- 0.5 + 0.005*x
+var_het <- rnorm(n = length(x), mean = x, sd = sqrt(v))
+dados_assimetricos <- rgamma(1000, 1, 1)
+
+dados = data.frame(dados_assimetricos, var_het)
+p1 = dados %>% 
+  ggplot(aes(x=dados_assimetricos, after_stat(density)))+
+  geom_histogram(color = "white", fill = "steelblue")+
+  xlab('Atributo Assimétrico')+
+  theme(legend.position='none')+
+  theme_pubclean()
+
+p2 = dados %>% 
+  mutate(dados_simetricos = predict(yeojohnson(dados_assimetricos))) %>% 
+  ggplot(aes(x=dados_simetricos, after_stat(density)))+
+  geom_histogram(color = "white", fill = "steelblue")+
+  xlab('Atributo Transformado')+
+  theme(legend.position='none')+
+  theme_pubclean()
+
+p1 + p2
+```
+:::
+::::
+<p align="center"> 
+No entanto, a transformação Yeo-Johnson é mais flexível porque pode ser usada para **variáveis que podem assumir valores negativos**. 
+</p>
+
+
+## Transformação de dados
+
+A transformação Yeo-Johnson é definida pela seguinte equação:
+
+
+$$
+y = 
+  \begin{cases}
+      \dfrac{(x + 1)^\lambda - 1}{\lambda}, & se \ x \geq  0, \ \lambda \neq 0 \\
+      \ln(x + 1), & se \ x \geq 0 \ \lambda = 0 \\
+      \dfrac{-((-x + 1)^{(2 - \lambda)} - 1)}{(2 - \lambda)}, & se \ x <  0, \ \lambda \neq 2 \\
+      -\ln(-x+1) & se \ x <  0, \ \lambda = 2 
+  \end{cases}
+$$
+
+
+onde $x$ é a variável a ser transformada e $y$ é a variável transformada.
+
+
+
+## Discretização de dados
+
+**Discretização** é o processo de transformar uma **variável contínua** em uma **variável categórica ou discreta**. 
+
+- É útil quando se deseja agrupar valores contínuos em categorias ou intervalos para simplificar a análise ou reduzir o efeito de valores extremos. 
+
+
+![](/images/discretizacao.png){fig-align="center" width="500"}
+
+## Discretização de dados
+
+<br>
+
+Técnicas comuns de discretização:
+
+. . .
+
+  - **Discretização equi-probabilística:** Essa técnica envolve a divisão dos dados em intervalos de tamanho igual, de modo que cada intervalo contenha aproximadamente a mesma quantidade de observações.
+
+. . .
+
+  - **Discretização equi-distante:** Nessa técnica, os dados são divididos em intervalos de tamanho igual, com base em uma distância predefinida.
+
+## Discretização de dados
+
+<br>
+
+  - **Discretização por quartis:** Os dados são divididos em quartis, com base nos valores de corte que dividem os dados em quatro partes iguais.
+  
+  
+. . . 
+
+
+
+  - **Discretização por frequência:** Os dados são divididos em intervalos com base na frequência de observações em cada intervalo.
+
+
+## Discretização de dados
+
+
+  - **Binarização:** A binarização é uma técnica de transformação de dados que converte valores quantitativos em valores binários (0 ou 1) com base em um valor de corte.
+  
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+![](/images/fig05.png){fig-align="center" width="500"} 
+
+
+
+:::
+
+::: {.column width="50%"}
+![](/images/fig08.png){fig-align="center" width="1000"}
+:::
+::::
+
+
+
+## References {visibility="uncounted"}
+
+::: {#refs}
+:::

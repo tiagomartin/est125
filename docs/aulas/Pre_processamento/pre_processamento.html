@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-fe43d0015be6fd5bd60fe62033074fe8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.7">
+<title>EST125 - Introdução à Mineração de Dados – Pré-processamento de dados</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+<style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-9ac898bba65730bcac120b5368e57dbb.css">
+<link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+<meta property="og:title" content="Pré-processamento de dados – EST125 - Introdução à Mineração de Dados">
+<meta property="og:site_name" content="EST125 - Introdução à Mineração de Dados">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="../../images/back.jpeg" data-background-opacity="0.3" data-background-size="cover" class="quarto-title-block center"><h1 class="title">Pré-processamento de dados</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section><section><section id="introdução" class="title-slide slide level1 center"><h1>Introdução</h1>
+
+</section><section id="pré-processamento-de-dados" class="slide level2"><h2>Pré-processamento de dados</h2>
+<p>💡 <strong>Pré-processamento</strong> de dados se define como um conjunto de técnicas e procedimentos aplicados aos dados <strong>antes</strong> de sua utilização em um modelo ou algoritmo de análise.</p>
+<div class="fragment">
+<p>É uma etapa fundamental na análise de dados, pois visa garantir que os dados estejam <strong>corretos</strong>, <strong>completos</strong>, <strong>coerentes</strong> e em um <strong>formato</strong> apropriado para serem analisados.</p>
+</div>
+</section><section id="pré-processamento-de-dados-1" class="slide level2"><h2>Pré-processamento de dados</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/preprocess.jpeg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p align="center">
+O pré-processamento de dados inclui diversas atividades, como <strong>limpeza de dados</strong>, <strong>transformação de dados</strong>, <strong>redução de dimensão</strong>, <strong>seleção de recursos</strong>, <strong>normalização</strong> e <strong>amostragem</strong>.
+</p>
+</div></div>
+<p align="center">
+👉 O <strong>objetivo geral</strong> do pré-processamento de dados é <strong>aumentar a qualidade</strong> e a <strong>precisão da análise</strong> de dados, <strong>minimizando a influência de ruídos</strong> e <strong>inconsistências</strong> nos resultados finais.
+</p>
+</section><section id="importância-do-pré-processamento" class="slide level2"><h2>Importância do pré-processamento</h2>
+<p>O pré-processamento de dados é uma etapa importante e crítica no processo de análise de dados. Algumas razões pelas quais é importante realizar o pré-processamento são:</p>
+<div class="fragment">
+<p>👉 <strong>Melhoria da qualidade dos dados:</strong> O pré-processamento de dados pode ajudar a melhorar a qualidade dos dados, eliminando dados duplicados, ausentes ou inconsistentes. Isso resulta em dados mais precisos e confiáveis para análise.</p>
+</div>
+<div class="fragment">
+<p>👉 <strong>Ajuste dos dados para a análise:</strong> Muitos modelos e algoritmos de análise de dados requerem que os dados estejam em um formato específico. Na etapa do pré-processamento de dados ajusta-se os dados para que estejam em um formato adequado para a análise.</p>
+</div>
+</section><section id="importância-do-pré-processamento-1" class="slide level2"><h2>Importância do pré-processamento</h2>
+<p>👉 <strong>Eliminação de ruídos:</strong> Os dados geralmente contêm ruídos, como outliers e valores extremos, que podem afetar negativamente a precisão dos resultados finais. Nesta etapa, elimina-se esses ruídos, tornando os resultados mais precisos.</p>
+<div class="fragment">
+<p>👉 <strong>Redução da complexidade dos dados:</strong> Podemos reduzir a complexidade dos dados, eliminando variáveis desnecessárias e reduzindo o número de dimensões do conjunto de dados. Isso torna mais fácil a análise e interpretação dos dados.</p>
+</div>
+<div class="fragment">
+<p>👉 <strong>Melhoria do desempenho do modelo:</strong> O pré-processamento de dados pode ajudar a melhorar o desempenho do modelo, ao remover dados redundantes, normalizar os dados e selecionar os recursos mais importantes. Isso resulta em modelos mais precisos e confiáveis.</p>
+</div>
+</section><section id="importância-do-pré-processamento-2" class="slide level2"><h2>Importância do pré-processamento</h2>
+
+<img data-src="../..\images/time.jpg" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/?sh=34ce9abe6f63">Fonte: Forbes</a></p></section><section id="importância-do-pré-processamento-3" class="slide level2"><h2>Importância do pré-processamento</h2>
+
+<img data-src="https://media3.giphy.com/media/9u514UZd57mRhnBCEk/giphy.gif" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://gph.is/g/Eq2rpxa">Fonte: Giphy</a></p></section><section id="o-que-há-de-errado-nessa-base" class="slide level2"><h2>O que há de errado nessa base?</h2>
+<p><br></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-34fe{background-color:#c0c0c0;border-color:inherit;text-align:center;vertical-align:top; font-size:30px}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top; font-size:30px}
+</style>
+<table class="tg">
+<thead><tr>
+<th class="tg-34fe">
+Usuário
+</th>
+<th class="tg-34fe">
+Idade
+</th>
+<th class="tg-34fe">
+Cidade
+</th>
+<th class="tg-34fe">
+Data
+</th>
+<th class="tg-34fe">
+Salário
+</th>
+<th class="tg-34fe">
+Npáginas
+</th>
+<th class="tg-34fe">
+Nsessões
+</th>
+<th class="tg-34fe">
+Nprodutos
+</th>
+<th class="tg-34fe">
+Clique
+</th>
+<th class="tg-34fe">
+Comprou
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tg-c3ow">
+user1
+</td>
+<td class="tg-c3ow">
+22
+</td>
+<td class="tg-c3ow">
+Belo Horizonte
+</td>
+<td class="tg-c3ow">
+22/10/21
+</td>
+<td class="tg-c3ow">
+1200
+</td>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+no
+</td>
+<td class="tg-c3ow">
+no
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+user2
+</td>
+<td class="tg-c3ow">
+1
+</td>
+<td class="tg-c3ow">
+São paulo
+</td>
+<td class="tg-c3ow">
+20/09/22
+</td>
+<td class="tg-c3ow">
+5000
+</td>
+<td class="tg-c3ow">
+21
+</td>
+<td class="tg-c3ow">
+4
+</td>
+<td class="tg-c3ow">
+11
+</td>
+<td class="tg-c3ow">
+yes
+</td>
+<td class="tg-c3ow">
+yes
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+user3
+</td>
+<td class="tg-c3ow">
+41
+</td>
+<td class="tg-c3ow">
+BH
+</td>
+<td class="tg-c3ow">
+23 de dezembro 2022
+</td>
+<td class="tg-c3ow">
+12000
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+1
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+NA
+</td>
+<td class="tg-c3ow">
+yes
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+user4
+</td>
+<td class="tg-c3ow">
+32
+</td>
+<td class="tg-c3ow">
+Miami
+</td>
+<td class="tg-c3ow">
+22/10/01
+</td>
+<td class="tg-c3ow">
+50000
+</td>
+<td class="tg-c3ow">
+NA
+</td>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+yes
+</td>
+<td class="tg-c3ow">
+no
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+user5
+</td>
+<td class="tg-c3ow">
+20
+</td>
+<td class="tg-c3ow">
+Tokyo
+</td>
+<td class="tg-c3ow">
+23/01/25
+</td>
+<td class="tg-c3ow">
+12220
+</td>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+8
+</td>
+<td class="tg-c3ow">
+no
+</td>
+<td class="tg-c3ow">
+yes
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+user6
+</td>
+<td class="tg-c3ow">
+28
+</td>
+<td class="tg-c3ow">
+NY
+</td>
+<td class="tg-c3ow">
+March 14, 2018
+</td>
+<td class="tg-c3ow">
+250000
+</td>
+<td class="tg-c3ow">
+8
+</td>
+<td class="tg-c3ow">
+NA
+</td>
+<td class="tg-c3ow">
+NA
+</td>
+<td class="tg-c3ow">
+no
+</td>
+<td class="tg-c3ow">
+yes
+</td>
+</tr>
+<tr></tr>
+</tbody>
+</table></section><section id="principais-problemas-com-dados-reais" class="slide level2"><h2>Principais problemas com dados reais</h2>
+<p><br></p>
+
+<img data-src="../..\images/tipos.png" class="r-stretch quarto-figure quarto-figure-center"></section><section id="tipos-de-dados" class="slide level2"><h2>Tipos de dados</h2>
+<p>Os dados podem ser classificados em três tipos principais: <strong>estruturados</strong>, <strong>semiestruturados</strong> e <strong>não estruturados</strong></p>
+<p>👉 <strong>Estruturados</strong></p>
+<p>São dados organizados em uma estrutura definida, como tabelas, colunas e linhas em um banco de dados.</p>
+<ul>
+<li>
+<strong>Exemplos:</strong> informações de vendas, cadastros de clientes, registros de transações financeiras, entre outros.</li>
+</ul>
+<div class="fragment">
+<p>💻 Para dados estruturados, a técnica de pré-processamento mais comum é a <strong>limpeza de dados</strong>, além da <strong>seleção de atributos relevantes</strong>, <strong>normalização</strong> e <strong>transformação</strong> de dados.</p>
+</div>
+</section><section id="tipos-de-dados-1" class="slide level2"><h2>Tipos de dados</h2>
+<p>👉 <strong>Semiestruturados</strong></p>
+<p>São dados que não possuem uma estrutura rígida como os dados estruturados, mas possuem algumas formas de organização, como marcadores, tags ou atributos.</p>
+<ul>
+<li>
+<strong>Exemplos:</strong> arquivos XML, JSON, HTML, entre outros.</li>
+</ul>
+<div class="fragment">
+<p>💻 Para dados semiestruturados, a técnica de pré-processamento mais comum é a <strong>extração de informações relevantes</strong>, que envolve a identificação de padrões e estruturas em dados como XML, JSON ou HTML, além da <strong>extração de dados</strong> a partir dessas estruturas.</p>
+</div>
+</section><section id="tipos-de-dados-2" class="slide level2"><h2>Tipos de dados</h2>
+<p>👉 <strong>Não estruturados</strong></p>
+<p>São dados que não possuem uma estrutura definida e estão em formato livre, como texto, imagens, vídeos, áudios, e-mails, redes sociais, entre outros.</p>
+<div class="fragment">
+<p>💻 Exigem o uso de técnicas mais avançadas de <strong>processamento de linguagem natural</strong>, <strong>reconhecimento de padrões</strong> e <strong>aprendizado de máquina</strong>.</p>
+</div>
+<div class="fragment">
+<p>Com o aumento da quantidade de dados gerados diariamente, a análise de <strong>dados semiestruturados</strong> e <strong>não estruturados</strong> tem se tornado cada vez mais importante para empresas que desejam obter insights valiosos sobre seus clientes, mercado e tendências.</p>
+</div>
+</section><section id="processo-de-preparação-da-base-de-dados" class="slide level2"><h2>Processo de preparação da base de dados</h2>
+<p><br></p>
+
+<img data-src="../..\images/pre.png" class="r-stretch quarto-figure quarto-figure-center"></section><section id="limpeza-de-dados" class="slide level2"><h2>Limpeza de dados</h2>
+<p>🤔 O que é limpeza de dados? 🧹</p>
+<ul>
+<li>
+<strong>Limpeza de dados</strong> é o processo de <strong>identificar</strong>, <strong>remover</strong> ou <strong>corrigir dados imprecisos</strong>, <strong>incompletos</strong>, <strong>inconsistentes</strong>, <strong>duplicados</strong> ou <strong>irrelevantes</strong> em um conjunto de dados.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>É uma etapa <strong>importante</strong> no processo de análise de dados, uma vez que <strong>dados sujos</strong> podem <strong>afetar negativamente</strong> a <strong>qualidade</strong> e <strong>confiabilidade</strong> dos resultados da análise.</li>
+</ul>
+</div>
+</section><section id="identificação-de-problemas" class="slide level2"><h2>Identificação de problemas</h2>
+<p>👉 Existem várias técnicas para identificar problemas de limpeza de dados em um conjunto de dados. Algumas das técnicas mais comuns incluem:</p>
+<ul>
+<li>
+<strong>Análise visual:</strong> pode-se inspecionar o conjunto de dados para identificar erros óbvios, como valores ausentes, valores que não fazem sentido ou valores extremos.</li>
+</ul>
+
+<img data-src="../..\images/outlier.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.nagwa.com/en/explainers/845148137695/">Fonte:Nagwa</a></p></section><section id="identificação-de-problemas-1" class="slide level2"><h2>Identificação de problemas</h2>
+<ul>
+<li>
+<strong>Estatística descritiva:</strong> realizar uma boa análise descritiva. Valores extremos ou valores que estão muito longe do intervalo interquartil, por exemplo, podem ser indicativos de problemas de limpeza de dados.</li>
+</ul>
+
+<img data-src="../..\images/outlier2.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://davidmlane.com/ben/cartoons.html">Fonte:Statistics Cartoons by Ben Shabad</a></p></section><section id="identificação-de-problemas-2" class="slide level2"><h2>Identificação de problemas</h2>
+<ul>
+<li>
+<strong>Gráficos de distribuição:</strong> analisar os gráficos de distribuição para cada variável e observar padrões incomuns na distribuição dos valores, como bimodalidade, assimetria ou outliers.</li>
+</ul>
+
+<img data-src="../..\images/assimetrica.png" class="r-stretch quarto-figure quarto-figure-center"></section><section id="identificação-de-problemas-3" class="slide level2"><h2>Identificação de problemas</h2>
+<ul>
+<li>
+<strong>Análise de correlação:</strong> analisar as correlações entre as variáveis e procurar relações que não fazem sentido ou que não deveriam existir.</li>
+</ul>
+
+<img data-src="../..\images/espurias.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://euleralencar.medium.com/o-que-%C3%A9-a-correla%C3%A7%C3%A3o-esp%C3%BAria-819b77482764">Fonte:Medium</a></p></section><section id="identificação-de-problemas-4" class="slide level2"><h2>Identificação de problemas</h2>
+<ul>
+<li>
+<strong>Análise de consistência:</strong> comparar valores em diferentes variáveis para ver se eles são consistentes entre si.
+<ul>
+<li>Por exemplo, se uma pessoa é descrita como tendo 2 metros de altura e 30 kg de peso, pode haver um problema de limpeza de dados.</li>
+</ul>
+</li>
+</ul>
+
+<img data-src="../..\images/inconsistentes.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="tratamento-de-dados-faltantes" class="slide level2"><h2>Tratamento de dados faltantes</h2>
+
+<img data-src="https://media2.giphy.com/media/3s0OTExhi8qzSC3nHC/giphy.gif" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://gph.is/2Tz7gn7">Fonte: Giphy</a></p></section><section id="tratamento-de-dados-faltantes-1" class="slide level2"><h2>Tratamento de dados faltantes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<blockquote>
+<p>“The idea of imputation is both seductive and dangerous”.</p>
+</blockquote>
+<p align="center">
+<span class="citation" data-cites="madow1983incomplete">Madow et al. (<a href="#/references" role="doc-biblioref" onclick="">1983</a>)</span>
+</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/missing.jpeg" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+A escolha do método de tratamento de valor ausente <strong>depende do tipo de valor ausente</strong> identificado. Basicamente, existem dois tipos de valores ausentes: <strong>aleatórios</strong> e <strong>não aleatórios</strong>
+</p>
+</section><section id="mecanismo-gerador-dos-dados-faltantes" class="slide level2"><h2>Mecanismo gerador dos dados faltantes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/dice.png" class="quarto-figure quarto-figure-center" width="400"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<br><p align="center">
+<strong>MCAR (missing completely at random):</strong> ocorrem de forma <strong>completamente aleatória</strong> e <strong>não estão relacionados</strong> com as outras variáveis do conjunto de dados.
+</p>
+</div></div>
+<p align="center">
+👉 Por exemplo, em uma pesquisa por telefone algumas das respostas não foram registradas devido a problemas técnicos que ocorreram aleatoriamente durante a coleta dos dados.
+</p>
+</section><section id="mecanismo-gerador-dos-dados-faltantes-1" class="slide level2"><h2>Mecanismo gerador dos dados faltantes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<br><p align="center">
+<strong>MNAR (missing not at random):</strong> são valores ausentes que <strong>estão relacionados</strong> com outras variáveis do conjunto de dados e podem levar a <strong>enviesamento</strong> na análise dos dados.
+</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/not_randon.jpeg" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+👉 Por exemplo, em uma pesquisa sobre saúde mental, as pessoas que sofrem de depressão tendem a não responder perguntas sobre sua condição de saúde mental.
+</p>
+</section><section id="como-identificar-o-mecanismo-gerador-dos-dados-faltantes" class="slide level2"><h2>Como identificar o mecanismo gerador dos dados faltantes?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/margin_plot.png" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<br><p align="center">
+Para identificar <strong>valores ausentes MCAR</strong>, uma técnica é analisar a <strong>distribuição de valores ausentes</strong> em relação às <strong>outras variáveis</strong> do conjunto de dados.
+</p>
+</div></div>
+<p align="center">
+👉 Se <strong>não houver correlação</strong> entre a <strong>ausência de valores</strong> e outras variáveis, é provável que os valores ausentes <strong>sejam MCAR</strong>.
+</p>
+</section><section id="como-identificar-o-mecanismo-gerador-dos-dados-faltantes-1" class="slide level2"><h2>Como identificar o mecanismo gerador dos dados faltantes?</h2>
+<p>👉 Também é possível realizar testes estatísticos para verificar se a distribuição dos valores ausentes é aleatória ou não.</p>
+<div class="fragment">
+<p>🙁 Já a identificação de <strong>valores ausentes MNAR</strong> é mais complexa, pois eles estão relacionados a outras variáveis do conjunto de dados e, portanto, é mais difícil determinar se eles são <strong>completamente aleatórios</strong> ou <strong>não</strong>.</p>
+</div>
+</section><section id="como-identificar-o-mecanismo-gerador-dos-dados-faltantes-2" class="slide level2"><h2>Como identificar o mecanismo gerador dos dados faltantes?</h2>
+<p>👉 Algumas técnicas para identificar valores ausentes MNAR incluem:</p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Análise de padrões de resposta:</strong> é possível analisar como objetos com valores ausentes se diferenciam daqueles que não têm valores ausentes, em termos dos atributos.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/margin_plot_2.png" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<br><p align="center">
+Se os indivíduos com <strong>valores ausentes</strong> são <strong>significativamente diferentes</strong> em relação a essas variáveis, é provável que os <strong>valores ausentes sejam MNAR</strong>.
+</p>
+</div></div>
+</div>
+</section><section id="como-identificar-o-mecanismo-gerador-dos-dados-faltantes-3" class="slide level2"><h2>Como identificar o mecanismo gerador dos dados faltantes?</h2>
+<p><br></p>
+<ul>
+<li>
+<strong>Análise de correlação:</strong> é possível analisar a correlação entre as variáveis com valores ausentes e outras variáveis no conjunto de dados.
+<ul>
+<li>Se houver uma correlação significativa entre as variáveis, é possível que os valores ausentes sejam MNAR.</li>
+</ul>
+</li>
+</ul></section><section id="como-identificar-o-mecanismo-gerador-dos-dados-faltantes-4" class="slide level2"><h2>Como identificar o mecanismo gerador dos dados faltantes?</h2>
+<p><br></p>
+<ul>
+<li>
+<p><strong>Análise visual:</strong> é possível realizar análises gráficas para verificar se há algum padrão de valores ausentes que sugira que eles não são aleatórios.</p>
+<ul>
+<li>Por exemplo, pode-se criar um gráfico de dispersão de uma variável em relação a outra, marcando as observações com valores ausentes. Se houver um padrão na localização dos valores ausentes no gráfico, é possível que eles sejam MNAR.</li>
+</ul>
+</li>
+</ul></section><section id="tratamento-de-valores-ausentes-completamente-aleatórios" class="slide level2"><h2>Tratamento de valores ausentes completamente aleatórios</h2>
+<p><br></p>
+<p>
+</p>
+<p>O tratamento de <strong>valores ausentes completamente aleatórios (MCAR)</strong> é relativamente simples, pois os valores ausentes são <strong>independentes</strong> das demais variáveis e podem ser tratados <strong>sem viés</strong>.</p>
+</section><section id="tratamento-de-valores-ausentes-completamente-aleatórios-1" class="slide level2"><h2>Tratamento de valores ausentes completamente aleatórios</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p align="center">
+<strong>Exclusão de registros com valores ausentes:</strong> Se a proporção de valores ausentes é pequena em relação ao tamanho do conjunto de dados, é possível excluir os registros que contêm valores ausentes sem comprometer a análise.
+</p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/delete.jpeg" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+No entanto, isso pode levar a uma <strong>perda de informações valiosas</strong> e <strong>reduzir o tamanho</strong> do conjunto de dados.
+</p>
+</section><section id="tratamento-de-valores-ausentes-completamente-aleatórios-2" class="slide level2"><h2>Tratamento de valores ausentes completamente aleatórios</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p align="center">
+<strong>Imputação de valores:</strong> Se o número de valores ausentes é grande, é possível imputar os valores ausentes usando métodos estatísticos, como a média, mediana ou regressão.
+</p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/imputacao.png" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+Esses métodos são <strong>simples</strong> e <strong>rápidos</strong>, mas podem <strong>introduzir um viés nos resultados</strong>, dependendo da <strong>distribuição dos valores ausentes</strong> e da escolha do método de imputação.
+</p>
+</section><section id="tratamento-de-valores-ausentes-completamente-aleatórios-3" class="slide level2"><h2>Tratamento de valores ausentes completamente aleatórios</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/imput_ML.png" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p align="center">
+<strong>Modelagem com técnicas de aprendizado de máquina:</strong> As técnicas de aprendizado de máquina podem ajudar a prever valores ausentes com base em outros dados disponíveis.
+</p>
+</div></div>
+<p align="center">
+<strong>Mais precisa</strong> do que a imputação de valores, mas também pode ser <strong>mais complexa</strong> e exigir um <strong>conjunto de dados de treinamento grande</strong> o suficiente para o <strong>modelo aprender a relação entre as variáveis</strong>.
+</p>
+</section><section id="tratamento-de-valores-ausentes-não-aleatórios" class="slide level2"><h2>Tratamento de valores ausentes não aleatórios</h2>
+<br><p>
+</p>
+<p>O tratamento de <strong>valores ausentes não aleatórios (MNAR)</strong> é <strong>mais complexo</strong> do que o tratamento de <strong>valores ausentes completamente aleatórios (MCAR)</strong>, pois os valores ausentes estão <strong>relacionados</strong> a outras variáveis do conjunto de dados e podem levar a um <strong>viés na análise</strong> se não forem tratados adequadamente.</p>
+</section><section id="tratamento-de-valores-ausentes-não-aleatórios-1" class="slide level2"><h2>Tratamento de valores ausentes não aleatórios</h2>
+<ul>
+<li>
+<strong>Modelagem com técnicas de aprendizado de máquina:</strong> Como os valores ausentes MNAR estão relacionados a outras variáveis do conjunto de dados, a modelagem com técnicas de aprendizado de máquina pode ser uma abordagem útil para prever os valores ausentes com base nas informações disponíveis.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<p><strong>Imputação baseada em modelos:</strong> A imputação baseada em modelos é uma técnica que envolve a construção de um modelo estatístico para prever os valores ausentes com base nas informações disponíveis.</p>
+<ul>
+<li>Essa abordagem requer um conhecimento prévio da relação entre as variáveis e pode ser mais complexa do que outros métodos de imputação.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="tratamento-de-valores-ausentes-não-aleatórios-2" class="slide level2"><h2>Tratamento de valores ausentes não aleatórios</h2>
+<p><br></p>
+<ul>
+<li>
+<p><strong>Análise de sensibilidade:</strong> A análise de sensibilidade é uma técnica que envolve testar diferentes cenários e valores de imputação para avaliar o impacto nos resultados da análise.</p>
+<ul>
+<li>Essa abordagem pode ajudar a identificar os valores mais plausíveis para a imputação e a avaliar a robustez dos resultados.</li>
+</ul>
+</li>
+</ul></section><section id="tratamento-de-valores-ausentes-não-aleatórios-3" class="slide level2"><h2>Tratamento de valores ausentes não aleatórios</h2>
+<p>Uma vez que os valores ausentes estão <strong>relacionados</strong> a outras variáveis do conjunto de dados, há um <strong>padrão de ausência</strong> definido em MNAR, que pode ser importante.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>
+</p>
+<p>Uma maneira de <strong>reter esse padrão de ausência</strong> é adicionando uma <strong>variável binária</strong>, indicando se a <strong>característica foi imputada</strong>.</p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/imput_bin.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+</section><section id="tratamento-de-valores-inconsistentes" class="slide level2"><h2>Tratamento de valores inconsistentes</h2>
+<p>O tratamento de valores inconsistentes é importante para garantir a qualidade e a confiabilidade dos dados <span style="font-size:50px;">→</span> podem afetar negativamente a análise e a interpretação dos resultados.</p>
+
+<img data-src="../..\images/inconsistente.jpg" class="quarto-figure quarto-figure-center r-stretch" width="600"></section><section id="tratamento-de-valores-inconsistentes-1" class="slide level2"><h2>Tratamento de valores inconsistentes</h2>
+<p>Algumas técnicas comuns para lidar com valores inconsistentes incluem:</p>
+<ul>
+<li>
+<strong>Identificação de valores inconsistentes:</strong> Verifica-se os valores em cada variável, comparando-os com os valores esperados ou com outras fontes de dados. Também é possível usar técnicas de detecção de outliers para identificar valores inconsistentes automaticamente.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<p><strong>Correção manual:</strong> Para valores inconsistentes que podem ser facilmente corrigidos, a correção manual pode ser uma abordagem eficaz.</p>
+<ul>
+<li>Isso pode incluir a revisão manual dos dados e a correção de erros, como erros de digitação ou valores fora do intervalo esperado.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="tratamento-de-valores-inconsistentes-2" class="slide level2"><h2>Tratamento de valores inconsistentes</h2>
+<ul>
+<li>
+<p><strong>Imputação de valores:</strong> Para valores inconsistentes que não podem ser facilmente corrigidos, a imputação de valores pode ser uma abordagem útil.</p>
+<ul>
+<li>Isso envolve a substituição de valores inconsistentes por valores estimados com base em outras informações disponíveis no conjunto de dados.</li>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<p><strong>Exclusão de registros:</strong> Para valores inconsistentes que não podem ser corrigidos e não podem ser imputados com precisão, a exclusão de registros pode ser uma abordagem apropriada.</p>
+<ul>
+<li>Isso envolve a remoção dos registros com valores inconsistentes do conjunto de dados.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="tratamento-de-ruídos" class="slide level2"><h2>Tratamento de ruídos</h2>
+
+<img data-src="https://media2.giphy.com/media/QFuBzoQdijNFztFEp6/giphy.gif" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://gph.is/g/ZPBYYOp">Fonte: Giphy</a></p></section><section id="tratamento-de-ruídos-1" class="slide level2"><h2>Tratamento de ruídos</h2>
+<p><strong>Ruído</strong>, no contexto da <strong>estatística e análise de dados</strong>, refere-se a qualquer tipo de <strong>interferência</strong> ou <strong>distorção</strong> que pode obscurecer ou alterar a interpretação dos dados coletados.</p>
+<div class="fragment">
+<p>Esse fenômeno pode surgir de <strong>diversas fontes</strong>, como erros de entrada de dados, erros de medição, valores atípicos, variabilidade aleatória ou viés e influências externas que <strong>não estão diretamente relacionadas ao fenômeno em estudo</strong>.</p>
+</div>
+<div class="fragment">
+<p>O ruído pode ser considerado um <strong>fator indesejado</strong> que compromete a <strong>precisão</strong> e a <strong>confiabilidade</strong> das análises estatísticas.</p>
+</div>
+</section><section id="tratamento-de-ruídos-2" class="slide level2"><h2>Tratamento de ruídos</h2>
+
+<img data-src="../..\images/ruido2.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section><section id="tratamento-de-ruídos-3" class="slide level2"><h2>Tratamento de ruídos</h2>
+<p><br> - <strong>Identificação e remoção de valores atípicos:</strong> valores que são muito diferentes dos outros valores no conjunto de dados podem ser identificados como valores atípicos.</p>
+<pre><code>- Esses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise.</code></pre>
+<div class="fragment">
+<ul>
+<li>
+<strong>Correção de erros de entrada de dados:</strong> erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros.</li>
+</ul>
+</div>
+</section><section id="tratamento-de-ruídos-4" class="slide level2"><h2>Tratamento de ruídos</h2>
+<p><br> - <strong>Normalização ou padronização de dados:</strong> a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes.</p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Utilização de técnicas de agrupamento:</strong> técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído.</li>
+</ul>
+</div>
+</section><section id="tratamento-de-ruídos-5" class="slide level2"><h2>Tratamento de ruídos</h2>
+<ul>
+<li>
+<strong>Utilização de técnicas de suavização de dados:</strong> técnicas de suavização, como média móvel ou suavização exponencial, podem ser usadas para reduzir o impacto do ruído nos dados.</li>
+</ul>
+
+<img data-src="../..\images/suavizacao.png" class="quarto-figure quarto-figure-center r-stretch" width="400"></section><section id="como-identificar-um-valor-atípico" class="slide level2"><h2>Como identificar um valor atípico?</h2>
+<ul>
+<li><strong>Gráfico box-plot</strong></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<strong>Z-score:</strong> valores com um z-score maior do que um limite (geralmente 3) são considerados valores atípicos.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>
+<strong>Intervalo interquartil (IQR):</strong> valores abaixo de Q1 - 1,5 x IQR ou acima de Q3 + 1,5 x IQR são considerados valores atípicos.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>
+<strong>Método de DBSCAN:</strong> é um algoritmo de clusterização que agrupa pontos de dados que estão próximos uns dos outros e identifica valores que não estão próximos a nenhum cluster, o que pode ser um sinal de valores atípicos.</li>
+</ul>
+</div>
+</section><section id="como-identificar-um-valor-atípico-1" class="slide level2"><h2>Como identificar um valor atípico?</h2>
+<p><br></p>
+<p>Quaisquer que sejam as técnicas empregadas, a <strong>documentação</strong> e o <strong>registro das etapas de limpeza de dados</strong> são <strong>essenciais</strong> para garantir a <strong>reprodutibilidade</strong>, <strong>transparência</strong>, <strong>colaboração</strong>, <strong>auditabilidade</strong> e <strong>controle de qualidade em análises de dados</strong>.</p>
+</section><section id="integração-de-dados" class="slide level2"><h2>Integração de dados</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br><br><strong>Integração de dados</strong> é o processo de <strong>combinar dados de múltiplas fontes</strong> em um <strong>único conjunto de dados</strong> <strong>coerente</strong> e <strong>integrado</strong>.</p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<p align="center">
+<img data-src="../..\images/Data-Integration.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</div></div>
+<p align="center">
+O <strong>objetivo da integração de dados</strong> é criar um conjunto de dados mais <strong>completo</strong> e <strong>preciso</strong>, permitindo análises mais <strong>abrangentes</strong> e <strong>informadas</strong>.
+</p>
+</section><section id="integração-de-dados-1" class="slide level2"><h2>Integração de dados</h2>
+<ul>
+<li>
+<p><strong>Fusão de dados:</strong> é o processo de combinar dois ou mais conjuntos de dados com base em uma chave comum.</p>
+<ul>
+<li>Por exemplo, dados de clientes de uma empresa podem ser fundidos com dados de vendas, com base no número de identificação de cliente.</li>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<p><strong>Análise de correspondência:</strong> é uma técnica de integração de dados que permite combinar informações de diferentes fontes, com base em uma análise de correspondência de variáveis.</p>
+<ul>
+<li>Por exemplo, dados de vendas de uma empresa podem ser combinados com dados demográficos, com base em correspondências de variáveis, como localização geográfica ou faixa etária.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="integração-de-dados-2" class="slide level2"><h2>Integração de dados</h2>
+<p><br><br></p>
+<p align="center">
+<span style="font-size:100px;">💡</span> Independentemente da técnica usada, é importante lembrar que a <strong>integração de dados</strong> pode ser <strong>complexa</strong> e <strong>demorada</strong> e pode envolver a <strong>identificação</strong> e <strong>correção de inconsistências nos dados</strong>.
+</p>
+</section><section id="redução-de-dados" class="slide level2"><h2>Redução de dados</h2>
+<p><br><br><span style="font-size:100px;">💡</span> A <strong>redução de dados</strong> é uma técnica usada para <strong>diminuir a dimensão</strong> de um conjunto de dados, ou seja, reduzir o número de variáveis ou características que compõem o conjunto de dados.</p>
+</section><section id="redução-de-dados-1" class="slide level2"><h2>Redução de dados</h2>
+<ul>
+<li>
+<p>Existem várias razões para reduzir os dados:</p>
+<ul>
+<li>
+<strong>Simplificar</strong> a análise de dados, tornando-a mais fácil e mais rápida de ser executada;</li>
+<li>
+<strong>Reduzir</strong> o tempo de processamento e armazenamento dos dados;</li>
+<li>
+<strong>Melhorar</strong> a qualidade dos dados, eliminando variáveis irrelevantes ou redundantes que possam afetar negativamente a análise;</li>
+<li>
+<strong>Preparar</strong> os dados para a entrada em um modelo de aprendizado de máquina.</li>
+</ul>
+</li>
+</ul></section><section id="análise-de-componentes-principais" class="slide level2"><h2>Análise de Componentes Principais</h2>
+
+<img data-src="../..\images/pca.png" class="quarto-figure quarto-figure-center r-stretch" width="500"></section><section id="amostragem" class="slide level2"><h2>Amostragem</h2>
+
+<img data-src="../..\images/sampling.png" class="quarto-figure quarto-figure-center r-stretch" width="500"></section><section id="seleção-de-atributos" class="slide level2"><h2>Seleção de atributos</h2>
+<ul>
+<li>
+<strong>Seleção de atributos</strong> é um processo de pré-processamento de dados que envolve a <strong>escolha dos atributos</strong> (variáveis) <strong>mais relevantes</strong> para a análise.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>O objetivo da seleção de atributos é <strong>reduzir a dimensionalidade dos dados</strong>, eliminando características <strong>irrelevantes</strong> e <strong>redundantes</strong>, e, assim, melhorar a <strong>precisão</strong> e a <strong>eficiência</strong> da análise.</li>
+</ul>
+</div>
+</section><section id="seleção-de-atributos-1" class="slide level2"><h2>Seleção de atributos</h2>
+<p><strong>Seleção baseada em filtro:</strong> Essa técnica usa métricas estatísticas para avaliar a relevância dos atributos e seleciona aqueles que têm maior correlação com a variável de interesse.</p>
+<ul>
+<li>
+<strong>Métodos de filtragem:</strong> coeficiente de correlação, ganho de informação e o teste de qui-quadrado.</li>
+</ul>
+
+<img data-src="../..\images/fig01.png" class="r-stretch"></section><section id="seleção-de-atributos-2" class="slide level2"><h2>Seleção de atributos</h2>
+<p><strong>Seleção baseada em wrapper:</strong> Essa técnica envolve a seleção de atributos por meio de um modelo de aprendizado de máquina, que é treinado em um conjunto de atributos selecionados. O modelo é avaliado usando validação cruzada e as atributos são selecionados com base no desempenho do modelo.</p>
+<ul>
+<li>
+<strong>Métodos wrapper:</strong> Forward stepwise selection, Backward Elimination, Bi-directional stepwise selection &amp; elimination.</li>
+</ul>
+
+<img data-src="../..\images/fig02.png" class="r-stretch"></section><section id="seleção-de-atributos-3" class="slide level2"><h2>Seleção de atributos</h2>
+<p><strong>Seleção baseada em incorporação:</strong> Essa técnica envolve a seleção de atributos durante o processo de treinamento do modelo de aprendizado de máquina. O modelo é treinado com todas os atributos e, em seguida, os atributos são removidos com base em sua importância para o modelo.</p>
+<ul>
+<li>
+<strong>Métodos de incorporação:</strong> Regressão LASSO, Árvores de decisão…</li>
+</ul>
+
+<img data-src="../..\images/fig03.png" class="r-stretch"></section><section id="transformação-de-dados" class="slide level2"><h2>Transformação de dados</h2>
+
+<img data-src="https://media3.giphy.com/media/P4TqKx6NHyLnO/giphy.gif" class="r-stretch quarto-figure-center"><p class="caption"><a href="http://gph.is/1Vp16TL">Fonte: Giphy</a></p></section><section id="transformação-de-dados-1" class="slide level2"><h2>Transformação de dados</h2>
+<p>As bases de dados brutas e integradas a partir de <strong>bases distintas</strong> podem sofrer, além de <strong>valores ausentes</strong>, <strong>ruídos</strong> e <strong>inconsistências</strong>, de dados não ou pouco <strong>padronizados</strong>.</p>
+<div class="fragment">
+<ul>
+<li>Por exemplo, pode haver valores de um mesmo atributo escritos em maiúsculo e outros em minúsculo, e os formatos e as unidades podem ser diferentes.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Outro tipo de problema encontrado é a <strong>não uniformidade dos atributos</strong>, ou seja, alguns atributos podem ser <strong>numéricos</strong>, outros <strong>categóricos</strong>, e os <strong>domínios de cada atributo podem ser muito diferentes</strong>.</li>
+</ul>
+</div>
+</section><section id="transformação-de-dados-2" class="slide level2"><h2>Transformação de dados</h2>
+<p>Como podemos resolver esses problemas?</p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Padronização:</strong> Resolver as diferenças de unidades e escalas dos dados.
+<ul>
+<li>
+<strong>Capitalização:</strong> é usual padronizar as fontes, normalmente para maiúsculo.</li>
+<li>
+<strong>Padronização de formatos:</strong> observar e padronizar o formato de cada atributo da base, principalmente quando diferentes bases precisam ser integradas.</li>
+<li>
+<strong>Conversão de unidades:</strong> todos os dados devem ser convertidos e padronizados em uma mesma unidade de medida.</li>
+<li>
+<strong>Normalização:</strong> tornar os dados mais apropriados à aplicação de algum algoritmo de mineração.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="tipos-de-normalização" class="slide level2"><h2>Tipos de normalização</h2>
+<ul>
+<li>
+<strong>Normalização Max-Min:</strong> Realiza uma transformação linear nos dados originais</li>
+</ul>
+<p><span class="math display">\[X' = \dfrac{X - \min(X)}{\max(X) - \min(X)}\]</span></p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Normalização pelo escore-z:</strong> Útil quando os valores máximo e mínimo de um atributo forem desconhecidos ou quando existe outliers.</li>
+</ul>
+<p><span class="math display">\[X' = \dfrac{X - \bar{X}}{s_X}\]</span></p>
+</div>
+</section><section id="tipos-de-normalização-1" class="slide level2"><h2>Tipos de normalização</h2>
+<ul>
+<li>
+<strong>Normalização pelo escalonamento decimal:</strong> Move a casa decimal de um atributo <span class="math inline">\(X\)</span>.</li>
+</ul>
+<p><span class="math display">\[X' = \dfrac{X}{10^j}\]</span></p>
+<p>em que <span class="math inline">\(j\)</span> é o menor inteiro tal que <span class="math inline">\(\max(|X'|)&lt; 1\)</span>.</p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Normalização pela distância interquartilica:</strong> Toma o valor do atributo, subtrai a mediana e divide pela distância interquartílica (<span class="math inline">\(DIQ = Q_3 - Q_1\)</span>)</li>
+</ul>
+<p><span class="math display">\[X' =  \dfrac{X - Q_2}{DIQ}\]</span></p>
+</div>
+</section><section id="exemplo-de-uso-das-diferentes-normalizações" class="slide level2"><h2>Exemplo de uso das diferentes normalizações</h2>
+<br><style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:30px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:"Montserrat", sans-serif !default;font-size:50px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-34fe{background-color:#c0c0c0;border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead><tr>
+<th class="tg-34fe">
+ID
+</th>
+<th class="tg-34fe">
+Valor original
+</th>
+<th class="tg-34fe">
+Max-Min
+</th>
+<th class="tg-34fe">
+Escore-z
+</th>
+<th class="tg-34fe">
+Escalonamento decimal
+</th>
+<th class="tg-34fe">
+Distância interquartílica
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tg-c3ow">
+1
+</td>
+<td class="tg-c3ow">
+67
+</td>
+<td class="tg-c3ow">
+0,85
+</td>
+<td class="tg-c3ow">
+0,73
+</td>
+<td class="tg-c3ow">
+0,67
+</td>
+<td class="tg-c3ow">
+0,40
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+43
+</td>
+<td class="tg-c3ow">
+0,33
+</td>
+<td class="tg-c3ow">
+-0,92
+</td>
+<td class="tg-c3ow">
+0,43
+</td>
+<td class="tg-c3ow">
+-0,80
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+58
+</td>
+<td class="tg-c3ow">
+0,65
+</td>
+<td class="tg-c3ow">
+0,11
+</td>
+<td class="tg-c3ow">
+0,58
+</td>
+<td class="tg-c3ow">
+-0,05
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+4
+</td>
+<td class="tg-c3ow">
+28
+</td>
+<td class="tg-c3ow">
+0,00
+</td>
+<td class="tg-c3ow">
+-1,96
+</td>
+<td class="tg-c3ow">
+0,28
+</td>
+<td class="tg-c3ow">
+-1,55
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+5
+</td>
+<td class="tg-c3ow">
+74
+</td>
+<td class="tg-c3ow">
+1,00
+</td>
+<td class="tg-c3ow">
+1,21
+</td>
+<td class="tg-c3ow">
+0,74
+</td>
+<td class="tg-c3ow">
+0,75
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+6
+</td>
+<td class="tg-c3ow">
+65
+</td>
+<td class="tg-c3ow">
+0,80
+</td>
+<td class="tg-c3ow">
+0,59
+</td>
+<td class="tg-c3ow">
+0,65
+</td>
+<td class="tg-c3ow">
+0,30
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+7
+</td>
+<td class="tg-c3ow">
+70
+</td>
+<td class="tg-c3ow">
+0,91
+</td>
+<td class="tg-c3ow">
+0,94
+</td>
+<td class="tg-c3ow">
+0,70
+</td>
+<td class="tg-c3ow">
+0,55
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+8
+</td>
+<td class="tg-c3ow">
+42
+</td>
+<td class="tg-c3ow">
+0,30
+</td>
+<td class="tg-c3ow">
+-0,99
+</td>
+<td class="tg-c3ow">
+0,42
+</td>
+<td class="tg-c3ow">
+-0,85
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+9
+</td>
+<td class="tg-c3ow">
+57
+</td>
+<td class="tg-c3ow">
+0,63
+</td>
+<td class="tg-c3ow">
+0,04
+</td>
+<td class="tg-c3ow">
+0,57
+</td>
+<td class="tg-c3ow">
+-0,10
+</td>
+</tr>
+<tr>
+<td class="tg-c3ow">
+10
+</td>
+<td class="tg-c3ow">
+60
+</td>
+<td class="tg-c3ow">
+0,70
+</td>
+<td class="tg-c3ow">
+0,25
+</td>
+<td class="tg-c3ow">
+0,60
+</td>
+<td class="tg-c3ow">
+0,05
+</td>
+</tr>
+<tr></tr>
+</tbody>
+</table></section><section id="transformação-de-dados-3" class="slide level2"><h2>Transformação de dados</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>👉 <strong>Transformação logarítmica:</strong> Usada para reduzir a assimetria e a variância dos dados.</p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-1-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<p align="center">
+É especialmente <strong>útil</strong> quando os dados estão distribuídos de <strong>forma exponencial</strong> ou quando há um <strong>grande intervalo de valores</strong> entre as observações.
+</p>
+</section><section id="transformação-de-dados-4" class="slide level2"><h2>Transformação de dados</h2>
+<p>A <strong>transformação logarítmica</strong> é definida pela seguinte equação:</p>
+<p><span class="math display">\[
+y = \log(x)
+\]</span></p>
+<p>onde <span class="math inline">\(x\)</span> é a variável a ser transformada e <span class="math inline">\(y\)</span> é a variável transformada.</p>
+<div class="fragment">
+<p>Trata-se de uma transformação <strong>monotônica</strong>, isto é, não afeta a <strong>ordem dos dados</strong>. Isso é importante para modelos preditivos porque garante que a transformação não afete a capacidade do modelo de capturar a relação entre as variáveis.</p>
+</div>
+</section><section id="transformação-de-dados-5" class="slide level2"><h2>Transformação de dados</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>👉 <strong>Transformação de raiz quadrada:</strong> Similar à transformação logarítmica, com o benefício de manter a escala original dos dados, facilitando a interpretação.</p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<p align="center">
+A transformação logarítmica é mais adequada para <strong>dados com caudas longas</strong> e <strong>uma grande variação</strong>, enquanto a <strong>transformação da raiz quadrada</strong> é mais adequada para <strong>dados com uma variação moderada</strong>. Além disso, a o uso de logarítmos tem o efeito de estabilizar a variância dos dados, enquanto a o uso da raiz quadrada tem o efeito de reduzir a variância dos dados.
+</p>
+</section><section id="transformação-de-dados-6" class="slide level2"><h2>Transformação de dados</h2>
+<p>A transformação de raiz quadrada é definida pela seguinte equação:</p>
+<p><span class="math display">\[
+y = \sqrt x
+\]</span></p>
+<p>onde <span class="math inline">\(x\)</span> é a variável a ser transformada e <span class="math inline">\(y\)</span> é a variável transformada.</p>
+<div class="fragment">
+<p>Assim como a transformação logarítimica, a transformação de raiz quadrada é uma transformação monotônica, o que significa que não afeta a ordem dos dados.</p>
+</div>
+</section><section id="transformação-de-dados-7" class="slide level2"><h2>Transformação de dados</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>👉 A <strong>transformação de Box-Cox</strong> é uma técnica para transformar variáveis em modelos preditivos que é amplamente utilizada para melhorar a qualidade da modelagem e a precisão das previsões.</p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-3-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<p align="center">
+É uma <strong>técnica paramétrica</strong> que depende de um <strong>parâmetro lambda</strong> que é estimado a partir dos dados, podendo ser usada apenas com <strong>variáveis não negativas</strong>.
+</p>
+</section><section id="transformação-de-dados-8" class="slide level2"><h2>Transformação de dados</h2>
+<p>A transformação de Box-Cox é definida pela seguinte equação:</p>
+<p><span class="math display">\[
+y =
+  \begin{cases}
+      \dfrac{(x^\lambda - 1)}{\lambda}, &amp; se \ \lambda \neq  0 \\
+      \log(x), &amp; se \ \lambda = 0
+  \end{cases}
+\]</span></p>
+<p>onde <span class="math inline">\(x\)</span> é a variável a ser transformada e <span class="math inline">\(y\)</span> é a variável transformada.</p>
+<div class="fragment">
+<p>Esta é uma técnica de transformação de dados útil usada para estabilizar a variância, tornar os dados mais semelhantes à distribuição normal.</p>
+<ul>
+<li>Por exemplo, quando um atributo tem a aparência de uma curva normal mas está descolado para a direita ou esquerda.</li>
+</ul>
+</div>
+</section><section id="transformação-de-dados-9" class="slide level2"><h2>Transformação de dados</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br> 👉 A <strong>transformação Yeo-Johnson</strong> é uma técnica de transformação semelhante à transformação de Box-Cox.</p>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure><p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div></div>
+<p align="center">
+No entanto, a transformação Yeo-Johnson é mais flexível porque pode ser usada para <strong>variáveis que podem assumir valores negativos</strong>.
+</p>
+</section><section id="transformação-de-dados-10" class="slide level2"><h2>Transformação de dados</h2>
+<p>A transformação Yeo-Johnson é definida pela seguinte equação:</p>
+<p><span class="math display">\[
+y =
+  \begin{cases}
+      \dfrac{(x + 1)^\lambda - 1}{\lambda}, &amp; se \ x \geq  0, \ \lambda \neq 0 \\
+      \ln(x + 1), &amp; se \ x \geq 0 \ \lambda = 0 \\
+      \dfrac{-((-x + 1)^{(2 - \lambda)} - 1)}{(2 - \lambda)}, &amp; se \ x &lt;  0, \ \lambda \neq 2 \\
+      -\ln(-x+1) &amp; se \ x &lt;  0, \ \lambda = 2
+  \end{cases}
+\]</span></p>
+<p>onde <span class="math inline">\(x\)</span> é a variável a ser transformada e <span class="math inline">\(y\)</span> é a variável transformada.</p>
+</section><section id="discretização-de-dados" class="slide level2"><h2>Discretização de dados</h2>
+<p><strong>Discretização</strong> é o processo de transformar uma <strong>variável contínua</strong> em uma <strong>variável categórica ou discreta</strong>.</p>
+<ul>
+<li>É útil quando se deseja agrupar valores contínuos em categorias ou intervalos para simplificar a análise ou reduzir o efeito de valores extremos.</li>
+</ul>
+
+<img data-src="../..\images/discretizacao.png" class="quarto-figure quarto-figure-center r-stretch" width="500"></section><section id="discretização-de-dados-1" class="slide level2"><h2>Discretização de dados</h2>
+<p><br></p>
+<p>Técnicas comuns de discretização:</p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Discretização equi-probabilística:</strong> Essa técnica envolve a divisão dos dados em intervalos de tamanho igual, de modo que cada intervalo contenha aproximadamente a mesma quantidade de observações.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>
+<strong>Discretização equi-distante:</strong> Nessa técnica, os dados são divididos em intervalos de tamanho igual, com base em uma distância predefinida.</li>
+</ul>
+</div>
+</section><section id="discretização-de-dados-2" class="slide level2"><h2>Discretização de dados</h2>
+<p><br></p>
+<ul>
+<li>
+<strong>Discretização por quartis:</strong> Os dados são divididos em quartis, com base nos valores de corte que dividem os dados em quatro partes iguais.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<strong>Discretização por frequência:</strong> Os dados são divididos em intervalos com base na frequência de observações em cada intervalo.</li>
+</ul>
+</div>
+</section><section id="discretização-de-dados-3" class="slide level2"><h2>Discretização de dados</h2>
+<ul>
+<li>
+<strong>Binarização:</strong> A binarização é uma técnica de transformação de dados que converte valores quantitativos em valores binários (0 ou 1) com base em um valor de corte.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/fig05.png" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/fig08.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div></div>
+</section><section id="references" class="slide level2 smaller scrollable" data-visibility="uncounted"><h2>References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-madow1983incomplete" class="csl-entry" role="listitem">
+Madow, W. G., H. Nisselson, I. Olkin, D. B. Rubin, National Research Council (U.S.). Panel on Incomplete Data, Assembly of Behavioral, and Social Sciences (U.S.). Panel on Incomplete Data. 1983. <em>Incomplete Data in Sample Surveys: Theory and Bibliographies</em>. Incomplete Data in Sample Surveys. Academic Press.
+</div>
+</div>
+
+
+</section></section>
+</div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+    
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+    
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+    
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+    
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp("http:\/\/professortp\.com\.br\/est1125\/");
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+
+
+</body></html>
