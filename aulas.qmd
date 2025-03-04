@@ -2,9 +2,10 @@
 title: "Aulas"
 ---
 
--   [Conceitos iniciais](/aulas/Conceitos%20iniciais/conceitos_iniciais.html "Conceitos iniciais"){aria-label="Conceitos iniciais"}
+- [Conceitos iniciais](/aulas/Conceitos%20iniciais/conceitos_iniciais.html "Conceitos iniciais"){aria-label="Conceitos iniciais"}
 
-- Pré-processamento de dados
+- [Pré-processamento de dados](/aulas/Pre_processamento/pre_processamento.html "Pré-processamento de dados"){aria-label="Pré-processamento de dados"}
+
 
 - Análise preditiva
 
