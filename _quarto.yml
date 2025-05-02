@@ -32,9 +32,9 @@ website:
     collapse-level: 1
     contents:
       - aulas.qmd
-      - estudos.qmd
-      - exercicios.qmd
-      - analises.qmd
+      #- estudos.qmd
+      #- exercicios.qmd
+      #- analises.qmd
       - plano.qmd
       - cronograma.qmd
       

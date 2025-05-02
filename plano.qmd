@@ -1,0 +1,10 @@
+---
+title: "Plano de Ensino"
+---
+
+Leia com atenção o **plano de ensino da disciplina** que será oferecida neste período. Nele estão as regras do jogo.
+
+
+
+
+- [Plano de ensino](https://github.com/tiagomartin/est125/blob/main/documentos/Plano%20de%20Ensino%20mineracao_25-1.pdf)
