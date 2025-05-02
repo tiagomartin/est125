@@ -1,9 +1,5 @@
 ---
-title: "About"
+title: "Sobre"
 ---
 
-About this site
-
-```{r}
-1 + 1
-```
+Disciplina oferecida em caráter eletivo no semestre 2025/1
