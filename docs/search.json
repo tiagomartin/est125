@@ -1,10 +1,482 @@
 [
   {
+    "objectID": "programacao/semana-1.html",
+    "href": "programacao/semana-1.html",
+    "title": "Semana 01",
+    "section": "",
+    "text": "Sejam bem-vindos à disciplina EST125 - Introdução à Mineração de Dados.\nLeiam com atenção o plano de ensino da disciplina. Nele estão as regras do jogo!"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Introdução à Mineração de Dados",
     "section": "",
-    "text": "Página dedicada à disciplina EST125 - Introdução à Mineração de Dados\n\n\nA mineração de dados é o processo de explorar grandes conjuntos de dados para extrair informações valiosas e úteis. Essa técnica é utilizada em diversas áreas, como negócios, saúde, ciência e governo, para identificar padrões, prever comportamentos e tomar decisões informadas.\n\n\nEmenta\nDefinição. Relação com a descoberta de conhecimento, estatística e inteligência computacional. Obtenção, normalização e limpeza de dados. Seleção, transformação e mineração. Classificação e regressão. Modelos e algoritmos para mineração de dados. Extração de informações e síntese. Classificação supervisionada, não-supervisionada e algoritmos híbridos. Arvores de decisão e sua criação. Algoritmos e técnicas de regressão. Interação entre técnicas de mineração de dados e outras técnicas computacionais.\n\n\nConteúdo Programático\n\nConceitos iniciais: Definição de Mineração de Dados. Relação do processo de mineração de dados com descoberta de conhecimento, estatística, inteligência computacional. Fases de um processo de descoberta de conhecimento: obtenção e normalização de dados, limpeza de dados, seleção e transformação, mineração, avaliação do conhecimento.\nAnálise preditiva: Tarefas de mineração de dados: classificação e regressão.\nAnálise de agrupamentos: A tarefa de agrupamento. Avaliação de modelos para análise de agrupamento.\nRegras de associação: Processo de mineração de regras de Associação. Algoritmos para mineração de regras de associação.\nDetecção de anomalias: Introdução. Processo de detecção de anomalias. Métodos estatísticos. Métodos algorítmicos.\n\n\n\nHorário de Aulas\nNeste semestre, as aulas da disciplina serão ministradas no LABEST III.\n\n\n\nDia\nHorário\nLocal\n\n\n\n\nSegunda-feira\n17:10 - 18:50\nLABEST III\n\n\nQuarta-feira\n17:10 - 18:50\nLABEST III\n\n\n\n\n\n\n\n\n\n\n\nReferências Bibliográficas\n\nAmaral, F. C. N. 2001. Data Mining: Técnicas e Aplicações Para o Marketing Direto. Berkeley.\n\n\nCarvalho, L. A. V. 2005. Datamining - a Mineracao de Dados No Marketing, Medicina, Economia, Engenharia e Administracao. Ed. Ciência Moderna.\n\n\nDe Castro, Leandro, and Daniel Ferrari. 2016. Introdução à Mineração de Dados: Conceitos Básicos, Algoritmos e Aplicações.\n\n\nGoldschmidt, R., and E. Passos. 2005. Data Mining: Um Guia Prático. Elsevier Editora.\n\n\nHan, J., M. Kamber, and J. Pei. 2011. Data Mining: Concepts and Techniques. The Morgan Kaufmann Series in Data Management Systems. Morgan Kaufmann.\n\n\nHastie, T., R. Tibshirani, and J. H. Friedman. 2001. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. Springer Series in Statistics. Springer.\n\n\nJohnson, R. A., and D. W. Wichern. 2007. Applied Multivariate Statistical Analysis. Applied Multivariate Statistical Analysis. Pearson Prentice Hall.\n\n\nKumar, V., P. TAM, and M. Steinbach. 2009. Introdução Ao Data Mining; Mineração de Dados.\n\n\nMorettin, P. A., and W. O. Bussab. 2017. ESTATÍSTICA bÁSICA. Editora Saraiva.\n\n\nSilva, Leandro, Sarajane Peres, and Clodis Boscarioli. 2017. Introdução a Mineração de Dados Com Aplicações Em r."
+    "text": "Página dedicada à disciplina EST125 - Introdução à Mineração de Dados\n\n\nA mineração de dados é o processo de explorar grandes conjuntos de dados para extrair informações valiosas e úteis. Essa técnica é utilizada em diversas áreas, como negócios, saúde, ciência e governo, para identificar padrões, prever comportamentos e tomar decisões informadas.\n\n\nEmenta\nDefinição. Relação com a descoberta de conhecimento, estatística e inteligência computacional. Obtenção, normalização e limpeza de dados. Seleção, transformação e mineração. Classificação e regressão. Modelos e algoritmos para mineração de dados. Extração de informações e síntese. Classificação supervisionada, não-supervisionada e algoritmos híbridos. Arvores de decisão e sua criação. Algoritmos e técnicas de regressão. Interação entre técnicas de mineração de dados e outras técnicas computacionais.\n\n\nConteúdo Programático\n\nConceitos iniciais: Definição de Mineração de Dados. Relação do processo de mineração de dados com descoberta de conhecimento, estatística, inteligência computacional. Fases de um processo de descoberta de conhecimento: obtenção e normalização de dados, limpeza de dados, seleção e transformação, mineração, avaliação do conhecimento.\nAnálise preditiva: Tarefas de mineração de dados: classificação e regressão.\nAnálise de agrupamentos: A tarefa de agrupamento. Avaliação de modelos para análise de agrupamento.\nRegras de associação: Processo de mineração de regras de Associação. Algoritmos para mineração de regras de associação.\nDetecção de anomalias: Introdução. Processo de detecção de anomalias. Métodos estatísticos. Métodos algorítmicos.\n\n\n\nHorário de Aulas\nNeste semestre, as aulas da disciplina serão ministradas no LABEST II.\n\n\n\nDia\nHorário\nLocal\n\n\n\n\nTerça-feira\n17:10 - 18:50\nLABEST II\n\n\nQuinta-feira\n17:10 - 18:50\nLABEST II\n\n\n\n\n\n\n\n\n\n\n\nReferências Bibliográficas\n\nAmaral, F. C. N. 2001. Data Mining: Técnicas e Aplicações Para o Marketing Direto. Berkeley.\n\n\nCarvalho, L. A. V. 2005. Datamining - a Mineracao de Dados No Marketing, Medicina, Economia, Engenharia e Administracao. Ed. Ciência Moderna.\n\n\nDe Castro, Leandro, and Daniel Ferrari. 2016. Introdução à Mineração de Dados: Conceitos Básicos, Algoritmos e Aplicações.\n\n\nGoldschmidt, R., and E. Passos. 2005. Data Mining: Um Guia Prático. Elsevier Editora.\n\n\nHan, J., M. Kamber, and J. Pei. 2011. Data Mining: Concepts and Techniques. The Morgan Kaufmann Series in Data Management Systems. Morgan Kaufmann.\n\n\nHastie, T., R. Tibshirani, and J. H. Friedman. 2001. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. Springer Series in Statistics. Springer.\n\n\nJohnson, R. A., and D. W. Wichern. 2007. Applied Multivariate Statistical Analysis. Applied Multivariate Statistical Analysis. Pearson Prentice Hall.\n\n\nKumar, V., P. TAM, and M. Steinbach. 2009. Introdução Ao Data Mining; Mineração de Dados.\n\n\nMorettin, P. A., and W. O. Bussab. 2017. ESTATÍSTICA bÁSICA. Editora Saraiva.\n\n\nSilva, Leandro, Sarajane Peres, and Clodis Boscarioli. 2017. Introdução a Mineração de Dados Com Aplicações Em r."
+  },
+  {
+    "objectID": "aulas.html",
+    "href": "aulas.html",
+    "title": "Aulas",
+    "section": "",
+    "text": "Conceitos iniciais\nPré-processamento de dados\nAnálise preditiva\nReconhecimento de padrões\nRegras de associação\nDetecção de anomalias",
+    "crumbs": [
+      "Aulas"
+    ]
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#motivação-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#motivação-1",
+    "title": "Conceitos Iniciais",
+    "section": "Motivação",
+    "text": "Motivação\n\n\n\n“Nós estamos nos afogando em informação, mas sedentos por conhecimento”.\n\n\nNaisbitt (1982)\n\n\n\n\n\n\n\n\n\nSão os dados, o novo petróleo?"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento",
+    "title": "Conceitos Iniciais",
+    "section": "Muitos dados, pouco conhecimento!",
+    "text": "Muitos dados, pouco conhecimento!\nA quantidade de dados gerados diariamente vem aumentando exponencialmente, tornando a análise de dados cada vez mais importante\n\n\n\nFonte: statista\n\n\n\n👉 Um zettabyte é igual a 1 trilhão de gigabytes 😲"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento-1",
+    "title": "Conceitos Iniciais",
+    "section": "Muitos dados, pouco conhecimento!",
+    "text": "Muitos dados, pouco conhecimento!"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento",
+    "title": "Conceitos Iniciais",
+    "section": "Como usar o conhecimento?",
+    "text": "Como usar o conhecimento?\nNegócios: tomada de decisões baseadas em dados"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-1",
+    "title": "Conceitos Iniciais",
+    "section": "Como usar o conhecimento?",
+    "text": "Como usar o conhecimento?\nSaúde: descobrir novos tratamentos e medicamentos"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-2",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-2",
+    "title": "Conceitos Iniciais",
+    "section": "Como usar o conhecimento?",
+    "text": "Como usar o conhecimento?\nSegurança: prever e prevenir crimes e ameaças"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-3",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-3",
+    "title": "Conceitos Iniciais",
+    "section": "Como usar o conhecimento?",
+    "text": "Como usar o conhecimento?\nMarketing: segmentação de clientes e personalização de produtos/serviços"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados",
+    "title": "Conceitos Iniciais",
+    "section": "O que é mineração de dados?",
+    "text": "O que é mineração de dados?\n\n\nA mineração de dados é o processo de descobrir conhecimentos ocultos e padrões em grandes volumes de dados.\nTem como objetivo transformar dados brutos em informações úteis e conhecimentos para a tomada de decisão."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados-1",
+    "title": "Conceitos Iniciais",
+    "section": "O que é mineração de dados?",
+    "text": "O que é mineração de dados?\n\n\n\n\n\n\n\n\n\nEla usa técnicas de aprendizado de máquina, estatística e inteligência artificial para analisar dados e extrair insights.\n\n\nEssas técnicas transformam, de maneira inteligente e automática, os dados disponíveis em informações úteis, que representem o conhecimento para ser usado com sabedoria."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria",
+    "title": "Conceitos Iniciais",
+    "section": "Dado, informação, conhecimento e sabedoria",
+    "text": "Dado, informação, conhecimento e sabedoria\n\n\n\n\n\n\n\n\n\n\n\nInformação, e não dados, valem dinheiro, tempo, conhecimento!"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-1",
+    "title": "Conceitos Iniciais",
+    "section": "Dado, informação, conhecimento e sabedoria",
+    "text": "Dado, informação, conhecimento e sabedoria\n\n\n\n\n\n\n\n\n\n\n \n “O conhecimento começa com a definição dos termos.” \n\n\nSócrates"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-2",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-2",
+    "title": "Conceitos Iniciais",
+    "section": "Dado, informação, conhecimento e sabedoria",
+    "text": "Dado, informação, conhecimento e sabedoria\nDado: são fatos brutos, sem significado ou contexto, que podem ser registrados e armazenados."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-3",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-3",
+    "title": "Conceitos Iniciais",
+    "section": "Dado, informação, conhecimento e sabedoria",
+    "text": "Dado, informação, conhecimento e sabedoria\nInformação: é o resultado da organização e interpretação dos dados, dando-lhes significado e contexto."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-4",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-4",
+    "title": "Conceitos Iniciais",
+    "section": "Dado, informação, conhecimento e sabedoria",
+    "text": "Dado, informação, conhecimento e sabedoria\nConhecimento: é a compreensão dos relacionamentos entre as informações e a capacidade de aplicar essas informações em uma situação específica."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-5",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-5",
+    "title": "Conceitos Iniciais",
+    "section": "Dado, informação, conhecimento e sabedoria",
+    "text": "Dado, informação, conhecimento e sabedoria\nSabedoria: é a habilidade de usar o conhecimento de forma ética e eficaz para tomar decisões sábias."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM, SEMMA e KDD",
+    "text": "CRISP-DM, SEMMA e KDD\n\nGerenciamento de projetos é um campo estabelecido focado no planejamento, entrega, controle e monitoramento de um projeto.\n\n\n\nExistem várias metodologias para gerenciar projetos de mineração de dados.\n\n\n\n\nTrês das metodologias mais comuns são CRISP-DM, SEMMA e KDD."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM",
+    "text": "CRISP-DM\n\nCRISP-DM (CRoss Industry Standard Process for Data Mining) é uma metodologia de mineração de dados amplamente utilizada.\n\n\n\nEnvolve seis etapas: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.\n\n\n\n\nÉ uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM",
+    "text": "CRISP-DM"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Compreensão do negócio",
+    "text": "CRISP-DM: Compreensão do negócio\n\nNesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.\n\n\n\nÉ importante definir claramente o escopo do projeto e entender os recursos disponíveis."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Compreensão dos Dados",
+    "text": "CRISP-DM: Compreensão dos Dados\n\nNesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.\n\n\n\nÉ importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Preparação dos Dados",
+    "text": "CRISP-DM: Preparação dos Dados\n\nNesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.\n\n\n\nÉ importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Modelagem",
+    "text": "CRISP-DM: Modelagem\n\nNesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Avaliação",
+    "text": "CRISP-DM: Avaliação\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Implantação",
+    "text": "CRISP-DM: Implantação\n\nNesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.\n\n\n\nÉ importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA",
+    "text": "SEMMA\n\nSEMMA (Sample, Explore, Modify, Model, Assess) é uma metodologia de mineração de dados desenvolvida pela SAS.\n\n\n\nEnvolve cinco etapas: amostragem, exploração, modificação, modelagem e avaliação.\n\n\n\n\nSEMMA é uma abordagem focada no modelo e pode ser usada em conjunção com outras metodologias de gerenciamento de projetos."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA",
+    "text": "SEMMA"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Amostragem",
+    "text": "SEMMA: Amostragem\n\nNesta fase, o objetivo é selecionar um subconjunto representativo dos dados originais.\n\n\n\nÉ importante garantir que a amostra seja grande o suficiente para fornecer resultados precisos e confiáveis."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Exploração",
+    "text": "SEMMA: Exploração\n\nNesta fase, o objetivo é explorar os dados selecionados na etapa anterior e identificar padrões ou tendências.\n\n\n\nÉ importante visualizar os dados para identificar padrões facilmente e identificar outliers."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Modificação",
+    "text": "SEMMA: Modificação\n\nNesta fase, o objetivo é transformar os dados de forma apropriada para que possam ser usados na modelagem.\n\n\n\nÉ importante realizar a limpeza dos dados, selecionar as variáveis relevantes e transformar os dados para que possam ser usados na modelagem."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Modelagem",
+    "text": "SEMMA: Modelagem\n\nNesta fase, o objetivo é criar e testar modelos usando os dados preparados na etapa anterior.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Avaliação",
+    "text": "SEMMA: Avaliação\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de amostragem.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
+    "title": "Conceitos Iniciais",
+    "section": "KDD",
+    "text": "KDD\n\nKDD (Knowledge Discovery in Databases) é uma metodologia mais ampla que CRISP-DM e SEMMA.\n\n\n\nEnvolve basicamente três etapas: pré-processamento, mineração de dados e pós-processamento.\n\nPré-processamento inclui limpeza, integração e transformação de dados.\nA mineração de dados inclui seleção, pré-processamento e modelagem de dados.\nO pós-processamento inclui interpretação e avaliação dos resultados."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-1",
+    "title": "Conceitos Iniciais",
+    "section": "KDD",
+    "text": "KDD"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-seleção",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-seleção",
+    "title": "Conceitos Iniciais",
+    "section": "KDD: Seleção",
+    "text": "KDD: Seleção\n\nNesta fase, o objetivo é selecionar os dados relevantes para o problema de mineração.\n\n\n\nÉ importante identificar as fontes de dados relevantes e escolher as variáveis de interesse."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-pré-processamento",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-pré-processamento",
+    "title": "Conceitos Iniciais",
+    "section": "KDD: Pré-processamento",
+    "text": "KDD: Pré-processamento\n\nNesta fase, o objetivo é preparar os dados para análise.\n\n\n\nÉ importante lidar com valores ausentes, tratar outliers e realizar normalização ou padronização de variáveis."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-limpeza",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-limpeza",
+    "title": "Conceitos Iniciais",
+    "section": "KDD: Limpeza",
+    "text": "KDD: Limpeza\n\nNesta fase, o objetivo é identificar e corrigir erros nos dados.\n\n\n\nÉ importante lidar com dados duplicados, corrigir erros de digitação e identificar e tratar valores discrepantes."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-transformação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-transformação",
+    "title": "Conceitos Iniciais",
+    "section": "KDD: Transformação",
+    "text": "KDD: Transformação\n\nNesta fase, o objetivo é transformar os dados em uma forma que seja adequada para a análise.\n\n\n\nÉ importante realizar transformações como discretização, agregação, e normalização para que os dados possam ser usados com sucesso na modelagem."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-mineração-de-dados",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-mineração-de-dados",
+    "title": "Conceitos Iniciais",
+    "section": "KDD: Mineração de dados",
+    "text": "KDD: Mineração de dados\n\nNesta fase, o objetivo é aplicar técnicas de mineração de dados para identificar padrões e relacionamentos nos dados.\n\n\n\nÉ importante escolher as técnicas de mineração de dados apropriadas e avaliar a eficácia dos modelos gerados."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-interpretação-e-avaliação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-interpretação-e-avaliação",
+    "title": "Conceitos Iniciais",
+    "section": "KDD: Interpretação e avaliação",
+    "text": "KDD: Interpretação e avaliação\n\nNesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.\n\n\n\nÉ importante avaliar a eficácia dos modelos gerados e determinar se as descobertas são significativas e úteis."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
+    "title": "Conceitos Iniciais",
+    "section": "Qual metodologia utilizar?",
+    "text": "Qual metodologia utilizar?"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar-1",
+    "title": "Conceitos Iniciais",
+    "section": "Qual metodologia utilizar?",
+    "text": "Qual metodologia utilizar?\nCRISP-DM, SEMMA e KDD são todas metodologias amplamente utilizadas para gerenciamento de projetos de mineração de dados.\n\nCRISP-DM é uma abordagem iterativa em cascata, SEMMA é uma abordagem em cascata focada no modelo e KDD é uma metodologia mais ampla com três etapas principais.\n\n\nA escolha da metodologia dependerá das necessidades específicas do projeto e dos recursos disponíveis para o gerenciamento do projeto."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados",
+    "title": "Conceitos Iniciais",
+    "section": "Tarefas e técnicas de mineração de dados",
+    "text": "Tarefas e técnicas de mineração de dados\nUma tarefa de mineração de dados determina o tipo de problema que será resolvido pelo processo de mineração de dados.\n\nPodem ser descritivas ou preditivas.\n\n\nJá a técnica, representa o algoritmo que pode ser empregado para a execução da tarefa."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados-1",
+    "title": "Conceitos Iniciais",
+    "section": "Tarefas e técnicas de mineração de dados",
+    "text": "Tarefas e técnicas de mineração de dados\nAs tarefas de mineração de dados incluem: classificação, clustering, regressão, associação e detecção de anomalias.\n\nCada uma dessas tarefas tem um objetivo específico na análise de dados."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#classificação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#classificação",
+    "title": "Conceitos Iniciais",
+    "section": "Classificação",
+    "text": "Classificação\n\n\n\n\n\n\n\n\n\n\nA classificação é uma tarefa de mineração de dados que envolve a atribuição de um rótulo a um conjunto de dados com base em um conjunto de características.\n\n\n\nAs técnicas de classificação incluem: árvores de decisão, redes neurais, SVM, Naive Bayes, etc."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#clusterização",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#clusterização",
+    "title": "Conceitos Iniciais",
+    "section": "Clusterização",
+    "text": "Clusterização\n\n\n\n\nClustering é uma tarefa de mineração de dados que envolve a organização de um conjunto de dados em grupos com base em suas características.\n\n\n\n\n\n\n\n\n\nAs técnicas de clustering incluem: k-means, DBSCAN, aglomeração hierárquica, etc."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#regressão-ou-predição",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#regressão-ou-predição",
+    "title": "Conceitos Iniciais",
+    "section": "Regressão ou predição",
+    "text": "Regressão ou predição\n\n\n\n\nA regressão ou predição é uma tarefa de mineração de dados que envolve a identificação de uma relação entre uma variável dependente e uma ou mais variáveis independentes.\n\n\n\n\n\n\n\n\nAs técnicas de regressão incluem: regressão linear, regressão logística, etc."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#associação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#associação",
+    "title": "Conceitos Iniciais",
+    "section": "Associação",
+    "text": "Associação\n\n\n\n\n\n\n\n\n\n\nA associação é uma tarefa de mineração de dados que envolve a descoberta de relações entre itens em um conjunto de dados.\n\n\n\nAs técnicas de associação incluem: regras de associação, análise de cesta de compras, etc."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#detecção-de-anomalias",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#detecção-de-anomalias",
+    "title": "Conceitos Iniciais",
+    "section": "Detecção de anomalias",
+    "text": "Detecção de anomalias\n\n\n\n\nA detecção de anomalias é uma tarefa de mineração de dados que envolve a identificação de pontos de dados incomuns em um conjunto de dados.\n\n\n\n\n\n\n\n\n\nAs técnicas de detecção de anomalias incluem: análise de desvio, detecção de outliers, etc."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-da-definição-dos-objetivos",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-da-definição-dos-objetivos",
+    "title": "Conceitos Iniciais",
+    "section": "Importância da definição dos objetivos",
+    "text": "Importância da definição dos objetivos\nEnquanto isso, no país das maravilhas…"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos",
+    "title": "Conceitos Iniciais",
+    "section": "Definição dos objetivos",
+    "text": "Definição dos objetivos\nDefinir claramente os objetivos da análise de dados é fundamental para o sucesso do projeto.\n\nOs objetivos devem ser específicos, mensuráveis, alcançáveis, relevantes e ter um prazo estabelecido (SMART).\n\n\n\nPor exemplo, suponha que uma empresa queira aumentar as vendas em uma determinada região.\n\nUsando a metodologia SMART, a empresa pode definir o objetivo da seguinte maneira:"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-1",
+    "title": "Conceitos Iniciais",
+    "section": "Definição dos objetivos",
+    "text": "Definição dos objetivos\n\nEspecífico: O objetivo deve ser específico e detalhado.\n\nPor exemplo, “Aumentar as vendas de determinada categoria de produtos na região em 10% no próximo trimestre”.\n\n\n\n\nMensurável: O objetivo deve ser mensurável para que possa ser avaliado.\n\nPor exemplo, a empresa pode usar dados de vendas para medir o progresso em relação à meta.\n\n\n\n\n\nAlcançável: O objetivo deve ser alcançável para evitar frustração e desânimo da equipe.\n\nA empresa pode avaliar a capacidade da equipe, recursos disponíveis e condições de mercado para determinar se a meta é alcançável."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-2",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-2",
+    "title": "Conceitos Iniciais",
+    "section": "Definição dos objetivos",
+    "text": "Definição dos objetivos\n\nRelevante: O objetivo deve ser relevante para os objetivos de negócios da empresa.\n\nA meta de aumentar as vendas em uma determinada região deve estar alinhada com os objetivos de negócios da empresa.\n\n\n\n\nTemporal: O objetivo deve ser definido em um prazo determinado.\n\nPor exemplo, a meta deve ser alcançada em três meses."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-3",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-3",
+    "title": "Conceitos Iniciais",
+    "section": "Definição dos objetivos",
+    "text": "Definição dos objetivos\nCom a definição clara do objetivo usando a metodologia SMART, a empresa pode traçar um plano de ação, coletar dados relevantes, realizar análises para identificar as causas da queda nas vendas, e implementar medidas para atingir a meta.\n\nA empresa também pode monitorar o progresso e ajustar as medidas se necessário para garantir que a meta seja alcançada no prazo estabelecido."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema",
+    "title": "Conceitos Iniciais",
+    "section": "Importância de entender o problema",
+    "text": "Importância de entender o problema\n\n\nEntenda o problema e depois pense em como resolvê-lo"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-1",
+    "title": "Conceitos Iniciais",
+    "section": "Importância de entender o problema",
+    "text": "Importância de entender o problema\n\nQual o problema nessa foto?"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-2",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-2",
+    "title": "Conceitos Iniciais",
+    "section": "Importância de entender o problema",
+    "text": "Importância de entender o problema\n\nSendo o cavalo, vamos trocá-lo por um avião!"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-3",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-3",
+    "title": "Conceitos Iniciais",
+    "section": "Importância de entender o problema",
+    "text": "Importância de entender o problema\n\nCompre um mais potente..."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês",
+    "title": "Conceitos Iniciais",
+    "section": "Técnica dos cinco porquês",
+    "text": "Técnica dos cinco porquês\n\n\n\n\n\n\n\n\n\n\nA técnica dos cinco porquês é uma técnica de análise de causalidade que pode ser usada para identificar a causa raiz de um problema, através de perguntas sucessivas."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês-1",
+    "title": "Conceitos Iniciais",
+    "section": "Técnica dos cinco porquês",
+    "text": "Técnica dos cinco porquês\nO processo da técnica dos cinco porquês pode ser resumido nas seguintes etapas:\n\n\nIdentificar o problema: Comece identificando o problema que precisa ser resolvido.\n\n\n\n\nFazer a primeira pergunta: Pergunte “Por que o problema ocorreu?” e identifique a causa mais provável.\n\n\n\n\nFazer a segunda pergunta: Pergunte “Por que a causa identificada na pergunta anterior ocorreu?” e identifique a causa mais provável."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês-2",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês-2",
+    "title": "Conceitos Iniciais",
+    "section": "Técnica dos cinco porquês",
+    "text": "Técnica dos cinco porquês\n\nContinuar com as perguntas subsequentes: Continue fazendo perguntas sucessivas até que a causa raiz seja identificada.\n\n\n\nResolver o problema: Uma vez que a causa raiz é identificada, é possível implementar soluções para resolver o problema.\n\n\n\n👉 É importante notar que, embora a técnica dos cinco porquês seja uma técnica útil, ela não é uma solução universal para todos os problemas.\n\nÀs vezes, a causa raiz de um problema pode ser mais complexa e exigir técnicas de análise mais avançadas.\nAlém disso, é importante não se limitar a apenas cinco perguntas se necessário para chegar à causa raiz do problema."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês",
+    "title": "Conceitos Iniciais",
+    "section": "Exemplo do uso da técnica dos cinco porquês",
+    "text": "Exemplo do uso da técnica dos cinco porquês\n\n🤔 Problema: O faturamento da empresa diminuiu no último trimestre\n\n\n\nPor que o faturamento da empresa diminuiu no último trimestre?\n\n\nResposta: Porque as vendas de um dos produtos mais vendidos caíram.\n\n\n\n\nPor que as vendas do produto mais vendido caíram?\n\n\nResposta: Porque a concorrência começou a oferecer preços mais baixos.\n\n\n\n\nPor que a concorrência começou a oferecer preços mais baixos?\n\n\nResposta: Porque um novo concorrente entrou no mercado e começou a oferecer preços mais baixos para ganhar participação de mercado."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês-1",
+    "title": "Conceitos Iniciais",
+    "section": "Exemplo do uso da técnica dos cinco porquês",
+    "text": "Exemplo do uso da técnica dos cinco porquês\n\nPor que o novo concorrente conseguiu oferecer preços mais baixos?\n\n\nResposta: Porque ele tem custos de produção mais baixos do que a nossa empresa.\n\n\n\nPor que nossos custos de produção são mais altos do que os do novo concorrente?\n\n\nResposta: Porque não atualizamos nossos equipamentos de produção há anos, o que torna nosso processo menos eficiente e mais caro."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês-2",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês-2",
+    "title": "Conceitos Iniciais",
+    "section": "Exemplo do uso da técnica dos cinco porquês",
+    "text": "Exemplo do uso da técnica dos cinco porquês\n👉 Com essa análise, a causa raiz do problema do faturamento da empresa ter diminuído no último trimestre foi identificada: a falta de atualização dos equipamentos de produção.\n\n\nDe posse dessa informação, a empresa pode agora tomar medidas para atualizar seus equipamentos de produção e aumentar sua eficiência para voltar a ter um faturamento maior."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#references",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#references",
+    "title": "Conceitos Iniciais",
+    "section": "References",
+    "text": "References\n\n\nNaisbitt, J. 1982. Megatrends: Ten New Directions Transforming Our Lives. Megatrends: Ten New Directions Transforming Our Lives, Nr. 158. Warner Books."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "Disciplina oferecida em caráter eletivo no semestre 2025/1"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#pré-processamento-de-dados",
@@ -539,471 +1011,6 @@
     "text": "References\n\n\nMadow, W. G., H. Nisselson, I. Olkin, D. B. Rubin, National Research Council (U.S.). Panel on Incomplete Data, Assembly of Behavioral, and Social Sciences (U.S.). Panel on Incomplete Data. 1983. Incomplete Data in Sample Surveys: Theory and Bibliographies. Incomplete Data in Sample Surveys. Academic Press."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Sobre",
-    "section": "",
-    "text": "Disciplina oferecida em caráter eletivo no semestre 2025/1"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#motivação-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#motivação-1",
-    "title": "Conceitos Iniciais",
-    "section": "Motivação",
-    "text": "Motivação\n\n\n\n“Nós estamos nos afogando em informação, mas sedentos por conhecimento”.\n\n\nNaisbitt (1982)\n\n\n\n\n\n\n\n\n\nSão os dados, o novo petróleo?"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento",
-    "title": "Conceitos Iniciais",
-    "section": "Muitos dados, pouco conhecimento!",
-    "text": "Muitos dados, pouco conhecimento!\nA quantidade de dados gerados diariamente vem aumentando exponencialmente, tornando a análise de dados cada vez mais importante\n\n\n\nFonte: statista\n\n\n\n👉 Um zettabyte é igual a 1 trilhão de gigabytes 😲"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#muitos-dados-pouco-conhecimento-1",
-    "title": "Conceitos Iniciais",
-    "section": "Muitos dados, pouco conhecimento!",
-    "text": "Muitos dados, pouco conhecimento!"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento",
-    "title": "Conceitos Iniciais",
-    "section": "Como usar o conhecimento?",
-    "text": "Como usar o conhecimento?\nNegócios: tomada de decisões baseadas em dados"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-1",
-    "title": "Conceitos Iniciais",
-    "section": "Como usar o conhecimento?",
-    "text": "Como usar o conhecimento?\nSaúde: descobrir novos tratamentos e medicamentos"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-2",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-2",
-    "title": "Conceitos Iniciais",
-    "section": "Como usar o conhecimento?",
-    "text": "Como usar o conhecimento?\nSegurança: prever e prevenir crimes e ameaças"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-3",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#como-usar-o-conhecimento-3",
-    "title": "Conceitos Iniciais",
-    "section": "Como usar o conhecimento?",
-    "text": "Como usar o conhecimento?\nMarketing: segmentação de clientes e personalização de produtos/serviços"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados",
-    "title": "Conceitos Iniciais",
-    "section": "O que é mineração de dados?",
-    "text": "O que é mineração de dados?\n\n\nA mineração de dados é o processo de descobrir conhecimentos ocultos e padrões em grandes volumes de dados.\nTem como objetivo transformar dados brutos em informações úteis e conhecimentos para a tomada de decisão."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#o-que-é-mineração-de-dados-1",
-    "title": "Conceitos Iniciais",
-    "section": "O que é mineração de dados?",
-    "text": "O que é mineração de dados?\n\n\n\n\n\n\n\n\n\nEla usa técnicas de aprendizado de máquina, estatística e inteligência artificial para analisar dados e extrair insights.\n\n\nEssas técnicas transformam, de maneira inteligente e automática, os dados disponíveis em informações úteis, que representem o conhecimento para ser usado com sabedoria."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria",
-    "title": "Conceitos Iniciais",
-    "section": "Dado, informação, conhecimento e sabedoria",
-    "text": "Dado, informação, conhecimento e sabedoria\n\n\n\n\n\n\n\n\n\n\n\nInformação, e não dados, valem dinheiro, tempo, conhecimento!"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-1",
-    "title": "Conceitos Iniciais",
-    "section": "Dado, informação, conhecimento e sabedoria",
-    "text": "Dado, informação, conhecimento e sabedoria\n\n\n\n\n\n\n\n\n\n\n \n “O conhecimento começa com a definição dos termos.” \n\n\nSócrates"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-2",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-2",
-    "title": "Conceitos Iniciais",
-    "section": "Dado, informação, conhecimento e sabedoria",
-    "text": "Dado, informação, conhecimento e sabedoria\nDado: são fatos brutos, sem significado ou contexto, que podem ser registrados e armazenados."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-3",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-3",
-    "title": "Conceitos Iniciais",
-    "section": "Dado, informação, conhecimento e sabedoria",
-    "text": "Dado, informação, conhecimento e sabedoria\nInformação: é o resultado da organização e interpretação dos dados, dando-lhes significado e contexto."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-4",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-4",
-    "title": "Conceitos Iniciais",
-    "section": "Dado, informação, conhecimento e sabedoria",
-    "text": "Dado, informação, conhecimento e sabedoria\nConhecimento: é a compreensão dos relacionamentos entre as informações e a capacidade de aplicar essas informações em uma situação específica."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-5",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#dado-informação-conhecimento-e-sabedoria-5",
-    "title": "Conceitos Iniciais",
-    "section": "Dado, informação, conhecimento e sabedoria",
-    "text": "Dado, informação, conhecimento e sabedoria\nSabedoria: é a habilidade de usar o conhecimento de forma ética e eficaz para tomar decisões sábias."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM, SEMMA e KDD",
-    "text": "CRISP-DM, SEMMA e KDD\n\nGerenciamento de projetos é um campo estabelecido focado no planejamento, entrega, controle e monitoramento de um projeto.\n\n\n\nExistem várias metodologias para gerenciar projetos de mineração de dados.\n\n\n\n\nTrês das metodologias mais comuns são CRISP-DM, SEMMA e KDD."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\n\nCRISP-DM (CRoss Industry Standard Process for Data Mining) é uma metodologia de mineração de dados amplamente utilizada.\n\n\n\nEnvolve seis etapas: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.\n\n\n\n\nÉ uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Compreensão do negócio",
-    "text": "CRISP-DM: Compreensão do negócio\n\nNesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.\n\n\n\nÉ importante definir claramente o escopo do projeto e entender os recursos disponíveis."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Compreensão dos Dados",
-    "text": "CRISP-DM: Compreensão dos Dados\n\nNesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.\n\n\n\nÉ importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Preparação dos Dados",
-    "text": "CRISP-DM: Preparação dos Dados\n\nNesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.\n\n\n\nÉ importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Modelagem",
-    "text": "CRISP-DM: Modelagem\n\nNesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Avaliação",
-    "text": "CRISP-DM: Avaliação\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Implantação",
-    "text": "CRISP-DM: Implantação\n\nNesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.\n\n\n\nÉ importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA",
-    "text": "SEMMA\n\nSEMMA (Sample, Explore, Modify, Model, Assess) é uma metodologia de mineração de dados desenvolvida pela SAS.\n\n\n\nEnvolve cinco etapas: amostragem, exploração, modificação, modelagem e avaliação.\n\n\n\n\nSEMMA é uma abordagem focada no modelo e pode ser usada em conjunção com outras metodologias de gerenciamento de projetos."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA",
-    "text": "SEMMA"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Amostragem",
-    "text": "SEMMA: Amostragem\n\nNesta fase, o objetivo é selecionar um subconjunto representativo dos dados originais.\n\n\n\nÉ importante garantir que a amostra seja grande o suficiente para fornecer resultados precisos e confiáveis."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Exploração",
-    "text": "SEMMA: Exploração\n\nNesta fase, o objetivo é explorar os dados selecionados na etapa anterior e identificar padrões ou tendências.\n\n\n\nÉ importante visualizar os dados para identificar padrões facilmente e identificar outliers."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Modificação",
-    "text": "SEMMA: Modificação\n\nNesta fase, o objetivo é transformar os dados de forma apropriada para que possam ser usados na modelagem.\n\n\n\nÉ importante realizar a limpeza dos dados, selecionar as variáveis relevantes e transformar os dados para que possam ser usados na modelagem."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Modelagem",
-    "text": "SEMMA: Modelagem\n\nNesta fase, o objetivo é criar e testar modelos usando os dados preparados na etapa anterior.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Avaliação",
-    "text": "SEMMA: Avaliação\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de amostragem.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
-    "title": "Conceitos Iniciais",
-    "section": "KDD",
-    "text": "KDD\n\nKDD (Knowledge Discovery in Databases) é uma metodologia mais ampla que CRISP-DM e SEMMA.\n\n\n\nEnvolve basicamente três etapas: pré-processamento, mineração de dados e pós-processamento.\n\nPré-processamento inclui limpeza, integração e transformação de dados.\nA mineração de dados inclui seleção, pré-processamento e modelagem de dados.\nO pós-processamento inclui interpretação e avaliação dos resultados."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-1",
-    "title": "Conceitos Iniciais",
-    "section": "KDD",
-    "text": "KDD"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-seleção",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-seleção",
-    "title": "Conceitos Iniciais",
-    "section": "KDD: Seleção",
-    "text": "KDD: Seleção\n\nNesta fase, o objetivo é selecionar os dados relevantes para o problema de mineração.\n\n\n\nÉ importante identificar as fontes de dados relevantes e escolher as variáveis de interesse."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-pré-processamento",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-pré-processamento",
-    "title": "Conceitos Iniciais",
-    "section": "KDD: Pré-processamento",
-    "text": "KDD: Pré-processamento\n\nNesta fase, o objetivo é preparar os dados para análise.\n\n\n\nÉ importante lidar com valores ausentes, tratar outliers e realizar normalização ou padronização de variáveis."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-limpeza",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-limpeza",
-    "title": "Conceitos Iniciais",
-    "section": "KDD: Limpeza",
-    "text": "KDD: Limpeza\n\nNesta fase, o objetivo é identificar e corrigir erros nos dados.\n\n\n\nÉ importante lidar com dados duplicados, corrigir erros de digitação e identificar e tratar valores discrepantes."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-transformação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-transformação",
-    "title": "Conceitos Iniciais",
-    "section": "KDD: Transformação",
-    "text": "KDD: Transformação\n\nNesta fase, o objetivo é transformar os dados em uma forma que seja adequada para a análise.\n\n\n\nÉ importante realizar transformações como discretização, agregação, e normalização para que os dados possam ser usados com sucesso na modelagem."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-mineração-de-dados",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-mineração-de-dados",
-    "title": "Conceitos Iniciais",
-    "section": "KDD: Mineração de dados",
-    "text": "KDD: Mineração de dados\n\nNesta fase, o objetivo é aplicar técnicas de mineração de dados para identificar padrões e relacionamentos nos dados.\n\n\n\nÉ importante escolher as técnicas de mineração de dados apropriadas e avaliar a eficácia dos modelos gerados."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-interpretação-e-avaliação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-interpretação-e-avaliação",
-    "title": "Conceitos Iniciais",
-    "section": "KDD: Interpretação e avaliação",
-    "text": "KDD: Interpretação e avaliação\n\nNesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.\n\n\n\nÉ importante avaliar a eficácia dos modelos gerados e determinar se as descobertas são significativas e úteis."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
-    "title": "Conceitos Iniciais",
-    "section": "Qual metodologia utilizar?",
-    "text": "Qual metodologia utilizar?"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar-1",
-    "title": "Conceitos Iniciais",
-    "section": "Qual metodologia utilizar?",
-    "text": "Qual metodologia utilizar?\nCRISP-DM, SEMMA e KDD são todas metodologias amplamente utilizadas para gerenciamento de projetos de mineração de dados.\n\nCRISP-DM é uma abordagem iterativa em cascata, SEMMA é uma abordagem em cascata focada no modelo e KDD é uma metodologia mais ampla com três etapas principais.\n\n\nA escolha da metodologia dependerá das necessidades específicas do projeto e dos recursos disponíveis para o gerenciamento do projeto."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados",
-    "title": "Conceitos Iniciais",
-    "section": "Tarefas e técnicas de mineração de dados",
-    "text": "Tarefas e técnicas de mineração de dados\nUma tarefa de mineração de dados determina o tipo de problema que será resolvido pelo processo de mineração de dados.\n\nPodem ser descritivas ou preditivas.\n\n\nJá a técnica, representa o algoritmo que pode ser empregado para a execução da tarefa."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados-1",
-    "title": "Conceitos Iniciais",
-    "section": "Tarefas e técnicas de mineração de dados",
-    "text": "Tarefas e técnicas de mineração de dados\nAs tarefas de mineração de dados incluem: classificação, clustering, regressão, associação e detecção de anomalias.\n\nCada uma dessas tarefas tem um objetivo específico na análise de dados."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#classificação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#classificação",
-    "title": "Conceitos Iniciais",
-    "section": "Classificação",
-    "text": "Classificação\n\n\n\n\n\n\n\n\n\n\nA classificação é uma tarefa de mineração de dados que envolve a atribuição de um rótulo a um conjunto de dados com base em um conjunto de características.\n\n\n\nAs técnicas de classificação incluem: árvores de decisão, redes neurais, SVM, Naive Bayes, etc."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#clusterização",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#clusterização",
-    "title": "Conceitos Iniciais",
-    "section": "Clusterização",
-    "text": "Clusterização\n\n\n\n\nClustering é uma tarefa de mineração de dados que envolve a organização de um conjunto de dados em grupos com base em suas características.\n\n\n\n\n\n\n\n\n\nAs técnicas de clustering incluem: k-means, DBSCAN, aglomeração hierárquica, etc."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#regressão-ou-predição",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#regressão-ou-predição",
-    "title": "Conceitos Iniciais",
-    "section": "Regressão ou predição",
-    "text": "Regressão ou predição\n\n\n\n\nA regressão ou predição é uma tarefa de mineração de dados que envolve a identificação de uma relação entre uma variável dependente e uma ou mais variáveis independentes.\n\n\n\n\n\n\n\n\nAs técnicas de regressão incluem: regressão linear, regressão logística, etc."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#associação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#associação",
-    "title": "Conceitos Iniciais",
-    "section": "Associação",
-    "text": "Associação\n\n\n\n\n\n\n\n\n\n\nA associação é uma tarefa de mineração de dados que envolve a descoberta de relações entre itens em um conjunto de dados.\n\n\n\nAs técnicas de associação incluem: regras de associação, análise de cesta de compras, etc."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#detecção-de-anomalias",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#detecção-de-anomalias",
-    "title": "Conceitos Iniciais",
-    "section": "Detecção de anomalias",
-    "text": "Detecção de anomalias\n\n\n\n\nA detecção de anomalias é uma tarefa de mineração de dados que envolve a identificação de pontos de dados incomuns em um conjunto de dados.\n\n\n\n\n\n\n\n\n\nAs técnicas de detecção de anomalias incluem: análise de desvio, detecção de outliers, etc."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-da-definição-dos-objetivos",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-da-definição-dos-objetivos",
-    "title": "Conceitos Iniciais",
-    "section": "Importância da definição dos objetivos",
-    "text": "Importância da definição dos objetivos\nEnquanto isso, no país das maravilhas…"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos",
-    "title": "Conceitos Iniciais",
-    "section": "Definição dos objetivos",
-    "text": "Definição dos objetivos\nDefinir claramente os objetivos da análise de dados é fundamental para o sucesso do projeto.\n\nOs objetivos devem ser específicos, mensuráveis, alcançáveis, relevantes e ter um prazo estabelecido (SMART).\n\n\n\nPor exemplo, suponha que uma empresa queira aumentar as vendas em uma determinada região.\n\nUsando a metodologia SMART, a empresa pode definir o objetivo da seguinte maneira:"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-1",
-    "title": "Conceitos Iniciais",
-    "section": "Definição dos objetivos",
-    "text": "Definição dos objetivos\n\nEspecífico: O objetivo deve ser específico e detalhado.\n\nPor exemplo, “Aumentar as vendas de determinada categoria de produtos na região em 10% no próximo trimestre”.\n\n\n\n\nMensurável: O objetivo deve ser mensurável para que possa ser avaliado.\n\nPor exemplo, a empresa pode usar dados de vendas para medir o progresso em relação à meta.\n\n\n\n\n\nAlcançável: O objetivo deve ser alcançável para evitar frustração e desânimo da equipe.\n\nA empresa pode avaliar a capacidade da equipe, recursos disponíveis e condições de mercado para determinar se a meta é alcançável."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-2",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-2",
-    "title": "Conceitos Iniciais",
-    "section": "Definição dos objetivos",
-    "text": "Definição dos objetivos\n\nRelevante: O objetivo deve ser relevante para os objetivos de negócios da empresa.\n\nA meta de aumentar as vendas em uma determinada região deve estar alinhada com os objetivos de negócios da empresa.\n\n\n\n\nTemporal: O objetivo deve ser definido em um prazo determinado.\n\nPor exemplo, a meta deve ser alcançada em três meses."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-3",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#definição-dos-objetivos-3",
-    "title": "Conceitos Iniciais",
-    "section": "Definição dos objetivos",
-    "text": "Definição dos objetivos\nCom a definição clara do objetivo usando a metodologia SMART, a empresa pode traçar um plano de ação, coletar dados relevantes, realizar análises para identificar as causas da queda nas vendas, e implementar medidas para atingir a meta.\n\nA empresa também pode monitorar o progresso e ajustar as medidas se necessário para garantir que a meta seja alcançada no prazo estabelecido."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema",
-    "title": "Conceitos Iniciais",
-    "section": "Importância de entender o problema",
-    "text": "Importância de entender o problema\n\n\nEntenda o problema e depois pense em como resolvê-lo"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-1",
-    "title": "Conceitos Iniciais",
-    "section": "Importância de entender o problema",
-    "text": "Importância de entender o problema\n\nQual o problema nessa foto?"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-2",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-2",
-    "title": "Conceitos Iniciais",
-    "section": "Importância de entender o problema",
-    "text": "Importância de entender o problema\n\nSendo o cavalo, vamos trocá-lo por um avião!"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-3",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#importância-de-entender-o-problema-3",
-    "title": "Conceitos Iniciais",
-    "section": "Importância de entender o problema",
-    "text": "Importância de entender o problema\n\nCompre um mais potente..."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês",
-    "title": "Conceitos Iniciais",
-    "section": "Técnica dos cinco porquês",
-    "text": "Técnica dos cinco porquês\n\n\n\n\n\n\n\n\n\n\nA técnica dos cinco porquês é uma técnica de análise de causalidade que pode ser usada para identificar a causa raiz de um problema, através de perguntas sucessivas."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês-1",
-    "title": "Conceitos Iniciais",
-    "section": "Técnica dos cinco porquês",
-    "text": "Técnica dos cinco porquês\nO processo da técnica dos cinco porquês pode ser resumido nas seguintes etapas:\n\n\nIdentificar o problema: Comece identificando o problema que precisa ser resolvido.\n\n\n\n\nFazer a primeira pergunta: Pergunte “Por que o problema ocorreu?” e identifique a causa mais provável.\n\n\n\n\nFazer a segunda pergunta: Pergunte “Por que a causa identificada na pergunta anterior ocorreu?” e identifique a causa mais provável."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês-2",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#técnica-dos-cinco-porquês-2",
-    "title": "Conceitos Iniciais",
-    "section": "Técnica dos cinco porquês",
-    "text": "Técnica dos cinco porquês\n\nContinuar com as perguntas subsequentes: Continue fazendo perguntas sucessivas até que a causa raiz seja identificada.\n\n\n\nResolver o problema: Uma vez que a causa raiz é identificada, é possível implementar soluções para resolver o problema.\n\n\n\n👉 É importante notar que, embora a técnica dos cinco porquês seja uma técnica útil, ela não é uma solução universal para todos os problemas.\n\nÀs vezes, a causa raiz de um problema pode ser mais complexa e exigir técnicas de análise mais avançadas.\nAlém disso, é importante não se limitar a apenas cinco perguntas se necessário para chegar à causa raiz do problema."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês",
-    "title": "Conceitos Iniciais",
-    "section": "Exemplo do uso da técnica dos cinco porquês",
-    "text": "Exemplo do uso da técnica dos cinco porquês\n\n🤔 Problema: O faturamento da empresa diminuiu no último trimestre\n\n\n\nPor que o faturamento da empresa diminuiu no último trimestre?\n\n\nResposta: Porque as vendas de um dos produtos mais vendidos caíram.\n\n\n\n\nPor que as vendas do produto mais vendido caíram?\n\n\nResposta: Porque a concorrência começou a oferecer preços mais baixos.\n\n\n\n\nPor que a concorrência começou a oferecer preços mais baixos?\n\n\nResposta: Porque um novo concorrente entrou no mercado e começou a oferecer preços mais baixos para ganhar participação de mercado."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês-1",
-    "title": "Conceitos Iniciais",
-    "section": "Exemplo do uso da técnica dos cinco porquês",
-    "text": "Exemplo do uso da técnica dos cinco porquês\n\nPor que o novo concorrente conseguiu oferecer preços mais baixos?\n\n\nResposta: Porque ele tem custos de produção mais baixos do que a nossa empresa.\n\n\n\nPor que nossos custos de produção são mais altos do que os do novo concorrente?\n\n\nResposta: Porque não atualizamos nossos equipamentos de produção há anos, o que torna nosso processo menos eficiente e mais caro."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês-2",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-do-uso-da-técnica-dos-cinco-porquês-2",
-    "title": "Conceitos Iniciais",
-    "section": "Exemplo do uso da técnica dos cinco porquês",
-    "text": "Exemplo do uso da técnica dos cinco porquês\n👉 Com essa análise, a causa raiz do problema do faturamento da empresa ter diminuído no último trimestre foi identificada: a falta de atualização dos equipamentos de produção.\n\n\nDe posse dessa informação, a empresa pode agora tomar medidas para atualizar seus equipamentos de produção e aumentar sua eficiência para voltar a ter um faturamento maior."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#references",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#references",
-    "title": "Conceitos Iniciais",
-    "section": "References",
-    "text": "References\n\n\nNaisbitt, J. 1982. Megatrends: Ten New Directions Transforming Our Lives. Megatrends: Ten New Directions Transforming Our Lives, Nr. 158. Warner Books."
-  },
-  {
-    "objectID": "aulas.html",
-    "href": "aulas.html",
-    "title": "Aulas",
-    "section": "",
-    "text": "Conceitos iniciais\nPré-processamento de dados\nAnálise preditiva\nReconhecimento de padrões\nRegras de associação\nDetecção de anomalias",
-    "crumbs": [
-      "Aulas"
-    ]
-  },
-  {
     "objectID": "cronograma.html",
     "href": "cronograma.html",
     "title": "Cronograma da disciplina",
@@ -1011,6 +1018,16 @@
     "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nConceitos iniciais",
     "crumbs": [
       "Cronograma da disciplina"
+    ]
+  },
+  {
+    "objectID": "plano.html",
+    "href": "plano.html",
+    "title": "Plano de Ensino",
+    "section": "",
+    "text": "Leia com atenção o plano de ensino da disciplina que será oferecida neste período. Nele estão as regras do jogo.\n\nPlano de ensino",
+    "crumbs": [
+      "Plano de Ensino"
     ]
   }
 ]
