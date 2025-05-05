@@ -1,0 +1,336 @@
+---
+title: "Análise Preditiva"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+---
+
+
+# Machine Learning
+
+## O que é Inteligência Artificial (IA)?
+
+:::: {.columns}
+::: {.column width="40%"}
+
+<br>
+
+![](/images/IA.png){fig.align="right" width=120%}
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+<p align="center"> 
+A capacidade de um **sistema computacional** simular **habilidades cognitivas humanas** 
+</p>
+
+<br>
+
+
+- Visão Computacional
+
+- Processamento de Linguagem Natural
+
+- Robótica 
+
+- Machine Learning
+:::
+::::
+
+
+## O que é Inteligência Artificial (IA)?
+
+<br>
+
+![](/images/linha_IA.png){fig.align="center" width=120%}
+
+
+## O que é Machine Learning?
+
+<p align="center">
+Um subcampo da IA que permite que sistemas aprendam a partir de dados, sem serem explicitamente programados
+</p>
+
+<br>
+
+![](/images/PT_ML.png){fig.align="center" width=80%}
+
+## O que é Machine Learning?
+
+:::: {.columns}
+
+::: {.column width="20%"}
+<span style='font-size:200px;'>&#128202;</span> 
+:::
+
+::: {.column width="80%"}
+<p align="center">
+Do ponto de vista da **Estatística**, Machine Learning (ML) é uma extensão e uma aplicação computacional de métodos estatísticos com um forte **foco em predição** e **descoberta de padrões em dados**, muitas vezes em larga escala e com **menor ênfase na inferência causal tradicional**.
+</p>
+:::
+
+::::
+
+
+. . .
+
+
+:::: {.columns}
+
+::: {.column width="20%"}
+<span style='font-size:200px;'>&#128187;</span> 
+:::
+
+::: {.column width="80%"}
+<p align="center">
+Do ponto de vista da **Ciência da Computação**, Machine Learning (ML) é um campo que se concentra no **desenvolvimento de algoritmos** e sistemas computacionais que podem **aprender a partir de dados** para realizar tarefas **sem serem explicitamente programados** para cada uma delas.
+</p>
+:::
+
+::::
+
+
+## O que é Machine Learning?
+
+![](/images/est_cc_ML.png){fig.align="center"}
+
+## As duas culturas...
+
+<br>
+
+- **Data Modeling Culture:** Domina a comunidade estatística. Nela se **assume que o modelo utilizado é correto**. Testar suposições é fundamental. **Foco em inferência e na interpretação dos parâmetros**.
+
+. . .
+
+- **Algorithmic Modeling Culture:** Domina a comunidade de machine learning. Nela **não se assume que o modelo utilizado é correto**; **o modelo é utilizado apenas para criar bons algoritmos preditivos**. Podemos interpretar os resultados, mas esse, em geral, não é o foco.
+
+
+## Exemplos práticos de aplicações de ML no dia a dia.
+
+<br>
+
+
+-	Sistemas de recomendação (Netflix, Amazon).
+-	Filtros de spam (Gmail).
+-	Carros autônomos (Tesla).
+-	Diagnóstico médico (detecção de tumores).
+-	Reconhecimento facial (smartphones).
+
+
+## Como as Máquinas Aprendem? 
+
+<br>
+
+::: {#fig layout-ncol=2}
+
+![](/images/bike.png){.nostretch fig-align="center" width="800px"}
+
+
+![](/images/aprendizadoRN.gif){.nostretch fig-align="center" width="1200px"}
+:::
+
+
+## Componentes do aprendizado de máquina
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![https://vas3k.com/blog/machine_learning/](/images/fig07.png){.nostretch fig-align="center" width="700px"}
+:::
+
+::: {.column width="40%"}
+
+<br>
+
+<p></p>
+
+- Dados
+
+- Características/Features
+
+- Algoritmos
+
+:::
+
+::::
+
+## O mapa da aprendizagem de máquina
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](/images/fig02a.png){fig.align="center"}
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+<p align="center">
+&#128073; Nunca há uma única maneira de resolver um problema no mundo do aprendizado de máquina. 
+
+&#128073; Sempre existem vários algoritmos que se encaixam, e você deve escolher qual deles se encaixa melhor. 
+
+
+&#128073; Tudo pode ser resolvido com uma rede neural? Sim, mas quem pagará por todo esse custo?
+</p>
+
+
+
+:::
+
+::::
+
+
+## O mapa da aprendizagem de máquina
+
+![](/images/fig03a.png){.nostretch fig-align="center" width="1200px"}
+
+
+
+## Aprendizado de Máquina Clássico
+
+
+![](/images/tipos_aprend.png){.nostretch fig-align="center" width="1150px"}
+
+
+
+## Aprendizado de Máquina Clássico
+
+
+
+&#128073; O aprendizado de máquina clássico é frequentemente dividido em duas categorias – **Aprendizado Supervisionado** e **Não Supervisionado**.
+
+. . .
+
+
+- **Aprendizado Supervisionado:** usa um algoritmo que precisa de exemplos rotulados para desempenhar suas tarefas. 
+
+
+. . .
+
+
+- **Aprendizado Não-supervisionado:** os dados não são rotulados, não há professor e a máquina está tentando encontrar padrões por conta própria.
+
+
+
+## Aprendizado Supervisionado
+
+<br>
+
+<span style='font-size:80px;'>&#128161;</span> Claramente, a máquina aprenderá mais rápido com um professor. Por isso, é mais comum encontrarmos esse caso nas tarefas da vida real.
+
+. . .
+
+
+- Existem dois tipos de tarefas: 
+
+    - **classificação:** predição de categoria de um objeto e 
+    - **regressão:** predição de um ponto específico em um eixo numérico.
+    
+    
+## Tarefa de classificação
+
+<p align="center">
+Os algoritmos de classificação dividem os objetos com base em um dos atributos conhecidos de antemão. 
+</p>
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<br>
+
+- Usados nos dias de hoje para:
+
+  - Filtragem de spam;
+  - Detecção de idioma;
+  - Pesquisa por documentos semelhantes;
+  - Análise de sentimentos;
+  - Reconhecimento de caracteres;
+  - Detecção de fraude.
+
+:::
+
+::: {.column width="40%"}
+
+![](/images/fig09.png){.nostretch fig-align="center" width="1000px"}
+
+:::
+::::
+
+
+## Tarefa de classificação
+
+<br>
+<br>
+
+
+<p align="center">
+Algoritmos populares: **Naive Bayes**, **Decision Tree**, **Logistic Regression**, **K-Nearest Neighbours**, **Support Vector Machine**.
+</p>
+
+
+## Tarefa de regressão
+
+<p align="center">
+Se a variável resposta é quantitativa, temos um problema de análise de regressão 
+</p>
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<br>
+
+- Usados nos dias de hoje para:
+
+  - Previsões do preço das ações;
+  - Análise de demanda e volume de vendas;
+  - Diagnóstico médico;
+  - Quaisquer correlações numéricas.
+
+:::
+
+::: {.column width="40%"}
+
+![](/images/fig10.png){.nostretch fig-align="center" width="1000px"}
+
+:::
+::::
+
+## Tarefa de regressão
+
+<br>
+<br>
+
+
+<p align="center">
+Algoritmos populares: **Decision Tree**, **Regressão Linear** e **Regressão Polinomial**, **K-Nearest Neighbours**, **Support Vector Machine**.
+</p>
+
+
+
+
+## Avaliação de modelos
+
+
+<span style='font-size:80px;'>&#128161;</span>  Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!

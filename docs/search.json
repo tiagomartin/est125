@@ -1029,5 +1029,152 @@
     "crumbs": [
       "Plano de Ensino"
     ]
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-que-é-inteligência-artificial-ia",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-que-é-inteligência-artificial-ia",
+    "title": "Análise Preditiva",
+    "section": "O que é Inteligência Artificial (IA)?",
+    "text": "O que é Inteligência Artificial (IA)?\n\n\n\n\n\n\n\nA capacidade de um sistema computacional simular habilidades cognitivas humanas\n\n\n\nVisão Computacional\nProcessamento de Linguagem Natural\nRobótica\nMachine Learning"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-que-é-inteligência-artificial-ia-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-que-é-inteligência-artificial-ia-1",
+    "title": "Análise Preditiva",
+    "section": "O que é Inteligência Artificial (IA)?",
+    "text": "O que é Inteligência Artificial (IA)?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-que-é-machine-learning",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-que-é-machine-learning",
+    "title": "Análise Preditiva",
+    "section": "O que é Machine Learning?",
+    "text": "O que é Machine Learning?\n\nUm subcampo da IA que permite que sistemas aprendam a partir de dados, sem serem explicitamente programados"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-que-é-machine-learning-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-que-é-machine-learning-1",
+    "title": "Análise Preditiva",
+    "section": "O que é Machine Learning?",
+    "text": "O que é Machine Learning?\n\n\n📊\n\n\nDo ponto de vista da Estatística, Machine Learning (ML) é uma extensão e uma aplicação computacional de métodos estatísticos com um forte foco em predição e descoberta de padrões em dados, muitas vezes em larga escala e com menor ênfase na inferência causal tradicional.\n\n\n\n\n\n💻\n\n\nDo ponto de vista da Ciência da Computação, Machine Learning (ML) é um campo que se concentra no desenvolvimento de algoritmos e sistemas computacionais que podem aprender a partir de dados para realizar tarefas sem serem explicitamente programados para cada uma delas."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-que-é-machine-learning-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-que-é-machine-learning-2",
+    "title": "Análise Preditiva",
+    "section": "O que é Machine Learning?",
+    "text": "O que é Machine Learning?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#as-duas-culturas",
+    "href": "aulas/Analise_preditiva/preditiva.html#as-duas-culturas",
+    "title": "Análise Preditiva",
+    "section": "As duas culturas…",
+    "text": "As duas culturas…\n\n\nData Modeling Culture: Domina a comunidade estatística. Nela se assume que o modelo utilizado é correto. Testar suposições é fundamental. Foco em inferência e na interpretação dos parâmetros.\n\n\n\nAlgorithmic Modeling Culture: Domina a comunidade de machine learning. Nela não se assume que o modelo utilizado é correto; o modelo é utilizado apenas para criar bons algoritmos preditivos. Podemos interpretar os resultados, mas esse, em geral, não é o foco."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplos-práticos-de-aplicações-de-ml-no-dia-a-dia.",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplos-práticos-de-aplicações-de-ml-no-dia-a-dia.",
+    "title": "Análise Preditiva",
+    "section": "Exemplos práticos de aplicações de ML no dia a dia.",
+    "text": "Exemplos práticos de aplicações de ML no dia a dia.\n\n\nSistemas de recomendação (Netflix, Amazon).\nFiltros de spam (Gmail).\nCarros autônomos (Tesla).\nDiagnóstico médico (detecção de tumores).\nReconhecimento facial (smartphones)."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#como-as-máquinas-aprendem",
+    "href": "aulas/Analise_preditiva/preditiva.html#como-as-máquinas-aprendem",
+    "title": "Análise Preditiva",
+    "section": "Como as Máquinas Aprendem?",
+    "text": "Como as Máquinas Aprendem?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#componentes-do-aprendizado-de-máquina",
+    "href": "aulas/Analise_preditiva/preditiva.html#componentes-do-aprendizado-de-máquina",
+    "title": "Análise Preditiva",
+    "section": "Componentes do aprendizado de máquina",
+    "text": "Componentes do aprendizado de máquina\n\n\n\n\n\n\nhttps://vas3k.com/blog/machine_learning/\n\n\n\n\n\n\n\nDados\nCaracterísticas/Features\nAlgoritmos"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina",
+    "title": "Análise Preditiva",
+    "section": "O mapa da aprendizagem de máquina",
+    "text": "O mapa da aprendizagem de máquina\n\n\n\n\n\n\n👉 Nunca há uma única maneira de resolver um problema no mundo do aprendizado de máquina.\n👉 Sempre existem vários algoritmos que se encaixam, e você deve escolher qual deles se encaixa melhor.\n👉 Tudo pode ser resolvido com uma rede neural? Sim, mas quem pagará por todo esse custo?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina-1",
+    "title": "Análise Preditiva",
+    "section": "O mapa da aprendizagem de máquina",
+    "text": "O mapa da aprendizagem de máquina"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#aprendizado-de-máquina-clássico",
+    "href": "aulas/Analise_preditiva/preditiva.html#aprendizado-de-máquina-clássico",
+    "title": "Análise Preditiva",
+    "section": "Aprendizado de Máquina Clássico",
+    "text": "Aprendizado de Máquina Clássico"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#aprendizado-de-máquina-clássico-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#aprendizado-de-máquina-clássico-1",
+    "title": "Análise Preditiva",
+    "section": "Aprendizado de Máquina Clássico",
+    "text": "Aprendizado de Máquina Clássico\n👉 O aprendizado de máquina clássico é frequentemente dividido em duas categorias – Aprendizado Supervisionado e Não Supervisionado.\n\n\nAprendizado Supervisionado: usa um algoritmo que precisa de exemplos rotulados para desempenhar suas tarefas.\n\n\n\n\nAprendizado Não-supervisionado: os dados não são rotulados, não há professor e a máquina está tentando encontrar padrões por conta própria."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#section",
+    "href": "aulas/Analise_preditiva/preditiva.html#section",
+    "title": "Análise Preditiva",
+    "section": "",
+    "text": "💡"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#aprendizado-supervisionado",
+    "href": "aulas/Analise_preditiva/preditiva.html#aprendizado-supervisionado",
+    "title": "Análise Preditiva",
+    "section": "Aprendizado Supervisionado",
+    "text": "Aprendizado Supervisionado\n\n💡 Claramente, a máquina aprenderá mais rápido com um professor. Por isso, é mais comum encontrarmos esse caso nas tarefas da vida real.\n\n\nExistem dois tipos de tarefas:\n\nclassificação: predição de categoria de um objeto e\nregressão: predição de um ponto específico em um eixo numérico."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação",
+    "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação",
+    "title": "Análise Preditiva",
+    "section": "Tarefa de classificação",
+    "text": "Tarefa de classificação\n\nOs algoritmos de classificação dividem os objetos com base em um dos atributos conhecidos de antemão.\n\n\n\n\n\nUsados nos dias de hoje para:\n\nFiltragem de spam;\nDetecção de idioma;\nPesquisa por documentos semelhantes;\nAnálise de sentimentos;\nReconhecimento de caracteres;\nDetecção de fraude."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-1",
+    "title": "Análise Preditiva",
+    "section": "Tarefa de classificação",
+    "text": "Tarefa de classificação\n \n\nAlgoritmos populares: Naive Bayes, Decision Tree, Logistic Regression, K-Nearest Neighbours, Support Vector Machine."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-2",
+    "title": "Análise Preditiva",
+    "section": "Tarefa de classificação",
+    "text": "Tarefa de classificação\n💡 Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão",
+    "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão",
+    "title": "Análise Preditiva",
+    "section": "Tarefa de regressão",
+    "text": "Tarefa de regressão\n\nSe a variável resposta é quantitativa, temos um problema de análise de regressão\n\n\n\n\n\nUsados nos dias de hoje para:\n\nPrevisões do preço das ações;\nAnálise de demanda e volume de vendas;\nDiagnóstico médico;\nQuaisquer correlações numéricas."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão-1",
+    "title": "Análise Preditiva",
+    "section": "Tarefa de regressão",
+    "text": "Tarefa de regressão\n \n\nAlgoritmos populares: Decision Tree, Regressão Linear e Regressão Polinomial, K-Nearest Neighbours, Support Vector Machine."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos",
+    "text": "Avaliação de modelos\n💡 Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!"
   }
 ]
