@@ -369,8 +369,7 @@ Se a variável resposta é quantitativa, temos um problema de análise de regres
 <ul>
 <li>Previsões do preço das ações;</li>
 <li>Análise de demanda e volume de vendas;</li>
-<li>Diagnóstico médico;</li>
-<li>Quaisquer correlações numéricas.</li>
+<li>Diagnóstico médico.</li>
 </ul></li>
 </ul>
 </div><div class="column" style="width:40%;">
@@ -390,7 +389,685 @@ Algoritmos populares: <strong>Decision Tree</strong>, <strong>Regressão Linear<
 </section>
 <section id="avaliação-de-modelos" class="slide level2">
 <h2>Avaliação de modelos</h2>
-<p><span style="font-size:80px;">💡</span> Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!</p>
+<p><span style="font-size:80px;">💡</span> Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a <strong>avaliação de modelos</strong>!</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/detetive.jpg" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p align="center">
+A <strong>avaliação de modelos</strong> de machine learning é como um <strong>detetive investigando um caso</strong>.
+</p>
+</div></div>
+</section>
+<section id="avaliação-de-modelos-1" class="slide level2">
+<h2>Avaliação de modelos</h2>
+<p><br></p>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/over_under.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/erro_over_under.png" class="fragment quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="avaliação-de-modelos-2" class="slide level2">
+<h2>Avaliação de modelos</h2>
+<p align="center">
+<span style="font-size:70px;">🤔</span> O nosso modelo é um <strong>herói</strong> ou um <strong>impostor</strong>?
+</p>
+
+<img data-src="https://media4.giphy.com/media/ek4CUx2FONgHaMz9V5/giphy-downsized-medium.gif" class="quarto-figure quarto-figure-center r-stretch" width="1000"></section>
+<section id="matriz-de-confusão" class="slide level2">
+<h2>Matriz de confusão</h2>
+<p>Permite a visualização do <strong>desempenho</strong> de um <strong>algoritmo de classificação</strong></p>
+<p>&nbsp;</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section>
+<section id="matriz-de-confusão-1" class="slide level2">
+<h2>Matriz de confusão</h2>
+<p><br></p>
+<ul>
+<li><strong>VP (Verdadeiro Positivo):</strong> objeto da classe positiva classificado como positivo</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>VN (Verdadeiro Negativo):</strong> objeto da classe negativa classificado como negativo</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>FP (Falso Positivo):</strong> objeto da classe negativa classificado como positivo. Também conhecido como <strong>alarme falso</strong> ou <strong>Erro tipo 1</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>FN (Falso Negativo):</strong> objeto da classe positiva classificado como negativo. É também conhecido como <strong>Erro Tipo 2</strong></li>
+</ul>
+</div>
+</section>
+<section id="matriz-de-confusão-2" class="slide level2">
+<h2>Matriz de confusão</h2>
+<p><br></p>
+<p><strong>Exemplo:</strong> Sejam as seguintes matrizes de confusão, obtidas de dois classificadores quaisquer.</p>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_cliente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_paciente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="métricas-derivadas-da-matriz-de-confusão" class="title-slide slide level1 center">
+<h1>Métricas derivadas da matriz de confusão</h1>
+
+</section>
+<section id="acurácia" class="slide level2">
+<h2>Acurácia</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/acc.jpg" class="quarto-figure quarto-figure-center" width="400"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p align="center">
+Mede a <strong>proporção de previsões corretas</strong> do modelo em relação ao total de previsões feitas.
+</p>
+</div></div>
+<p align="center">
+<strong>É como sua nota em uma prova!</strong>
+</p>
+</section>
+<section id="acurácia-1" class="slide level2">
+<h2>Acurácia</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/acc_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+<p>A <strong>Taxa de Erro Aparente</strong> do classificador é dada por</p>
+<p><span class="math display">\[TEA = 1 - ACC\]</span></p>
+</section>
+<section id="acurácia-2" class="slide level2">
+<h2>Acurácia</h2>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_cliente_acc.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/acc_tea_cliente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_paciente_acc.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/acc_tea_paciente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="acurácia-3" class="slide level2">
+<h2>Acurácia</h2>
+<p><br></p>
+<p><br></p>
+<p align="center">
+Mas será que a <strong>acurácia</strong> é suficiente para avaliar nossos modelos de forma <strong>precisa</strong>?
+</p>
+<div class="fragment">
+<p align="center">
+Às vezes, uma <strong>única métrica</strong> não é capaz de nos contar toda a história.
+</p>
+</div>
+</section>
+<section id="precisão" class="slide level2">
+<h2>Precisão</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/precision.jpg" class="quarto-figure quarto-figure-center" width="400"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p align="center">
+Ela nos diz quantas das <strong>previsões positivas</strong> foram realmente <strong>corretas</strong>.
+</p>
+</div></div>
+</section>
+<section id="precisão-1" class="slide level2">
+<h2>Precisão</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/precision_form.jpg" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+Porcentagem de verdadeiros positivos dentre todos os objetos classificados como positivos
+</p>
+</section>
+<section id="precisão-2" class="slide level2">
+<h2>Precisão</h2>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_cliente_prec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/prec_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_paciente_prec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/prec_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sensibilidade" class="slide level2">
+<h2>Sensibilidade</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/recall.jpg" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+Mede a <strong>proporção de casos positivos reais</strong> que foram encontrados pelo modelo
+</p>
+</div></div>
+</section>
+<section id="sensibilidade-1" class="slide level2">
+<h2>Sensibilidade</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/sens_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+Também conhecida por <strong>Recall</strong> ou <strong>Taxa de Verdadeiros Positivos (TVP)</strong>
+</p>
+</section>
+<section id="sensibilidade-2" class="slide level2">
+<h2>Sensibilidade</h2>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_cliente_sens.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/sens_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_paciente_sens.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/sens_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="especificidade" class="slide level2">
+<h2>Especificidade</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/espec.jpg" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p><br></p>
+<p align="center">
+Ajuda a identificar a capacidade do modelo em reconhecer <strong>corretamente as amostras negativas</strong>
+</p>
+</div></div>
+</section>
+<section id="especificidade-1" class="slide level2">
+<h2>Especificidade</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/espec_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+Também conhecida por <strong>Taxa de Verdadeiros Negativos (TVN)</strong>
+</p>
+</section>
+<section id="especificidade-2" class="slide level2">
+<h2>Especificidade</h2>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_cliente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/espec_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_paciente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/espec_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="taxa-de-falso-positivo" class="slide level2">
+<h2>Taxa de Falso Positivo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/fpr.jpg" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p><br></p>
+<p align="center">
+Ela mede a <strong>proporção de amostras negativas</strong> classificadas como positivas pelo modelo
+</p>
+</div></div>
+</section>
+<section id="taxa-de-falso-positivo-1" class="slide level2">
+<h2>Taxa de Falso Positivo</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/fpr_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="taxa-de-falso-positivo-2" class="slide level2">
+<h2>Taxa de Falso Positivo</h2>
+<div class="quarto-layout-panel" data-layout-nrow="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_cliente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/fpr_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/mc_paciente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/fpr_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="f_1-score" class="slide level2">
+<h2><span class="math inline">\(F_1\)</span>-Score</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/f1.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p align="center">
+Ele leva em consideração tanto <strong>precisão</strong> quanto a <strong>sensibilidade</strong>, dando uma medida balanceada do desempenho do modelo.
+</p>
+</div></div>
+</section>
+<section id="f_1-score-1" class="slide level2">
+<h2><span class="math inline">\(F_1\)</span>-Score</h2>
+<p><br></p>
+<p><br></p>
+<p><span class="math display">\[F_1 \text{-score} = 2 \times \dfrac{\text{Precisão} \times \text{Sensibilidade}}{\text{Precisão} + \text{Sensibilidade}}\]</span></p>
+<p><br></p>
+<p align="center">
+O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista</strong> em uma corda bamba.
+</p>
+</section>
+<section id="curva-roc" class="slide level2">
+<h2>Curva ROC</h2>
+<ul>
+<li>A <strong>Curva ROC</strong> é como um mapa que nos guia pela <strong>sensibilidade</strong> e pelos <strong>falsos positivos</strong> do modelo em diferentes configurações.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Ela nos mostra o quão bem nosso modelo pode <strong>distinguir</strong> entre as classes.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/roc.jpg" class="fragment quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="curva-roc-1" class="slide level2">
+<h2>Curva ROC</h2>
+<ul>
+<li>Representa o número de vezes que o classificador <strong>acertou a predição</strong> contra o número de vezes que o classificador <strong>errou a predição</strong></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>A área sob a curva ROC, conhecida como <strong>AUC-ROC</strong>, é uma métrica comumente utilizada para avaliar o desempenho global do modelo.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Quanto <strong>maior a AUC-ROC</strong>, <strong>melhor</strong> é o desempenho do modelo em discriminar corretamente as classes.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/auc.jpg" class="fragment quarto-figure quarto-figure-center" width="1400"></p>
+</figure>
+</div>
+</div>
+</section></section>
+<section>
+<section id="e-como-avaliar-modelos-de-predição" class="title-slide slide level1 center">
+<h1>E como avaliar modelos de predição?</h1>
+
+</section>
+<section id="avaliação-de-modelos-de-predição" class="slide level2">
+<h2>Avaliação de modelos de predição</h2>
+<p><br></p>
+<ul>
+<li>Seja <span class="math inline">\(d_j\)</span>, <span class="math inline">\(j = 1,\cdots, n\)</span>, a resposta desejada para o objeto <span class="math inline">\(j\)</span> e <span class="math inline">\(y_j\)</span> a resposta estimada (predita) do algoritmo, obtida a partir de uma entrada <span class="math inline">\(\mathbf{x_j}\)</span> apresentada ao algoritmo.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Seja então, <span class="math inline">\(e_j = d_j - y_j\)</span> a diferença entre o valor observado e o valor predito para o objeto <span class="math inline">\(j\)</span>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Podemos definir as seguintes métricas para <strong>avaliação de modelos preditivos.</strong></li>
+</ul>
+</div>
+</section>
+<section id="avaliação-de-modelos-de-predição-1" class="slide level2">
+<h2>Avaliação de modelos de predição</h2>
+<p><strong>Erro Quadrático Médio (MSE - Mean Squared Error):</strong></p>
+<p><span class="math display">\[MSE =\dfrac{1}{n} \displaystyle{\sum_{j=1}^n e_j^2}\]</span></p>
+<ul>
+<li><p><strong>Ponto forte:</strong> Penaliza fortemente erros maiores devido ao termo quadrático. Isso significa que o MSE é sensível a outliers (valores discrepantes).</p></li>
+<li><p><strong>Ponto fraco:</strong> Como eleva os erros ao quadrado, a unidade da métrica resultante não é a mesma da variável original, o que dificulta a interpretação direta da magnitude do erro.</p></li>
+</ul>
+</section>
+<section id="avaliação-de-modelos-de-predição-2" class="slide level2">
+<h2>Avaliação de modelos de predição</h2>
+<p><strong>Raiz do Erro Quadrático Médio (RMSE - Root Mean Squared Error):</strong></p>
+<p><span class="math display">\[RMSE =\sqrt{\dfrac{1}{n} \displaystyle{\sum_{j=1}^n e_j^2}}\]</span></p>
+<ul>
+<li><p><strong>Ponto forte:</strong> Mantém a propriedade de penalizar erros maiores, mas retorna o erro na mesma unidade da variável original, facilitando a interpretação. É uma métrica amplamente utilizada.</p></li>
+<li><p><strong>Ponto fraco:</strong> Ainda é sensível a outliers, pois se baseia no MSE.</p></li>
+</ul>
+</section>
+<section id="avaliação-de-modelos-de-predição-3" class="slide level2">
+<h2>Avaliação de modelos de predição</h2>
+<p><strong>Erro Médio Absoluto (MAE - Mean Absolute Error):</strong></p>
+<p><span class="math display">\[MAE = \dfrac{1}{n} \displaystyle{\sum_{j=1}^n |e_j|}\]</span></p>
+<ul>
+<li><p><strong>Ponto forte:</strong> É mais robusto a outliers em comparação com MSE e RMSE, pois não eleva os erros ao quadrado. Fornece uma medida direta da magnitude média dos erros na unidade original da variável.</p></li>
+<li><p><strong>Ponto fraco:</strong> Não penaliza erros maiores de forma tão intensa quanto o MSE e RMSE. Pode não ser ideal se erros grandes tiverem um impacto significativamente maior no seu problema.</p></li>
+</ul>
+</section>
+<section id="avaliação-de-modelos-de-predição-4" class="slide level2">
+<h2>Avaliação de modelos de predição</h2>
+<p><strong>Erro Percentual Absoluto Médio (MAPE - Mean Absolute Percentage Error):</strong></p>
+<p><span class="math display">\[MAPE = \dfrac{1}{n} \displaystyle{\sum_{j=1}^n |e_j/d_j|}\times 100\]</span></p>
+<ul>
+<li><p><strong>Ponto forte:</strong> É fácil de interpretar, pois expressa o erro em termos percentuais. Isso pode ser útil para comparar o desempenho de modelos em diferentes escalas.</p></li>
+<li><p><strong>Ponto fraco:</strong> Não é definido quando os valores reais são zero. Além disso, pode ser assimétrico, penalizando mais os erros de previsão abaixo do valor real do que acima. Pode ser instável se houver valores reais muito pequenos.</p></li>
+</ul>
+</section>
+<section id="avaliação-de-modelos-de-predição-5" class="slide level2">
+<h2>Avaliação de modelos de predição</h2>
+<p align="center">
+<span style="font-size:70px;">🤔</span> Qual a melhor métrica?
+</p>
+<p><strong>Em resumo:</strong></p>
+<ul>
+<li>Se você se preocupa muito com grandes erros: MSE e RMSE são boas opções.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Se você quer uma métrica robusta a outliers: MAE é uma boa escolha.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Se a interpretabilidade em termos percentuais é importante (com cuidado com valores zero/pequenos): MAPE pode ser útil.</li>
+</ul>
+</div>
+<div class="fragment">
+<p align="center">
+<span style="font-size:60px;">💡</span> O ideal é analisar todas as métricas em conjunto, considerando o contexto do seu problema e utilizando validação cruzada.
+</p>
+</div>
+</section>
+<section id="qual-o-melhor-modelo" class="slide level2">
+<h2>Qual o melhor modelo?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span style="font-size:70px;">👉</span> Suponha que tenhamos dados simulados utilizando o seguinte modelo:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig01.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig02.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="qual-o-melhor-modelo-1" class="slide level2">
+<h2>Qual o melhor modelo?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span style="font-size:70px;">👉</span> Podemos estimar diversos modelos <span class="math inline">\(y\)</span> que predizem o verdadeiro valor de <span class="math inline">\(d\)</span></p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig03.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
 
 
 </section></section>

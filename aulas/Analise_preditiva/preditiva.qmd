@@ -305,8 +305,7 @@ Se a variável resposta é quantitativa, temos um problema de análise de regres
 
   - Previsões do preço das ações;
   - Análise de demanda e volume de vendas;
-  - Diagnóstico médico;
-  - Quaisquer correlações numéricas.
+  - Diagnóstico médico.
 
 :::
 
@@ -333,4 +332,681 @@ Algoritmos populares: **Decision Tree**, **Regressão Linear** e **Regressão Po
 ## Avaliação de modelos
 
 
-<span style='font-size:80px;'>&#128161;</span>  Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!
+<span style='font-size:80px;'>&#128161;</span>  Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a **avaliação de modelos**!
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](/images/detetive.jpg){.nostretch fig-align="center" width="1000px"}
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+<p align="center">
+A **avaliação de modelos** de machine learning é como um **detetive investigando um caso**.
+</p>
+
+:::
+::::
+
+
+## Avaliação de modelos
+
+<br>
+
+<br>
+
+::: {layout-ncol=2}
+
+![](/images/over_under.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/erro_over_under.png){.fragment fig-align="center" width="1000px"}
+
+
+:::
+
+
+
+## Avaliação de modelos
+
+
+
+<p align="center" >
+<span style='font-size:70px;'>&#129300;</span> O nosso modelo é um **herói** ou um **impostor**?
+</p>
+
+![](https://media4.giphy.com/media/ek4CUx2FONgHaMz9V5/giphy-downsized-medium.gif){fig-align="center" width="1000px"}
+
+
+
+
+## Matriz de confusão
+
+
+Permite a visualização do **desempenho** de um **algoritmo de classificação**
+
+&nbsp;
+
+![](/images/mc.png){.nostretch fig-align="center" width="1000px"}
+
+## Matriz de confusão
+
+<br>
+
+- **VP (Verdadeiro Positivo):** objeto da classe positiva classificado como positivo 
+
+. . .
+
+
+- **VN (Verdadeiro Negativo):** objeto da classe negativa classificado como negativo
+
+. . .
+
+
+- **FP (Falso Positivo):** objeto da classe negativa classificado como positivo. Também conhecido como **alarme falso** ou **Erro tipo 1**
+
+
+. . .
+
+
+- **FN (Falso Negativo):** objeto da classe positiva classificado como negativo. É também conhecido como **Erro Tipo 2**
+
+
+## Matriz de confusão
+
+<br> 
+
+**Exemplo:** Sejam as seguintes matrizes de confusão, obtidas de dois classificadores quaisquer.
+
+<br>
+
+::: {layout-ncol=2}
+
+![](/images/mc_cliente.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/mc_paciente.png){.nostretch fig-align="center" width="1000px"}
+
+
+:::
+
+
+# Métricas derivadas da matriz de confusão
+
+## Acurácia
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](/images/acc.jpg){.nostretch fig-align="center" width="400px"}
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+
+<p align="center">
+Mede a **proporção de previsões corretas** do modelo em relação ao total de previsões feitas.
+</p>
+
+:::
+::::
+
+
+<p align="center">
+**É como sua nota em uma prova!**
+</p>
+
+
+## Acurácia
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/mc.png){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+
+![](/images/acc_form.jpg){.nostretch fig-align="center" width="800px"}
+
+:::
+::::
+
+
+A **Taxa de Erro Aparente** do classificador é dada por
+
+$$TEA = 1 - ACC$$
+
+
+
+## Acurácia
+
+::: {layout-nrow=2}
+
+![](/images/mc_cliente_acc.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/acc_tea_cliente.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/mc_paciente_acc.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/acc_tea_paciente.png){.nostretch fig-align="center" width="1000px"}
+
+:::
+
+
+## Acurácia
+
+
+<br>
+
+<br>
+
+
+<p align="center">
+Mas será que a **acurácia** é suficiente para avaliar nossos modelos de forma **precisa**? 
+</p>
+
+
+. . .
+
+
+<p align="center">
+Às vezes, uma **única métrica** não é capaz de nos contar toda a história.
+</p>
+
+
+
+## Precisão
+
+<br>
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](/images/precision.jpg){.nostretch fig-align="center" width="400px"}
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+
+<p align="center">
+Ela nos diz quantas das **previsões positivas** foram realmente **corretas**.
+</p>
+
+:::
+::::
+
+
+## Precisão
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/mc.png){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](/images/precision_form.jpg){fig-align="center" width="800px"}
+
+:::
+::::
+
+
+
+<p align="center">
+Porcentagem de verdadeiros positivos dentre todos os objetos classificados como positivos
+</p>
+
+
+
+## Precisão
+
+
+::: {layout-nrow=2 layout-valign="bottom"}
+
+![](/images/mc_cliente_prec.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/prec_form_clientes.jpg){.nostretch fig-align="center" width="1000px"}
+
+![](/images/mc_paciente_prec.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/prec_form_pacientes.jpg){.nostretch fig-align="center" width="1000px"}
+
+:::
+
+
+
+## Sensibilidade
+
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/recall.jpg){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+
+<p align="center">
+Mede a **proporção de casos positivos reais** que foram encontrados pelo modelo 
+</p>
+
+
+:::
+::::
+
+## Sensibilidade
+
+<br>
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/mc.png){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](/images/sens_form.jpg){.nostretch fig-align="center" width="1000px"}
+
+:::
+::::
+
+<p align="center">
+Também conhecida por **Recall** ou **Taxa de Verdadeiros Positivos (TVP)**
+</p>
+
+## Sensibilidade
+
+
+::: {layout-nrow=2 layout-valign="bottom"}
+
+![](/images/mc_cliente_sens.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/sens_form_clientes.jpg){.nostretch fig-align="center" width="1000px"}
+
+![](/images/mc_paciente_sens.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/sens_form_pacientes.jpg){.nostretch fig-align="center" width="1000px"}
+
+:::
+
+
+## Especificidade
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/espec.jpg){.nostretch fig-align="center" width="600px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+<br>
+
+<p align="center">
+Ajuda a identificar a capacidade do modelo em reconhecer **corretamente as amostras negativas**   
+</p>
+
+
+:::
+::::
+
+
+## Especificidade
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/mc.png){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](/images/espec_form.jpg){.nostretch fig-align="center" width="800px"}
+
+:::
+::::
+
+<p align="center">
+Também conhecida por **Taxa de Verdadeiros Negativos (TVN)**
+</p>
+
+
+## Especificidade
+
+::: {layout-nrow=2 layout-valign="bottom"}
+
+![](/images/mc_cliente_espec.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/espec_form_clientes.jpg){.nostretch fig-align="center" width="1000px"}
+
+![](/images/mc_paciente_espec.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/espec_form_pacientes.jpg){.nostretch fig-align="center" width="1000px"}
+
+:::
+
+
+## Taxa de Falso Positivo
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+![](/images/fpr.jpg){.nostretch fig-align="center" width="1000px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+<br>
+
+<p align="center">
+Ela mede a **proporção de amostras negativas** classificadas como positivas pelo modelo  
+</p>
+
+
+:::
+::::
+
+
+## Taxa de Falso Positivo
+
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/mc.png){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](/images/fpr_form.jpg){.nostretch fig-align="center" width="500px"}
+
+:::
+::::
+
+
+## Taxa de Falso Positivo
+
+::: {layout-nrow=2 layout-valign="bottom"}
+
+![](/images/mc_cliente_espec.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/fpr_form_clientes.jpg){.nostretch fig-align="center" width="1000px"}
+
+![](/images/mc_paciente_espec.png){.nostretch fig-align="center" width="1000px"}
+
+![](/images/fpr_form_pacientes.jpg){.nostretch fig-align="center" width="1000px"}
+
+:::
+
+
+## $F_1$-Score
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+![](/images/f1.jpg){.nostretch fig-align="center" width="500px"}
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+<br>
+
+<br>
+
+<p align="center">
+ Ele leva em consideração tanto **precisão** quanto a **sensibilidade**, dando uma medida balanceada do desempenho do modelo.  
+</p>
+
+
+:::
+::::
+
+
+## $F_1$-Score
+
+<br>
+
+<br>
+
+$$F_1 \text{-score} = 2 \times \dfrac{\text{Precisão} \times \text{Sensibilidade}}{\text{Precisão} + \text{Sensibilidade}}$$
+
+<br>
+
+<p align="center">
+O $F_1$-Score é como um **equilibrista** em uma corda bamba.
+</p>
+
+
+## Curva ROC
+
+- A **Curva ROC** é como um mapa que nos guia pela **sensibilidade** e pelos **falsos positivos** do modelo em diferentes configurações. 
+
+. . .
+
+- Ela nos mostra o quão bem nosso modelo pode **distinguir** entre as classes.
+
+
+![](/images/roc.jpg){.fragment fig-align="center" width="700px"}
+
+
+## Curva ROC
+
+
+- Representa o número de vezes que o classificador **acertou a predição** contra o número de vezes que o classificador **errou a predição**
+
+. . .
+
+
+- A área sob a curva ROC, conhecida como **AUC-ROC**, é uma métrica comumente utilizada para avaliar o desempenho global do modelo. 
+
+. . . 
+
+- Quanto **maior a AUC-ROC**, **melhor** é o desempenho do modelo em discriminar corretamente as classes.
+
+![](/images/auc.jpg){.fragment fig-align="center" width="1400px"}
+
+
+# E como avaliar modelos de predição?
+
+## Avaliação de modelos de predição
+
+<br>
+
+- Seja $d_j$, $j = 1,\cdots, n$, a resposta desejada para o objeto $j$ e $y_j$ a resposta estimada (predita) do algoritmo, obtida a partir de uma entrada $\mathbf{x_j}$ apresentada ao algoritmo.
+
+. . .
+
+- Seja então, $e_j = d_j - y_j$ a diferença entre o valor observado e o valor predito para o objeto $j$.
+
+
+. . .
+
+- Podemos definir as seguintes métricas para **avaliação de modelos preditivos.**
+
+## Avaliação de modelos de predição
+
+**Erro Quadrático Médio (MSE - Mean Squared Error):**
+
+$$MSE =\dfrac{1}{n} \displaystyle{\sum_{j=1}^n e_j^2}$$
+
+ - **Ponto forte:** Penaliza fortemente erros maiores devido ao termo quadrático. Isso significa que o MSE é sensível a outliers (valores discrepantes).
+
+
+ - **Ponto fraco:** Como eleva os erros ao quadrado, a unidade da métrica resultante não é a mesma da variável original, o que dificulta a interpretação direta da magnitude do erro.
+
+
+## Avaliação de modelos de predição
+
+**Raiz do Erro Quadrático Médio (RMSE - Root Mean Squared Error):**
+
+$$RMSE =\sqrt{\dfrac{1}{n} \displaystyle{\sum_{j=1}^n e_j^2}}$$
+
+
+ - **Ponto forte:** Mantém a propriedade de penalizar erros maiores, mas retorna o erro na mesma unidade da variável original, facilitando a interpretação. É uma métrica amplamente utilizada.
+
+
+ - **Ponto fraco:** Ainda é sensível a outliers, pois se baseia no MSE.
+
+
+
+## Avaliação de modelos de predição
+
+**Erro Médio Absoluto (MAE - Mean Absolute Error):**
+
+$$MAE = \dfrac{1}{n} \displaystyle{\sum_{j=1}^n |e_j|}$$
+
+ - **Ponto forte:** É mais robusto a outliers em comparação com MSE e RMSE, pois não eleva os erros ao quadrado. Fornece uma medida direta da magnitude média dos erros na unidade original da variável.
+
+
+ - **Ponto fraco:** Não penaliza erros maiores de forma tão intensa quanto o MSE e RMSE. Pode não ser ideal se erros grandes tiverem um impacto significativamente maior no seu problema.
+
+
+
+
+## Avaliação de modelos de predição
+
+**Erro Percentual Absoluto Médio (MAPE - Mean Absolute Percentage Error):**
+
+$$MAPE = \dfrac{1}{n} \displaystyle{\sum_{j=1}^n |e_j/d_j|}\times 100$$
+
+ - **Ponto forte:** É fácil de interpretar, pois expressa o erro em termos percentuais. Isso pode ser útil para comparar o desempenho de modelos em diferentes escalas.
+
+
+ - **Ponto fraco:** Não é definido quando os valores reais são zero. Além disso, pode ser assimétrico, penalizando mais os erros de previsão abaixo do valor real do que acima. Pode ser instável se houver valores reais muito pequenos.
+
+
+## Avaliação de modelos de predição
+
+<p align="center">
+<span style='font-size:70px;'>&#129300;</span> Qual a melhor métrica?
+</p>
+
+
+
+**Em resumo:**
+
+
+- Se você se preocupa muito com grandes erros: MSE e RMSE são boas opções.
+
+. . .
+
+- Se você quer uma métrica robusta a outliers: MAE é uma boa escolha.
+
+. . .
+
+- Se a interpretabilidade em termos percentuais é importante (com cuidado com valores zero/pequenos): MAPE pode ser útil.
+
+. . .
+
+
+<p align="center">
+<span style='font-size:60px;'>&#128161;</span> O ideal é analisar todas as métricas em conjunto, considerando o contexto do seu problema e utilizando validação cruzada.
+</p>
+
+
+## Qual o melhor modelo?
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+<span style='font-size:70px;'>&#128073;</span> Suponha que tenhamos dados simulados utilizando o seguinte modelo:
+
+![](/images/predicao/fig01.png){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="50%"}
+
+![](/images/predicao/fig02.png){.nostretch fig-align="center" width="800px"}
+
+
+:::
+::::
+
+
+## Qual o melhor modelo?
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+<span style='font-size:70px;'>&#128073;</span> Podemos estimar diversos modelos $y$ que predizem o verdadeiro valor de $d$
+
+
+:::
+
+::: {.column width="50%"}
+
+![](/images/predicao/fig03.png){.nostretch fig-align="center" width="800px"}
+
+
+:::
+::::
