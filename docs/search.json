@@ -1126,7 +1126,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#section",
     "title": "Análise Preditiva",
     "section": "",
-    "text": "💡"
+    "text": "Exemplos"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#aprendizado-supervisionado",
@@ -1161,7 +1161,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão",
     "title": "Análise Preditiva",
     "section": "Tarefa de regressão",
-    "text": "Tarefa de regressão\n\nSe a variável resposta é quantitativa, temos um problema de análise de regressão\n\n\n\n\n\nUsados nos dias de hoje para:\n\nPrevisões do preço das ações;\nAnálise de demanda e volume de vendas;\nDiagnóstico médico;\nQuaisquer correlações numéricas."
+    "text": "Tarefa de regressão\n\nSe a variável resposta é quantitativa, temos um problema de análise de regressão\n\n\n\n\n\nUsados nos dias de hoje para:\n\nPrevisões do preço das ações;\nAnálise de demanda e volume de vendas;\nDiagnóstico médico."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão-1",
@@ -1175,6 +1175,258 @@
     "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos",
     "title": "Análise Preditiva",
     "section": "Avaliação de modelos",
-    "text": "Avaliação de modelos\n💡 Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!"
+    "text": "Avaliação de modelos\n💡 Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!\n\n\n\n\n\n\n\n\n\n\nA avaliação de modelos de machine learning é como um detetive investigando um caso."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-1",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos",
+    "text": "Avaliação de modelos"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-2",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos",
+    "text": "Avaliação de modelos\n\n🤔 O nosso modelo é um herói ou um impostor?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão",
+    "href": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão",
+    "title": "Análise Preditiva",
+    "section": "Matriz de confusão",
+    "text": "Matriz de confusão\nPermite a visualização do desempenho de um algoritmo de classificação"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão-1",
+    "title": "Análise Preditiva",
+    "section": "Matriz de confusão",
+    "text": "Matriz de confusão\n\n\nVP (Verdadeiro Positivo): objeto da classe positiva classificado como positivo\n\n\n\nVN (Verdadeiro Negativo): objeto da classe negativa classificado como negativo\n\n\n\n\nFP (Falso Positivo): objeto da classe negativa classificado como positivo. Também conhecido como alarme falso ou Erro tipo 1\n\n\n\n\nFN (Falso Negativo): objeto da classe positiva classificado como negativo. É também conhecido como Erro Tipo 2"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão-2",
+    "title": "Análise Preditiva",
+    "section": "Matriz de confusão",
+    "text": "Matriz de confusão\n\nExemplo: Sejam as seguintes matrizes de confusão, obtidas de dois classificadores quaisquer."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#métricas-derivadas-da-matriz-de-confusão",
+    "href": "aulas/Analise_preditiva/preditiva.html#métricas-derivadas-da-matriz-de-confusão",
+    "title": "Análise Preditiva",
+    "section": "Métricas derivadas da matriz de confusão",
+    "text": "Métricas derivadas da matriz de confusão\n\n\n\n\n\n\n\n\n\n\nAcurácia\n\n\nMede a proporção de previsões corretas do modelo em relação ao total de previsões feitas.\n\n\n\nÉ como sua nota em uma prova!"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#acurácia",
+    "href": "aulas/Analise_preditiva/preditiva.html#acurácia",
+    "title": "Análise Preditiva",
+    "section": "Acurácia",
+    "text": "Acurácia\n\n\n\n\n\n\n\n\n\n\nMede a proporção de previsões corretas do modelo em relação ao total de previsões feitas.\n\n\n\nÉ como sua nota em uma prova!"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#acurácia-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#acurácia-1",
+    "title": "Análise Preditiva",
+    "section": "Acurácia",
+    "text": "Acurácia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA Taxa de Erro Aparente do classificador é dada por\n\\[TEA = 1 - ACC\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#acurácia-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#acurácia-2",
+    "title": "Análise Preditiva",
+    "section": "Acurácia",
+    "text": "Acurácia"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#acurácia-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#acurácia-3",
+    "title": "Análise Preditiva",
+    "section": "Acurácia",
+    "text": "Acurácia\n\n\n\nMas será que a acurácia é suficiente para avaliar nossos modelos de forma precisa?\n\n\n\nÀs vezes, uma única métrica não é capaz de nos contar toda a história."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#precisão",
+    "href": "aulas/Analise_preditiva/preditiva.html#precisão",
+    "title": "Análise Preditiva",
+    "section": "Precisão",
+    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\n\nEla nos diz quantas das previsões positivas foram realmente corretas."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#precisão-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#precisão-1",
+    "title": "Análise Preditiva",
+    "section": "Precisão",
+    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPorcentagem de verdadeiros positivos dentre todos os objetos classificados como positivos"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#precisão-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#precisão-2",
+    "title": "Análise Preditiva",
+    "section": "Precisão",
+    "text": "Precisão"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#sensibilidade",
+    "href": "aulas/Analise_preditiva/preditiva.html#sensibilidade",
+    "title": "Análise Preditiva",
+    "section": "Sensibilidade",
+    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\n\nMede a proporção de casos positivos reais que foram encontrados pelo modelo"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#sensibilidade-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#sensibilidade-1",
+    "title": "Análise Preditiva",
+    "section": "Sensibilidade",
+    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Recall ou Taxa de Verdadeiros Positivos (TVP)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#sensibilidade-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#sensibilidade-2",
+    "title": "Análise Preditiva",
+    "section": "Sensibilidade",
+    "text": "Sensibilidade"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#especificidade",
+    "href": "aulas/Analise_preditiva/preditiva.html#especificidade",
+    "title": "Análise Preditiva",
+    "section": "Especificidade",
+    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\n\nAjuda a identificar a capacidade do modelo em reconhecer corretamente as amostras negativas"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#especificidade-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#especificidade-1",
+    "title": "Análise Preditiva",
+    "section": "Especificidade",
+    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Taxa de Verdadeiros Negativos (TVN)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#especificidade-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#especificidade-2",
+    "title": "Análise Preditiva",
+    "section": "Especificidade",
+    "text": "Especificidade"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo",
+    "href": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo",
+    "title": "Análise Preditiva",
+    "section": "Taxa de Falso Positivo",
+    "text": "Taxa de Falso Positivo\n\n\n\n\n\n\n\n\n\n\n\n\nEla mede a proporção de amostras negativas classificadas como positivas pelo modelo"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo-1",
+    "title": "Análise Preditiva",
+    "section": "Taxa de Falso Positivo",
+    "text": "Taxa de Falso Positivo"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo-2",
+    "title": "Análise Preditiva",
+    "section": "Taxa de Falso Positivo",
+    "text": "Taxa de Falso Positivo"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#f_1",
+    "href": "aulas/Analise_preditiva/preditiva.html#f_1",
+    "title": "Análise Preditiva",
+    "section": "F_1",
+    "text": "F_1"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#f_1-score",
+    "href": "aulas/Analise_preditiva/preditiva.html#f_1-score",
+    "title": "Análise Preditiva",
+    "section": "\\(F_1\\)-Score",
+    "text": "\\(F_1\\)-Score\n\n\n\n\n\n\n\n\n\n\n\n\n\nEle leva em consideração tanto precisão quanto a sensibilidade, dando uma medida balanceada do desempenho do modelo."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#f_1-score-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#f_1-score-1",
+    "title": "Análise Preditiva",
+    "section": "\\(F_1\\)-Score",
+    "text": "\\(F_1\\)-Score\n\n\n\\[F_1 \\text{-score} = 2 \\times \\dfrac{\\text{Precisão} \\times \\text{Sensibilidade}}{\\text{Precisão} + \\text{Sensibilidade}}\\]\n\n\nO \\(F_1\\)-Score é como um equilibrista em uma corda bamba."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#curva-roc",
+    "href": "aulas/Analise_preditiva/preditiva.html#curva-roc",
+    "title": "Análise Preditiva",
+    "section": "Curva ROC",
+    "text": "Curva ROC\n\nA Curva ROC é como um mapa que nos guia pela sensibilidade e pelos falsos positivos do modelo em diferentes configurações.\n\n\n\nEla nos mostra o quão bem nosso modelo pode distinguir entre as classes."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#curva-roc-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#curva-roc-1",
+    "title": "Análise Preditiva",
+    "section": "Curva ROC",
+    "text": "Curva ROC\n\nRepresenta o número de vezes que o classificador acertou a predição contra o número de vezes que o classificador errou a predição\n\n\n\nA área sob a curva ROC, conhecida como AUC-ROC, é uma métrica comumente utilizada para avaliar o desempenho global do modelo.\n\n\n\n\nQuanto maior a AUC-ROC, melhor é o desempenho do modelo em discriminar corretamente as classes."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos de predição",
+    "text": "Avaliação de modelos de predição\n\n\nSeja \\(d_j\\), \\(j = 1,\\cdots, n\\), a resposta desejada para o objeto \\(j\\) e \\(y_j\\) a resposta estimada (predita) do algoritmo, obtida a partir de uma entrada \\(\\mathbf{x_j}\\) apresentada ao algoritmo.\n\n\n\nSeja então, \\(e_j = d_j - y_j\\) a diferença entre o valor observado e o valor predito para o objeto \\(j\\).\n\n\n\n\nPodemos definir as seguintes métricas para avaliação de modelos preditivos."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-1",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos de predição",
+    "text": "Avaliação de modelos de predição\nErro Quadrático Médio (MSE - Mean Squared Error):\n\\[MSE =\\dfrac{1}{n} \\displaystyle{\\sum_{j=1}^n e_j^2}\\]\n\nPonto forte: Penaliza fortemente erros maiores devido ao termo quadrático. Isso significa que o MSE é sensível a outliers (valores discrepantes).\nPonto fraco: Como eleva os erros ao quadrado, a unidade da métrica resultante não é a mesma da variável original, o que dificulta a interpretação direta da magnitude do erro."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-2",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos de predição",
+    "text": "Avaliação de modelos de predição\nRaiz do Erro Quadrático Médio (RMSE - Root Mean Squared Error):\n\\[RMSE =\\sqrt{\\dfrac{1}{n} \\displaystyle{\\sum_{j=1}^n e_j^2}}\\]\n\nPonto forte: Mantém a propriedade de penalizar erros maiores, mas retorna o erro na mesma unidade da variável original, facilitando a interpretação. É uma métrica amplamente utilizada.\nPonto fraco: Ainda é sensível a outliers, pois se baseia no MSE."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-3",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos de predição",
+    "text": "Avaliação de modelos de predição\nErro Médio Absoluto (MAE - Mean Absolute Error):\n\\[MAE = \\dfrac{1}{n} \\displaystyle{\\sum_{j=1}^n |e_j|}\\]\n\nPonto forte: É mais robusto a outliers em comparação com MSE e RMSE, pois não eleva os erros ao quadrado. Fornece uma medida direta da magnitude média dos erros na unidade original da variável.\nPonto fraco: Não penaliza erros maiores de forma tão intensa quanto o MSE e RMSE. Pode não ser ideal se erros grandes tiverem um impacto significativamente maior no seu problema."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-4",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-4",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos de predição",
+    "text": "Avaliação de modelos de predição\nErro Percentual Absoluto Médio (MAPE - Mean Absolute Percentage Error):\n\\[MAPE = \\dfrac{1}{n} \\displaystyle{\\sum_{j=1}^n |e_j/d_j|}\\times 100\\]\n\nPonto forte: É fácil de interpretar, pois expressa o erro em termos percentuais. Isso pode ser útil para comparar o desempenho de modelos em diferentes escalas.\nPonto fraco: Não é definido quando os valores reais são zero. Além disso, pode ser assimétrico, penalizando mais os erros de previsão abaixo do valor real do que acima. Pode ser instável se houver valores reais muito pequenos."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-5",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-5",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos de predição",
+    "text": "Avaliação de modelos de predição\n\n🤔 Qual a melhor métrica?\n\nEm resumo:\n\nSe você se preocupa muito com grandes erros: MSE e RMSE são boas opções.\n\n\n\nSe você quer uma métrica robusta a outliers: MAE é uma boa escolha.\n\n\n\n\nSe a interpretabilidade em termos percentuais é importante (com cuidado com valores zero/pequenos): MAPE pode ser útil.\n\n\n\n\n💡 O ideal é analisar todas as métricas em conjunto, considerando o contexto do seu problema e utilizando validação cruzada."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-6",
+    "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição-6",
+    "title": "Análise Preditiva",
+    "section": "Avaliação de modelos de predição",
+    "text": "Avaliação de modelos de predição\nAlguns comentários a respeito das métricas:"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#qual-o-melhor-modelo",
+    "href": "aulas/Analise_preditiva/preditiva.html#qual-o-melhor-modelo",
+    "title": "Análise Preditiva",
+    "section": "Qual o melhor modelo?",
+    "text": "Qual o melhor modelo?\n\n\n\n👉 Suponha que tenhamos dados simulados utilizando o seguinte modelo:"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#qual-o-melhor-modelo-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#qual-o-melhor-modelo-1",
+    "title": "Análise Preditiva",
+    "section": "Qual o melhor modelo?",
+    "text": "Qual o melhor modelo?\n\n\n\n👉 Podemos estimar diversos modelos \\(y\\) que predizem o verdadeiro valor de \\(d\\)"
   }
 ]
