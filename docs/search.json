@@ -1428,5 +1428,54 @@
     "title": "Análise Preditiva",
     "section": "Qual o melhor modelo?",
     "text": "Qual o melhor modelo?\n\n\n\n👉 Podemos estimar diversos modelos \\(y\\) que predizem o verdadeiro valor de \\(d\\)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#qual-o-melhor-modelo-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#qual-o-melhor-modelo-2",
+    "title": "Análise Preditiva",
+    "section": "Qual o melhor modelo?",
+    "text": "Qual o melhor modelo?\n\n\n\n👉 Nosso interesse está em treinar o modelo e avaliar a sua capacidade de generalização"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#validação-holdout",
+    "href": "aulas/Analise_preditiva/preditiva.html#validação-holdout",
+    "title": "Análise Preditiva",
+    "section": "Validação holdout",
+    "text": "Validação holdout\n\n\n\n👉 Dados originais: treinamento e teste\n👉 Dados de treinamento: treinamento e validação"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#validação-holdout-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#validação-holdout-1",
+    "title": "Análise Preditiva",
+    "section": "Validação holdout",
+    "text": "Validação holdout\n\n\n\nExemplo: Vamos avaliar a relação entre Frequência Cardíaca e Idade de 270 pacientes"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#validação-holdout-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#validação-holdout-2",
+    "title": "Análise Preditiva",
+    "section": "Validação holdout",
+    "text": "Validação holdout\n\n🤔 Qual o melhor modelo nesse caso?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#validação-holdout-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#validação-holdout-3",
+    "title": "Análise Preditiva",
+    "section": "Validação holdout",
+    "text": "Validação holdout\n\n👉 70% da base para treino e 30% para validação"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#validação-cruzada-k-fold",
+    "href": "aulas/Analise_preditiva/preditiva.html#validação-cruzada-k-fold",
+    "title": "Análise Preditiva",
+    "section": "Validação cruzada k-fold",
+    "text": "Validação cruzada k-fold\n👉 Dados de treinamento: \\(k\\) partes iguais. Treina com \\(k-1\\) partes, e valida com uma"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#validação-cruzada-k-fold-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#validação-cruzada-k-fold-1",
+    "title": "Análise Preditiva",
+    "section": "Validação cruzada k-fold",
+    "text": "Validação cruzada k-fold"
   }
 ]

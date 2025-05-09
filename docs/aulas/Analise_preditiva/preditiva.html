@@ -1068,6 +1068,121 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 </figure>
 </div>
 </div></div>
+</section>
+<section id="qual-o-melhor-modelo-2" class="slide level2">
+<h2>Qual o melhor modelo?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span style="font-size:70px;">👉</span> Nosso interesse está em treinar o modelo e avaliar a sua capacidade de generalização</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig04.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="validação-holdout" class="slide level2">
+<h2>Validação holdout</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span style="font-size:70px;">👉</span> <strong>Dados originais:</strong> treinamento e teste</p>
+<p><span style="font-size:70px;">👉</span> <strong>Dados de treinamento:</strong> treinamento e validação</p>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/houlout.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="validação-holdout-1" class="slide level2">
+<h2>Validação holdout</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><strong>Exemplo:</strong> Vamos avaliar a relação entre Frequência Cardíaca e Idade de 270 pacientes</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/freq.png" class="nostretch quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/exemplo.png" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="validação-holdout-2" class="slide level2">
+<h2>Validação holdout</h2>
+<p align="center">
+<span style="font-size:60px;">🤔</span> Qual o melhor modelo nesse caso?
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig05.png" class="quarto-figure quarto-figure-center" width="700"></p>
+</figure>
+</div>
+</section>
+<section id="validação-holdout-3" class="slide level2">
+<h2>Validação holdout</h2>
+<p align="center">
+<span style="font-size:60px;">👉</span> 70% da base para treino e 30% para validação
+</p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig06.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig07.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="validação-cruzada-k-fold" class="slide level2">
+<h2>Validação cruzada k-fold</h2>
+<p><span style="font-size:70px;">👉</span> <strong>Dados de treinamento:</strong> <span class="math inline">\(k\)</span> partes iguais. <strong>Treina</strong> com <span class="math inline">\(k-1\)</span> partes, e <strong>valida</strong> com uma</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/cross_validation.png" class="quarto-figure quarto-figure-center" width="1400"></p>
+</figure>
+</div>
+</section>
+<section id="validação-cruzada-k-fold-1" class="slide level2">
+<h2>Validação cruzada k-fold</h2>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig08.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig09.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 
 
 </section></section>

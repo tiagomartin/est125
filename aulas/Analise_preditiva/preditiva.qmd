@@ -1010,3 +1010,134 @@ $$MAPE = \dfrac{1}{n} \displaystyle{\sum_{j=1}^n |e_j/d_j|}\times 100$$
 
 :::
 ::::
+
+
+
+## Qual o melhor modelo?
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+<span style='font-size:70px;'>&#128073;</span> Nosso interesse está em treinar o modelo e avaliar a sua capacidade de generalização
+
+
+:::
+
+::: {.column width="50%"}
+
+![](/images/predicao/fig04.png){.nostretch fig-align="center" width="800px"}
+
+
+:::
+::::
+
+
+
+## Validação holdout
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+<span style='font-size:70px;'>&#128073;</span> **Dados originais:** treinamento e teste
+
+
+<span style='font-size:70px;'>&#128073;</span> **Dados de treinamento:** treinamento e validação
+
+:::
+
+::: {.column width="50%"}
+
+![](/images/predicao/houlout.png){.nostretch fig-align="center" width="800px"}
+
+
+:::
+::::
+
+
+
+
+## Validação holdout
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+**Exemplo:** Vamos avaliar a relação entre Frequência Cardíaca e Idade de 270 pacientes
+
+
+![](/images/predicao/freq.png){.nostretch fig-align="center" width="600px"}
+
+:::
+
+::: {.column width="50%"}
+
+<br>
+
+![](/images/predicao/exemplo.png){.nostretch fig-align="center" width="1200px"}
+
+
+:::
+::::
+
+
+
+## Validação holdout
+
+<p align="center">
+<span style='font-size:60px;'>&#129300;</span> Qual o melhor modelo nesse caso?
+</p>
+
+
+![](/images/predicao/fig05.png){.nostretch fig-align="center" width="700px"}
+
+
+## Validação holdout
+
+
+<p align="center">
+<span style='font-size:60px;'>&#128073;</span> 70% da base para treino e 30% para validação
+</p>
+
+::: {layout-ncol=2}
+![](/images/predicao/fig06.png){.nostretch fig-align="center" width="900px"}
+
+![](/images/predicao/fig07.png){.nostretch fig-align="center" width="900px"}
+:::
+
+
+
+
+## Validação cruzada k-fold
+
+<span style='font-size:70px;'>&#128073;</span> **Dados de treinamento:** $k$ partes iguais. **Treina** com $k-1$ partes, e **valida** com uma
+
+![](/images/predicao/cross_validation.png){.nostretch fig-align="center" width="1400px"}
+
+
+
+## Validação cruzada k-fold
+
+<br>
+
+::: {layout-ncol=2}
+![](/images/predicao/fig08.png){.nostretch fig-align="center" width="900px"}
+
+![](/images/predicao/fig09.png){.nostretch fig-align="center" width="900px"}
+:::
