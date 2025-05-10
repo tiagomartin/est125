@@ -1141,3 +1141,246 @@ $$MAPE = \dfrac{1}{n} \displaystyle{\sum_{j=1}^n |e_j/d_j|}\times 100$$
 
 ![](/images/predicao/fig09.png){.nostretch fig-align="center" width="900px"}
 :::
+
+
+## Trade-off bias-variância
+
+
+Imagine que você está tentando **acertar** um alvo com dardos. Seus arremessos podem ser agrupados de três maneiras diferentes:
+
+
+- **Grupo de alto viés (bias):** Seus arremessos são **consistentemente agrupados longe do alvo**, mas **próximos uns dos outros**. Isso indica um **alto viés**, pois você está fazendo arremessos incorretos, mas de forma **consistente**.
+
+
+. . .
+
+- **Grupo de alta variância:** Seus arremessos estão **espalhados por toda a área**, **longe do alvo e uns dos outros**. Isso indica **alta variância**, pois seus arremessos são **inconsistentes e imprevisíveis**. 
+
+
+
+. . .
+
+
+- **Grupo equilibrado:** Seus arremessos estão **agrupados próximo ao alvo** e também estão **próximos uns dos outros**. Isso é o **equilíbrio** entre **viés** e **variância**, onde você está acertando o alvo de forma **consistente** e **precisa**.
+
+
+
+## Trade-off bias-variância
+
+![](/images/predicao/bias_variance.png){.nostretch fig-align="center" width="900px"}
+
+
+## Trade-off bias-variância
+
+
+<br>
+
+
+Queremos construir modelos que não apenas performem bem nos dados de treinamento, mas que também façam previsões precisas em dados novos e não vistos.
+
+
+. . .
+
+
+O **erro total** de um **modelo preditivo** em dados não vistos pode ser **decomposto em três componentes principais**, ou seja,
+
+
+
+$$\text{Erro Total} = \text{Bias}^2 + \text{Variância} + \text{Erro Irredutível}$$
+
+
+
+## Trade-off bias-variância
+
+<br>
+
+- **Bias (Viés):** Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.
+
+
+. . .
+
+
+- **Variância:** Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.
+
+
+. . .
+
+- **Erro Irredutível:** Ruído inerente aos dados que não pode ser reduzido por nenhum modelo.
+
+
+## O Problema do Subajuste (Underfitting)
+
+<br>
+
+Modelos com **alto bias** fazem suposições fortes sobre a forma da função que mapeia as entradas para as saídas. São tipicamente modelos mais simples, com poucos parâmetros.
+
+. . .
+
+
+- Consequências:
+
+  - Desempenho ruim tanto nos dados de treinamento quanto nos dados de teste.
+  - Incapacidade de capturar a complexidade real dos dados.
+  
+  
+## O Problema do Sobreajuste (Overfitting)
+
+<br>
+
+Modelos com **alta variância** aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.
+
+
+- Consequências:
+
+  - Excelente desempenho nos dados de treinamento.
+  - Desempenho significativamente pior em dados de teste não vistos. O modelo "decorou" os dados de treinamento em vez de aprender padrões gerais.
+
+
+## Underfitting e Overfitting
+
+<br>
+
+![](/images/predicao/over_under_good.png){.nostretch fig-align="center" width="1800px"}
+
+
+## Bias vs. Variância
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+<br>
+
+Voltemos ao nosso modelo simulado:
+
+
+![](/images/predicao/fig01.png){.nostretch fig-align="center" width="600px"}
+
+:::
+
+::: {.column width="50%"}
+
+![](/images/predicao/fig02.png){.nostretch fig-align="center" width="1200px"}
+
+
+:::
+::::
+
+
+
+## Bias vs. Variância
+
+<p align="center">
+<span style='font-size:60px;'>&#128073;</span> Vamos ajustar um modelo polinomial de **grau 2**
+</p>
+
+
+
+
+![](/images/predicao/fig12.png){.nostretch fig-align="center" width="800px"}
+
+
+## Bias vs. Variância
+
+::: {layout-ncol=2}
+![](/images/predicao/fig13.png){.nostretch fig-align="center" width="900px"}
+
+![](/images/predicao/fig14.png){.nostretch fig-align="center" width="900px"}
+:::
+
+
+
+
+
+## Bias vs. Variância
+
+<p align="center">
+<span style='font-size:60px;'>&#128073;</span> Vamos ajustar um modelo polinomial de **grau 10**
+</p>
+
+
+
+
+![](/images/predicao/fig15.png){.nostretch fig-align="center" width="800px"}
+
+
+## Bias vs. Variância
+
+::: {layout-ncol=2}
+![](/images/predicao/fig16.png){.nostretch fig-align="center" width="900px"}
+
+![](/images/predicao/fig17.png){.nostretch fig-align="center" width="900px"}
+:::
+
+
+
+
+
+
+
+
+
+
+## O Tradeoff - A Balança Delicada
+
+<span style='font-size:80px;'>&#128073;</span> **Bias** e **variância** estão **inversamente relacionados**. Tentar reduzir um geralmente aumenta o outro.
+
+
+. . .
+
+- **Modelos simples** tendem a ter **alto bias e baixa variância**.
+
+- **Modelos complexos** tendem a ter **baixo bias e alta variância**.
+
+
+. . .
+
+<span style='font-size:80px;'>&#128161;</span> O objetivo é encontrar um modelo com um **bom equilíbrio** entre **bias** e **variância**, que **minimize o erro de generalização**.
+
+
+
+## O Tradeoff - A Balança Delicada
+
+<br>
+
+![](/images/predicao/bias-variance_tradeOff.png){.nostretch fig-align="center" width="1800px"}
+
+## Como Lidar com o Tradeoff?
+
+<br>
+
+- **Seleção de Modelos:** Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).
+
+. . .
+
+- **Ajuste de Hiperparâmetros:**  Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).
+
+. . .
+
+
+- **Validação Cruzada:** Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.
+
+. . .
+
+- **Engenharia de Features:** Criar features mais informativas pode reduzir o bias.
+
+
+## Como Lidar com o Tradeoff?
+
+<br>
+
+- **Regularização:** Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).
+
+
+. . .
+
+
+- **Mais Dados:** Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.
+
+. . .
+
+
+- **Ensemble Methods:** Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância.

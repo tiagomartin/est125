@@ -1477,5 +1477,124 @@
     "title": "Análise Preditiva",
     "section": "Validação cruzada k-fold",
     "text": "Validação cruzada k-fold"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância",
+    "href": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância",
+    "title": "Análise Preditiva",
+    "section": "Trade-off bias-variância",
+    "text": "Trade-off bias-variância\nImagine que você está tentando acertar um alvo com dardos. Seus arremessos podem ser agrupados de três maneiras diferentes:\n\nGrupo de alto viés (bias): Seus arremessos são consistentemente agrupados longe do alvo, mas próximos uns dos outros. Isso indica um alto viés, pois você está fazendo arremessos incorretos, mas de forma consistente.\n\n\n\nGrupo de alta variância: Seus arremessos estão espalhados por toda a área, longe do alvo e uns dos outros. Isso indica alta variância, pois seus arremessos são inconsistentes e imprevisíveis.\n\n\n\n\nGrupo equilibrado: Seus arremessos estão agrupados próximo ao alvo e também estão próximos uns dos outros. Isso é o equilíbrio entre viés e variância, onde você está acertando o alvo de forma consistente e precisa."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-1",
+    "title": "Análise Preditiva",
+    "section": "Trade-off bias-variância",
+    "text": "Trade-off bias-variância"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-2",
+    "title": "Análise Preditiva",
+    "section": "Trade-off bias-variância",
+    "text": "Trade-off bias-variância\n\nQueremos construir modelos que não apenas performem bem nos dados de treinamento, mas que também façam previsões precisas em dados novos e não vistos.\n\nO erro total de um modelo preditivo em dados não vistos pode ser decomposto em três componentes principais, ou seja,\n\\[\\text{Erro Total} = \\text{Bias}^2 + \\text{Variância} + \\text{Erro Irredutível}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-problema-do-subajuste-underfitting",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-problema-do-subajuste-underfitting",
+    "title": "Análise Preditiva",
+    "section": "O Problema do Subajuste (Underfitting)",
+    "text": "O Problema do Subajuste (Underfitting)\n\nModelos com alto bias fazem suposições fortes sobre a forma da função que mapeia as entradas para as saídas. São tipicamente modelos mais simples, com poucos parâmetros.\n\n\nConsequências:\n\nDesempenho ruim tanto nos dados de treinamento quanto nos dados de teste.\nIncapacidade de capturar a complexidade real dos dados."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-3",
+    "title": "Análise Preditiva",
+    "section": "Trade-off bias-variância",
+    "text": "Trade-off bias-variância\n\n\nBias (Viés): Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.\n\n\n\nVariância: Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.\n\n\n\n\nErro Irredutível: Ruído inerente aos dados que não pode ser reduzido por nenhum modelo."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#variância---o-problema-do-sobreajuste-overfitting",
+    "href": "aulas/Analise_preditiva/preditiva.html#variância---o-problema-do-sobreajuste-overfitting",
+    "title": "Análise Preditiva",
+    "section": "Variância - O Problema do Sobreajuste (Overfitting)",
+    "text": "Variância - O Problema do Sobreajuste (Overfitting)\nModelos com alta variância aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.\n\nConsequências:\n\nExcelente desempenho nos dados de treinamento.\nDesempenho significativamente pior em dados de teste não vistos. O modelo “decorou” os dados de treinamento em vez de aprender padrões gerais."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-problema-do-sobreajuste-overfitting",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-problema-do-sobreajuste-overfitting",
+    "title": "Análise Preditiva",
+    "section": "O Problema do Sobreajuste (Overfitting)",
+    "text": "O Problema do Sobreajuste (Overfitting)\n\nModelos com alta variância aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.\n\nConsequências:\n\nExcelente desempenho nos dados de treinamento.\nDesempenho significativamente pior em dados de teste não vistos. O modelo “decorou” os dados de treinamento em vez de aprender padrões gerais."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#underfitting-e-overfitting",
+    "href": "aulas/Analise_preditiva/preditiva.html#underfitting-e-overfitting",
+    "title": "Análise Preditiva",
+    "section": "Underfitting e Overfitting",
+    "text": "Underfitting e Overfitting"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-tradeoff---a-balança-delicada",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-tradeoff---a-balança-delicada",
+    "title": "Análise Preditiva",
+    "section": "O Tradeoff - A Balança Delicada",
+    "text": "O Tradeoff - A Balança Delicada\n👉 Bias e variância estão inversamente relacionados. Tentar reduzir um geralmente aumenta o outro.\n\n\nModelos simples tendem a ter alto bias e baixa variância.\nModelos complexos tendem a ter baixo bias e alta variância.\n\n\n\n💡 O objetivo é encontrar um modelo com um bom equilíbrio entre bias e variância, que minimize o erro de generalização."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-tradeoff---a-balança-delicada-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-tradeoff---a-balança-delicada-1",
+    "title": "Análise Preditiva",
+    "section": "O Tradeoff - A Balança Delicada",
+    "text": "O Tradeoff - A Balança Delicada"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância",
+    "href": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância",
+    "title": "Análise Preditiva",
+    "section": "Bias vs. Variância",
+    "text": "Bias vs. Variância\n\n\n\n\nVoltemos ao nosso modelo simulado:"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância-1",
+    "title": "Análise Preditiva",
+    "section": "Bias vs. Variância",
+    "text": "Bias vs. Variância\n\n👉 Vamos ajustar um modelo polinomial de grau 2"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância-2",
+    "title": "Análise Preditiva",
+    "section": "Bias vs. Variância",
+    "text": "Bias vs. Variância"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância-3",
+    "title": "Análise Preditiva",
+    "section": "Bias vs. Variância",
+    "text": "Bias vs. Variância\n\n👉 Vamos ajustar um modelo polinomial de grau 10"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância-4",
+    "href": "aulas/Analise_preditiva/preditiva.html#bias-vs.-variância-4",
+    "title": "Análise Preditiva",
+    "section": "Bias vs. Variância",
+    "text": "Bias vs. Variância"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff",
+    "href": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff",
+    "title": "Análise Preditiva",
+    "section": "Como Lidar com o Tradeoff?",
+    "text": "Como Lidar com o Tradeoff?\n\n\nSeleção de Modelos: Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).\n\n\n\nAjuste de Hiperparâmetros: Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).\n\n\n\n\nValidação Cruzada: Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.\n\n\n\n\nEngenharia de Features: Criar features mais informativas pode reduzir o bias."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff-1",
+    "title": "Análise Preditiva",
+    "section": "Como Lidar com o Tradeoff?",
+    "text": "Como Lidar com o Tradeoff?\n\n\nRegularização: Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).\n\n\n\nMais Dados: Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.\n\n\n\n\nEnsemble Methods: Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância."
   }
 ]

@@ -1183,8 +1183,239 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 </div>
 </div>
 </div>
+</section>
+<section id="trade-off-bias-variância" class="slide level2">
+<h2>Trade-off bias-variância</h2>
+<p>Imagine que você está tentando <strong>acertar</strong> um alvo com dardos. Seus arremessos podem ser agrupados de três maneiras diferentes:</p>
+<ul>
+<li><strong>Grupo de alto viés (bias):</strong> Seus arremessos são <strong>consistentemente agrupados longe do alvo</strong>, mas <strong>próximos uns dos outros</strong>. Isso indica um <strong>alto viés</strong>, pois você está fazendo arremessos incorretos, mas de forma <strong>consistente</strong>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Grupo de alta variância:</strong> Seus arremessos estão <strong>espalhados por toda a área</strong>, <strong>longe do alvo e uns dos outros</strong>. Isso indica <strong>alta variância</strong>, pois seus arremessos são <strong>inconsistentes e imprevisíveis</strong>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Grupo equilibrado:</strong> Seus arremessos estão <strong>agrupados próximo ao alvo</strong> e também estão <strong>próximos uns dos outros</strong>. Isso é o <strong>equilíbrio</strong> entre <strong>viés</strong> e <strong>variância</strong>, onde você está acertando o alvo de forma <strong>consistente</strong> e <strong>precisa</strong>.</li>
+</ul>
+</div>
+</section>
+<section id="trade-off-bias-variância-1" class="slide level2">
+<h2>Trade-off bias-variância</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/bias_variance.png" class="quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</section>
+<section id="trade-off-bias-variância-2" class="slide level2">
+<h2>Trade-off bias-variância</h2>
+<p><br></p>
+<p>Queremos construir modelos que não apenas performem bem nos dados de treinamento, mas que também façam previsões precisas em dados novos e não vistos.</p>
+<div class="fragment">
+<p>O <strong>erro total</strong> de um <strong>modelo preditivo</strong> em dados não vistos pode ser <strong>decomposto em três componentes principais</strong>, ou seja,</p>
+<p><span class="math display">\[\text{Erro Total} = \text{Bias}^2 + \text{Variância} + \text{Erro Irredutível}\]</span></p>
+</div>
+</section>
+<section id="trade-off-bias-variância-3" class="slide level2">
+<h2>Trade-off bias-variância</h2>
+<p><br></p>
+<ul>
+<li><strong>Bias (Viés):</strong> Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Variância:</strong> Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Erro Irredutível:</strong> Ruído inerente aos dados que não pode ser reduzido por nenhum modelo.</li>
+</ul>
+</div>
+</section>
+<section id="o-problema-do-subajuste-underfitting" class="slide level2">
+<h2>O Problema do Subajuste (Underfitting)</h2>
+<p><br></p>
+<p>Modelos com <strong>alto bias</strong> fazem suposições fortes sobre a forma da função que mapeia as entradas para as saídas. São tipicamente modelos mais simples, com poucos parâmetros.</p>
+<div class="fragment">
+<ul>
+<li><p>Consequências:</p>
+<ul>
+<li>Desempenho ruim tanto nos dados de treinamento quanto nos dados de teste.</li>
+<li>Incapacidade de capturar a complexidade real dos dados.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="o-problema-do-sobreajuste-overfitting" class="slide level2">
+<h2>O Problema do Sobreajuste (Overfitting)</h2>
+<p><br></p>
+<p>Modelos com <strong>alta variância</strong> aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.</p>
+<ul>
+<li><p>Consequências:</p>
+<ul>
+<li>Excelente desempenho nos dados de treinamento.</li>
+<li>Desempenho significativamente pior em dados de teste não vistos. O modelo “decorou” os dados de treinamento em vez de aprender padrões gerais.</li>
+</ul></li>
+</ul>
+</section>
+<section id="underfitting-e-overfitting" class="slide level2">
+<h2>Underfitting e Overfitting</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/over_under_good.png" class="quarto-figure quarto-figure-center" width="1800"></p>
+</figure>
+</div>
+</section>
+<section id="bias-vs.-variância" class="slide level2">
+<h2>Bias vs.&nbsp;Variância</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><br></p>
+<p>Voltemos ao nosso modelo simulado:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig01.png" class="nostretch quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig02.png" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="bias-vs.-variância-1" class="slide level2">
+<h2>Bias vs.&nbsp;Variância</h2>
+<p align="center">
+<span style="font-size:60px;">👉</span> Vamos ajustar um modelo polinomial de <strong>grau 2</strong>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig12.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</section>
+<section id="bias-vs.-variância-2" class="slide level2">
+<h2>Bias vs.&nbsp;Variância</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig13.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig14.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="bias-vs.-variância-3" class="slide level2">
+<h2>Bias vs.&nbsp;Variância</h2>
+<p align="center">
+<span style="font-size:60px;">👉</span> Vamos ajustar um modelo polinomial de <strong>grau 10</strong>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig15.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</section>
+<section id="bias-vs.-variância-4" class="slide level2">
+<h2>Bias vs.&nbsp;Variância</h2>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig16.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/fig17.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="o-tradeoff---a-balança-delicada" class="slide level2">
+<h2>O Tradeoff - A Balança Delicada</h2>
+<p><span style="font-size:80px;">👉</span> <strong>Bias</strong> e <strong>variância</strong> estão <strong>inversamente relacionados</strong>. Tentar reduzir um geralmente aumenta o outro.</p>
+<div class="fragment">
+<ul>
+<li><p><strong>Modelos simples</strong> tendem a ter <strong>alto bias e baixa variância</strong>.</p></li>
+<li><p><strong>Modelos complexos</strong> tendem a ter <strong>baixo bias e alta variância</strong>.</p></li>
+</ul>
+</div>
+<div class="fragment">
+<p><span style="font-size:80px;">💡</span> O objetivo é encontrar um modelo com um <strong>bom equilíbrio</strong> entre <strong>bias</strong> e <strong>variância</strong>, que <strong>minimize o erro de generalização</strong>.</p>
+</div>
+</section>
+<section id="o-tradeoff---a-balança-delicada-1" class="slide level2">
+<h2>O Tradeoff - A Balança Delicada</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/predicao/bias-variance_tradeOff.png" class="quarto-figure quarto-figure-center" width="1800"></p>
+</figure>
+</div>
+</section>
+<section id="como-lidar-com-o-tradeoff" class="slide level2">
+<h2>Como Lidar com o Tradeoff?</h2>
+<p><br></p>
+<ul>
+<li><strong>Seleção de Modelos:</strong> Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Ajuste de Hiperparâmetros:</strong> Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Validação Cruzada:</strong> Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Engenharia de Features:</strong> Criar features mais informativas pode reduzir o bias.</li>
+</ul>
+</div>
+</section>
+<section id="como-lidar-com-o-tradeoff-1" class="slide level2">
+<h2>Como Lidar com o Tradeoff?</h2>
+<p><br></p>
+<ul>
+<li><strong>Regularização:</strong> Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Mais Dados:</strong> Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><strong>Ensemble Methods:</strong> Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância.</li>
+</ul>
 
 
+</div>
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
