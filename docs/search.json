@@ -133,14 +133,14 @@
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-semma-e-kdd",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM, SEMMA e KDD",
-    "text": "CRISP-DM, SEMMA e KDD\n\nGerenciamento de projetos é um campo estabelecido focado no planejamento, entrega, controle e monitoramento de um projeto.\n\n\n\nExistem várias metodologias para gerenciar projetos de mineração de dados.\n\n\n\n\nTrês das metodologias mais comuns são CRISP-DM, SEMMA e KDD."
+    "text": "CRISP-DM, SEMMA e KDD\n\n\nGerenciamento de projetos é um campo estabelecido focado no planejamento, entrega, controle e monitoramento de um projeto.\n\n\n\nExistem várias metodologias para gerenciar projetos de mineração de dados.\n\n\n\n\nTrês das metodologias mais comuns são CRISP-DM, SEMMA e KDD."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM",
-    "text": "CRISP-DM\n\nCRISP-DM (CRoss Industry Standard Process for Data Mining) é uma metodologia de mineração de dados amplamente utilizada.\n\n\n\nEnvolve seis etapas: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.\n\n\n\n\nÉ uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto."
+    "text": "CRISP-DM\n\n\nCRISP-DM (CRoss Industry Standard Process for Data Mining) é uma metodologia de mineração de dados amplamente utilizada.\n\n\n\nEnvolve seis etapas: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.\n\n\n\n\nÉ uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
@@ -154,49 +154,49 @@
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM: Compreensão do negócio",
-    "text": "CRISP-DM: Compreensão do negócio\n\nNesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.\n\n\n\nÉ importante definir claramente o escopo do projeto e entender os recursos disponíveis."
+    "text": "CRISP-DM: Compreensão do negócio\n\n\nNesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.\n\n\n\nÉ importante definir claramente o escopo do projeto e entender os recursos disponíveis."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM: Compreensão dos Dados",
-    "text": "CRISP-DM: Compreensão dos Dados\n\nNesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.\n\n\n\nÉ importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados."
+    "text": "CRISP-DM: Compreensão dos Dados\n\n\nNesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.\n\n\n\nÉ importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM: Preparação dos Dados",
-    "text": "CRISP-DM: Preparação dos Dados\n\nNesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.\n\n\n\nÉ importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem."
+    "text": "CRISP-DM: Preparação dos Dados\n\n\nNesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.\n\n\n\nÉ importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM: Modelagem",
-    "text": "CRISP-DM: Modelagem\n\nNesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
+    "text": "CRISP-DM: Modelagem\n\n\nNesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM: Avaliação",
-    "text": "CRISP-DM: Avaliação\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
+    "text": "CRISP-DM: Avaliação\n\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
     "title": "Conceitos Iniciais",
     "section": "CRISP-DM: Implantação",
-    "text": "CRISP-DM: Implantação\n\nNesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.\n\n\n\nÉ importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários."
+    "text": "CRISP-DM: Implantação\n\n\nNesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.\n\n\n\nÉ importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
     "title": "Conceitos Iniciais",
     "section": "SEMMA",
-    "text": "SEMMA\n\nSEMMA (Sample, Explore, Modify, Model, Assess) é uma metodologia de mineração de dados desenvolvida pela SAS.\n\n\n\nEnvolve cinco etapas: amostragem, exploração, modificação, modelagem e avaliação.\n\n\n\n\nSEMMA é uma abordagem focada no modelo e pode ser usada em conjunção com outras metodologias de gerenciamento de projetos."
+    "text": "SEMMA\n\n\nSEMMA (Sample, Explore, Modify, Model, Assess) é uma metodologia de mineração de dados desenvolvida pela SAS.\n\n\n\nEnvolve cinco etapas: amostragem, exploração, modificação, modelagem e avaliação.\n\n\n\n\nSEMMA é uma abordagem focada no modelo e pode ser usada em conjunção com outras metodologias de gerenciamento de projetos."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
@@ -210,42 +210,42 @@
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
     "title": "Conceitos Iniciais",
     "section": "SEMMA: Amostragem",
-    "text": "SEMMA: Amostragem\n\nNesta fase, o objetivo é selecionar um subconjunto representativo dos dados originais.\n\n\n\nÉ importante garantir que a amostra seja grande o suficiente para fornecer resultados precisos e confiáveis."
+    "text": "SEMMA: Amostragem\n\n\nNesta fase, o objetivo é selecionar um subconjunto representativo dos dados originais.\n\n\n\nÉ importante garantir que a amostra seja grande o suficiente para fornecer resultados precisos e confiáveis."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
     "title": "Conceitos Iniciais",
     "section": "SEMMA: Exploração",
-    "text": "SEMMA: Exploração\n\nNesta fase, o objetivo é explorar os dados selecionados na etapa anterior e identificar padrões ou tendências.\n\n\n\nÉ importante visualizar os dados para identificar padrões facilmente e identificar outliers."
+    "text": "SEMMA: Exploração\n\n\nNesta fase, o objetivo é explorar os dados selecionados na etapa anterior e identificar padrões ou tendências.\n\n\n\nÉ importante visualizar os dados para identificar padrões facilmente e identificar outliers."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
     "title": "Conceitos Iniciais",
     "section": "SEMMA: Modificação",
-    "text": "SEMMA: Modificação\n\nNesta fase, o objetivo é transformar os dados de forma apropriada para que possam ser usados na modelagem.\n\n\n\nÉ importante realizar a limpeza dos dados, selecionar as variáveis relevantes e transformar os dados para que possam ser usados na modelagem."
+    "text": "SEMMA: Modificação\n\n\nNesta fase, o objetivo é transformar os dados de forma apropriada para que possam ser usados na modelagem.\n\n\n\nÉ importante realizar a limpeza dos dados, selecionar as variáveis relevantes e transformar os dados para que possam ser usados na modelagem."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
     "title": "Conceitos Iniciais",
     "section": "SEMMA: Modelagem",
-    "text": "SEMMA: Modelagem\n\nNesta fase, o objetivo é criar e testar modelos usando os dados preparados na etapa anterior.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
+    "text": "SEMMA: Modelagem\n\n\nNesta fase, o objetivo é criar e testar modelos usando os dados preparados na etapa anterior.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
     "title": "Conceitos Iniciais",
     "section": "SEMMA: Avaliação",
-    "text": "SEMMA: Avaliação\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de amostragem.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
+    "text": "SEMMA: Avaliação\n\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de amostragem.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
     "title": "Conceitos Iniciais",
     "section": "KDD",
-    "text": "KDD\n\nKDD (Knowledge Discovery in Databases) é uma metodologia mais ampla que CRISP-DM e SEMMA.\n\n\n\nEnvolve basicamente três etapas: pré-processamento, mineração de dados e pós-processamento.\n\nPré-processamento inclui limpeza, integração e transformação de dados.\nA mineração de dados inclui seleção, pré-processamento e modelagem de dados.\nO pós-processamento inclui interpretação e avaliação dos resultados."
+    "text": "KDD\n\n\nKDD (Knowledge Discovery in Databases) é uma metodologia mais ampla que CRISP-DM e SEMMA.\n\n\n\nEnvolve basicamente três etapas: pré-processamento, mineração de dados e pós-processamento.\n\nPré-processamento inclui limpeza, integração e transformação de dados.\nA mineração de dados inclui seleção, pré-processamento e modelagem de dados.\nO pós-processamento inclui interpretação e avaliação dos resultados."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-1",
@@ -259,42 +259,42 @@
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-seleção",
     "title": "Conceitos Iniciais",
     "section": "KDD: Seleção",
-    "text": "KDD: Seleção\n\nNesta fase, o objetivo é selecionar os dados relevantes para o problema de mineração.\n\n\n\nÉ importante identificar as fontes de dados relevantes e escolher as variáveis de interesse."
+    "text": "KDD: Seleção\n\n\nNesta fase, o objetivo é selecionar os dados relevantes para o problema de mineração.\n\n\n\nÉ importante identificar as fontes de dados relevantes e escolher as variáveis de interesse."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-pré-processamento",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-pré-processamento",
     "title": "Conceitos Iniciais",
     "section": "KDD: Pré-processamento",
-    "text": "KDD: Pré-processamento\n\nNesta fase, o objetivo é preparar os dados para análise.\n\n\n\nÉ importante lidar com valores ausentes, tratar outliers e realizar normalização ou padronização de variáveis."
+    "text": "KDD: Pré-processamento\n\n\nNesta fase, o objetivo é preparar os dados para análise.\n\n\n\nÉ importante lidar com valores ausentes, tratar outliers e realizar normalização ou padronização de variáveis."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-limpeza",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-limpeza",
     "title": "Conceitos Iniciais",
     "section": "KDD: Limpeza",
-    "text": "KDD: Limpeza\n\nNesta fase, o objetivo é identificar e corrigir erros nos dados.\n\n\n\nÉ importante lidar com dados duplicados, corrigir erros de digitação e identificar e tratar valores discrepantes."
+    "text": "KDD: Limpeza\n\n\nNesta fase, o objetivo é identificar e corrigir erros nos dados.\n\n\n\nÉ importante lidar com dados duplicados, corrigir erros de digitação e identificar e tratar valores discrepantes."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-transformação",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-transformação",
     "title": "Conceitos Iniciais",
     "section": "KDD: Transformação",
-    "text": "KDD: Transformação\n\nNesta fase, o objetivo é transformar os dados em uma forma que seja adequada para a análise.\n\n\n\nÉ importante realizar transformações como discretização, agregação, e normalização para que os dados possam ser usados com sucesso na modelagem."
+    "text": "KDD: Transformação\n\n\nNesta fase, o objetivo é transformar os dados em uma forma que seja adequada para a análise.\n\n\n\nÉ importante realizar transformações como discretização, agregação, e normalização para que os dados possam ser usados com sucesso na modelagem."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-mineração-de-dados",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-mineração-de-dados",
     "title": "Conceitos Iniciais",
     "section": "KDD: Mineração de dados",
-    "text": "KDD: Mineração de dados\n\nNesta fase, o objetivo é aplicar técnicas de mineração de dados para identificar padrões e relacionamentos nos dados.\n\n\n\nÉ importante escolher as técnicas de mineração de dados apropriadas e avaliar a eficácia dos modelos gerados."
+    "text": "KDD: Mineração de dados\n\n\nNesta fase, o objetivo é aplicar técnicas de mineração de dados para identificar padrões e relacionamentos nos dados.\n\n\n\nÉ importante escolher as técnicas de mineração de dados apropriadas e avaliar a eficácia dos modelos gerados."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-interpretação-e-avaliação",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd-interpretação-e-avaliação",
     "title": "Conceitos Iniciais",
     "section": "KDD: Interpretação e avaliação",
-    "text": "KDD: Interpretação e avaliação\n\nNesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.\n\n\n\nÉ importante avaliar a eficácia dos modelos gerados e determinar se as descobertas são significativas e úteis."
+    "text": "KDD: Interpretação e avaliação\n\n\nNesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.\n\n\n\nÉ importante avaliar a eficácia dos modelos gerados e determinar se as descobertas são significativas e úteis."
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
@@ -1070,7 +1070,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#as-duas-culturas",
     "title": "Análise Preditiva",
     "section": "As duas culturas…",
-    "text": "As duas culturas…\n\n\nData Modeling Culture: Domina a comunidade estatística. Nela se assume que o modelo utilizado é correto. Testar suposições é fundamental. Foco em inferência e na interpretação dos parâmetros.\n\n\n\nAlgorithmic Modeling Culture: Domina a comunidade de machine learning. Nela não se assume que o modelo utilizado é correto; o modelo é utilizado apenas para criar bons algoritmos preditivos. Podemos interpretar os resultados, mas esse, em geral, não é o foco."
+    "text": "As duas culturas…\n\n\n\nData Modeling Culture: Domina a comunidade estatística. Nela se assume que o modelo utilizado é correto. Testar suposições é fundamental. Foco em inferência e na interpretação dos parâmetros.\n\n\n\n\nAlgorithmic Modeling Culture: Domina a comunidade de machine learning. Nela não se assume que o modelo utilizado é correto; o modelo é utilizado apenas para criar bons algoritmos preditivos. Podemos interpretar os resultados, mas esse, em geral, não é o foco."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplos-práticos-de-aplicações-de-ml-no-dia-a-dia.",
@@ -1091,14 +1091,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#componentes-do-aprendizado-de-máquina",
     "title": "Análise Preditiva",
     "section": "Componentes do aprendizado de máquina",
-    "text": "Componentes do aprendizado de máquina\n\n\n\n\n\n\nhttps://vas3k.com/blog/machine_learning/\n\n\n\n\n\n\n\nDados\nCaracterísticas/Features\nAlgoritmos"
+    "text": "Componentes do aprendizado de máquina\n\n\n\n\n\nhttps://vas3k.com/blog/machine_learning/\n\n\n\n\n\n\nDados\nCaracterísticas/Features\nAlgoritmos"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina",
     "href": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina",
     "title": "Análise Preditiva",
     "section": "O mapa da aprendizagem de máquina",
-    "text": "O mapa da aprendizagem de máquina\n\n\n\n\n\n\n👉 Nunca há uma única maneira de resolver um problema no mundo do aprendizado de máquina.\n👉 Sempre existem vários algoritmos que se encaixam, e você deve escolher qual deles se encaixa melhor.\n👉 Tudo pode ser resolvido com uma rede neural? Sim, mas quem pagará por todo esse custo?"
+    "text": "O mapa da aprendizagem de máquina\n\n\n\n\n\n\n\n👉 Nunca há uma única maneira de resolver um problema no mundo do aprendizado de máquina.\n👉 Sempre existem vários algoritmos que se encaixam, e você deve escolher qual deles se encaixa melhor.\n👉 Tudo pode ser resolvido com uma rede neural? Sim, mas quem pagará por todo esse custo?"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina-1",
@@ -1119,35 +1119,35 @@
     "href": "aulas/Analise_preditiva/preditiva.html#aprendizado-de-máquina-clássico-1",
     "title": "Análise Preditiva",
     "section": "Aprendizado de Máquina Clássico",
-    "text": "Aprendizado de Máquina Clássico\n👉 O aprendizado de máquina clássico é frequentemente dividido em duas categorias – Aprendizado Supervisionado e Não Supervisionado.\n\n\nAprendizado Supervisionado: usa um algoritmo que precisa de exemplos rotulados para desempenhar suas tarefas.\n\n\n\n\nAprendizado Não-supervisionado: os dados não são rotulados, não há professor e a máquina está tentando encontrar padrões por conta própria."
+    "text": "Aprendizado de Máquina Clássico\n👉 O aprendizado de máquina clássico é frequentemente dividido em duas categorias – Aprendizado Supervisionado e Não Supervisionado.\n\n\n\nAprendizado Supervisionado: usa um algoritmo que precisa de exemplos rotulados para desempenhar suas tarefas.\n\n\n\n\n\nAprendizado Não-supervisionado: os dados não são rotulados, não há professor e a máquina está tentando encontrar padrões por conta própria."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#section",
     "href": "aulas/Analise_preditiva/preditiva.html#section",
     "title": "Análise Preditiva",
     "section": "",
-    "text": "Exemplos"
+    "text": "R\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;% \n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"classification\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.974359\n\n\n\n\n\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX_train, X_test, y_train, y_test = train_test_split(\n    iris.data, iris.target, stratify=iris.target, random_state=12345\n)\n\nknn = KNeighborsClassifier(n_neighbors=5)\nknn.fit(X_train, y_train)\n\n\n\n\nKNeighborsClassifier()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nKNeighborsClassifierKNeighborsClassifier()\n\n\n\ny_pred = knn.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9473684210526315"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#aprendizado-supervisionado",
     "href": "aulas/Analise_preditiva/preditiva.html#aprendizado-supervisionado",
     "title": "Análise Preditiva",
     "section": "Aprendizado Supervisionado",
-    "text": "Aprendizado Supervisionado\n\n💡 Claramente, a máquina aprenderá mais rápido com um professor. Por isso, é mais comum encontrarmos esse caso nas tarefas da vida real.\n\n\nExistem dois tipos de tarefas:\n\nclassificação: predição de categoria de um objeto e\nregressão: predição de um ponto específico em um eixo numérico."
+    "text": "Aprendizado Supervisionado\n\n💡 Claramente, a máquina aprenderá mais rápido com um professor. Por isso, é mais comum encontrarmos esse caso nas tarefas da vida real.\n\n\n\nExistem dois tipos de tarefas:\n\n\nclassificação: predição de categoria de um objeto e\n\nregressão: predição de um ponto específico em um eixo numérico."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação",
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação",
     "title": "Análise Preditiva",
     "section": "Tarefa de classificação",
-    "text": "Tarefa de classificação\n\nOs algoritmos de classificação dividem os objetos com base em um dos atributos conhecidos de antemão.\n\n\n\n\n\nUsados nos dias de hoje para:\n\nFiltragem de spam;\nDetecção de idioma;\nPesquisa por documentos semelhantes;\nAnálise de sentimentos;\nReconhecimento de caracteres;\nDetecção de fraude."
+    "text": "Tarefa de classificação\n\nOs algoritmos de classificação dividem os objetos com base em um dos atributos conhecidos de antemão.\n\n\n\n\n\n\nUsados nos dias de hoje para:\n\nFiltragem de spam;\nDetecção de idioma;\nPesquisa por documentos semelhantes;\nAnálise de sentimentos;\nReconhecimento de caracteres;\nDetecção de fraude."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-1",
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-1",
     "title": "Análise Preditiva",
     "section": "Tarefa de classificação",
-    "text": "Tarefa de classificação\n \n\nAlgoritmos populares: Naive Bayes, Decision Tree, Logistic Regression, K-Nearest Neighbours, Support Vector Machine."
+    "text": "Tarefa de classificação\n\n\nAlgoritmos populares: Naive Bayes, Decision Tree, Logistic Regression, K-Nearest Neighbours, Support Vector Machine."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-2",
@@ -1161,21 +1161,21 @@
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão",
     "title": "Análise Preditiva",
     "section": "Tarefa de regressão",
-    "text": "Tarefa de regressão\n\nSe a variável resposta é quantitativa, temos um problema de análise de regressão\n\n\n\n\n\nUsados nos dias de hoje para:\n\nPrevisões do preço das ações;\nAnálise de demanda e volume de vendas;\nDiagnóstico médico."
+    "text": "Tarefa de regressão\n\nSe a variável resposta é quantitativa, temos um problema de análise de regressão\n\n\n\n\n\n\nUsados nos dias de hoje para:\n\nPrevisões do preço das ações;\nAnálise de demanda e volume de vendas;\nDiagnóstico médico."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão-1",
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão-1",
     "title": "Análise Preditiva",
     "section": "Tarefa de regressão",
-    "text": "Tarefa de regressão\n \n\nAlgoritmos populares: Decision Tree, Regressão Linear e Regressão Polinomial, K-Nearest Neighbours, Support Vector Machine."
+    "text": "Tarefa de regressão\n\n\nAlgoritmos populares: Decision Tree, Regressão Linear e Regressão Polinomial, K-Nearest Neighbours, Support Vector Machine."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos",
     "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos",
     "title": "Análise Preditiva",
     "section": "Avaliação de modelos",
-    "text": "Avaliação de modelos\n💡 Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!\n\n\n\n\n\n\n\n\n\n\nA avaliação de modelos de machine learning é como um detetive investigando um caso."
+    "text": "Avaliação de modelos\n💡 Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!\n\n\n\n\n\n\n\n\n\nA avaliação de modelos de machine learning é como um detetive investigando um caso."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-1",
@@ -1203,7 +1203,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão-1",
     "title": "Análise Preditiva",
     "section": "Matriz de confusão",
-    "text": "Matriz de confusão\n\n\nVP (Verdadeiro Positivo): objeto da classe positiva classificado como positivo\n\n\n\nVN (Verdadeiro Negativo): objeto da classe negativa classificado como negativo\n\n\n\n\nFP (Falso Positivo): objeto da classe negativa classificado como positivo. Também conhecido como alarme falso ou Erro tipo 1\n\n\n\n\nFN (Falso Negativo): objeto da classe positiva classificado como negativo. É também conhecido como Erro Tipo 2"
+    "text": "Matriz de confusão\n\n\n\nVP (Verdadeiro Positivo): objeto da classe positiva classificado como positivo\n\n\n\n\nVN (Verdadeiro Negativo): objeto da classe negativa classificado como negativo\n\n\n\n\n\nFP (Falso Positivo): objeto da classe negativa classificado como positivo. Também conhecido como alarme falso ou Erro tipo 1\n\n\n\n\n\n\nFN (Falso Negativo): objeto da classe positiva classificado como negativo. É também conhecido como Erro Tipo 2"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão-2",
@@ -1224,14 +1224,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#acurácia",
     "title": "Análise Preditiva",
     "section": "Acurácia",
-    "text": "Acurácia\n\n\n\n\n\n\n\n\n\n\nMede a proporção de previsões corretas do modelo em relação ao total de previsões feitas.\n\n\n\nÉ como sua nota em uma prova!"
+    "text": "Acurácia\n\n\n\n\n\n\n\n\n\nMede a proporção de previsões corretas do modelo em relação ao total de previsões feitas.\n\n\n\nÉ como sua nota em uma prova!"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#acurácia-1",
     "href": "aulas/Analise_preditiva/preditiva.html#acurácia-1",
     "title": "Análise Preditiva",
     "section": "Acurácia",
-    "text": "Acurácia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA Taxa de Erro Aparente do classificador é dada por\n\\[TEA = 1 - ACC\\]"
+    "text": "Acurácia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA Taxa de Erro Aparente do classificador é dada por\n\\[TEA = 1 - ACC\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#acurácia-2",
@@ -1252,14 +1252,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#precisão",
     "title": "Análise Preditiva",
     "section": "Precisão",
-    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\n\nEla nos diz quantas das previsões positivas foram realmente corretas."
+    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\nEla nos diz quantas das previsões positivas foram realmente corretas."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#precisão-1",
     "href": "aulas/Analise_preditiva/preditiva.html#precisão-1",
     "title": "Análise Preditiva",
     "section": "Precisão",
-    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPorcentagem de verdadeiros positivos dentre todos os objetos classificados como positivos"
+    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPorcentagem de verdadeiros positivos dentre todos os objetos classificados como positivos"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#precisão-2",
@@ -1273,14 +1273,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#sensibilidade",
     "title": "Análise Preditiva",
     "section": "Sensibilidade",
-    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\n\nMede a proporção de casos positivos reais que foram encontrados pelo modelo"
+    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\nMede a proporção de casos positivos reais que foram encontrados pelo modelo"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#sensibilidade-1",
     "href": "aulas/Analise_preditiva/preditiva.html#sensibilidade-1",
     "title": "Análise Preditiva",
     "section": "Sensibilidade",
-    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Recall ou Taxa de Verdadeiros Positivos (TVP)"
+    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Recall ou Taxa de Verdadeiros Positivos (TVP)"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#sensibilidade-2",
@@ -1294,14 +1294,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#especificidade",
     "title": "Análise Preditiva",
     "section": "Especificidade",
-    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\n\nAjuda a identificar a capacidade do modelo em reconhecer corretamente as amostras negativas"
+    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\nAjuda a identificar a capacidade do modelo em reconhecer corretamente as amostras negativas"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#especificidade-1",
     "href": "aulas/Analise_preditiva/preditiva.html#especificidade-1",
     "title": "Análise Preditiva",
     "section": "Especificidade",
-    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Taxa de Verdadeiros Negativos (TVN)"
+    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Taxa de Verdadeiros Negativos (TVN)"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#especificidade-2",
@@ -1315,7 +1315,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo",
     "title": "Análise Preditiva",
     "section": "Taxa de Falso Positivo",
-    "text": "Taxa de Falso Positivo\n\n\n\n\n\n\n\n\n\n\n\n\nEla mede a proporção de amostras negativas classificadas como positivas pelo modelo"
+    "text": "Taxa de Falso Positivo\n\n\n\n\n\n\n\n\n\n\n\nEla mede a proporção de amostras negativas classificadas como positivas pelo modelo"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo-1",
@@ -1342,14 +1342,14 @@
     "objectID": "aulas/Analise_preditiva/preditiva.html#f_1-score",
     "href": "aulas/Analise_preditiva/preditiva.html#f_1-score",
     "title": "Análise Preditiva",
-    "section": "\\(F_1\\)-Score",
-    "text": "\\(F_1\\)-Score\n\n\n\n\n\n\n\n\n\n\n\n\n\nEle leva em consideração tanto precisão quanto a sensibilidade, dando uma medida balanceada do desempenho do modelo."
+    "section": "\n\\(F_1\\)-Score",
+    "text": "\\(F_1\\)-Score\n\n\n\n\n\n\n\n\n\n\n\n\nEle leva em consideração tanto precisão quanto a sensibilidade, dando uma medida balanceada do desempenho do modelo."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#f_1-score-1",
     "href": "aulas/Analise_preditiva/preditiva.html#f_1-score-1",
     "title": "Análise Preditiva",
-    "section": "\\(F_1\\)-Score",
+    "section": "\n\\(F_1\\)-Score",
     "text": "\\(F_1\\)-Score\n\n\n\\[F_1 \\text{-score} = 2 \\times \\dfrac{\\text{Precisão} \\times \\text{Sensibilidade}}{\\text{Precisão} + \\text{Sensibilidade}}\\]\n\n\nO \\(F_1\\)-Score é como um equilibrista em uma corda bamba."
   },
   {
@@ -1364,7 +1364,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#curva-roc-1",
     "title": "Análise Preditiva",
     "section": "Curva ROC",
-    "text": "Curva ROC\n\nRepresenta o número de vezes que o classificador acertou a predição contra o número de vezes que o classificador errou a predição\n\n\n\nA área sob a curva ROC, conhecida como AUC-ROC, é uma métrica comumente utilizada para avaliar o desempenho global do modelo.\n\n\n\n\nQuanto maior a AUC-ROC, melhor é o desempenho do modelo em discriminar corretamente as classes."
+    "text": "Curva ROC\n\nRepresenta o número de vezes que o classificador acertou a predição contra o número de vezes que o classificador errou a predição\n\n\n\n\nA área sob a curva ROC, conhecida como AUC-ROC, é uma métrica comumente utilizada para avaliar o desempenho global do modelo.\n\n\n\n\nQuanto maior a AUC-ROC, melhor é o desempenho do modelo em discriminar corretamente as classes."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição",
@@ -1483,7 +1483,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância",
     "title": "Análise Preditiva",
     "section": "Trade-off bias-variância",
-    "text": "Trade-off bias-variância\nImagine que você está tentando acertar um alvo com dardos. Seus arremessos podem ser agrupados de três maneiras diferentes:\n\nGrupo de alto viés (bias): Seus arremessos são consistentemente agrupados longe do alvo, mas próximos uns dos outros. Isso indica um alto viés, pois você está fazendo arremessos incorretos, mas de forma consistente.\n\n\n\nGrupo de alta variância: Seus arremessos estão espalhados por toda a área, longe do alvo e uns dos outros. Isso indica alta variância, pois seus arremessos são inconsistentes e imprevisíveis.\n\n\n\n\nGrupo equilibrado: Seus arremessos estão agrupados próximo ao alvo e também estão próximos uns dos outros. Isso é o equilíbrio entre viés e variância, onde você está acertando o alvo de forma consistente e precisa."
+    "text": "Trade-off bias-variância\nImagine que você está tentando acertar um alvo com dardos. Seus arremessos podem ser agrupados de três maneiras diferentes:\n\n\nGrupo de alto viés (bias): Seus arremessos são consistentemente agrupados longe do alvo, mas próximos uns dos outros. Isso indica um alto viés, pois você está fazendo arremessos incorretos, mas de forma consistente.\n\n\n\n\nGrupo de alta variância: Seus arremessos estão espalhados por toda a área, longe do alvo e uns dos outros. Isso indica alta variância, pois seus arremessos são inconsistentes e imprevisíveis.\n\n\n\n\n\nGrupo equilibrado: Seus arremessos estão agrupados próximo ao alvo e também estão próximos uns dos outros. Isso é o equilíbrio entre viés e variância, onde você está acertando o alvo de forma consistente e precisa."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-1",
@@ -1504,14 +1504,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#o-problema-do-subajuste-underfitting",
     "title": "Análise Preditiva",
     "section": "O Problema do Subajuste (Underfitting)",
-    "text": "O Problema do Subajuste (Underfitting)\n\nModelos com alto bias fazem suposições fortes sobre a forma da função que mapeia as entradas para as saídas. São tipicamente modelos mais simples, com poucos parâmetros.\n\n\nConsequências:\n\nDesempenho ruim tanto nos dados de treinamento quanto nos dados de teste.\nIncapacidade de capturar a complexidade real dos dados."
+    "text": "O Problema do Subajuste (Underfitting)\n\nModelos com alto bias fazem suposições fortes sobre a forma da função que mapeia as entradas para as saídas. São tipicamente modelos mais simples, com poucos parâmetros.\n\n\n\nConsequências:\n\nDesempenho ruim tanto nos dados de treinamento quanto nos dados de teste.\nIncapacidade de capturar a complexidade real dos dados."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-3",
     "href": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-3",
     "title": "Análise Preditiva",
     "section": "Trade-off bias-variância",
-    "text": "Trade-off bias-variância\n\n\nBias (Viés): Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.\n\n\n\nVariância: Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.\n\n\n\n\nErro Irredutível: Ruído inerente aos dados que não pode ser reduzido por nenhum modelo."
+    "text": "Trade-off bias-variância\n\n\n\nBias (Viés): Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.\n\n\n\n\nVariância: Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.\n\n\n\n\n\nErro Irredutível: Ruído inerente aos dados que não pode ser reduzido por nenhum modelo."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#variância---o-problema-do-sobreajuste-overfitting",
@@ -1525,7 +1525,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#o-problema-do-sobreajuste-overfitting",
     "title": "Análise Preditiva",
     "section": "O Problema do Sobreajuste (Overfitting)",
-    "text": "O Problema do Sobreajuste (Overfitting)\n\nModelos com alta variância aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.\n\nConsequências:\n\nExcelente desempenho nos dados de treinamento.\nDesempenho significativamente pior em dados de teste não vistos. O modelo “decorou” os dados de treinamento em vez de aprender padrões gerais."
+    "text": "O Problema do Sobreajuste (Overfitting)\n\nModelos com alta variância aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.\n\n\nConsequências:\n\nExcelente desempenho nos dados de treinamento.\nDesempenho significativamente pior em dados de teste não vistos. O modelo “decorou” os dados de treinamento em vez de aprender padrões gerais."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#underfitting-e-overfitting",
@@ -1588,14 +1588,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff",
     "title": "Análise Preditiva",
     "section": "Como Lidar com o Tradeoff?",
-    "text": "Como Lidar com o Tradeoff?\n\n\nSeleção de Modelos: Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).\n\n\n\nAjuste de Hiperparâmetros: Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).\n\n\n\n\nValidação Cruzada: Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.\n\n\n\n\nEngenharia de Features: Criar features mais informativas pode reduzir o bias."
+    "text": "Como Lidar com o Tradeoff?\n\n\n\nSeleção de Modelos: Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).\n\n\n\n\nAjuste de Hiperparâmetros: Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).\n\n\n\n\n\nValidação Cruzada: Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.\n\n\n\n\n\nEngenharia de Features: Criar features mais informativas pode reduzir o bias."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff-1",
     "href": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff-1",
     "title": "Análise Preditiva",
     "section": "Como Lidar com o Tradeoff?",
-    "text": "Como Lidar com o Tradeoff?\n\n\nRegularização: Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).\n\n\n\nMais Dados: Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.\n\n\n\n\nEnsemble Methods: Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância."
+    "text": "Como Lidar com o Tradeoff?\n\n\n\nRegularização: Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).\n\n\n\n\nMais Dados: Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.\n\n\n\n\n\nEnsemble Methods: Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmos-de-classificação-1",
@@ -1609,7 +1609,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#k-nearest-neighbors-knn",
     "title": "Análise Preditiva",
     "section": "K-Nearest Neighbors (KNN)",
-    "text": "K-Nearest Neighbors (KNN)"
+    "text": "K-Nearest Neighbors (KNN)\n\nO KNN é um algoritmo de aprendizado supervisionado de classificação e regressão, que usa a proximidade dos objetos para classificar novas instâncias.\n\nÉ um dos algoritmos mais simples e intuitivos de aprendizado de máquina. Utiliza a ideia do vizinho mais próximo, o que significa que ele determina a classe de uma instância com base nas classes de seus vizinhos mais próximos.\n\n\nEm outras palavras, se a maioria dos vizinhos mais próximos de uma instância pertence a uma classe específica, então a instância também é classificada como pertencente a essa classe."
   },
   {
     "objectID": "programacao/semana-2.html",
@@ -1624,5 +1624,152 @@
     "title": "Semana 02",
     "section": "",
     "text": "Conceitos iniciais"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmo-knn",
+    "href": "aulas/Analise_preditiva/preditiva.html#algoritmo-knn",
+    "title": "Análise Preditiva",
+    "section": "Algoritmo KNN",
+    "text": "Algoritmo KNN"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmos-de-predição-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#algoritmos-de-predição-1",
+    "title": "Análise Preditiva",
+    "section": "Algoritmos de predição",
+    "text": "Algoritmos de predição\n\n\n\nAlgoritmos mais comuns usados para problemas de predição:\n\nK-Nearest Neighbors (KNN)\nNaive Bayes\nÁrvores de decisão\nRandom Forests\nMáquinas de Vetores de Suporte (SVM)\nRedes Neurais Artificiais (ANN)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmo-knn-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#algoritmo-knn-1",
+    "title": "Análise Preditiva",
+    "section": "Algoritmo KNN",
+    "text": "Algoritmo KNN\n\nKNN é usado para problemas de classificação e regressão.\n\n\nEm problemas de classificação, a classe mais comum entre os K vizinhos mais próximos é escolhida como a classe da nova instância.\n\n\n\n\nEm problemas de regressão, a média ou mediana dos valores alvo dos K vizinhos mais próximos é escolhida como o valor alvo da nova instância."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#k-nearest-neighbors-knn-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#k-nearest-neighbors-knn-1",
+    "title": "Análise Preditiva",
+    "section": "K-Nearest Neighbors (KNN)",
+    "text": "K-Nearest Neighbors (KNN)\n\nKNN é usado para problemas de classificação e regressão.\n\n\nEm problemas de classificação, a classe mais comum entre os K vizinhos mais próximos é escolhida como a classe da nova instância.\n\n\n\n\nEm problemas de regressão, a média ou mediana dos valores alvo dos K vizinhos mais próximos é escolhida como o valor alvo da nova instância."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n👍\n\n\nSimples de entender e implementar.\nNão faz muitas suposições sobre os dados (não paramétrico).\nÚtil para dados complexos e não lineares.\nPode ser usado tanto para classificação quanto para regressão."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-1",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👎\n\n\nComputacionalmente caro para grandes conjuntos de dados (cálculo de distância para todos os pontos).\nSensível à escala dos dados (variáveis com escalas maiores podem dominar o cálculo da distância) - importância da normalização/padronização.\nDesempenho pode degradar em dados com muitas dimensões (maldição da dimensionalidade).\nEscolha do valor de k pode ser crucial e não é trivial."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-knn",
+    "href": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-knn",
+    "title": "Análise Preditiva",
+    "section": "Pré-processamento de Dados para KNN",
+    "text": "Pré-processamento de Dados para KNN\n\n\n\n💻\n\n\n\nEscalonamento de features: Padronização (média zero, desvio padrão um) ou normalização (escala entre 0 e 1) para garantir que todas as features contribuam igualmente para o cálculo da distância.\n\nTratamento de valores ausentes: Imputação ou remoção.\n\nSeleção de features: Reduzir a dimensionalidade para melhorar o desempenho."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#a-escolha-do-valor-de-k",
+    "href": "aulas/Analise_preditiva/preditiva.html#a-escolha-do-valor-de-k",
+    "title": "Análise Preditiva",
+    "section": "A escolha do valor de K",
+    "text": "A escolha do valor de K\n\nO valor de K é um parâmetro importante em KNN. Ele determina o número de vizinhos mais próximos que são usados para classificar uma nova instância.\n\nUm valor de K pequeno pode levar a um modelo muito sensível ao ruído nos dados (overfitting), enquanto um valor grande de K pode levar a uma perda de detalhes importantes nos dados (underfitting).\n\n\nA escolha do valor K ideal é frequentemente realizada por meio de técnicas de validação cruzada.\n\n\nK ímpar evita empates."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#métricas-de-distância",
+    "href": "aulas/Analise_preditiva/preditiva.html#métricas-de-distância",
+    "title": "Análise Preditiva",
+    "section": "Métricas de Distância",
+    "text": "Métricas de Distância\n\n\nDistância Euclidiana: A mais comum.\n\n\\[d_{ij} = \\displaystyle{\\sqrt{(\\mathbf{x}_i - \\mathbf{x}_j)^t(\\mathbf{x}_i - \\mathbf{x}_j)}} = \\sqrt{\\displaystyle{\\sum_{k=1}^p(x_{ik} - x_{jk})^2}}\\]\n\n\nDistância de Minkowski: Soma das diferenças absolutas entre as coordenadas.\n\n\\[d_{ij} = \\left( \\displaystyle{\\sum_{k=1}^P} |X_{ik} - X_{jk}|^{\\lambda}\\right)^{\\frac{1}{\\lambda}}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#métricas-de-distância-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#métricas-de-distância-1",
+    "title": "Análise Preditiva",
+    "section": "Métricas de Distância",
+    "text": "Métricas de Distância\n\n\n\nPara a distância de Minkowski:\n\nSe \\(\\lambda = 1\\), temos a chamada métrica de Manhattan. É também conhecida como city block.\n\nSe \\(\\lambda = 2\\), temos a distância euclidiana.\nA métrica de Minkowski é menos afetada pela presença de valores discrepantes na amostra do que a distância Euclidiana.\n\n\n\n\n\nSe os dados forem textuais: usar cosseno"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-1",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\nJoão possui as seguintes características\n\nmenos de 30 anos\nrenda média\né estudante\npossuí um bom crédito na praça!"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-2",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\nJoão compraria ou não compraria o computador?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-3",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\nQuem é o João?\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-4",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-4",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\nUsando o classificador KNN com k = 5"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-5",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-5",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\nTemos então que os 5 vizinhos mais próximos a João são\n\n\n\n❌\n\n\n\n\n\\(x_2 = \\{\\leq 30, \\text{ Alta}, \\text{ Sim}, \\text{ Bom}\\}\\)\n\n\n\\(x_8 = \\{\\leq 30, \\text{Média}, \\text{ Não}, \\text{ Bom}\\}\\)\n\n\n\n\n\n\n✅\n\n\n\n\\(x_9 = \\{\\leq 30, \\text{ Baixa}, \\text{ Sim}, \\text{ Bom}\\}\\)\n\n\n\\(x_{10} = \\{&gt; 40, \\text{ Média}, \\text{ Sim}, \\text{ Excelente}\\}\\)\n\n\n\\(x_{11} = \\{\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Excelente}\\}\\)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-6",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-6",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\nJoão comprará o computador?\n\nDe acordo com o KNN: SIM!"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#section-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#section-1",
+    "title": "Análise Preditiva",
+    "section": "",
+    "text": "R\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;% \n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"classification\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.974359\n\n\n\n\n\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX_train, X_test, y_train, y_test = train_test_split(\n    iris.data, iris.target, stratify=iris.target, random_state=12345\n)\n\nknn = KNeighborsClassifier(n_neighbors=5)\nknn.fit(X_train, y_train)\n\n\n\n\nKNeighborsClassifier()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nKNeighborsClassifierKNeighborsClassifier()\n\n\n\ny_pred = knn.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9473684210526315"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#knn-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#knn-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "KNN no R e Python",
+    "text": "KNN no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;% \n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"classification\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.974359\n\n\n\n\n\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX_train, X_test, y_train, y_test = train_test_split(\n    iris.data, iris.target, stratify=iris.target, random_state=12345\n)\n\nknn = KNeighborsClassifier(n_neighbors=5)\nknn.fit(X_train, y_train)\n\n\n\n\nKNeighborsClassifier()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nKNeighborsClassifierKNeighborsClassifier()\n\n\n\ny_pred = knn.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9473684210526315"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#knn-para-classificação-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#knn-para-classificação-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "KNN para classificação no R e Python",
+    "text": "KNN para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;% \n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"classification\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.974359\n\n\n\n\n\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX_train, X_test, y_train, y_test = train_test_split(\n    iris.data, iris.target, stratify=iris.target, random_state=12345\n)\n\nknn = KNeighborsClassifier(n_neighbors=5)\nknn.fit(X_train, y_train)\n\n\n\n\nKNeighborsClassifier()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nKNeighborsClassifierKNeighborsClassifier()\n\n\n\ny_pred = knn.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9473684210526315"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#knn-para-regressão-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#knn-para-regressão-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "KNN para regressão no R e Python",
+    "text": "KNN para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;%\n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"regression\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.069807\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nknn_reg = KNeighborsRegressor(n_neighbors=5)\nknn_reg.fit(X_train, y_train)\n\n\n\n\nKNeighborsRegressor()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nKNeighborsRegressorKNeighborsRegressor()\n\n\n\ny_pred = knn_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n1.1408296168142682"
   }
 ]

@@ -234,6 +234,8 @@ Sócrates
 
 ## CRISP-DM, SEMMA e KDD
 
+<br>
+
 - **Gerenciamento de projetos** é um campo estabelecido focado no planejamento, entrega, controle e monitoramento de um projeto. 
 
 
@@ -250,6 +252,8 @@ Sócrates
 
 
 ## CRISP-DM
+
+<br>
 
 - CRISP-DM (**CR**oss **I**ndustry **S**tandard **P**rocess for **D**ata **M**ining) é uma metodologia de mineração de dados amplamente utilizada.
 
@@ -275,6 +279,7 @@ Sócrates
 
 ## CRISP-DM: Compreensão do negócio
 
+<br>
 
 - Nesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.
 
@@ -287,6 +292,7 @@ Sócrates
 
 ## CRISP-DM: Compreensão dos Dados
 
+<br>
 
 - Nesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.
 
@@ -298,6 +304,7 @@ Sócrates
 
 ## CRISP-DM: Preparação dos Dados
 
+<br>
 
 - Nesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.
 
@@ -308,6 +315,7 @@ Sócrates
 
 ## CRISP-DM: Modelagem
 
+<br>
 
 - Nesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.
 
@@ -318,6 +326,7 @@ Sócrates
 
 ## CRISP-DM: Avaliação
 
+<br>
 
 - Nesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.
 
@@ -332,6 +341,7 @@ Sócrates
 
 ## CRISP-DM: Implantação
 
+<br>
 
 - Nesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.
 
@@ -343,6 +353,7 @@ Sócrates
 
 ## SEMMA
 
+<br>
 
 - SEMMA (**S**ample, **E**xplore, **M**odify, **M**odel, **A**ssess) é uma metodologia de mineração de dados desenvolvida pela SAS.
 
@@ -369,6 +380,8 @@ Sócrates
 
 ## SEMMA: Amostragem
 
+<br>
+
 - Nesta fase, o objetivo é selecionar um subconjunto representativo dos dados originais.
 
 
@@ -381,6 +394,8 @@ Sócrates
 
 
 ## SEMMA: Exploração
+
+<br>
 
 - Nesta fase, o objetivo é explorar os dados selecionados na etapa anterior e identificar padrões ou tendências.
 
@@ -396,6 +411,8 @@ Sócrates
 
 ## SEMMA: Modificação
 
+<br>
+
 - Nesta fase, o objetivo é transformar os dados de forma apropriada para que possam ser usados na modelagem.
 
 
@@ -410,6 +427,8 @@ Sócrates
 
 ## SEMMA: Modelagem
 
+<br>
+
 - Nesta fase, o objetivo é criar e testar modelos usando os dados preparados na etapa anterior.
 
 
@@ -421,6 +440,8 @@ Sócrates
 
 
 ## SEMMA: Avaliação
+
+<br>
 
 - Nesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de amostragem.
 
@@ -436,6 +457,7 @@ Sócrates
 
 ## KDD
 
+<br>
 
 - KDD (**K**nowledge **D**iscovery in **D**atabases) é uma metodologia mais ampla que CRISP-DM e SEMMA.
 
@@ -459,6 +481,8 @@ Sócrates
 
 ## KDD: Seleção
 
+<br>
+
 - Nesta fase, o objetivo é selecionar os dados relevantes para o problema de mineração.
 
 
@@ -472,6 +496,8 @@ Sócrates
 
 ## KDD: Pré-processamento
 
+<br>
+
 - Nesta fase, o objetivo é preparar os dados para análise.
 
 
@@ -483,6 +509,8 @@ Sócrates
 
 
 ## KDD: Limpeza
+
+<br>
 
 - Nesta fase, o objetivo é identificar e corrigir erros nos dados.
 
@@ -496,6 +524,8 @@ Sócrates
 
 ## KDD: Transformação
 
+<br>
+
 - Nesta fase, o objetivo é transformar os dados em uma forma que seja adequada para a análise.
 
 
@@ -507,6 +537,8 @@ Sócrates
 
 ## KDD: Mineração de dados
 
+<br>
+
 - Nesta fase, o objetivo é aplicar técnicas de mineração de dados para identificar padrões e relacionamentos nos dados.
 
 . . .
@@ -515,6 +547,8 @@ Sócrates
 
 
 ## KDD: Interpretação e avaliação
+
+<br>
 
 - Nesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.
 
