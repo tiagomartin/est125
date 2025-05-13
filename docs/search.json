@@ -1015,7 +1015,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nConceitos iniciais",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais",
     "crumbs": [
       "Cronograma da disciplina"
     ]
@@ -1596,5 +1596,33 @@
     "title": "Análise Preditiva",
     "section": "Como Lidar com o Tradeoff?",
     "text": "Como Lidar com o Tradeoff?\n\n\nRegularização: Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).\n\n\n\nMais Dados: Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.\n\n\n\n\nEnsemble Methods: Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmos-de-classificação-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#algoritmos-de-classificação-1",
+    "title": "Análise Preditiva",
+    "section": "Algoritmos de classificação",
+    "text": "Algoritmos de classificação\n\n\nAlgoritmos mais comuns usados para problemas de classificação:\n\nK-Nearest Neighbors (KNN)\nNaive Bayes\nÁrvores de decisão\nRandom Forests\nMáquinas de Vetores de Suporte (SVM)\nRedes Neurais Artificiais (ANN)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#k-nearest-neighbors-knn",
+    "href": "aulas/Analise_preditiva/preditiva.html#k-nearest-neighbors-knn",
+    "title": "Análise Preditiva",
+    "section": "K-Nearest Neighbors (KNN)",
+    "text": "K-Nearest Neighbors (KNN)"
+  },
+  {
+    "objectID": "programacao/semana-2.html",
+    "href": "programacao/semana-2.html",
+    "title": "Semana 02",
+    "section": "",
+    "text": "Conceitos iniciais"
+  },
+  {
+    "objectID": "programacao/semana-2.html#slides",
+    "href": "programacao/semana-2.html#slides",
+    "title": "Semana 02",
+    "section": "",
+    "text": "Conceitos iniciais"
   }
 ]
