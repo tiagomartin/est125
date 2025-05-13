@@ -1384,3 +1384,23 @@ Voltemos ao nosso modelo simulado:
 
 
 - **Ensemble Methods:** Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância.
+
+
+
+# Algoritmos de classificação
+
+## Algoritmos de classificação
+
+<br>
+
+- Algoritmos mais comuns usados para problemas de classificação:
+
+  - K-Nearest Neighbors (KNN)
+  - Naive Bayes
+  - Árvores de decisão
+  - Random Forests
+  - Máquinas de Vetores de Suporte (SVM)
+  - Redes Neurais Artificiais (ANN)
+  
+
+##  K-Nearest Neighbors (KNN) 

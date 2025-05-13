@@ -1,0 +1,8 @@
+---
+title: "Semana 02"
+---
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Conceitos iniciais](/aulas/Conceitos%20iniciais/conceitos_iniciais.html "Conceitos iniciais"){aria-label="Conceitos iniciais"}
