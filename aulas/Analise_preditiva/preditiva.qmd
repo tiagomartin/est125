@@ -1387,13 +1387,13 @@ Voltemos ao nosso modelo simulado:
 
 
 
-# Algoritmos de classificação
+# Algoritmos de predição
 
-## Algoritmos de classificação
+## Algoritmos de predição
 
 <br>
 
-- Algoritmos mais comuns usados para problemas de classificação:
+- Algoritmos mais comuns usados para problemas de predição:
 
   - K-Nearest Neighbors (KNN)
   - Naive Bayes
@@ -1404,3 +1404,419 @@ Voltemos ao nosso modelo simulado:
   
 
 ##  K-Nearest Neighbors (KNN) 
+
+<br>
+
+O KNN é um algoritmo de aprendizado supervisionado de classificação e regressão, que usa a proximidade dos objetos para classificar novas instâncias.
+
+
+. . .
+
+É um dos algoritmos mais simples e intuitivos de aprendizado de máquina. Utiliza a ideia do **vizinho mais próximo**, o que significa que ele determina a classe de uma instância com base nas classes de seus vizinhos mais próximos.
+
+. . .
+
+Em outras palavras, se a maioria dos vizinhos mais próximos de uma instância pertence a uma classe específica, então a instância também é classificada como pertencente a essa classe.
+
+
+## Algoritmo KNN
+
+![](/images/knn/knn.png){.nostretch fig-align="center" width="900px"}
+
+
+##  Algoritmo KNN
+
+<br>
+
+KNN é usado para problemas de classificação e regressão.
+
+
+. . .
+
+
+  - Em problemas de **classificação**, a classe mais comum entre os K vizinhos mais próximos é escolhida como a classe da nova instância.
+
+. . .
+
+  - Em problemas de **regressão**, a média ou mediana dos valores alvo dos K vizinhos mais próximos é escolhida como o valor alvo da nova instância.
+
+
+## A escolha do valor de K
+
+<br>
+
+O valor de K é um **parâmetro** importante em KNN. Ele determina o **número de vizinhos mais próximos** que são usados para classificar uma nova instância.
+
+. . .
+
+
+Um valor de K pequeno pode levar a um modelo muito **sensível** ao **ruído** nos dados (overfitting), enquanto um valor grande de K pode levar a uma **perda** de detalhes importantes nos dados (underfitting).
+
+
+. . .
+
+A escolha do valor K ideal é frequentemente realizada por meio de técnicas de **validação cruzada**. 
+
+. . .
+
+
+K ímpar evita empates.
+
+
+
+  
+
+
+## Métricas de Distância
+
+- **Distância Euclidiana:** A mais comum. 
+
+$$d_{ij} = \displaystyle{\sqrt{(\mathbf{x}_i - \mathbf{x}_j)^t(\mathbf{x}_i - \mathbf{x}_j)}} = \sqrt{\displaystyle{\sum_{k=1}^p(x_{ik} - x_{jk})^2}}$$
+
+- **Distância de Minkowski:** Soma das diferenças absolutas entre as coordenadas. 
+
+$$d_{ij} = \left( \displaystyle{\sum_{k=1}^P} |X_{ik} - X_{jk}|^{\lambda}\right)^{\frac{1}{\lambda}}$$
+
+## Métricas de Distância
+
+<br>
+
+- Para a distância de Minkowski:
+
+  - Se $\lambda = 1$, temos a chamada **métrica de Manhattan**. É também conhecida como *city block*.  
+  - Se $\lambda = 2$, temos a distância euclidiana.
+  - A métrica de Minkowski é menos afetada pela presença de valores discrepantes na amostra do que a distância Euclidiana.
+
+. . .
+
+
+- Se os dados forem textuais: usar cosseno
+
+
+## Vantagens e Desvantagens
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="10%"}
+<span style='font-size:130px;'>&#128077;</span>
+:::
+
+::: {.column width="90%"}
+  -	Simples de entender e implementar.
+  -	Não faz muitas suposições sobre os dados (não paramétrico).
+  -	Útil para dados complexos e não lineares.
+  -	Pode ser usado tanto para classificação quanto para regressão.
+:::
+
+::::
+
+## Vantagens e Desvantagens
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<br>
+
+<span style='font-size:130px;'>&#128078;</span>
+:::
+
+::: {.column width="90%"}
+  -	Computacionalmente caro para grandes conjuntos de dados (cálculo de distância para todos os pontos).
+  -	Sensível à escala dos dados (variáveis com escalas maiores podem dominar o cálculo da distância) - importância da normalização/padronização.
+  -	Desempenho pode degradar em dados com muitas dimensões (maldição da dimensionalidade).
+  - Escolha do valor de k pode ser crucial e não é trivial.
+
+:::
+
+::::
+
+
+
+## Pré-processamento de Dados para KNN
+
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<span style='font-size:130px;'>&#128187;</span>
+:::
+
+::: {.column width="90%"}
+  -	**Escalonamento de features:** Padronização (média zero, desvio padrão um) ou normalização (escala entre 0 e 1) para garantir que todas as features contribuam igualmente para o cálculo da distância.
+  -	**Tratamento de valores ausentes:** Imputação ou remoção.
+  - **Seleção de features:** Reduzir a dimensionalidade para melhorar o desempenho.
+
+
+:::
+
+::::
+
+
+## Exemplo: Compra de um computador
+
+
+![](/images/knn/tabela.jpg){.nostretch fig-align="center" width="1300px"}
+
+## Exemplo: Compra de um computador
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](/images/joao.png){.nostretch fig-align="center" width="1300px"}
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+João possui as seguintes características
+
+- menos de 30 anos
+- renda média
+- é estudante
+- possuí um bom crédito na praça!
+
+
+:::
+
+::::
+
+
+## Exemplo: Compra de um computador 
+
+<p align="center">
+João **compraria** ou **não compraria** o computador?
+</p>
+
+
+![](https://media2.giphy.com/media/XeH1MFu4x3etVsllUN/giphy.gif){.nostretch fig-align="center" width="1100px"}  
+
+
+
+## Exemplo: Compra de um computador
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+![](/images/joao.png){.nostretch fig-align="center" width="1300px"}
+:::
+
+::: {.column width="60%"}
+
+<br>
+
+<p align="center" style="font-size: 76px">**Quem é o João?**</p>
+
+&nbsp;
+&nbsp;
+
+::: {.fragment}
+<p align="center" style="font-size: 56px">$x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})$</p>
+:::
+
+
+:::
+
+::::
+
+
+## Exemplo: Compra de um computador 
+
+<p align="center">
+Usando o classificador KNN com k = 5
+</p>
+
+
+![](/images/knn/tab_dist.jpg){.nostretch fig-align="center" width="1100px"}
+
+
+
+## Exemplo: Compra de um computador 
+
+<br>
+
+Temos então que os **5 vizinhos** mais próximos a João são
+
+ \s\s
+
+:::: {.columns}
+
+::: {.column width="10%"}
+<span style='font-size:130px;'>&#x274C;</span>
+:::
+
+::: {.column width="90%"}
+
+ \s\s
+
+- <p style="color: red">$x_2 = \{\leq 30, \text{ Alta}, \text{ Sim}, \text{ Bom}\}$</p>
+- <p style="color: red">$x_8 = \{\leq 30, \text{Média}, \text{ Não}, \text{ Bom}\}$</p>
+
+:::
+
+::::
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<span style='font-size:130px;'>&#x2705;</span>
+:::
+
+::: {.column width="90%"}
+
+
+ 
+- <p style="color: green">$x_9 = \{\leq 30, \text{ Baixa}, \text{ Sim}, \text{ Bom}\}$</p>
+- <p style="color: green">$x_{10} = \{> 40, \text{ Média}, \text{ Sim}, \text{ Excelente}\}$</p>
+- <p style="color: green">$x_{11} = \{\leq 30, \text{ Média}, \text{ Sim}, \text{ Excelente}\}$</p>
+:::
+
+::::
+
+
+## Exemplo: Compra de um computador 
+
+<br>
+
+<br>
+
+
+<details>
+  <summary align="center" style='font-size:80px;'>**João comprará o computador?**</summary>
+  <p align="center" style="color: green; font-size:80px;"> **De acordo com o KNN: SIM!** </p>
+</details>
+
+
+## KNN para classificação no R e Python
+
+```{r include = FALSE}
+library(reticulate)
+reticulate::conda_list()
+use_condaenv("py3.8", required = TRUE)
+py_config()
+```
+
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+
+library(tidymodels)
+library(Metrics)
+
+set.seed(12345)
+data(iris)
+iris_split <- initial_split(iris, strata = Species)
+train_data <- training(iris_split)
+test_data <- testing(iris_split)
+
+knn_spec <- nearest_neighbor(neighbors = 5) %>% 
+  set_engine("kknn") %>%
+  set_mode("classification")
+
+knn_fit <- workflow() %>%
+  add_model(knn_spec) %>%
+  add_formula(Species ~ .) %>%
+  fit(data = train_data)
+
+sp_predict <- predict(knn_fit, test_data)
+
+Metrics::accuracy(test_data$Species, sp_predict$.pred_class)
+```
+
+### Python
+
+```{python}
+#| echo: true
+
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score
+
+iris = load_iris()
+X_train, X_test, y_train, y_test = train_test_split(
+    iris.data, iris.target, stratify=iris.target, random_state=12345
+)
+
+knn = KNeighborsClassifier(n_neighbors=5)
+knn.fit(X_train, y_train)
+y_pred = knn.predict(X_test)
+accuracy_score(y_test, y_pred)
+```
+
+:::
+
+## KNN para regressão no R e Python
+
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+
+library(tidymodels)
+library(Metrics)
+
+data("mtcars")
+set.seed(12345)
+mtcars_split <- initial_split(mtcars, strata = mpg)
+train_data <- training(mtcars_split)
+test_data <- testing(mtcars_split)
+
+knn_spec <- nearest_neighbor(neighbors = 5) %>%
+  set_engine("kknn") %>%
+  set_mode("regression")
+
+knn_fit <- workflow() %>%
+  add_model(knn_spec) %>%
+  add_formula(mpg ~ .) %>%
+  fit(data = train_data)
+
+mpg_predict <- predict(knn_fit, test_data)
+
+Metrics::mse(test_data$mpg, mpg_predict$.pred) # MSE
+```
+
+### Python
+
+```{python}
+#| echo: true
+
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.metrics import mean_squared_error
+
+data = fetch_california_housing()
+X_train, X_test, y_train, y_test = train_test_split(
+    data.data, data.target, random_state=12345
+)
+
+knn_reg = KNeighborsRegressor(n_neighbors=5)
+knn_reg.fit(X_train, y_train)
+y_pred = knn_reg.predict(X_test)
+mean_squared_error(y_test, y_pred, squared=True)  # MSE
+```
+
+:::

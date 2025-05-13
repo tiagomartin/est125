@@ -6,16 +6,16 @@
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.29">
-
-  <title>EST125 - Introdução à Mineração de Dados – Análise Preditiva</title>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
-  <style>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+<title>EST125 - Introdução à Mineração de Dados – Análise Preditiva</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+<style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -27,13 +27,79 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-5389521b91c90b914e6de3488af1db39.css">
-  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
-  <style type="text/css">
+<link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-5389521b91c90b914e6de3488af1db39.css">
+<link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
       overflow: auto;
@@ -127,20 +193,14 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="../../images/back.jpeg" data-background-opacity="0.3" data-background-size="cover" class="quarto-title-block center">
-  <h1 class="title">Análise Preditiva</h1>
+<section id="title-slide" data-background-image="../../images/back.jpeg" data-background-opacity="0.3" data-background-size="cover" class="quarto-title-block center"><h1 class="title">Análise Preditiva</h1>
 
 <div class="quarto-title-authors">
 </div>
 
-</section>
-<section>
-<section id="machine-learning" class="title-slide slide level1 center">
-<h1>Machine Learning</h1>
+</section><section><section id="machine-learning" class="title-slide slide level1 center"><h1>Machine Learning</h1>
 
-</section>
-<section id="o-que-é-inteligência-artificial-ia" class="slide level2">
-<h2>O que é Inteligência Artificial (IA)?</h2>
+</section><section id="o-que-é-inteligência-artificial-ia" class="slide level2"><h2>O que é Inteligência Artificial (IA)?</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p><br></p>
@@ -158,22 +218,16 @@ A capacidade de um <strong>sistema computacional</strong> simular <strong>habili
 <li><p>Machine Learning</p></li>
 </ul>
 </div></div>
-</section>
-<section id="o-que-é-inteligência-artificial-ia-1" class="slide level2">
-<h2>O que é Inteligência Artificial (IA)?</h2>
+</section><section id="o-que-é-inteligência-artificial-ia-1" class="slide level2"><h2>O que é Inteligência Artificial (IA)?</h2>
 <p><br></p>
 
-<img data-src="../..\images/linha_IA.png" style="width:120.0%" data-fig.align="center" class="r-stretch"></section>
-<section id="o-que-é-machine-learning" class="slide level2">
-<h2>O que é Machine Learning?</h2>
+<img data-src="../..\images/linha_IA.png" style="width:120.0%" data-fig.align="center" class="r-stretch"></section><section id="o-que-é-machine-learning" class="slide level2"><h2>O que é Machine Learning?</h2>
 <p align="center">
 Um subcampo da IA que permite que sistemas aprendam a partir de dados, sem serem explicitamente programados
 </p>
 <p><br></p>
 
-<img data-src="../..\images/PT_ML.png" style="width:80.0%" data-fig.align="center" class="r-stretch"></section>
-<section id="o-que-é-machine-learning-1" class="slide level2">
-<h2>O que é Machine Learning?</h2>
+<img data-src="../..\images/PT_ML.png" style="width:80.0%" data-fig.align="center" class="r-stretch"></section><section id="o-que-é-machine-learning-1" class="slide level2"><h2>O que é Machine Learning?</h2>
 <div class="columns">
 <div class="column" style="width:20%;">
 <p><span style="font-size:200px;">📊</span></p>
@@ -192,25 +246,21 @@ Do ponto de vista da <strong>Ciência da Computação</strong>, Machine Learning
 </p>
 </div></div>
 </div>
-</section>
-<section id="o-que-é-machine-learning-2" class="slide level2">
-<h2>O que é Machine Learning?</h2>
+</section><section id="o-que-é-machine-learning-2" class="slide level2"><h2>O que é Machine Learning?</h2>
 
-<img data-src="../..\images/est_cc_ML.png" data-fig.align="center" class="r-stretch"></section>
-<section id="as-duas-culturas" class="slide level2">
-<h2>As duas culturas…</h2>
+<img data-src="../..\images/est_cc_ML.png" data-fig.align="center" class="r-stretch"></section><section id="as-duas-culturas" class="slide level2"><h2>As duas culturas…</h2>
 <p><br></p>
 <ul>
-<li><strong>Data Modeling Culture:</strong> Domina a comunidade estatística. Nela se <strong>assume que o modelo utilizado é correto</strong>. Testar suposições é fundamental. <strong>Foco em inferência e na interpretação dos parâmetros</strong>.</li>
+<li>
+<strong>Data Modeling Culture:</strong> Domina a comunidade estatística. Nela se <strong>assume que o modelo utilizado é correto</strong>. Testar suposições é fundamental. <strong>Foco em inferência e na interpretação dos parâmetros</strong>.</li>
 </ul>
 <div class="fragment">
 <ul>
-<li><strong>Algorithmic Modeling Culture:</strong> Domina a comunidade de machine learning. Nela <strong>não se assume que o modelo utilizado é correto</strong>; <strong>o modelo é utilizado apenas para criar bons algoritmos preditivos</strong>. Podemos interpretar os resultados, mas esse, em geral, não é o foco.</li>
+<li>
+<strong>Algorithmic Modeling Culture:</strong> Domina a comunidade de machine learning. Nela <strong>não se assume que o modelo utilizado é correto</strong>; <strong>o modelo é utilizado apenas para criar bons algoritmos preditivos</strong>. Podemos interpretar os resultados, mas esse, em geral, não é o foco.</li>
 </ul>
 </div>
-</section>
-<section id="exemplos-práticos-de-aplicações-de-ml-no-dia-a-dia." class="slide level2">
-<h2>Exemplos práticos de aplicações de ML no dia a dia.</h2>
+</section><section id="exemplos-práticos-de-aplicações-de-ml-no-dia-a-dia." class="slide level2"><h2>Exemplos práticos de aplicações de ML no dia a dia.</h2>
 <p><br></p>
 <ul>
 <li>Sistemas de recomendação (Netflix, Amazon).</li>
@@ -218,40 +268,31 @@ Do ponto de vista da <strong>Ciência da Computação</strong>, Machine Learning
 <li>Carros autônomos (Tesla).</li>
 <li>Diagnóstico médico (detecção de tumores).</li>
 <li>Reconhecimento facial (smartphones).</li>
-</ul>
-</section>
-<section id="como-as-máquinas-aprendem" class="slide level2">
-<h2>Como as Máquinas Aprendem?</h2>
+</ul></section><section id="como-as-máquinas-aprendem" class="slide level2"><h2>Como as Máquinas Aprendem?</h2>
 <p><br></p>
 <div id="fig" class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/bike.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/bike.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/aprendizadoRN.gif" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
+<figure><p><img data-src="../..\images/aprendizadoRN.gif" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="componentes-do-aprendizado-de-máquina" class="slide level2">
-<h2>Componentes do aprendizado de máquina</h2>
+</section><section id="componentes-do-aprendizado-de-máquina" class="slide level2"><h2>Componentes do aprendizado de máquina</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/fig07.png" class="" width="700"></p>
-<figcaption>https://vas3k.com/blog/machine_learning/</figcaption>
-</figure>
+<figure><p><img data-src="../..\images/fig07.png" class="" width="700"></p>
+<figcaption>https://vas3k.com/blog/machine_learning/</figcaption></figure>
 </div>
 </div><div class="column" style="width:40%;">
 <p><br></p>
@@ -263,67 +304,60 @@ Do ponto de vista da <strong>Ciência da Computação</strong>, Machine Learning
 <li><p>Algoritmos</p></li>
 </ul>
 </div></div>
-</section>
-<section id="o-mapa-da-aprendizagem-de-máquina" class="slide level2">
-<h2>O mapa da aprendizagem de máquina</h2>
+</section><section id="o-mapa-da-aprendizagem-de-máquina" class="slide level2"><h2>O mapa da aprendizagem de máquina</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p><img data-src="../..\images/fig02a.png" data-fig.align="center"></p>
 </div><div class="column" style="width:60%;">
 <p><br></p>
 <p align="center">
-</p><p>👉 Nunca há uma única maneira de resolver um problema no mundo do aprendizado de máquina.</p>
+</p>
+<p>👉 Nunca há uma única maneira de resolver um problema no mundo do aprendizado de máquina.</p>
 <p>👉 Sempre existem vários algoritmos que se encaixam, e você deve escolher qual deles se encaixa melhor.</p>
 👉 Tudo pode ser resolvido com uma rede neural? Sim, mas quem pagará por todo esse custo?
-<p></p>
+
 </div></div>
-</section>
-<section id="o-mapa-da-aprendizagem-de-máquina-1" class="slide level2">
-<h2>O mapa da aprendizagem de máquina</h2>
+</section><section id="o-mapa-da-aprendizagem-de-máquina-1" class="slide level2"><h2>O mapa da aprendizagem de máquina</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/fig03a.png" class="quarto-figure quarto-figure-center" width="1200"></p>
+<figure><p><img data-src="../..\images/fig03a.png" class="quarto-figure quarto-figure-center" width="1200"></p>
 </figure>
 </div>
-</section>
-<section id="aprendizado-de-máquina-clássico" class="slide level2">
-<h2>Aprendizado de Máquina Clássico</h2>
+</section><section id="aprendizado-de-máquina-clássico" class="slide level2"><h2>Aprendizado de Máquina Clássico</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/tipos_aprend.png" class="quarto-figure quarto-figure-center" width="1150"></p>
+<figure><p><img data-src="../..\images/tipos_aprend.png" class="quarto-figure quarto-figure-center" width="1150"></p>
 </figure>
 </div>
-</section>
-<section id="aprendizado-de-máquina-clássico-1" class="slide level2">
-<h2>Aprendizado de Máquina Clássico</h2>
+</section><section id="aprendizado-de-máquina-clássico-1" class="slide level2"><h2>Aprendizado de Máquina Clássico</h2>
 <p>👉 O aprendizado de máquina clássico é frequentemente dividido em duas categorias – <strong>Aprendizado Supervisionado</strong> e <strong>Não Supervisionado</strong>.</p>
 <div class="fragment">
 <ul>
-<li><strong>Aprendizado Supervisionado:</strong> usa um algoritmo que precisa de exemplos rotulados para desempenhar suas tarefas.</li>
+<li>
+<strong>Aprendizado Supervisionado:</strong> usa um algoritmo que precisa de exemplos rotulados para desempenhar suas tarefas.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Aprendizado Não-supervisionado:</strong> os dados não são rotulados, não há professor e a máquina está tentando encontrar padrões por conta própria.</li>
+<li>
+<strong>Aprendizado Não-supervisionado:</strong> os dados não são rotulados, não há professor e a máquina está tentando encontrar padrões por conta própria.</li>
 </ul>
 </div>
-</section>
-<section id="aprendizado-supervisionado" class="slide level2">
-<h2>Aprendizado Supervisionado</h2>
+</section><section id="aprendizado-supervisionado" class="slide level2"><h2>Aprendizado Supervisionado</h2>
 <p><br></p>
 <p><span style="font-size:80px;">💡</span> Claramente, a máquina aprenderá mais rápido com um professor. Por isso, é mais comum encontrarmos esse caso nas tarefas da vida real.</p>
 <div class="fragment">
 <ul>
-<li><p>Existem dois tipos de tarefas:</p>
+<li>
+<p>Existem dois tipos de tarefas:</p>
 <ul>
-<li><strong>classificação:</strong> predição de categoria de um objeto e</li>
-<li><strong>regressão:</strong> predição de um ponto específico em um eixo numérico.</li>
-</ul></li>
+<li>
+<strong>classificação:</strong> predição de categoria de um objeto e</li>
+<li>
+<strong>regressão:</strong> predição de um ponto específico em um eixo numérico.</li>
+</ul>
+</li>
 </ul>
 </div>
-</section>
-<section id="tarefa-de-classificação" class="slide level2">
-<h2>Tarefa de classificação</h2>
+</section><section id="tarefa-de-classificação" class="slide level2"><h2>Tarefa de classificação</h2>
 <p align="center">
 Os algoritmos de classificação dividem os objetos com base em um dos atributos conhecidos de antemão.
 </p>
@@ -331,7 +365,8 @@ Os algoritmos de classificação dividem os objetos com base em um dos atributos
 <div class="column" style="width:60%;">
 <p><br></p>
 <ul>
-<li><p>Usados nos dias de hoje para:</p>
+<li>
+<p>Usados nos dias de hoje para:</p>
 <ul>
 <li>Filtragem de spam;</li>
 <li>Detecção de idioma;</li>
@@ -339,25 +374,21 @@ Os algoritmos de classificação dividem os objetos com base em um dos atributos
 <li>Análise de sentimentos;</li>
 <li>Reconhecimento de caracteres;</li>
 <li>Detecção de fraude.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/fig09.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/fig09.png" class="quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="tarefa-de-classificação-1" class="slide level2">
-<h2>Tarefa de classificação</h2>
-<p><br> <br></p>
+</section><section id="tarefa-de-classificação-1" class="slide level2"><h2>Tarefa de classificação</h2>
+<p><br><br></p>
 <p align="center">
 Algoritmos populares: <strong>Naive Bayes</strong>, <strong>Decision Tree</strong>, <strong>Logistic Regression</strong>, <strong>K-Nearest Neighbours</strong>, <strong>Support Vector Machine</strong>.
 </p>
-</section>
-<section id="tarefa-de-regressão" class="slide level2">
-<h2>Tarefa de regressão</h2>
+</section><section id="tarefa-de-regressão" class="slide level2"><h2>Tarefa de regressão</h2>
 <p align="center">
 Se a variável resposta é quantitativa, temos um problema de análise de regressão
 </p>
@@ -365,36 +396,32 @@ Se a variável resposta é quantitativa, temos um problema de análise de regres
 <div class="column" style="width:60%;">
 <p><br></p>
 <ul>
-<li><p>Usados nos dias de hoje para:</p>
+<li>
+<p>Usados nos dias de hoje para:</p>
 <ul>
 <li>Previsões do preço das ações;</li>
 <li>Análise de demanda e volume de vendas;</li>
 <li>Diagnóstico médico.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </div><div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/fig10.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/fig10.png" class="quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="tarefa-de-regressão-1" class="slide level2">
-<h2>Tarefa de regressão</h2>
-<p><br> <br></p>
+</section><section id="tarefa-de-regressão-1" class="slide level2"><h2>Tarefa de regressão</h2>
+<p><br><br></p>
 <p align="center">
 Algoritmos populares: <strong>Decision Tree</strong>, <strong>Regressão Linear</strong> e <strong>Regressão Polinomial</strong>, <strong>K-Nearest Neighbours</strong>, <strong>Support Vector Machine</strong>.
 </p>
-</section>
-<section id="avaliação-de-modelos" class="slide level2">
-<h2>Avaliação de modelos</h2>
+</section><section id="avaliação-de-modelos" class="slide level2"><h2>Avaliação de modelos</h2>
 <p><span style="font-size:80px;">💡</span> Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a <strong>avaliação de modelos</strong>!</p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/detetive.jpg" class="quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/detetive.jpg" class="quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -403,71 +430,64 @@ Algoritmos populares: <strong>Decision Tree</strong>, <strong>Regressão Linear<
 A <strong>avaliação de modelos</strong> de machine learning é como um <strong>detetive investigando um caso</strong>.
 </p>
 </div></div>
-</section>
-<section id="avaliação-de-modelos-1" class="slide level2">
-<h2>Avaliação de modelos</h2>
+</section><section id="avaliação-de-modelos-1" class="slide level2"><h2>Avaliação de modelos</h2>
 <p><br></p>
 <p><br></p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/over_under.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/over_under.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/erro_over_under.png" class="fragment quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/erro_over_under.png" class="fragment quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="avaliação-de-modelos-2" class="slide level2">
-<h2>Avaliação de modelos</h2>
+</section><section id="avaliação-de-modelos-2" class="slide level2"><h2>Avaliação de modelos</h2>
 <p align="center">
 <span style="font-size:70px;">🤔</span> O nosso modelo é um <strong>herói</strong> ou um <strong>impostor</strong>?
 </p>
 
-<img data-src="https://media4.giphy.com/media/ek4CUx2FONgHaMz9V5/giphy-downsized-medium.gif" class="quarto-figure quarto-figure-center r-stretch" width="1000"></section>
-<section id="matriz-de-confusão" class="slide level2">
-<h2>Matriz de confusão</h2>
+<img data-src="https://media4.giphy.com/media/ek4CUx2FONgHaMz9V5/giphy-downsized-medium.gif" class="quarto-figure quarto-figure-center r-stretch" width="1000"></section><section id="matriz-de-confusão" class="slide level2"><h2>Matriz de confusão</h2>
 <p>Permite a visualização do <strong>desempenho</strong> de um <strong>algoritmo de classificação</strong></p>
 <p>&nbsp;</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc.png" class="quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
-</section>
-<section id="matriz-de-confusão-1" class="slide level2">
-<h2>Matriz de confusão</h2>
+</section><section id="matriz-de-confusão-1" class="slide level2"><h2>Matriz de confusão</h2>
 <p><br></p>
 <ul>
-<li><strong>VP (Verdadeiro Positivo):</strong> objeto da classe positiva classificado como positivo</li>
+<li>
+<strong>VP (Verdadeiro Positivo):</strong> objeto da classe positiva classificado como positivo</li>
 </ul>
 <div class="fragment">
 <ul>
-<li><strong>VN (Verdadeiro Negativo):</strong> objeto da classe negativa classificado como negativo</li>
+<li>
+<strong>VN (Verdadeiro Negativo):</strong> objeto da classe negativa classificado como negativo</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>FP (Falso Positivo):</strong> objeto da classe negativa classificado como positivo. Também conhecido como <strong>alarme falso</strong> ou <strong>Erro tipo 1</strong></li>
+<li>
+<strong>FP (Falso Positivo):</strong> objeto da classe negativa classificado como positivo. Também conhecido como <strong>alarme falso</strong> ou <strong>Erro tipo 1</strong>
+</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>FN (Falso Negativo):</strong> objeto da classe positiva classificado como negativo. É também conhecido como <strong>Erro Tipo 2</strong></li>
+<li>
+<strong>FN (Falso Negativo):</strong> objeto da classe positiva classificado como negativo. É também conhecido como <strong>Erro Tipo 2</strong>
+</li>
 </ul>
 </div>
-</section>
-<section id="matriz-de-confusão-2" class="slide level2">
-<h2>Matriz de confusão</h2>
+</section><section id="matriz-de-confusão-2" class="slide level2"><h2>Matriz de confusão</h2>
 <p><br></p>
 <p><strong>Exemplo:</strong> Sejam as seguintes matrizes de confusão, obtidas de dois classificadores quaisquer.</p>
 <p><br></p>
@@ -475,33 +495,25 @@ A <strong>avaliação de modelos</strong> de machine learning é como um <strong
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_cliente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_cliente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_paciente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_paciente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="métricas-derivadas-da-matriz-de-confusão" class="title-slide slide level1 center">
-<h1>Métricas derivadas da matriz de confusão</h1>
+</section></section><section><section id="métricas-derivadas-da-matriz-de-confusão" class="title-slide slide level1 center"><h1>Métricas derivadas da matriz de confusão</h1>
 
-</section>
-<section id="acurácia" class="slide level2">
-<h2>Acurácia</h2>
+</section><section id="acurácia" class="slide level2"><h2>Acurácia</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/acc.jpg" class="quarto-figure quarto-figure-center" width="400"></p>
+<figure><p><img data-src="../..\images/acc.jpg" class="quarto-figure quarto-figure-center" width="400"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -513,43 +525,35 @@ Mede a <strong>proporção de previsões corretas</strong> do modelo em relaçã
 <p align="center">
 <strong>É como sua nota em uma prova!</strong>
 </p>
-</section>
-<section id="acurácia-1" class="slide level2">
-<h2>Acurácia</h2>
+</section><section id="acurácia-1" class="slide level2"><h2>Acurácia</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/acc_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/acc_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div></div>
 <p>A <strong>Taxa de Erro Aparente</strong> do classificador é dada por</p>
 <p><span class="math display">\[TEA = 1 - ACC\]</span></p>
-</section>
-<section id="acurácia-2" class="slide level2">
-<h2>Acurácia</h2>
+</section><section id="acurácia-2" class="slide level2"><h2>Acurácia</h2>
 <div class="quarto-layout-panel" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_cliente_acc.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_cliente_acc.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/acc_tea_cliente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/acc_tea_cliente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
@@ -557,23 +561,19 @@ Mede a <strong>proporção de previsões corretas</strong> do modelo em relaçã
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_paciente_acc.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_paciente_acc.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/acc_tea_paciente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/acc_tea_paciente.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="acurácia-3" class="slide level2">
-<h2>Acurácia</h2>
+</section><section id="acurácia-3" class="slide level2"><h2>Acurácia</h2>
 <p><br></p>
 <p><br></p>
 <p align="center">
@@ -584,15 +584,12 @@ Mas será que a <strong>acurácia</strong> é suficiente para avaliar nossos mod
 Às vezes, uma <strong>única métrica</strong> não é capaz de nos contar toda a história.
 </p>
 </div>
-</section>
-<section id="precisão" class="slide level2">
-<h2>Precisão</h2>
+</section><section id="precisão" class="slide level2"><h2>Precisão</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:40%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/precision.jpg" class="quarto-figure quarto-figure-center" width="400"></p>
+<figure><p><img data-src="../..\images/precision.jpg" class="quarto-figure quarto-figure-center" width="400"></p>
 </figure>
 </div>
 </div><div class="column" style="width:60%;">
@@ -601,44 +598,36 @@ Mas será que a <strong>acurácia</strong> é suficiente para avaliar nossos mod
 Ela nos diz quantas das <strong>previsões positivas</strong> foram realmente <strong>corretas</strong>.
 </p>
 </div></div>
-</section>
-<section id="precisão-1" class="slide level2">
-<h2>Precisão</h2>
+</section><section id="precisão-1" class="slide level2"><h2>Precisão</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/precision_form.jpg" class="quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/precision_form.jpg" class="quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div></div>
 <p align="center">
 Porcentagem de verdadeiros positivos dentre todos os objetos classificados como positivos
 </p>
-</section>
-<section id="precisão-2" class="slide level2">
-<h2>Precisão</h2>
+</section><section id="precisão-2" class="slide level2"><h2>Precisão</h2>
 <div class="quarto-layout-panel" data-layout-nrow="2">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_cliente_prec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_cliente_prec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/prec_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/prec_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
@@ -646,29 +635,24 @@ Porcentagem de verdadeiros positivos dentre todos os objetos classificados como 
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_paciente_prec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_paciente_prec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/prec_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/prec_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="sensibilidade" class="slide level2">
-<h2>Sensibilidade</h2>
+</section><section id="sensibilidade" class="slide level2"><h2>Sensibilidade</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/recall.jpg" class="quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/recall.jpg" class="quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -677,44 +661,36 @@ Porcentagem de verdadeiros positivos dentre todos os objetos classificados como 
 Mede a <strong>proporção de casos positivos reais</strong> que foram encontrados pelo modelo
 </p>
 </div></div>
-</section>
-<section id="sensibilidade-1" class="slide level2">
-<h2>Sensibilidade</h2>
+</section><section id="sensibilidade-1" class="slide level2"><h2>Sensibilidade</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/sens_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/sens_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div></div>
 <p align="center">
 Também conhecida por <strong>Recall</strong> ou <strong>Taxa de Verdadeiros Positivos (TVP)</strong>
 </p>
-</section>
-<section id="sensibilidade-2" class="slide level2">
-<h2>Sensibilidade</h2>
+</section><section id="sensibilidade-2" class="slide level2"><h2>Sensibilidade</h2>
 <div class="quarto-layout-panel" data-layout-nrow="2">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_cliente_sens.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_cliente_sens.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/sens_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/sens_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
@@ -722,28 +698,23 @@ Também conhecida por <strong>Recall</strong> ou <strong>Taxa de Verdadeiros Pos
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_paciente_sens.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_paciente_sens.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/sens_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/sens_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="especificidade" class="slide level2">
-<h2>Especificidade</h2>
+</section><section id="especificidade" class="slide level2"><h2>Especificidade</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/espec.jpg" class="quarto-figure quarto-figure-center" width="600"></p>
+<figure><p><img data-src="../..\images/espec.jpg" class="quarto-figure quarto-figure-center" width="600"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -753,44 +724,36 @@ Também conhecida por <strong>Recall</strong> ou <strong>Taxa de Verdadeiros Pos
 Ajuda a identificar a capacidade do modelo em reconhecer <strong>corretamente as amostras negativas</strong>
 </p>
 </div></div>
-</section>
-<section id="especificidade-1" class="slide level2">
-<h2>Especificidade</h2>
+</section><section id="especificidade-1" class="slide level2"><h2>Especificidade</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/espec_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/espec_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div></div>
 <p align="center">
 Também conhecida por <strong>Taxa de Verdadeiros Negativos (TVN)</strong>
 </p>
-</section>
-<section id="especificidade-2" class="slide level2">
-<h2>Especificidade</h2>
+</section><section id="especificidade-2" class="slide level2"><h2>Especificidade</h2>
 <div class="quarto-layout-panel" data-layout-nrow="2">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_cliente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_cliente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/espec_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/espec_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
@@ -798,29 +761,24 @@ Também conhecida por <strong>Taxa de Verdadeiros Negativos (TVN)</strong>
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_paciente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_paciente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/espec_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/espec_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="taxa-de-falso-positivo" class="slide level2">
-<h2>Taxa de Falso Positivo</h2>
+</section><section id="taxa-de-falso-positivo" class="slide level2"><h2>Taxa de Falso Positivo</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/fpr.jpg" class="quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/fpr.jpg" class="quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -830,41 +788,33 @@ Também conhecida por <strong>Taxa de Verdadeiros Negativos (TVN)</strong>
 Ela mede a <strong>proporção de amostras negativas</strong> classificadas como positivas pelo modelo
 </p>
 </div></div>
-</section>
-<section id="taxa-de-falso-positivo-1" class="slide level2">
-<h2>Taxa de Falso Positivo</h2>
+</section><section id="taxa-de-falso-positivo-1" class="slide level2"><h2>Taxa de Falso Positivo</h2>
 <p><br></p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/mc.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/fpr_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="500"></p>
+<figure><p><img data-src="../..\images/fpr_form.jpg" class="nostretch quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="taxa-de-falso-positivo-2" class="slide level2">
-<h2>Taxa de Falso Positivo</h2>
+</section><section id="taxa-de-falso-positivo-2" class="slide level2"><h2>Taxa de Falso Positivo</h2>
 <div class="quarto-layout-panel" data-layout-nrow="2">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_cliente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_cliente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/fpr_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/fpr_form_clientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
@@ -872,29 +822,25 @@ Ela mede a <strong>proporção de amostras negativas</strong> classificadas como
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/mc_paciente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/mc_paciente_espec.png" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/fpr_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+<figure><p><img data-src="../..\images/fpr_form_pacientes.jpg" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="f_1-score" class="slide level2">
-<h2><span class="math inline">\(F_1\)</span>-Score</h2>
+</section><section id="f_1-score" class="slide level2"><h2>
+<span class="math inline">\(F_1\)</span>-Score</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/f1.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+<figure><p><img data-src="../..\images/f1.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -905,9 +851,8 @@ Ela mede a <strong>proporção de amostras negativas</strong> classificadas como
 Ele leva em consideração tanto <strong>precisão</strong> quanto a <strong>sensibilidade</strong>, dando uma medida balanceada do desempenho do modelo.
 </p>
 </div></div>
-</section>
-<section id="f_1-score-1" class="slide level2">
-<h2><span class="math inline">\(F_1\)</span>-Score</h2>
+</section><section id="f_1-score-1" class="slide level2"><h2>
+<span class="math inline">\(F_1\)</span>-Score</h2>
 <p><br></p>
 <p><br></p>
 <p><span class="math display">\[F_1 \text{-score} = 2 \times \dfrac{\text{Precisão} \times \text{Sensibilidade}}{\text{Precisão} + \text{Sensibilidade}}\]</span></p>
@@ -915,9 +860,7 @@ Ele leva em consideração tanto <strong>precisão</strong> quanto a <strong>sen
 <p align="center">
 O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista</strong> em uma corda bamba.
 </p>
-</section>
-<section id="curva-roc" class="slide level2">
-<h2>Curva ROC</h2>
+</section><section id="curva-roc" class="slide level2"><h2>Curva ROC</h2>
 <ul>
 <li>A <strong>Curva ROC</strong> é como um mapa que nos guia pela <strong>sensibilidade</strong> e pelos <strong>falsos positivos</strong> do modelo em diferentes configurações.</li>
 </ul>
@@ -926,16 +869,14 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 <li>Ela nos mostra o quão bem nosso modelo pode <strong>distinguir</strong> entre as classes.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/roc.jpg" class="fragment quarto-figure quarto-figure-center" width="700"></p>
+<figure><p><img data-src="../..\images/roc.jpg" class="fragment quarto-figure quarto-figure-center" width="700"></p>
 </figure>
 </div>
 </div>
-</section>
-<section id="curva-roc-1" class="slide level2">
-<h2>Curva ROC</h2>
+</section><section id="curva-roc-1" class="slide level2"><h2>Curva ROC</h2>
 <ul>
-<li>Representa o número de vezes que o classificador <strong>acertou a predição</strong> contra o número de vezes que o classificador <strong>errou a predição</strong></li>
+<li>Representa o número de vezes que o classificador <strong>acertou a predição</strong> contra o número de vezes que o classificador <strong>errou a predição</strong>
+</li>
 </ul>
 <div class="fragment">
 <ul>
@@ -947,19 +888,13 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 <li>Quanto <strong>maior a AUC-ROC</strong>, <strong>melhor</strong> é o desempenho do modelo em discriminar corretamente as classes.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/auc.jpg" class="fragment quarto-figure quarto-figure-center" width="1400"></p>
+<figure><p><img data-src="../..\images/auc.jpg" class="fragment quarto-figure quarto-figure-center" width="1400"></p>
 </figure>
 </div>
 </div>
-</section></section>
-<section>
-<section id="e-como-avaliar-modelos-de-predição" class="title-slide slide level1 center">
-<h1>E como avaliar modelos de predição?</h1>
+</section></section><section><section id="e-como-avaliar-modelos-de-predição" class="title-slide slide level1 center"><h1>E como avaliar modelos de predição?</h1>
 
-</section>
-<section id="avaliação-de-modelos-de-predição" class="slide level2">
-<h2>Avaliação de modelos de predição</h2>
+</section><section id="avaliação-de-modelos-de-predição" class="slide level2"><h2>Avaliação de modelos de predição</h2>
 <p><br></p>
 <ul>
 <li>Seja <span class="math inline">\(d_j\)</span>, <span class="math inline">\(j = 1,\cdots, n\)</span>, a resposta desejada para o objeto <span class="math inline">\(j\)</span> e <span class="math inline">\(y_j\)</span> a resposta estimada (predita) do algoritmo, obtida a partir de uma entrada <span class="math inline">\(\mathbf{x_j}\)</span> apresentada ao algoritmo.</li>
@@ -971,48 +906,35 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 </div>
 <div class="fragment">
 <ul>
-<li>Podemos definir as seguintes métricas para <strong>avaliação de modelos preditivos.</strong></li>
+<li>Podemos definir as seguintes métricas para <strong>avaliação de modelos preditivos.</strong>
+</li>
 </ul>
 </div>
-</section>
-<section id="avaliação-de-modelos-de-predição-1" class="slide level2">
-<h2>Avaliação de modelos de predição</h2>
+</section><section id="avaliação-de-modelos-de-predição-1" class="slide level2"><h2>Avaliação de modelos de predição</h2>
 <p><strong>Erro Quadrático Médio (MSE - Mean Squared Error):</strong></p>
 <p><span class="math display">\[MSE =\dfrac{1}{n} \displaystyle{\sum_{j=1}^n e_j^2}\]</span></p>
 <ul>
 <li><p><strong>Ponto forte:</strong> Penaliza fortemente erros maiores devido ao termo quadrático. Isso significa que o MSE é sensível a outliers (valores discrepantes).</p></li>
 <li><p><strong>Ponto fraco:</strong> Como eleva os erros ao quadrado, a unidade da métrica resultante não é a mesma da variável original, o que dificulta a interpretação direta da magnitude do erro.</p></li>
-</ul>
-</section>
-<section id="avaliação-de-modelos-de-predição-2" class="slide level2">
-<h2>Avaliação de modelos de predição</h2>
+</ul></section><section id="avaliação-de-modelos-de-predição-2" class="slide level2"><h2>Avaliação de modelos de predição</h2>
 <p><strong>Raiz do Erro Quadrático Médio (RMSE - Root Mean Squared Error):</strong></p>
 <p><span class="math display">\[RMSE =\sqrt{\dfrac{1}{n} \displaystyle{\sum_{j=1}^n e_j^2}}\]</span></p>
 <ul>
 <li><p><strong>Ponto forte:</strong> Mantém a propriedade de penalizar erros maiores, mas retorna o erro na mesma unidade da variável original, facilitando a interpretação. É uma métrica amplamente utilizada.</p></li>
 <li><p><strong>Ponto fraco:</strong> Ainda é sensível a outliers, pois se baseia no MSE.</p></li>
-</ul>
-</section>
-<section id="avaliação-de-modelos-de-predição-3" class="slide level2">
-<h2>Avaliação de modelos de predição</h2>
+</ul></section><section id="avaliação-de-modelos-de-predição-3" class="slide level2"><h2>Avaliação de modelos de predição</h2>
 <p><strong>Erro Médio Absoluto (MAE - Mean Absolute Error):</strong></p>
 <p><span class="math display">\[MAE = \dfrac{1}{n} \displaystyle{\sum_{j=1}^n |e_j|}\]</span></p>
 <ul>
 <li><p><strong>Ponto forte:</strong> É mais robusto a outliers em comparação com MSE e RMSE, pois não eleva os erros ao quadrado. Fornece uma medida direta da magnitude média dos erros na unidade original da variável.</p></li>
 <li><p><strong>Ponto fraco:</strong> Não penaliza erros maiores de forma tão intensa quanto o MSE e RMSE. Pode não ser ideal se erros grandes tiverem um impacto significativamente maior no seu problema.</p></li>
-</ul>
-</section>
-<section id="avaliação-de-modelos-de-predição-4" class="slide level2">
-<h2>Avaliação de modelos de predição</h2>
+</ul></section><section id="avaliação-de-modelos-de-predição-4" class="slide level2"><h2>Avaliação de modelos de predição</h2>
 <p><strong>Erro Percentual Absoluto Médio (MAPE - Mean Absolute Percentage Error):</strong></p>
 <p><span class="math display">\[MAPE = \dfrac{1}{n} \displaystyle{\sum_{j=1}^n |e_j/d_j|}\times 100\]</span></p>
 <ul>
 <li><p><strong>Ponto forte:</strong> É fácil de interpretar, pois expressa o erro em termos percentuais. Isso pode ser útil para comparar o desempenho de modelos em diferentes escalas.</p></li>
 <li><p><strong>Ponto fraco:</strong> Não é definido quando os valores reais são zero. Além disso, pode ser assimétrico, penalizando mais os erros de previsão abaixo do valor real do que acima. Pode ser instável se houver valores reais muito pequenos.</p></li>
-</ul>
-</section>
-<section id="avaliação-de-modelos-de-predição-5" class="slide level2">
-<h2>Avaliação de modelos de predição</h2>
+</ul></section><section id="avaliação-de-modelos-de-predição-5" class="slide level2"><h2>Avaliação de modelos de predição</h2>
 <p align="center">
 <span style="font-size:70px;">🤔</span> Qual a melhor métrica?
 </p>
@@ -1035,56 +957,44 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 <span style="font-size:60px;">💡</span> O ideal é analisar todas as métricas em conjunto, considerando o contexto do seu problema e utilizando validação cruzada.
 </p>
 </div>
-</section>
-<section id="qual-o-melhor-modelo" class="slide level2">
-<h2>Qual o melhor modelo?</h2>
+</section><section id="qual-o-melhor-modelo" class="slide level2"><h2>Qual o melhor modelo?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
 <p><span style="font-size:70px;">👉</span> Suponha que tenhamos dados simulados utilizando o seguinte modelo:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig01.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/predicao/fig01.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig02.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/predicao/fig02.png" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="qual-o-melhor-modelo-1" class="slide level2">
-<h2>Qual o melhor modelo?</h2>
+</section><section id="qual-o-melhor-modelo-1" class="slide level2"><h2>Qual o melhor modelo?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
 <p><span style="font-size:70px;">👉</span> Podemos estimar diversos modelos <span class="math inline">\(y\)</span> que predizem o verdadeiro valor de <span class="math inline">\(d\)</span></p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig03.png" class="quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/predicao/fig03.png" class="quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="qual-o-melhor-modelo-2" class="slide level2">
-<h2>Qual o melhor modelo?</h2>
+</section><section id="qual-o-melhor-modelo-2" class="slide level2"><h2>Qual o melhor modelo?</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
 <p><span style="font-size:70px;">👉</span> Nosso interesse está em treinar o modelo e avaliar a sua capacidade de generalização</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig04.png" class="quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/predicao/fig04.png" class="quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="validação-holdout" class="slide level2">
-<h2>Validação holdout</h2>
+</section><section id="validação-holdout" class="slide level2"><h2>Validação holdout</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
@@ -1092,45 +1002,35 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 <p><span style="font-size:70px;">👉</span> <strong>Dados de treinamento:</strong> treinamento e validação</p>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/houlout.png" class="quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/predicao/houlout.png" class="quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="validação-holdout-1" class="slide level2">
-<h2>Validação holdout</h2>
+</section><section id="validação-holdout-1" class="slide level2"><h2>Validação holdout</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
 <p><strong>Exemplo:</strong> Vamos avaliar a relação entre Frequência Cardíaca e Idade de 270 pacientes</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/freq.png" class="nostretch quarto-figure quarto-figure-center" width="600"></p>
+<figure><p><img data-src="../..\images/predicao/freq.png" class="nostretch quarto-figure quarto-figure-center" width="600"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/exemplo.png" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
+<figure><p><img data-src="../..\images/predicao/exemplo.png" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="validação-holdout-2" class="slide level2">
-<h2>Validação holdout</h2>
+</section><section id="validação-holdout-2" class="slide level2"><h2>Validação holdout</h2>
 <p align="center">
 <span style="font-size:60px;">🤔</span> Qual o melhor modelo nesse caso?
 </p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig05.png" class="quarto-figure quarto-figure-center" width="700"></p>
+<figure><p><img data-src="../..\images/predicao/fig05.png" class="quarto-figure quarto-figure-center" width="700"></p>
 </figure>
 </div>
-</section>
-<section id="validação-holdout-3" class="slide level2">
-<h2>Validação holdout</h2>
+</section><section id="validação-holdout-3" class="slide level2"><h2>Validação holdout</h2>
 <p align="center">
 <span style="font-size:60px;">👉</span> 70% da base para treino e 30% para validação
 </p>
@@ -1138,224 +1038,188 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig06.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/fig06.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig07.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/fig07.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="validação-cruzada-k-fold" class="slide level2">
-<h2>Validação cruzada k-fold</h2>
+</section><section id="validação-cruzada-k-fold" class="slide level2"><h2>Validação cruzada k-fold</h2>
 <p><span style="font-size:70px;">👉</span> <strong>Dados de treinamento:</strong> <span class="math inline">\(k\)</span> partes iguais. <strong>Treina</strong> com <span class="math inline">\(k-1\)</span> partes, e <strong>valida</strong> com uma</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/cross_validation.png" class="quarto-figure quarto-figure-center" width="1400"></p>
+<figure><p><img data-src="../..\images/predicao/cross_validation.png" class="quarto-figure quarto-figure-center" width="1400"></p>
 </figure>
 </div>
-</section>
-<section id="validação-cruzada-k-fold-1" class="slide level2">
-<h2>Validação cruzada k-fold</h2>
+</section><section id="validação-cruzada-k-fold-1" class="slide level2"><h2>Validação cruzada k-fold</h2>
 <p><br></p>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig08.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/fig08.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig09.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/fig09.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="trade-off-bias-variância" class="slide level2">
-<h2>Trade-off bias-variância</h2>
+</section><section id="trade-off-bias-variância" class="slide level2"><h2>Trade-off bias-variância</h2>
 <p>Imagine que você está tentando <strong>acertar</strong> um alvo com dardos. Seus arremessos podem ser agrupados de três maneiras diferentes:</p>
 <ul>
-<li><strong>Grupo de alto viés (bias):</strong> Seus arremessos são <strong>consistentemente agrupados longe do alvo</strong>, mas <strong>próximos uns dos outros</strong>. Isso indica um <strong>alto viés</strong>, pois você está fazendo arremessos incorretos, mas de forma <strong>consistente</strong>.</li>
+<li>
+<strong>Grupo de alto viés (bias):</strong> Seus arremessos são <strong>consistentemente agrupados longe do alvo</strong>, mas <strong>próximos uns dos outros</strong>. Isso indica um <strong>alto viés</strong>, pois você está fazendo arremessos incorretos, mas de forma <strong>consistente</strong>.</li>
 </ul>
 <div class="fragment">
 <ul>
-<li><strong>Grupo de alta variância:</strong> Seus arremessos estão <strong>espalhados por toda a área</strong>, <strong>longe do alvo e uns dos outros</strong>. Isso indica <strong>alta variância</strong>, pois seus arremessos são <strong>inconsistentes e imprevisíveis</strong>.</li>
+<li>
+<strong>Grupo de alta variância:</strong> Seus arremessos estão <strong>espalhados por toda a área</strong>, <strong>longe do alvo e uns dos outros</strong>. Isso indica <strong>alta variância</strong>, pois seus arremessos são <strong>inconsistentes e imprevisíveis</strong>.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Grupo equilibrado:</strong> Seus arremessos estão <strong>agrupados próximo ao alvo</strong> e também estão <strong>próximos uns dos outros</strong>. Isso é o <strong>equilíbrio</strong> entre <strong>viés</strong> e <strong>variância</strong>, onde você está acertando o alvo de forma <strong>consistente</strong> e <strong>precisa</strong>.</li>
+<li>
+<strong>Grupo equilibrado:</strong> Seus arremessos estão <strong>agrupados próximo ao alvo</strong> e também estão <strong>próximos uns dos outros</strong>. Isso é o <strong>equilíbrio</strong> entre <strong>viés</strong> e <strong>variância</strong>, onde você está acertando o alvo de forma <strong>consistente</strong> e <strong>precisa</strong>.</li>
 </ul>
 </div>
-</section>
-<section id="trade-off-bias-variância-1" class="slide level2">
-<h2>Trade-off bias-variância</h2>
+</section><section id="trade-off-bias-variância-1" class="slide level2"><h2>Trade-off bias-variância</h2>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/bias_variance.png" class="quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/bias_variance.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
-</section>
-<section id="trade-off-bias-variância-2" class="slide level2">
-<h2>Trade-off bias-variância</h2>
+</section><section id="trade-off-bias-variância-2" class="slide level2"><h2>Trade-off bias-variância</h2>
 <p><br></p>
 <p>Queremos construir modelos que não apenas performem bem nos dados de treinamento, mas que também façam previsões precisas em dados novos e não vistos.</p>
 <div class="fragment">
 <p>O <strong>erro total</strong> de um <strong>modelo preditivo</strong> em dados não vistos pode ser <strong>decomposto em três componentes principais</strong>, ou seja,</p>
 <p><span class="math display">\[\text{Erro Total} = \text{Bias}^2 + \text{Variância} + \text{Erro Irredutível}\]</span></p>
 </div>
-</section>
-<section id="trade-off-bias-variância-3" class="slide level2">
-<h2>Trade-off bias-variância</h2>
+</section><section id="trade-off-bias-variância-3" class="slide level2"><h2>Trade-off bias-variância</h2>
 <p><br></p>
 <ul>
-<li><strong>Bias (Viés):</strong> Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.</li>
+<li>
+<strong>Bias (Viés):</strong> Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.</li>
 </ul>
 <div class="fragment">
 <ul>
-<li><strong>Variância:</strong> Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.</li>
+<li>
+<strong>Variância:</strong> Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Erro Irredutível:</strong> Ruído inerente aos dados que não pode ser reduzido por nenhum modelo.</li>
+<li>
+<strong>Erro Irredutível:</strong> Ruído inerente aos dados que não pode ser reduzido por nenhum modelo.</li>
 </ul>
 </div>
-</section>
-<section id="o-problema-do-subajuste-underfitting" class="slide level2">
-<h2>O Problema do Subajuste (Underfitting)</h2>
+</section><section id="o-problema-do-subajuste-underfitting" class="slide level2"><h2>O Problema do Subajuste (Underfitting)</h2>
 <p><br></p>
 <p>Modelos com <strong>alto bias</strong> fazem suposições fortes sobre a forma da função que mapeia as entradas para as saídas. São tipicamente modelos mais simples, com poucos parâmetros.</p>
 <div class="fragment">
 <ul>
-<li><p>Consequências:</p>
+<li>
+<p>Consequências:</p>
 <ul>
 <li>Desempenho ruim tanto nos dados de treinamento quanto nos dados de teste.</li>
 <li>Incapacidade de capturar a complexidade real dos dados.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 </div>
-</section>
-<section id="o-problema-do-sobreajuste-overfitting" class="slide level2">
-<h2>O Problema do Sobreajuste (Overfitting)</h2>
+</section><section id="o-problema-do-sobreajuste-overfitting" class="slide level2"><h2>O Problema do Sobreajuste (Overfitting)</h2>
 <p><br></p>
 <p>Modelos com <strong>alta variância</strong> aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.</p>
 <ul>
-<li><p>Consequências:</p>
+<li>
+<p>Consequências:</p>
 <ul>
 <li>Excelente desempenho nos dados de treinamento.</li>
 <li>Desempenho significativamente pior em dados de teste não vistos. O modelo “decorou” os dados de treinamento em vez de aprender padrões gerais.</li>
-</ul></li>
 </ul>
-</section>
-<section id="underfitting-e-overfitting" class="slide level2">
-<h2>Underfitting e Overfitting</h2>
+</li>
+</ul></section><section id="underfitting-e-overfitting" class="slide level2"><h2>Underfitting e Overfitting</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/over_under_good.png" class="quarto-figure quarto-figure-center" width="1800"></p>
+<figure><p><img data-src="../..\images/predicao/over_under_good.png" class="quarto-figure quarto-figure-center" width="1800"></p>
 </figure>
 </div>
-</section>
-<section id="bias-vs.-variância" class="slide level2">
-<h2>Bias vs.&nbsp;Variância</h2>
+</section><section id="bias-vs.-variância" class="slide level2"><h2>Bias vs.&nbsp;Variância</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><br></p>
 <p><br></p>
 <p>Voltemos ao nosso modelo simulado:</p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig01.png" class="nostretch quarto-figure quarto-figure-center" width="600"></p>
+<figure><p><img data-src="../..\images/predicao/fig01.png" class="nostretch quarto-figure quarto-figure-center" width="600"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig02.png" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
+<figure><p><img data-src="../..\images/predicao/fig02.png" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
 </figure>
 </div>
 </div></div>
-</section>
-<section id="bias-vs.-variância-1" class="slide level2">
-<h2>Bias vs.&nbsp;Variância</h2>
+</section><section id="bias-vs.-variância-1" class="slide level2"><h2>Bias vs.&nbsp;Variância</h2>
 <p align="center">
 <span style="font-size:60px;">👉</span> Vamos ajustar um modelo polinomial de <strong>grau 2</strong>
 </p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig12.png" class="quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/predicao/fig12.png" class="quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
-</section>
-<section id="bias-vs.-variância-2" class="slide level2">
-<h2>Bias vs.&nbsp;Variância</h2>
+</section><section id="bias-vs.-variância-2" class="slide level2"><h2>Bias vs.&nbsp;Variância</h2>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig13.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/fig13.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig14.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/fig14.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="bias-vs.-variância-3" class="slide level2">
-<h2>Bias vs.&nbsp;Variância</h2>
+</section><section id="bias-vs.-variância-3" class="slide level2"><h2>Bias vs.&nbsp;Variância</h2>
 <p align="center">
 <span style="font-size:60px;">👉</span> Vamos ajustar um modelo polinomial de <strong>grau 10</strong>
 </p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig15.png" class="quarto-figure quarto-figure-center" width="800"></p>
+<figure><p><img data-src="../..\images/predicao/fig15.png" class="quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
-</section>
-<section id="bias-vs.-variância-4" class="slide level2">
-<h2>Bias vs.&nbsp;Variância</h2>
+</section><section id="bias-vs.-variância-4" class="slide level2"><h2>Bias vs.&nbsp;Variância</h2>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig16.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/fig16.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/fig17.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
+<figure><p><img data-src="../..\images/predicao/fig17.png" class="nostretch quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="o-tradeoff---a-balança-delicada" class="slide level2">
-<h2>O Tradeoff - A Balança Delicada</h2>
+</section><section id="o-tradeoff---a-balança-delicada" class="slide level2"><h2>O Tradeoff - A Balança Delicada</h2>
 <p><span style="font-size:80px;">👉</span> <strong>Bias</strong> e <strong>variância</strong> estão <strong>inversamente relacionados</strong>. Tentar reduzir um geralmente aumenta o outro.</p>
 <div class="fragment">
 <ul>
@@ -1366,65 +1230,61 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 <div class="fragment">
 <p><span style="font-size:80px;">💡</span> O objetivo é encontrar um modelo com um <strong>bom equilíbrio</strong> entre <strong>bias</strong> e <strong>variância</strong>, que <strong>minimize o erro de generalização</strong>.</p>
 </div>
-</section>
-<section id="o-tradeoff---a-balança-delicada-1" class="slide level2">
-<h2>O Tradeoff - A Balança Delicada</h2>
+</section><section id="o-tradeoff---a-balança-delicada-1" class="slide level2"><h2>O Tradeoff - A Balança Delicada</h2>
 <p><br></p>
 <div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../..\images/predicao/bias-variance_tradeOff.png" class="quarto-figure quarto-figure-center" width="1800"></p>
+<figure><p><img data-src="../..\images/predicao/bias-variance_tradeOff.png" class="quarto-figure quarto-figure-center" width="1800"></p>
 </figure>
 </div>
-</section>
-<section id="como-lidar-com-o-tradeoff" class="slide level2">
-<h2>Como Lidar com o Tradeoff?</h2>
+</section><section id="como-lidar-com-o-tradeoff" class="slide level2"><h2>Como Lidar com o Tradeoff?</h2>
 <p><br></p>
 <ul>
-<li><strong>Seleção de Modelos:</strong> Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).</li>
+<li>
+<strong>Seleção de Modelos:</strong> Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).</li>
 </ul>
 <div class="fragment">
 <ul>
-<li><strong>Ajuste de Hiperparâmetros:</strong> Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).</li>
+<li>
+<strong>Ajuste de Hiperparâmetros:</strong> Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Validação Cruzada:</strong> Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.</li>
+<li>
+<strong>Validação Cruzada:</strong> Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Engenharia de Features:</strong> Criar features mais informativas pode reduzir o bias.</li>
+<li>
+<strong>Engenharia de Features:</strong> Criar features mais informativas pode reduzir o bias.</li>
 </ul>
 </div>
-</section>
-<section id="como-lidar-com-o-tradeoff-1" class="slide level2">
-<h2>Como Lidar com o Tradeoff?</h2>
+</section><section id="como-lidar-com-o-tradeoff-1" class="slide level2"><h2>Como Lidar com o Tradeoff?</h2>
 <p><br></p>
 <ul>
-<li><strong>Regularização:</strong> Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).</li>
+<li>
+<strong>Regularização:</strong> Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).</li>
 </ul>
 <div class="fragment">
 <ul>
-<li><strong>Mais Dados:</strong> Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.</li>
+<li>
+<strong>Mais Dados:</strong> Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li><strong>Ensemble Methods:</strong> Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância.</li>
+<li>
+<strong>Ensemble Methods:</strong> Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância.</li>
 </ul>
 </div>
-</section></section>
-<section>
-<section id="algoritmos-de-classificação" class="title-slide slide level1 center">
-<h1>Algoritmos de classificação</h1>
+</section></section><section><section id="algoritmos-de-predição" class="title-slide slide level1 center"><h1>Algoritmos de predição</h1>
 
-</section>
-<section id="algoritmos-de-classificação-1" class="slide level2">
-<h2>Algoritmos de classificação</h2>
+</section><section id="algoritmos-de-predição-1" class="slide level2"><h2>Algoritmos de predição</h2>
 <p><br></p>
 <ul>
-<li><p>Algoritmos mais comuns usados para problemas de classificação:</p>
+<li>
+<p>Algoritmos mais comuns usados para problemas de predição:</p>
 <ul>
 <li>K-Nearest Neighbors (KNN)</li>
 <li>Naive Bayes</li>
@@ -1432,38 +1292,369 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
 <li>Random Forests</li>
 <li>Máquinas de Vetores de Suporte (SVM)</li>
 <li>Redes Neurais Artificiais (ANN)</li>
-</ul></li>
 </ul>
-</section>
-<section id="k-nearest-neighbors-knn" class="slide level2">
-<h2>K-Nearest Neighbors (KNN)</h2>
+</li>
+</ul></section><section id="k-nearest-neighbors-knn" class="slide level2"><h2>K-Nearest Neighbors (KNN)</h2>
+<p><br></p>
+<p>O KNN é um algoritmo de aprendizado supervisionado de classificação e regressão, que usa a proximidade dos objetos para classificar novas instâncias.</p>
+<div class="fragment">
+<p>É um dos algoritmos mais simples e intuitivos de aprendizado de máquina. Utiliza a ideia do <strong>vizinho mais próximo</strong>, o que significa que ele determina a classe de uma instância com base nas classes de seus vizinhos mais próximos.</p>
+</div>
+<div class="fragment">
+<p>Em outras palavras, se a maioria dos vizinhos mais próximos de uma instância pertence a uma classe específica, então a instância também é classificada como pertencente a essa classe.</p>
+</div>
+</section><section id="algoritmo-knn" class="slide level2"><h2>Algoritmo KNN</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/knn.png" class="quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</section><section id="algoritmo-knn-1" class="slide level2"><h2>Algoritmo KNN</h2>
+<p><br></p>
+<p>KNN é usado para problemas de classificação e regressão.</p>
+<div class="fragment">
+<ul>
+<li>Em problemas de <strong>classificação</strong>, a classe mais comum entre os K vizinhos mais próximos é escolhida como a classe da nova instância.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Em problemas de <strong>regressão</strong>, a média ou mediana dos valores alvo dos K vizinhos mais próximos é escolhida como o valor alvo da nova instância.</li>
+</ul>
+</div>
+</section><section id="a-escolha-do-valor-de-k" class="slide level2"><h2>A escolha do valor de K</h2>
+<p><br></p>
+<p>O valor de K é um <strong>parâmetro</strong> importante em KNN. Ele determina o <strong>número de vizinhos mais próximos</strong> que são usados para classificar uma nova instância.</p>
+<div class="fragment">
+<p>Um valor de K pequeno pode levar a um modelo muito <strong>sensível</strong> ao <strong>ruído</strong> nos dados (overfitting), enquanto um valor grande de K pode levar a uma <strong>perda</strong> de detalhes importantes nos dados (underfitting).</p>
+</div>
+<div class="fragment">
+<p>A escolha do valor K ideal é frequentemente realizada por meio de técnicas de <strong>validação cruzada</strong>.</p>
+</div>
+<div class="fragment">
+<p>K ímpar evita empates.</p>
+</div>
+</section><section id="métricas-de-distância" class="slide level2"><h2>Métricas de Distância</h2>
+<ul>
+<li>
+<strong>Distância Euclidiana:</strong> A mais comum.</li>
+</ul>
+<p><span class="math display">\[d_{ij} = \displaystyle{\sqrt{(\mathbf{x}_i - \mathbf{x}_j)^t(\mathbf{x}_i - \mathbf{x}_j)}} = \sqrt{\displaystyle{\sum_{k=1}^p(x_{ik} - x_{jk})^2}}\]</span></p>
+<ul>
+<li>
+<strong>Distância de Minkowski:</strong> Soma das diferenças absolutas entre as coordenadas.</li>
+</ul>
+<p><span class="math display">\[d_{ij} = \left( \displaystyle{\sum_{k=1}^P} |X_{ik} - X_{jk}|^{\lambda}\right)^{\frac{1}{\lambda}}\]</span></p>
+</section><section id="métricas-de-distância-1" class="slide level2"><h2>Métricas de Distância</h2>
+<p><br></p>
+<ul>
+<li>
+<p>Para a distância de Minkowski:</p>
+<ul>
+<li>Se <span class="math inline">\(\lambda = 1\)</span>, temos a chamada <strong>métrica de Manhattan</strong>. É também conhecida como <em>city block</em>.<br>
+</li>
+<li>Se <span class="math inline">\(\lambda = 2\)</span>, temos a distância euclidiana.</li>
+<li>A métrica de Minkowski é menos afetada pela presença de valores discrepantes na amostra do que a distância Euclidiana.</li>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Se os dados forem textuais: usar cosseno</li>
+</ul>
+</div>
+</section><section id="vantagens-e-desvantagens" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:130px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>Simples de entender e implementar.</li>
+<li>Não faz muitas suposições sobre os dados (não paramétrico).</li>
+<li>Útil para dados complexos e não lineares.</li>
+<li>Pode ser usado tanto para classificação quanto para regressão.</li>
+</ul>
+</div></div>
+</section><section id="vantagens-e-desvantagens-1" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><br></p>
+<p><span style="font-size:130px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>Computacionalmente caro para grandes conjuntos de dados (cálculo de distância para todos os pontos).</li>
+<li>Sensível à escala dos dados (variáveis com escalas maiores podem dominar o cálculo da distância) - importância da normalização/padronização.</li>
+<li>Desempenho pode degradar em dados com muitas dimensões (maldição da dimensionalidade).</li>
+<li>Escolha do valor de k pode ser crucial e não é trivial.</li>
+</ul>
+</div></div>
+</section><section id="pré-processamento-de-dados-para-knn" class="slide level2"><h2>Pré-processamento de Dados para KNN</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:130px;">💻</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>
+<strong>Escalonamento de features:</strong> Padronização (média zero, desvio padrão um) ou normalização (escala entre 0 e 1) para garantir que todas as features contribuam igualmente para o cálculo da distância.</li>
+<li>
+<strong>Tratamento de valores ausentes:</strong> Imputação ou remoção.</li>
+<li>
+<strong>Seleção de features:</strong> Reduzir a dimensionalidade para melhorar o desempenho.</li>
+</ul>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</section><section id="exemplo-compra-de-um-computador-1" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/joao.png" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p>João possui as seguintes características</p>
+<ul>
+<li>menos de 30 anos</li>
+<li>renda média</li>
+<li>é estudante</li>
+<li>possuí um bom crédito na praça!</li>
+</ul>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-2" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p align="center">
+João <strong>compraria</strong> ou <strong>não compraria</strong> o computador?
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="https://media2.giphy.com/media/XeH1MFu4x3etVsllUN/giphy.gif" class="quarto-figure quarto-figure-center" width="1100"></p>
+</figure>
+</div>
+</section><section id="exemplo-compra-de-um-computador-3" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/joao.png" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p align="center" style="font-size: 76px">
+<strong>Quem é o João?</strong>
+</p>
+<p>&nbsp; &nbsp;</p>
+<div class="fragment">
+<p align="center" style="font-size: 56px">
+<span class="math inline">\(x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})\)</span>
+</p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-4" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p align="center">
+Usando o classificador KNN com k = 5
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tab_dist.jpg" class="quarto-figure quarto-figure-center" width="1100"></p>
+</figure>
+</div>
+</section><section id="exemplo-compra-de-um-computador-5" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p><br></p>
+<p>Temos então que os <strong>5 vizinhos</strong> mais próximos a João são</p>
+<p></p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:130px;">❌</span></p>
+</div><div class="column" style="width:90%;">
+<p></p>
+<ul>
+<li><p style="color: red">
+<span class="math inline">\(x_2 = \{\leq 30, \text{ Alta}, \text{ Sim}, \text{ Bom}\}\)</span>
+</p></li>
+<li><p style="color: red">
+<span class="math inline">\(x_8 = \{\leq 30, \text{Média}, \text{ Não}, \text{ Bom}\}\)</span>
+</p></li>
+</ul>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:130px;">✅</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li><p style="color: green">
+<span class="math inline">\(x_9 = \{\leq 30, \text{ Baixa}, \text{ Sim}, \text{ Bom}\}\)</span>
+</p></li>
+<li><p style="color: green">
+<span class="math inline">\(x_{10} = \{&gt; 40, \text{ Média}, \text{ Sim}, \text{ Excelente}\}\)</span>
+</p></li>
+<li><p style="color: green">
+<span class="math inline">\(x_{11} = \{\leq 30, \text{ Média}, \text{ Sim}, \text{ Excelente}\}\)</span>
+</p></li>
+</ul>
+</div></div>
+</div>
+</section><section id="exemplo-compra-de-um-computador-6" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p><br></p>
+<p><br></p>
+<details><summary align="center" style="font-size:80px;"><strong>João comprará o computador?</strong>
+</summary><p align="center" style="color: green; font-size:80px;">
+<strong>De acordo com o KNN: SIM!</strong>
+</p>
+</details></section><section id="knn-para-classificação-no-r-e-python" class="slide level2"><h2>KNN para classificação no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-1-1">R</a></li>
+<li><a href="#tabset-1-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb1-2"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb1-3"><a></a></span>
+<span id="cb1-4"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb1-5"><a></a><span class="fu">data</span>(iris)</span>
+<span id="cb1-6"><a></a>iris_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(iris, <span class="at">strata =</span> Species)</span>
+<span id="cb1-7"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(iris_split)</span>
+<span id="cb1-8"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(iris_split)</span>
+<span id="cb1-9"><a></a></span>
+<span id="cb1-10"><a></a>knn_spec <span class="ot">&lt;-</span> <span class="fu">nearest_neighbor</span>(<span class="at">neighbors =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-11"><a></a>  <span class="fu">set_engine</span>(<span class="st">"kknn"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>)</span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a>knn_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-15"><a></a>  <span class="fu">add_model</span>(knn_spec) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a></a>  <span class="fu">add_formula</span>(Species <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb1-17"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb1-18"><a></a></span>
+<span id="cb1-19"><a></a>sp_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(knn_fit, test_data)</span>
+<span id="cb1-20"><a></a></span>
+<span id="cb1-21"><a></a>Metrics<span class="sc">::</span><span class="fu">accuracy</span>(test_data<span class="sc">$</span>Species, sp_predict<span class="sc">$</span>.pred_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.974359</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
+<span id="cb3-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb3-3"><a></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsClassifier</span>
+<span id="cb3-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb3-7"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb3-8"><a></a>    iris.data, iris.target, stratify<span class="op">=</span>iris.target, random_state<span class="op">=</span><span class="dv">12345</span></span>
+<span id="cb3-9"><a></a>)</span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a>knn <span class="op">=</span> KNeighborsClassifier(n_neighbors<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb3-12"><a></a>knn.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-1 {color: black;}#sk-container-id-1 pre{padding: 0;}#sk-container-id-1 div.sk-toggleable {background-color: white;}#sk-container-id-1 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-1 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-1 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-1 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-1 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-1 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-1 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-1 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-1 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-1 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-1 div.sk-item {position: relative;z-index: 1;}#sk-container-id-1 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-1 div.sk-item::before, #sk-container-id-1 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-1 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-1 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-1 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-1 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-1 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-1 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-1 div.sk-label-container {text-align: center;}#sk-container-id-1 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-1 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-1" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>KNeighborsClassifier()</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsClassifier</label><div class="sk-toggleable__content"><pre>KNeighborsClassifier()</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>y_pred <span class="op">=</span> knn.predict(X_test)</span>
+<span id="cb4-2"><a></a>accuracy_score(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.9473684210526315</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="knn-para-regressão-no-r-e-python" class="slide level2"><h2>KNN para regressão no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-2-1">R</a></li>
+<li><a href="#tabset-2-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb6-2"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb6-3"><a></a></span>
+<span id="cb6-4"><a></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb6-5"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb6-6"><a></a>mtcars_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(mtcars, <span class="at">strata =</span> mpg)</span>
+<span id="cb6-7"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(mtcars_split)</span>
+<span id="cb6-8"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(mtcars_split)</span>
+<span id="cb6-9"><a></a></span>
+<span id="cb6-10"><a></a>knn_spec <span class="ot">&lt;-</span> <span class="fu">nearest_neighbor</span>(<span class="at">neighbors =</span> <span class="dv">5</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-11"><a></a>  <span class="fu">set_engine</span>(<span class="st">"kknn"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-12"><a></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>)</span>
+<span id="cb6-13"><a></a></span>
+<span id="cb6-14"><a></a>knn_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb6-15"><a></a>  <span class="fu">add_model</span>(knn_spec) <span class="sc">%&gt;%</span></span>
+<span id="cb6-16"><a></a>  <span class="fu">add_formula</span>(mpg <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb6-17"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb6-18"><a></a></span>
+<span id="cb6-19"><a></a>mpg_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(knn_fit, test_data)</span>
+<span id="cb6-20"><a></a></span>
+<span id="cb6-21"><a></a>Metrics<span class="sc">::</span><span class="fu">mse</span>(test_data<span class="sc">$</span>mpg, mpg_predict<span class="sc">$</span>.pred) <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.069807</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_california_housing</span>
+<span id="cb8-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb8-3"><a></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsRegressor</span>
+<span id="cb8-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<span id="cb8-5"><a></a></span>
+<span id="cb8-6"><a></a>data <span class="op">=</span> fetch_california_housing()</span>
+<span id="cb8-7"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb8-8"><a></a>    data.data, data.target, random_state<span class="op">=</span><span class="dv">12345</span></span>
+<span id="cb8-9"><a></a>)</span>
+<span id="cb8-10"><a></a></span>
+<span id="cb8-11"><a></a>knn_reg <span class="op">=</span> KNeighborsRegressor(n_neighbors<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb8-12"><a></a>knn_reg.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-2 {color: black;}#sk-container-id-2 pre{padding: 0;}#sk-container-id-2 div.sk-toggleable {background-color: white;}#sk-container-id-2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-2 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-2 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-2 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-2 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-2 div.sk-item {position: relative;z-index: 1;}#sk-container-id-2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-2 div.sk-item::before, #sk-container-id-2 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-2 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-2 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-2 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-2 div.sk-label-container {text-align: center;}#sk-container-id-2 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-2 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-2" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>KNeighborsRegressor()</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-2" type="checkbox" checked=""><label for="sk-estimator-id-2" class="sk-toggleable__label sk-toggleable__label-arrow">KNeighborsRegressor</label><div class="sk-toggleable__content"><pre>KNeighborsRegressor()</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>y_pred <span class="op">=</span> knn_reg.predict(X_test)</span>
+<span id="cb9-2"><a></a>mean_squared_error(y_test, y_pred, squared<span class="op">=</span><span class="va">True</span>)  <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.1408296168142682</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </section></section>
-    </div>
+</div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
 
 </div>
 </div></div>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
-  <!-- reveal.js plugins -->
-  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
-  
-
-  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-
-  <script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
 
       // Full list of configuration options available at:
       // https://revealjs.com/config/
@@ -1654,8 +1845,42 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
           RevealZoom
         ]
       });
-    </script>
-    <script id="quarto-html-after-body" type="application/javascript">
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+    
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+    
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+    
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+    
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
         tabsets.forEach(function(tabset) {
@@ -1822,6 +2047,6 @@ O <span class="math inline">\(F_1\)</span>-Score é como um <strong>equilibrista
         }
       });
       </script>
-    
+
 
 </body></html>
