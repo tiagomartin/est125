@@ -1644,6 +1644,1204 @@ Usando o classificador KNN com k = 5
 </div>
 </div>
 </div>
+</section><section id="algoritmo-naive-bayes" class="slide level2"><h2>Algoritmo Naive Bayes</h2>
+<p><br></p>
+<p>Baseia-se no <strong>Teorema de Bayes</strong>, que afirma que a probabilidade de um evento ocorrer dado que outro evento já ocorreu é proporcional à probabilidade deste último evento ocorrer dado o primeiro.</p>
+<div class="fragment">
+<p>A “ingenuidade” (Naive): assume que os preditores são independentes entre si, dado o valor da classe.</p>
+</div>
+<div class="fragment">
+<p>Aplicado principalmente em problemas de classificação, especialmente com dados categóricos ou textuais.</p>
+</div>
+</section><section id="revisão-do-teorema-de-bayes" class="slide level2"><h2>Revisão do Teorema de Bayes</h2>
+<p>Sejam A e B dois eventos</p>
+<p><span class="math display">\[P(A|B) = \dfrac{P(B|A)P(A)}{P(B)},\,\,\,\,\,\,\, \text{para } P(B)&gt;0\]</span></p>
+<div class="fragment">
+<p>O Teorema de Bayes Aplicado ao Naive Bayes:</p>
+<p><span class="math display">\[P(\text{Classe}|\text{Características}) = \dfrac{P(\text{Características}|\text{Classe})P(\text{Classe})}{P(\text{Características})}\]</span></p>
+</div>
+<div class="fragment">
+<p align="center">
+<span style="font-size:80px;">👉</span>O objetivo é encontrar a classe com a <strong>maior probabilidade posterior</strong>.
+</p>
+</div>
+</section><section id="o-teorema-de-bayes-aplicado-ao-naive-bayes" class="slide level2"><h2>O Teorema de Bayes Aplicado ao Naive Bayes</h2>
+<p>Devido a essa suposição de independência condicional, a probabilidade das características conjuntas dado a classe pode ser simplificada para o produto das probabilidades de cada característica individual dado a classe:</p>
+<p><span class="math display">\[P(X_1, X_2,\cdots, X_n|\text{Classe}) = P(X_1|\text{Classe}) \times P(X_2|\text{Classe}) \times \cdots \times P(X_n|\text{Classe})\]</span></p>
+<div class="fragment">
+<p>Substituindo na fórmula de Bayes, nos leva a</p>
+<p><span class="math display">\[P(\text{Classe}|\text{Características}) \propto P(\text{Classe}) \times \prod_{i=1}^n P(X_i|\text{Classe})\]</span></p>
+<p><strong>Observação importante:</strong> O denominador <span class="math inline">\(P(\text{Características})\)</span> é constante para todas as classes, então podemos ignorá-lo para fins de comparação</p>
+</div>
+</section><section id="tipos-de-naive-bayes" class="slide level2"><h2>Tipos de Naive Bayes</h2>
+<p><br></p>
+<ul>
+<li>
+<strong>Gaussian Naive Bayes:</strong> Para características contínuas. Assume que as características são distribuídas de acordo com uma distribuição Gaussiana (Normal).</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<strong>Multinomial Naive Bayes:</strong> Ideal para contagens de ocorrências (ex: contagem de palavras em documentos, usado em classificação de texto).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>
+<strong>Bernoulli Naive Bayes:</strong> Adequado para dados binários (presença/ausência de uma característica).</li>
+</ul>
+</div>
+</section><section id="vantagens-e-desvantagens-2" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><br></p>
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>
+<strong>Simplicidade:</strong> Fácil de entender e implementar.</li>
+<li>
+<strong>Eficiência:</strong> Muito rápido para treinar e prever, especialmente em grandes conjuntos de dados.</li>
+<li>
+<strong>Bom desempenho:</strong> Surpreendentemente eficaz em muitos problemas reais, mesmo com a suposição de independência.</li>
+<li>
+<strong>Processamento de texto:</strong> Excelente para classificação de documentos e filtragem de spam.</li>
+<li>
+<strong>Não requer muitos dados:</strong> Pode funcionar bem com conjuntos de dados menores.</li>
+</ul>
+</div></div>
+</section><section id="vantagens-e-desvantagens-3" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><br></p>
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>
+<strong>Suposição de independência:</strong> A suposição de independência entre as características raramente é verdadeira no mundo real, o que pode limitar a precisão.</li>
+<li>
+<strong>Problema de “zero frequência”:</strong> Se uma categoria de característica não aparecer no conjunto de treinamento para uma determinada classe, a probabilidade para essa característica será zero, o que leva a uma probabilidade posterior zero. (para resolver: Laplace Smoothing)</li>
+<li>
+<strong>Estimativa de Probabilidades:</strong> Pode ter um desempenho ruim quando há características numéricas com distribuições complexas (a suposição Gaussiana pode não se aplicar).</li>
+</ul>
+</div></div>
+</section><section id="pré-processamento-de-dados-para-naive-bayes" class="slide level2"><h2>Pré-processamento de Dados para Naive Bayes</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><br></p>
+<p><span style="font-size:160px;">💻</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>
+<strong>Dados Categóricos:</strong> Transformar para formato numérico (One-Hot Encoding ou Label Encoding, dependendo do tipo de NB).</li>
+<li>
+<strong>Dados Numéricos:</strong>
+<ul>
+<li>
+<strong>GaussianNB:</strong> Assumir distribuição normal. Normalização/padronização pode ajudar, mas não é estritamente necessária como em KNN, já que não se baseia em distância.</li>
+<li>
+<strong>Discretização:</strong> Converter dados numéricos em categóricos (bins) para usar Multinomial ou Bernoulli NB.</li>
+</ul>
+</li>
+<li>
+<strong>Tratamento de Valores Ausentes:</strong> Imputação ou remoção.</li>
+<li>
+<strong>Textuais:</strong> Tokenização, remoção de stop words, stemização/lema, TF-IDF, CountVectorizer.</li>
+</ul>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-7" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</section><section id="exemplo-compra-de-um-computador-8" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/joao.png" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p align="center" style="font-size: 76px">
+<strong>Voltando ao Joãozinho…</strong>
+</p>
+<p>&nbsp; &nbsp;</p>
+<div class="fragment">
+<p align="center" style="font-size: 56px">
+<span class="math inline">\(x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})\)</span>
+</p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-9" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<strong>Probabilidade de ocorrência das classes</strong>
+</p>
+<div class="fragment">
+<p><span class="math display">\[ P(\text{classe = Sim}) = \dfrac{9}{14}\]</span> <span class="math display">\[P(\text{classe = Não}) = \dfrac{5}{14}\]</span></p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-10" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<span class="math inline">\(x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})\)</span>
+</p>
+<div class="fragment">
+<p>Para o atributo <strong>Idade</strong>:</p>
+<p><span class="math display">\[ P(\text{Idade} \leq 30 | \text{classe = Sim}) = \dfrac{2}{9} \\ P(\text{Idade} \leq 30 | \text{classe = Não}) = \dfrac{3}{5}\]</span></p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-11" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<span class="math inline">\(x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})\)</span>
+</p>
+<div class="fragment">
+<p>Para o atributo <strong>Renda</strong>:</p>
+<p><span class="math display">\[ P(\text{Renda = Média} | \text{classe = Sim}) = \dfrac{4}{9} \\ P(\text{Renda = Média} | \text{classe = Não}) = \dfrac{2}{5}\]</span></p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-12" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<span class="math inline">\(x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})\)</span>
+</p>
+<div class="fragment">
+<p>Para o atributo <strong>Estudante</strong>:</p>
+<p><span class="math display">\[ P(\text{Estudante = Sim} | \text{classe = Sim}) = \dfrac{6}{9} \\ P(\text{Estudante = Sim} | \text{classe = Não}) = \dfrac{2}{5}\]</span></p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-13" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<span class="math inline">\(x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})\)</span>
+</p>
+<div class="fragment">
+<p>Para o atributo <strong>Crédito</strong>:</p>
+<p><span class="math display">\[ P(\text{Crédito = Bom} | \text{classe = Sim}) = \dfrac{6}{9} \\ P(\text{Crédito = Bom} | \text{classe = Não}) = \dfrac{3}{5}\]</span></p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-14" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p>Temos então, sob independência:</p>
+<p><span class="math display">\[P(x_0|\text{Sim}) = P(\leq 30 \cap \text{Média} \cap \text{Sim} \cap \text{Bom}|\text{Sim} ) \\ = \dfrac{2}{9} \times \dfrac{4}{9}\times \dfrac{6}{9}\times \dfrac{6}{9} = \dfrac{288}{729} = 0,0439\\\]</span></p>
+<div class="fragment">
+<p>e,</p>
+<p><span class="math display">\[P(x_0|\text{Não}) = P(\leq 30 \cap \text{Média} \cap \text{Sim} \cap \text{Bom}|\text{Não} ) \\ = \dfrac{3}{5} \times \dfrac{2}{5}\times \dfrac{2}{5}\times \dfrac{3}{5} = \dfrac{36}{625} = 0,0576\\\]</span></p>
+</div>
+</section><section id="exemplo-compra-de-um-computador-15" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p>Pelo Teorema da Probabilidade Total:</p>
+<p><span class="math display">\[
+\begin{eqnarray*}
+P(x_0) &amp;=&amp; P(x_0|\text{Sim}) \times P(\text{Sim}) + P(x_0|\text{Não}) \times P(\text{Não}) \\ &amp;=&amp; 0,0439 \times 0,6429 + 0,0576 \times 0,3571 \\ &amp;=&amp; 0,0488
+\end{eqnarray*}
+\]</span></p>
+<div class="fragment">
+<p>Assim, pelo Teorema de Bayes:</p>
+<p><span class="math display">\[P(\text{Sim}|x_0) = \dfrac{P(x_0|\text{Sim}) \times P(\text{Sim})}{P(x_0)} = \dfrac{0,0439 \times 0,6429}{0,0488} = 0,5783\]</span></p>
+</div>
+</section><section id="exemplo-compra-de-um-computador-16" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p>e,</p>
+<p><span class="math display">\[P(\text{Não}|x_0) = \dfrac{P(x_0|\text{Não}) \times P(\text{Não})}{P(x_0)} = \dfrac{0,0576 \times 0,3571}{0,0488} = 0,4215 \\ \]</span></p>
+</section><section id="exemplo-compra-de-um-computador-17" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p><br></p>
+<p><br></p>
+<details><summary align="center" style="font-size:80px;"><strong>João comprará o computador?</strong>
+</summary><p align="center" style="color: green; font-size:80px;">
+<strong>De acordo com o Naive Bayes: SIM!</strong>
+</p>
+</details></section><section id="naive-bayes-para-classificação-no-r-e-python" class="slide level2"><h2>Naive Bayes para classificação no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-3-1">R</a></li>
+<li><a href="#tabset-3-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb11-2"><a></a><span class="fu">library</span>(discrim)</span>
+<span id="cb11-3"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb11-4"><a></a></span>
+<span id="cb11-5"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb11-6"><a></a><span class="fu">data</span>(iris)</span>
+<span id="cb11-7"><a></a>iris_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(iris, <span class="at">strata =</span> Species)</span>
+<span id="cb11-8"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(iris_split)</span>
+<span id="cb11-9"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(iris_split)</span>
+<span id="cb11-10"><a></a></span>
+<span id="cb11-11"><a></a>nb_model <span class="ot">&lt;-</span> <span class="fu">naive_Bayes</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb11-12"><a></a>  <span class="fu">set_engine</span>(<span class="st">"klaR"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-13"><a></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>)</span>
+<span id="cb11-14"><a></a></span>
+<span id="cb11-15"><a></a>nb_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb11-16"><a></a>  <span class="fu">add_model</span>(nb_model) <span class="sc">%&gt;%</span></span>
+<span id="cb11-17"><a></a>  <span class="fu">add_formula</span>(Species <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb11-18"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb11-19"><a></a></span>
+<span id="cb11-20"><a></a>sp_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(nb_fit, <span class="at">new_data =</span> test_data)</span>
+<span id="cb11-21"><a></a></span>
+<span id="cb11-22"><a></a>Metrics<span class="sc">::</span><span class="fu">accuracy</span>(test_data<span class="sc">$</span>Species, sp_predict<span class="sc">$</span>.pred_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.9487179</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb13-3"><a></a><span class="im">from</span> sklearn.naive_bayes <span class="im">import</span> GaussianNB <span class="co"># Para dados contínuos como Iris</span></span>
+<span id="cb13-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, confusion_matrix</span>
+<span id="cb13-5"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris <span class="co"># Para carregar o dataset Iris</span></span>
+<span id="cb13-6"><a></a></span>
+<span id="cb13-7"><a></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb13-8"><a></a>X <span class="op">=</span> pd.DataFrame(iris.data, columns<span class="op">=</span>iris.feature_names)</span>
+<span id="cb13-9"><a></a>y <span class="op">=</span> pd.Series(iris.target_names[iris.target], name<span class="op">=</span><span class="st">'species'</span>) <span class="co"># Mapear números para nomes de espécies</span></span>
+<span id="cb13-10"><a></a></span>
+<span id="cb13-11"><a></a><span class="co"># Split dos dados em treino e teste</span></span>
+<span id="cb13-12"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">12345</span>)</span>
+<span id="cb13-13"><a></a></span>
+<span id="cb13-14"><a></a>model_nb <span class="op">=</span> GaussianNB()</span>
+<span id="cb13-15"><a></a>model_nb.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-3 {color: black;}#sk-container-id-3 pre{padding: 0;}#sk-container-id-3 div.sk-toggleable {background-color: white;}#sk-container-id-3 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-3 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-3 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-3 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-3 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-3 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-3 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-3 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-3 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-3 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-3 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-3 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-3 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-3 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-3 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-3 div.sk-item {position: relative;z-index: 1;}#sk-container-id-3 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-3 div.sk-item::before, #sk-container-id-3 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-3 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-3 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-3 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-3 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-3 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-3 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-3 div.sk-label-container {text-align: center;}#sk-container-id-3 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-3 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-3" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>GaussianNB()</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-3" type="checkbox" checked=""><label for="sk-estimator-id-3" class="sk-toggleable__label sk-toggleable__label-arrow">GaussianNB</label><div class="sk-toggleable__content"><pre>GaussianNB()</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a>y_pred <span class="op">=</span> model_nb.predict(X_test)</span>
+<span id="cb14-2"><a></a>accuracy_score(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.9555555555555556</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="árvores-de-decisão" class="slide level2"><h2>Árvores de decisão</h2>
+<p><br></p>
+<p>Uma <strong>árvore de decisão</strong> é um modelo de aprendizado de máquina que utiliza uma estrutura de árvore para tomar decisões com base em condições nos dados de entrada.</p>
+<div class="fragment">
+<p>Essa estrutura hierárquica consiste em nós que representam <strong>testes</strong> sobre atributos e arestas que conectam os nós, indicando os resultados desses testes.</p>
+</div>
+<div class="fragment">
+<p>Cada <strong>nó interno</strong> da árvore representa um teste em um atributo específico, enquanto as <strong>folhas</strong> representam as classes ou valores de saída.</p>
+</div>
+</section><section id="árvores-de-decisão-1" class="slide level2"><h2>Árvores de decisão</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/ad/ad.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+Ao percorrer a árvore da raiz até uma folha, os dados de entrada são avaliados de acordo com os testes em cada nó, seguindo o caminho apropriado até alcançar uma folha, onde é tomada a decisão final.
+</p>
+</div></div>
+</section><section id="principais-algoritmos" class="slide level2"><h2>Principais Algoritmos</h2>
+<p><br></p>
+<p align="center">
+<strong>ID3 (Iterative Dichotomiser 3)</strong>
+</p>
+<ul>
+<li>É um dos primeiros algoritmos de árvore de decisão e utiliza o <strong>ganho de informação</strong> como critério para selecionar a melhor divisão em cada nó. No entanto, o ID3 não lida diretamente com <strong>atributos numéricos</strong>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Favorece características com muitos valores distintos.</li>
+</ul>
+</div>
+</section><section id="principais-algoritmos-1" class="slide level2"><h2>Principais Algoritmos</h2>
+<p><br></p>
+<p align="center">
+<strong>C4.5</strong>
+</p>
+<ul>
+<li>É uma extensão do ID3 e possui melhorias, incluindo a capacidade de lidar com <strong>atributos numéricos</strong> e <strong>valores ausentes</strong>. Além disso, o C4.5 utiliza a <strong>razão de ganho</strong> como métrica de seleção de atributos, em vez do ganho de informação utilizado pelo ID3.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Corrige o viés em relação a características com muitos valores.</li>
+</ul>
+</div>
+</section><section id="principais-algoritmos-2" class="slide level2"><h2>Principais Algoritmos</h2>
+<p><br></p>
+<p align="center">
+<strong>CART (Classification and Regression Trees)</strong>
+</p>
+<ul>
+<li>Pode ser usado tanto para classificação quanto para regressão.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Para classificação, usa o índice de Gini como critério de divisão.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Gera árvores binárias (cada nó tem exatamente dois filhos).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Ele busca minimizar a <strong>impureza</strong> nos nós da árvore.</li>
+</ul>
+</div>
+</section><section id="principais-algoritmos-3" class="slide level2"><h2>Principais Algoritmos</h2>
+<p><br></p>
+<p align="center">
+<strong>CART (Classification and Regression Trees)</strong>
+</p>
+<ul>
+<li>Para regressão, busca dividir os dados de forma a minimizar o erro quadrático médio (MSE) ou o desvio absoluto médio (MAE) nos nós folha.</li>
+</ul></section><section id="processo-de-preparação-de-um-modelo-de-árvore-de-decisão" class="slide level2"><h2>Processo de preparação de um modelo de Árvore de Decisão</h2>
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/ad/processo.jpg" class="quarto-figure quarto-figure-center" width="1800"></p>
+</figure>
+</div>
+</section><section id="critérios-de-divisão-para-classificação" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<p><br></p>
+<p><br></p>
+<p align="center">
+O objetivo dos critérios de divisão é encontrar a melhor característica para separar os dados em subconjuntos mais “puros” em relação à variável alvo (classe).
+</p>
+</section><section id="critérios-de-divisão-para-classificação-1" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<p><br></p>
+<ul>
+<li><strong>Entropia</strong></li>
+</ul>
+<p>A <strong>entropia</strong> é uma <strong>medida de impureza</strong> ou aleatoriedade dos dados em um algoritmo de árvore de decisão. Ela é utilizada para avaliar o quão homogêneos ou heterogêneos são os exemplos de uma determinada classe em um conjunto de dados.</p>
+<div class="fragment">
+<p>É calculada a partir da distribuição das classes no conjunto de dados. Quanto <strong>maior</strong> a entropia, <strong>maior a incerteza</strong> sobre a classe de um exemplo. Quanto <strong>menor</strong> a entropia, mais <strong>homogêneos</strong> são os exemplos em relação à classe.</p>
+</div>
+</section><section id="critérios-de-divisão-para-classificação-2" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<p><br></p>
+<ul>
+<li><strong>Entropia</strong></li>
+</ul>
+<p><span class="math display">\[ \text{E(S)} = \sum_{i=1}^c -p_i\log_2 p_i\]</span></p>
+<p>em que <span class="math inline">\(p_i\)</span> é a proporção de exemplos na classe <span class="math inline">\(i\)</span> da amostra de treinamento S.</p>
+</section><section id="critérios-de-divisão-para-classificação-3" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<p><br></p>
+<ul>
+<li><strong>Ganho de Informação (G)</strong></li>
+</ul>
+<p>O <strong>ganho de informação</strong> é uma métrica utilizada para medir a relevância de um atributo na divisão dos dados. Ele indica a <strong>quantidade de informação</strong> que um atributo fornece sobre a <strong>classe</strong> ou <strong>variável</strong> de saída.</p>
+<div class="fragment">
+<p>Mede a <strong>redução na entropia</strong> após a divisão do conjunto de dados por uma característica.</p>
+</div>
+<div class="fragment">
+<p>O ID3 escolhe a característica com o <strong>maior ganho de informação</strong>.</p>
+</div>
+</section><section id="critérios-de-divisão-para-classificação-4" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<p><br></p>
+<ul>
+<li><strong>Ganho de Informação (G)</strong></li>
+</ul>
+<p><span class="math display">\[ \text{G}(S, A) = \text{E}(S) - \text{E}(S,A)\]</span></p>
+<p>em que <span class="math inline">\(E(S,A) = \sum_{v\in \text{valores de } A} \dfrac{|S_v|}{|S|} \times \text{E}(S_v)\)</span> é a entropia do atributo A.</p>
+</section><section id="critérios-de-divisão-para-classificação-5" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<p><br></p>
+<ul>
+<li><strong>Razão de ganho</strong></li>
+</ul>
+<p>Também conhecida como <strong>gain ratio</strong>, é uma métrica utilizada para selecionar os melhores atributos de divisão, levando em consideração o viés por atributos com muitos valores possíveis.</p>
+<div class="fragment">
+<p>Enquanto o <strong>ganho de informação</strong> mede a redução da entropia dos dados após a divisão com base em um atributo, a <strong>razão de ganho</strong> ajusta esse valor, levando em consideração o número de valores distintos do atributo.</p>
+</div>
+<div class="fragment">
+<p>Essa correção é importante para evitar que atributos com <strong>muitos valores</strong> possíveis tenham vantagem sobre atributos com <strong>menos valores</strong>.</p>
+</div>
+</section><section id="critérios-de-divisão-para-classificação-6" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<p><br></p>
+<ul>
+<li><strong>Razão de ganho</strong></li>
+</ul>
+<p><span class="math display">\[ \text{Gain ratio}(S, A) = \dfrac{G(S, A)}{E(S, A)}\]</span></p>
+</section><section id="critérios-de-divisão-para-classificação-7" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<ul>
+<li><strong>Índice de Gini</strong></li>
+</ul>
+<p>O índice de Gini é outra medida de <strong>impureza</strong> utilizada para avaliar a heterogeneidade dos dados em relação à classe ou variável de saída.</p>
+<div class="fragment">
+<p>Medida da probabilidade de uma amostra ser classificada incorretamente se fosse aleatoriamente rotulada de acordo com a distribuição das classes no subconjunto.</p>
+</div>
+<div class="fragment">
+<p>Um valor menor indica maior pureza.</p>
+</div>
+<div class="fragment">
+<p>Usado pelo CART para classificação.</p>
+</div>
+</section><section id="critérios-de-divisão-para-classificação-8" class="slide level2"><h2>Critérios de Divisão para Classificação</h2>
+<ul>
+<li><strong>Índice de Gini</strong></li>
+</ul>
+<p><span class="math display">\[ \text{Gini}(S) = 1 - \sum_{i=1}^c p_i^2\]</span> em que <span class="math inline">\(p_i\)</span> é a proporção de exemplos na classe <span class="math inline">\(i\)</span> da amostra de treinamento S.</p>
+<div class="fragment">
+<p>O CART busca a divisão que resulta na maior redução no índice de Gini.</p>
+</div>
+<div class="fragment">
+<p>O índice de Gini varia de 0 a 1, sendo 0 quando todos os exemplos pertencem à mesma classe (alta pureza) e 1 quando os exemplos estão igualmente distribuídos entre as classes (alta impureza).</p>
+</div>
+</section><section id="critérios-de-divisão-para-regressão" class="slide level2"><h2>Critérios de Divisão para Regressão</h2>
+<p><br></p>
+<p><br></p>
+<p align="center">
+O objetivo é dividir os dados de forma a minimizar a variabilidade da variável alvo dentro de cada nó folha.
+</p>
+</section><section id="critérios-de-divisão-para-regressão-1" class="slide level2"><h2>Critérios de Divisão para Regressão</h2>
+<ul>
+<li><strong>Redução do Erro Quadrático Médio (MSE):</strong></li>
+</ul>
+<p>O CART para regressão geralmente busca a divisão que maximiza a redução no MSE.</p>
+<div class="fragment">
+<p>Calcula-se o MSE no nó pai e o MSE ponderado nos nós filhos após a divisão. A divisão que proporciona a maior redução é escolhida.</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[MSE = \dfrac{1}{|S|} \displaystyle{\sum_{i\in S} (y_i - \bar{y})^2}\]</span></p>
+<p>em que <span class="math inline">\(y_i\)</span> é o valor da variável alvo para a amostra <span class="math inline">\(i\)</span> e <span class="math inline">\(\bar{y}\)</span> é a média dos valores da variável alvo em S.</p>
+</div>
+</section><section id="critérios-de-divisão-para-regressão-2" class="slide level2"><h2>Critérios de Divisão para Regressão</h2>
+<ul>
+<li><strong>Redução do Desvio Absoluto Médio (MAE):</strong></li>
+</ul>
+<p>Alternativamente, alguns algoritmos de árvores de regressão podem usar o MAE.</p>
+<div class="fragment">
+<p><span class="math display">\[MAE = \dfrac{1}{|S|} \displaystyle{\sum_{i\in S} |y_i - \text{mediana}(y)|}\]</span></p>
+</div>
+</section><section id="vantagens-e-desvantagens-4" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><br></p>
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>Fáceis de entender e interpretar (modelos “caixa branca”).</li>
+<li>Podem lidar com dados numéricos e categóricos.</li>
+<li>Não exigem muita preparação dos dados (não sensíveis a escala ou transformações monótonas).</li>
+<li>Capazes de capturar relações não lineares entre as características e a variável alvo.</li>
+<li>Úteis para seleção de características (as características mais próximas da raiz são consideradas mais importantes).</li>
+</ul>
+</div></div>
+</section><section id="vantagens-e-desvantagens-5" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><br></p>
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>Tendência ao overfitting (ajustar-se demais aos dados de treinamento, resultando em mau desempenho em dados novos).</li>
+<li>Podem ser sensíveis a pequenas variações nos dados de treinamento.</li>
+<li>Podem criar árvores complexas que não generalizam bem.</li>
+<li>Para algumas tarefas, podem não ser tão precisas quanto outros algoritmos.</li>
+<li>O algoritmo guloso de construção da árvore nem sempre encontra a melhor árvore possível.</li>
+</ul>
+</div></div>
+</section><section id="controle-de-overfitting-podas" class="slide level2"><h2>Controle de Overfitting (Podas)</h2>
+<p><br></p>
+<p>A <strong>poda</strong> é o processo de <strong>reduzir o tamanho de uma árvore de decisão</strong>, removendo seções da árvore que podem estar superajustando os dados de treinamento.</p>
+<div class="fragment">
+<p>O objetivo da poda é <strong>simplificar</strong> a árvore, tornando-a mais generalizável e menos propensa a memorizar ruídos específicos do conjunto de treinamento.</p>
+</div>
+</section><section id="controle-de-overfitting-podas-1" class="slide level2"><h2>Controle de Overfitting (Podas)</h2>
+<p><br></p>
+<p>Tipos de Poda:</p>
+<ul>
+<li>
+<p><strong>Pré-poda:</strong> Parar o crescimento da árvore antecipadamente com base em critérios (ex: profundidade máxima, número mínimo de amostras por nó).</p>
+<ul>
+<li>Mais eficiente computacionalmente; pode levar ao underfitting</li>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>
+<p><strong>Pós-poda:</strong> Construir a árvore completa e depois remover nós que não melhoram o desempenho em um conjunto de validação.</p>
+<ul>
+<li>Árvores com melhor capacidade de generalização; mais intensiva computacionalmente</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="exemplo-compra-de-um-computador-18" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</section><section id="exemplo-compra-de-um-computador-19" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/knn/tabela.jpg" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<strong>Cálculo da Entropia</strong>
+</p>
+<p><span class="math display">\[ \text{E(S)} = \sum_{i=1}^c -p_i\log_2 p_i\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[ \text{E(S)} = -\dfrac{9}{14}\log_2 (\dfrac{9}{14}) - \dfrac{5}{14}\log_2 (\dfrac{5}{14}) = 0,940\]</span></p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-20" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><br></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead><tr>
+<th class="tg-cw6g">
+</th>
+<th class="tg-cw6g">
+</th>
+<th class="tg-c3ow" colspan="2">
+Classe
+</th>
+<th class="tg-c3ow">
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tg-cw6g">
+</td>
+<td class="tg-oao4">
+</td>
+<td class="tg-c3ow">
+Sim
+</td>
+<td class="tg-c3ow">
+Não
+</td>
+<td class="tg-c3ow">
+</td>
+</tr>
+<tr>
+<td class="tg-itrc" rowspan="3">
+Idade<br>
+</td>
+<td class="tg-oao4">
+=&lt; 30
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-oao4">
+31…40
+</td>
+<td class="tg-c3ow">
+4
+</td>
+<td class="tg-c3ow">
+0
+</td>
+<td class="tg-c3ow">
+4
+</td>
+</tr>
+<tr>
+<td class="tg-oao4">
+&gt;40
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-cw6g">
+</td>
+<td class="tg-oao4">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<strong>Ganho de informação para o atributo idade</strong>
+</p>
+<p><span class="math display">\[ \text{E(S, Idade)} = \dfrac{|\leq 30|}{|S|}\times \text{E}(\leq 30)\\
++ \dfrac{|31...40|}{|S|}\times \text{E}(31...40) \\ +  \dfrac{|&gt;40|}{|S|}\times \text{E}(&gt;40)\]</span></p>
+<!-- ::: {.fragment} -->
+<!-- $$ \text{E(S)} = -\dfrac{9}{14}\log_2 (\dfrac{9}{14}) - \dfrac{5}{14}\log_2 (\dfrac{5}{14}) = 0,940$$ -->
+<!-- ::: -->
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-21" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><br></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead><tr>
+<th class="tg-cw6g">
+</th>
+<th class="tg-cw6g">
+</th>
+<th class="tg-c3ow" colspan="2">
+Classe
+</th>
+<th class="tg-c3ow">
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tg-cw6g">
+</td>
+<td class="tg-oao4">
+</td>
+<td class="tg-c3ow">
+Sim
+</td>
+<td class="tg-c3ow">
+Não
+</td>
+<td class="tg-c3ow">
+</td>
+</tr>
+<tr>
+<td class="tg-itrc" rowspan="3">
+Idade<br>
+</td>
+<td class="tg-oao4">
+=&lt; 30
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-oao4">
+31…40
+</td>
+<td class="tg-c3ow">
+4
+</td>
+<td class="tg-c3ow">
+0
+</td>
+<td class="tg-c3ow">
+4
+</td>
+</tr>
+<tr>
+<td class="tg-oao4">
+&gt;40
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-cw6g">
+</td>
+<td class="tg-oao4">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<strong>Ganho de informação para o atributo idade</strong>
+</p>
+<p><span class="math display">\[ \text{E(S, Idade)} = \dfrac{5}{14}\times \text{E}(\leq 30) \\ + \dfrac{4}{14}\times \text{E}(31...40) \\ +  \dfrac{5}{14}\times \text{E}(&gt;40)\]</span></p>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-22" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><br></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead><tr>
+<th class="tg-cw6g">
+</th>
+<th class="tg-cw6g">
+</th>
+<th class="tg-c3ow" colspan="2">
+Classe
+</th>
+<th class="tg-c3ow">
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tg-cw6g">
+</td>
+<td class="tg-oao4">
+</td>
+<td class="tg-c3ow">
+Sim
+</td>
+<td class="tg-c3ow">
+Não
+</td>
+<td class="tg-c3ow">
+</td>
+</tr>
+<tr>
+<td class="tg-itrc" rowspan="3">
+Idade<br>
+</td>
+<td class="tg-oao4">
+=&lt; 30
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-oao4">
+31…40
+</td>
+<td class="tg-c3ow">
+4
+</td>
+<td class="tg-c3ow">
+0
+</td>
+<td class="tg-c3ow">
+4
+</td>
+</tr>
+<tr>
+<td class="tg-oao4">
+&gt;40
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-cw6g">
+</td>
+<td class="tg-oao4">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<strong>Ganho de informação para o atributo idade</strong>
+</p>
+<p><span class="math display">\[ \text{E}(\leq 30) = -\dfrac{2}{5}\log_2 (\dfrac{2}{5}) - \dfrac{3}{5}\log_2 (\dfrac{3}{5}) = 0,971\]</span> <span class="math display">\[ \text{E}(31...40) = 0\,\,\,\,\,\,\,\, \text{e} \,\,\,\,\,\,\,\, \text{E}(&gt;40) = 0,971\]</span></p>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-23" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><br></p>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+<thead><tr>
+<th class="tg-cw6g">
+</th>
+<th class="tg-cw6g">
+</th>
+<th class="tg-c3ow" colspan="2">
+Classe
+</th>
+<th class="tg-c3ow">
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="tg-cw6g">
+</td>
+<td class="tg-oao4">
+</td>
+<td class="tg-c3ow">
+Sim
+</td>
+<td class="tg-c3ow">
+Não
+</td>
+<td class="tg-c3ow">
+</td>
+</tr>
+<tr>
+<td class="tg-itrc" rowspan="3">
+Idade<br>
+</td>
+<td class="tg-oao4">
+=&lt; 30
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-oao4">
+31…40
+</td>
+<td class="tg-c3ow">
+4
+</td>
+<td class="tg-c3ow">
+0
+</td>
+<td class="tg-c3ow">
+4
+</td>
+</tr>
+<tr>
+<td class="tg-oao4">
+&gt;40
+</td>
+<td class="tg-c3ow">
+3
+</td>
+<td class="tg-c3ow">
+2
+</td>
+<td class="tg-c3ow">
+5
+</td>
+</tr>
+<tr>
+<td class="tg-cw6g">
+</td>
+<td class="tg-oao4">
+</td>
+<td class="tg-c3ow">
+</td>
+<td class="tg-c3ow">
+</td>
+</tr>
+</tbody>
+</table>
+</div><div class="column" style="width:50%;">
+<p><br></p>
+<p align="center">
+<strong>Ganho de informação para o atributo idade</strong>
+</p>
+<p><span class="math display">\[ \text{E(S, Idade)} = \dfrac{5}{|14|}\times 0,971  + \dfrac{4}{|14|}\times 0 \\ +  \dfrac{5}{14}\times 0,971 = 0,693\]</span></p>
+<p><span class="math display">\[ \text{G}(S, \text{Idade}) = \text{E}(S) - \text{E}(S,\text{Idade})\\ = 0,940 - 0,693 = 0,247\]</span></p>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-24" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/ad/ganhos.png" class="quarto-figure quarto-figure-center" width="1800"></p>
+</figure>
+</div>
+</section><section id="exemplo-compra-de-um-computador-25" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p><br></p>
+<p>Escolhemos o atributo com maior ganho de informação como nó de decisão. No nosso caso, o atributo <strong>Idade</strong>. A partir daí, dividimos o conjunto de dados a partir das categorias da variável idade e repetimos o mesmo processo em todos os ramos.</p>
+<div class="fragment">
+<p>Um ramo com entropia de 0 é um <strong>nó folha</strong>. Um ramo com entropia maior que 0 precisa de mais divisão.</p>
+</div>
+</section><section id="exemplo-compra-de-um-computador-26" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p align="center">
+<strong>Árvore estimada</strong>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/ad/arv_est.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section><section id="exemplo-compra-de-um-computador-27" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/joao.png" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</div><div class="column" style="width:60%;">
+<p><br></p>
+<p align="center" style="font-size: 76px">
+<strong>Voltando ao Joãozinho…</strong>
+</p>
+<p>&nbsp; &nbsp;</p>
+<div class="fragment">
+<p align="center" style="font-size: 56px">
+<span class="math inline">\(x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})\)</span>
+</p>
+</div>
+</div></div>
+</section><section id="exemplo-compra-de-um-computador-28" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p align="center" style="font-size: 56px">
+<span class="math inline">\(x_0 = (\leq 30, \text{ Média}, \text{ Sim}, \text{ Bom})\)</span>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/ad/arv_est_joao.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section><section id="exemplo-compra-de-um-computador-29" class="slide level2"><h2>Exemplo: Compra de um computador</h2>
+<p><br></p>
+<p><br></p>
+<details><summary align="center" style="font-size:80px;"><strong>João comprará o computador?</strong>
+</summary><p align="center" style="color: green; font-size:80px;">
+<strong>De acordo com Árvores de Decisão: SIM!</strong>
+</p>
+</details></section><section id="árvores-de-decisão-para-classificação-no-r-e-python" class="slide level2"><h2>Árvores de Decisão para classificação no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-4-1">R</a></li>
+<li><a href="#tabset-4-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb16-2"><a></a><span class="fu">library</span>(discrim)</span>
+<span id="cb16-3"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb16-4"><a></a></span>
+<span id="cb16-5"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb16-6"><a></a><span class="fu">data</span>(iris)</span>
+<span id="cb16-7"><a></a>iris_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(iris, <span class="at">strata =</span> Species)</span>
+<span id="cb16-8"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(iris_split)</span>
+<span id="cb16-9"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(iris_split)</span>
+<span id="cb16-10"><a></a></span>
+<span id="cb16-11"><a></a>tree_model <span class="ot">&lt;-</span> <span class="fu">decision_tree</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb16-12"><a></a>  <span class="fu">set_engine</span>(<span class="st">"rpart"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-13"><a></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>)</span>
+<span id="cb16-14"><a></a></span>
+<span id="cb16-15"><a></a>tree_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb16-16"><a></a>  <span class="fu">add_model</span>(tree_model) <span class="sc">%&gt;%</span></span>
+<span id="cb16-17"><a></a>  <span class="fu">add_formula</span>(Species <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb16-18"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb16-19"><a></a></span>
+<span id="cb16-20"><a></a>sp_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(tree_fit, <span class="at">new_data =</span> test_data)</span>
+<span id="cb16-21"><a></a></span>
+<span id="cb16-22"><a></a>Metrics<span class="sc">::</span><span class="fu">accuracy</span>(test_data<span class="sc">$</span>Species, sp_predict<span class="sc">$</span>.pred_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8974359</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb18-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb18-3"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
+<span id="cb18-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
+<span id="cb18-5"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
+<span id="cb18-6"><a></a></span>
+<span id="cb18-7"><a></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb18-8"><a></a>X <span class="op">=</span> pd.DataFrame(iris.data, columns<span class="op">=</span>iris.feature_names)</span>
+<span id="cb18-9"><a></a>y <span class="op">=</span> pd.Series(iris.target_names[iris.target], name<span class="op">=</span><span class="st">'species'</span>) <span class="co"># Mapear números para nomes de espécies</span></span>
+<span id="cb18-10"><a></a></span>
+<span id="cb18-11"><a></a><span class="co"># Split dos dados em treino e teste</span></span>
+<span id="cb18-12"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">12345</span>)</span>
+<span id="cb18-13"><a></a></span>
+<span id="cb18-14"><a></a>tree <span class="op">=</span> DecisionTreeClassifier(random_state<span class="op">=</span><span class="dv">12345</span>)</span>
+<span id="cb18-15"><a></a>tree.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-4 {color: black;}#sk-container-id-4 pre{padding: 0;}#sk-container-id-4 div.sk-toggleable {background-color: white;}#sk-container-id-4 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-4 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-4 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-4 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-4 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-4 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-4 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-4 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-4 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-4 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-4 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-4 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-4 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-4 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-4 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-4 div.sk-item {position: relative;z-index: 1;}#sk-container-id-4 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-4 div.sk-item::before, #sk-container-id-4 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-4 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-4 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-4 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-4 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-4 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-4 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-4 div.sk-label-container {text-align: center;}#sk-container-id-4 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-4 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-4" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>DecisionTreeClassifier(random_state=12345)</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-4" type="checkbox" checked=""><label for="sk-estimator-id-4" class="sk-toggleable__label sk-toggleable__label-arrow">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier(random_state=12345)</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a></a>y_pred <span class="op">=</span> tree.predict(X_test)</span>
+<span id="cb19-2"><a></a>accuracy_score(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.9777777777777777</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="árvores-de-decisão-para-regressão-no-r-e-python" class="slide level2"><h2>Árvores de Decisão para regressão no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-5-1">R</a></li>
+<li><a href="#tabset-5-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb21-2"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb21-3"><a></a></span>
+<span id="cb21-4"><a></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb21-5"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb21-6"><a></a>mtcars_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(mtcars, <span class="at">strata =</span> mpg)</span>
+<span id="cb21-7"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(mtcars_split)</span>
+<span id="cb21-8"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(mtcars_split)</span>
+<span id="cb21-9"><a></a></span>
+<span id="cb21-10"><a></a>tree_model <span class="ot">&lt;-</span> <span class="fu">decision_tree</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb21-11"><a></a>  <span class="fu">set_engine</span>(<span class="st">"rpart"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-12"><a></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>)</span>
+<span id="cb21-13"><a></a></span>
+<span id="cb21-14"><a></a>tree_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-15"><a></a>  <span class="fu">add_model</span>(tree_model) <span class="sc">%&gt;%</span></span>
+<span id="cb21-16"><a></a>  <span class="fu">add_formula</span>(mpg <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb21-17"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb21-18"><a></a></span>
+<span id="cb21-19"><a></a>mpg_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(tree_fit, test_data)</span>
+<span id="cb21-20"><a></a></span>
+<span id="cb21-21"><a></a>Metrics<span class="sc">::</span><span class="fu">mse</span>(test_data<span class="sc">$</span>mpg, mpg_predict<span class="sc">$</span>.pred) <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17.00174</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-5-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_california_housing</span>
+<span id="cb23-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb23-3"><a></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeRegressor</span>
+<span id="cb23-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<span id="cb23-5"><a></a></span>
+<span id="cb23-6"><a></a>data <span class="op">=</span> fetch_california_housing()</span>
+<span id="cb23-7"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb23-8"><a></a>    data.data, data.target, random_state<span class="op">=</span><span class="dv">12345</span></span>
+<span id="cb23-9"><a></a>)</span>
+<span id="cb23-10"><a></a></span>
+<span id="cb23-11"><a></a>tree <span class="op">=</span> DecisionTreeRegressor(random_state<span class="op">=</span><span class="dv">12345</span>)</span>
+<span id="cb23-12"><a></a>tree.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-5 {color: black;}#sk-container-id-5 pre{padding: 0;}#sk-container-id-5 div.sk-toggleable {background-color: white;}#sk-container-id-5 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-5 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-5 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-5 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-5 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-5 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-5 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-5 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-5 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-5 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-5 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-5 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-5 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-5 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-5 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-5 div.sk-item {position: relative;z-index: 1;}#sk-container-id-5 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-5 div.sk-item::before, #sk-container-id-5 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-5 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-5 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-5 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-5 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-5 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-5 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-5 div.sk-label-container {text-align: center;}#sk-container-id-5 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-5 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-5" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>DecisionTreeRegressor(random_state=12345)</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-5" type="checkbox" checked=""><label for="sk-estimator-id-5" class="sk-toggleable__label sk-toggleable__label-arrow">DecisionTreeRegressor</label><div class="sk-toggleable__content"><pre>DecisionTreeRegressor(random_state=12345)</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a></a>y_pred <span class="op">=</span> tree.predict(X_test)</span>
+<span id="cb24-2"><a></a>mean_squared_error(y_test, y_pred, squared<span class="op">=</span><span class="va">True</span>)  <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.5445212937679262</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
 </section></section>
