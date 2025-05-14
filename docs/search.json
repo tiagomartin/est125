@@ -1771,5 +1771,446 @@
     "title": "Análise Preditiva",
     "section": "KNN para regressão no R e Python",
     "text": "KNN para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;%\n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"regression\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.069807\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nknn_reg = KNeighborsRegressor(n_neighbors=5)\nknn_reg.fit(X_train, y_train)\n\n\n\n\nKNeighborsRegressor()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nKNeighborsRegressorKNeighborsRegressor()\n\n\n\ny_pred = knn_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n1.1408296168142682"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmo-naïve-bayes",
+    "href": "aulas/Analise_preditiva/preditiva.html#algoritmo-naïve-bayes",
+    "title": "Análise Preditiva",
+    "section": "Algoritmo Naïve Bayes",
+    "text": "Algoritmo Naïve Bayes\nBaseia-se no Teorema de Bayes, que afirma que a probabilidade de um evento ocorrer dado que outro evento já ocorreu é proporcional à probabilidade deste último evento ocorrer dado o primeiro."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmo-naive-bayes",
+    "href": "aulas/Analise_preditiva/preditiva.html#algoritmo-naive-bayes",
+    "title": "Análise Preditiva",
+    "section": "Algoritmo Naive Bayes",
+    "text": "Algoritmo Naive Bayes\n\nBaseia-se no Teorema de Bayes, que afirma que a probabilidade de um evento ocorrer dado que outro evento já ocorreu é proporcional à probabilidade deste último evento ocorrer dado o primeiro.\n\nA “ingenuidade” (Naive): assume que os preditores são independentes entre si, dado o valor da classe.\n\n\nAplicado principalmente em problemas de classificação, especialmente com dados categóricos ou textuais."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#revisão-do-teorema-de-bayes",
+    "href": "aulas/Analise_preditiva/preditiva.html#revisão-do-teorema-de-bayes",
+    "title": "Análise Preditiva",
+    "section": "Revisão do Teorema de Bayes",
+    "text": "Revisão do Teorema de Bayes\nSejam A e B dois eventos\n\\[P(A|B) = \\dfrac{P(B|A)P(A)}{P(B)},\\,\\,\\,\\,\\,\\,\\, \\text{para } P(B)&gt;0\\]\n\nO Teorema de Bayes Aplicado ao Naive Bayes:\n\\[P(\\text{Classe}|\\text{Características}) = \\dfrac{P(\\text{Características}|\\text{Classe})P(\\text{Classe})}{P(\\text{Características})}\\]\n\n\n\n👉O objetivo é encontrar a classe com a maior probabilidade posterior."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#o-teorema-de-bayes-aplicado-ao-naive-bayes",
+    "href": "aulas/Analise_preditiva/preditiva.html#o-teorema-de-bayes-aplicado-ao-naive-bayes",
+    "title": "Análise Preditiva",
+    "section": "O Teorema de Bayes Aplicado ao Naive Bayes",
+    "text": "O Teorema de Bayes Aplicado ao Naive Bayes\nDevido a essa suposição de independência condicional, a probabilidade das características conjuntas dado a classe pode ser simplificada para o produto das probabilidades de cada característica individual dado a classe:\n\\[P(X_1, X_2,\\cdots, X_n|\\text{Classe}) = P(X_1|\\text{Classe}) \\times P(X_2|\\text{Classe}) \\times \\cdots \\times P(X_n|\\text{Classe})\\]\n\nSubstituindo na fórmula de Bayes, nos leva a\n\\[P(\\text{Classe}|\\text{Características}) \\propto P(\\text{Classe}) \\times \\prod_{i=1}^n P(X_i|\\text{Classe})\\]\nObservação importante: O denominador \\(P(\\text{Características})\\) é constante para todas as classes, então podemos ignorá-lo para fins de comparação"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#tipos-de-naive-bayes",
+    "href": "aulas/Analise_preditiva/preditiva.html#tipos-de-naive-bayes",
+    "title": "Análise Preditiva",
+    "section": "Tipos de Naive Bayes",
+    "text": "Tipos de Naive Bayes\n\n\n\nGaussian Naive Bayes: Para características contínuas. Assume que as características são distribuídas de acordo com uma distribuição Gaussiana (Normal).\n\n\n\n\nMultinomial Naive Bayes: Ideal para contagens de ocorrências (ex: contagem de palavras em documentos, usado em classificação de texto).\n\n\n\n\n\nBernoulli Naive Bayes: Adequado para dados binários (presença/ausência de uma característica)."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-7",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-7",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-8",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-8",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\nVoltando ao Joãozinho…\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-9",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-9",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\nProbabilidade de ocorrência das classes\n\n\n\\[ P(\\text{classe = Sim}) = \\dfrac{9}{14}\\] \\[P(\\text{classe = Não}) = \\dfrac{5}{14}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-10",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-10",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Idade:\n\\[ P(\\text{Idade} \\leq 30 | \\text{classe = Sim}) = \\dfrac{2}{9} \\\\ P(\\text{Idade} \\leq 30 | \\text{classe = Não}) = \\dfrac{3}{5}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-11",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-11",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Renda:\n\\[ P(\\text{Renda = Média} | \\text{classe = Sim}) = \\dfrac{4}{9} \\\\ P(\\text{Renda = Média} | \\text{classe = Não}) = \\dfrac{2}{5}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-12",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-12",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Estudante:\n\\[ P(\\text{Estudante = Sim} | \\text{classe = Sim}) = \\dfrac{6}{9} \\\\ P(\\text{Estudante = Sim} | \\text{classe = Não}) = \\dfrac{2}{5}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-13",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-13",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Crédito:\n\\[ P(\\text{Crédito = Bom} | \\text{classe = Sim}) = \\dfrac{6}{9} \\\\ P(\\text{Crédito = Bom} | \\text{classe = Não}) = \\dfrac{3}{5}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-14",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-14",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\nTemos então, sob independência:\n\\[P(x_0|\\text{Sim}) = P(\\leq 30 \\cap \\text{Média} \\cap \\text{Sim} \\cap \\text{Bom}|\\text{Sim} ) \\\\ = \\dfrac{2}{9} \\times \\dfrac{4}{9}\\times \\dfrac{6}{9}\\times \\dfrac{6}{9} = \\dfrac{288}{729} = 0,0439\\\\\\]\n\ne,\n\\[P(x_0|\\text{Não}) = P(\\leq 30 \\cap \\text{Média} \\cap \\text{Sim} \\cap \\text{Bom}|\\text{Não} ) \\\\ = \\dfrac{3}{5} \\times \\dfrac{2}{5}\\times \\dfrac{2}{5}\\times \\dfrac{3}{5} = \\dfrac{36}{625} = 0,0576\\\\\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-15",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-15",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\nPelo Teorema da Probabilidade Total:\n\\[\n\\begin{eqnarray*}\nP(x_0) &=& P(x_0|\\text{Sim}) \\times P(\\text{Sim}) + P(x_0|\\text{Não}) \\times P(\\text{Não}) \\\\ &=& 0,0439 \\times 0,6429 + 0,0576 \\times 0,3571 \\\\ &=& 0,0488\n\\end{eqnarray*}\n\\]\n\nAssim, pelo Teorema de Bayes:\n\\[P(\\text{Sim}|x_0) = \\dfrac{P(x_0|\\text{Sim}) \\times P(\\text{Sim})}{P(x_0)} = \\dfrac{0,0439 \\times 0,6429}{0,0488} = 0,5783\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-16",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-16",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\ne,\n\\[P(\\text{Não}|x_0) = \\dfrac{P(x_0|\\text{Não}) \\times P(\\text{Não})}{P(x_0)} = \\dfrac{0,0576 \\times 0,3571}{0,0488} = 0,4215 \\\\ \\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-2",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👍\n\n\n\nSimplicidade: Fácil de entender e implementar.\n\nEficiência: Muito rápido para treinar e prever, especialmente em grandes conjuntos de dados.\n\nBom desempenho: Surpreendentemente eficaz em muitos problemas reais, mesmo com a suposição de independência.\n\nProcessamento de texto: Excelente para classificação de documentos e filtragem de spam.\n\nNão requer muitos dados: Pode funcionar bem com conjuntos de dados menores."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-3",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👎\n\n\n\nSuposição de independência: A suposição de independência entre as características raramente é verdadeira no mundo real, o que pode limitar a precisão.\n\nProblema de “zero frequência”: Se uma categoria de característica não aparecer no conjunto de treinamento para uma determinada classe, a probabilidade para essa característica será zero, o que leva a uma probabilidade posterior zero. (para resolver: Laplace Smoothing)\n\nEstimativa de Probabilidades: Pode ter um desempenho ruim quando há características numéricas com distribuições complexas (a suposição Gaussiana pode não se aplicar)."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-knn-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-knn-1",
+    "title": "Análise Preditiva",
+    "section": "Pré-processamento de Dados para KNN",
+    "text": "Pré-processamento de Dados para KNN\n\n\n\n💻\n\n\n\nDados Categóricos: Transformar para formato numérico (One-Hot Encoding ou Label Encoding, dependendo do tipo de NB).\n\nDados Numéricos:\n\n\nGaussianNB: Assumir distribuição normal. Normalização/padronização pode ajudar, mas não é estritamente necessária como em KNN, já que não se baseia em distância.\n\nDiscretização: Converter dados numéricos em categóricos (bins) para usar Multinomial ou Bernoulli NB.\n\n\n\nTratamento de Valores Ausentes: Imputação ou remoção.\n\nTextuais: Tokenização, remoção de stop words, stemização/lema, TF-IDF, CountVectorizer."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-17",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-17",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\nJoão comprará o computador?\n\nDe acordo com o Naive Bayes: SIM!"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-naive-bayes",
+    "href": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-naive-bayes",
+    "title": "Análise Preditiva",
+    "section": "Pré-processamento de Dados para Naive Bayes",
+    "text": "Pré-processamento de Dados para Naive Bayes\n\n\n\n💻\n\n\n\nDados Categóricos: Transformar para formato numérico (One-Hot Encoding ou Label Encoding, dependendo do tipo de NB).\n\nDados Numéricos:\n\n\nGaussianNB: Assumir distribuição normal. Normalização/padronização pode ajudar, mas não é estritamente necessária como em KNN, já que não se baseia em distância.\n\nDiscretização: Converter dados numéricos em categóricos (bins) para usar Multinomial ou Bernoulli NB.\n\n\n\nTratamento de Valores Ausentes: Imputação ou remoção.\n\nTextuais: Tokenização, remoção de stop words, stemização/lema, TF-IDF, CountVectorizer."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#naive-bayes-para-classificação-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#naive-bayes-para-classificação-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "Naive Bayes para classificação no R e Python",
+    "text": "Naive Bayes para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nnb_model &lt;- naive_Bayes() %&gt;% \n  set_engine(\"klaR\") %&gt;%\n  set_mode(\"classification\")\n\nnb_fit &lt;- workflow() %&gt;%\n  add_model(nb_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(nb_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.9487179\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.naive_bayes import GaussianNB # Para dados contínuos como Iris\nfrom sklearn.metrics import accuracy_score, confusion_matrix\nfrom sklearn.datasets import load_iris # Para carregar o dataset Iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nmodel_nb = GaussianNB()\nmodel_nb.fit(X_train, y_train)\n\n\n\n\nGaussianNB()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nGaussianNBGaussianNB()\n\n\n\ny_pred = model_nb.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9555555555555556"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão",
+    "href": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão",
+    "title": "Análise Preditiva",
+    "section": "Árvores de decisão",
+    "text": "Árvores de decisão\n\nUma árvore de decisão é um modelo de aprendizado de máquina que utiliza uma estrutura de árvore para tomar decisões com base em condições nos dados de entrada.\n\nEssa estrutura hierárquica consiste em nós que representam testes sobre atributos e arestas que conectam os nós, indicando os resultados desses testes.\n\n\nCada nó interno da árvore representa um teste em um atributo específico, enquanto as folhas representam as classes ou valores de saída."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-1",
+    "title": "Análise Preditiva",
+    "section": "Árvores de decisão",
+    "text": "Árvores de decisão\n\n\n\n\n\n\n\n\n\nAo percorrer a árvore da raiz até uma folha, os dados de entrada são avaliados de acordo com os testes em cada nó, seguindo o caminho apropriado até alcançar uma folha, onde é tomada a decisão final."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-2",
+    "title": "Análise Preditiva",
+    "section": "Árvores de decisão",
+    "text": "Árvores de decisão\nAo percorrer a árvore da raiz até uma folha, os dados de entrada são avaliados de acordo com os testes em cada nó, seguindo o caminho apropriado até alcançar uma folha, onde é tomada a decisão final."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos",
+    "title": "Análise Preditiva",
+    "section": "Principais Algoritmos",
+    "text": "Principais Algoritmos\n\n\nID3 (Iterative Dichotomiser 3)\n\n\nÉ um dos primeiros algoritmos de árvore de decisão e utiliza o ganho de informação como critério para selecionar a melhor divisão em cada nó. No entanto, o ID3 não lida diretamente com atributos numéricos.\n\n\n\nFavorece características com muitos valores distintos."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-para-classificação",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-para-classificação",
+    "title": "Análise Preditiva",
+    "section": "Principais Algoritmos para Classificação",
+    "text": "Principais Algoritmos para Classificação\n\n\nID3 (Iterative Dichotomiser 3)\n\n\nÉ um dos primeiros algoritmos de árvore de decisão e utiliza o ganho de informação como critério para selecionar a melhor divisão em cada nó. No entanto, o ID3 não lida diretamente com atributos numéricos.\n\n\n\nFavorece características com muitos valores distintos."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-para-classificação-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-para-classificação-1",
+    "title": "Análise Preditiva",
+    "section": "Principais Algoritmos para Classificação",
+    "text": "Principais Algoritmos para Classificação\n\n\nC4.5\n\n\nÉ uma extensão do ID3 e possui melhorias, incluindo a capacidade de lidar com atributos numéricos e valores ausentes. Além disso, o C4.5 utiliza a razão de ganho como métrica de seleção de atributos, em vez do ganho de informação utilizado pelo ID3.\n\n\n\nCorrige o viés em relação a características com muitos valores."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-para-classificação-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-para-classificação-2",
+    "title": "Análise Preditiva",
+    "section": "Principais Algoritmos para Classificação",
+    "text": "Principais Algoritmos para Classificação\n\n\nCART (Classification and Regression Trees)\n\n\nPode ser usado tanto para classificação quanto para regressão.\n\n\n\nPara classificação, usa o índice de Gini como critério de divisão.\n\n\n\n\nGera árvores binárias (cada nó tem exatamente dois filhos).\n\n\n\n\nEle busca minimizar a impureza nos nós da árvore."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-1",
+    "title": "Análise Preditiva",
+    "section": "Principais Algoritmos",
+    "text": "Principais Algoritmos\n\n\nC4.5\n\n\nÉ uma extensão do ID3 e possui melhorias, incluindo a capacidade de lidar com atributos numéricos e valores ausentes. Além disso, o C4.5 utiliza a razão de ganho como métrica de seleção de atributos, em vez do ganho de informação utilizado pelo ID3.\n\n\n\nCorrige o viés em relação a características com muitos valores."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-2",
+    "title": "Análise Preditiva",
+    "section": "Principais Algoritmos",
+    "text": "Principais Algoritmos\n\n\nCART (Classification and Regression Trees)\n\n\nPode ser usado tanto para classificação quanto para regressão.\n\n\n\nPara classificação, usa o índice de Gini como critério de divisão.\n\n\n\n\nGera árvores binárias (cada nó tem exatamente dois filhos).\n\n\n\n\nEle busca minimizar a impureza nos nós da árvore."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos-3",
+    "title": "Análise Preditiva",
+    "section": "Principais Algoritmos",
+    "text": "Principais Algoritmos\n\n\nCART (Classification and Regression Trees)\n\n\nPara regressão, busca dividir os dados de forma a minimizar o erro quadrático médio (MSE) ou o desvio absoluto médio (MAE) nos nós folha."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#processo-de-preparação-de-um-modelo-de-árvore-de-decisão",
+    "href": "aulas/Analise_preditiva/preditiva.html#processo-de-preparação-de-um-modelo-de-árvore-de-decisão",
+    "title": "Análise Preditiva",
+    "section": "Processo de preparação de um modelo de Árvore de Decisão",
+    "text": "Processo de preparação de um modelo de Árvore de Decisão"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\n\n\nO objetivo dos critérios de divisão é encontrar a melhor característica para separar os dados em subconjuntos mais “puros” em relação à variável alvo (classe)."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-1",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\n\nEntropia\n\nA entropia é uma medida de impureza ou aleatoriedade dos dados em um algoritmo de árvore de decisão. Ela é utilizada para avaliar o quão homogêneos ou heterogêneos são os exemplos de uma determinada classe em um conjunto de dados.\n\nÉ calculada a partir da distribuição das classes no conjunto de dados. Quanto maior a entropia, maior a incerteza sobre a classe de um exemplo. Quanto menor a entropia, mais homogêneos são os exemplos em relação à classe."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-2",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\n\nEntropia\n\n\\[ \\text{E(S)} = \\sum_{i=1}^c -p_i\\log_2 p_i\\]\nem que \\(p_i\\) é a proporção de exemplos na classe \\(i\\) da amostra de treinamento S."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-3",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\n\nGanho de Informação (G)\n\nO ganho de informação é uma métrica utilizada para medir a relevância de um atributo na divisão dos dados. Ele indica a quantidade de informação que um atributo fornece sobre a classe ou variável de saída.\n\nMede a redução na entropia após a divisão do conjunto de dados por uma característica.\n\n\nO ID3 escolhe a característica com o maior ganho de informação."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-4",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-4",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\n\nGanho de Informação (G)\n\n\\[ \\text{G}(S, A) = \\text{E}(S) - \\text{E}(S,A)\\]\nem que \\(E(S,A) = \\sum_{v\\in \\text{valores de } A} \\dfrac{|S_v|}{|S|} \\times \\text{E}(S_v)\\) é a entropia do atributo A."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-5",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-5",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\n\nRazão de ganho\n\nTambém conhecida como gain ratio, é uma métrica utilizada para selecionar os melhores atributos de divisão, levando em consideração o viés por atributos com muitos valores possíveis.\n\nEnquanto o ganho de informação mede a redução da entropia dos dados após a divisão com base em um atributo, a razão de ganho ajusta esse valor, levando em consideração o número de valores distintos do atributo.\n\n\nEssa correção é importante para evitar que atributos com muitos valores possíveis tenham vantagem sobre atributos com menos valores."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-6",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-6",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\n\nRazão de ganho\n\n\\[ \\text{Gain ratio}(S, A) = \\dfrac{G(S, A)}{E(S, A)}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-7",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-7",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\nÍndice de Gini\n\nO índice de Gini é outra medida de impureza utilizada para avaliar a heterogeneidade dos dados em relação à classe ou variável de saída.\n\nMedida da probabilidade de uma amostra ser classificada incorretamente se fosse aleatoriamente rotulada de acordo com a distribuição das classes no subconjunto.\n\n\nUm valor menor indica maior pureza.\n\n\nUsado pelo CART para classificação."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-8",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-classificação-8",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Classificação",
+    "text": "Critérios de Divisão para Classificação\n\nÍndice de Gini\n\n\\[ \\text{Gini}(S) = 1 - \\sum_{i=1}^c p_i^2\\] em que \\(p_i\\) é a proporção de exemplos na classe \\(i\\) da amostra de treinamento S.\n\nO CART busca a divisão que resulta na maior redução no índice de Gini.\n\n\nO índice de Gini varia de 0 a 1, sendo 0 quando todos os exemplos pertencem à mesma classe (alta pureza) e 1 quando os exemplos estão igualmente distribuídos entre as classes (alta impureza)."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-regressão",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-regressão",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Regressão",
+    "text": "Critérios de Divisão para Regressão\n\n\n\nO objetivo é dividir os dados de forma a minimizar a variabilidade da variável alvo dentro de cada nó folha."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-regressão-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-regressão-1",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Regressão",
+    "text": "Critérios de Divisão para Regressão\n\nRedução do Erro Quadrático Médio (MSE):\n\nO CART para regressão geralmente busca a divisão que maximiza a redução no MSE.\n\nCalcula-se o MSE no nó pai e o MSE ponderado nos nós filhos após a divisão. A divisão que proporciona a maior redução é escolhida.\n\n\n\\[MSE = \\dfrac{1}{|S|} \\displaystyle{\\sum_{i\\in S} (y_i - \\bar{y})^2}\\]\nem que \\(y_i\\) é o valor da variável alvo para a amostra \\(i\\) e \\(\\bar{y}\\) é a média dos valores da variável alvo em S."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-regressão-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#critérios-de-divisão-para-regressão-2",
+    "title": "Análise Preditiva",
+    "section": "Critérios de Divisão para Regressão",
+    "text": "Critérios de Divisão para Regressão\n\nRedução do Desvio Absoluto Médio (MAE):\n\nAlternativamente, alguns algoritmos de árvores de regressão podem usar o MAE.\n\n\\[MAE = \\dfrac{1}{|S|} \\displaystyle{\\sum_{i\\in S} |y_i - \\text{mediana}(y)|}\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-4",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-4",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👍\n\n\nFáceis de entender e interpretar (modelos “caixa branca”).\nPodem lidar com dados numéricos e categóricos.\nNão exigem muita preparação dos dados (não sensíveis a escala ou transformações monótonas).\nCapazes de capturar relações não lineares entre as características e a variável alvo.\nÚteis para seleção de características (as características mais próximas da raiz são consideradas mais importantes)."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-5",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-5",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👎\n\n\nTendência ao overfitting (ajustar-se demais aos dados de treinamento, resultando em mau desempenho em dados novos).\nPodem ser sensíveis a pequenas variações nos dados de treinamento.\nPodem criar árvores complexas que não generalizam bem.\nPara algumas tarefas, podem não ser tão precisas quanto outros algoritmos.\nO algoritmo guloso de construção da árvore nem sempre encontra a melhor árvore possível."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#controle-de-overfitting-podas",
+    "href": "aulas/Analise_preditiva/preditiva.html#controle-de-overfitting-podas",
+    "title": "Análise Preditiva",
+    "section": "Controle de Overfitting (Podas)",
+    "text": "Controle de Overfitting (Podas)\n\nA poda é o processo de reduzir o tamanho de uma árvore de decisão, removendo seções da árvore que podem estar superajustando os dados de treinamento.\n\nO objetivo da poda é simplificar a árvore, tornando-a mais generalizável e menos propensa a memorizar ruídos específicos do conjunto de treinamento."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#controle-de-overfitting-podas-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#controle-de-overfitting-podas-1",
+    "title": "Análise Preditiva",
+    "section": "Controle de Overfitting (Podas)",
+    "text": "Controle de Overfitting (Podas)\n\nTipos de Poda:\n\n\nPré-poda: Parar o crescimento da árvore antecipadamente com base em critérios (ex: profundidade máxima, número mínimo de amostras por nó).\n\nMais eficiente computacionalmente; pode levar ao underfitting\n\n\n\n\n\n\nPós-poda: Construir a árvore completa e depois remover nós que não melhoram o desempenho em um conjunto de validação.\n\nÁrvores com melhor capacidade de generalização; mais intensiva computacionalmente"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-18",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-18",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-19",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-19",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\nCálculo da Entropia\n\n\\[ \\text{E(S)} = \\sum_{i=1}^c -p_i\\log_2 p_i\\]\n\n\\[ \\text{E(S)} = -\\dfrac{9}{14}\\log_2 (\\dfrac{9}{14}) - \\dfrac{5}{14}\\log_2 (\\dfrac{5}{14}) = 0,940\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-20",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-20",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{|\\leq 30|}{|S|}\\times \\text{E}(\\leq 30)\\\\\n+ \\dfrac{|31...40|}{|S|}\\times \\text{E}(31...40) \\\\ +  \\dfrac{|&gt;40|}{|S|}\\times \\text{E}(&gt;40)\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-21",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-21",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{5}{14}\\times \\text{E}(\\leq 30) \\\\ + \\dfrac{4}{14}\\times \\text{E}(31...40) \\\\ +  \\dfrac{5}{14}\\times \\text{E}(&gt;40)\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-22",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-22",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E}(\\leq 30) = -\\dfrac{2}{5}\\log_2 (\\dfrac{2}{5}) - \\dfrac{3}{5}\\log_2 (\\dfrac{3}{5}) = 0,971\\] \\[ \\text{E}(31...40) = 0\\,\\,\\,\\,\\,\\,\\,\\, \\text{e} \\,\\,\\,\\,\\,\\,\\,\\, \\text{E}(&gt;40) = 0,971\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-23",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-23",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{5}{|14|}\\times 0,971  + \\dfrac{4}{|14|}\\times 0 \\\\ +  \\dfrac{5}{14}\\times 0,971 = 0,693\\]\n\\[ \\text{G}(S, \\text{Idade}) = \\text{E}(S) - \\text{E}(S,\\text{Idade})\\\\ = 0,940 - 0,693 = 0,247\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-24",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-24",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-25",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-25",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\nEscolhemos o atributo com maior ganho de informação como nó de decisão. No nosso caso, o atributo Idade. A partir daí, dividimos o conjunto de dados a partir das categorias da variável idade e repetimos o mesmo processo em todos os ramos.\n\nUm ramo com entropia de 0 é um nó folha. Um ramo com entropia maior que 0 precisa de mais divisão."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-26",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-26",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\nÁrvore estimada"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-27",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-27",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\nVoltando ao Joãozinho…\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-28",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-28",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-29",
+    "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-29",
+    "title": "Análise Preditiva",
+    "section": "Exemplo: Compra de um computador",
+    "text": "Exemplo: Compra de um computador\n\n\nJoão comprará o computador?\n\nDe acordo com Árvores de Decisão: SIM!"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#naive-bayes-para-classificação-no-r-e-python-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#naive-bayes-para-classificação-no-r-e-python-1",
+    "title": "Análise Preditiva",
+    "section": "Naive Bayes para classificação no R e Python",
+    "text": "Naive Bayes para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nnb_model &lt;- naive_Bayes() %&gt;% \n  set_engine(\"klaR\") %&gt;%\n  set_mode(\"classification\")\n\nnb_fit &lt;- workflow() %&gt;%\n  add_model(nb_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(nb_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.9487179\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.naive_bayes import GaussianNB # Para dados contínuos como Iris\nfrom sklearn.metrics import accuracy_score, confusion_matrix\nfrom sklearn.datasets import load_iris # Para carregar o dataset Iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nmodel_nb = GaussianNB()\nmodel_nb.fit(X_train, y_train)\n\n\n\n\nGaussianNB()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nGaussianNBGaussianNB()\n\n\n\ny_pred = model_nb.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9555555555555556"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-para-classificação-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-para-classificação-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "Árvores de Decisão para classificação no R e Python",
+    "text": "Árvores de Decisão para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\ntree_model &lt;- decision_tree() %&gt;% \n  set_engine(\"rpart\") %&gt;%\n  set_mode(\"classification\")\n\ntree_fit &lt;- workflow() %&gt;%\n  add_model(tree_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(tree_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\ntree = DecisionTreeClassifier(random_state=12345)\ntree.fit(X_train, y_train)\n\n\n\n\nDecisionTreeClassifier(random_state=12345)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nDecisionTreeClassifierDecisionTreeClassifier(random_state=12345)\n\n\n\ny_pred = tree.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-para-regressão-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-para-regressão-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "Árvores de Decisão para regressão no R e Python",
+    "text": "Árvores de Decisão para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\ntree_model &lt;- decision_tree() %&gt;% \n  set_engine(\"rpart\") %&gt;%\n  set_mode(\"regression\")\n\ntree_fit &lt;- workflow() %&gt;%\n  add_model(tree_model) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(tree_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 17.00174\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\ntree = DecisionTreeRegressor(random_state=12345)\ntree.fit(X_train, y_train)\n\n\n\n\nDecisionTreeRegressor(random_state=12345)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nDecisionTreeRegressorDecisionTreeRegressor(random_state=12345)\n\n\n\ny_pred = tree.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.5445212937679262"
   }
 ]
