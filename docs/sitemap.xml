@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/cronograma.html</loc>
-    <lastmod>2025-05-13T12:07:39.244Z</lastmod>
+    <lastmod>2025-05-15T17:19:22.421Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/plano.html</loc>
@@ -39,5 +39,25 @@
   <url>
     <loc>http://professortp.com.br/est1125/programacao/semana-2.html</loc>
     <lastmod>2025-05-13T12:05:37.286Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/python-env/Tools/scripts/reindent.html</loc>
+    <lastmod>2025-04-08T15:21:55.000Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/python-env/Lib/site-packages/pandas/tests/indexes/period/test_constructors.html</loc>
+    <lastmod>2025-04-12T04:11:02.233Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/python-env/Lib/site-packages/numpy/random/LICENSE.html</loc>
+    <lastmod>2024-11-22T22:35:48.578Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/python-env/Lib/site-packages/pandas/tests/indexes/datetimes/test_indexing.html</loc>
+    <lastmod>2025-04-12T04:11:02.202Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/python-env/Lib/site-packages/pandas/tests/indexes/period/test_indexing.html</loc>
+    <lastmod>2025-04-12T04:11:02.233Z</lastmod>
   </url>
 </urlset>
