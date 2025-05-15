@@ -1,0 +1,12 @@
+{
+  "hash": "d50233ee759e688ec213d950ea9ad968",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "",
+    "supporting": [
+      "reindent_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
