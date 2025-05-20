@@ -1,0 +1,8 @@
+---
+title: "Semana 03"
+---
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Pré-processamento de dados](/aulas/Pre_processamento/pre_processamento.html "Pré-processamento"){aria-label="Pré-processamento"}

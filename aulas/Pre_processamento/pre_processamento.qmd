@@ -712,23 +712,25 @@ O ruído pode ser considerado um **fator indesejado** que compromete a **precis�
 ## Tratamento de ruídos
 
 <br>
+
 - **Identificação e remoção de valores atípicos:** valores que são muito diferentes dos outros valores no conjunto de dados podem ser identificados como valores atípicos. 
 
-    - Esses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise.
+  - Esses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise.
 
 . . .
   
-  - **Correção de erros de entrada de dados:** erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros.
+- **Correção de erros de entrada de dados:** erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros.
 
 ## Tratamento de ruídos
 
 <br>
-  - **Normalização ou padronização de dados:** a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes.
+
+- **Normalização ou padronização de dados:** a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes.
 
 . . .
   
 
-  - **Utilização de técnicas de agrupamento:** técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído.
+- **Utilização de técnicas de agrupamento:** técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído.
 
 
 
