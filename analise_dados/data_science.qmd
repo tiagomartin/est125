@@ -1,0 +1,49 @@
+---
+title: "Análise de dados: Explorando a base de dados **Data Science Salaries 2023** do **Kaggle**"
+lang: pt
+toc: true
+code-annotations: "hover"
+execute:
+  echo: true
+---
+
+
+Você já se deparou com um conjunto de dados e se perguntou por onde começar a extrair informações valiosas? A Análise Exploratória de Dados (EDA) é a resposta para essa pergunta! Nesta análise, apresentaremos um guia passo a passo que o ajudará a realizar uma EDA eficiente e obter insights significativos dos seus dados.
+
+Para isso, vamos utilizar a base de dados [Data Science Salaries 2023](https://www.kaggle.com/datasets/arnabchaki/data-science-salaries-2023) do **Kaggle**. Essa base de dados contém informações sobre os salários de profissionais de ciência de dados em diferentes regiões e setores.
+
+## Sobre os dados
+
+O conjunto de dados refere-se aos salários de diferentes profissionais de ciência de dados, mensurados nas seguintes características:
+
+  - **work_year:** O ano em que o salário foi pago.
+  - **experience_level:** O nível de experiência no trabalho durante o ano.
+  - **employment_type:** O tipo de emprego para a função.
+  - **job_title:** O cargo exercido durante o ano.
+  - **salary:** O valor total do salário bruto pago.
+  - **salary_currency:** A moeda do salário pago, representada por um código [ISO 4217](https://pt.wikipedia.org/wiki/ISO_4217).
+  - **salary_in_usd:** O salário em USD (dólares americanos).
+  - **employee_residence:** O país de residência principal do funcionário durante o ano de trabalho, representado por um código [ISO 3166](https://www.iban.com/country-codes).
+  - **remote_ratio:** A quantidade geral de trabalho realizado remotamente.
+  - **company_location:** O país da sede da empresa ou filial contratante.
+  - **company_size:** O número médio de pessoas que trabalharam para a empresa durante o ano.
+
+
+
+## Pacotes utilizados
+
+```{r}
+pacman::p_load(
+  rio, here, skimr, tidyverse, gtsummary, rstatix, janitor, scales, flextable, descriptr, treemapify, ggpubr, funModeling, ggalluvial,
+  vip, VIM, patchwork, monochromeR, googleVis) 
+```
+
+## Leitura dos dados
+ 
+```{r}
+dados = read.csv('dados/ds_salaries.csv', stringsAsFactors = TRUE) 
+dados %>% 
+  glimpse()
+```
+
+
