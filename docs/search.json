@@ -2233,5 +2233,33 @@
     "title": "Semana 03",
     "section": "",
     "text": "Pré-processamento de dados"
+  },
+  {
+    "objectID": "analise_dados/data_science.html",
+    "href": "analise_dados/data_science.html",
+    "title": "Análise de dados: Explorando a base de dados Data Science Salaries 2023 do Kaggle",
+    "section": "",
+    "text": "Você já se deparou com um conjunto de dados e se perguntou por onde começar a extrair informações valiosas? A Análise Exploratória de Dados (EDA) é a resposta para essa pergunta! Nesta análise, apresentaremos um guia passo a passo que o ajudará a realizar uma EDA eficiente e obter insights significativos dos seus dados.\nPara isso, vamos utilizar a base de dados Data Science Salaries 2023 do Kaggle. Essa base de dados contém informações sobre os salários de profissionais de ciência de dados em diferentes regiões e setores."
+  },
+  {
+    "objectID": "analise_dados/data_science.html#sobre-os-dados",
+    "href": "analise_dados/data_science.html#sobre-os-dados",
+    "title": "Análise de dados: Explorando a base de dados Data Science Salaries 2023 do Kaggle",
+    "section": "Sobre os dados",
+    "text": "Sobre os dados\nO conjunto de dados refere-se aos salários de diferentes profissionais de ciência de dados, mensurados nas seguintes características:\n\nwork_year: O ano em que o salário foi pago.\nexperience_level: O nível de experiência no trabalho durante o ano.\nemployment_type: O tipo de emprego para a função.\njob_title: O cargo exercido durante o ano.\nsalary: O valor total do salário bruto pago.\nsalary_currency: A moeda do salário pago, representada por um código ISO 4217.\nsalary_in_usd: O salário em USD (dólares americanos).\nemployee_residence: O país de residência principal do funcionário durante o ano de trabalho, representado por um código ISO 3166.\nremote_ratio: A quantidade geral de trabalho realizado remotamente.\ncompany_location: O país da sede da empresa ou filial contratante.\ncompany_size: O número médio de pessoas que trabalharam para a empresa durante o ano."
+  },
+  {
+    "objectID": "analise_dados/data_science.html#pacotes-utilizados",
+    "href": "analise_dados/data_science.html#pacotes-utilizados",
+    "title": "Análise de dados: Explorando a base de dados Data Science Salaries 2023 do Kaggle",
+    "section": "Pacotes utilizados",
+    "text": "Pacotes utilizados\nload &lt;- function(pkg){\n  new.pkg &lt;- pkg[!(pkg %in% installed.packages()[, \"Package\"])]\n  if (length(new.pkg))\n    install.packages(new.pkg, dependencies = TRUE)\n  sapply(pkg, require, character.only = TRUE)\n} \n\npackages &lt;- c(\"tidyverse\",'tidymodels', 'janitor', 'ggpubr', 'funModeling', 'ggalluvial', 'vip', 'skimr', 'VIM', 'patchwork', 'monochromeR', 'googleVis', 'treemapify')\n\nload(packages)"
+  },
+  {
+    "objectID": "analise_dados/data_science.html#leitura-dos-dados",
+    "href": "analise_dados/data_science.html#leitura-dos-dados",
+    "title": "Análise de dados: Explorando a base de dados Data Science Salaries 2023 do Kaggle",
+    "section": "Leitura dos dados",
+    "text": "Leitura dos dados\ndados = read.csv('dados/ds_salaries.csv', stringsAsFactors = TRUE) \ndados %&gt;% \n  glimpse()"
   }
 ]
