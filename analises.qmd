@@ -1,0 +1,5 @@
+---
+title: "Análise de dados"
+---
+
+-   [EDA: Salários em Ciência de Dados](analise_dados/data_science.html "Script análise de dados"){aria-label="Script análise de dados"}
