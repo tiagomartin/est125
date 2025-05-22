@@ -6,3 +6,8 @@ title: "Semana 03"
 ## Slides
 
 {{< fa file-powerpoint size=lg >}} [Pré-processamento de dados](/aulas/Pre_processamento/pre_processamento.html "Pré-processamento"){aria-label="Pré-processamento"}
+
+
+## Script análise de dados: Explorando a base de dados **Data Science Salaries 2023** do **Kaggle**
+
+{{< fa brands r-project size=lg >}} [EDA: Salários em Ciência de Dados](/analise_dados/data_science.html "Script análise de dados"){aria-label="Script análise de dados"}
