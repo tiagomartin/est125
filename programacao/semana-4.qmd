@@ -1,0 +1,9 @@
+---
+title: "Semana 04"
+---
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Pré-processamento de dados](/aulas/Pre_processamento/pre_processamento.html#/tratamento-de-valores-inconsistentes "Pré-processamento"){aria-label="Pré-processamento"}
+

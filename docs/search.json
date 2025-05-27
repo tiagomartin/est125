@@ -14,6 +14,13 @@
     "text": "Pré-processamento de dados"
   },
   {
+    "objectID": "programacao/semana-3.html#script-análise-de-dados-explorando-a-base-de-dados-data-science-salaries-2023-do-kaggle",
+    "href": "programacao/semana-3.html#script-análise-de-dados-explorando-a-base-de-dados-data-science-salaries-2023-do-kaggle",
+    "title": "Semana 03",
+    "section": "Script análise de dados: Explorando a base de dados Data Science Salaries 2023 do Kaggle",
+    "text": "Script análise de dados: Explorando a base de dados Data Science Salaries 2023 do Kaggle\n EDA: Salários em Ciência de Dados"
+  },
+  {
     "objectID": "programacao/semana-1.html",
     "href": "programacao/semana-1.html",
     "title": "Semana 01",
@@ -2110,7 +2117,7 @@
     "href": "aulas/Pre_processamento/pre_processamento.html#seleção-de-atributos-2",
     "title": "Pré-processamento de dados",
     "section": "Seleção de atributos",
-    "text": "Seleção de atributos\nSeleção baseada em wrapper: Essa técnica envolve a seleção de atributos por meio de um modelo de aprendizado de máquina, que é treinado em um conjunto de atributos selecionados. O modelo é avaliado usando validação cruzada e as atributos são selecionados com base no desempenho do modelo.\n\n\nMétodos wrapper: Forward stepwise selection, Backward Elimination, Bi-directional stepwise selection & elimination."
+    "text": "Seleção de atributos\nSeleção baseada em wrapper: Essa técnica envolve a seleção de atributos por meio de um modelo de aprendizado de máquina, que é treinado em um conjunto de atributos selecionados. O modelo é avaliado usando validação cruzada e as atributos são selecionados com base no desempenho do modelo.\n\n\nMétodos wrapper: Forward stepwise selection, Backward Elimination."
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#seleção-de-atributos-3",
@@ -2257,7 +2264,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nAvaliação\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados",
     "crumbs": [
       "Cronograma da disciplina"
     ]
@@ -2285,5 +2292,19 @@
     "title": "Semana 02",
     "section": "",
     "text": "Conceitos iniciais"
+  },
+  {
+    "objectID": "programacao/semana-4.html",
+    "href": "programacao/semana-4.html",
+    "title": "Semana 04",
+    "section": "",
+    "text": "Pré-processamento de dados"
+  },
+  {
+    "objectID": "programacao/semana-4.html#slides",
+    "href": "programacao/semana-4.html#slides",
+    "title": "Semana 04",
+    "section": "",
+    "text": "Pré-processamento de dados"
   }
 ]
