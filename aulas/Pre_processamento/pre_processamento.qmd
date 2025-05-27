@@ -879,7 +879,7 @@ O **objetivo da integração de dados** é criar um conjunto de dados mais **com
 
 **Seleção baseada em wrapper:** Essa técnica envolve a seleção de atributos por meio de um modelo de aprendizado de máquina, que é treinado em um conjunto de atributos selecionados. O modelo é avaliado usando validação cruzada e as atributos são selecionados com base no desempenho do modelo.
 
-  - **Métodos wrapper:** Forward stepwise selection, Backward Elimination, Bi-directional stepwise selection & elimination.
+  - **Métodos wrapper:** Forward stepwise selection, Backward Elimination.
 
 ![](/images/fig02.png)
 

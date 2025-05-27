@@ -26,8 +26,9 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |  [2](programacao/semana-2.html)  | Ter, 13/05 | Conceitos iniciais | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Conceitos%20iniciais/conceitos_iniciais.html "Conceitos iniciais"){aria-label="Conceitos iniciais"} | | | | | | 
 |  | Qui, 15/05 | Conceitos iniciais | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Conceitos%20iniciais/conceitos_iniciais.html#/importância-da-definição-dos-objetivos "Conceitos iniciais"){aria-label="Conceitos iniciais"} | | | | | | 
 |  [3](programacao/semana-3.html)  | Ter, 20/05 | Pré-processamento de dados | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Pre_processamento/pre_processamento.html#/processo-de-preparação-da-base-de-dados "Pré-processamento"){aria-label="Pré-processamento"} | | | | | | 
-|                           | Qui, 22/05 | Não haverá aula! |  |   | |  |  |  |
-
+|                           | Qui, 22/05 | Não haverá aula! |  |   | |  |   [{{< fa brands r-project size=2xl >}}](analise_dados/data_science.html "Script análise de dados"){aria-label="Script análise de dados"} ||
+|  [4](programacao/semana-4.html)  | Ter, 27/05 | Pré-processamento de dados | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Pre_processamento/pre_processamento.html#/tratamento-de-valores-inconsistentes "Pré-processamento"){aria-label="Pré-processamento"} | | | | | | 
+|                           | Qui, 29/05 | Pré-processamento de dados |  | [{{< fa file-powerpoint size=2xl >}}](/aulas/Pre_processamento/pre_processamento.html#/tratamento-de-valores-inconsistentes "Pré-processamento"){aria-label="Pré-processamento"}  | |  |   ||
 
 <!-- |  [4](programacao/semana-4.html)  | Seg, 02/12 | Relato (Série) de casos | [{{< fa file-pdf size=2xl >}}](artigos/relato_de_caso_coronavirus_coracao.pdf) | [{{< fa file-powerpoint size=2xl >}}️](/aulas/Planejamento/index.html "Relato e Séries de casos"){aria-label="Relato e Séries de casos"}    |  |  ||    -->
 <!-- |                           | Qua, 04/11 | Estudos de coorte | [{{< fa file-pdf size=2xl >}}](artigos/impacto_funcionalidade_idosos_estudo_coorte.pdf) | [{{< fa file-powerpoint size=2xl >}}️](/aulas/Planejamento/#/estudos-observacionais-analíticos "Estudos de coorte"){aria-label="Estudos de coorte"}  |  |  |  |  |   -->
