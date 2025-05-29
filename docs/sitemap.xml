@@ -46,7 +46,7 @@
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/preditiva.html</loc>
-    <lastmod>2025-05-14T23:43:50.974Z</lastmod>
+    <lastmod>2025-05-29T17:14:11.416Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/python-env/Lib/site-packages/pandas/tests/indexes/datetimes/test_indexing.html</loc>
@@ -75,5 +75,9 @@
   <url>
     <loc>http://professortp.com.br/est1125/programacao/semana-3.html</loc>
     <lastmod>2025-05-22T01:38:54.851Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/material_complementar/tidymodels.html</loc>
+    <lastmod>2025-05-29T17:38:56.373Z</lastmod>
   </url>
 </urlset>
