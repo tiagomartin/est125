@@ -1706,9 +1706,17 @@ Temos então que os **5 vizinhos** mais próximos a João são
 
 ```{r include = FALSE}
 library(reticulate)
+repl_python()
 reticulate::conda_list()
-use_condaenv("py3.8", required = TRUE)
+use_condaenv("r-reticulate", required = TRUE)
 py_config()
+
+library(usethis)
+
+edit_r_environ()
+
+
+#py_install("scikit-learn")
 ```
 
 
@@ -3231,3 +3239,317 @@ mean_squared_error(y_test, y_pred, squared=True)  # MSE
 ```
 
 :::
+
+
+## Random Forests
+
+<br>
+
+
+**Random Forests** é um algoritmo de aprendizado de máquina que combina várias **árvores de decisão** independentes para realizar tarefas de classificação ou regressão. 
+
+. . .
+
+Ele pertence à categoria de **métodos ensemble**, que buscam melhorar a precisão e robustez das predições combinando diferentes modelos para se obter um único resultado.
+
+
+## Random Forests
+
+Utiliza bagging (bootstrap aggregation) para criar múltiplas árvores e combinar suas previsões.
+
+
+
+![](/images/rf/bagg.png){.nostretch fig-align="center" width="1400px"}
+
+
+
+## Construção de um Random Forests
+
+
+1) Amostras são geradas com substituição (bootstrap)
+
+. . .
+
+2) Para cada amostra, os dados são divididos utilizando os atributos que maximizem a **pureza dos nós**
+    - **Critérios de divisão:** Gini Index, Entropia, Ganho de Informação, etc.
+
+. . .
+
+
+3) A cada divisão da árvore, uma amostra aleatória de variáveis é usada
+   - Construção recursiva até atingir **critérios de parada** (profundidade máxima, pureza mínima)
+
+. . .
+
+4) Previsão final: Cada árvore possui um peso igual na votação final
+    - Classificação: maioria dos votos
+    - Regressão: média das previsões
+
+
+## Construção de um Random Forests    
+
+![](/images/rf/random.jpeg){.nostretch fig-align="center" width="1400px"}
+
+
+
+
+## Construção de um Random Forests
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+![](/images/rf/rf_class.jpg){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="40%"}
+
+<br>
+
+<br>
+
+<details>
+  <summary align="center" style='font-size:50px;'>**Qual a classe predita?**</summary>
+  <p align="center" style="color: black; font-size:40px;"> **Pela regra da maioria: classe 1** </p>
+</details>
+
+:::
+
+::::
+
+
+## Hiperparâmetros principais
+
+<br>
+
+- **n_estimators / ntree:** número de árvores na floresta
+
+- **max_features / mtry:** número de variáveis usadas por divisão
+
+- **max_depth:** profundidade máxima das árvores
+
+- **min_samples_split:** mínimo de amostras para uma divisão
+
+
+
+## Vantagens e Desvantagens
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<br>
+
+<span style='font-size:160px;'>&#128077;</span>
+:::
+
+::: {.column width="90%"}
+- Trata efetivamente problemas de **overfitting**
+- Lida bem com **ruídos**, **dados ausentes** e **valores discrepantes**
+- Lida com classificações multiclasses
+- Pouco ajuste de parâmetros
+- Capaz de lidar com **atributos de diferentes tipos** (numéricos, categóricos)
+- Reduz a **variância** e melhora a **precisão** em comparação com uma única árvore
+:::
+
+::::
+
+## Vantagens e Desvantagens
+
+<br>
+<br>
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<span style='font-size:160px;'>&#128078;</span>
+:::
+
+::: {.column width="90%"}
+
+<p> 
+</p>
+
+- Menos interpretável que uma árvore única
+
+- Mais custoso computacionalmente
+
+:::
+
+::::
+
+
+
+
+## Random Forests para classificação no R e Python
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+
+library(tidymodels)
+library(discrim)
+library(Metrics)
+
+set.seed(12345)
+data(iris)
+iris_split <- initial_split(iris, strata = Species)
+train_data <- training(iris_split)
+test_data <- testing(iris_split)
+
+rf_model <- rand_forest(mtry = 2, trees = 500) %>%
+  set_engine("ranger", importance = "impurity") %>%
+  set_mode("classification")
+
+rf_fit <- workflow() %>%
+  add_model(rf_model) %>%
+  add_formula(Species ~ .) %>%
+  fit(data = train_data)
+
+sp_predict <- predict(rf_fit, new_data = test_data)
+
+Metrics::accuracy(test_data$Species, sp_predict$.pred_class)
+```
+
+### Python
+
+```{python}
+#| echo: true
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+X = pd.DataFrame(iris.data, columns=iris.feature_names)
+y = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies
+
+# Split dos dados em treino e teste
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)
+
+rf_model = RandomForestClassifier(n_estimators=500, max_features=2)
+rf_model.fit(X_train, y_train)
+y_pred = rf_model.predict(X_test)
+accuracy_score(y_test, y_pred)
+```
+
+:::
+
+
+## Random Forests para regressão no R e Python
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+
+library(tidymodels)
+library(Metrics)
+
+data("mtcars")
+set.seed(12345)
+mtcars_split <- initial_split(mtcars, strata = mpg)
+train_data <- training(mtcars_split)
+test_data <- testing(mtcars_split)
+
+rf_reg <- rand_forest(mtry = 3, trees = 500) %>%
+  set_engine("ranger", importance = "impurity") %>%
+  set_mode("regression")
+
+rf_reg_fit <- workflow() %>%
+  add_model(rf_reg) %>%
+  add_formula(mpg ~ .) %>%
+  fit(data = train_data)
+
+mpg_predict <- predict(rf_reg_fit, test_data)
+
+Metrics::mse(test_data$mpg, mpg_predict$.pred) # MSE
+```
+
+### Python
+
+```{python}
+#| echo: true
+
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error
+
+data = fetch_california_housing()
+X_train, X_test, y_train, y_test = train_test_split(
+    data.data, data.target, random_state=12345
+)
+
+reg = RandomForestRegressor(n_estimators=100, max_features=6)
+reg.fit(X_train, y_train)
+y_pred = reg.predict(X_test)
+mean_squared_error(y_test, y_pred, squared=True)  # MSE
+```
+
+:::
+
+
+## Importância das variáveis
+
+<br>
+
+- Random Forest permite extrair importância das variáveis
+
+- Mostra o quanto cada variável contribui para a redução da impureza ou erro
+
+
+## Importância das variáveis
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+#| output-location: column
+library(vip)
+extract_fit_parsnip(rf_fit) %>% vip(num_features = 4)
+```
+
+
+### Python
+
+```{python}
+#| echo: true
+#| output-location: column
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+
+# Criar DataFrame com variáveis e importâncias
+feat_imp = pd.DataFrame({
+    "Variável": iris.feature_names,
+    "Importância": rf_model.feature_importances_
+})
+
+# Ordenar pela importância
+feat_imp = feat_imp.sort_values(by="Importância", ascending=False)
+
+# Plotar gráfico ordenado
+sns.barplot(x="Importância", y="Variável", data=feat_imp, palette="viridis")
+plt.title("Importância das variáveis")
+plt.tight_layout()
+plt.show()
+```
+
+:::
+
+
+## Support Vector Machine (SVM)

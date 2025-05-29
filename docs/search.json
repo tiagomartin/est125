@@ -2306,5 +2306,131 @@
     "title": "Semana 03",
     "section": "Script análise de dados: Explorando a base de dados Data Science Salaries 2023 do Kaggle",
     "text": "Script análise de dados: Explorando a base de dados Data Science Salaries 2023 do Kaggle\n EDA: Salários em Ciência de Dados"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests",
+    "href": "aulas/Analise_preditiva/preditiva.html#random-forests",
+    "title": "Análise Preditiva",
+    "section": "Random Forests",
+    "text": "Random Forests\n\nRandom Forests é um algoritmo de aprendizado de máquina que combina várias árvores de decisão independentes para realizar tarefas de classificação ou regressão.\n\nEle pertence à categoria de métodos ensemble, que buscam melhorar a precisão e robustez das predições combinando diferentes modelos para se obter um único resultado."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests",
+    "href": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests",
+    "title": "Análise Preditiva",
+    "section": "Construção de um Random Forests",
+    "text": "Construção de um Random Forests\n\nAmostras são geradas com substituição (bootstrap)\n\n\n\nPara cada amostra, os dados são divididos utilizando os atributos que maximizem a pureza dos nós\n\n\nCritérios de divisão: Gini Index, Entropia, Ganho de Informação, etc.\n\n\n\n\n\n\nA cada divisão da árvore, uma amostra aleatória de variáveis é usada\n\nConstrução recursiva até atingir critérios de parada (profundidade máxima, pureza mínima)\n\n\n\n\n\n\nPrevisão final: Cada árvore possui um peso igual na votação final\n\nClassificação: maioria dos votos\nRegressão: média das previsões"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#random-forests-1",
+    "title": "Análise Preditiva",
+    "section": "Random Forests",
+    "text": "Random Forests\nUtiliza bagging (bootstrap aggregation) para criar múltiplas árvores e combinar suas previsões."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests-1",
+    "title": "Análise Preditiva",
+    "section": "Construção de um Random Forests",
+    "text": "Construção de um Random Forests"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests-2",
+    "title": "Análise Preditiva",
+    "section": "Construção de um Random Forests",
+    "text": "Construção de um Random Forests\n\n\n\n\n\n\n\n\n\nQual a classe predita?\n\nPela regra da maioria: classe 1"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-6",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-6",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👍\n\n\nTrata efetivamente problemas de overfitting\n\nLida bem com ruídos, dados ausentes e valores discrepantes\n\nLida com classificações multiclasses\nPouco ajuste de parâmetros\nCapaz de lidar com atributos de diferentes tipos (numéricos, categóricos)\nReduz a variância e melhora a precisão em comparação com uma única árvore"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-7",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-7",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n👎\n\n\n\n\nMenos interpretável que uma árvore única\nMais custoso computacionalmente"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#hiperparâmetros-principais",
+    "href": "aulas/Analise_preditiva/preditiva.html#hiperparâmetros-principais",
+    "title": "Análise Preditiva",
+    "section": "Hiperparâmetros principais",
+    "text": "Hiperparâmetros principais\n\n\nn_estimators / ntree: número de árvores na floresta\nmax_features / mtry: número de variáveis usadas por divisão\nmax_depth: profundidade máxima das árvores\nmin_samples_split: mínimo de amostras para uma divisão"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "Random Forests para classificação no R e Python",
+    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "Random Forests para regressão no R e Python",
+    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.2578660416976653"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis",
+    "href": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis",
+    "title": "Análise Preditiva",
+    "section": "Importância das variáveis",
+    "text": "Importância das variáveis\n\n\nRandom Forest permite extrair importância das variáveis\nMostra o quanto cada variável contribui para a redução da impureza ou erro"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#support-vector-machine-svm",
+    "href": "aulas/Analise_preditiva/preditiva.html#support-vector-machine-svm",
+    "title": "Análise Preditiva",
+    "section": "Support Vector Machine (SVM)",
+    "text": "Support Vector Machine (SVM)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis-1",
+    "title": "Análise Preditiva",
+    "section": "Importância das variáveis",
+    "text": "Importância das variáveis\n\n\nR\nPython\n\n\n\n\n\nlibrary(vip)\nextract_fit_parsnip(rf_fit) %&gt;% vip(num_features = 4)\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Criar DataFrame com variáveis e importâncias\nfeat_imp = pd.DataFrame({\n    \"Variável\": iris.feature_names,\n    \"Importância\": rf_model.feature_importances_\n})\n\n# Ordenar pela importância\nfeat_imp = feat_imp.sort_values(by=\"Importância\", ascending=False)\n\n# Plotar gráfico ordenado\nsns.barplot(x=\"Importância\", y=\"Variável\", data=feat_imp, palette=\"viridis\")\nplt.title(\"Importância das variáveis\")\nplt.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "material_complementar/tidymodels.html",
+    "href": "material_complementar/tidymodels.html",
+    "title": "Desvendando o tidymodels: Um Guia para Estudantes de Ciência de Dados",
+    "section": "",
+    "text": "Olá, pessoal! Bom dia!\nHoje vamos desvendar um dos pacotes mais poderosos e versáteis no universo do R para quem trabalha com Ciência de Dados: o tidymodels. Se você já se aventurou em construir modelos preditivos, sabe que o processo pode ser um pouco… artesanal. O tidymodels chega para organizar essa bagunça e transformar a construção de modelos em algo mais intuitivo, padronizado e, claro, tidy!"
+  },
+  {
+    "objectID": "material_complementar/tidymodels.html#o-que-é-o-tidymodels",
+    "href": "material_complementar/tidymodels.html#o-que-é-o-tidymodels",
+    "title": "Desvendando o tidymodels: Um Guia para Estudantes de Ciência de Dados",
+    "section": "O que é o tidymodels?",
+    "text": "O que é o tidymodels?\nPense no tidymodels como uma coleção de pacotes que trabalham em conjunto para oferecer uma estrutura unificada e consistente para o machine learning em R. Assim como o tidyverse revolucionou a manipulação de dados, o tidymodels faz o mesmo para a modelagem. Ele segue a filosofia tidy do R, o que significa que as funções são projetadas para serem encadeadas, facilitando a leitura e a escrita do código.\nEle cobre todas as etapas do fluxo de trabalho de machine learning, desde a preparação dos dados até a avaliação do modelo, passando pela seleção de modelos e ajuste de hiperparâmetros."
+  },
+  {
+    "objectID": "material_complementar/tidymodels.html#por-que-usar-o-tidymodels",
+    "href": "material_complementar/tidymodels.html#por-que-usar-o-tidymodels",
+    "title": "Desvendando o tidymodels: Um Guia para Estudantes de Ciência de Dados",
+    "section": "Por que usar o tidymodels?",
+    "text": "Por que usar o tidymodels?\n\nConsistência: Esqueça a necessidade de aprender sintaxes diferentes para cada algoritmo. O tidymodels oferece uma interface unificada.\nOrganização: Ele incentiva a criação de um fluxo de trabalho claro e modular, o que facilita a replicação e a manutenção do seu código.\nFlexibilidade: Embora padronizado, ele é incrivelmente flexível, permitindo que você experimente diferentes modelos e abordagens.\nIntegração: Nascido e criado no ecossistema tidy, ele se integra perfeitamente com pacotes como dplyr e ggplot2."
+  },
+  {
+    "objectID": "material_complementar/tidymodels.html#componentes-chave-do-tidymodels",
+    "href": "material_complementar/tidymodels.html#componentes-chave-do-tidymodels",
+    "title": "Desvendando o tidymodels: Um Guia para Estudantes de Ciência de Dados",
+    "section": "Componentes Chave do tidymodels",
+    "text": "Componentes Chave do tidymodels\nO tidymodels é composto por diversos pacotes que desempenham funções específicas. Os principais que você precisa conhecer são:\n\nrsample: Para criar amostras de dados (treino/teste, validação cruzada).\nrecipes: Para pré-processamento de dados (transformações, engenharia de features).\nparsnip: Para especificar e ajustar diferentes tipos de modelos (regressão linear, árvores, SVMs, etc.) com uma sintaxe consistente.\ntune: Para ajuste de hiperparâmetros de modelos.\nworkflows: Para empacotar modelos e recipes em um único objeto.\nyardstick: Para medir o desempenho do modelo com diversas métricas.\ndials: Para gerenciar espaços de tuning de hiperparâmetros."
+  },
+  {
+    "objectID": "material_complementar/tidymodels.html#mão-na-massa-um-exemplo-prático",
+    "href": "material_complementar/tidymodels.html#mão-na-massa-um-exemplo-prático",
+    "title": "Desvendando o tidymodels: Um Guia para Estudantes de Ciência de Dados",
+    "section": "Mão na Massa: Um Exemplo Prático!",
+    "text": "Mão na Massa: Um Exemplo Prático!\nVamos construir um modelo de regressão para prever os valores do famoso conjunto de dados mtcars. Nosso objetivo será prever o consumo de combustível (mpg) com base em outras características do carro.\nPrimeiro, vamos carregar os pacotes necessários:\n\n\nMostrar código\nlibrary(tidymodels)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n# Configurações para reprodutibilidade\nset.seed(123)\n\n\n\nPreparação dos Dados com rsample\n\nVamos dividir nossos dados em conjuntos de treino e teste."
   }
 ]
