@@ -1,15 +1,14 @@
 ---
-title: "Desvendando o tidymodels: Um Guia para Estudantes de Ciência de Dados"
+title: "Desvendando o pacote tidymodels"
 format:
   html:
     toc: true
-    code-fold: true
+    code-fold: false
     code-summary: "Mostrar código"
     embed-resources: true
-editor: visual
+execute: 
+  eval: false   
 ---
-
-Olá, pessoal! Bom dia!
 
 Hoje vamos desvendar um dos pacotes mais poderosos e versáteis no universo do R para quem trabalha com **Ciência de Dados**: o **`tidymodels`**. Se você já se aventurou em construir modelos preditivos, sabe que o processo pode ser um pouco… artesanal. O `tidymodels` chega para organizar essa bagunça e transformar a construção de modelos em algo mais intuitivo, padronizado e, claro, *tidy*!
 
@@ -48,7 +47,9 @@ O `tidymodels` é composto por diversos pacotes que desempenham funções espec�
 
 ## Mão na Massa: Um Exemplo Prático!
 
-Vamos construir um modelo de regressão para prever os valores do famoso conjunto de dados `mtcars`. Nosso objetivo será prever o consumo de combustível (`mpg`) com base em outras características do carro.
+
+O conjunto de dados da Ames Housing é um conjunto de dados bem conhecido no campo da aprendizagem de máquina e análise de dados. Ele contém vários recursos e atributos de casas residenciais em **Ames**, **Iowa**, **EUA**. O conjunto de dados é frequentemente usado para tarefas de regressão, principalmente para prever os preços da habitação.
+
 
 Primeiro, vamos carregar os pacotes necessários:
 
@@ -64,7 +65,294 @@ library(ggplot2)
 set.seed(123)
 ```
 
-1. Preparação dos Dados com `rsample`
+
+### 1. Preparação dos Dados com `rsample`
 
 
-Vamos dividir nossos dados em conjuntos de treino e teste.
+O pacote rsample é o seu ponto de partida para a divisão estratégica dos seus dados. É fundamental para garantir que seu modelo seja avaliado de forma imparcial e que generalize bem para dados novos.
+
+
+### Por que usar?
+
+- **Separação Treino/Teste:** Essencial para avaliar a capacidade de generalização do modelo. O modelo é treinado apenas nos dados de treino e avaliado no conjunto de teste "invisível".
+- **Validação Cruzada (Cross-Validation):** Uma técnica mais robusta para estimar o desempenho do modelo e ajustar hiperparâmetros. Ajuda a reduzir a variância da estimativa de desempenho em comparação com uma única divisão treino/teste.
+- **Reamostragem (Bootstrapping):** Útil para estimar a incerteza das estimativas do modelo.
+
+
+### Como usar?
+
+`initial_split()`: Para dividir seus dados em conjuntos de treino e teste.
+
+
+```{r}
+data(ames)
+
+# Cria um conjunto de dados tibble para o tidymodels
+ames_tbl <- as_tibble(ames)
+
+# Divisão dos dados em treino e teste
+split_data <- initial_split(ames_tbl, prop = 0.80)
+train_data <- training(split_data)
+test_data  <- testing(split_data)
+
+# Verificando as dimensões
+dim(train_data)
+dim(test_data)
+```
+
+`vfold_cv()`: Para criar conjuntos para validação cruzada.
+
+```{r}
+ames_folds <- vfold_cv(train_data, v = 10, strata = Sale_Price) # 10-fold cross-validation
+ames_folds
+```
+
+
+### 2. Pré-processamento e Engenharia de Features com `recipes`
+
+O pacote `recipes` oferece uma sintaxe declarativa e encadeável para definir todas as etapas de pré-processamento e engenharia de features que você deseja aplicar aos seus dados.
+
+### Por que usar?
+
+- **Padronização e Consistência:** Garante que as mesmas transformações sejam aplicadas consistentemente nos conjuntos de treino, teste e novos dados.
+- **Evitar Vazamento de Dados (Data Leakage):** As operações de pré-processamento (como normalização) são "treinadas" apenas nos dados de treino e depois aplicadas aos dados de teste, evitando que informações do conjunto de teste influenciem o pré-processamento.
+- **Replicabilidade:** Facilita a reprodução de todas as etapas de preparação dos dados.
+- **Engenharia de Features:** Permite criar novas variáveis a partir das existentes (e.g., interações, polinômios).
+
+
+### Como usar?
+
+- `recipe(formula, data)`: Define a base da receita.
+
+- `step_*()`: Adiciona as etapas de pré-processamento.
+    - `step_normalize()`: Normaliza variáveis numéricas (média 0, desvio padrão 1).
+    - `step_dummy()`: Cria variáveis dummy (one-hot encoding) para variáveis categóricas.
+    - `step_impute_mean()` / `step_impute_knn()`: Lida com valores ausentes.
+    - `step_log()`: Aplica transformação logarítmica.
+    - `step_other()`: Agrupa níveis raros de fatores em uma categoria "outros".
+    - `step_interact()`: Cria interações entre variáveis.
+    - `step_zv()`: Remove variáveis com variância zero.
+    
+```{r}
+#| message: false
+#| warning: false
+ames_recipe <-
+  recipe(Sale_Price ~ ., data = ames) %>%
+  step_log(Sale_Price, base = 10) %>% # Transformar a variável resposta
+  step_other(Neighborhood, threshold = 0.05) %>% # Agrupar bairros raros
+  step_dummy(all_nominal_predictors()) %>% # Dummy para todas as variáveis categóricas
+  step_impute_knn(all_predictors()) %>% # Imputar valores ausentes com KNN
+  step_normalize(all_numeric_predictors()) %>%  # Normalizar variáveis numéricas
+  step_zv(all_predictors()) # Remover variáveis com variância zero
+  
+# Uma receita é uma "planta". Para aplicá-la, você precisa `prep()` e `bake()`.
+# `prep()` calcula as estatísticas necessárias para as transformações (e.g., média para normalização).
+# `bake()` aplica essas transformações aos dados.
+prepared_recipe <- prep(ames_recipe, training = ames)
+baked_data <- bake(prepared_recipe, new_data = ames)
+```
+
+
+### 3. Especificação do Modelo com `parsnip`
+
+
+O pacote `parsnip` fornece uma interface consistente para especificar diferentes tipos de modelos de machine learning, independentemente do "motor" (o pacote R que realmente implementa o algoritmo) que você deseja usar.
+
+
+### Por que usar?
+
+- **Interface Unificada:** Você usa a mesma sintaxe para especificar uma regressão linear, uma árvore de decisão, um SVM, uma rede neural, etc.
+- **Flexibilidade de Motores:** Permite alternar facilmente entre diferentes implementações do mesmo algoritmo (e.g., glmnet ou keras para regressão logística).
+- **Separação de Preocupações:** Você define o tipo de modelo e seu modo (classificação/regressão) antes de se preocupar com os detalhes do fitting.
+
+
+### Como usar?
+
+- `model_type()`: Função para o tipo de modelo (e.g., `linear_reg()`, `rand_forest()`, `boost_tree()`, `svm_rbf()`).
+
+- `set_engine()`: Define qual pacote será usado para implementar o modelo (e.g., `"lm"`, `"ranger"`, `"xgboost"`, `"kernlab"`).
+
+- `set_mode()`: Define se é um problema de `"regression"` ou `"classification"`.
+
+- `set_args()`: Define hiperparâmetros que podem ser ajustados ou passados diretamente (e.g., `trees = 1000` para `rand_forest`).
+
+```{r}
+#| message: false
+#| warning: false
+# Regressão Linear
+lm_spec <- linear_reg() %>%
+  set_engine("lm") %>%
+  set_mode("regression")
+
+# Árvore de Decisão de Classificação
+tree_spec <- decision_tree(cost_complexity = tune()) %>% # `tune()` indica um hiperparâmetro para ajuste
+  set_engine("rpart") %>%
+  set_mode("classification")
+
+
+# Especificar Random Forest com mtry para ajuste
+rf_spec <- rand_forest(mtry = tune(), trees = 1000, min_n = tune()) %>%
+  set_engine("ranger") %>%
+  set_mode("regression")
+
+```
+
+
+### 4. `workflows`: Combinando `recipes` e `parsnip`
+
+
+O pacote `workflows` é a "cola" do `tidymodels`. Ele permite que você empacote uma *recipe* e uma especificação de modelo em um único objeto, tornando o processo de *fitting* e previsão mais eficiente e menos propenso a erros.
+
+### Por que usar?
+
+- **Consolidação:** Reúne todas as etapas de pré-processamento e o modelo em um único objeto coerente.
+- **Facilita o `fit()` e `predict()`:** Você treina e faz previsões no workflow como um todo, em vez de gerenciar a recipe e o modelo separadamente.
+- **Integridade:** Garante que o pré-processamento correto seja aplicado antes do treinamento e das previsões.
+
+
+### Como usar?
+
+- `workflow()`: Inicia o objeto de workflow.
+
+- `add_recipe()`: Adiciona a recipe criada.
+
+- `add_model()`: Adiciona a especificação do modelo.
+
+```{r}
+#| message: false
+#| warning: false
+
+# Usando a recipe e o modelo da sessão anterior
+ames_workflow <-
+  workflow() %>%
+  add_recipe(ames_recipe) %>%
+  add_model(rf_spec)
+
+ames_workflow # Visualize o workflow
+```
+
+
+### 5. Ajuste de Hiperparâmetros com `tune` (Opcional, mas Altamente Recomendado!)
+
+
+O pacote `tune` é o coração do `tidymodels` para encontrar os melhores hiperparâmetros para o seu modelo. Ele trabalha em conjunto com `rsample` para realizar o tuning de forma sistemática.
+
+### Por que usar?
+
+- **Otimização do Modelo:** Encontrar os hiperparâmetros ideais pode melhorar significativamente o desempenho do seu modelo.
+- **Metodologias Robustas:** Suporta *tuning* por grade (`tune_grid`) e tuning Bayesiano (`tune_bayes`), que são métodos eficientes para explorar o espaço de hiperparâmetros.
+- **Validação Cruzada Integrada:** O `tune` se integra perfeitamente com os *folds* de validação cruzada do `rsample` para avaliar o desempenho de cada combinação de hiperparâmetros de forma robusta.
+
+
+### Como usar?
+
+- Defina os hiperparâmetros a serem ajustados com `tune()` na especificação do modelo (`parsnip`).
+
+- `tune_grid()`: Realiza uma busca em grade (grid search) sobre um conjunto predefinido de hiperparâmetros.
+
+- `tune_bayes()`: Realiza uma busca Bayesiana, que é mais eficiente para espaços de hiperparâmetros grandes.
+
+- `collect_metrics()`: Coleta as métricas de desempenho para cada combinação de hiperparâmetros.
+
+- `select_best()` / `select_by_one_std_err()`: Ajuda a escolher o melhor conjunto de hiperparâmetros.
+
+
+
+```{r}
+# Realizar o ajuste de hiperparâmetros
+tune_results <-
+  ames_workflow %>%
+  tune_grid(
+    resamples = ames_folds,
+    grid = 10 # Tentar 10 combinações aleatórias de mtry e min_n
+  )
+
+# Analisar os resultados do tuning
+tune_results %>% collect_metrics()
+tune_results %>% show_best(metric ="rmse")
+
+# Selecionar o melhor modelo e finalizar o workflow
+best_params <- tune_results %>% select_best(metric ="rmse")
+final_workflow <- ames_workflow %>% finalize_workflow(best_params)
+```
+
+
+
+### 6. Treinamento Final do Modelo com `fit`
+
+Após todas as etapas de preparação e, opcionalmente, ajuste de hiperparâmetros, `fit()` é a função que treina o modelo final nos dados de treino completos (ou no conjunto de dados completo se você estiver fazendo um treinamento final antes da implantação).
+
+### Por que usar?
+
+- **Cria o Modelo Final:** É o passo onde o algoritmo de machine learning aprende os padrões dos dados.
+- **Integração com o Workflow:** Treina o `workflow` completo, garantindo que a recipe seja preparada e aplicada aos dados de treino antes do modelo ser ajustado.
+
+
+### Como usar?
+
+- `fit(workflow, data)`: Treina o workflow com os dados especificados.
+
+```{r}
+# Usando o workflow finalizado do tuning (ou o workflow original se não houver tuning)
+final_model <- fit(final_workflow, data = train_data)
+```
+
+
+### 7. Fazendo Previsões com `predict`
+
+
+A função `predict()` é usada para gerar previsões em novos dados, sejam eles o conjunto de teste ou dados de produção.
+
+### Por que usar?
+
+- **Avaliação de Desempenho:** Previsões no conjunto de teste são cruciais para avaliar o quão bem o modelo generaliza.
+- **Aplicação em Produção:** Uma vez que o modelo é implantado, `predict()` é usado para gerar novas previsões.
+
+
+### Como usar?
+
+-`predict(trained_model, new_data)`: Gera previsões para um novo conjunto de dados.
+
+```{r}
+predictions <- predict(final_model, new_data = test_data) %>%
+  bind_cols(test_data) # Juntando com os valores reais para avaliação
+```
+
+
+### 8. Avaliação de Desempenho com `yardstick`
+
+O pacote `yardstick` fornece uma ampla gama de métricas para avaliar o desempenho do seu modelo, tanto para problemas de regressão quanto de classificação.
+
+### Por que usar?
+
+- **Métricas Abrangentes:** Oferece métricas padrão e avançadas (e.g., RMSE, R-quadrado, AUC, acurácia, precisão, recall, F1-score).
+- **Consistência:** As funções de métricas têm uma interface consistente.
+- **Pronto para `dplyr`:** As funções `metric_set()` e `metrics()` se integram bem com o `tidyverse`.
+
+
+### Como usar?
+
+- `metric_set()`: Cria um conjunto de métricas para avaliação.
+
+- `metrics(data, truth, estimate)`: Calcula as métricas para um conjunto de dados.
+
+
+```{r}
+# Para regressão
+predictions %>%
+  metrics(truth = Sale_Price, estimate = .pred)
+
+# Para classificação 
+# classification_metrics <- metric_set(accuracy, roc_auc, sens, spec)
+# predictions_class %>% classification_metrics(truth = actual_class, estimate = .pred_class, .pred_positive_prob)
+```
+
+
+
+
+### Conclusão
+
+Entender cada uma dessas etapas e o papel de cada pacote no `tidymodels` é a chave para construir fluxos de trabalho de *machine learning* eficientes, robustos e reproduzíveis em R. A beleza está na modularidade e na capacidade de encadear essas operações, transformando um processo complexo em algo sistemático e elegante.
+
+Ao dominar essas etapas, você estará bem equipado para enfrentar uma variedade de desafios de modelagem de dados!
+
