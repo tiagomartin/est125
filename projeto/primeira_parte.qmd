@@ -1,0 +1,177 @@
+---
+title: "Previsão de Churn em uma Empresa de Telecomunicações"
+format: html
+---
+
+
+
+
+
+## 🌐 Cenário: A Empresa "ConecteMais Corp."
+
+
+A ConecteMais Corp. é uma das maiores empresas de telecomunicações da Califórnia, oferecendo serviços de internet, telefonia fixa, telefonia móvel e TV por assinatura. Nos últimos meses, a empresa tem notado um aumento preocupante na taxa de churn de clientes, especialmente em determinados segmentos. Isso impacta diretamente a receita e a sustentabilidade do negócio. A diretoria executiva solicitou uma reunião com a equipe de análise de dados para entender melhor o problema e definir estratégias para reduzir o churn. 
+
+
+### 🧠 Sua Missão:
+
+Como parte do time de Análise de Dados da ConecteMais, sua equipe foi convocada para participar de uma reunião estratégica de emergência com os principais executivos da empresa.
+
+O objetivo? Descobrir por que os clientes estão deixando a empresa e ajudar a prever quem corre risco de sair no futuro.
+
+Sua missão será dividida em fases:
+
+
+## 🤝 Fase 1: A Reunião de Alinhamento
+
+
+### Participantes da Reunião
+
+- 📊 Líder da Equipe de Negócios (Marketing e Vendas): Sra. Ana Paula, Diretora de Estratégias de Clientes.
+
+*“Sabemos que estamos perdendo clientes, mas não sabemos o porquê. Precisamos de uma análise baseada em dados.”*
+
+- 💼 João Silva (Gerente de Marketing): 
+
+*“Testamos promoções, descontos e novos planos... Mas algo ainda está errado. Será que estamos **ignorando** os sinais de insatisfação?”*
+
+- 💻 Líder da Equipe de Análise de Dados: Dr. Carlos Eduardo, Gerente de Ciência de Dados.
+
+*“Nosso objetivo será entender os padrões e preparar um modelo que antecipe a rotatividade com precisão.”*
+
+
+### Problema Discutido
+
+A Sra. Ana Paula inicia a reunião expressando a preocupação da diretoria com o aumento do churn. Ela apresenta alguns dados gerais:
+
+- A taxa de churn mensal passou de 15% para 26.5% nos últimos 6 meses.
+- Foi observado um aumento de reclamações em mídias sociais e no atendimento ao cliente.
+- Há uma percepção de que a concorrência está lançando pacotes mais agressivos.
+
+Ela enfatiza que a empresa precisa identificar proativamente os clientes com maior probabilidade de churn para que a equipe de marketing possa intervir com ofertas personalizadas, suporte proativo ou outras estratégias de retenção.
+
+
+### Objetivos Definidos
+
+Você e seu grupo participarão de uma reunião com o gerente de ciência de dados da empresa. Nessa etapa, vocês deverão:
+
+- Compreender o problema de negócios;
+
+- Levantar hipóteses sobre fatores que influenciam a saída de clientes;
+
+- Analisar o dicionário de dados e identificar informações úteis para prever a rotatividade.
+    - Categorizar as variáveis em:
+        - Categóricas nominais 
+        - Categóricas ordinais 
+        - Numéricas contínuas 
+        - Binárias 
+    - Identificar a variável-alvo: Churn Value (0 = permaneceu, 1 = saiu)
+
+
+
+### Descrição do Conjunto de Dados de Rotatividade de Clientes ConecteMais 
+
+Os dados de rotatividade de clientes da ConecteMais contêm informações sobre uma empresa de telecomunicações fictícia que forneceu serviços de telefone residencial e internet a 7043 clientes na Califórnia no terceiro trimestre. Ele indica quais clientes saíram, permaneceram ou se inscreveram para o serviço. Várias informações demográficas importantes são incluídas para cada cliente, bem como um Score de Satisfação, Score de Rotatividade e um Índice de Valor de Tempo de Vida do Cliente (CLTV).
+
+- Descrição das variáveis:
+    - **CustomerID:** Um ID exclusivo que identifica cada cliente.
+    - **Gender:** O gênero do cliente: Male (Masculino), Female (Feminino).
+    - **Age:** A idade atual do cliente, em anos, no momento em que o trimestre fiscal terminou.
+    - **Senior Citizen:** Indica se o cliente tem 65 anos ou mais: Yes (Sim), No (Não).
+    - **Married:** Indica se o cliente é casado: Yes (Sim), No (Não).
+    - **Dependents:** Indica se o cliente mora com algum dependente: Yes (Sim), No (Não). Dependentes podem ser filhos, pais, avós, etc.
+    - **Number of Dependents:** Indica o número de dependentes que moram com o cliente.
+    - **Count:** Um valor usado em relatórios/dashboards para somar o número de clientes em um conjunto filtrado.
+    - **Country:** O país de residência principal do cliente.
+    - **State:** O estado de residência principal do cliente.
+    - **City:** A cidade de residência principal do cliente.
+    - **Zip Code:** O código postal de residência principal do cliente.
+    - **Latitude:** A latitude de residência principal do cliente.
+    -	**Longitude:** A longitude de residência principal do cliente.
+    - **Population:** Uma estimativa populacional atual para toda a área do código postal.
+    - **Quarter:** O trimestre fiscal do qual os dados foram derivados (por exemplo, Q3).
+    - **Referred a Friend:** Indica se o cliente já indicou um amigo ou membro da família para esta empresa: Yes (Sim), No (Não).
+    - **Number of Referrals:** Indica o número de indicações que o cliente fez até o momento.
+    - **Tenure in Months:** Indica o número total de meses que o cliente esteve com a empresa até o final do trimestre especificado acima.
+    - **Offer:** Identifica a última oferta de marketing que o cliente aceitou, se aplicável. Os valores incluem None (Nenhum), Offer A, Offer B, Offer C, Offer D e Offer E.
+    - **Phone Service:** Indica se o cliente assina o serviço de telefone residencial com a empresa: Yes (Sim), No (Não).
+    - **Avg Monthly Long Distance Charges:** Indica as cobranças médias de chamadas de longa distância do cliente, calculadas até o final do trimestre especificado acima.
+    - **Multiple Lines:** Indica se o cliente assina várias linhas telefônicas com a empresa: Yes (Sim), No (Não).
+    - **Internet Service:** Indica se o cliente assina o serviço de Internet com a empresa: No (Não), DSL, Fiber Optic (Fibra Óptica), Cable (Cabo).
+    - **Avg Monthly GB Download:** Indica o volume médio de download do cliente em gigabytes, calculado até o final do trimestre especificado acima.
+    - **Online Security:** Indica se o cliente assina um serviço adicional de segurança online fornecido pela empresa: Yes (Sim), No (Não).
+    - **Online Backup:** Indica se o cliente assina um serviço adicional de backup online fornecido pela empresa: Yes (Sim), No (Não).
+    - **Device Protection Plan:** Indica se o cliente assina um plano adicional de proteção de dispositivo para seu equipamento de Internet fornecido pela empresa: Yes (Sim), No (Não).
+    - **Premium Tech Support:** Indica se o cliente assina um plano adicional de suporte técnico da empresa com tempos de espera reduzidos: Yes (Sim), No (Não).
+    - **Streaming TV:** Indica se o cliente usa seu serviço de Internet para transmitir programação de televisão de um provedor terceirizado: Yes (Sim), No (Não). A empresa não cobra uma taxa adicional por este serviço.
+    - **Streaming Movies:** Indica se o cliente usa seu serviço de Internet para transmitir filmes de um provedor terceirizado: Yes (Sim), No (Não). A empresa não cobra uma taxa adicional por este serviço.
+    - **Streaming Music:** Indica se o cliente usa seu serviço de Internet para transmitir música de um provedor terceirizado: Yes (Sim), No (Não). A empresa não cobra uma taxa adicional por este serviço.
+    - **Unlimited Data:** Indica se o cliente pagou uma taxa mensal adicional para ter downloads/uploads de dados ilimitados: Yes (Sim), No (Não).
+    - **Contract:** Indica o tipo de contrato atual do cliente: Month-to-Month (Mês a Mês), One Year (Um Ano), Two Year (Dois Anos).
+    - **Paperless Billing:** Indica se o cliente escolheu o faturamento sem papel: Yes (Sim), No (Não).
+    - **Payment Method:** Indica como o cliente paga sua conta: Bank Withdrawal (Débito em Conta), Credit Card (Cartão de Crédito), Mailed Check (Cheque Enviado pelo Correio).
+    - **Monthly Charge:** Indica a cobrança mensal total atual do cliente para todos os seus serviços da empresa.
+    - **Total Charges:** Indica o total de cobranças do cliente, calculado até o final do trimestre especificado acima.
+    - **Total Refunds:** Indica o total de reembolsos do cliente, calculado até o final do trimestre especificado acima.
+    - **Total Extra Data Charges:** Indica o total de cobranças do cliente por downloads de dados extras acima dos especificados em seu plano, até o final do trimestre especificado acima.
+    - **Total Long Distance Charges:** Indica o total de cobranças do cliente por chamadas de longa distância acima das especificadas em seu plano, até o final do trimestre especificado acima.
+    - **Satisfaction Score:** Uma classificação geral de satisfação do cliente com a empresa de 1 (Muito Insatisfeito) a 5 (Muito Satisfeito).
+    - **Satisfaction Score Label:** Indica a versão textual do score (1-5) como uma string de texto.
+    - **Customer Status:** Indica o status do cliente no final do trimestre: Churned (Saiu), Stayed (Permaneceu) ou Joined (Entrou).
+    - **Churn Label:** Yes (Sim) = o cliente deixou a empresa neste trimestre. No (Não) = o cliente permaneceu com a empresa. Diretamente relacionado ao Churn Value.
+    - **Churn Value:** 1 = o cliente deixou a empresa neste trimestre. 0 = o cliente permaneceu com a empresa. Diretamente relacionado ao Churn Label.
+    - **Churn Score:** Um valor de 0 a 100 que é calculado usando a ferramenta preditiva IBM SPSS Modeler. O modelo incorpora múltiplos fatores conhecidos por causar rotatividade. Quanto maior o score, maior a probabilidade de o cliente sair.
+    - **Churn Score Category:** Um cálculo que atribui um Churn Score a uma das seguintes categorias: 0-10, 11-20, 21-30, 31-40, 41-50, 51-60, 61-70, 71-80, 81-90 e 91-100.
+    - **CLTV:** Customer Lifetime Value (Valor de Tempo de Vida do Cliente). Um CLTV previsto é calculado usando fórmulas corporativas e dados existentes. Quanto maior o valor, mais valioso é o cliente. Clientes de alto valor devem ser monitorados para evitar a rotatividade.
+    - **CLTV Category:** Um cálculo que atribui um valor CLTV a uma das seguintes categorias: 2000-2500, 2501-3000, 3001-3500, 3501-4000, 4001-4500, 4501-5000, 5001-5500, 5501-6000, 6001-6500 e 6501-7000.
+    - **Churn Category:** Uma categoria de alto nível para o motivo de rotatividade do cliente: Attitude (Atitude), Competitor (Concorrente), Dissatisfaction (Insatisfação), Other (Outro), Price (Preço). Quando deixam a empresa, todos os clientes são questionados sobre os motivos de sua saída. Diretamente relacionado ao Churn Reason.
+    -	**Churn Reason:** Um motivo específico do cliente para deixar a empresa. Diretamente relacionado ao Churn Category.
+
+
+
+
+
+## 🛠️ Fase 2: O Diagnóstico Técnico
+
+
+### 🔍 Objetivo
+
+
+O objetivo desta etapa é permitir que a equipe de análise compreenda profundamente o conjunto de dados da ConecteMais Corp., identifique potenciais problemas de qualidade dos dados e proponha um plano de pré-processamento para tornar os dados adequados à modelagem preditiva.
+
+
+### 🧠 Tarefas e Desafios Propostos
+
+
+Após a reunião, a equipe de dados inicia a exploração da base. Agora é hora de:
+
+- Avaliar a qualidade dos dados;
+    - Identificar valores faltantes, variáveis irrelevantes e problemas de codificação;
+    - Identificar variáveis com baixa variabilidade: que não agregam informação ao modelo;
+    - Identificar variáveis altamente correlacionadas: redundância que pode prejudicar modelos lineares;
+    - Avaliar distribuições assimétricas ou outliers extremos em variáveis numéricas;
+    - Avaliar se existe desbalanceamento da variável-alvo (Churn Value).
+
+- Propor um plano de pré-processamento para tornar os dados prontos para uso em modelos de classificação supervisionada.
+
+A diretoria precisa de resultados acionáveis. Sua análise poderá influenciar a decisão de milhões de dólares em estratégias de retenção.
+
+
+## 🎯 Fase 3: Construção e Avaliação de Modelos Preditivos
+
+
+### 🔍 Objetivo
+
+Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (churn) com base nos dados históricos fornecidos pela ConecteMais Corp. O foco é prever o valor da variável binária Churn Value (1 = saiu, 0 = permaneceu), usando as demais variáveis como preditoras.
+
+
+### 🧠 Desafios Propostos
+
+- Identificar quais variáveis são mais relevantes para prever a saída de clientes;
+
+- Lidar com dados desbalanceados (caso a proporção entre churn e não churn seja desigual);
+
+- Comparar diferentes algoritmos de classificação;
+
+- Ajustar e validar os modelos com critérios adequados.
+

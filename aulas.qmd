@@ -7,7 +7,7 @@ title: "Aulas"
 - [Pré-processamento de dados](/aulas/Pre_processamento/pre_processamento.html "Pré-processamento de dados"){aria-label="Pré-processamento de dados"}
 
 
-- Análise preditiva
+- [Análise preditiva](/aulas/Analise_preditiva/preditiva.html "Análise preditiva"){aria-label="Análise preditiva"}
 
 - Reconhecimento de padrões
 

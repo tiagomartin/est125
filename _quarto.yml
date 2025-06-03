@@ -35,8 +35,10 @@ website:
       #- estudos.qmd
       #- exercicios.qmd
       - analises.qmd
-      - plano.qmd
       - cronograma.qmd
+      - material.qmd
+      - plano.qmd
+
       
 
       

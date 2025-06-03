@@ -45,7 +45,7 @@ O `tidymodels` é composto por diversos pacotes que desempenham funções espec�
 
 ---
 
-## Mão na Massa: Um Exemplo Prático!
+## Mãos na Massa: Um Exemplo Prático!
 
 
 O conjunto de dados da Ames Housing é um conjunto de dados bem conhecido no campo da aprendizagem de máquina e análise de dados. Ele contém vários recursos e atributos de casas residenciais em **Ames**, **Iowa**, **EUA**. O conjunto de dados é frequentemente usado para tarefas de regressão, principalmente para prever os preços da habitação.
@@ -132,7 +132,9 @@ O pacote `recipes` oferece uma sintaxe declarativa e encadeável para definir to
     - `step_other()`: Agrupa níveis raros de fatores em uma categoria "outros".
     - `step_interact()`: Cria interações entre variáveis.
     - `step_zv()`: Remove variáveis com variância zero.
-    
+
+- Mais `steps` do pacote `recipes` podem ser encontrados [aqui](https://www.tidymodels.org/find/recipes/).
+
 ```{r}
 #| message: false
 #| warning: false

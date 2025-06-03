@@ -1,0 +1,6 @@
+---
+title: "Material Complementar"
+format: html
+---
+
+-   [Desvendando o pacote tidymodels](material_complementar/tidymodels.html "Desvendando o pacote tidymodels"){aria-label="Desvendando o pacote tidymodels"}
