@@ -1,5 +1,7 @@
 ---
-title: "Análise de dados"
+title: "Análise de Dados"
 ---
 
 -   [EDA: Salários em Ciência de Dados](analise_dados/data_science.html "Script análise de dados"){aria-label="Script análise de dados"}
+
+-   [Pré-processamento usando a base de dados Space Titanic](analise_dados/space_titanic.html "Script análise de dados"){aria-label="Script análise de dados"}

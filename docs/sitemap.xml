@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://professortp.com.br/est1125/projeto/primeira_parte.html</loc>
+    <lastmod>2025-06-03T16:24:59.576Z</lastmod>
+  </url>
+  <url>
     <loc>http://professortp.com.br/est1125/programacao/semana-4.html</loc>
     <lastmod>2025-05-27T17:11:16.447Z</lastmod>
   </url>
@@ -13,8 +17,12 @@
     <lastmod>2025-05-02T22:30:11.439Z</lastmod>
   </url>
   <url>
+    <loc>http://professortp.com.br/est1125/material.html</loc>
+    <lastmod>2025-06-03T17:04:40.136Z</lastmod>
+  </url>
+  <url>
     <loc>http://professortp.com.br/est1125/cronograma.html</loc>
-    <lastmod>2025-05-28T23:37:10.258Z</lastmod>
+    <lastmod>2025-06-03T17:45:32.972Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/aulas/Pre_processamento/pre_processamento.html</loc>
@@ -33,16 +41,20 @@
     <lastmod>2024-11-22T22:35:48.578Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est1125/analise_dados/data_science.html</loc>
-    <lastmod>2025-05-22T01:04:35.292Z</lastmod>
+    <loc>http://professortp.com.br/est1125/analise_dados/space_titanic.html</loc>
+    <lastmod>2025-06-03T16:55:38.454Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/analises.html</loc>
+    <lastmod>2025-06-03T17:45:39.467Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/about.html</loc>
     <lastmod>2025-05-02T22:18:53.023Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est1125/analises.html</loc>
-    <lastmod>2025-05-22T01:09:04.475Z</lastmod>
+    <loc>http://professortp.com.br/est1125/analise_dados/data_science.html</loc>
+    <lastmod>2025-05-22T01:04:35.292Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/preditiva.html</loc>
@@ -62,11 +74,15 @@
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/aulas.html</loc>
-    <lastmod>2025-03-04T19:16:06.685Z</lastmod>
+    <lastmod>2025-06-03T17:36:51.956Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/index.html</loc>
     <lastmod>2025-05-05T13:56:05.543Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/material_complementar/tidymodels.html</loc>
+    <lastmod>2025-06-03T17:42:40.849Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/programacao/semana-1.html</loc>
@@ -77,7 +93,7 @@
     <lastmod>2025-05-22T01:38:54.851Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est1125/material_complementar/tidymodels.html</loc>
-    <lastmod>2025-05-29T19:46:33.127Z</lastmod>
+    <loc>http://professortp.com.br/est1125/programacao/semana-5.html</loc>
+    <lastmod>2025-06-03T17:34:45.770Z</lastmod>
   </url>
 </urlset>

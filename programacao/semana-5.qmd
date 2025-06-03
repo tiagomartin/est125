@@ -1,0 +1,17 @@
+---
+title: "Semana 05"
+---
+
+
+## Script pré-processamento usando a base de dados Space Titanic no R
+
+{{< fa brands r-project size=lg >}} [Pré-processamento usando a base de dados Space Titanic](/analise_dados/space_titanic.html "Script análise de dados"){aria-label="Script análise de dados"}
+
+## Material complementar
+
+{{< fa folder size=lg >}} [Desvendando o pacote tidymodels](/material_complementar/tidymodels.html "Desvendando o pacote tidymodels"){aria-label="Desvendando o pacote tidymodels"}
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Análise preditiva](/aulas/Analise_preditiva/preditiva.html "Análise preditiva"){aria-label="Análise preditiva"}
+
