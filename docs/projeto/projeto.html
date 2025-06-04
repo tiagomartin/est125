@@ -325,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#participantes-da-reunião" id="toc-participantes-da-reunião" class="nav-link" data-scroll-target="#participantes-da-reunião">Participantes da Reunião</a></li>
   <li><a href="#problema-discutido" id="toc-problema-discutido" class="nav-link" data-scroll-target="#problema-discutido">Problema Discutido</a></li>
   <li><a href="#objetivos-definidos" id="toc-objetivos-definidos" class="nav-link" data-scroll-target="#objetivos-definidos">Objetivos Definidos</a></li>
-  <li><a href="#descrição-do-conjunto-de-dados-de-rotatividade-de-clientes-conectemais" id="toc-descrição-do-conjunto-de-dados-de-rotatividade-de-clientes-conectemais" class="nav-link" data-scroll-target="#descrição-do-conjunto-de-dados-de-rotatividade-de-clientes-conectemais">Descrição do Conjunto de Dados de Rotatividade de Clientes ConecteMais</a></li>
+  <li><a href="#base-de-dados" id="toc-base-de-dados" class="nav-link" data-scroll-target="#base-de-dados">Base de dados</a></li>
   <li><a href="#tarefas-e-desafios-propostos" id="toc-tarefas-e-desafios-propostos" class="nav-link" data-scroll-target="#tarefas-e-desafios-propostos">🧠 Tarefas e Desafios Propostos</a></li>
   </ul></li>
   <li><a href="#fase-2-o-diagnóstico-técnico" id="toc-fase-2-o-diagnóstico-técnico" class="nav-link" data-scroll-target="#fase-2-o-diagnóstico-técnico">🛠️ Fase 2: O Diagnóstico Técnico</a>
@@ -353,7 +353,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#questões-para-discussão-e-resolução-3" id="toc-questões-para-discussão-e-resolução-3" class="nav-link" data-scroll-target="#questões-para-discussão-e-resolução-3">🤔 Questões para Discussão e Resolução:</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est125/edit/main/projeto/primeira_parte.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est125/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est125/edit/main/projeto/projeto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est125/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -395,25 +395,33 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>📊 Líder da Equipe de Negócios (Marketing e Vendas): Sra. Ana Paula, Diretora de Estratégias de Clientes.</li>
 </ul>
-<p><em>“Sabemos que estamos perdendo clientes, mas não sabemos o porquê. Precisamos de uma análise baseada em dados.”</em></p>
+<p><em>“Sabemos que estamos perdendo clientes, mas não sabemos exatamente o porquê. Precisamos de uma análise sólida, baseada em evidências, que nos ajude a agir com antecedência.”</em></p>
 <ul>
 <li>💼 João Silva (Gerente de Marketing):</li>
 </ul>
-<p><em>“Testamos promoções, descontos e novos planos… Mas algo ainda está errado. Será que estamos <strong>ignorando</strong> os sinais de insatisfação?”</em></p>
+<p><em>“Já testamos promoções, descontos, campanhas de fidelização e novos planos. Mas algo ainda não está funcionando. Será que os clientes estão insatisfeitos e não estamos enxergando os sinais a tempo?”</em></p>
+<ul>
+<li>🖥️ Sr.&nbsp;Mauro Bastos – Especialista em Dados e Infraestrutura</li>
+</ul>
+<p><em>“Sou responsável pelo banco de dados e pela governança das informações da ConecteMais. Organizei os dados de clientes com base em nosso sistema CRM e em registros de cobrança, suporte e serviços. Vocês terão acesso à base com todas as variáveis explicadas no dicionário. Qualquer dúvida técnica ou limitação da base, falem comigo.”</em></p>
 <ul>
 <li>💻 Líder da Equipe de Análise de Dados: Dr.&nbsp;Carlos Eduardo, Gerente de Ciência de Dados.</li>
 </ul>
-<p><em>“Nosso objetivo será entender os padrões e preparar um modelo que antecipe a rotatividade com precisão.”</em></p>
+<p><em>“Nossa missão é identificar padrões nos dados que expliquem a rotatividade e desenvolver um modelo preditivo para ajudar a ConecteMais a antecipar e prevenir perdas de clientes. Para isso, precisamos primeiro entender o negócio, o contexto e a estrutura dos dados disponíveis.”</em></p>
 </section>
 <section id="problema-discutido" class="level3">
 <h3 class="anchored" data-anchor-id="problema-discutido">Problema Discutido</h3>
-<p>A Sra. Ana Paula inicia a reunião expressando a preocupação da diretoria com o aumento do <em>churn</em>. Ela apresenta alguns dados gerais:</p>
+<p>🎙 A Sra. Ana Paula inicia a reunião expressando a preocupação da diretoria com o aumento do <em>churn</em>. Ela apresenta alguns dados gerais:</p>
 <ul>
 <li>A taxa de <em>churn</em> mensal passou de 15% para 26.5% nos últimos 6 meses.</li>
 <li>Foi observado um aumento de reclamações em mídias sociais e no atendimento ao cliente.</li>
 <li>Há uma percepção de que a concorrência está lançando pacotes mais agressivos.</li>
 </ul>
 <p>Ela enfatiza que a empresa precisa identificar proativamente os clientes com maior probabilidade de <em>churn</em> para que a equipe de marketing possa intervir com ofertas personalizadas, suporte proativo ou outras estratégias de retenção.</p>
+<p>🎙 Sr.&nbsp;Mauro Bastos (abrindo o notebook e conectando ao projetor):</p>
+<p>“Para ajudar vocês, preparei uma base limpa com os principais dados de clientes. Vocês terão acesso ao histórico de contratos, tipos de serviço, cobranças, reclamações e se o cliente deixou ou não a empresa. O dicionário de dados está disponível e cada variável já foi brevemente descrita. Reforço que vocês devem validar a qualidade dos dados – há campos com ausências e outras possíveis inconsistências.”</p>
+<p>🎙 Sr.&nbsp;Mauro Bastos (acrescenta):</p>
+<p>“Caso precisem de variáveis adicionais, posso consultar os sistemas internos para ver o que pode ser exportado. Mas comecem com <a href="">este conjunto</a>. Ele cobre 99% das saídas registradas no último trimestre.”</p>
 </section>
 <section id="objetivos-definidos" class="level3">
 <h3 class="anchored" data-anchor-id="objetivos-definidos">Objetivos Definidos</h3>
@@ -421,18 +429,19 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Compreender o problema de negócios;</p></li>
 <li><p>Levantar hipóteses sobre fatores que influenciam a saída de clientes;</p></li>
-<li><p>Identificar a variável-alvo: <code>Churn Value</code> (0 = permaneceu, 1 = saiu)</p></li>
+<li><p>Identificar a variável-alvo: <code>Churn Label</code></p></li>
 </ul>
 </section>
-<section id="descrição-do-conjunto-de-dados-de-rotatividade-de-clientes-conectemais" class="level3">
-<h3 class="anchored" data-anchor-id="descrição-do-conjunto-de-dados-de-rotatividade-de-clientes-conectemais">Descrição do Conjunto de Dados de Rotatividade de Clientes ConecteMais</h3>
-<p>Os dados de rotatividade de clientes da ConecteMais contêm informações sobre uma empresa de telecomunicações fictícia que forneceu serviços de telefone residencial e internet a 7043 clientes na Califórnia no terceiro trimestre. Ele indica quais clientes saíram, permaneceram ou se inscreveram para o serviço. Várias informações demográficas importantes são incluídas para cada cliente, bem como um Score de Satisfação, Score de Rotatividade e um Índice de Valor de Tempo de Vida do Cliente (CLTV).</p>
+<section id="base-de-dados" class="level3">
+<h3 class="anchored" data-anchor-id="base-de-dados">Base de dados</h3>
+<p>A base de dados de rotatividade de clientes da ConecteMais contêm informações sobre serviços de telefone residencial e internet fornecidos a mais de 6 mil clientes na Califórnia no terceiro trimestre. Ela indica quais clientes saíram, permaneceram ou se inscreveram para nesses serviços. Várias informações demográficas importantes são incluídas para cada cliente, bem como um score de satisfação, score de rotatividade e um Índice de Valor de Tempo de Vida do Cliente (CLTV).</p>
 <ul>
 <li>Descrição das variáveis:
 <ul>
 <li><code>CustomerID:</code> Um ID exclusivo que identifica cada cliente.</li>
 <li><code>Gender:</code> O gênero do cliente: Male (Masculino), Female (Feminino).</li>
 <li><code>Age:</code> A idade atual do cliente, em anos, no momento em que o trimestre fiscal terminou.</li>
+<li><code>Under 30:</code> Indica se o cliente tem menos de 30 anos: Yes (Sim), No (Não).</li>
 <li><code>Senior Citizen:</code> Indica se o cliente tem 65 anos ou mais: Yes (Sim), No (Não).</li>
 <li><code>Married:</code> Indica se o cliente é casado: Yes (Sim), No (Não).</li>
 <li><code>Dependents:</code> Indica se o cliente mora com algum dependente: Yes (Sim), No (Não). Dependentes podem ser filhos, pais, avós, etc.</li>
@@ -453,7 +462,8 @@ ul.task-list li input[type="checkbox"] {
 <li><code>Phone Service:</code> Indica se o cliente assina o serviço de telefone residencial com a empresa: Yes (Sim), No (Não).</li>
 <li><code>Avg Monthly Long Distance Charges:</code> Indica as cobranças médias de chamadas de longa distância do cliente, calculadas até o final do trimestre especificado acima.</li>
 <li><code>Multiple Lines:</code> Indica se o cliente assina várias linhas telefônicas com a empresa: Yes (Sim), No (Não).</li>
-<li><code>Internet Service:</code> Indica se o cliente assina o serviço de Internet com a empresa: No (Não), DSL, Fiber Optic (Fibra Óptica), Cable (Cabo).</li>
+<li><code>Internet Service:</code> Indica se o cliente assina o serviço de Internet com a empresa: Yes (Sim), No (Não).</li>
+<li><code>Internet Type:</code> Indica o serviço de Internet contradado junto a empresa: None (Nenhum), DSL, Fiber Optic (Fibra Óptica), Cable (Cabo).</li>
 <li><code>Avg Monthly GB Download:</code> Indica o volume médio de download do cliente em gigabytes, calculado até o final do trimestre especificado acima.</li>
 <li><code>Online Security:</code> Indica se o cliente assina um serviço adicional de segurança online fornecido pela empresa: Yes (Sim), No (Não).</li>
 <li><code>Online Backup:</code> Indica se o cliente assina um serviço adicional de backup online fornecido pela empresa: Yes (Sim), No (Não).</li>
@@ -472,14 +482,10 @@ ul.task-list li input[type="checkbox"] {
 <li><code>Total Extra Data Charges:</code> Indica o total de cobranças do cliente por downloads de dados extras acima dos especificados em seu plano, até o final do trimestre especificado acima.</li>
 <li><code>Total Long Distance Charges:</code> Indica o total de cobranças do cliente por chamadas de longa distância acima das especificadas em seu plano, até o final do trimestre especificado acima.</li>
 <li><code>Satisfaction Score:</code> Uma classificação geral de satisfação do cliente com a empresa de 1 (Muito Insatisfeito) a 5 (Muito Satisfeito).</li>
-<li><code>Satisfaction Score Label:</code> Indica a versão textual do score (1-5) como uma string de texto.</li>
 <li><code>Customer Status:</code> Indica o status do cliente no final do trimestre: Churned (Saiu), Stayed (Permaneceu) ou Joined (Entrou).</li>
-<li><code>Churn Label:</code> Yes (Sim) = o cliente deixou a empresa neste trimestre. No (Não) = o cliente permaneceu com a empresa. Diretamente relacionado ao <code>Churn Value</code>.</li>
-<li><code>Churn Value:</code> 1 = o cliente deixou a empresa neste trimestre. 0 = o cliente permaneceu com a empresa. Diretamente relacionado ao <code>Churn Label</code>.</li>
+<li><code>Churn Label:</code> Yes (Sim) = o cliente deixou a empresa neste trimestre. No (Não) = o cliente permaneceu com a empresa.</li>
 <li><code>Churn Score:</code> Um valor de 0 a 100 que é calculado usando a ferramenta preditiva IBM SPSS Modeler. O modelo incorpora múltiplos fatores conhecidos por causar rotatividade. Quanto maior o score, maior a probabilidade de o cliente sair.</li>
-<li><code>Churn Score Category:</code> Um cálculo que atribui um Churn Score a uma das seguintes categorias: 0-10, 11-20, 21-30, 31-40, 41-50, 51-60, 61-70, 71-80, 81-90 e 91-100.</li>
 <li><code>CLTV:</code> Customer Lifetime Value (Valor de Tempo de Vida do Cliente). Um CLTV previsto é calculado usando fórmulas corporativas e dados existentes. Quanto maior o valor, mais valioso é o cliente. Clientes de alto valor devem ser monitorados para evitar a rotatividade.</li>
-<li><code>CLTV Category:</code> Um cálculo que atribui um valor CLTV a uma das seguintes categorias: 2000-2500, 2501-3000, 3001-3500, 3501-4000, 4001-4500, 4501-5000, 5001-5500, 5501-6000, 6001-6500 e 6501-7000.</li>
 <li><code>Churn Category:</code> Uma categoria de alto nível para o motivo de rotatividade do cliente: Attitude (Atitude), Competitor (Concorrente), Dissatisfaction (Insatisfação), Other (Outro), Price (Preço). Quando deixam a empresa, todos os clientes são questionados sobre os motivos de sua saída. Diretamente relacionado ao Churn Reason.</li>
 <li><code>Churn Reason:</code> Um motivo específico do cliente para deixar a empresa. Diretamente relacionado ao Churn Category.</li>
 </ul></li>
@@ -512,7 +518,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Identificar variáveis com baixa variabilidade: que não agregam informação ao modelo;</li>
 <li>Identificar variáveis altamente correlacionadas: redundância que pode prejudicar modelos lineares;</li>
 <li>Avaliar distribuições assimétricas ou outliers extremos em variáveis numéricas;</li>
-<li>Avaliar se existe desbalanceamento da variável-alvo (<code>Churn Value</code>).</li>
+<li>Avaliar se existe desbalanceamento da variável-alvo (<code>Churn Label</code>).</li>
 </ul></li>
 <li>Propor um plano de pré-processamento para tornar os dados prontos para uso em modelos de classificação supervisionada.</li>
 </ul>
@@ -531,7 +537,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="fase-3-construção-e-avaliação-de-modelos-preditivos">🎯 Fase 3: Construção e Avaliação de Modelos Preditivos</h2>
 <section id="objetivo-1" class="level3">
 <h3 class="anchored" data-anchor-id="objetivo-1">🔍 Objetivo</h3>
-<p>Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (<em>churn</em>) com base nos dados históricos fornecidos pela ConecteMais Corp.&nbsp;O foco é prever o valor da variável binária <code>Churn Value</code> (1 = saiu, 0 = permaneceu), usando as demais variáveis como preditoras.</p>
+<p>Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (<em>churn</em>) com base nos dados históricos fornecidos pela ConecteMais Corp.&nbsp;O foco é prever o valor da variável <code>Churn Label</code>, usando as demais variáveis como preditoras.</p>
 </section>
 <section id="tarefas-e-desafios-propostos-2" class="level3">
 <h3 class="anchored" data-anchor-id="tarefas-e-desafios-propostos-2">🧠 Tarefas e Desafios Propostos</h3>
@@ -548,7 +554,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Divisão e Estratégia de Validação:</li>
 </ol>
 <ul>
-<li><p>Considerando a variável alvo <code>Churn Value</code>, que é binária (0 ou 1) e o provável desbalanceamento de classes (menos clientes dão <em>churn</em> do que permanecem), qual a melhor estratégia para dividir o conjunto de dados em treino e teste? Justifiquem a escolha (ex: amostragem estratificada, proporções).</p></li>
+<li><p>Considerando a variável alvo <code>Churn Label</code> e o provável desbalanceamento de classes (menos clientes dão <em>churn</em> do que permanecem), qual a melhor estratégia para dividir o conjunto de dados em treino e teste? Justifiquem a escolha (ex: amostragem estratificada, proporções).</p></li>
 <li><p>Além da divisão inicial, qual técnica de validação cruzada (ex: K-Fold Cross-Validation, Stratified K-Fold) vocês recomendariam para obter uma avaliação mais robusta do desempenho do modelo e por quê?</p></li>
 </ul>
 <ol start="2" type="1">
@@ -1086,7 +1092,7 @@ ul.task-list li input[type="checkbox"] {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tiagomartin/est125/edit/main/projeto/primeira_parte.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est125/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tiagomartin/est125/edit/main/projeto/projeto.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est125/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Página construída usando <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
