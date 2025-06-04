@@ -15,3 +15,6 @@ title: "Semana 05"
 
 {{< fa file-powerpoint size=lg >}} [Análise preditiva](/aulas/Analise_preditiva/preditiva.html "Análise preditiva"){aria-label="Análise preditiva"}
 
+## Projeto
+
+{{< fa list-check size=lg >}} [Projeto: Análise de Churn na Empresa ConecteMais Corp.](/projeto.html "Projeto: Análise de Churn na Empresa ConecteMais Corp."){aria-label="Projeto: Análise de Churn na Empresa ConecteMais Corp."}

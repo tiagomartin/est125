@@ -1,0 +1,119 @@
+---
+title: "Projeto Avaliativo"
+subtitle: "EST125 - Introdução à Mineração de Dados"
+format: html
+---
+
+
+
+# Análise de Churn na Empresa ConecteMais Corp.
+
+<p align="left" style="font-size: 30px"> 
+[Clique aqui](/projeto/projeto_avaliativo.html) para acessar o projeto!
+</p>
+
+
+
+## 💡 Visão Geral do Projeto
+
+Neste projeto avaliativo, vocês atuarão como analistas de dados da empresa fictícia ConecteMais Corp., uma das maiores provedoras de serviços de telecomunicações da Califórnia. A empresa enfrenta um problema crítico de aumento na taxa de churn (rotatividade de clientes), que afeta diretamente sua lucratividade e sustentabilidade no mercado competitivo.
+
+A missão da equipe de vocês será ajudar a empresa a entender os motivos que levam os clientes a cancelarem seus serviços e a desenvolver soluções baseadas em dados que contribuam para prever e reduzir o churn.
+
+O trabalho será dividido em cinco fases, a serem realizadas de forma sequencial e com entregas parciais conforme o cronograma da disciplina.
+
+
+## 🗂️ Estrutura do Projeto (Fases)
+
+
+### 🗪 Fase 1: A Reunião de Alinhamento
+
+- **Objetivo:** Entender o problema de negócios, o contexto organizacional, os papéis das áreas envolvidas e o conjunto de dados fornecido.
+
+- **Tarefas:**
+    - Interpretar o problema da empresa com base nos dados e depoimentos.
+    - Formular hipóteses sobre possíveis causas do *churn*.
+    - Definir a variável-alvo (`Churn Label`).
+    - Identificar o objetivo principal do projeto de mineração de dados.
+
+- **Entregável:** Documento com diagnóstico inicial e objetivos do projeto.
+
+
+### 🛠️ Fase 2: O Diagnóstico Técnico
+
+- **Objetivo:** Avaliar a qualidade dos dados fornecidos e propor técnicas adequadas de pré-processamento.
+
+- **Tarefas:**
+    - Identificar problemas como valores ausentes, colunas redundantes, codificações inconsistentes, outliers, desbalanceamento da variável-alvo, etc.
+    - Propor um plano de tratamento dos dados.
+
+- **Entregável:** Relatório técnico com diagnóstico dos dados e plano de pré-processamento.
+
+
+### 🎯 Fase 3: Construção e Avaliação de Modelos Preditivos
+
+- **Objetivo:** Utilizar técnicas de classificação supervisionada para prever o *churn*.
+
+- **Tarefas:**
+    - Escolher algoritmos de classificação (por exemplo: árvore de decisão, random forest, SVM, etc.).
+    - Aplicar validação cruzada.
+    - Avaliar os modelos com métricas apropriadas (acurácia, AUC, F1-score, etc.).
+    - Interpretar os resultados e identificar variáveis mais importantes.
+
+- **Entregável:** Código + relatório com os resultados da modelagem e análise de desempenho.
+
+### 🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes
+
+- **Objetivo:** Aplicar técnicas não supervisionadas para entender diferentes perfis de clientes.
+
+- **Tarefas:**
+    - Utilizar algoritmos de agrupamento (ex.: K-means, DBSCAN, hierárquico).
+    - Identificar padrões de comportamento entre grupos de clientes.
+    - Relacionar os segmentos encontrados com o risco de *churn*.
+
+- **Entregável:** Relatório com análise dos clusters, características de cada grupo e implicações para o negócio.
+
+### 🧺 Fase 5: Construção de um Sistema de Recomendação
+
+- **Objetivo:** Desenvolver um sistema básico de recomendação de ações para reter clientes.
+
+- **Tarefas:**
+    - Criar regras ou modelos que recomendem ofertas, serviços ou estratégias de retenção personalizadas com base no perfil e risco de churn do cliente.
+
+- **Entregável:** Protótipo de sistema (simples) + documento com sugestões de ações de retenção baseadas nos dados.
+
+
+## 🗓️ Entregas e Cronograma
+
+Cada fase deverá ser entregue via [Moodle](https://moodlepresencial.ufop.br/login/index.php) conforme o cronograma abaixo, respeitando os prazos de submissão parcial. As entregas serão avaliadas individualmente e contribuirão para a nota final do projeto.
+
+
+- **Fase 1 + Fase 2 - data de entrega: 30/06/2025**
+
+- **Fase 3 - data de entrega: 21/07/2025**
+
+- **Fase 4 - data de entrega: 11/08/2025**
+
+- **Fase 5 - data de entrega: 02/09/2025**
+
+
+Obs.: Este cronograma poderá sofrer mudanças e adaptações ao longo do semestre.
+
+
+## 🧑‍💼 Papel dos Alunos
+
+Neste projeto, vocês devem se organizar em **dois grupos (um com três e outro com quatro integrantes)** e assumir o papel de um time de cientistas de dados atuando no mundo real, lidando com um problema concreto e multidisciplinar. Além de aplicar técnicas de mineração de dados, espera-se que vocês:
+
+- Comuniquem suas descobertas de forma clara e orientada ao negócio.
+
+- Desenvolvam soluções que possam ser úteis e acionáveis pela empresa.
+
+- Trabalhem de forma colaborativa, dividindo responsabilidades.
+
+
+## 📌 Considerações Finais
+
+Este projeto é uma oportunidade de integrar teoria e prática, aplicando o que foi aprendido em sala de aula em um desafio realista, com alto valor estratégico. Usem a base de dados com espírito crítico, explorem os dados com criatividade e sempre mantenham em mente o impacto das suas análises para o negócio da ConecteMais Corp.
+
+Boa sorte e bons insights!
+📈💡📊
