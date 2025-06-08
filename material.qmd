@@ -4,3 +4,6 @@ format: html
 ---
 
 -   [Desvendando o pacote tidymodels](material_complementar/tidymodels.html "Desvendando o pacote tidymodels"){aria-label="Desvendando o pacote tidymodels"}
+
+-   [Desbalanceamento de Classes: Um problema real em Ciência de Dados](material_complementar/desbalanceamento.html "Desbalanceamento de Classes"){aria-label="Desbalanceamento de Classes"}
+
