@@ -1,0 +1,14 @@
+---
+title: "Semana 06"
+---
+
+
+
+## Material complementar
+
+{{< fa folder size=lg >}} [Desbalanceamento de Classes: Um problema real em Ciência de Dados](/material_complementar/desbalanceamento.html "Desbalanceamento de Classes"){aria-label="Desbalanceamento de Classes"}
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Análise preditiva](/aulas/Analise_preditiva/preditiva.html#/métricas-derivadas-da-matriz-de-confusão "Métricas de avaliação"){aria-label="Métricas de avaliação"}
+
