@@ -2569,7 +2569,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da Disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 03/06\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 05/06\nAnálise Preditiva",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 03/06\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 05/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 10/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 12/06\nAnálise Preditiva",
     "crumbs": [
       "Cronograma da Disciplina"
     ]
@@ -2705,5 +2705,26 @@
     "title": "Desbalanceamento de Classes: Um Problema Real em Ciência de Dados",
     "section": "Conclusão",
     "text": "Conclusão\nLidar com o desbalanceamento de classes é mais do que apenas uma tarefa técnica; é uma questão de garantir que seus modelos sejam úteis e confiáveis no mundo real, especialmente para os eventos raros, mas críticos. A chave é identificar o problema cedo (lembre-se: se a classe minoritária está abaixo de 40%, já é um alerta!), compreender suas consequências e aplicar as técnicas mais adequadas de reamostragem (incluindo a abordagem híbrida), ajuste de algoritmo ou avaliação de métricas.\nNão existe uma solução única que sirva para todos os casos. A escolha da melhor abordagem depende do seu conjunto de dados, do algoritmo que você está usando e, fundamentalmente, do objetivo de negócio. A experimentação e a validação cuidadosa são sempre os melhores caminhos!"
+  },
+  {
+    "objectID": "programacao/semana-6.html",
+    "href": "programacao/semana-6.html",
+    "title": "Semana 06",
+    "section": "",
+    "text": "Desbalanceamento de Classes: Um problema real em Ciência de Dados"
+  },
+  {
+    "objectID": "programacao/semana-6.html#material-complementar",
+    "href": "programacao/semana-6.html#material-complementar",
+    "title": "Semana 06",
+    "section": "",
+    "text": "Desbalanceamento de Classes: Um problema real em Ciência de Dados"
+  },
+  {
+    "objectID": "programacao/semana-6.html#slides",
+    "href": "programacao/semana-6.html#slides",
+    "title": "Semana 06",
+    "section": "Slides",
+    "text": "Slides\n Análise preditiva"
   }
 ]
