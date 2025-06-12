@@ -3553,3 +3553,488 @@ plt.show()
 
 
 ## Support Vector Machine (SVM)
+
+<br>
+
+- Algoritmo supervisionado usado para **classificação** e **regressão**.
+
+. . .
+
+- Busca **uma fronteira ótima** (hiperplano) que separa as classes com a maior margem possível.
+
+. . .
+
+
+- Depende de poucos pontos críticos: os **vetores de suporte**.
+
+
+. . .
+
+
+- Pode trabalhar com dados **não linearmente separáveis** através da técnica do **kernel trick**.
+
+
+
+## Por que aprender SVM?
+
+<br>
+
+- É um dos algoritmos mais eficazes para problemas de classificação com fronteiras complexas.
+
+. . .
+
+- Funciona bem em espaços de alta dimensão.
+
+. . .
+
+- Utiliza o conceito de **margem máxima**, promovendo boa generalização.
+
+. . .
+
+- Amplamente utilizado em áreas como bioinformática, finanças, reconhecimento de padrões.
+
+
+## Princípio básico
+
+<br>
+
+O objetivo do SVM é encontrar um **hiperplano de separação ótimo** que **maximize a margem** entre as classes.
+
+. . .
+
+
+Para problemas de classificação binária, um **hiperplano de separação** é uma superfície que divide o espaço de características em duas regiões, uma para cada classe. Neste caso, esse hiperplano é uma **reta**!
+
+. . .
+
+Em problemas **multiclasse**, pode ser um plano ou uma superfície mais complexa.
+
+
+
+## Hiperplano de Separação
+
+
+![](/images/rf/hiper.jpg){.nostretch fig-align="center" width="1000px"}
+
+<p align="center">  
+Temos aqui 4 hiperplanos (A, B, C e D). Qual o melhor?
+</p>
+
+
+## Conceitos de vetores de suporte e Margem Máxima
+
+<br>
+
+Os **vetores de suporte** são os pontos de dados mais próximos ao hiperplano de separação. Eles são fundamentais para o SVM, pois definem a posição do hiperplano e a **margem**.
+
+. . .
+
+A **margem** é a distância entre o hiperplano de separação e os vetores de suporte mais próximos. O objetivo do SVM é **maximizar a margem**, pois isso aumenta a capacidade de **generalização** do modelo.
+
+
+## Conceitos de vetores de suporte e Margem Máxima
+
+
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<br> 
+
+![](/images/rf/svm.jpeg){.nostretch fig-align="center" width="1000px"}
+
+<p align="center">  
+Margem = $d_1 + d_2$
+</p>
+
+:::
+
+::: {.column width="40%" .fragment}
+
+<br>
+
+<p align="center">  
+<span style='font-size:70px;'>&#128073;</span> Para encontrar o **hiperplano ótimo**, caímos em um problema de otimização com restrição, que pode ser resolvido utilizando a técnica dos **Multiplicadores de Lagrange**!
+</p>
+
+:::
+
+::::
+
+
+
+## Kernel Trick: separando o inseparável
+
+Mas e se tivermos problemas **não linearmente separáveis**?
+
+![](/images/rf/nLin.png){.nostretch fig-align="center" width="800px"}
+
+
+## Kernel Trick: separando o inseparável
+
+O SVM é um algoritmo que inicialmente trabalha com dados **linearmente separáveis**. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um **hiperplano linear**. É aí que entra o **Kernel Trick**.
+
+
+. . .
+
+
+O **Kernel Trick** (Truque do Kernel) nos permite **mapear os dados** para um espaço de características de **dimensão superior**, onde se tornam linearmente separáveis. 
+
+
+. . .
+
+
+Isso é feito através de uma **função** chamada **kernel**, que calcula o produto interno entre dois vetores nesse espaço de características.
+
+
+## Kernel Trick: separando o inseparável
+
+
+![](/images/rf/kernelTrick.png){.nostretch fig-align="center" width="1400px"}
+
+
+## Kernel Trick: separando o inseparável
+
+
+
+:::: {.columns}
+
+::: {.column width="40%"}
+
+<br>
+
+<span style='font-size:70px;'>&#128073;</span>  Exemplos comuns:
+
+- Linear
+- Polinomial
+- Radial Basis Function (RBF ou Gaussiano)
+- Sigmoide
+
+:::
+
+::: {.column width="60%" .fragment}
+
+![](/images/rf/kernel.jpg){.nostretch fig-align="center" width="800px"}
+
+:::
+
+::::
+
+
+## Escolha do kernel
+
+<br>
+
+A escolha do kernel adequado é importante para obter um bom desempenho do SVM. É necessário analisar as características dos dados e testar diferentes kernels para encontrar o que **melhor se adapta** ao problema em questão
+
+. . .
+
+
+O uso do **Kernel Trick** pode melhorar o desempenho do SVM ao permitir que ele modele relações não lineares nos dados. No entanto, é preciso ter cuidado para evitar o **overfitting**, garantindo que o modelo generalize bem para dados não vistos.
+
+
+## SVM para problemas multiclasse
+
+
+O SVM como definido funciona para **duas classes**. O que fazemos então se tivermos **mais de duas** classes?
+
+. . .
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<p></p>
+
+### One-vs-One (OVO)
+
+- Nessa abordagem, é criado um **classificador SVM** para cada **par de classes** possível. 
+
+- Cada classificador é usado para classificar uma instância de entrada e a **classe com mais votos** é selecionada como a **classe final**.
+
+
+:::
+
+::: {.column width="40%" .fragment}
+
+![](/images/rf/OVO.png){.nostretch fig-align="center" width="800px"}
+
+:::
+
+::::
+
+
+
+## SVM para problemas multiclasse
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+<p></p>
+
+### One-vs-All (OVA)
+
+- Essa abordagem consiste em treinar **um classificador SVM para cada classe**, onde cada classificador é treinado para distinguir uma classe específica das demais classes combinadas.
+
+- Durante a fase de teste, cada classificador é usado para classificar uma instância de entrada e a classe com a **maior probabilidade** é selecionada como a classe final.
+
+
+:::
+
+::: {.column width="40%" .fragment}
+
+![](/images/rf/OVA.png){.nostretch fig-align="center" width="1000px"}
+
+:::
+
+::::
+
+
+
+## SVM para classificação no R e Python
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+
+library(tidymodels)
+library(discrim)
+library(Metrics)
+
+set.seed(12345)
+data(iris)
+iris <- iris %>% filter(Species != "setosa") %>% mutate(Species = factor(Species))
+iris_split <- initial_split(iris, strata = Species)
+train_data <- training(iris_split)
+test_data <- testing(iris_split)
+
+svm_model <- svm_rbf() %>%
+  set_engine("kernlab") %>%
+  set_mode("classification")
+
+svm_fit <- workflow() %>%
+  add_model(svm_model) %>%
+  add_formula(Species ~ .) %>%
+  fit(data = train_data)
+
+sp_predict <- predict(svm_fit, new_data = test_data)
+
+Metrics::accuracy(test_data$Species, sp_predict$.pred_class)
+```
+
+### Python
+
+```{python}
+#| echo: true
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+X = iris.data[iris.target != 0, :2]
+y = iris.target[iris.target != 0]
+
+# Split dos dados em treino e teste
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)
+
+svm_model = SVC(kernel="rbf")
+svm_model.fit(X_train, y_train)
+y_pred = svm_model.predict(X_test)
+accuracy_score(y_test, y_pred)
+```
+
+:::
+
+
+## SVM para Regressão
+
+<br>
+ 
+- Também pode ser usado para problemas de regressão, chamado de **SVR (Support Vector Regression)**.
+
+. . .
+
+- Busca encontrar uma função que tenha no máximo $\epsilon$ de desvio dos pontos de treino, mantendo a maior margem possível.
+
+. . .
+
+
+- É sensível à escolha do kernel e dos hiperparâmetros (ex: $C$, $\epsilon$ ).
+
+
+
+## SVR para regressão no R e Python
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+
+library(tidymodels)
+library(Metrics)
+
+data("mtcars")
+set.seed(12345)
+mtcars_split <- initial_split(mtcars, strata = mpg)
+train_data <- training(mtcars_split)
+test_data <- testing(mtcars_split)
+
+svr_reg <- svm_rbf() %>%
+  set_engine("kernlab") %>%
+  set_mode("regression")
+
+svr_reg_fit <- workflow() %>%
+  add_model(svr_reg) %>%
+  add_formula(mpg ~ .) %>%
+  fit(data = train_data)
+
+mpg_predict <- predict(svr_reg_fit, test_data)
+
+Metrics::mse(test_data$mpg, mpg_predict$.pred) # MSE
+```
+
+### Python
+
+```{python}
+#| echo: true
+
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVR
+from sklearn.metrics import mean_squared_error
+
+data = fetch_california_housing()
+X_train, X_test, y_train, y_test = train_test_split(
+    data.data, data.target, random_state=12345
+)
+
+svr_reg = SVR(kernel='rbf', C=100, epsilon=0.1)
+svr_reg.fit(X_train, y_train)
+y_pred = svr_reg.predict(X_test)
+mean_squared_error(y_test, y_pred, squared=True)  # MSE
+```
+
+:::
+
+
+## Principais Hiperparâmetros do SVM
+
+- 🔧 **C (Custo da penalização)**
+  - Controla o equilíbrio entre **margem ampla** e **erros de classificação**.
+  - Valores baixos → margem maior, mais tolerância ao erro.  
+  - Valores altos → menos erros, margem mais estreita (pode causar overfitting).
+  
+. . .
+
+- 🌐 **Kernel**
+  - Função que transforma os dados para um espaço de maior dimensão:
+    - `"linear"`: separação linear.
+    - `"rbf"` (radial basis function): não linear, padrão.
+    - `"poly"`: polinomial, útil para interações complexas.
+
+
+## Principais Hiperparâmetros do SVM
+
+
+
+- ⚙️ **Gamma** (usado com RBF e poly)
+  - Define a influência de um ponto de treino:
+    - Valores altos → influência local → mais complexidade.
+    - Valores baixos → influência global → modelo mais suave.
+    
+. . .
+
+- 📏 **Epsilon (para regressão - SVR)**
+  - Define a zona de tolerância onde **nenhuma penalização é aplicada**.
+  - Controla a sensibilidade do modelo a pequenas variações nos dados.
+
+
+## Pré-processamento para SVM
+
+<br>
+
+- O SVM é sensível à escala das variáveis:
+  - Padronização (ex: `StandardScaler` no Python) é altamente recomendada.    
+  - Em tidymodels, use `step_normalize()` no `recipe`.
+  - Remover outliers pode ajudar na estabilidade da margem.
+
+
+## Vantagens e Desvantagens
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<span style='font-size:160px;'>&#128077;</span>
+:::
+
+::: {.column width="90%"}
+
+<p></p>
+
+- Alta capacidade de generalização
+
+- Funciona bem em dados com muitas variáveis
+
+- Eficiente em fronteiras não lineares com kernels
+:::
+
+::::
+
+. . .
+
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<span style='font-size:160px;'>&#128078;</span>
+:::
+
+::: {.column width="90%"}
+
+<p></p>
+
+- Pode ser lento com bases muito grandes
+
+- Escolha do kernel e parâmetros pode exigir `tuning` intenso
+
+- Pouco interpretável (modelo de “caixa-preta”)
+
+:::
+
+::::
+
+
+## Quando usar SVM?
+
+
+<br> 
+
+
+- Quando há fronteiras complexas de decisão
+
+. . .
+
+- Quando se quer evitar overfitting em problemas com poucas amostras
+
+. . .
+
+- Quando outras abordagens lineares falharem
+
+. . .
+
+- Em tarefas onde o tempo de predição não é um gargalo crítico

@@ -3014,7 +3014,7 @@ Idade<br>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span>
 <span id="cb29-2"><a></a>accuracy_score(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.9777777777777777</code></pre>
+<pre><code>0.9555555555555556</code></pre>
 </div>
 </div>
 </div>
@@ -3084,7 +3084,7 @@ Idade<br>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>y_pred <span class="op">=</span> reg.predict(X_test)</span>
 <span id="cb34-2"><a></a>mean_squared_error(y_test, y_pred, squared<span class="op">=</span><span class="va">True</span>)  <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.25797409128940485</code></pre>
+<pre><code>0.2591302295672953</code></pre>
 </div>
 </div>
 </div>
@@ -3149,8 +3149,434 @@ Idade<br>
 </div>
 </div>
 </section><section id="support-vector-machine-svm" class="slide level2"><h2>Support Vector Machine (SVM)</h2>
+<p><br></p>
+<ul>
+<li>Algoritmo supervisionado usado para <strong>classificação</strong> e <strong>regressão</strong>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Busca <strong>uma fronteira ótima</strong> (hiperplano) que separa as classes com a maior margem possível.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Depende de poucos pontos críticos: os <strong>vetores de suporte</strong>.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Pode trabalhar com dados <strong>não linearmente separáveis</strong> através da técnica do <strong>kernel trick</strong>.</li>
+</ul>
+</div>
+</section><section id="por-que-aprender-svm" class="slide level2"><h2>Por que aprender SVM?</h2>
+<p><br></p>
+<ul>
+<li>É um dos algoritmos mais eficazes para problemas de classificação com fronteiras complexas.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Funciona bem em espaços de alta dimensão.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Utiliza o conceito de <strong>margem máxima</strong>, promovendo boa generalização.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Amplamente utilizado em áreas como bioinformática, finanças, reconhecimento de padrões.</li>
+</ul>
+</div>
+</section><section id="princípio-básico" class="slide level2"><h2>Princípio básico</h2>
+<p><br></p>
+<p>O objetivo do SVM é encontrar um <strong>hiperplano de separação ótimo</strong> que <strong>maximize a margem</strong> entre as classes.</p>
+<div class="fragment">
+<p>Para problemas de classificação binária, um <strong>hiperplano de separação</strong> é uma superfície que divide o espaço de características em duas regiões, uma para cada classe. Neste caso, esse hiperplano é uma <strong>reta</strong>!</p>
+</div>
+<div class="fragment">
+<p>Em problemas <strong>multiclasse</strong>, pode ser um plano ou uma superfície mais complexa.</p>
+</div>
+</section><section id="hiperplano-de-separação" class="slide level2"><h2>Hiperplano de Separação</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rf/hiper.jpg" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+<p align="center">
+Temos aqui 4 hiperplanos (A, B, C e D). Qual o melhor?
+</p>
+</section><section id="conceitos-de-vetores-de-suporte-e-margem-máxima" class="slide level2"><h2>Conceitos de vetores de suporte e Margem Máxima</h2>
+<p><br></p>
+<p>Os <strong>vetores de suporte</strong> são os pontos de dados mais próximos ao hiperplano de separação. Eles são fundamentais para o SVM, pois definem a posição do hiperplano e a <strong>margem</strong>.</p>
+<div class="fragment">
+<p>A <strong>margem</strong> é a distância entre o hiperplano de separação e os vetores de suporte mais próximos. O objetivo do SVM é <strong>maximizar a margem</strong>, pois isso aumenta a capacidade de <strong>generalização</strong> do modelo.</p>
+</div>
+</section><section id="conceitos-de-vetores-de-suporte-e-margem-máxima-1" class="slide level2"><h2>Conceitos de vetores de suporte e Margem Máxima</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rf/svm.jpeg" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+<p align="center">
+Margem = <span class="math inline">\(d_1 + d_2\)</span>
+</p>
+</div><div class="column fragment" style="width:40%;">
+<p><br></p>
+<p align="center">
+<span style="font-size:70px;">👉</span> Para encontrar o <strong>hiperplano ótimo</strong>, caímos em um problema de otimização com restrição, que pode ser resolvido utilizando a técnica dos <strong>Multiplicadores de Lagrange</strong>!
+</p>
+</div></div>
+</section><section id="kernel-trick-separando-o-inseparável" class="slide level2"><h2>Kernel Trick: separando o inseparável</h2>
+<p>Mas e se tivermos problemas <strong>não linearmente separáveis</strong>?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rf/nLin.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</section><section id="kernel-trick-separando-o-inseparável-1" class="slide level2"><h2>Kernel Trick: separando o inseparável</h2>
+<p>O SVM é um algoritmo que inicialmente trabalha com dados <strong>linearmente separáveis</strong>. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um <strong>hiperplano linear</strong>. É aí que entra o <strong>Kernel Trick</strong>.</p>
+<div class="fragment">
+<p>O <strong>Kernel Trick</strong> (Truque do Kernel) nos permite <strong>mapear os dados</strong> para um espaço de características de <strong>dimensão superior</strong>, onde se tornam linearmente separáveis.</p>
+</div>
+<div class="fragment">
+<p>Isso é feito através de uma <strong>função</strong> chamada <strong>kernel</strong>, que calcula o produto interno entre dois vetores nesse espaço de características.</p>
+</div>
+</section><section id="kernel-trick-separando-o-inseparável-2" class="slide level2"><h2>Kernel Trick: separando o inseparável</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rf/kernelTrick.png" class="quarto-figure quarto-figure-center" width="1400"></p>
+</figure>
+</div>
+</section><section id="kernel-trick-separando-o-inseparável-3" class="slide level2"><h2>Kernel Trick: separando o inseparável</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><br></p>
+<p><span style="font-size:70px;">👉</span> Exemplos comuns:</p>
+<ul>
+<li>Linear</li>
+<li>Polinomial</li>
+<li>Radial Basis Function (RBF ou Gaussiano)</li>
+<li>Sigmoide</li>
+</ul>
+</div><div class="column fragment" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rf/kernel.jpg" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+</section><section id="escolha-do-kernel" class="slide level2"><h2>Escolha do kernel</h2>
+<p><br></p>
+<p>A escolha do kernel adequado é importante para obter um bom desempenho do SVM. É necessário analisar as características dos dados e testar diferentes kernels para encontrar o que <strong>melhor se adapta</strong> ao problema em questão</p>
+<div class="fragment">
+<p>O uso do <strong>Kernel Trick</strong> pode melhorar o desempenho do SVM ao permitir que ele modele relações não lineares nos dados. No entanto, é preciso ter cuidado para evitar o <strong>overfitting</strong>, garantindo que o modelo generalize bem para dados não vistos.</p>
+</div>
+</section><section id="svm-para-problemas-multiclasse" class="slide level2"><h2>SVM para problemas multiclasse</h2>
+<p>O SVM como definido funciona para <strong>duas classes</strong>. O que fazemos então se tivermos <strong>mais de duas</strong> classes?</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>
+</p>
+<h3 id="one-vs-one-ovo">One-vs-One (OVO)</h3>
+<ul>
+<li><p>Nessa abordagem, é criado um <strong>classificador SVM</strong> para cada <strong>par de classes</strong> possível.</p></li>
+<li><p>Cada classificador é usado para classificar uma instância de entrada e a <strong>classe com mais votos</strong> é selecionada como a <strong>classe final</strong>.</p></li>
+</ul>
+</div><div class="column fragment" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rf/OVO.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+</div>
+</section><section id="svm-para-problemas-multiclasse-1" class="slide level2"><h2>SVM para problemas multiclasse</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>
+</p>
+<h3 id="one-vs-all-ova">One-vs-All (OVA)</h3>
+<ul>
+<li><p>Essa abordagem consiste em treinar <strong>um classificador SVM para cada classe</strong>, onde cada classificador é treinado para distinguir uma classe específica das demais classes combinadas.</p></li>
+<li><p>Durante a fase de teste, cada classificador é usado para classificar uma instância de entrada e a classe com a <strong>maior probabilidade</strong> é selecionada como a classe final.</p></li>
+</ul>
+</div><div class="column fragment" style="width:40%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rf/OVA.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div></div>
+</section><section id="svm-para-classificação-no-r-e-python" class="slide level2"><h2>SVM para classificação no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-9" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-9-1">R</a></li>
+<li><a href="#tabset-9-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-9-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb38-2"><a></a><span class="fu">library</span>(discrim)</span>
+<span id="cb38-3"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb38-4"><a></a></span>
+<span id="cb38-5"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb38-6"><a></a><span class="fu">data</span>(iris)</span>
+<span id="cb38-7"><a></a>iris <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Species <span class="sc">!=</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Species =</span> <span class="fu">factor</span>(Species))</span>
+<span id="cb38-8"><a></a>iris_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(iris, <span class="at">strata =</span> Species)</span>
+<span id="cb38-9"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(iris_split)</span>
+<span id="cb38-10"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(iris_split)</span>
+<span id="cb38-11"><a></a></span>
+<span id="cb38-12"><a></a>svm_model <span class="ot">&lt;-</span> <span class="fu">svm_rbf</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb38-13"><a></a>  <span class="fu">set_engine</span>(<span class="st">"kernlab"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb38-14"><a></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>)</span>
+<span id="cb38-15"><a></a></span>
+<span id="cb38-16"><a></a>svm_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb38-17"><a></a>  <span class="fu">add_model</span>(svm_model) <span class="sc">%&gt;%</span></span>
+<span id="cb38-18"><a></a>  <span class="fu">add_formula</span>(Species <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb38-19"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb38-20"><a></a></span>
+<span id="cb38-21"><a></a>sp_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(svm_fit, <span class="at">new_data =</span> test_data)</span>
+<span id="cb38-22"><a></a></span>
+<span id="cb38-23"><a></a>Metrics<span class="sc">::</span><span class="fu">accuracy</span>(test_data<span class="sc">$</span>Species, sp_predict<span class="sc">$</span>.pred_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8461538</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-9-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb40-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb40-3"><a></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVC</span>
+<span id="cb40-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
+<span id="cb40-5"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
+<span id="cb40-6"><a></a></span>
+<span id="cb40-7"><a></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb40-8"><a></a>X <span class="op">=</span> iris.data[iris.target <span class="op">!=</span> <span class="dv">0</span>, :<span class="dv">2</span>]</span>
+<span id="cb40-9"><a></a>y <span class="op">=</span> iris.target[iris.target <span class="op">!=</span> <span class="dv">0</span>]</span>
+<span id="cb40-10"><a></a></span>
+<span id="cb40-11"><a></a><span class="co"># Split dos dados em treino e teste</span></span>
+<span id="cb40-12"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">12345</span>)</span>
+<span id="cb40-13"><a></a></span>
+<span id="cb40-14"><a></a>svm_model <span class="op">=</span> SVC(kernel<span class="op">=</span><span class="st">"rbf"</span>)</span>
+<span id="cb40-15"><a></a>svm_model.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-8 {color: black;background-color: white;}#sk-container-id-8 pre{padding: 0;}#sk-container-id-8 div.sk-toggleable {background-color: white;}#sk-container-id-8 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-8 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-8 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-8 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-8 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-8 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-8 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-8 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-8 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-8 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-8 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-8 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-8 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-8 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-8 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-8 div.sk-item {position: relative;z-index: 1;}#sk-container-id-8 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-8 div.sk-item::before, #sk-container-id-8 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-8 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-8 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-8 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-8 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-8 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-8 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-8 div.sk-label-container {text-align: center;}#sk-container-id-8 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-8 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-8" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>SVC()</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-8" type="checkbox" checked=""><label for="sk-estimator-id-8" class="sk-toggleable__label sk-toggleable__label-arrow">SVC</label><div class="sk-toggleable__content"><pre>SVC()</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a></a>y_pred <span class="op">=</span> svm_model.predict(X_test)</span>
+<span id="cb41-2"><a></a>accuracy_score(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.6666666666666666</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="svm-para-regressão" class="slide level2"><h2>SVM para Regressão</h2>
+<p><br></p>
+<ul>
+<li>Também pode ser usado para problemas de regressão, chamado de <strong>SVR (Support Vector Regression)</strong>.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Busca encontrar uma função que tenha no máximo <span class="math inline">\(\epsilon\)</span> de desvio dos pontos de treino, mantendo a maior margem possível.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>É sensível à escolha do kernel e dos hiperparâmetros (ex: <span class="math inline">\(C\)</span>, <span class="math inline">\(\epsilon\)</span> ).</li>
+</ul>
+</div>
+</section><section id="svr-para-regressão-no-r-e-python" class="slide level2"><h2>SVR para regressão no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-10" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-10-1">R</a></li>
+<li><a href="#tabset-10-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-10-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb43-2"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb43-3"><a></a></span>
+<span id="cb43-4"><a></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb43-5"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb43-6"><a></a>mtcars_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(mtcars, <span class="at">strata =</span> mpg)</span>
+<span id="cb43-7"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(mtcars_split)</span>
+<span id="cb43-8"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(mtcars_split)</span>
+<span id="cb43-9"><a></a></span>
+<span id="cb43-10"><a></a>svr_reg <span class="ot">&lt;-</span> <span class="fu">svm_rbf</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb43-11"><a></a>  <span class="fu">set_engine</span>(<span class="st">"kernlab"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb43-12"><a></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>)</span>
+<span id="cb43-13"><a></a></span>
+<span id="cb43-14"><a></a>svr_reg_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb43-15"><a></a>  <span class="fu">add_model</span>(svr_reg) <span class="sc">%&gt;%</span></span>
+<span id="cb43-16"><a></a>  <span class="fu">add_formula</span>(mpg <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb43-17"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb43-18"><a></a></span>
+<span id="cb43-19"><a></a>mpg_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(svr_reg_fit, test_data)</span>
+<span id="cb43-20"><a></a></span>
+<span id="cb43-21"><a></a>Metrics<span class="sc">::</span><span class="fu">mse</span>(test_data<span class="sc">$</span>mpg, mpg_predict<span class="sc">$</span>.pred) <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8.124458</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-10-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_california_housing</span>
+<span id="cb45-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb45-3"><a></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVR</span>
+<span id="cb45-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<span id="cb45-5"><a></a></span>
+<span id="cb45-6"><a></a>data <span class="op">=</span> fetch_california_housing()</span>
+<span id="cb45-7"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb45-8"><a></a>    data.data, data.target, random_state<span class="op">=</span><span class="dv">12345</span></span>
+<span id="cb45-9"><a></a>)</span>
+<span id="cb45-10"><a></a></span>
+<span id="cb45-11"><a></a>svr_reg <span class="op">=</span> SVR(kernel<span class="op">=</span><span class="st">'rbf'</span>, C<span class="op">=</span><span class="dv">100</span>, epsilon<span class="op">=</span><span class="fl">0.1</span>)</span>
+<span id="cb45-12"><a></a>svr_reg.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-9 {color: black;background-color: white;}#sk-container-id-9 pre{padding: 0;}#sk-container-id-9 div.sk-toggleable {background-color: white;}#sk-container-id-9 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-9 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-9 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-9 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-9 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-9 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-9 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-9 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-9 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-9 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-9 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-9 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-9 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-9 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-9 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-9 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-9 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-9 div.sk-item {position: relative;z-index: 1;}#sk-container-id-9 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-9 div.sk-item::before, #sk-container-id-9 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-9 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-9 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-9 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-9 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-9 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-9 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-9 div.sk-label-container {text-align: center;}#sk-container-id-9 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-9 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-9" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>SVR(C=100)</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-9" type="checkbox" checked=""><label for="sk-estimator-id-9" class="sk-toggleable__label sk-toggleable__label-arrow">SVR</label><div class="sk-toggleable__content"><pre>SVR(C=100)</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a></a>y_pred <span class="op">=</span> svr_reg.predict(X_test)</span>
+<span id="cb46-2"><a></a>mean_squared_error(y_test, y_pred, squared<span class="op">=</span><span class="va">True</span>)  <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.6697473584156818</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="principais-hiperparâmetros-do-svm" class="slide level2"><h2>Principais Hiperparâmetros do SVM</h2>
+<ul>
+<li>🔧 <strong>C (Custo da penalização)</strong>
+<ul>
+<li>Controla o equilíbrio entre <strong>margem ampla</strong> e <strong>erros de classificação</strong>.</li>
+<li>Valores baixos → margem maior, mais tolerância ao erro.<br>
+</li>
+<li>Valores altos → menos erros, margem mais estreita (pode causar overfitting).</li>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>🌐 <strong>Kernel</strong>
+<ul>
+<li>Função que transforma os dados para um espaço de maior dimensão:
+<ul>
+<li>
+<code>"linear"</code>: separação linear.</li>
+<li>
+<code>"rbf"</code> (radial basis function): não linear, padrão.</li>
+<li>
+<code>"poly"</code>: polinomial, útil para interações complexas.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="principais-hiperparâmetros-do-svm-1" class="slide level2"><h2>Principais Hiperparâmetros do SVM</h2>
+<ul>
+<li>⚙️ <strong>Gamma</strong> (usado com RBF e poly)
+<ul>
+<li>Define a influência de um ponto de treino:
+<ul>
+<li>Valores altos → influência local → mais complexidade.</li>
+<li>Valores baixos → influência global → modelo mais suave.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>📏 <strong>Epsilon (para regressão - SVR)</strong>
+<ul>
+<li>Define a zona de tolerância onde <strong>nenhuma penalização é aplicada</strong>.</li>
+<li>Controla a sensibilidade do modelo a pequenas variações nos dados.</li>
+</ul>
+</li>
+</ul>
+</div>
+</section><section id="pré-processamento-para-svm" class="slide level2"><h2>Pré-processamento para SVM</h2>
+<p><br></p>
+<ul>
+<li>O SVM é sensível à escala das variáveis:
+<ul>
+<li>Padronização (ex: <code>StandardScaler</code> no Python) é altamente recomendada.<br>
+</li>
+<li>Em tidymodels, use <code>step_normalize()</code> no <code>recipe</code>.</li>
+<li>Remover outliers pode ajudar na estabilidade da margem.</li>
+</ul>
+</li>
+</ul></section><section id="vantagens-e-desvantagens-8" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<p>
+</p>
+<ul>
+<li><p>Alta capacidade de generalização</p></li>
+<li><p>Funciona bem em dados com muitas variáveis</p></li>
+<li><p>Eficiente em fronteiras não lineares com kernels</p></li>
+</ul>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<p>
+</p>
+<ul>
+<li><p>Pode ser lento com bases muito grandes</p></li>
+<li><p>Escolha do kernel e parâmetros pode exigir <code>tuning</code> intenso</p></li>
+<li><p>Pouco interpretável (modelo de “caixa-preta”)</p></li>
+</ul>
+</div></div>
+</div>
+</section><section id="quando-usar-svm" class="slide level2"><h2>Quando usar SVM?</h2>
+<p><br></p>
+<ul>
+<li>Quando há fronteiras complexas de decisão</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Quando se quer evitar overfitting em problemas com poucas amostras</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Quando outras abordagens lineares falharem</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Em tarefas onde o tempo de predição não é um gargalo crítico</li>
+</ul>
 
 
+</div>
 </section></section>
 </div>
   <div class="quarto-auto-generated-content" style="display: none;">
