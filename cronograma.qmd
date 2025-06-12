@@ -35,7 +35,7 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |  [5](programacao/semana-5.html)  | Ter, 03/06 | Pré-processamento usando a base de dados Space Titanic | |  | | |[{{< fa brands r-project size=2xl >}}](/analise_dados/space_titanic.html "Script análise de dados"){aria-label="Script análise de dados"} |[{{< fa folder size=2xl >}}](/material_complementar/tidymodels.html "Desvendando o pacote tidymodels"){aria-label="Desvendando o pacote tidymodels"} | | 
 |                           | Qui, 05/06 | Análise Preditiva |  | [{{< fa file-powerpoint size=2xl >}}](/aulas/Analise_preditiva/preditiva.html "Análise preditiva"){aria-label="Análise preditiva"}  | |  |   ||[{{< fa list-check size=2xl >}}](/projeto/projeto_avaliativo.html "Projeto: fase 1 e fase 2"){aria-label="Projeto: fase 1 e fase 2"}
 |  [6](programacao/semana-6.html)  | Ter, 10/06 | Análise Preditiva | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Analise_preditiva/preditiva.html#/métricas-derivadas-da-matriz-de-confusão "Métricas de avaliação"){aria-label="Métricas de avaliação"} | | | |[{{< fa folder size=2xl >}}](/material_complementar/desbalanceamento.html "Desbalanceamento de Classes"){aria-label="Desbalanceamento de Classes"} | | 
-|                           | Qui, 12/06 | Análise Preditiva |  | [{{< fa file-powerpoint size=2xl >}}](/aulas/Analise_preditiva/preditiva.html#/métricas-derivadas-da-matriz-de-confusão "Métricas de avaliação"){aria-label="Métricas de avaliação"}  | |  |   ||
+|                           | Qui, 12/06 | Análise Preditiva |  | [{{< fa file-powerpoint size=2xl >}}](/aulas/Analise_preditiva/preditiva.html#/trade-off-bias-variância "Trade-off Bias-Variância"){aria-label="Trade-off Bias-Variância"}  | |  |   ||
 :::
 
 ```{r echo = FALSE}
