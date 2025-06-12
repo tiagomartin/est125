@@ -1733,14 +1733,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Random Forests para classificação no R e Python",
-    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
+    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9555555555555556"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Random Forests para regressão no R e Python",
-    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.25797409128940485"
+    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.2591302295672953"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis",
@@ -1761,7 +1761,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#support-vector-machine-svm",
     "title": "Análise Preditiva",
     "section": "Support Vector Machine (SVM)",
-    "text": "Support Vector Machine (SVM)"
+    "text": "Support Vector Machine (SVM)\n\n\nAlgoritmo supervisionado usado para classificação e regressão.\n\n\n\nBusca uma fronteira ótima (hiperplano) que separa as classes com a maior margem possível.\n\n\n\n\nDepende de poucos pontos críticos: os vetores de suporte.\n\n\n\n\nPode trabalhar com dados não linearmente separáveis através da técnica do kernel trick."
   },
   {
     "objectID": "analise_dados/data_science.html",
@@ -2726,5 +2726,180 @@
     "title": "Semana 06",
     "section": "Slides",
     "text": "Slides\n Análise preditiva"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#por-que-aprender-svm",
+    "href": "aulas/Analise_preditiva/preditiva.html#por-que-aprender-svm",
+    "title": "Análise Preditiva",
+    "section": "Por que aprender SVM?",
+    "text": "Por que aprender SVM?\n\n\nÉ um dos algoritmos mais eficazes para problemas de classificação com fronteiras complexas.\n\n\n\nFunciona bem em espaços de alta dimensão.\n\n\n\n\nUtiliza o conceito de margem máxima, promovendo boa generalização.\n\n\n\n\nAmplamente utilizado em áreas como bioinformática, finanças, reconhecimento de padrões."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#intuição-separação-linear",
+    "href": "aulas/Analise_preditiva/preditiva.html#intuição-separação-linear",
+    "title": "Análise Preditiva",
+    "section": "Intuição: Separação Linear",
+    "text": "Intuição: Separação Linear\nPrincípio básico: O objetivo do SVM é encontrar um hiperplano de separação ótimo que maximize a margem entre as classes.\n\nPara problemas de classificação binária, um hiperplano de separação é uma superfície que divide o espaço de características em duas regiões, uma para cada classe. Neste caso, esse hiperplano é uma reta!\n\n\nEm problemas multiclasse, pode ser um plano ou uma superfície mais complexa."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#hiperplano-de-separação",
+    "href": "aulas/Analise_preditiva/preditiva.html#hiperplano-de-separação",
+    "title": "Análise Preditiva",
+    "section": "Hiperplano de Separação",
+    "text": "Hiperplano de Separação\n\n\n\n\n\nTemos aqui 4 hiperplanos (A, B, C e D). Qual o melhor?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#princípio-básico",
+    "href": "aulas/Analise_preditiva/preditiva.html#princípio-básico",
+    "title": "Análise Preditiva",
+    "section": "Princípio básico",
+    "text": "Princípio básico\n\nO objetivo do SVM é encontrar um hiperplano de separação ótimo que maximize a margem entre as classes.\n\nPara problemas de classificação binária, um hiperplano de separação é uma superfície que divide o espaço de características em duas regiões, uma para cada classe. Neste caso, esse hiperplano é uma reta!\n\n\nEm problemas multiclasse, pode ser um plano ou uma superfície mais complexa."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#conceito-de-margem-máxima",
+    "href": "aulas/Analise_preditiva/preditiva.html#conceito-de-margem-máxima",
+    "title": "Análise Preditiva",
+    "section": "Conceito de Margem Máxima",
+    "text": "Conceito de Margem Máxima\n\nA margem é a distância entre a fronteira de decisão e os vetores de suporte.\nSVM escolhe o hiperplano com a maior margem possível.\nFórmula da margem (sem aprofundar em matemática):\\[ \\text{Margem} = \\frac{2}{\\|w\\|} \\]\nonde ( w ) é o vetor de coeficientes do hiperplano."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#conceitos-de-vetores-de-suporte-e-margem-máxima",
+    "href": "aulas/Analise_preditiva/preditiva.html#conceitos-de-vetores-de-suporte-e-margem-máxima",
+    "title": "Análise Preditiva",
+    "section": "Conceitos de vetores de suporte e Margem Máxima",
+    "text": "Conceitos de vetores de suporte e Margem Máxima\n\nOs vetores de suporte são os pontos de dados mais próximos ao hiperplano de separação. Eles são fundamentais para o SVM, pois definem a posição do hiperplano e a margem.\n\nA margem é a distância entre o hiperplano de separação e os vetores de suporte mais próximos. O objetivo do SVM é maximizar a margem, pois isso aumenta a capacidade de generalização do modelo."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#conceitos-de-vetores-de-suporte-e-margem-máxima-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#conceitos-de-vetores-de-suporte-e-margem-máxima-1",
+    "title": "Análise Preditiva",
+    "section": "Conceitos de vetores de suporte e Margem Máxima",
+    "text": "Conceitos de vetores de suporte e Margem Máxima\n\n\n\n\n\n\n\n\nMargem = \\(d_1 + d_2\\)\n\n\n\n\n👉 Para encontrar o hiperplano ótimo, caímos em um problema de otimização com restrição, que pode ser resolvido utilizando a técnica dos Multiplicadores de Lagrange!"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável",
+    "href": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável",
+    "title": "Análise Preditiva",
+    "section": "Kernel Trick: separando o inseparável",
+    "text": "Kernel Trick: separando o inseparável\nMas e se tivermos problemas não linearmente separáveis?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável-1",
+    "title": "Análise Preditiva",
+    "section": "Kernel Trick: separando o inseparável",
+    "text": "Kernel Trick: separando o inseparável\nO SVM é um algoritmo que inicialmente trabalha com dados linearmente separáveis. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um hiperplano linear. É aí que entra o Kernel Trick.\n\nO Kernel Trick (Truque do Kernel) nos permite mapear os dados para um espaço de características de dimensão superior, onde se tornam linearmente separáveis.\n\n\nIsso é feito através de uma função chamada kernel, que calcula o produto interno entre dois vetores nesse espaço de características."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável-2",
+    "title": "Análise Preditiva",
+    "section": "Kernel Trick: separando o inseparável",
+    "text": "Kernel Trick: separando o inseparável"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável-3",
+    "title": "Análise Preditiva",
+    "section": "Kernel Trick: separando o inseparável",
+    "text": "Kernel Trick: separando o inseparável\n\n\n\n👉 Exemplos comuns:\n\nLinear\nPolinomial\nRadial Basis Function (RBF ou Gaussiano)\nSigmoide"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#escolha-do-kernel",
+    "href": "aulas/Analise_preditiva/preditiva.html#escolha-do-kernel",
+    "title": "Análise Preditiva",
+    "section": "Escolha do kernel",
+    "text": "Escolha do kernel\n\nA escolha do kernel adequado é importante para obter um bom desempenho do SVM. É necessário analisar as características dos dados e testar diferentes kernels para encontrar o que melhor se adapta ao problema em questão\n\nO uso do Kernel Trick pode melhorar o desempenho do SVM ao permitir que ele modele relações não lineares nos dados. No entanto, é preciso ter cuidado para evitar o overfitting, garantindo que o modelo generalize bem para dados não vistos."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#svm-para-problemas-multiclasse",
+    "href": "aulas/Analise_preditiva/preditiva.html#svm-para-problemas-multiclasse",
+    "title": "Análise Preditiva",
+    "section": "SVM para problemas multiclasse",
+    "text": "SVM para problemas multiclasse\nO SVM como definido funciona para duas classes. O que fazemos então se tivermos mais de duas classes?\n\n\n\n\n\nOne-vs-One (OVO)\n\nNessa abordagem, é criado um classificador SVM para cada par de classes possível.\nCada classificador é usado para classificar uma instância de entrada e a classe com mais votos é selecionada como a classe final."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#svm-para-problemas-multiclasse-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#svm-para-problemas-multiclasse-1",
+    "title": "Análise Preditiva",
+    "section": "SVM para problemas multiclasse",
+    "text": "SVM para problemas multiclasse\n\n\n\n\nOne-vs-All (OVA)\n\nEssa abordagem consiste em treinar um classificador SVM para cada classe, onde cada classificador é treinado para distinguir uma classe específica das demais classes combinadas.\nDurante a fase de teste, cada classificador é usado para classificar uma instância de entrada e a classe com a maior probabilidade é selecionada como a classe final."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-hiperparâmetros-do-svm",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-hiperparâmetros-do-svm",
+    "title": "Análise Preditiva",
+    "section": "Principais Hiperparâmetros do SVM",
+    "text": "Principais Hiperparâmetros do SVM\n\n🔧 C (Custo da penalização)\n\nControla o equilíbrio entre margem ampla e erros de classificação.\nValores baixos → margem maior, mais tolerância ao erro.\n\nValores altos → menos erros, margem mais estreita (pode causar overfitting).\n\n\n\n\n\n🌐 Kernel\n\nFunção que transforma os dados para um espaço de maior dimensão:\n\n\n\"linear\": separação linear.\n\n\"rbf\" (radial basis function): não linear, padrão.\n\n\"poly\": polinomial, útil para interações complexas."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#principais-hiperparâmetros-do-svm-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#principais-hiperparâmetros-do-svm-1",
+    "title": "Análise Preditiva",
+    "section": "Principais Hiperparâmetros do SVM",
+    "text": "Principais Hiperparâmetros do SVM\n\n⚙️ Gamma (usado com RBF e poly)\n\nDefine a influência de um ponto de treino:\n\nValores altos → influência local → mais complexidade.\nValores baixos → influência global → modelo mais suave.\n\n\n\n\n\n\n\n📏 Epsilon (para regressão - SVR)\n\nDefine a zona de tolerância onde nenhuma penalização é aplicada.\nControla a sensibilidade do modelo a pequenas variações nos dados."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-8",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-8",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n👍\n\n\n\n\nAlta capacidade de generalização\nFunciona bem em dados com muitas variáveis\nEficiente em fronteiras não lineares com kernels\n\n\n\n\n\n👎\n\n\n\n\nPode ser lento com bases muito grandes\nEscolha do kernel e parâmetros pode exigir tuning intenso\nPouco interpretável (modelo de “caixa-preta”)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-9",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-9",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n👎\n\n\n\n\nPode ser lento com bases muito grandes\nEscolha do kernel e parâmetros pode exigir tuning intenso\nPouco interpretável (modelo de “caixa-preta”)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python-1",
+    "title": "Análise Preditiva",
+    "section": "Random Forests para classificação no R e Python",
+    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python-1",
+    "title": "Análise Preditiva",
+    "section": "Random Forests para regressão no R e Python",
+    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.2561189862406818"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#svm-para-classificação-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#svm-para-classificação-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "SVM para classificação no R e Python",
+    "text": "SVM para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris &lt;- iris %&gt;% filter(Species != \"setosa\") %&gt;% mutate(Species = factor(Species))\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nsvm_model &lt;- svm_rbf() %&gt;%\n  set_engine(\"kernlab\") %&gt;%\n  set_mode(\"classification\")\n\nsvm_fit &lt;- workflow() %&gt;%\n  add_model(svm_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(svm_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8461538\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVC\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = iris.data[iris.target != 0, :2]\ny = iris.target[iris.target != 0]\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nsvm_model = SVC(kernel=\"rbf\")\nsvm_model.fit(X_train, y_train)\n\n\n\n\nSVC()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nSVCSVC()\n\n\n\ny_pred = svm_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.6666666666666666"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#svm-para-regressão",
+    "href": "aulas/Analise_preditiva/preditiva.html#svm-para-regressão",
+    "title": "Análise Preditiva",
+    "section": "SVM para Regressão",
+    "text": "SVM para Regressão\n\n\nTambém pode ser usado para problemas de regressão, chamado de SVR (Support Vector Regression).\n\n\n\nBusca encontrar uma função que tenha no máximo \\(\\epsilon\\) de desvio dos pontos de treino, mantendo a maior margem possível.\n\n\n\n\nÉ sensível à escolha do kernel e dos hiperparâmetros (ex: \\(C\\), \\(\\epsilon\\) )."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#svr-para-regressão-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#svr-para-regressão-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "SVR para regressão no R e Python",
+    "text": "SVR para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nsvr_reg &lt;- svm_rbf() %&gt;%\n  set_engine(\"kernlab\") %&gt;%\n  set_mode(\"regression\")\n\nsvr_reg_fit &lt;- workflow() %&gt;%\n  add_model(svr_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(svr_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 8.124458\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVR\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nsvr_reg = SVR(kernel='rbf', C=100, epsilon=0.1)\nsvr_reg.fit(X_train, y_train)\n\n\n\n\nSVR(C=100)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nSVRSVR(C=100)\n\n\n\ny_pred = svr_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.6697473584156818"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#pré-processamento-para-svm",
+    "href": "aulas/Analise_preditiva/preditiva.html#pré-processamento-para-svm",
+    "title": "Análise Preditiva",
+    "section": "Pré-processamento para SVM",
+    "text": "Pré-processamento para SVM\n\n\nO SVM é sensível à escala das variáveis:\n\nPadronização (ex: StandardScaler no Python) é altamente recomendada.\n\nEm tidymodels, use step_normalize() no recipe.\nRemover outliers pode ajudar na estabilidade da margem."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#quando-usar-svm",
+    "href": "aulas/Analise_preditiva/preditiva.html#quando-usar-svm",
+    "title": "Análise Preditiva",
+    "section": "Quando usar SVM?",
+    "text": "Quando usar SVM?\n\n\nQuando há fronteiras complexas de decisão\n\n\n\nQuando se quer evitar overfitting em problemas com poucas amostras\n\n\n\n\nQuando outras abordagens lineares falharem\n\n\n\n\nEm tarefas onde o tempo de predição não é um gargalo crítico"
   }
 ]
