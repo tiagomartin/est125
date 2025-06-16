@@ -2569,7 +2569,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da Disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 03/06\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 05/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 10/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 12/06\nAnálise Preditiva",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 03/06\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 05/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 10/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 12/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n7\nTer, 17/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 19/06\nFeriado: não haverá aula",
     "crumbs": [
       "Cronograma da Disciplina"
     ]
@@ -2901,5 +2901,40 @@
     "title": "Análise Preditiva",
     "section": "Quando usar SVM?",
     "text": "Quando usar SVM?\n\n\nQuando há fronteiras complexas de decisão\n\n\n\nQuando se quer evitar overfitting em problemas com poucas amostras\n\n\n\n\nQuando outras abordagens lineares falharem\n\n\n\n\nEm tarefas onde o tempo de predição não é um gargalo crítico"
+  },
+  {
+    "objectID": "programacao/semana-7.html",
+    "href": "programacao/semana-7.html",
+    "title": "Semana 07",
+    "section": "",
+    "text": "Análise preditiva"
+  },
+  {
+    "objectID": "programacao/semana-7.html#slides",
+    "href": "programacao/semana-7.html#slides",
+    "title": "Semana 07",
+    "section": "",
+    "text": "Análise preditiva"
+  },
+  {
+    "objectID": "material_complementar/vazamento.html",
+    "href": "material_complementar/vazamento.html",
+    "title": "Vazamento de dados: O inimigo oculto da predição confiável",
+    "section": "",
+    "text": "🚨 Hoje vamos mergulhar em um problema sutil, mas extremamente perigoso no mundo da modelagem preditiva: o vazamento de dados (ou data leakage). Se não diagnosticado e tratado corretamente, ele pode levar à criação de modelos que parecem incrivelmente precisos em seus dados de treino, mas falham miseravelmente ao serem aplicados a dados reais e não vistos."
+  },
+  {
+    "objectID": "material_complementar/vazamento.html#o-que-é-vazamento-de-dados-data-leakage",
+    "href": "material_complementar/vazamento.html#o-que-é-vazamento-de-dados-data-leakage",
+    "title": "Vazamento de dados: O inimigo oculto da predição confiável",
+    "section": "🤔 O que é vazamento de dados (data leakage)?",
+    "text": "🤔 O que é vazamento de dados (data leakage)?\nImagine que você está tentando prever se um paciente tem uma determinada doença com base em seus exames. Se você incluir no seu conjunto de dados de treino uma informação que só estaria disponível após o diagnóstico (por exemplo, um código de procedimento médico realizado após a confirmação da doença), seu modelo “aprenderá” essa correlação espúria. Ele não estará realmente identificando os fatores de risco da doença, mas sim “colando” a resposta com base em informações futuras.\nData leakage ocorre quando informações que não estariam disponíveis no momento da predição são utilizadas no treinamento do modelo. Isso faz com que o modelo aprenda padrões irreais, que não se sustentam em dados do mundo real.\nEm outras palavras, o modelo “cola” na resposta porque tem acesso a informações que não deveria ter. Isso gera uma falsa sensação de desempenho alto durante o treinamento e validação."
+  },
+  {
+    "objectID": "material_complementar/vazamento.html#consequências-do-vazamento-de-dados",
+    "href": "material_complementar/vazamento.html#consequências-do-vazamento-de-dados",
+    "title": "Vazamento de dados: O inimigo oculto da predição confiável",
+    "section": "⚠️ Consequências do vazamento de dados",
+    "text": "⚠️ Consequências do vazamento de dados\n\n📉 Overfitting extremo: o modelo aprende relações espúrias que não se generalizam.\n🤥 Avaliações enganosas: métricas como acurácia ou AUC são infladas artificialmente.\n🚫 Falhas na produção: quando aplicado em novos dados, o modelo apresenta desempenho muito inferior.\n💸 Decisões erradas: em contextos reais (saúde, finanças, marketing), isso pode levar a prejuízos graves."
   }
 ]
