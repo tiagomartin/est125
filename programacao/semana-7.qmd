@@ -1,0 +1,9 @@
+---
+title: "Semana 07"
+---
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Análise preditiva](/aulas/Analise_preditiva/preditiva.html#/algoritmo-naive-bayes "Algoritmo Naive Bayes"){aria-label="Algoritmo Naive Bayes"}
