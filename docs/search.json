@@ -141,7 +141,7 @@
     "href": "material_complementar/vazamento.html",
     "title": "Vazamento de dados: O inimigo oculto da predição confiável",
     "section": "",
-    "text": "🚨 Hoje vamos mergulhar em um problema sutil, mas extremamente perigoso no mundo da modelagem preditiva: o vazamento de dados (ou data leakage). Se não diagnosticado e tratado corretamente, ele pode levar à criação de modelos que parecem incrivelmente precisos em seus dados de treino, mas falham miseravelmente ao serem aplicados a dados reais e não vistos."
+    "text": "Hoje vamos mergulhar em um problema sutil, mas extremamente perigoso no mundo da modelagem preditiva: o vazamento de dados (ou data leakage). Se não diagnosticado e tratado corretamente, ele pode levar à criação de modelos que parecem incrivelmente precisos em seus dados de treino, mas falham miseravelmente ao serem aplicados a dados reais e não vistos."
   },
   {
     "objectID": "material_complementar/vazamento.html#o-que-é-vazamento-de-dados-data-leakage",
@@ -2922,5 +2922,12 @@
     "title": "Projeto Avaliativo: Análise de churn em uma Empresa de Telecomunicações",
     "section": "🧺 Fase 5: Construção de um Sistema de Recomendação",
     "text": "🧺 Fase 5: Construção de um Sistema de Recomendação"
+  },
+  {
+    "objectID": "programacao/semana-7.html#material-complementar",
+    "href": "programacao/semana-7.html#material-complementar",
+    "title": "Semana 07",
+    "section": "",
+    "text": "Vazamento de dados: O inimigo oculto da predição confiável"
   }
 ]

@@ -10,7 +10,7 @@ execute:
   eval: false   
 ---
 
-🚨 Hoje vamos mergulhar em um problema sutil, mas extremamente perigoso no mundo da modelagem preditiva: o vazamento de dados (ou data leakage). Se não diagnosticado e tratado corretamente, ele pode levar à criação de modelos que parecem incrivelmente precisos em seus dados de treino, mas falham miseravelmente ao serem aplicados a dados reais e não vistos.
+Hoje vamos mergulhar em um problema sutil, mas extremamente perigoso no mundo da modelagem preditiva: o vazamento de dados (ou data leakage). Se não diagnosticado e tratado corretamente, ele pode levar à criação de modelos que parecem incrivelmente precisos em seus dados de treino, mas falham miseravelmente ao serem aplicados a dados reais e não vistos.
 
 
 ## 🤔 O que é vazamento de dados (data leakage)?
