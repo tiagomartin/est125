@@ -3,6 +3,10 @@ title: "Semana 07"
 ---
 
 
+## Material complementar
+
+{{< fa folder size=lg >}} [Vazamento de dados: O inimigo oculto da predição confiável](material_complementar/vazamento.html "Vazamento de dados"){aria-label="Vazamento de dados"}
+
 
 ## Slides
 

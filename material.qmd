@@ -7,3 +7,5 @@ format: html
 
 -   [Desbalanceamento de Classes: Um problema real em Ciência de Dados](material_complementar/desbalanceamento.html "Desbalanceamento de Classes"){aria-label="Desbalanceamento de Classes"}
 
+-   [Vazamento de dados: O inimigo oculto da predição confiável](material_complementar/vazamento.html "Vazamento de dados"){aria-label="Vazamento de dados"}
+
