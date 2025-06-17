@@ -64,14 +64,14 @@
     "href": "programacao/semana-7.html",
     "title": "Semana 07",
     "section": "",
-    "text": "Análise preditiva"
+    "text": "Vazamento de dados: O inimigo oculto da predição confiável"
   },
   {
     "objectID": "programacao/semana-7.html#slides",
     "href": "programacao/semana-7.html#slides",
     "title": "Semana 07",
-    "section": "",
-    "text": "Análise preditiva"
+    "section": "Slides",
+    "text": "Slides\n Análise preditiva"
   },
   {
     "objectID": "programacao/semana-5.html",
@@ -2775,7 +2775,7 @@
     "href": "material.html",
     "title": "Material Complementar",
     "section": "",
-    "text": "Desvendando o pacote tidymodels\nDesbalanceamento de Classes: Um problema real em Ciência de Dados",
+    "text": "Desvendando o pacote tidymodels\nDesbalanceamento de Classes: Um problema real em Ciência de Dados\nVazamento de dados: O inimigo oculto da predição confiável",
     "crumbs": [
       "Material Complementar"
     ]
