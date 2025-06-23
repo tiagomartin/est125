@@ -3014,7 +3014,7 @@ Idade<br>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span>
 <span id="cb29-2"><a></a>accuracy_score(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.9555555555555556</code></pre>
+<pre><code>0.9777777777777777</code></pre>
 </div>
 </div>
 </div>
@@ -3084,7 +3084,7 @@ Idade<br>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>y_pred <span class="op">=</span> reg.predict(X_test)</span>
 <span id="cb34-2"><a></a>mean_squared_error(y_test, y_pred, squared<span class="op">=</span><span class="va">True</span>)  <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.2591302295672953</code></pre>
+<pre><code>0.2567399557335787</code></pre>
 </div>
 </div>
 </div>
@@ -3574,9 +3574,555 @@ Margem = <span class="math inline">\(d_1 + d_2\)</span>
 <ul>
 <li>Em tarefas onde o tempo de predição não é um gargalo crítico</li>
 </ul>
-
-
 </div>
+</section><section id="redes-neurais-artificiais" class="slide level2"><h2>Redes Neurais Artificiais</h2>
+<p>
+</p>
+<p><strong>Redes neurais artificiais</strong> são modelos matemáticos e computacionais inspirados no funcionamento do <strong>cérebro humano</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/neuronio2.png" class="fragment quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section><section id="inspiração-biológica" class="slide level2"><h2>Inspiração biológica</h2>
+<p>Os <strong>neurônios</strong> se comunicam através de <strong>sinapses</strong>. Sinapse é a região onde dois neurônios entram em contato e através da qual os <strong>impulsos nervosos</strong> são transmitidos entre eles</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/sinapse.jpeg" class="fragment quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</section><section id="neurônio-artificial" class="slide level2"><h2>Neurônio Artificial</h2>
+<p>
+</p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/neuronioMP.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div><div class="column fragment" style="width:30%;">
+<p><br></p>
+<p><span class="math display">\[ \nu_k = \sum_{i=1}^p w_{ki}x_i +b_k\]</span></p>
+<p><span class="math display">\[ y_k = \varphi(\nu_k)\]</span></p>
+</div></div>
+</section><section id="funções-de-ativação" class="slide level2"><h2>Funções de ativação</h2>
+<p><br></p>
+<p>A <strong>função de ativação</strong>, denotada por <span class="math inline">\(\varphi(\nu)\)</span>, define sua saída ou ativação em termos do sinal <span class="math inline">\(\nu\)</span>.</p>
+<div class="fragment">
+<p>Essa função é responsável por introduzir <strong>não-linearidades</strong> nas operações realizadas pela rede neural, permitindo que ela aprenda e modele <strong>relações complexas</strong> nos dados.</p>
+</div>
+</section><section id="função-threshold" class="slide level2"><h2>Função Threshold</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span class="math display">\[\varphi(\nu) = \begin{cases}1 &amp; \text{se } \nu \geq 0, \\
+0 &amp; \text{se }\nu &lt; 0\end{cases}\]</span></p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/threshold.jpeg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+<span style="font-size:80px;">👉</span> Útil em problemas onde se deseja atribuir uma saída binária, como 0 ou 1, com base em um limite.
+</p>
+</section><section id="função-sigmoidal" class="slide level2"><h2>Função Sigmoidal</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span class="math display">\[\varphi(\nu) = \dfrac{1}{1 + \exp(-a\nu)}\]</span></p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/sigmoide.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+</p>
+<p><span style="font-size:80px;">👉</span> Útil em problemas onde a saída representa a probabilidade de pertencer a uma das duas classes.</p>
+
+</section><section id="função-sinal" class="slide level2"><h2>Função Sinal</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span class="math display">\[\varphi(\nu) = \begin{cases}1 &amp; \text{se } \nu &gt; 0, \\
+0 &amp; \text{se }\nu = 0, \\
+-1 &amp; \text{se } \nu &lt; 0 \end{cases}\]</span></p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/sinal.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+<span style="font-size:80px;">👉</span> Útil em problemas onde se deseja atribuir uma saída discreta de -1 ou 1 com base na polaridade do valor de entrada.
+</p>
+</section><section id="função-tangente-hiperbólica" class="slide level2"><h2>Função Tangente Hiperbólica</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span class="math display">\[\varphi(\nu) = \dfrac{1-\exp(-\beta \nu)}{1+\exp(-\beta \nu)}\]</span></p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/tanh.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+<span style="font-size:80px;">👉</span> É comumente usada em redes neurais para classificação binária ou regressão.
+</p>
+</section><section id="função-relu" class="slide level2"><h2>Função ReLU</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span class="math display">\[\varphi(\nu) = \max(0, \nu)\]</span></p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/relu.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+<span style="font-size:80px;">👉</span> Amplamente usada em camadas ocultas de redes neurais devido à sua simplicidade computacional
+</p>
+</section><section id="função-softmax" class="slide level2"><h2>Função Softmax</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<p><span class="math display">\[\varphi(\nu) = \dfrac{\exp({\nu})}{\sum_{k=1}^K \exp(\nu_k) }\]</span></p>
+</div><div class="column" style="width:50%;">
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/softmax.jpg" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div></div>
+<p align="center">
+<span style="font-size:80px;">👉</span> Usada para classificação multiclasse. As saídas são normalizadas, representando probabilidades.
+</p>
+</section><section id="arquiteturas-de-redes" class="slide level2"><h2>Arquiteturas de redes</h2>
+<p><br></p>
+<p>Existem <strong>várias arquiteturas</strong> de redes neurais que foram desenvolvidas ao longo dos anos para atender a diferentes <strong>necessidades</strong> e <strong>desafios</strong>.</p>
+<div class="fragment">
+<p>A arquitetura de uma RNA, define a sua <strong>especialidade</strong> e qual <strong>tipo de problema</strong> poderá ser utilizada para resolvê-lo.</p>
+</div>
+<div class="fragment">
+<p>O que define a arquitetura de uma RNA basicamente são as <strong>camadas</strong> (camada única ou múltiplas camadas), <strong>número de neurônios</strong> em cada camada e o tipo de <strong>conexão</strong> entre os neurônios (FeedForward ou feedback)</p>
+</div>
+</section><section id="perceptron" class="slide level2"><h2>Perceptron</h2>
+<p>O <strong>perceptron</strong> é a arquitetura mais básica de rede neural, composta por <strong>um único neurônio</strong> com conexões diretas (<strong>feedforward</strong>) de entrada e uma função de ativação.</p>
+<p>
+</p>
+<div class="columns">
+<div class="column" style="width:70%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/neuronioMP.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column fragment" style="width:30%;">
+<p>
+</p>
+<ul>
+<li>
+<strong>bias:</strong> ajusta a influência das entradas</li>
+<li>aprimora a flexibilidade do modelo.</li>
+</ul>
+</div></div>
+</section><section id="perceptron-1" class="slide level2"><h2>Perceptron</h2>
+<p>Essa arquitetura é usada principalmente para problemas de <strong>classificação linearmente separáveis</strong>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/li.jpg" class="nostretch quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rf/nLin.png" class="nostretch quarto-figure quarto-figure-center" width="550"></p>
+</figure>
+</div>
+</div></div>
+</section><section id="multi-layer-perceptron-mlp" class="slide level2"><h2>Multi-Layer Perceptron (MLP)</h2>
+<p><br></p>
+<p>O <strong>MLP</strong> é uma arquitetura de rede neural <strong>feedforward</strong> com várias <strong>camadas ocultas</strong> entre a <strong>camada de entrada</strong> e a <strong>camada de saída</strong>.</p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Camada de Entrada</strong>: Recebe os dados de entrada.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>
+<strong>Camadas Ocultas</strong>: Realizam o processamento das entradas.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>
+<strong>Camada de Saída</strong>: Fornece a saída do modelo.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Cada camada possui <strong>vários</strong> neurônios <strong>interconectados</strong>.</p>
+</div>
+</section><section id="multi-layer-perceptron-mlp-1" class="slide level2"><h2>Multi-Layer Perceptron (MLP)</h2>
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/mlp.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section><section id="multi-layer-perceptron-mlp-2" class="slide level2"><h2>Multi-Layer Perceptron (MLP)</h2>
+<p>
+</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/rna.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+<p>O MLP é capaz de aprender e modelar relações complexas nos dados e é amplamente usado em problemas de classificação e regressão.</p>
+</section><section id="treinamento-das-redes-neurais" class="slide level2"><h2>Treinamento das Redes Neurais</h2>
+<p><br></p>
+<p>O <strong>treinamento</strong> de redes neurais é o processo de ajustar os <strong>pesos</strong> e <strong>bias</strong> (parâmetros) da rede neural para que ela seja capaz de aprender a partir dos dados de treinamento e gerar previsões precisas para novos dados.</p>
+<div class="fragment">
+<p>O treinamento envolve a <strong>minimização</strong> de uma <strong>função de custo</strong> ou perda, que mede a diferença entre as <strong>saídas previstas</strong> pela rede neural e as <strong>saídas desejadas</strong>.</p>
+</div>
+</section><section id="treinamento-das-redes-neurais-1" class="slide level2"><h2>Treinamento das Redes Neurais</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="https://media3.giphy.com/media/7HAm2aWDviqeQ/giphy-downsized-medium.gif" class="nostretch quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/super.png" class="nostretch quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</div></div>
+<div class="fragment">
+<p align="center">
+<span style="font-size:80px;">👉</span> Treinamento supervisionado
+</p>
+</div>
+</section><section id="treinamento-do-perceptron" class="slide level2"><h2>Treinamento do perceptron</h2>
+<p>Para cada exemplo de treinamento, o perceptron realiza uma <strong>propagação direta</strong> dos dados de entrada através da função de ativação.</p>
+<div class="fragment">
+<p>O <strong>resultado</strong> da propagação direta é comparado com a <strong>saída desejada</strong>.</p>
+</div>
+<div class="fragment">
+<p>Se a <strong>saída do perceptron</strong> corresponder à <strong>saída desejada</strong>, nenhuma atualização nos pesos e bias é necessária e o próximo exemplo de treinamento é processado.</p>
+</div>
+<div class="fragment">
+<p>Se a saída do perceptron for <strong>diferente</strong> da saída desejada, os pesos e o bias são <strong>atualizados</strong> para ajustar o perceptron.</p>
+</div>
+</section><section id="treinamento-do-perceptron-1" class="slide level2"><h2>Treinamento do perceptron</h2>
+<p>A atualização dos pesos é dada por:</p>
+<p><span class="math display">\[\mathbf{w}(n+1) = \mathbf{w}(n) + \eta[\hat{y}(n)-y(n)]\mathbf{x}(n)\]</span></p>
+<div class="fragment">
+<p>E a atualização do bias:</p>
+<p><span class="math display">\[b(n+1) = b(n) + \eta y(n)\]</span></p>
+<p>em que:</p>
+<ul>
+<li>
+<span class="math inline">\(\hat{y}(n)\)</span> é a saída alvo</li>
+<li>
+<span class="math inline">\(y(n)\)</span> é a saída da rede</li>
+<li>
+<span class="math inline">\(\eta\)</span> é a taxa de aprendizado</li>
+</ul>
+</div>
+</section><section id="treinamento-do-perceptron-2" class="slide level2"><h2>Treinamento do perceptron</h2>
+<p><br></p>
+<p>A <strong>taxa de aprendizagem</strong> (<span class="math inline">\(\eta\)</span>) é um hiperparâmetro crítico no treinamento do perceptron:</p>
+<div class="fragment">
+<ul>
+<li>Se for <strong>muito grande</strong>, pode levar a oscilações e a não convergência do algoritmo.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Se for <strong>muito pequena</strong>, o treinamento pode ser lento.</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Geralmente seu valor varia de 0.1 a 1.0</p>
+</div>
+</section><section id="treinamento-de-redes-mlp" class="slide level2"><h2>Treinamento de redes MLP</h2>
+<p><br></p>
+<p>O algoritmo de aprendizado da MLP é chamado <strong>backpropagation</strong> e é composto, basicamente, de duas etapas</p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Propagação:</strong> Recebimento dos estímulos que é aplicado aos neurônios da rede, onde seu efeito se <strong>propaga</strong> camada por camada até produzir uma saída como resposta da rede. Neste passo <strong>não há alteração</strong> nos pesos sinápticos.</li>
+</ul>
+</div>
+</section><section id="treinamento-de-redes-mlp-1" class="slide level2"><h2>Treinamento de redes MLP</h2>
+<p><br></p>
+<p>A <strong>saída prevista</strong> pela rede MLP é comparada com a <strong>saída desejada</strong> usando uma <strong>função de custo</strong>. A função de custo mede o quão bem a rede MLP está performando em relação ao objetivo desejado.</p>
+<div class="fragment">
+<ul>
+<li>
+<strong>Retropropagação:</strong> Após a saída, os pesos sinápticos são <strong>ajustados</strong> de acordo com a regra de correção de erro. Este sinal é propagado então para toda rede da saída para o entrada (caminho inverso), ou seja, o erro é <strong>retropropagado</strong>.</li>
+</ul>
+</div>
+</section><section id="treinamento-de-redes-mlp-2" class="slide level2"><h2>Treinamento de redes MLP</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="../..\images/rna/backpropagation.gif" class="quarto-figure quarto-figure-center" width="1200"></p>
+</figure>
+</div>
+</section><section id="ajuste-de-hiperparâmetros" class="slide level2"><h2>Ajuste de Hiperparâmetros</h2>
+<p><br></p>
+<ul>
+<li>
+<strong>Número de Camadas Ocultas:</strong> Determina a complexidade da rede.
+<ul>
+<li>
+<strong>Mais camadas:</strong> Maior capacidade de modelar relações complexas. Contudo, pode resultar em redes mais lentas para treinar e maior risco de overfitting se não controlado.</li>
+<li>
+<strong>Menos camadas:</strong> Menor capacidade de abstração, podendo falhar em aprender padrões complexos dos dados.</li>
+</ul>
+</li>
+</ul></section><section id="ajuste-de-hiperparâmetros-1" class="slide level2"><h2>Ajuste de Hiperparâmetros</h2>
+<p><br></p>
+<ul>
+<li>
+<strong>Número de Neurônios:</strong> Controla a capacidade de aprendizagem da rede.
+<ul>
+<li>
+<strong>Mais neurônios:</strong> Maior capacidade de aprendizagem e representação dos dados, mas pode levar ao overfitting (modelo “memorizando” os dados de treinamento em vez de generalizar bem).</li>
+<li>
+<strong>Menos neurônios:</strong> Pode resultar em um modelo muito simples, incapaz de capturar as relações complexas dos dados.</li>
+</ul>
+</li>
+</ul></section><section id="ajuste-de-hiperparâmetros-2" class="slide level2"><h2>Ajuste de Hiperparâmetros</h2>
+<p><br></p>
+<ul>
+<li>
+<strong>Taxa de Aprendizado:</strong> Define o quanto os pesos são atualizados a cada iteração.
+<ul>
+<li>
+<strong>Taxa muito alta:</strong> O modelo pode “saltar” a solução ótima, resultando em um treinamento instável.</li>
+<li>
+<strong>Taxa muito baixa:</strong> O treinamento será mais lento, podendo até ficar preso em um ótimo local (máximo ou mínimo).</li>
+</ul>
+</li>
+</ul></section><section id="evitando-overfitting-dropout" class="slide level2"><h2>Evitando Overfitting: Dropout</h2>
+<ul>
+<li>
+<strong>Dropout</strong> é uma técnica de regularização onde, durante o treinamento, neurônios são aleatoriamente “desconectados” (ou desligados) de cada vez. Isso impede que o modelo dependa demais de neurônios específicos.</li>
+</ul>
+<p><span style="font-size:80px;">👉</span> Reduz a co-adaptação dos neurônios, forçando o modelo a aprender representações mais robustas. Aumenta a generalização do modelo e melhora o desempenho em dados não vistos.</p>
+<div class="fragment">
+<ul>
+<li>Durante o treinamento, uma fração dos neurônios (tipicamente 20%-50%) é removida aleatoriamente a cada iteração, dificultando a adaptação excessiva a um único conjunto de características.</li>
+</ul>
+</div>
+</section><section id="evitando-overfitting-regularização-l2" class="slide level2"><h2>Evitando Overfitting: Regularização L2</h2>
+<ul>
+<li>
+<strong>A regularização L2</strong> penaliza os pesos grandes ao adicionar uma soma dos quadrados dos pesos à função de custo do modelo. Isso evita que os neurônios se especializem demais em dados específicos.</li>
+</ul>
+<p><span style="font-size:80px;">👉</span> Ao forçar os pesos a permanecerem pequenos, o modelo tende a ter uma capacidade de generalização maior, reduzindo o risco de overfitting. Penaliza fortemente pesos grandes, incentivando uma solução mais “suave” com menos variação nos parâmetros.</p>
+<div class="fragment">
+<ul>
+<li>A regularização L2 é muito eficaz para problemas com muitos atributos e ajuda a melhorar a estabilidade do modelo.</li>
+</ul>
+</div>
+</section><section id="vantagens-e-desvantagens-9" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><br></p>
+<p><br></p>
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li><p><strong>Capacidade de Modelar Relações Complexas:</strong> As RNA são poderosas para capturar padrões não lineares e relações complexas nos dados.</p></li>
+<li><p><strong>Adaptabilidade:</strong> Podem ser aplicadas a uma ampla gama de problemas, tanto para classificação quanto para regressão, além de tarefas como visão computacional e processamento de linguagem natural.</p></li>
+<li><p><strong>Melhoria com Dados Abundantes:</strong> Seu desempenho tende a melhorar conforme a quantidade de dados aumenta, sendo uma escolha excelente em problemas com grandes volumes de dados.</p></li>
+<li><p><strong>Desempenho em Dados Não Estruturados:</strong> Muito eficazes em dados como imagens, áudio e texto, onde outras técnicas de modelagem podem não ser tão eficientes.</p></li>
+</ul>
+</div></div>
+</section><section id="vantagens-e-desvantagens-10" class="slide level2"><h2>Vantagens e Desvantagens</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><br></p>
+<p><br></p>
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li><p><strong>Necessidade de Grande Quantidade de Dados:</strong> As RNA tendem a ter um desempenho inferior quando a quantidade de dados é pequena. Elas precisam de muitos exemplos para generalizar corretamente.</p></li>
+<li><p><strong>Custo Computacional Alto:</strong> O treinamento de redes neurais pode ser extremamente intensivo em termos de tempo e recursos computacionais, especialmente para redes grandes e profundas.</p></li>
+<li><p><strong>Falta de Interpretabilidade:</strong> As RNA são frequentemente descritas como “caixas pretas”, já que pode ser difícil entender como a rede toma decisões. Isso pode ser um problema em aplicações onde a explicação das decisões é crucial (por exemplo, na área da saúde ou finanças).</p></li>
+<li><p><strong>Overfitting:</strong> As RNA são propensas a overfitting, especialmente quando o número de camadas e neurônios é muito alto, ou quando não há dados suficientes para treinar adequadamente o modelo.</p></li>
+</ul>
+</div></div>
+</section><section id="pré-processamento-para-redes-neurais-artificiais" class="slide level2"><h2>Pré-processamento para Redes Neurais Artificiais</h2>
+<ul>
+<li><p><strong>Limpeza de Dados:</strong> Remover ou imputar valores ausentes e corrigir erros nos dados.</p></li>
+<li><p><strong>Transformação de Variáveis Categóricas:</strong> Usar One-Hot Encoding ou Label Encoding para converter variáveis categóricas em numéricas.</p></li>
+<li><p><strong>Normalização/Padronização:</strong> Escalonar as variáveis para que tenham a mesma escala.</p></li>
+<li><p><strong>Normalização:</strong> Ajuste para o intervalo [0, 1].</p></li>
+<li><p><strong>Padronização:</strong> Ajuste para média 0 e desvio padrão 1.</p></li>
+<li><p><strong>Divisão dos Dados:</strong> Separar os dados em conjuntos de treinamento e teste (ex: 80/20).</p></li>
+<li><p><strong>Balanceamento de Classes (se necessário):</strong> Usar técnicas como SMOTE ou subamostragem/sobreamostragem.</p></li>
+</ul></section><section id="rna-para-classificação-no-r-e-python" class="slide level2"><h2>RNA para classificação no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-11" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-11-1">R</a></li>
+<li><a href="#tabset-11-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-11-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb48-2"><a></a><span class="fu">library</span>(nnet)</span>
+<span id="cb48-3"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb48-4"><a></a></span>
+<span id="cb48-5"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb48-6"><a></a><span class="fu">data</span>(iris)</span>
+<span id="cb48-7"><a></a>iris <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Species <span class="sc">!=</span> <span class="st">"setosa"</span>) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">Species =</span> <span class="fu">factor</span>(Species))</span>
+<span id="cb48-8"><a></a>iris_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(iris, <span class="at">strata =</span> Species)</span>
+<span id="cb48-9"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(iris_split)</span>
+<span id="cb48-10"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(iris_split)</span>
+<span id="cb48-11"><a></a></span>
+<span id="cb48-12"><a></a>nn_model <span class="ot">&lt;-</span> <span class="fu">mlp</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb48-13"><a></a>  <span class="fu">set_engine</span>(<span class="st">"nnet"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb48-14"><a></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>)</span>
+<span id="cb48-15"><a></a></span>
+<span id="cb48-16"><a></a>nn_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb48-17"><a></a>  <span class="fu">add_model</span>(nn_model) <span class="sc">%&gt;%</span></span>
+<span id="cb48-18"><a></a>  <span class="fu">add_formula</span>(Species <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb48-19"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb48-20"><a></a></span>
+<span id="cb48-21"><a></a>sp_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(nn_fit, <span class="at">new_data =</span> test_data)</span>
+<span id="cb48-22"><a></a></span>
+<span id="cb48-23"><a></a>Metrics<span class="sc">::</span><span class="fu">accuracy</span>(test_data<span class="sc">$</span>Species, sp_predict<span class="sc">$</span>.pred_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8846154</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-11-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb50-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb50-3"><a></a><span class="im">from</span> sklearn.neural_network <span class="im">import</span> MLPClassifier</span>
+<span id="cb50-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, classification_report, confusion_matrix</span>
+<span id="cb50-5"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> load_iris</span>
+<span id="cb50-6"><a></a></span>
+<span id="cb50-7"><a></a>iris <span class="op">=</span> load_iris()</span>
+<span id="cb50-8"><a></a>X <span class="op">=</span> iris.data[iris.target <span class="op">!=</span> <span class="dv">0</span>, :<span class="dv">2</span>]</span>
+<span id="cb50-9"><a></a>y <span class="op">=</span> iris.target[iris.target <span class="op">!=</span> <span class="dv">0</span>]</span>
+<span id="cb50-10"><a></a></span>
+<span id="cb50-11"><a></a><span class="co"># Split dos dados em treino e teste</span></span>
+<span id="cb50-12"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">12345</span>)</span>
+<span id="cb50-13"><a></a></span>
+<span id="cb50-14"><a></a>nn_model <span class="op">=</span> MLPClassifier(hidden_layer_sizes<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">5</span>), max_iter<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">12345</span>)</span>
+<span id="cb50-15"><a></a>nn_model.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-10 {color: black;background-color: white;}#sk-container-id-10 pre{padding: 0;}#sk-container-id-10 div.sk-toggleable {background-color: white;}#sk-container-id-10 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-10 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-10 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-10 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-10 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-10 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-10 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-10 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-10 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-10 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-10 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-10 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-10 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-10 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-10 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-10 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-10 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-10 div.sk-item {position: relative;z-index: 1;}#sk-container-id-10 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-10 div.sk-item::before, #sk-container-id-10 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-10 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-10 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-10 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-10 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-10 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-10 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-10 div.sk-label-container {text-align: center;}#sk-container-id-10 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-10 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-10" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-10" type="checkbox" checked=""><label for="sk-estimator-id-10" class="sk-toggleable__label sk-toggleable__label-arrow">MLPClassifier</label><div class="sk-toggleable__content"><pre>MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a></a>y_pred <span class="op">=</span> nn_model.predict(X_test)</span>
+<span id="cb51-2"><a></a>accuracy_score(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.43333333333333335</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="rna-para-regressão-no-r-e-python" class="slide level2"><h2>RNA para regressão no R e Python</h2>
+<div class="panel-tabset">
+<ul id="tabset-12" class="panel-tabset-tabby">
+<li><a data-tabby-default="" href="#tabset-12-1">R</a></li>
+<li><a href="#tabset-12-2">Python</a></li>
+</ul>
+<div class="tab-content">
+<div id="tabset-12-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb53-2"><a></a><span class="fu">library</span>(Metrics)</span>
+<span id="cb53-3"><a></a></span>
+<span id="cb53-4"><a></a><span class="fu">data</span>(<span class="st">"mtcars"</span>)</span>
+<span id="cb53-5"><a></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb53-6"><a></a>mtcars_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(mtcars, <span class="at">strata =</span> mpg)</span>
+<span id="cb53-7"><a></a>train_data <span class="ot">&lt;-</span> <span class="fu">training</span>(mtcars_split)</span>
+<span id="cb53-8"><a></a>test_data <span class="ot">&lt;-</span> <span class="fu">testing</span>(mtcars_split)</span>
+<span id="cb53-9"><a></a></span>
+<span id="cb53-10"><a></a>nn_reg <span class="ot">&lt;-</span> <span class="fu">mlp</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb53-11"><a></a>  <span class="fu">set_engine</span>(<span class="st">"nnet"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb53-12"><a></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>)</span>
+<span id="cb53-13"><a></a></span>
+<span id="cb53-14"><a></a>nn_reg_fit <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb53-15"><a></a>  <span class="fu">add_model</span>(nn_reg) <span class="sc">%&gt;%</span></span>
+<span id="cb53-16"><a></a>  <span class="fu">add_formula</span>(mpg <span class="sc">~</span> .) <span class="sc">%&gt;%</span></span>
+<span id="cb53-17"><a></a>  <span class="fu">fit</span>(<span class="at">data =</span> train_data)</span>
+<span id="cb53-18"><a></a></span>
+<span id="cb53-19"><a></a>mpg_predict <span class="ot">&lt;-</span> <span class="fu">predict</span>(nn_reg_fit, test_data)</span>
+<span id="cb53-20"><a></a></span>
+<span id="cb53-21"><a></a>Metrics<span class="sc">::</span><span class="fu">mse</span>(test_data<span class="sc">$</span>mpg, mpg_predict<span class="sc">$</span>.pred) <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15.50235</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-12-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_california_housing</span>
+<span id="cb55-2"><a></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb55-3"><a></a><span class="im">from</span> sklearn.neural_network <span class="im">import</span> MLPRegressor</span>
+<span id="cb55-4"><a></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> mean_squared_error</span>
+<span id="cb55-5"><a></a></span>
+<span id="cb55-6"><a></a>data <span class="op">=</span> fetch_california_housing()</span>
+<span id="cb55-7"><a></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
+<span id="cb55-8"><a></a>    data.data, data.target, random_state<span class="op">=</span><span class="dv">12345</span></span>
+<span id="cb55-9"><a></a>)</span>
+<span id="cb55-10"><a></a></span>
+<span id="cb55-11"><a></a>nn_reg <span class="op">=</span> MLPRegressor(hidden_layer_sizes<span class="op">=</span>(<span class="dv">50</span>, <span class="dv">25</span>), max_iter<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">12345</span>)</span>
+<span id="cb55-12"><a></a>nn_reg.fit(X_train, y_train)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<style>#sk-container-id-11 {color: black;background-color: white;}#sk-container-id-11 pre{padding: 0;}#sk-container-id-11 div.sk-toggleable {background-color: white;}#sk-container-id-11 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-container-id-11 label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-container-id-11 label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-container-id-11 div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-container-id-11 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-container-id-11 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-container-id-11 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-container-id-11 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-container-id-11 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-11 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-11 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-container-id-11 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-container-id-11 div.sk-estimator:hover {background-color: #d4ebff;}#sk-container-id-11 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-container-id-11 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-container-id-11 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: 0;}#sk-container-id-11 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;position: relative;}#sk-container-id-11 div.sk-item {position: relative;z-index: 1;}#sk-container-id-11 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;position: relative;}#sk-container-id-11 div.sk-item::before, #sk-container-id-11 div.sk-parallel-item::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 0;bottom: 0;left: 50%;z-index: -1;}#sk-container-id-11 div.sk-parallel-item {display: flex;flex-direction: column;z-index: 1;position: relative;background-color: white;}#sk-container-id-11 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-container-id-11 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-container-id-11 div.sk-parallel-item:only-child::after {width: 0;}#sk-container-id-11 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;}#sk-container-id-11 div.sk-label label {font-family: monospace;font-weight: bold;display: inline-block;line-height: 1.2em;}#sk-container-id-11 div.sk-label-container {text-align: center;}#sk-container-id-11 div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-container-id-11 div.sk-text-repr-fallback {display: none;}</style>
+<div id="sk-container-id-11" class="sk-top-container">
+<div class="sk-text-repr-fallback">
+<pre>MLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)</pre>
+<b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b>
+</div>
+<div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator sk-toggleable">
+<input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-11" type="checkbox" checked=""><label for="sk-estimator-id-11" class="sk-toggleable__label sk-toggleable__label-arrow">MLPRegressor</label><div class="sk-toggleable__content"><pre>MLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)</pre></div>
+</div></div></div>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a></a>y_pred <span class="op">=</span> nn_reg.predict(X_test)</span>
+<span id="cb56-2"><a></a>mean_squared_error(y_test, y_pred, squared<span class="op">=</span><span class="va">True</span>)  <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.7468737160368192</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
 </section></section>
 </div>
   <div class="quarto-auto-generated-content" style="display: none;">

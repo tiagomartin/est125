@@ -4038,3 +4038,768 @@ mean_squared_error(y_test, y_pred, squared=True)  # MSE
 . . .
 
 - Em tarefas onde o tempo de predição não é um gargalo crítico
+
+
+## Redes Neurais Artificiais
+
+<p></p>
+
+**Redes neurais artificiais** são modelos matemáticos e computacionais inspirados no funcionamento do **cérebro humano**.
+
+![](/images/rna/neuronio2.png){.fragment .nostretch fig-align="center" width="1000px"}
+
+## Inspiração biológica
+
+Os **neurônios** se comunicam através de **sinapses**. Sinapse é a região onde dois neurônios entram em contato e através da qual os **impulsos nervosos** são transmitidos entre eles
+
+
+![](/images/rna/sinapse.jpeg){.fragment .nostretch fig-align="center" width="500px"}
+
+
+## Neurônio Artificial
+
+<p></p>
+
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+![](/images/rna/neuronioMP.png){.nostretch fig-align="center" width="1000px"}
+:::
+
+::: {.column width="30%" .fragment}
+
+<br>
+
+$$ \nu_k = \sum_{i=1}^p w_{ki}x_i +b_k$$
+
+$$ y_k = \varphi(\nu_k)$$
+
+:::
+
+::::
+
+
+## Funções de ativação
+
+<br>
+
+A **função de ativação**, denotada por $\varphi(\nu)$, define sua saída ou ativação em termos do sinal $\nu$. 
+
+
+. . .
+
+
+Essa função é responsável por introduzir **não-linearidades** nas operações realizadas pela rede neural, permitindo que ela aprenda e modele **relações complexas** nos dados.
+
+
+## Função Threshold
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+$$\varphi(\nu) = \begin{cases}1 & \text{se } \nu \geq 0, \\
+0 & \text{se }\nu < 0\end{cases}$$
+
+:::
+
+::: {.column width="50%"}
+
+<p></p>
+
+![](/images/rna/threshold.jpeg){.nostretch fig-align="center" width="500px"}
+
+:::
+
+::::
+
+<p align="center">  
+<span style='font-size:80px;'>&#128073;</span> Útil em problemas onde se deseja atribuir uma saída binária, como 0 ou 1, com base em um limite.
+</p>
+
+
+
+
+
+## Função Sigmoidal
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+$$\varphi(\nu) = \dfrac{1}{1 + \exp(-a\nu)}$$
+
+:::
+
+::: {.column width="50%"}
+
+<p></p>
+
+![](/images/rna/sigmoide.jpg){.nostretch fig-align="center" width="500px"}
+
+:::
+
+::::
+
+<p align="center">  
+<span style='font-size:80px;'>&#128073;</span> Útil em problemas onde a saída representa a probabilidade de pertencer a uma das duas classes.
+
+</p>
+
+
+
+
+## Função Sinal
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+$$\varphi(\nu) = \begin{cases}1 & \text{se } \nu > 0, \\
+0 & \text{se }\nu = 0, \\
+-1 & \text{se } \nu < 0 \end{cases}$$
+
+:::
+
+::: {.column width="50%"}
+
+<p></p>
+
+![](/images/rna/sinal.jpg){.nostretch fig-align="center" width="500px"}
+
+:::
+
+::::
+
+<p align="center">  
+<span style='font-size:80px;'>&#128073;</span> Útil em problemas onde se deseja atribuir uma saída discreta de -1 ou 1 com base na polaridade do valor de entrada.
+</p>
+
+
+
+
+
+## Função Tangente Hiperbólica
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+$$\varphi(\nu) = \dfrac{1-\exp(-\beta \nu)}{1+\exp(-\beta \nu)}$$
+
+:::
+
+::: {.column width="50%"}
+
+<p></p>
+
+![](/images/rna/tanh.jpg){.nostretch fig-align="center" width="500px"}
+
+:::
+
+::::
+
+<p align="center">  
+<span style='font-size:80px;'>&#128073;</span> É comumente usada em redes neurais para classificação binária ou regressão.
+</p>
+
+
+
+
+## Função ReLU
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+$$\varphi(\nu) = \max(0, \nu)$$
+
+:::
+
+::: {.column width="50%"}
+
+<p></p>
+
+![](/images/rna/relu.jpg){.nostretch fig-align="center" width="500px"}
+
+:::
+
+::::
+
+<p align="center">  
+<span style='font-size:80px;'>&#128073;</span> Amplamente usada em camadas ocultas de redes neurais devido à sua simplicidade computacional 
+</p>
+
+
+
+## Função Softmax
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+
+
+$$\varphi(\nu) = \dfrac{\exp({\nu})}{\sum_{k=1}^K \exp(\nu_k) }$$
+
+:::
+
+::: {.column width="50%"}
+
+<p></p>
+
+![](/images/rna/softmax.jpg){.nostretch fig-align="center" width="500px"}
+
+:::
+
+::::
+
+<p align="center">  
+<span style='font-size:80px;'>&#128073;</span> Usada para classificação multiclasse. As saídas são normalizadas, representando probabilidades. 
+</p>
+
+
+
+## Arquiteturas de redes
+
+<br>
+
+Existem **várias arquiteturas** de redes neurais que foram desenvolvidas ao longo dos anos para atender a diferentes **necessidades** e **desafios**.
+
+. . .
+
+A arquitetura de uma RNA, define a sua **especialidade** e qual **tipo de problema** poderá ser utilizada para resolvê-lo.
+
+. . .
+
+O que define a arquitetura de uma RNA basicamente são as **camadas** (camada única ou múltiplas camadas), **número de neurônios** em cada camada e o tipo de **conexão** entre os neurônios (FeedForward ou feedback)
+
+
+
+## Perceptron
+
+O **perceptron** é a arquitetura mais básica de rede neural, composta por **um único neurônio** com conexões diretas (**feedforward**) de entrada e uma função de ativação. 
+
+
+<p></p>
+
+
+:::: {.columns}
+
+::: {.column width="70%"}
+
+![](/images/rna/neuronioMP.png){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="30%" .fragment}
+
+<p></p>
+
+- **bias:** ajusta a influência das entradas
+- aprimora a flexibilidade do modelo.
+
+:::
+
+::::
+
+
+
+## Perceptron
+
+
+Essa arquitetura é usada principalmente para problemas de **classificação linearmente separáveis**.
+
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](/images/rna/li.jpg){.nostretch fig-align="center" width="800px"}
+:::
+
+::: {.column width="50%"}
+
+![](/images/rf/nLin.png){.nostretch fig-align="center" width="550px"}
+
+
+:::
+
+::::
+
+
+## Multi-Layer Perceptron (MLP)
+
+<br>
+
+O **MLP** é uma arquitetura de rede neural **feedforward** com várias **camadas ocultas** entre a **camada de entrada** e a **camada de saída**. 
+
+. . .
+
+- **Camada de Entrada**: Recebe os dados de entrada.
+
+. . .
+
+- **Camadas Ocultas**: Realizam o processamento das entradas.
+
+. . .
+
+- **Camada de Saída**: Fornece a saída do modelo.
+
+
+. . .
+
+Cada camada possui **vários** neurônios **interconectados**. 
+
+
+
+
+## Multi-Layer Perceptron (MLP)
+
+<p></p>
+
+![](/images/rna/mlp.png){.nostretch fig-align="center" width="1000px"}
+
+## Multi-Layer Perceptron (MLP)
+
+<p></p>
+
+![](/images/rna/rna.png){.nostretch fig-align="center" width="1000px"}
+
+
+
+O MLP é capaz de aprender e modelar relações complexas nos dados e é amplamente usado em problemas de classificação e regressão.
+
+
+
+## Treinamento das Redes Neurais
+
+<br>
+
+O **treinamento** de redes neurais é o processo de ajustar os **pesos** e **bias** (parâmetros) da rede neural para que ela seja capaz de aprender a partir dos dados de treinamento e gerar previsões precisas para novos dados.
+
+. . .
+
+
+O treinamento envolve a **minimização** de uma **função de custo** ou perda, que mede a diferença entre as **saídas previstas** pela rede neural e as **saídas desejadas**.
+
+
+## Treinamento das Redes Neurais
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+<br>
+
+![](https://media3.giphy.com/media/7HAm2aWDviqeQ/giphy-downsized-medium.gif){.nostretch fig-align="center" width="1000px"}
+:::
+
+::: {.column width="50%"}
+
+![](/images/rna/super.png){.nostretch fig-align="center" width="500px"}
+
+
+:::
+
+::::
+
+. . .
+
+<p align="center">  
+<span style='font-size:80px;'>&#128073;</span> Treinamento supervisionado
+</p>
+
+
+## Treinamento do perceptron
+
+
+Para cada exemplo de treinamento, o perceptron realiza uma **propagação direta** dos dados de entrada através da função de ativação. 
+
+. . .
+
+
+O **resultado** da propagação direta é comparado com a **saída desejada**. 
+
+. . .
+
+Se a **saída do perceptron** corresponder à **saída desejada**, nenhuma atualização nos pesos e bias é necessária e o próximo exemplo de treinamento é processado.
+
+. . .
+
+Se a saída do perceptron for **diferente** da saída desejada, os pesos e o bias são **atualizados** para ajustar o perceptron. 
+
+
+
+## Treinamento do perceptron
+
+
+A atualização dos pesos é dada por:
+
+$$\mathbf{w}(n+1) = \mathbf{w}(n) + \eta[\hat{y}(n)-y(n)]\mathbf{x}(n)$$
+
+
+. . .
+
+E a atualização do bias:
+
+$$b(n+1) = b(n) + \eta y(n)$$
+
+em que:
+
+- $\hat{y}(n)$ é a saída alvo
+- $y(n)$ é a saída da rede
+- $\eta$ é a taxa de aprendizado
+
+
+## Treinamento do perceptron
+
+<br>
+
+A **taxa de aprendizagem** ($\eta$) é um hiperparâmetro crítico no treinamento do perceptron:
+
+
+. . .
+
+- Se for **muito grande**, pode levar a oscilações e a não convergência do algoritmo. 
+
+. . .
+
+- Se for **muito pequena**, o treinamento pode ser lento. 
+
+
+. . .
+
+Geralmente seu valor varia de 0.1 a 1.0
+
+
+## Treinamento de redes MLP
+
+<br>
+
+O algoritmo de aprendizado da MLP é chamado **backpropagation** e é composto, basicamente, de duas etapas
+
+. . .
+
+- **Propagação:** Recebimento dos estímulos que é aplicado aos neurônios da rede, onde seu efeito se **propaga** camada por camada até produzir uma saída como resposta da rede. Neste passo **não há alteração** nos pesos sinápticos.
+
+
+
+
+## Treinamento de redes MLP
+
+<br>
+
+
+A **saída prevista** pela rede MLP é comparada com a **saída desejada** usando uma **função de custo**. A função de custo mede o quão bem a rede MLP está performando em relação ao objetivo desejado. 
+
+
+
+. . .
+
+
+
+- **Retropropagação:** Após a saída, os pesos sinápticos são **ajustados** de acordo com a regra de correção de erro. Este sinal é propagado então para toda rede da saída para o entrada (caminho inverso), ou seja, o erro é **retropropagado**.
+
+
+
+
+## Treinamento de redes MLP
+
+
+![](/images/rna/backpropagation.gif){.nostretch fig-align="center" width="1200px"}
+
+
+
+## Ajuste de Hiperparâmetros
+
+
+<br>
+
+
+- **Número de Camadas Ocultas:** Determina a complexidade da rede.
+    - **Mais camadas:** Maior capacidade de modelar relações complexas. Contudo, pode resultar em redes mais lentas para treinar e maior risco de overfitting se não controlado.
+    - **Menos camadas:** Menor capacidade de abstração, podendo falhar em aprender padrões complexos dos dados.
+
+
+
+
+
+
+## Ajuste de Hiperparâmetros
+
+
+<br>
+
+
+- **Número de Neurônios:** Controla a capacidade de aprendizagem da rede.
+    - **Mais neurônios:** Maior capacidade de aprendizagem e representação dos dados, mas pode levar ao overfitting (modelo "memorizando" os dados de treinamento em vez de generalizar bem).
+    - **Menos neurônios:** Pode resultar em um modelo muito simples, incapaz de capturar as relações complexas dos dados.
+
+
+
+## Ajuste de Hiperparâmetros
+
+<br>
+
+
+- **Taxa de Aprendizado:** Define o quanto os pesos são atualizados a cada iteração.
+    - **Taxa muito alta:** O modelo pode "saltar" a solução ótima, resultando em um treinamento instável.
+    - **Taxa muito baixa:** O treinamento será mais lento, podendo até ficar preso em um ótimo local (máximo ou mínimo).
+    
+
+## Evitando Overfitting: Dropout
+
+
+- **Dropout** é uma técnica de regularização onde, durante o treinamento, neurônios são aleatoriamente "desconectados" (ou desligados) de cada vez. Isso impede que o modelo dependa demais de neurônios específicos.
+
+
+<span style='font-size:80px;'>&#128073;</span> Reduz a co-adaptação dos neurônios, forçando o modelo a aprender representações mais robustas. Aumenta a generalização do modelo e melhora o desempenho em dados não vistos.
+
+
+. . . 
+
+- Durante o treinamento, uma fração dos neurônios (tipicamente 20%-50%) é removida aleatoriamente a cada iteração, dificultando a adaptação excessiva a um único conjunto de características.
+
+
+
+## Evitando Overfitting: Regularização L2
+
+
+- **A regularização L2** penaliza os pesos grandes ao adicionar uma soma dos quadrados dos pesos à função de custo do modelo. Isso evita que os neurônios se especializem demais em dados específicos.
+
+<span style='font-size:80px;'>&#128073;</span> Ao forçar os pesos a permanecerem pequenos, o modelo tende a ter uma capacidade de generalização maior, reduzindo o risco de overfitting. Penaliza fortemente pesos grandes, incentivando uma solução mais "suave" com menos variação nos parâmetros.
+
+. . . 
+
+
+- A regularização L2 é muito eficaz para problemas com muitos atributos e ajuda a melhorar a estabilidade do modelo.
+
+
+
+
+
+## Vantagens e Desvantagens
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<br>
+
+<br>
+
+<span style='font-size:160px;'>&#128077;</span>
+:::
+
+::: {.column width="90%"}
+
+- **Capacidade de Modelar Relações Complexas:** As RNA são poderosas para capturar padrões não lineares e relações complexas nos dados.
+
+- **Adaptabilidade:** Podem ser aplicadas a uma ampla gama de problemas, tanto para classificação quanto para regressão, além de tarefas como visão computacional e processamento de linguagem natural.
+
+- **Melhoria com Dados Abundantes:** Seu desempenho tende a melhorar conforme a quantidade de dados aumenta, sendo uma escolha excelente em problemas com grandes volumes de dados.
+
+- **Desempenho em Dados Não Estruturados:** Muito eficazes em dados como imagens, áudio e texto, onde outras técnicas de modelagem podem não ser tão eficientes.
+:::
+
+::::
+
+## Vantagens e Desvantagens
+
+
+:::: {.columns}
+
+::: {.column width="10%"}
+
+<br>
+
+<br>
+
+<span style='font-size:160px;'>&#128078;</span>
+:::
+
+::: {.column width="90%"}
+
+
+- **Necessidade de Grande Quantidade de Dados:** As RNA tendem a ter um desempenho inferior quando a quantidade de dados é pequena. Elas precisam de muitos exemplos para generalizar corretamente.
+
+- **Custo Computacional Alto:** O treinamento de redes neurais pode ser extremamente intensivo em termos de tempo e recursos computacionais, especialmente para redes grandes e profundas.
+
+- **Falta de Interpretabilidade:** As RNA são frequentemente descritas como "caixas pretas", já que pode ser difícil entender como a rede toma decisões. Isso pode ser um problema em aplicações onde a explicação das decisões é crucial (por exemplo, na área da saúde ou finanças).
+
+- **Overfitting:** As RNA são propensas a overfitting, especialmente quando o número de camadas e neurônios é muito alto, ou quando não há dados suficientes para treinar adequadamente o modelo.
+
+:::
+
+::::
+
+
+
+## Pré-processamento para Redes Neurais Artificiais
+
+- **Limpeza de Dados:** Remover ou imputar valores ausentes e corrigir erros nos dados.
+
+- **Transformação de Variáveis Categóricas:** Usar One-Hot Encoding ou Label Encoding para converter variáveis categóricas em numéricas.
+
+- **Normalização/Padronização:** Escalonar as variáveis para que tenham a mesma escala.
+
+- **Normalização:** Ajuste para o intervalo [0, 1].
+
+- **Padronização:** Ajuste para média 0 e desvio padrão 1.
+
+- **Divisão dos Dados:** Separar os dados em conjuntos de treinamento e teste (ex: 80/20).
+
+- **Balanceamento de Classes (se necessário):** Usar técnicas como SMOTE ou subamostragem/sobreamostragem.
+
+
+
+## RNA para classificação no R e Python
+
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+
+
+library(tidymodels)
+library(nnet)
+library(Metrics)
+
+set.seed(12345)
+data(iris)
+iris <- iris %>% filter(Species != "setosa") %>% mutate(Species = factor(Species))
+iris_split <- initial_split(iris, strata = Species)
+train_data <- training(iris_split)
+test_data <- testing(iris_split)
+
+nn_model <- mlp() %>%
+  set_engine("nnet") %>%
+  set_mode("classification")
+
+nn_fit <- workflow() %>%
+  add_model(nn_model) %>%
+  add_formula(Species ~ .) %>%
+  fit(data = train_data)
+
+sp_predict <- predict(nn_fit, new_data = test_data)
+
+Metrics::accuracy(test_data$Species, sp_predict$.pred_class)
+```
+
+### Python
+
+```{python}
+#| echo: true
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+X = iris.data[iris.target != 0, :2]
+y = iris.target[iris.target != 0]
+
+# Split dos dados em treino e teste
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)
+
+nn_model = MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)
+nn_model.fit(X_train, y_train)
+y_pred = nn_model.predict(X_test)
+accuracy_score(y_test, y_pred)
+```
+
+:::
+
+
+## RNA para regressão no R e Python
+
+::: {.panel-tabset}
+
+### R
+
+```{r}
+#| echo: true
+
+library(tidymodels)
+library(Metrics)
+
+data("mtcars")
+set.seed(12345)
+mtcars_split <- initial_split(mtcars, strata = mpg)
+train_data <- training(mtcars_split)
+test_data <- testing(mtcars_split)
+
+nn_reg <- mlp() %>%
+  set_engine("nnet") %>%
+  set_mode("regression")
+
+nn_reg_fit <- workflow() %>%
+  add_model(nn_reg) %>%
+  add_formula(mpg ~ .) %>%
+  fit(data = train_data)
+
+mpg_predict <- predict(nn_reg_fit, test_data)
+
+Metrics::mse(test_data$mpg, mpg_predict$.pred) # MSE
+```
+
+### Python
+
+```{python}
+#| echo: true
+
+from sklearn.datasets import fetch_california_housing
+from sklearn.model_selection import train_test_split
+from sklearn.neural_network import MLPRegressor
+from sklearn.metrics import mean_squared_error
+
+data = fetch_california_housing()
+X_train, X_test, y_train, y_test = train_test_split(
+    data.data, data.target, random_state=12345
+)
+
+nn_reg = MLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)
+nn_reg.fit(X_train, y_train)
+y_pred = nn_reg.predict(X_test)
+mean_squared_error(y_test, y_pred, squared=True)  # MSE
+```
+
+:::
+

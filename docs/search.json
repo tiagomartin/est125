@@ -1789,14 +1789,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Random Forests para classificação no R e Python",
-    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9555555555555556"
+    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Random Forests para regressão no R e Python",
-    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.2591302295672953"
+    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.2567399557335787"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis",
@@ -2929,5 +2929,264 @@
     "title": "Semana 07",
     "section": "",
     "text": "Vazamento de dados: O inimigo oculto da predição confiável"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#redes-neurais-artificiais",
+    "href": "aulas/Analise_preditiva/preditiva.html#redes-neurais-artificiais",
+    "title": "Análise Preditiva",
+    "section": "Redes Neurais Artificiais",
+    "text": "Redes Neurais Artificiais\n\n\nRedes neurais artificiais são modelos matemáticos e computacionais inspirados no funcionamento do cérebro humano."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#inspiração-biológica",
+    "href": "aulas/Analise_preditiva/preditiva.html#inspiração-biológica",
+    "title": "Análise Preditiva",
+    "section": "Inspiração biológica",
+    "text": "Inspiração biológica\nOs neurônios se comunicam através de sinapses. Sinapse é a região onde dois neurônios entram em contato e através da qual os impulsos nervosos são transmitidos entre eles"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#neurônio-artificial",
+    "href": "aulas/Analise_preditiva/preditiva.html#neurônio-artificial",
+    "title": "Análise Preditiva",
+    "section": "Neurônio Artificial",
+    "text": "Neurônio Artificial\n\n\n\n\n\n\n\n\n\n\n\\[ \\nu_k = \\sum_{i=1}^p w_{ki}x_i +b_k\\]\n\\[ y_k = \\varphi(\\nu_k)\\]"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#funções-de-ativação",
+    "href": "aulas/Analise_preditiva/preditiva.html#funções-de-ativação",
+    "title": "Análise Preditiva",
+    "section": "Funções de ativação",
+    "text": "Funções de ativação\n\nA função de ativação, denotada por \\(\\varphi(\\nu)\\), define sua saída ou ativação em termos do sinal \\(\\nu\\).\n\nEssa função é responsável por introduzir não-linearidades nas operações realizadas pela rede neural, permitindo que ela aprenda e modele relações complexas nos dados."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#função-threshold",
+    "href": "aulas/Analise_preditiva/preditiva.html#função-threshold",
+    "title": "Análise Preditiva",
+    "section": "Função Threshold",
+    "text": "Função Threshold\n\n\n\n\\[\\varphi(\\nu) = \\begin{cases}1 & \\text{se } \\nu \\geq 0, \\\\\n0 & \\text{se }\\nu &lt; 0\\end{cases}\\]\n\n\n\n\n\n\n\n\n\n👉 Útil em problemas onde se deseja atribuir uma saída binária, como 0 ou 1, com base em um limite."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#função-sigmoidal",
+    "href": "aulas/Analise_preditiva/preditiva.html#função-sigmoidal",
+    "title": "Análise Preditiva",
+    "section": "Função Sigmoidal",
+    "text": "Função Sigmoidal\n\n\n\n\\[\\varphi(\\nu) = \\dfrac{1}{1 + \\exp(-a\\nu)}\\]\n\n\n\n\n\n\n\n\n\n\n👉 Útil em problemas onde a saída representa a probabilidade de pertencer a uma das duas classes."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#função-sinal",
+    "href": "aulas/Analise_preditiva/preditiva.html#função-sinal",
+    "title": "Análise Preditiva",
+    "section": "Função Sinal",
+    "text": "Função Sinal\n\n\n\n\\[\\varphi(\\nu) = \\begin{cases}1 & \\text{se } \\nu &gt; 0, \\\\\n0 & \\text{se }\\nu = 0, \\\\\n-1 & \\text{se } \\nu &lt; 0 \\end{cases}\\]\n\n\n\n\n\n\n\n\n\n👉 Útil em problemas onde se deseja atribuir uma saída discreta de -1 ou 1 com base na polaridade do valor de entrada."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#função-tangente-hiperbólica",
+    "href": "aulas/Analise_preditiva/preditiva.html#função-tangente-hiperbólica",
+    "title": "Análise Preditiva",
+    "section": "Função Tangente Hiperbólica",
+    "text": "Função Tangente Hiperbólica\n\n\n\n\\[\\varphi(\\nu) = \\dfrac{1-\\exp(-\\beta \\nu)}{1+\\exp(-\\beta \\nu)}\\]\n\n\n\n\n\n\n\n\n\n👉 É comumente usada em redes neurais para classificação binária ou regressão."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#função-relu",
+    "href": "aulas/Analise_preditiva/preditiva.html#função-relu",
+    "title": "Análise Preditiva",
+    "section": "Função ReLU",
+    "text": "Função ReLU\n\n\n\n\\[\\varphi(\\nu) = \\max(0, \\nu)\\]\n\n\n\n\n\n\n\n\n\n👉 Amplamente usada em camadas ocultas de redes neurais devido à sua simplicidade computacional"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#função-softmax",
+    "href": "aulas/Analise_preditiva/preditiva.html#função-softmax",
+    "title": "Análise Preditiva",
+    "section": "Função Softmax",
+    "text": "Função Softmax\n\n\n\n\\[\\varphi(\\nu) = \\dfrac{\\exp({\\nu})}{\\sum_{k=1}^K \\exp(\\nu_k) }\\]\n\n\n\n\n\n\n\n\n\n👉 Usada para classificação multiclasse. As saídas são normalizadas, representando probabilidades."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#arquiteturas-de-redes",
+    "href": "aulas/Analise_preditiva/preditiva.html#arquiteturas-de-redes",
+    "title": "Análise Preditiva",
+    "section": "Arquiteturas de redes",
+    "text": "Arquiteturas de redes\n\nExistem várias arquiteturas de redes neurais que foram desenvolvidas ao longo dos anos para atender a diferentes necessidades e desafios.\n\nA arquitetura de uma RNA, define a sua especialidade e qual tipo de problema poderá ser utilizada para resolvê-lo.\n\n\nO que define a arquitetura de uma RNA basicamente são as camadas (camada única ou múltiplas camadas), número de neurônios em cada camada e o tipo de conexão entre os neurônios (FeedForward ou feedback)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#perceptron",
+    "href": "aulas/Analise_preditiva/preditiva.html#perceptron",
+    "title": "Análise Preditiva",
+    "section": "Perceptron",
+    "text": "Perceptron\nO perceptron é a arquitetura mais básica de rede neural, composta por um único neurônio com conexões diretas (feedforward) de entrada e uma função de ativação.\n\n\n\n\n\n\n\n\n\n\n\n\n\nbias: ajusta a influência das entradas\naprimora a flexibilidade do modelo."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#perceptron-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#perceptron-1",
+    "title": "Análise Preditiva",
+    "section": "Perceptron",
+    "text": "Perceptron\nEssa arquitetura é usada principalmente para problemas de classificação linearmente separáveis."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp",
+    "href": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp",
+    "title": "Análise Preditiva",
+    "section": "Multi-Layer Perceptron (MLP)",
+    "text": "Multi-Layer Perceptron (MLP)\n\nO MLP é uma arquitetura de rede neural feedforward com várias camadas ocultas entre a camada de entrada e a camada de saída.\n\n\n\nCamada de Entrada: Recebe os dados de entrada.\n\n\n\n\n\nCamadas Ocultas: Realizam o processamento das entradas.\n\n\n\n\n\nCamada de Saída: Fornece a saída do modelo.\n\n\n\nCada camada possui vários neurônios interconectados."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp-1",
+    "title": "Análise Preditiva",
+    "section": "Multi-Layer Perceptron (MLP)",
+    "text": "Multi-Layer Perceptron (MLP)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp-2",
+    "title": "Análise Preditiva",
+    "section": "Multi-Layer Perceptron (MLP)",
+    "text": "Multi-Layer Perceptron (MLP)\n\n\n\n\n\n\nO MLP é capaz de aprender e modelar relações complexas nos dados e é amplamente usado em problemas de classificação e regressão."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-das-redes-neurais",
+    "href": "aulas/Analise_preditiva/preditiva.html#treinamento-das-redes-neurais",
+    "title": "Análise Preditiva",
+    "section": "Treinamento das Redes Neurais",
+    "text": "Treinamento das Redes Neurais\n\nO treinamento de redes neurais é o processo de ajustar os pesos e bias (parâmetros) da rede neural para que ela seja capaz de aprender a partir dos dados de treinamento e gerar previsões precisas para novos dados.\n\nO treinamento envolve a minimização de uma função de custo ou perda, que mede a diferença entre as saídas previstas pela rede neural e as saídas desejadas."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-das-redes-neurais-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#treinamento-das-redes-neurais-1",
+    "title": "Análise Preditiva",
+    "section": "Treinamento das Redes Neurais",
+    "text": "Treinamento das Redes Neurais\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👉 Treinamento supervisionado"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron",
+    "href": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron",
+    "title": "Análise Preditiva",
+    "section": "Treinamento do perceptron",
+    "text": "Treinamento do perceptron\nPara cada exemplo de treinamento, o perceptron realiza uma propagação direta dos dados de entrada através da função de ativação.\n\nO resultado da propagação direta é comparado com a saída desejada.\n\n\nSe a saída do perceptron corresponder à saída desejada, nenhuma atualização nos pesos e bias é necessária e o próximo exemplo de treinamento é processado.\n\n\nSe a saída do perceptron for diferente da saída desejada, os pesos e o bias são atualizados para ajustar o perceptron."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron-1",
+    "title": "Análise Preditiva",
+    "section": "Treinamento do perceptron",
+    "text": "Treinamento do perceptron\nA atualização dos pesos é dada por:\n\\[\\mathbf{w}(n+1) = \\mathbf{w}(n) + \\eta[\\hat{y}(n)-y(n)]\\mathbf{x}(n)\\]\n\nE a atualização do bias:\n\\[b(n+1) = b(n) + \\eta y(n)\\]\nem que:\n\n\n\\(\\hat{y}(n)\\) é a saída alvo\n\n\\(y(n)\\) é a saída da rede\n\n\\(\\eta\\) é a taxa de aprendizado"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron-2",
+    "title": "Análise Preditiva",
+    "section": "Treinamento do perceptron",
+    "text": "Treinamento do perceptron\n\nA taxa de aprendizagem (\\(\\eta\\)) é um hiperparâmetro crítico no treinamento do perceptron:\n\n\nSe for muito grande, pode levar a oscilações e a não convergência do algoritmo.\n\n\n\n\nSe for muito pequena, o treinamento pode ser lento.\n\n\n\nGeralmente seu valor varia de 0.1 a 1.0"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp",
+    "href": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp",
+    "title": "Análise Preditiva",
+    "section": "Treinamento de redes MLP",
+    "text": "Treinamento de redes MLP\n\nO algoritmo de aprendizado da MLP é chamado backpropagation e é composto, basicamente, de duas etapas\n\n\n\nPropagação: Recebimento dos estímulos que é aplicado aos neurônios da rede, onde seu efeito se propaga camada por camada até produzir uma saída como resposta da rede. Neste passo não há alteração nos pesos sinápticos."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp-1",
+    "title": "Análise Preditiva",
+    "section": "Treinamento de redes MLP",
+    "text": "Treinamento de redes MLP\n\nA saída prevista pela rede MLP é comparada com a saída desejada usando uma função de custo. A função de custo mede o quão bem a rede MLP está performando em relação ao objetivo desejado.\n\n\n\nRetropropagação: Após a saída, os pesos sinápticos são ajustados de acordo com a regra de correção de erro. Este sinal é propagado então para toda rede da saída para o entrada (caminho inverso), ou seja, o erro é retropropagado."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp-2",
+    "title": "Análise Preditiva",
+    "section": "Treinamento de redes MLP",
+    "text": "Treinamento de redes MLP"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros",
+    "href": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros",
+    "title": "Análise Preditiva",
+    "section": "Ajuste de Hiperparâmetros",
+    "text": "Ajuste de Hiperparâmetros\n\n\n\nNúmero de Camadas Ocultas: Determina a complexidade da rede.\n\n\nMais camadas: Maior capacidade de modelar relações complexas. Contudo, pode resultar em redes mais lentas para treinar e maior risco de overfitting se não controlado.\n\nMenos camadas: Menor capacidade de abstração, podendo falhar em aprender padrões complexos dos dados."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros-1",
+    "title": "Análise Preditiva",
+    "section": "Ajuste de Hiperparâmetros",
+    "text": "Ajuste de Hiperparâmetros\n\n\n\nNúmero de Neurônios: Controla a capacidade de aprendizagem da rede.\n\n\nMais neurônios: Maior capacidade de aprendizagem e representação dos dados, mas pode levar ao overfitting (modelo “memorizando” os dados de treinamento em vez de generalizar bem).\n\nMenos neurônios: Pode resultar em um modelo muito simples, incapaz de capturar as relações complexas dos dados."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros-2",
+    "title": "Análise Preditiva",
+    "section": "Ajuste de Hiperparâmetros",
+    "text": "Ajuste de Hiperparâmetros\n\n\n\nTaxa de Aprendizado: Define o quanto os pesos são atualizados a cada iteração.\n\n\nTaxa muito alta: O modelo pode “saltar” a solução ótima, resultando em um treinamento instável.\n\nTaxa muito baixa: O treinamento será mais lento, podendo até ficar preso em um ótimo local (máximo ou mínimo)."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting",
+    "href": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting",
+    "title": "Análise Preditiva",
+    "section": "Evitando Overfitting",
+    "text": "Evitando Overfitting\n\n\nDropout é uma técnica de regularização onde, durante o treinamento, neurônios são aleatoriamente “desconectados” (ou desligados) de cada vez. Isso impede que o modelo dependa demais de neurônios específicos.\n\n👉 Reduz a co-adaptação dos neurônios, forçando o modelo a aprender representações mais robustas. Aumenta a generalização do modelo e melhora o desempenho em dados não vistos.\n\n\nDurante o treinamento, uma fração dos neurônios (tipicamente 20%-50%) é removida aleatoriamente a cada iteração, dificultando a adaptação excessiva a um único conjunto de características."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-1",
+    "title": "Análise Preditiva",
+    "section": "Evitando Overfitting",
+    "text": "Evitando Overfitting\n\n\nA regularização L2 penaliza os pesos grandes ao adicionar uma soma dos quadrados dos pesos à função de custo do modelo. Isso evita que os neurônios se especializem demais em dados específicos.\n\n👉 Ao forçar os pesos a permanecerem pequenos, o modelo tende a ter uma capacidade de generalização maior, reduzindo o risco de overfitting. Penaliza fortemente pesos grandes, incentivando uma solução mais “suave” com menos variação nos parâmetros.\n\n\nA regularização L2 é muito eficaz para problemas com muitos atributos e ajuda a melhorar a estabilidade do modelo."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-dropout",
+    "href": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-dropout",
+    "title": "Análise Preditiva",
+    "section": "Evitando Overfitting: Dropout",
+    "text": "Evitando Overfitting: Dropout\n\n\nDropout é uma técnica de regularização onde, durante o treinamento, neurônios são aleatoriamente “desconectados” (ou desligados) de cada vez. Isso impede que o modelo dependa demais de neurônios específicos.\n\n👉 Reduz a co-adaptação dos neurônios, forçando o modelo a aprender representações mais robustas. Aumenta a generalização do modelo e melhora o desempenho em dados não vistos.\n\n\nDurante o treinamento, uma fração dos neurônios (tipicamente 20%-50%) é removida aleatoriamente a cada iteração, dificultando a adaptação excessiva a um único conjunto de características."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-regularização-l2",
+    "href": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-regularização-l2",
+    "title": "Análise Preditiva",
+    "section": "Evitando Overfitting: Regularização L2",
+    "text": "Evitando Overfitting: Regularização L2\n\n\nA regularização L2 penaliza os pesos grandes ao adicionar uma soma dos quadrados dos pesos à função de custo do modelo. Isso evita que os neurônios se especializem demais em dados específicos.\n\n👉 Ao forçar os pesos a permanecerem pequenos, o modelo tende a ter uma capacidade de generalização maior, reduzindo o risco de overfitting. Penaliza fortemente pesos grandes, incentivando uma solução mais “suave” com menos variação nos parâmetros.\n\n\nA regularização L2 é muito eficaz para problemas com muitos atributos e ajuda a melhorar a estabilidade do modelo."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-das-redes-neurais-artificiais-rna",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-das-redes-neurais-artificiais-rna",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens das Redes Neurais Artificiais (RNA)",
+    "text": "Vantagens e Desvantagens das Redes Neurais Artificiais (RNA)"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-9",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-9",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👍\n\n\nCapacidade de Modelar Relações Complexas: As RNA são poderosas para capturar padrões não lineares e relações complexas nos dados.\nAdaptabilidade: Podem ser aplicadas a uma ampla gama de problemas, tanto para classificação quanto para regressão, além de tarefas como visão computacional e processamento de linguagem natural.\nMelhoria com Dados Abundantes: Seu desempenho tende a melhorar conforme a quantidade de dados aumenta, sendo uma escolha excelente em problemas com grandes volumes de dados.\nDesempenho em Dados Não Estruturados: Muito eficazes em dados como imagens, áudio e texto, onde outras técnicas de modelagem podem não ser tão eficientes."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-10",
+    "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-10",
+    "title": "Análise Preditiva",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👎\n\n\nNecessidade de Grande Quantidade de Dados: As RNA tendem a ter um desempenho inferior quando a quantidade de dados é pequena. Elas precisam de muitos exemplos para generalizar corretamente.\nCusto Computacional Alto: O treinamento de redes neurais pode ser extremamente intensivo em termos de tempo e recursos computacionais, especialmente para redes grandes e profundas.\nFalta de Interpretabilidade: As RNA são frequentemente descritas como “caixas pretas”, já que pode ser difícil entender como a rede toma decisões. Isso pode ser um problema em aplicações onde a explicação das decisões é crucial (por exemplo, na área da saúde ou finanças).\nOverfitting: As RNA são propensas a overfitting, especialmente quando o número de camadas e neurônios é muito alto, ou quando não há dados suficientes para treinar adequadamente o modelo."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#rna-para-classificação-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#rna-para-classificação-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "RNA para classificação no R e Python",
+    "text": "RNA para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(nnet)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris &lt;- iris %&gt;% filter(Species != \"setosa\") %&gt;% mutate(Species = factor(Species))\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nnn_model &lt;- mlp() %&gt;%\n  set_engine(\"nnet\") %&gt;%\n  set_mode(\"classification\")\n\nnn_fit &lt;- workflow() %&gt;%\n  add_model(nn_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(nn_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8846154\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neural_network import MLPClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = iris.data[iris.target != 0, :2]\ny = iris.target[iris.target != 0]\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nnn_model = MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)\nnn_model.fit(X_train, y_train)\n\n\n\n\nMLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nMLPClassifierMLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)\n\n\n\ny_pred = nn_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.43333333333333335"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#pré-processamento-para-redes-neurais-artificiais",
+    "href": "aulas/Analise_preditiva/preditiva.html#pré-processamento-para-redes-neurais-artificiais",
+    "title": "Análise Preditiva",
+    "section": "Pré-processamento para Redes Neurais Artificiais",
+    "text": "Pré-processamento para Redes Neurais Artificiais\n\nLimpeza de Dados: Remover ou imputar valores ausentes e corrigir erros nos dados.\nTransformação de Variáveis Categóricas: Usar One-Hot Encoding ou Label Encoding para converter variáveis categóricas em numéricas.\nNormalização/Padronização: Escalonar as variáveis para que tenham a mesma escala.\nNormalização: Ajuste para o intervalo [0, 1].\nPadronização: Ajuste para média 0 e desvio padrão 1.\nDivisão dos Dados: Separar os dados em conjuntos de treinamento e teste (ex: 80/20).\nBalanceamento de Classes (se necessário): Usar técnicas como SMOTE ou subamostragem/sobreamostragem."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#rna-para-regressão-no-r-e-python",
+    "href": "aulas/Analise_preditiva/preditiva.html#rna-para-regressão-no-r-e-python",
+    "title": "Análise Preditiva",
+    "section": "RNA para regressão no R e Python",
+    "text": "RNA para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nnn_reg &lt;- mlp() %&gt;%\n  set_engine(\"nnet\") %&gt;%\n  set_mode(\"regression\")\n\nnn_reg_fit &lt;- workflow() %&gt;%\n  add_model(nn_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(nn_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 15.50235\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neural_network import MLPRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nnn_reg = MLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)\nnn_reg.fit(X_train, y_train)\n\n\n\n\nMLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nMLPRegressorMLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)\n\n\n\ny_pred = nn_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.7468737160368192"
   }
 ]
