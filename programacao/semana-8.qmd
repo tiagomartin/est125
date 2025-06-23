@@ -1,0 +1,9 @@
+---
+title: "Semana 08"
+---
+
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Análise preditiva](/aulas/Analise_preditiva/preditiva.html#/random-forests "Algoritmo Random Forests"){aria-label="Algoritmo Random Forests"}
