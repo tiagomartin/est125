@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.29">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Construindo workflows preditivos usando a base de dados Space Titanic – EST125 - Introdução à Mineração de Dados</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e9f3ba5fbee03b112b18b9666ab66a2c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-b09848b6287391c45069fed345a57cb2.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<meta property="og:title" content="Análise preditiva com tidymodels: Experimento com Space Titanic – EST125 - Introdução à Mineração de Dados">
+<meta property="og:description" content="Homepage da disciplina EST125 - Introdução à Mineração de Dados, 2025/1.">
+<meta property="og:image" content="http://professortp.com.br/est1125/analise_dados/space_titanic_workflow_files/figure-html/unnamed-chunk-17-1.png">
+<meta property="og:site_name" content="EST125 - Introdução à Mineração de Dados">
+<meta property="og:image:height" content="960">
+<meta property="og:image:width" content="1344">
+</head>
+
+<body class="nav-sidebar docked quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Construindo workflows preditivos usando a base de dados Space Titanic</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main">
+    <a href="https://github.com/tiagomartin/est125" title="github" class="quarto-navigation-tool px-1" aria-label="github"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../aulas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aulas</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../analises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Análise de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cronograma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cronograma da Disciplina</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Material Complementar</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../plano.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plano de Ensino</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../projeto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projeto Avaliativo</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#pacotes-utilizados" id="toc-pacotes-utilizados" class="nav-link active" data-scroll-target="#pacotes-utilizados">Pacotes utilizados</a></li>
+  <li><a href="#leitura-dos-dados" id="toc-leitura-dos-dados" class="nav-link" data-scroll-target="#leitura-dos-dados">Leitura dos dados</a></li>
+  <li><a href="#divisão-dos-dados" id="toc-divisão-dos-dados" class="nav-link" data-scroll-target="#divisão-dos-dados">Divisão dos dados</a></li>
+  <li><a href="#receita-principal-de-pré-processamento" id="toc-receita-principal-de-pré-processamento" class="nav-link" data-scroll-target="#receita-principal-de-pré-processamento">Receita principal de pré-processamento</a></li>
+  <li><a href="#receita-adicional-de-pré-processamento" id="toc-receita-adicional-de-pré-processamento" class="nav-link" data-scroll-target="#receita-adicional-de-pré-processamento">Receita adicional de pré-processamento</a></li>
+  <li><a href="#definição-dos-modelos" id="toc-definição-dos-modelos" class="nav-link" data-scroll-target="#definição-dos-modelos">Definição dos modelos</a></li>
+  <li><a href="#juntando-tudo" id="toc-juntando-tudo" class="nav-link" data-scroll-target="#juntando-tudo">Juntando tudo</a>
+  <ul class="collapse">
+  <li><a href="#primeira-parte-workflows-com-pré-processamento-simples" id="toc-primeira-parte-workflows-com-pré-processamento-simples" class="nav-link" data-scroll-target="#primeira-parte-workflows-com-pré-processamento-simples">Primeira parte: workflows com pré-processamento simples</a></li>
+  <li><a href="#segunda-parte-workflows-com-pré-processamento-mais-elaborado" id="toc-segunda-parte-workflows-com-pré-processamento-mais-elaborado" class="nav-link" data-scroll-target="#segunda-parte-workflows-com-pré-processamento-mais-elaborado">Segunda parte: workflows com pré-processamento mais elaborado</a></li>
+  <li><a href="#unindo-tudo" id="toc-unindo-tudo" class="nav-link" data-scroll-target="#unindo-tudo">Unindo tudo</a></li>
+  </ul></li>
+  <li><a href="#hora-de-começar-o-processo-de-treinamento" id="toc-hora-de-começar-o-processo-de-treinamento" class="nav-link" data-scroll-target="#hora-de-começar-o-processo-de-treinamento">Hora de começar o processo de treinamento</a>
+  <ul class="collapse">
+  <li><a href="#visualizando-resultados" id="toc-visualizando-resultados" class="nav-link" data-scroll-target="#visualizando-resultados">Visualizando resultados</a></li>
+  <li><a href="#painel-da-esquerda-acurácia" id="toc-painel-da-esquerda-acurácia" class="nav-link" data-scroll-target="#painel-da-esquerda-acurácia">Painel da esquerda: Acurácia</a></li>
+  <li><a href="#painel-do-meio-brier-score" id="toc-painel-do-meio-brier-score" class="nav-link" data-scroll-target="#painel-do-meio-brier-score">Painel do meio: Brier Score</a></li>
+  <li><a href="#painel-da-direita-roc-auc" id="toc-painel-da-direita-roc-auc" class="nav-link" data-scroll-target="#painel-da-direita-roc-auc">Painel da direita: ROC AUC</a></li>
+  <li><a href="#avaliando-o-melhor-modelo-no-conjunto-de-testes" id="toc-avaliando-o-melhor-modelo-no-conjunto-de-testes" class="nav-link" data-scroll-target="#avaliando-o-melhor-modelo-no-conjunto-de-testes">Avaliando o melhor modelo no conjunto de testes</a></li>
+  </ul></li>
+  <li><a href="#como-as-variáveis-influenciam-as-decisões" id="toc-como-as-variáveis-influenciam-as-decisões" class="nav-link" data-scroll-target="#como-as-variáveis-influenciam-as-decisões">Como as variáveis influenciam as decisões?</a></li>
+  <li><a href="#e-se-quisermos-saber-sobre-uma-predição-específica" id="toc-e-se-quisermos-saber-sobre-uma-predição-específica" class="nav-link" data-scroll-target="#e-se-quisermos-saber-sobre-uma-predição-específica">E se quisermos saber sobre uma predição específica?</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est125/edit/main/analise_dados/space_titanic_workflow.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est125/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Construindo workflows preditivos usando a base de dados Space Titanic</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Imagine que você recebeu um conjunto de dados misterioso sobre passageiros de uma espaçonave e que alguns deles desapareceram em uma outra dimensão! A missão? Construir um modelo preditivo para identificar quem foi “transportado” com base em características como gastos, cabine, companhia de viagem, etc.</p>
+<p>Para essa jornada, vamos usar o pacote <code>tidymodels</code> do R, que nos ajuda a organizar todo o fluxo de análise preditiva de maneira limpa, modular e reprodutível. Além disso, vamos comparar seis modelos diferentes e ajustar automaticamente os seus hiperparâmetros para alcançar a melhor performance possível.</p>
+<section id="pacotes-utilizados" class="level2">
+<h2 class="anchored" data-anchor-id="pacotes-utilizados">Pacotes utilizados</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>load <span class="ot">&lt;-</span> <span class="cf">function</span>(pkg){</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  new.pkg <span class="ot">&lt;-</span> pkg[<span class="sc">!</span>(pkg <span class="sc">%in%</span> <span class="fu">installed.packages</span>()[, <span class="st">"Package"</span>])]</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">length</span>(new.pkg))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">install.packages</span>(new.pkg, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sapply</span>(pkg, require, <span class="at">character.only =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>} </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Pacotes utilizados nessa análise</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>,<span class="st">'tidymodels'</span>, <span class="st">'janitor'</span>, <span class="st">'ggpubr'</span>, <span class="st">'funModeling'</span>, <span class="st">'ggalluvial'</span>, <span class="st">'vip'</span>, <span class="st">'skimr'</span>, <span class="st">'VIM'</span>, <span class="st">'patchwork'</span>, <span class="st">'klaR'</span>, <span class="st">'kknn'</span>, <span class="st">'parsnip'</span>, <span class="st">'discrim'</span>, <span class="st">'colino'</span>, <span class="st">'FSelectorRcpp'</span>,<span class="st">'praznik'</span>, <span class="st">'kernelshap'</span>, <span class="st">'shapviz'</span>, <span class="st">"DALEX"</span>, <span class="st">"DALEXtra"</span>, <span class="st">'doParallel'</span>, <span class="st">'tictoc'</span>, <span class="st">'tidyr'</span>, <span class="st">'purrr'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    tidyverse    tidymodels       janitor        ggpubr   funModeling 
+         TRUE          TRUE          TRUE          TRUE          TRUE 
+   ggalluvial           vip         skimr           VIM     patchwork 
+         TRUE          TRUE          TRUE          TRUE          TRUE 
+         klaR          kknn       parsnip       discrim        colino 
+         TRUE          TRUE          TRUE          TRUE          TRUE 
+FSelectorRcpp       praznik    kernelshap       shapviz         DALEX 
+         TRUE          TRUE          TRUE          TRUE          TRUE 
+     DALEXtra    doParallel        tictoc         tidyr         purrr 
+         TRUE          TRUE          TRUE          TRUE          TRUE </code></pre>
+</div>
+</div>
+</section>
+<section id="leitura-dos-dados" class="level2">
+<h2 class="anchored" data-anchor-id="leitura-dos-dados">Leitura dos dados</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">=</span> rio<span class="sc">::</span><span class="fu">import</span>(<span class="st">"https://raw.githubusercontent.com/tiagomartin/est125/refs/heads/main/dados/space_titanic.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 8,693
+Columns: 14
+$ PassengerId  &lt;chr&gt; "0001_01", "0002_01", "0003_01", "0003_02", "0004_01", "0…
+$ HomePlanet   &lt;chr&gt; "Europa", "Earth", "Europa", "Europa", "Earth", "Earth", …
+$ CryoSleep    &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FA…
+$ Cabin        &lt;chr&gt; "B/0/P", "F/0/S", "A/0/S", "A/0/S", "F/1/S", "F/0/P", "F/…
+$ Destination  &lt;chr&gt; "TRAPPIST-1e", "TRAPPIST-1e", "TRAPPIST-1e", "TRAPPIST-1e…
+$ Age          &lt;dbl&gt; 39, 24, 58, 33, 16, 44, 26, 28, 35, 14, 34, 45, 32, 48, 2…
+$ VIP          &lt;lgl&gt; FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FA…
+$ RoomService  &lt;dbl&gt; 0, 109, 43, 0, 303, 0, 42, 0, 0, 0, 0, 39, 73, 719, 8, 32…
+$ FoodCourt    &lt;dbl&gt; 0, 9, 3576, 1283, 70, 483, 1539, 0, 785, 0, 0, 7295, 0, 1…
+$ ShoppingMall &lt;dbl&gt; 0, 25, 0, 371, 151, 0, 3, 0, 17, 0, NA, 589, 1123, 65, 12…
+$ Spa          &lt;dbl&gt; 0, 549, 6715, 3329, 565, 291, 0, 0, 216, 0, 0, 110, 0, 0,…
+$ VRDeck       &lt;dbl&gt; 0, 44, 49, 193, 2, 0, 0, NA, 0, 0, 0, 124, 113, 24, 7, 0,…
+$ Name         &lt;chr&gt; "Maham Ofracculy", "Juanna Vines", "Altark Susent", "Sola…
+$ Transported  &lt;lgl&gt; FALSE, TRUE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE, TRUE, …</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>dados <span class="sc">%&gt;%</span> <span class="fu">df_status</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       variable q_zeros p_zeros q_na p_na q_inf p_inf      type unique
+1   PassengerId       0    0.00    0 0.00     0     0 character   8693
+2    HomePlanet       0    0.00    0 0.00     0     0 character      4
+3     CryoSleep    5439   62.57  217 2.50     0     0   logical      2
+4         Cabin       0    0.00    0 0.00     0     0 character   6561
+5   Destination       0    0.00    0 0.00     0     0 character      4
+6           Age     178    2.05  179 2.06     0     0   numeric     80
+7           VIP    8291   95.38  203 2.34     0     0   logical      2
+8   RoomService    5577   64.16  181 2.08     0     0   numeric   1273
+9     FoodCourt    5456   62.76  183 2.11     0     0   numeric   1507
+10 ShoppingMall    5587   64.27  208 2.39     0     0   numeric   1115
+11          Spa    5324   61.24  183 2.11     0     0   numeric   1327
+12       VRDeck    5495   63.21  188 2.16     0     0   numeric   1306
+13         Name       0    0.00    0 0.00     0     0 character   8474
+14  Transported    4315   49.64    0 0.00     0     0   logical      2</code></pre>
+</div>
+</div>
+<p>Na <a href="..\analise_dados/space_titanic.html">análise anterior</a>, fizemos a exploração da base de dados e através dela, contruímos uma receita de pré-processamento utilizando o pacote <code>recipes</code> do ecossistema <code>tidymodels</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">=</span> dados <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(PassengerId, <span class="fu">c</span>(<span class="st">"PassGroup"</span>, <span class="st">"nGroup"</span>), <span class="at">sep =</span> <span class="st">"_"</span>, <span class="at">remove =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">PassGroup =</span> <span class="fu">as.numeric</span>(PassGroup))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">=</span> dados <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate</span>(Cabin, <span class="fu">c</span>(<span class="st">"CabinDeck"</span>, <span class="st">"CabinNum"</span>, <span class="st">"CabinSide"</span>), <span class="at">sep =</span> <span class="st">"/"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">CabinDeck =</span> <span class="fu">as.factor</span>(CabinDeck),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">CabinSide =</span> <span class="fu">as.factor</span>(CabinSide))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="divisão-dos-dados" class="level2">
+<h2 class="anchored" data-anchor-id="divisão-dos-dados">Divisão dos dados</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>splits <span class="ot">=</span> dados <span class="sc">%&gt;%</span> <span class="fu">initial_split</span>(<span class="at">strata =</span> Transported)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>dados_treino <span class="ot">=</span> <span class="fu">training</span>(splits)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>dados_teste <span class="ot">=</span> <span class="fu">testing</span>(splits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="receita-principal-de-pré-processamento" class="level2">
+<h2 class="anchored" data-anchor-id="receita-principal-de-pré-processamento">Receita principal de pré-processamento</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>STRecipe <span class="ot">=</span> <span class="fu">recipe</span>(Transported <span class="sc">~</span> ., <span class="at">data =</span> dados_treino) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">update_role</span>(PassengerId, Name, <span class="at">new_role =</span> <span class="st">"ID"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_mutate</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">GroupSize =</span> <span class="fu">as.integer</span>(purrr<span class="sc">::</span><span class="fu">map_dbl</span>(PassGroup, <span class="sc">~</span> <span class="fu">sum</span>(PassGroup <span class="sc">==</span> .x))),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">IsAlone =</span> <span class="fu">ifelse</span>(GroupSize<span class="sc">==</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>(),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">CabinNum =</span> <span class="fu">as.numeric</span>(CabinNum),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">nGroup =</span> <span class="fu">as.numeric</span>(nGroup),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">VIP =</span> <span class="fu">as.factor</span>(VIP),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">CryoSleep =</span> <span class="fu">ifelse</span>((RoomService <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span> FoodCourt <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span> ShoppingMall <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span> Spa <span class="sc">&gt;</span> <span class="dv">0</span> <span class="sc">|</span> VRDeck <span class="sc">&gt;</span> <span class="dv">0</span>), tidyr<span class="sc">::</span><span class="fu">replace_na</span>(CryoSleep, <span class="cn">FALSE</span>),<span class="cn">TRUE</span>),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">CryoSleep =</span> <span class="fu">as.factor</span>(CryoSleep)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_impute_knn</span>(CryoSleep, <span class="at">neighbors =</span> <span class="dv">2</span>, <span class="at">impute_with =</span> <span class="fu">imp_vars</span>(PassGroup, CabinDeck, CabinNum, CabinSide)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_mutate</span>(</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">RoomService =</span> <span class="fu">ifelse</span>(CryoSleep<span class="sc">==</span><span class="cn">TRUE</span>, tidyr<span class="sc">::</span><span class="fu">replace_na</span>(RoomService, <span class="dv">0</span>),RoomService),</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">FoodCourt =</span> <span class="fu">ifelse</span>(CryoSleep<span class="sc">==</span><span class="cn">TRUE</span>, tidyr<span class="sc">::</span><span class="fu">replace_na</span>(FoodCourt, <span class="dv">0</span>),FoodCourt),</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">ShoppingMall =</span> <span class="fu">ifelse</span>(CryoSleep<span class="sc">==</span><span class="cn">TRUE</span>, tidyr<span class="sc">::</span><span class="fu">replace_na</span>(ShoppingMall, <span class="dv">0</span>), ShoppingMall),</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Spa =</span> <span class="fu">ifelse</span>(CryoSleep<span class="sc">==</span><span class="cn">TRUE</span>, tidyr<span class="sc">::</span><span class="fu">replace_na</span>(Spa, <span class="dv">0</span>), Spa),</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">VRDeck =</span> <span class="fu">ifelse</span>(CryoSleep<span class="sc">==</span><span class="cn">TRUE</span>, tidyr<span class="sc">::</span><span class="fu">replace_na</span>(VRDeck, <span class="dv">0</span>), VRDeck)</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_impute_knn</span>(RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, <span class="at">neighbors =</span> <span class="dv">2</span>, </span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>                  <span class="at">impute_with =</span> <span class="fu">imp_vars</span>(PassGroup, CabinDeck, CabinNum, CabinSide)) <span class="sc">%&gt;%</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_impute_bag</span>(Age, VIP, CryoSleep, Destination, HomePlanet, CabinDeck, CabinNum, </span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>                  CabinSide) <span class="sc">%&gt;%</span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_mutate_at</span>(RoomService<span class="sc">:</span>VRDeck, <span class="at">fn=</span> <span class="sc">~</span><span class="fu">log10</span>(. <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_mutate</span>(<span class="at">despesasSuperfluas =</span> RoomService <span class="sc">+</span> Spa <span class="sc">+</span> VRDeck,</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>              <span class="at">despesasBasicas =</span> FoodCourt <span class="sc">+</span> ShoppingMall,</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>              <span class="at">Isearth =</span> <span class="fu">ifelse</span>(HomePlanet<span class="sc">==</span><span class="st">'Earth'</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>(),</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>              <span class="at">Iskid =</span> <span class="fu">ifelse</span>(Age <span class="sc">&lt;</span> <span class="dv">14</span>, <span class="dv">1</span>, <span class="dv">0</span>) <span class="sc">%&gt;%</span> <span class="fu">as.factor</span>(), </span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>              <span class="at">Transported =</span> <span class="fu">as.factor</span>(Transported)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_select_infgain</span>(<span class="fu">all_predictors</span>(), <span class="at">outcome =</span> <span class="st">"Transported"</span>, <span class="at">threshold =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Neste momento chegou a hora de prepararmos a modelagem dos dados. Vamos comparar seis modelos diferentes de classificação, KNN, Naive Bayes, Árvore de Decisão, Random Forest, SVM e Rede Neural, todos aplicados ao conjunto de dados Space Titanic. Cada modelo será treinado e validado com técnicas de validação cruzada, e seus hiperparâmetros serão ajustados automaticamente para obter o melhor desempenho possível. Ao final, avaliaremos as métricas obtidas e selecionaremos o modelo que apresentar os melhores resultados para os dados analisados, considerando como critério de seleção a acurácia dos modelos.</p>
+</section>
+<section id="receita-adicional-de-pré-processamento" class="level2">
+<h2 class="anchored" data-anchor-id="receita-adicional-de-pré-processamento">Receita adicional de pré-processamento</h2>
+<p>Alguns algoritmos de machine learning (como KNN, SVM e Redes Neurais) são sensíveis à escala dos dados e necessitam que todas as variáveis sejam numéricas. Se uma variável tem valores muito maiores do que outra, ela pode dominar a distância ou as ponderações do modelo, mesmo que não seja a mais importante. Portanto, normalizar evita esse desequilíbrio e garante que todas as variáveis numéricas contribuam igualmente para a análise. Além disso, variáveis com variância zero não contribuem com informação útil para os modelos preditivos. Como todos os seus valores são iguais, elas não ajudam a diferenciar as classes que queremos prever. Somado a isso, podem até atrapalhar o desempenho do modelo ou causar erros em algoritmos que exigem variabilidade nos dados.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>recipe_normalizado <span class="ot">=</span> STRecipe <span class="sc">%&gt;%</span> </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_normalize</span>(<span class="fu">all_numeric</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_dummy</span>(<span class="fu">all_nominal_predictors</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_zv</span>(<span class="fu">all_predictors</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Para os demais algoritmos, apenas incluiremos o passo de verificação de variáveis com zero variância na nossa receita principal.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>zv_recipe <span class="ot">=</span> STRecipe <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">step_zv</span>(<span class="fu">all_predictors</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="definição-dos-modelos" class="level2">
+<h2 class="anchored" data-anchor-id="definição-dos-modelos">Definição dos modelos</h2>
+<p>A seguir, definimos os modelos e hiperparâmetros que serão tunados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>knn_model <span class="ot">=</span> <span class="fu">nearest_neighbor</span>(<span class="at">neighbors =</span> <span class="fu">tune</span>(), <span class="at">weight_func =</span> <span class="fu">tune</span>(), <span class="at">dist_power =</span> <span class="fu">tune</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"kknn"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>) </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>nb_model <span class="ot">=</span> <span class="fu">naive_Bayes</span>(<span class="at">smoothness =</span> <span class="fu">tune</span>(), <span class="at">Laplace =</span> <span class="fu">tune</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">'klaR'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">'classification'</span>) </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>dt_model <span class="ot">=</span> <span class="fu">decision_tree</span>(<span class="at">cost_complexity =</span> <span class="fu">tune</span>(), <span class="at">min_n =</span> <span class="fu">tune</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">'rpart'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">'classification'</span>) </span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>rf_model <span class="ot">=</span> <span class="fu">rand_forest</span>(<span class="at">mtry =</span> <span class="fu">tune</span>(), <span class="at">min_n =</span> <span class="fu">tune</span>(), <span class="at">trees =</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">'ranger'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">'classification'</span>) </span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>svm_model <span class="ot">=</span> <span class="fu">svm_linear</span>(<span class="at">cost =</span> <span class="fu">tune</span>(), <span class="at">margin =</span> <span class="fu">tune</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">'kernlab'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">'classification'</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>nn_model <span class="ot">=</span> <span class="fu">mlp</span>(<span class="at">hidden_units =</span> <span class="fu">tune</span>(), <span class="at">penalty =</span> <span class="fu">tune</span>(), <span class="at">epochs =</span> <span class="fu">tune</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">'nnet'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">'classification'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Todos os modelos foram configurados para realizar tarefas de classificação e tiveram seus hiperparâmetros definidos com <code>tune()</code>, o que permite que esses valores sejam ajustados automaticamente durante o processo de tuning com validação cruzada. Cada modelo está pronto para ser integrado a um <code>workflow</code> do <code>tidymodels</code>, utilizando funções como <code>tune_grid()</code> ou <code>tune_bayes()</code> para encontrar as melhores combinações de parâmetros. Com isso, conseguimos comparar o desempenho entre os diferentes algoritmos de forma justa e escolher aquele que apresenta os melhores resultados para o conjunto de dados analisado.</p>
+</section>
+<section id="juntando-tudo" class="level2">
+<h2 class="anchored" data-anchor-id="juntando-tudo">Juntando tudo</h2>
+<p>Vamos utilizar o pacote <code>workflowsets</code> do ecossistema <code>tidymodels</code> para organizar e comparar vários modelos e pré-processamentos ao mesmo tempo, de forma clara e automatizada. A função <code>workflow_set()</code> cria uma <strong>coleção de workflows</strong>, combinando diferentes <strong>receitas de pré-processamento</strong> (<code>recipes</code>) com diferentes <strong>modelos</strong> (<code>models</code>). Ela é útil quando queremos testar diversas combinações de forma sistemática.</p>
+<section id="primeira-parte-workflows-com-pré-processamento-simples" class="level3">
+<h3 class="anchored" data-anchor-id="primeira-parte-workflows-com-pré-processamento-simples">Primeira parte: workflows com pré-processamento simples</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>simples <span class="ot">=</span> <span class="fu">workflow_set</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">preproc =</span> <span class="fu">list</span>(<span class="at">simples =</span> zv_recipe),</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">models =</span> <span class="fu">list</span>(<span class="at">arvore_decisao =</span> dt_model,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">randon_forest =</span> rf_model,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">naiveBayes =</span> nb_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Aqui estamos criando um conjunto de workflows chamado <code>simples</code>, onde usamos a receita <code>zv_recipe</code>, que executa todo o pré-processamento definido anteriormente em <code>STRecipe</code> adicionando o passo de verificação de variáveis com zero variância e a combinamos com três modelos diferentes:</p>
+<ul>
+<li><p>Árvore de decisão (<code>dt_model</code>)</p></li>
+<li><p>Random Forest (<code>rf_model</code>)</p></li>
+<li><p>Naive Bayes (<code>nb_model</code>)</p></li>
+</ul>
+<p>Isso resultará em <strong>três workflows</strong> com o mesmo pré-processamento e modelos distintos.</p>
+</section>
+<section id="segunda-parte-workflows-com-pré-processamento-mais-elaborado" class="level3">
+<h3 class="anchored" data-anchor-id="segunda-parte-workflows-com-pré-processamento-mais-elaborado">Segunda parte: workflows com pré-processamento mais elaborado</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>normalizados <span class="ot">=</span> <span class="fu">workflow_set</span>(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">preproc =</span> <span class="fu">list</span>(<span class="at">normalizados =</span> recipe_normalizado),</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">models =</span> <span class="fu">list</span>(<span class="at">redes_neurais =</span> nn_model,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">svm =</span> svm_model,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">knn =</span> knn_model))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Neste bloco, criamos outra coleção de workflows chamada <code>normalizados</code>, que usa a receita <code>recipe_normalizado</code>, que realiza todo o pré-processamento definido em <code>STRecipe</code> adicionando as etapas <code>step_normalize()</code> e <code>step_dummy()</code>, que são essenciais para modelos sensíveis à escala. Essa receita é combinada com:</p>
+<ul>
+<li><p>Rede Neural (<code>nn_model</code>)</p></li>
+<li><p>SVM (<code>svm_model</code>)</p></li>
+<li><p>KNN (<code>knn_model</code>)</p></li>
+</ul>
+<p>Também resultará em <strong>três workflows</strong> diferentes.</p>
+</section>
+<section id="unindo-tudo" class="level3">
+<h3 class="anchored" data-anchor-id="unindo-tudo">Unindo tudo</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>complete_workflows <span class="ot">=</span> <span class="fu">bind_rows</span>(simples,normalizados) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">wflow_id =</span> <span class="fu">gsub</span>(<span class="st">"(simples_)|(normalizados_)"</span>, <span class="st">""</span>, wflow_id))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Juntamos todos os workflows (total de 6) em um único objeto <code>complete_workflows</code> e removemos os prefixos <code>"simples_"</code> e <code>"normalizados_"</code> dos nomes dos workflows, deixando o identificador do modelo mais limpo (ex: <code>"arvore_decisao"</code> ao invés de <code>"simples_arvore_decisao"</code>).</p>
+</section>
+</section>
+<section id="hora-de-começar-o-processo-de-treinamento" class="level2">
+<h2 class="anchored" data-anchor-id="hora-de-começar-o-processo-de-treinamento">Hora de começar o processo de treinamento</h2>
+<p>Primeiro, vamos criar os conjuntos de validação cruzada que serão usados para avaliar os modelos. Note que faremos uma validação cruzada com 10 dobras (<code>folds</code>), ou seja, o conjunto de dados será dividido em 10 partes, garantindo que a proporção de classes seja mantida em cada uma das dobras, o que é importante quando a variável resposta está desbalanceada. Em cada rodada, uma parte é usada como validação e as outras 9 como treino. As informações sobre esse processo são armazenadas no objeto <code>cv_splits</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>cv_splits <span class="ot">=</span> <span class="fu">vfold_cv</span>(</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  dados_treino, <span class="at">v =</span> <span class="dv">10</span>, <span class="at">strata =</span> Transported</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A seguir, configuramos o comportamento do <strong>processo de tuning</strong> quando usamos <code>tune_grid()</code> (ou <code>tune_bayes()</code>) e salvamos no objeto <code>grid_ctrl</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>grid_ctrl <span class="ot">=</span> <span class="fu">control_grid</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">save_pred =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">parallel_over =</span> <span class="st">'everything'</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">save_workflow =</span> <span class="cn">TRUE</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p><code>save_pred = TRUE</code>: salva as predições feitas durante o tuning em cada dobra, o que permite gerar gráficos como curva ROC, matriz de confusão e análise de erro depois.</p></li>
+<li><p><code>parallel_over = 'everything'</code>: habilita o uso de <strong>paralelização completa</strong>, ou seja, o R vai tentar usar múltiplos núcleos do processador para acelerar o tuning, paralelizando sobre modelos, dobras e combinações de hiperparâmetros.</p></li>
+<li><p><code>save_workflow = TRUE</code> : salva o <strong>workflow completo</strong> para cada combinação de hiperparâmetros testada, o que permite depois recuperar o modelo treinado com uma configuração específica.</p></li>
+</ul>
+<p>Neste momento, vamos <strong>executar o tuning dos modelos em paralelo</strong>, ou seja, usando todos os núcleos de CPU disponíveis no seu computador menos um, para evitar travar o sistema operacional, o que pode acelerar bastante o processo quando estamos testando muitos modelos e hiperparâmetros.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(<span class="at">cores =</span> <span class="fu">detectCores</span>()<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>grid_resultados <span class="ot">=</span> complete_workflows <span class="sc">%&gt;%</span> </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">workflow_map</span>(</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">resamples =</span> cv_splits,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">grid =</span> <span class="dv">15</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">control =</span> grid_ctrl</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>i Creating pre-processing data to finalize unknown parameter: mtry</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>836.19 sec elapsed</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">stopImplicitCluster</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Note que a <strong>etapa principal</strong>, onde o <code>tidymodels</code> executa todos os workflows definidos, com tuning e validação cruzada está armazenada no objeto <code>grid_resultados</code>. Aqui, a função <code>workflow_map()</code> aplica <code>tune_grid()</code> com 15 combinações aleatórias de hiperparâmetros a cada <code>workflow</code> listado em <code>complete_workflows</code> (que contêm diferentes combinações de modelos e receitas), usando os 10 folds definidos para validação cruzada e as configurações definidas com <code>control_grid()</code> (como salvar predições, paralelizar, etc.). Por fim, finalizamos a paralelização, liberando os núcleos que estavam sendo usados.</p>
+<p>As funções <code>tic()</code> e <code>toc()</code> são do pacote <code>tictoc</code> e servem para medir o tempo de execução de um bloco de código.</p>
+<ul>
+<li><code>tic()</code> inicia o cronômetro;</li>
+<li><code>toc()</code> exibe quanto tempo se passou desde o <code>tic()</code>.</li>
+</ul>
+<section id="visualizando-resultados" class="level3">
+<h3 class="anchored" data-anchor-id="visualizando-resultados">Visualizando resultados</h3>
+<p>Vamos agora <strong>visualizar e explorar os resultados do tuning</strong> de vários modelos no <code>tidymodels</code>, utilizando o objeto <code>grid_resultados</code> gerado com <code>workflow_map()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(grid_resultados)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-17-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- ![](/images/autoplot.png){.nostretch fig-align="center" width="1000px"} -->
+<p>Esse gráfico apresenta os resultados do tuning de múltiplos modelos de classificação, avaliados com base em três métricas: acurácia (painel da esquerda), brier score (painel do meio) e AUC da curva ROC (painel da direita). Cada ponto representa uma combinação de hiperparâmetros testada durante a validação cruzada, e as barras verticais indicam a variabilidade do desempenho entre as dobras da validação cruzada.</p>
+</section>
+<section id="painel-da-esquerda-acurácia" class="level3">
+<h3 class="anchored" data-anchor-id="painel-da-esquerda-acurácia">Painel da esquerda: Acurácia</h3>
+<ul>
+<li><p>Os modelos <strong>Random Forest</strong> (<code>rand_forest</code>, cor azul) estão entre os melhores colocados, com valores de acurácia acima de 0,80 e baixa variabilidade, indicando desempenho estável e alto.</p></li>
+<li><p><strong>Redes Neurais (MLP)</strong> e <strong>Naive Bayes</strong> têm desempenho intermediário, com acurácias entre 0,75 e 0,78.</p></li>
+<li><p>O modelo <strong>KNN</strong> (<code>nearest_neighbor</code>) tem desempenho mais instável e geralmente inferior (acurácia &lt; 0,73), com grande variação entre as dobras.</p></li>
+<li><p>As <strong>Árvores de decisão</strong> (<code>decision_tree</code>) aparece no meio do gráfico, com desempenho moderado e alguma variabilidade.</p></li>
+</ul>
+</section>
+<section id="painel-do-meio-brier-score" class="level3">
+<h3 class="anchored" data-anchor-id="painel-do-meio-brier-score">Painel do meio: Brier Score</h3>
+<ul>
+<li><p>Mede a calibração das probabilidades preditas: quanto menor, melhor.</p></li>
+<li><p><strong>Random Forest</strong> novamente se destaca com os menores valores de Brier Score (ótima calibração).</p></li>
+<li><p><strong>Naive Bayes</strong> e <strong>KNN</strong> apresentam valores mais altos, indicando que as probabilidades previstas são menos confiáveis.</p></li>
+<li><p>A separação é clara: os melhores modelos estão no extremo esquerdo (baixo Brier Score), os piores, no direito.</p></li>
+</ul>
+</section>
+<section id="painel-da-direita-roc-auc" class="level3">
+<h3 class="anchored" data-anchor-id="painel-da-direita-roc-auc">Painel da direita: ROC AUC</h3>
+<ul>
+<li><p>O padrão se repete: <strong>Random Forest</strong> lidera com maior AUC (&gt; 0,88), mostrando excelente capacidade de separação das classes.</p></li>
+<li><p><strong>SVM</strong> e <strong>Redes Neurais</strong> também apresentam bom desempenho com AUC entre 0,83 e 0,86.</p></li>
+<li><p>Novamente, <strong>KNN</strong> aparece entre os piores desempenhos, com AUC abaixo de 0,75 em vários casos.</p></li>
+</ul>
+<p>Podemos gerar um gráfico mais específico que o anterior, focando apenas na métrica de acurácia, exibindo apenas a melhor combinação de hiperparâmetros para cada modelo, tornando a visualização mais limpa.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  grid_resultados,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">rank_metric =</span> <span class="st">"accuracy"</span>,  </span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">metric =</span> <span class="st">"accuracy"</span>,       </span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">select_best =</span> <span class="cn">TRUE</span> </span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- ![](/images/autoplot_acc_best.png){.nostretch fig-align="center" width="1000px"} -->
+<p>Novamente podemos observar que,</p>
+<ul>
+<li><p>O <strong>Random Forest</strong> se destaca como o melhor modelo em termos de acurácia e estabilidade.</p></li>
+<li><p>Modelos simples, como <strong>Naive Bayes</strong> e <strong>Árvore de Decisão</strong>, ainda entregam resultados razoáveis e estáveis.</p></li>
+<li><p>O <strong>KNN</strong>, por outro lado, tem desempenho inferior e alta incerteza, indicando que não é a melhor escolha para esse problema.</p></li>
+<li><p><strong>Redes Neurais</strong> e <strong>SVM</strong> são competitivos, mas com variação nos resultados entre os folds.</p></li>
+</ul>
+</section>
+<section id="avaliando-o-melhor-modelo-no-conjunto-de-testes" class="level3">
+<h3 class="anchored" data-anchor-id="avaliando-o-melhor-modelo-no-conjunto-de-testes">Avaliando o melhor modelo no conjunto de testes</h3>
+<p>Após analisarmos resultados do processo de treinamento, vamos extrair o melhor conjunto de hiperparâmetros para um modelo específico (no caso, o <strong>Random Forest</strong>) com base nos resultados de tuning.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>melhor_modelo <span class="ot">=</span> grid_resultados <span class="sc">%&gt;%</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_workflow_set_result</span>(<span class="st">"randon_forest"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select_best</span>(<span class="at">metric =</span> <span class="st">"accuracy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>O objeto <code>melhor_modelo</code> armazena os melhores hiperparâmetros do Random Forest, segundo a acurácia. Resta-nos agora realizar a etapa final do processo de modelagem preditiva com o modelo Random Forest ajustado, ou seja, finalizar o melhor workflow encontrado durante o tuning e avaliar seu desempenho no conjunto de teste.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>rf_ajustado <span class="ot">=</span> grid_resultados <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">extract_workflow</span>(<span class="st">"randon_forest"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">finalize_workflow</span>(melhor_modelo) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">last_fit</span>(<span class="at">split =</span> splits)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Começamos com o objeto <code>grid_resultados</code>, que contém os resultados de todos os workflows avaliados (modelos + receitas + tuning) e extraímos o workflow do modelo específico chamado <code>"randon_forest"</code>. Com os melhores hiperparâmetros encontrados (armazenados no objeto <code>melhor_modelo</code>), usamos a função <code>finalize_workflow()</code> para inseri-los no workflow. O resultado é um workflow “completo”, pronto para ser treinado e testado usando a função <code>last_fit(split = splits)</code>, que garante que o modelo final seja ajustado com todos os dados de treino disponíveis, sem validação cruzada, e avaliado diretamente no conjunto de teste.</p>
+<p>O objeto <code>rf_ajustado</code> é um objeto de classe <code>fit_resamples</code> com os seguintes elementos:</p>
+<ul>
+<li><p>O modelo Random Forest treinado com os melhores hiperparâmetros;</p></li>
+<li><p>As métricas obtidas no conjunto de teste (como acurácia, AUC, sensibilidade, etc.);</p></li>
+<li><p>As predições feitas no conjunto de teste (útil para gerar curva ROC, matriz de confusão, etc.).</p></li>
+</ul>
+<p>Podemos extrair as predições feitas pelo modelo Random Forest no conjunto de teste, após o ajuste final com <code>last_fit()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>rf_teste_resultados <span class="ot">=</span> rf_ajustado <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">collect_predictions</span>()</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>rf_teste_resultados</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,174 × 7
+   .pred_class .pred_FALSE .pred_TRUE id                .row Transported .config
+   &lt;fct&gt;             &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;            &lt;int&gt; &lt;fct&gt;       &lt;chr&gt;  
+ 1 TRUE             0.0251     0.975  train/test split     1 FALSE       Prepro…
+ 2 FALSE            0.890      0.110  train/test split     4 FALSE       Prepro…
+ 3 TRUE             0.0251     0.975  train/test split    11 TRUE        Prepro…
+ 4 FALSE            0.935      0.0653 train/test split    18 FALSE       Prepro…
+ 5 TRUE             0.0152     0.985  train/test split    19 TRUE        Prepro…
+ 6 TRUE             0.375      0.625  train/test split    20 TRUE        Prepro…
+ 7 TRUE             0.296      0.704  train/test split    24 FALSE       Prepro…
+ 8 TRUE             0.296      0.704  train/test split    27 FALSE       Prepro…
+ 9 TRUE             0.0152     0.985  train/test split    35 TRUE        Prepro…
+10 FALSE            0.950      0.0497 train/test split    40 FALSE       Prepro…
+# ℹ 2,164 more rows</code></pre>
+</div>
+</div>
+<p>O resultado armazenado no objeto <code>rf_teste_resultados</code> é uma tabela com informações úteis para avaliação. Com esse objeto, você pode:</p>
+<ul>
+<li>Gerar uma matriz de confusão:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>rf_teste_resultados <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">conf_mat</span>(<span class="at">truth=</span>Transported, <span class="at">estimate=</span>.pred_class)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction FALSE TRUE
+     FALSE   830  191
+     TRUE    249  904</code></pre>
+</div>
+</div>
+<p>Observamos que:</p>
+<ul>
+<li><p>Verdadeiro Negativo (TN) = 830 → o modelo previu FALSE, e de fato era FALSE.</p></li>
+<li><p>Falso Negativo (FN) = 191 → o modelo previu FALSE, mas era TRUE.</p></li>
+<li><p>Falso Positivo (FP) = 249 → o modelo previu TRUE, mas era FALSE.</p></li>
+<li><p>Verdadeiro Positivo (TP) = 904 → o modelo previu TRUE, e de fato era TRUE.</p></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Calcular métricas de avaliação:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>rf_teste_resultados <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">conf_mat</span>(<span class="at">truth=</span>Transported, <span class="at">estimate=</span>.pred_class) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 3
+   .metric              .estimator .estimate
+   &lt;chr&gt;                &lt;chr&gt;          &lt;dbl&gt;
+ 1 accuracy             binary         0.798
+ 2 kap                  binary         0.595
+ 3 sens                 binary         0.769
+ 4 spec                 binary         0.826
+ 5 ppv                  binary         0.813
+ 6 npv                  binary         0.784
+ 7 mcc                  binary         0.596
+ 8 j_index              binary         0.595
+ 9 bal_accuracy         binary         0.797
+10 detection_prevalence binary         0.470
+11 precision            binary         0.813
+12 recall               binary         0.769
+13 f_meas               binary         0.790</code></pre>
+</div>
+</div>
+<p>Observamos que:</p>
+<ul>
+<li><p>O modelo apresenta um desempenho robusto e equilibrado, com sensibilidade e especificidade próximas (77% e 83%, respectivamente), o que é positivo quando ambos os tipos de erro (falsos positivos e falsos negativos) têm importância.</p></li>
+<li><p>O índice de Kappa (0,595) e o MCC (0,596) confirmam que o modelo está performando de forma significativamente melhor do que o acaso.</p></li>
+<li><p>A precisão (PPV) e o valor preditivo negativo (NPV) também estão acima de 78%, indicando confiança nas predições positivas e negativas.</p></li>
+<li><p>O Youden’s J index (~0,595) sugere que o modelo é bom em separar as duas classes.</p></li>
+<li><p>A acurácia balanceada é quase idêntica à acurácia simples, o que indica que as classes estão relativamente equilibradas ou que o modelo não está tendencioso.</p></li>
+</ul>
+<p><br></p>
+<ul>
+<li>Construir uma curva ROC:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>rf_teste_resultados <span class="sc">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_curve</span>(.pred_FALSE,<span class="at">truth =</span> Transported) <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>rf_teste_resultados <span class="sc">%&gt;%</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_auc</span>(.pred_FALSE,<span class="at">truth =</span> Transported) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric .estimator .estimate
+  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt;
+1 roc_auc binary         0.871</code></pre>
+</div>
+</div>
+<p>Note que a curva ROC do seu modelo está bem acima da linha diagonal, o que indica que ele tem bom poder discriminativo. O valor da métrica <code>roc_auc</code> (Área sob a Curva ROC) apresentado é 0,871. Isso indica que o modelo possui excelente capacidade discriminativa, ou seja, ele consegue distinguir com alta precisão entre as classes positivas (transportados) e negativas (não transportados).</p>
+<p>Na etapa final da nossa análise, utilizamos as <strong>curvas de ganho acumulado</strong> e <strong>curva lift</strong> para avaliar a capacidade do modelo <code>Random Forest</code> em identificar corretamente os passageiros que seriam transportados, priorizando aqueles com maior probabilidade prevista. A <strong>curva de ganho acumulado</strong> nos mostra, de forma intuitiva, o quanto o modelo consegue capturar dos casos positivos à medida que aumentamos a proporção da amostra analisada. Já a <strong>curva lift</strong> indica o quanto o modelo é mais eficaz do que uma seleção aleatória em identificar corretamente os casos de interesse nos percentis superiores da base. Essas curvas são especialmente úteis em contextos de priorização, como marketing, crédito e saúde, pois evidenciam o valor prático do modelo ao permitir ações mais eficazes com base nas previsões geradas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>rf_teste_resultados <span class="sc">%&gt;%</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gain_curve</span>(<span class="at">truth =</span> Transported, .pred_FALSE) <span class="sc">%&gt;%</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>() <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Curva de Ganho Acumulado - Random Forest"</span>,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Proporção da Amostra"</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Proporção de Positivos Acumulados"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A curva de ganho acumulado mostra o desempenho do modelo Random Forest em identificar corretamente os passageiros transportados (classe positiva) ao longo de diferentes proporções da amostra classificada com maior probabilidade. No início do gráfico, a curva cresce de forma ligeiramente superior à linha de referência aleatória (a diagonal da área sombreada), indicando que o modelo consegue capturar mais passageiros transportados do que o acaso. À medida que mais indivíduos são incluídos na amostra (avançando no eixo X), a curva mantém um crescimento constante, mas sem uma inclinação muito acentuada. Isso sugere que o modelo consegue priorizar positivamente os casos, mas sem uma separação muito forte entre as classes. Ao atingir cerca de 75% da amostra, o modelo já identificou aproximadamente 90% dos passageiros realmente transportados, o que representa uma vantagem sobre uma seleção aleatória, embora não seja uma curva altamente eficiente (ela não se destaca muito da diagonal). Nos percentis finais (acima de 90% da amostra), a curva se aproxima de 100% dos positivos, como esperado, já que toda a amostra é considerada. A região acima da linha diagonal (no topo da área sombreada) representa a performance máxima possível que um modelo ideal poderia atingir.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>rf_teste_resultados <span class="sc">%&gt;%</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lift_curve</span>(<span class="at">truth =</span> Transported, .pred_FALSE) <span class="sc">%&gt;%</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autoplot</span>() <span class="sc">+</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Curva Lift - Random Forest"</span>,</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Proporção da Amostra"</span>,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Lift"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>O gráfico mostra o desempenho do modelo Random Forest em termos de lift, ou seja, o quanto o modelo melhora a identificação de passageiros transportados (classe positiva) em relação a uma seleção aleatória. Podemos observar que, nos primeiros percentis (até aproximadamente 5% da amostra), o modelo apresenta um lift superior a 2,0, o que significa que, entre os primeiros 5% dos indivíduos com maior probabilidade prevista de transporte, o modelo está encontrando mais que o dobro de positivos em comparação ao acaso. Há uma pequena oscilação inicial, típica de amostras muito pequenas, mas ainda dentro de um bom desempenho. A medida que são apresentados mais indivíduos ao modelo, o lift permanece acima de 1,5, indicando que o modelo continua sendo significativamente melhor que o aleatório. A curva mostra uma queda suave e contínua, indicando que o modelo perde gradualmente poder de discriminação ao incluir observações com menor probabilidade prevista. Observamos ainda que, após 75% da amostra ser apresentada, o lift se aproxima de 1,0, o que indica que, nesse ponto, o modelo não está mais distinguindo bem entre positivos e negativos. Esse comportamento é esperado, pois quando toda a base é considerada, a proporção de positivos reflete a prevalência real e o modelo se equivale ao acaso.</p>
+<p>Com base nas curvas de ganho acumulado e curva lift apresentadas, é possível concluir que o modelo Random Forest demonstra um desempenho razoável e consistente, especialmente quando o objetivo é priorizar corretamente os passageiros que seriam transportados (classe positiva) entre os primeiros percentis da amostra. O Random Forest apresenta um bom poder de priorização nos percentis iniciais, o que o torna útil para aplicações que exigem foco em uma parte mais restrita da população (por exemplo, campanhas, triagens ou alocação de recursos). Embora não seja um modelo perfeito, ele supera o acaso com folga e fornece valor preditivo prático, especialmente em contextos onde é importante identificar rapidamente os indivíduos mais prováveis de serem positivos.</p>
+</section>
+</section>
+<section id="como-as-variáveis-influenciam-as-decisões" class="level2">
+<h2 class="anchored" data-anchor-id="como-as-variáveis-influenciam-as-decisões">Como as variáveis influenciam as decisões?</h2>
+<p>Após treinarmos e avaliarmos o modelo Random Forest, uma etapa essencial é entender como ele está tomando suas decisões. Para isso, utilizamos os valores SHAP (SHapley Additive exPlanations), uma técnica de interpretabilidade que nos permite quantificar a contribuição de cada variável para a predição de cada observação individual.</p>
+<p>A ideia é responder perguntas como:</p>
+<ul>
+<li><p>Quais variáveis mais influenciaram a previsão de que um passageiro seria transportado?</p></li>
+<li><p>Em que medida cada característica aumentou ou diminuiu essa probabilidade?</p></li>
+</ul>
+<p>Neste exemplo, utilizamos o pacote <code>shapviz</code>, que facilita o uso de SHAP em modelos do tidymodels, e a função <code>kernelshap()</code>, que é compatível com modelos como o Random Forest. Aplicamos o pré-processamento usado no treinamento, extraímos o modelo ajustado e selecionamos uma amostra aleatória dos dados como base de referência para calcular os valores SHAP.</p>
+<p>Com isso, conseguimos produzir visualizações que mostram tanto a importância global das variáveis quanto explicações locais, observação por observação. Isso nos ajuda a confiar mais no modelo, a identificar padrões importantes e até a comunicar melhor os resultados para públicos não técnicos.</p>
+<p>A seguir, aplicamos o código que prepara e calcula os valores SHAP para nosso modelo Random Forest.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>rf_fit <span class="ot">=</span> <span class="fu">extract_fit_parsnip</span>(rf_ajustado)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>dadosP <span class="ot">=</span> <span class="fu">bake</span>(<span class="fu">prep</span>(zv_recipe), dados_treino)<span class="sc">%&gt;%</span> dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">'Transported'</span>))</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>background_data <span class="ot">=</span> dadosP[<span class="fu">sample</span>(<span class="fu">nrow</span>(dadosP), <span class="dv">50</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">registerDoParallel</span>(<span class="at">cores =</span> <span class="fu">detectCores</span>()<span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>shap_values <span class="ot">=</span> <span class="fu">kernelshap</span>(rf_fit,dadosP, <span class="at">bg_X =</span> background_data, <span class="at">type =</span> <span class="st">"prob"</span>, <span class="at">parallel =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Kernel SHAP values by the hybrid strategy of degree 2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1451.75 sec elapsed</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">stopImplicitCluster</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A função <code>shapviz()</code> transforma os valores SHAP calculados com <code>kernelshap()</code> em um objeto que pode ser facilmente explorado e visualizado.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>sv <span class="ot">=</span> <span class="fu">shapviz</span>(shap_values, <span class="at">which_class =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A função <code>sv_importance()</code> faz parte do pacote <code>shapviz</code> e é usada para extrair a importância das variáveis com base nos valores SHAP.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sv_importance</span>(sv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Esse gráfico exibe a importância global das variáveis para o modelo Random Forest com base nos valores SHAP, medidos pela média dos valores absolutos de SHAP de cada variável. Note que <code>despesasSuperfluas</code> é, de longe, a variável mais influente no modelo, com um valor médio de SHAP superior a 0.15. Isso indica que ela tem grande poder discriminativo para prever se um passageiro foi transportado ou não. <code>despesasBasicas</code>, <code>HomePlanet</code> e <code>IsEarth</code> também têm papel importante, mas com impacto consideravelmente menor.</p>
+<p>Variáveis como <code>PassengerId</code> e <code>Name</code> apresentam importância quase nula, sugerindo que não contribuem significativamente para as decisões do modelo (o que é esperado, pois são mais identificadores do que variáveis explicativas). Variáveis relacionadas ao conforto da viagem (<code>RoomService</code>, <code>Spa</code>, <code>ShoppingMall</code>, etc.) têm impacto moderado, o que faz sentido em um contexto onde o perfil de consumo pode indicar o comportamento do passageiro.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sv_importance</span>(sv, <span class="at">kind =</span> <span class="st">"bee"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Uma alternativa ao gráfico é o <code>beeswarm plot</code> de valores SHAP, gerado a partir da função <code>shapviz()</code> com <code>kind = "beeswarm"</code>. Ele fornece uma visão detalhada sobre como cada variável influenciou as previsões do modelo Random Forest para diferentes observações. Podemos observar que quanto maiores os gastos com despesas supérfluas (pontos mais claros), maior a contribuição positiva para a previsão da classe positiva. Isso sugere que passageiros com altos gastos têm maior chance de serem transportados. A variável <code>despesasBasicas</code> também influencia positivamente, mas com menor impacto e menor dispersão. Além disso,</p>
+<ul>
+<li><p><code>HomePlanet</code> e <code>IsEarth</code>: mostram variação relevante, com valores altos (ou baixos, dependendo da codificação) puxando o SHAP para direções opostas.</p></li>
+<li><p><code>CryoSleep</code>, <code>CabinDeck</code>, <code>VRDeck</code>, <code>ShoppingMall</code>, <code>Spa</code>, etc.: têm efeitos mais variados. Em alguns indivíduos aumentam a probabilidade de transporte, em outros diminuem. Isso indica interações complexas com o desfecho.</p></li>
+<li><p><code>PassengerId</code> e <code>Name</code>: praticamente não afetam a predição (como esperado), com valores SHAP próximos de zero.</p></li>
+</ul>
+<p>A função <code>sv_dependence(sv, "despesasSuperfluas")</code> gera um gráfico de dependência SHAP para a variável <code>despesasSuperfluas</code>. Esse tipo de gráfico ajuda a visualizar como os valores dessa variável impactam as previsões do modelo em termos dos valores SHAP.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sv_dependence</span>(sv, <span class="st">"despesasSuperfluas"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-33-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>O gráfico apresentado é uma curva de dependência SHAP para a variável <code>despesasSuperfluas</code>, com os pontos coloridos de acordo com a variável categórica <code>IsEarth</code>. Ele nos permite entender:</p>
+<ul>
+<li><p><strong>Correlação positiva geral:</strong> Conforme o valor de <code>despesasSuperfluas</code> aumenta, os valores SHAP também aumentam. Isso indica que gastos maiores com itens supérfluos aumentam a probabilidade de o modelo prever que o passageiro foi transportado.</p></li>
+<li><p><strong>Interação com a variável <code>IsEarth</code>:</strong> Passageiros que não estavam na Terra (roxos) apresentam, em geral, valores SHAP mais altos para os mesmos níveis de <code>despesasSuperfluas</code>, especialmente para valores médios e altos (acima de 2,5). Já os passageiros vindos da Terra (amarelos) têm valores SHAP consistentemente mais baixos, mesmo quando gastam bastante. Isso sugere que a origem do passageiro influencia a interpretação do modelo sobre o efeito do gasto supérfluo: Gastar com supérfluos tem mais peso positivo para prever transporte quando o passageiro não vem da Terra.</p></li>
+<li><p><strong>Região de baixo gasto (próxima a 0):</strong> Para valores baixos de <code>despesasSuperfluas</code>, os valores SHAP são geralmente negativos (efeito desfavorável na previsão). A distinção entre <code>IsEarth = 0</code> e <code>IsEarth = 1</code> é menos clara nesse intervalo, indicando que o impacto da origem do passageiro é mais evidente após certo nível de gasto.</p></li>
+</ul>
+<p>Sendo assim, o gráfico mostra que o modelo Random Forest está capturando uma interação relevante entre o local de origem (<code>IsEarth</code>) e o padrão de gasto com supérfluos. Em termos práticos:</p>
+<blockquote class="blockquote">
+<p>Gastos supérfluos são um indicativo importante de transporte, mas o peso dessa informação depende da origem do passageiro.</p>
+</blockquote>
+</section>
+<section id="e-se-quisermos-saber-sobre-uma-predição-específica" class="level2">
+<h2 class="anchored" data-anchor-id="e-se-quisermos-saber-sobre-uma-predição-específica">E se quisermos saber sobre uma predição específica?</h2>
+<p>Discutir a importância local das variáveis em modelos preditivos é fundamental para entender por que o modelo tomou determinada decisão para um passageiro específico da base de dados Space Titanic.</p>
+<p>Enquanto a <strong>importância global</strong> nos mostra, em média, quais variáveis mais influenciam o modelo em todo o conjunto de dados, a <strong>importância local</strong> revela, por exemplo, por que o modelo classificou um determinado passageiro como “transportado” ou “não transportado”. Isso permite identificar quais fatores individuais, como gastos em serviços de bordo, planeta de origem ou cabine, foram decisivos para a predição daquele passageiro.</p>
+<p>Essa análise é especialmente útil para investigar casos específicos, avaliar possíveis vieses e construir explicações mais transparentes e confiáveis, fundamentais quando se deseja interpretar o comportamento do modelo de forma personalizada.</p>
+<p>Uma maneira eficaz de explorar a importância local é utilizando a função <code>sv_force()</code>, do pacote <code>shapviz</code>. Esse comando gera uma visualização conhecida como gráfico de força (<code>force plot</code>), que mostra, de forma intuitiva, como cada variável contribuiu para aumentar ou diminuir a probabilidade de o modelo prever que esse passageiro seria transportado. Suponha que desejamos entender por que o indivíduo de número 10 em nossa amostra foi classificado como transportado (<code>Transported = TRUE</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sv_force</span>(sv[<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-34-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Podemos observar que:</p>
+<ul>
+<li><p><code>E[f(x)] = 0,523</code>: é o valor de predição médio do modelo, ou seja, a probabilidade média de transporte considerando todos os passageiros.</p></li>
+<li><p><code>f(x) = 0,892</code>: é a probabilidade prevista pelo modelo para este passageiro em específico. Isso significa que o modelo prevê que esse indivíduo tem 89,2% de chance de ser transportado.</p></li>
+<li><p>As setas amarelas representam o impacto de cada variável no deslocamento do valor médio (<code>E[f(x)]</code>) até o valor final previsto (<code>f(x)</code>):</p>
+<ul>
+<li><code>despesasSuperfluas = 3</code> → +0,126. A principal contribuição positiva: o gasto com despesas supérfluas elevou significativamente a previsão.</li>
+<li><code>Spa = 3</code> → +0,0766. Gastos com o spa também influenciaram fortemente para aumentar a probabilidade de transporte.</li>
+<li><code>8 other features</code> → +0,0502. Um conjunto de outras variáveis teve um pequeno efeito somado.</li>
+<li><code>despesasBasicas = 2,35</code> → +0,0483. Essa variável contribuiu positivamente, aumentando um pouco a probabilidade.</li>
+<li><code>IsEarth = 1</code> → +0,0412. Indica que o fato do passageiro ser da Terra teve efeito positivo na previsão.</li>
+<li><code>HomePlanet = Earth</code> → +0,0265. Aparece como fator categórico reforçando a influência acima.</li>
+</ul></li>
+</ul>
+<p>O gráfico abaixo representa a mesma ideia, com visual mais sequencial: da base média do modelo até a previsão individual.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sv_waterfall</span>(sv[<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_workflow_files/figure-html/unnamed-chunk-35-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>O modelo considera que esse passageiro tem fortes indícios de ter sido transportado, principalmente devido a altos gastos com despesas supérfluas e uso do Spa, o que pode estar associado a um perfil mais voltado ao conforto e luxo, possivelmente correlacionado com a experiência de transporte no espaço. A explicação é individualizada, o que permite entender com transparência por que esse caso específico foi classificado dessa forma.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("http:\/\/professortp\.com\.br\/est1125\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Copyright 2025, Tiago Pereira</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/tiagomartin/est125/edit/main/analise_dados/space_titanic_workflow.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est125/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Página construída usando <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

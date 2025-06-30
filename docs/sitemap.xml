@@ -66,7 +66,7 @@
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/analise_dados/space_titanic.html</loc>
-    <lastmod>2025-06-03T16:55:38.454Z</lastmod>
+    <lastmod>2025-06-28T14:55:52.711Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est1125/aulas/Analise_preditiva/python-env/Lib/site-packages/numpy/random/LICENSE.html</loc>
@@ -119,5 +119,9 @@
   <url>
     <loc>http://professortp.com.br/est1125/programacao/semana-8.html</loc>
     <lastmod>2025-06-23T22:18:16.796Z</lastmod>
+  </url>
+  <url>
+    <loc>http://professortp.com.br/est1125/analise_dados/space_titanic_workflow.html</loc>
+    <lastmod>2025-06-30T01:20:31.155Z</lastmod>
   </url>
 </urlset>

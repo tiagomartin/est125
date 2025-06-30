@@ -40,7 +40,7 @@ O conjunto de dados refere-se aos registros pessoais de cerca de 8700 passageiro
 
 -   **Transported** - Se o passageiro foi transportado para outra dimensão. Este é o alvo, a coluna que você está tentando prever.
 
-Apesar desse conjunto de dados destinar-se ao aprendizado de máquina supervisionado, faremos, neste *sript*, apenas a parte de pré-processamento, incluindo algumas análises exploratórias. Tentaremos responder às seguintes questões:
+Apesar desse conjunto de dados destinar-se ao aprendizado de máquina supervisionado, faremos, neste *script*, apenas a parte de pré-processamento, incluindo algumas análises exploratórias. Tentaremos responder às seguintes questões:
 
   - De onde vieram os passageiros e qual a relação disso com ser transportado ou não?
   - Em que cabine estavam os passageiros e qual a relação disso com ser transportado ou não?
