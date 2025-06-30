@@ -583,5 +583,3 @@ sv_waterfall(sv[10])
 ```
 
 O modelo considera que esse passageiro tem fortes indícios de ter sido transportado, principalmente devido a altos gastos com despesas supérfluas e uso do Spa, o que pode estar associado a um perfil mais voltado ao conforto e luxo, possivelmente correlacionado com a experiência de transporte no espaço. A explicação é individualizada, o que permite entender com transparência por que esse caso específico foi classificado dessa forma.
-
-
