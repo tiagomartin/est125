@@ -188,49 +188,49 @@ A diretoria precisa de resultados acionáveis. Sua análise poderá influenciar 
 ## 🎯 Fase 3: Construção e Avaliação de Modelos Preditivos
 
 
-<!-- ### 🔍 Objetivo -->
+### 🔍 Objetivo
 
-<!-- Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (*churn*) com base nos dados históricos fornecidos pela ConecteMais Corp. O foco é prever o valor da variável `Churn Label`, usando as demais variáveis como preditoras. -->
-
-
-<!-- ### 🧠 Tarefas e Desafios Propostos -->
-
-<!-- - Identificar quais variáveis são mais relevantes para prever a saída de clientes; -->
-
-<!-- - Lidar com dados desbalanceados (caso a proporção entre *churn* e não *churn* seja desigual); -->
-
-<!-- - Comparar diferentes algoritmos de classificação; -->
-
-<!-- - Ajustar e validar os modelos com critérios adequados. -->
+Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (*churn*) com base nos dados históricos fornecidos pela ConecteMais Corp. O foco é prever o valor da variável `Churn Label`, usando as demais variáveis como preditoras.
 
 
-<!-- ### 🤔 Questões para Discussão e Resolução: -->
+### 🧠 Tarefas e Desafios Propostos
 
-<!-- 1) Divisão e Estratégia de Validação: -->
+- Identificar quais variáveis são mais relevantes para prever a saída de clientes;
 
-<!--   - Considerando a variável alvo `Churn Label` e o provável desbalanceamento de classes (menos clientes dão *churn* do que permanecem), qual a melhor estratégia para dividir o conjunto de dados em treino e teste? Justifiquem a escolha (ex: amostragem estratificada, proporções). -->
+- Lidar com dados desbalanceados (caso a proporção entre *churn* e não *churn* seja desigual);
 
-<!--   - Além da divisão inicial, qual técnica de validação cruzada (ex: K-Fold Cross-Validation, Stratified K-Fold) vocês recomendariam para obter uma avaliação mais robusta do desempenho do modelo e por quê? -->
+- Comparar diferentes algoritmos de classificação;
 
-
-<!-- 2) Seleção e Treinamento de Modelos: -->
-
-<!--   - Sugiram dois algoritmos de classificação supervisionada diferentes que seriam adequados para prever o *churn*. Para cada algoritmo, expliquem brevemente por que ele é uma boa escolha para este problema de negócio e quais suas principais vantagens e desvantagens. -->
-
-<!--   - Ao treinar os modelos, quais seriam as considerações iniciais em termos de uso de algoritmos sensíveis à escala (necessidade de padronização/normalização das features numéricas)? -->
-
-<!-- 3) Métricas de Avaliação para Churn: -->
-
-<!--   - A diretoria da ConecteMais está muito interessada em identificar os clientes que realmente vão sair para intervir proativamente. Quais duas métricas de avaliação vocês consideram as mais importantes para medir o sucesso do modelo de *churn*, dado esse objetivo? Justifiquem a escolha de cada métrica e expliquem o que elas representam no contexto de previsão de *churn*. -->
-
-<!--   - Como a curva ROC e a AUC (Area Under the Curve) poderiam ser utilizadas para avaliar a capacidade do modelo de distinguir entre clientes que dão *churn* e os que não dão? -->
+- Ajustar e validar os modelos com critérios adequados.
 
 
-<!-- 4) Otimização e Interpretabilidade: -->
+### 🤔 Questões para Discussão e Resolução:
 
-<!--   - Após o treinamento inicial, o modelo pode não atingir a performance desejada. Quais seriam as duas principais estratégias para otimizar o desempenho do modelo (ex: ajuste de hiperparâmetros, engenharia de features, seleção de features)? Descrevam como essas estratégias seriam aplicadas. -->
+1) Divisão e Estratégia de Validação:
 
-<!--   - Assumindo que o modelo escolhido é um "black-box" (como uma Floresta Aleatória ou uma Rede Neural), como vocês poderiam apresentar insights sobre as variáveis mais importantes que influenciam o *churn* para a Sra. Ana Paula e o Sr. João Silva? Mencionem pelo menos uma técnica de interpretabilidade que poderia ser utilizada. -->
+  - Considerando a variável alvo `Churn Label` e o provável desbalanceamento de classes (menos clientes dão *churn* do que permanecem), qual a melhor estratégia para dividir o conjunto de dados em treino e teste? Justifiquem a escolha (ex: amostragem estratificada, proporções).
+
+  - Além da divisão inicial, qual técnica de validação cruzada (ex: K-Fold Cross-Validation, Stratified K-Fold) vocês recomendariam para obter uma avaliação mais robusta do desempenho do modelo e por quê?
+
+
+2) Seleção e Treinamento de Modelos:
+
+  - Sugiram dois algoritmos de classificação supervisionada diferentes que seriam adequados para prever o *churn*. Para cada algoritmo, expliquem brevemente por que ele é uma boa escolha para este problema de negócio e quais suas principais vantagens e desvantagens.
+
+  - Ao treinar os modelos, quais seriam as considerações iniciais em termos de uso de algoritmos sensíveis à escala (necessidade de padronização/normalização das features numéricas)?
+
+3) Métricas de Avaliação para Churn:
+
+  - A diretoria da ConecteMais está muito interessada em identificar os clientes que realmente vão sair para intervir proativamente. Quais duas métricas de avaliação vocês consideram as mais importantes para medir o sucesso do modelo de *churn*, dado esse objetivo? Justifiquem a escolha de cada métrica e expliquem o que elas representam no contexto de previsão de *churn*.
+
+  - Como a curva ROC e a AUC (Area Under the Curve) poderiam ser utilizadas para avaliar a capacidade do modelo de distinguir entre clientes que dão *churn* e os que não dão?
+
+
+4) Otimização e Interpretabilidade:
+
+  - Após o treinamento inicial, o modelo pode não atingir a performance desejada. Quais seriam as duas principais estratégias para otimizar o desempenho do modelo (ex: ajuste de hiperparâmetros, engenharia de features, seleção de features)? Descrevam como essas estratégias seriam aplicadas.
+
+  - Assumindo que o modelo escolhido é um "black-box" (como uma Floresta Aleatória ou uma Rede Neural), como vocês poderiam apresentar insights sobre as variáveis mais importantes que influenciam o *churn* para a Sra. Ana Paula e o Sr. João Silva? Mencionem pelo menos uma técnica de interpretabilidade que poderia ser utilizada.
   
   
 ## 🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes

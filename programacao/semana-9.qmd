@@ -1,0 +1,16 @@
+---
+title: "Semana 09"
+---
+
+
+## Script pré-processamento usando a base de dados Space Titanic no R
+
+{{< fa brands r-project size=lg >}} [Construindo workflows preditivos usando a base de dados Space Titanic](/analise_dados/space_titanic_workflow.html "Script análise de dados"){aria-label="Script análise de dados"}
+
+<!-- ## Slides -->
+
+<!-- {{< fa file-powerpoint size=lg >}} [Análise preditiva](/aulas/Analise_preditiva/preditiva.html "Análise preditiva"){aria-label="Análise preditiva"} -->
+
+## Projeto
+
+{{< fa list-check size=lg >}} [Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 3](/projeto/projeto_avaliativo.html#fase-3-construção-e-avaliação-de-modelos-preditivos "Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 3"){aria-label="Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 3"}

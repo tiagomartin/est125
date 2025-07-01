@@ -340,7 +340,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tarefas-e-desafios-propostos-1" id="toc-tarefas-e-desafios-propostos-1" class="nav-link" data-scroll-target="#tarefas-e-desafios-propostos-1">🧠 Tarefas e Desafios Propostos</a></li>
   <li><a href="#questões-para-discussão-e-resolução" id="toc-questões-para-discussão-e-resolução" class="nav-link" data-scroll-target="#questões-para-discussão-e-resolução">🤔 Questões para Discussão e Resolução:</a></li>
   </ul></li>
-  <li><a href="#fase-3-construção-e-avaliação-de-modelos-preditivos" id="toc-fase-3-construção-e-avaliação-de-modelos-preditivos" class="nav-link" data-scroll-target="#fase-3-construção-e-avaliação-de-modelos-preditivos">🎯 Fase 3: Construção e Avaliação de Modelos Preditivos</a></li>
+  <li><a href="#fase-3-construção-e-avaliação-de-modelos-preditivos" id="toc-fase-3-construção-e-avaliação-de-modelos-preditivos" class="nav-link" data-scroll-target="#fase-3-construção-e-avaliação-de-modelos-preditivos">🎯 Fase 3: Construção e Avaliação de Modelos Preditivos</a>
+  <ul class="collapse">
+  <li><a href="#objetivo-1" id="toc-objetivo-1" class="nav-link" data-scroll-target="#objetivo-1">🔍 Objetivo</a></li>
+  <li><a href="#tarefas-e-desafios-propostos-2" id="toc-tarefas-e-desafios-propostos-2" class="nav-link" data-scroll-target="#tarefas-e-desafios-propostos-2">🧠 Tarefas e Desafios Propostos</a></li>
+  <li><a href="#questões-para-discussão-e-resolução-1" id="toc-questões-para-discussão-e-resolução-1" class="nav-link" data-scroll-target="#questões-para-discussão-e-resolução-1">🤔 Questões para Discussão e Resolução:</a></li>
+  </ul></li>
   <li><a href="#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes" id="toc-fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes" class="nav-link" data-scroll-target="#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes">🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes</a></li>
   <li><a href="#fase-5-construção-de-um-sistema-de-recomendação" id="toc-fase-5-construção-de-um-sistema-de-recomendação" class="nav-link" data-scroll-target="#fase-5-construção-de-um-sistema-de-recomendação">🧺 Fase 5: Construção de um Sistema de Recomendação</a></li>
   </ul>
@@ -526,26 +531,50 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="fase-3-construção-e-avaliação-de-modelos-preditivos" class="level2">
 <h2 class="anchored" data-anchor-id="fase-3-construção-e-avaliação-de-modelos-preditivos">🎯 Fase 3: Construção e Avaliação de Modelos Preditivos</h2>
-<!-- ### 🔍 Objetivo -->
-<!-- Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (*churn*) com base nos dados históricos fornecidos pela ConecteMais Corp. O foco é prever o valor da variável `Churn Label`, usando as demais variáveis como preditoras. -->
-<!-- ### 🧠 Tarefas e Desafios Propostos -->
-<!-- - Identificar quais variáveis são mais relevantes para prever a saída de clientes; -->
-<!-- - Lidar com dados desbalanceados (caso a proporção entre *churn* e não *churn* seja desigual); -->
-<!-- - Comparar diferentes algoritmos de classificação; -->
-<!-- - Ajustar e validar os modelos com critérios adequados. -->
-<!-- ### 🤔 Questões para Discussão e Resolução: -->
-<!-- 1) Divisão e Estratégia de Validação: -->
-<!--   - Considerando a variável alvo `Churn Label` e o provável desbalanceamento de classes (menos clientes dão *churn* do que permanecem), qual a melhor estratégia para dividir o conjunto de dados em treino e teste? Justifiquem a escolha (ex: amostragem estratificada, proporções). -->
-<!--   - Além da divisão inicial, qual técnica de validação cruzada (ex: K-Fold Cross-Validation, Stratified K-Fold) vocês recomendariam para obter uma avaliação mais robusta do desempenho do modelo e por quê? -->
-<!-- 2) Seleção e Treinamento de Modelos: -->
-<!--   - Sugiram dois algoritmos de classificação supervisionada diferentes que seriam adequados para prever o *churn*. Para cada algoritmo, expliquem brevemente por que ele é uma boa escolha para este problema de negócio e quais suas principais vantagens e desvantagens. -->
-<!--   - Ao treinar os modelos, quais seriam as considerações iniciais em termos de uso de algoritmos sensíveis à escala (necessidade de padronização/normalização das features numéricas)? -->
-<!-- 3) Métricas de Avaliação para Churn: -->
-<!--   - A diretoria da ConecteMais está muito interessada em identificar os clientes que realmente vão sair para intervir proativamente. Quais duas métricas de avaliação vocês consideram as mais importantes para medir o sucesso do modelo de *churn*, dado esse objetivo? Justifiquem a escolha de cada métrica e expliquem o que elas representam no contexto de previsão de *churn*. -->
-<!--   - Como a curva ROC e a AUC (Area Under the Curve) poderiam ser utilizadas para avaliar a capacidade do modelo de distinguir entre clientes que dão *churn* e os que não dão? -->
-<!-- 4) Otimização e Interpretabilidade: -->
-<!--   - Após o treinamento inicial, o modelo pode não atingir a performance desejada. Quais seriam as duas principais estratégias para otimizar o desempenho do modelo (ex: ajuste de hiperparâmetros, engenharia de features, seleção de features)? Descrevam como essas estratégias seriam aplicadas. -->
-<!--   - Assumindo que o modelo escolhido é um "black-box" (como uma Floresta Aleatória ou uma Rede Neural), como vocês poderiam apresentar insights sobre as variáveis mais importantes que influenciam o *churn* para a Sra. Ana Paula e o Sr. João Silva? Mencionem pelo menos uma técnica de interpretabilidade que poderia ser utilizada. -->
+<section id="objetivo-1" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-1">🔍 Objetivo</h3>
+<p>Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (<em>churn</em>) com base nos dados históricos fornecidos pela ConecteMais Corp.&nbsp;O foco é prever o valor da variável <code>Churn Label</code>, usando as demais variáveis como preditoras.</p>
+</section>
+<section id="tarefas-e-desafios-propostos-2" class="level3">
+<h3 class="anchored" data-anchor-id="tarefas-e-desafios-propostos-2">🧠 Tarefas e Desafios Propostos</h3>
+<ul>
+<li><p>Identificar quais variáveis são mais relevantes para prever a saída de clientes;</p></li>
+<li><p>Lidar com dados desbalanceados (caso a proporção entre <em>churn</em> e não <em>churn</em> seja desigual);</p></li>
+<li><p>Comparar diferentes algoritmos de classificação;</p></li>
+<li><p>Ajustar e validar os modelos com critérios adequados.</p></li>
+</ul>
+</section>
+<section id="questões-para-discussão-e-resolução-1" class="level3">
+<h3 class="anchored" data-anchor-id="questões-para-discussão-e-resolução-1">🤔 Questões para Discussão e Resolução:</h3>
+<ol type="1">
+<li>Divisão e Estratégia de Validação:</li>
+</ol>
+<ul>
+<li><p>Considerando a variável alvo <code>Churn Label</code> e o provável desbalanceamento de classes (menos clientes dão <em>churn</em> do que permanecem), qual a melhor estratégia para dividir o conjunto de dados em treino e teste? Justifiquem a escolha (ex: amostragem estratificada, proporções).</p></li>
+<li><p>Além da divisão inicial, qual técnica de validação cruzada (ex: K-Fold Cross-Validation, Stratified K-Fold) vocês recomendariam para obter uma avaliação mais robusta do desempenho do modelo e por quê?</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Seleção e Treinamento de Modelos:</li>
+</ol>
+<ul>
+<li><p>Sugiram dois algoritmos de classificação supervisionada diferentes que seriam adequados para prever o <em>churn</em>. Para cada algoritmo, expliquem brevemente por que ele é uma boa escolha para este problema de negócio e quais suas principais vantagens e desvantagens.</p></li>
+<li><p>Ao treinar os modelos, quais seriam as considerações iniciais em termos de uso de algoritmos sensíveis à escala (necessidade de padronização/normalização das features numéricas)?</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Métricas de Avaliação para Churn:</li>
+</ol>
+<ul>
+<li><p>A diretoria da ConecteMais está muito interessada em identificar os clientes que realmente vão sair para intervir proativamente. Quais duas métricas de avaliação vocês consideram as mais importantes para medir o sucesso do modelo de <em>churn</em>, dado esse objetivo? Justifiquem a escolha de cada métrica e expliquem o que elas representam no contexto de previsão de <em>churn</em>.</p></li>
+<li><p>Como a curva ROC e a AUC (Area Under the Curve) poderiam ser utilizadas para avaliar a capacidade do modelo de distinguir entre clientes que dão <em>churn</em> e os que não dão?</p></li>
+</ul>
+<ol start="4" type="1">
+<li>Otimização e Interpretabilidade:</li>
+</ol>
+<ul>
+<li><p>Após o treinamento inicial, o modelo pode não atingir a performance desejada. Quais seriam as duas principais estratégias para otimizar o desempenho do modelo (ex: ajuste de hiperparâmetros, engenharia de features, seleção de features)? Descrevam como essas estratégias seriam aplicadas.</p></li>
+<li><p>Assumindo que o modelo escolhido é um “black-box” (como uma Floresta Aleatória ou uma Rede Neural), como vocês poderiam apresentar insights sobre as variáveis mais importantes que influenciam o <em>churn</em> para a Sra. Ana Paula e o Sr.&nbsp;João Silva? Mencionem pelo menos uma técnica de interpretabilidade que poderia ser utilizada.</p></li>
+</ul>
+</section>
 </section>
 <section id="fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes" class="level2">
 <h2 class="anchored" data-anchor-id="fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes">🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes</h2>
