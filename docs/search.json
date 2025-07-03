@@ -2132,7 +2132,7 @@
     "href": "analises.html",
     "title": "Análise de Dados",
     "section": "",
-    "text": "EDA: Salários em Ciência de Dados\nPré-processamento usando a base de dados Space Titanic",
+    "text": "EDA: Salários em Ciência de Dados\nPré-processamento usando a base de dados Space Titanic\nConstruindo workflows preditivos usando a base de dados Space Titanic",
     "crumbs": [
       "Análise de Dados"
     ]
@@ -3314,5 +3314,460 @@
     "title": "Semana 09",
     "section": "Projeto",
     "text": "Projeto\n Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 3"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#clusterização",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#clusterização",
+    "title": "Reconhecimento de Padrões",
+    "section": "Clusterização",
+    "text": "Clusterização\n\n\nUma das habilidades mais básicas dos organismos vivos é a capacidade de agrupar objetos similares para produzir uma taxonomia, uma classificação, ou um agrupamento."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#section",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#section",
+    "title": "Reconhecimento de Padrões",
+    "section": "",
+    "text": "Agrupamento de regiões com base em indicadores sociais"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#humanos-se-interessam-por-categorizações",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#humanos-se-interessam-por-categorizações",
+    "title": "Reconhecimento de Padrões",
+    "section": "Humanos se interessam por categorizações…",
+    "text": "Humanos se interessam por categorizações…\n\n\n\n\n\n\nMúsica\n\n\n\n\n\n\n\n\n\n\n\nRock\n\n\nErudita\n\n\nPopular\n\n\nJazz\n\n\netc…\n\n\n\n\n\n\n\n\n\nFilmes\n\n\n\n\n\n\n\n\n\n\n\nAnimação\n\n\nAventura\n\n\nComédia\n\n\nDrama\n\n\netc…"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#humanos-se-interessam-por-categorizações-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#humanos-se-interessam-por-categorizações-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Humanos se interessam por categorizações…",
+    "text": "Humanos se interessam por categorizações…\n\nDiversas ciências se baseiam na organização de objetos de acordo com suas similaridades\n\n\n\n\n\nBiologia\n\n\n\n\n\n\n\n\n\n\n\nReino: Animalia\n\n\nRamo: Chordata\n\n\nClasse: Mammalia\n\n\nOrdem: Primatas\n\n\nFamília: Hominidae\n\n\nGênero: Homo\n\n\nEspécie: Homo sapiens"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização",
+    "title": "Reconhecimento de Padrões",
+    "section": "O que é Clusterização?",
+    "text": "O que é Clusterização?\n\nExistem muitas situações nas quais não sabemos de antemão uma maneira apropriada de agrupar uma coleção de objetos de acordo com suas similaridades\n\nImagine que você tem uma cesta cheia de frutas diferentes. Como você poderia agrupá-las?"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "O que é Clusterização?",
+    "text": "O que é Clusterização?\n\n\n\nComo agrupá-las?\n\n\n\n\n\n\n\n\n\n\n\nPela cor?\n\n\nPelo tamanho?\n\n\nPelo sabor?\n\n\nOu algum outro critério?"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "O que é Clusterização?",
+    "text": "O que é Clusterização?\nA clusterização é uma técnica de mineração de dados que nos permite descobrir padrões e estruturas ocultas em conjuntos de dados. Ela agrupa objetos similares e os separa dos demais, formando clusters.\n\nSem rótulos previamente conhecidos.\n\n\nOs grupos são formados de maneira a maximizar a similaridade entre os elementos de um grupo (similaridade intra-grupo) e minimizar a similaridade entre elementos de grupos diferentes (similaridade inter-grupos)"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização-3",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização-3",
+    "title": "Reconhecimento de Padrões",
+    "section": "O que é Clusterização?",
+    "text": "O que é Clusterização?"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização-4",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#o-que-é-clusterização-4",
+    "title": "Reconhecimento de Padrões",
+    "section": "O que é Clusterização?",
+    "text": "O que é Clusterização?\n\nAplicações reais:\n\nSegmentação de clientes\nAnálise de perfis de usuários\nAgrupamento de genes\nAgrupamento de regiões com base em indicadores sociais"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais",
+    "title": "Reconhecimento de Padrões",
+    "section": "Aplicações reais",
+    "text": "Aplicações reais\n\n\n\nSegmentação de clientes\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIdentificar grupos de clientes com características semelhantes\n\n\nAnalisar comportamentos e preferências de consumo\n\n\nPersonalizar estratégias de marketing e comunicação\n\n\nOtimizar produtos e serviços para diferentes perfis\n\n\nMelhorar a experiência e fidelização dos clientes"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Aplicações reais",
+    "text": "Aplicações reais\n\n\n\n\nAnálise de perfis de usuários\n\n\n\n\n\n\n\n\n\n\n\nIdentificar diferentes perfis de usuários\n\n\nAnalisar comportamentos e preferências\n\n\nDetectar padrões de interação\n\n\nApoiar decisões estratégicas\n\n\nPersonalizar serviços ou produtos"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Aplicações reais",
+    "text": "Aplicações reais\n\n\n\nAgrupamento de genes\n\n\n\n\n\n\n\n\n\n\n\nIdentificar grupos de genes com padrões de expressão semelhantes\n\n\nInferir funções biológicas compartilhadas entre os genes do mesmo grupo\n\n\nDetectar relações de co-regulação entre genes\n\n\nRevelar possíveis vias metabólicas ou processos celulares associados\n\n\nApoiar a compreensão da organização funcional do genoma"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais-3",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais-3",
+    "title": "Reconhecimento de Padrões",
+    "section": "Aplicações reais",
+    "text": "Aplicações reais\n\n\n\nAgrupamento de genes\n\n\n\n\n\n\n\n\n\n\n\nIdentificar grupos de genes com padrões de expressão semelhantes\n\n\nInferir funções biológicas compartilhadas entre os genes do mesmo grupo\n\n\nDetectar relações de co-regulação entre genes\n\n\nRevelar possíveis vias metabólicas ou processos celulares associados\n\n\nApoiar a compreensão da organização funcional do genoma"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais-4",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#aplicações-reais-4",
+    "title": "Reconhecimento de Padrões",
+    "section": "Aplicações reais",
+    "text": "Aplicações reais\n\n\n\nAgrupamento de regiões com base em indicadores sociais\n\n\n\n\n\n\n\n\n\n\n\nIdentificar regiões com características sociais parecidas\n\n\nEntender melhor as desigualdades entre diferentes áreas\n\n\nAjudar na criação de políticas públicas mais justas\n\n\nFacilitar a análise de grandes quantidades de dados sociais\n\n\nPlanejar melhor os investimentos em infraestrutura e serviços"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#métodos-hierárquicos-de-clusterização",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#métodos-hierárquicos-de-clusterização",
+    "title": "Reconhecimento de Padrões",
+    "section": "Métodos hierárquicos de clusterização",
+    "text": "Métodos hierárquicos de clusterização\n\n\nAgrupamento hierárquico é uma técnica de clusterização baseada em uma estrutura de “árvore”\n\n\n\nPermite identificar relações de similaridade entre observações\n\n\n\n\nPode ser aglomerativo (bottom-up) ou divisivo (top-down)\n\n\n\n\nNão é necessário especificar o número de clusters a priori"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#tipos-de-agrupamento-hierárquico",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#tipos-de-agrupamento-hierárquico",
+    "title": "Reconhecimento de Padrões",
+    "section": "Tipos de Agrupamento Hierárquico",
+    "text": "Tipos de Agrupamento Hierárquico\n\nAglomerativo (HAC - Hierarchical Agglomerative Clustering)\n\nComeça com cada elemento em um cluster separado\nIterativamente une os pares de clusters mais semelhantes\nResulta em um dendrograma\n\n\n\n\nDivisivo\n\nComeça com todos os dados em um único cluster\nDivide recursivamente em subgrupos mais distintos\nMenos comum na prática devido à complexidade computacional"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#medidas-de-similaridade",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#medidas-de-similaridade",
+    "title": "Reconhecimento de Padrões",
+    "section": "Medidas de Similaridade",
+    "text": "Medidas de Similaridade\n\n\nBaseadas em distância entre observações\n\nEuclidiana (mais comum)\nManhattan\nCorrelação (Pearson)\n\n\n\n\nResultam em uma matriz de distância (ou dissimilaridade)"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#critérios-de-ligação",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#critérios-de-ligação",
+    "title": "Reconhecimento de Padrões",
+    "section": "Critérios de Ligação",
+    "text": "Critérios de Ligação\n\n\nSingle linkage (vizinho mais próximo)\n\n\n\nComplete linkage (vizinho mais distante)\n\n\n\n\nAverage linkage (média das distâncias)\n\n\n\n\nWard (minimiza a variância dentro dos grupos)"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#dendrogramas",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#dendrogramas",
+    "title": "Reconhecimento de Padrões",
+    "section": "Dendrogramas",
+    "text": "Dendrogramas\n\n\n\n\n\nRepresentação visual do processo de fusão\nPermite explorar diferentes cortes para definir o número de clusters\nAltura dos ramos reflete a dissimilaridade entre grupos"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#vantagens-e-desvantagens",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#vantagens-e-desvantagens",
+    "title": "Reconhecimento de Padrões",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n👍\n\n\nIntuitivo e visual\nNão exige escolha prévia do número de grupos\nAplica-se a dados qualitativos e quantitativos (com dissimilaridade adequada)\n\n\n\n\n\n👎\n\n\nSensível a outliers\nComplexidade computacional\nDificuldade em modificar estruturas já formadas"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#métodos-não-hierárquicos",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#métodos-não-hierárquicos",
+    "title": "Reconhecimento de Padrões",
+    "section": "Métodos não hierárquicos",
+    "text": "Métodos não hierárquicos\n\n\nAgrupamento não hierárquico é uma abordagem de clusterização que não utiliza estrutura em árvore\n\n\n\nMais eficiente para conjuntos de dados grandes\n\n\n\n\nFoco em descobrir grupos com base em similaridade de atributos"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#principais-métodos",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#principais-métodos",
+    "title": "Reconhecimento de Padrões",
+    "section": "Principais Métodos",
+    "text": "Principais Métodos\n\n\nK-means\n\nRequer a definição do número de clusters (k)\nAgrupa observações minimizando a variância dentro dos clusters\nIterativo:\n\nInicialização dos centróides\nAtribuição dos pontos ao cluster mais próximo\nAtualização dos centróides"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#principais-métodos-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#principais-métodos-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Principais Métodos",
+    "text": "Principais Métodos\n\n\nK-medoids (PAM)\n\nUsa objetos reais como centróides (medoids)\nMais robusto a outliers\nPode ser usado com qualquer métrica de dissimilaridade"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#k-means-vantagens-e-desvantagens",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#k-means-vantagens-e-desvantagens",
+    "title": "Reconhecimento de Padrões",
+    "section": "K-means: Vantagens e Desvantagens",
+    "text": "K-means: Vantagens e Desvantagens\n\n\n👍\n\n\n\n\nSimples e rápido\nEscalável para grandes conjuntos de dados\nFácil de interpretar e implementar\n\n\n\n\n\n👎\n\n\n\n\nSensível a outliers\nRequer especificar o número de clusters k\nFunciona melhor com clusters esféricos de tamanho semelhante"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#k-medoids-vantagens-e-desvantagens",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#k-medoids-vantagens-e-desvantagens",
+    "title": "Reconhecimento de Padrões",
+    "section": "K-medoids: Vantagens e Desvantagens",
+    "text": "K-medoids: Vantagens e Desvantagens\n\n\n👍\n\n\n\n\nMais robusto a outliers\nPode usar qualquer métrica de dissimilaridade\nResultados mais estáveis em presença de ruído\n\n\n\n\n\n👎\n\n\n\n\nMais lento que K-means em grandes conjuntos de dados\nPode exigir mais ajustes de parâmetros"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#métodos-baseados-em-densidade",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#métodos-baseados-em-densidade",
+    "title": "Reconhecimento de Padrões",
+    "section": "Métodos baseados em densidade",
+    "text": "Métodos baseados em densidade\nSão técnicas utilizadas na mineração de dados para identificar agrupamentos ou padrões em conjuntos de dados com base na densidade dos elementos amostrais.\n\nEsses métodos levam em consideração a proximidade entre os indivíduos, agrupando aqueles que estão próximos uns dos outros em regiões densas.\n\n\nUma região densa é uma região onde cada ponto tem muitos pontos em sua vizinhança."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#métodos-baseados-em-densidade-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#métodos-baseados-em-densidade-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Métodos baseados em densidade",
+    "text": "Métodos baseados em densidade\nSão técnicas utilizadas na mineração de dados para identificar agrupamentos ou padrões em conjuntos de dados com base na densidade dos elementos amostrais.\n\nEsses métodos levam em consideração a proximidade entre os indivíduos, agrupando aqueles que estão próximos uns dos outros em regiões densas.\n\n\nUma região densa é uma região onde cada ponto tem muitos pontos em sua vizinhança."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método DBSCAN",
+    "text": "Método DBSCAN\n\nO método DBSCAN (Density-Based Spatial Clustering of Applications with Noise) é um dos algoritmos baseados em densidade mais conhecidos.\n\nVamos definir densidade como sendo o número de pontos dentro de um raio específico\n\n\n\nDois principais parâmetros:\n\nEps: raio de vizinhança.\nMinPts: número mínimo de pontos para formar um cluster."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método DBSCAN",
+    "text": "Método DBSCAN\n\nO método DBSCAN (Density-Based Spatial Clustering of Applications with Noise) é um dos algoritmos baseados em densidade mais conhecidos.\n\nVamos definir densidade como sendo o número de pontos dentro de um raio específico\n\n\n\nDois principais parâmetros:\n\nEps: raio de vizinhança.\nMinPts: número mínimo de pontos para formar um cluster."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método DBSCAN",
+    "text": "Método DBSCAN\n\n\nUm ponto é um ponto de núcleo (core point) se ele tem mais que um número especificado de pontos (MinPts) dentro de Eps\n\nEstes são os pontos que estão no interior de um grupo\n\n\n\n\nUm ponto de fronteira (border point) tem menos que MinPts dentro de Eps mas está na vizinhança de um ponto núcleo\n\n\n\n\nUm ponto de ruído (noise point) é um ponto que não é nem um ponto núcleo nem um ponto de fronteira."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-3",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-3",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método DBSCAN",
+    "text": "Método DBSCAN"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-4",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-4",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método DBSCAN",
+    "text": "Método DBSCAN\n\nPara encontrar os agrupamentos, o algoritmo DBSCAN faz uma varredura nas observações determinando todos os pontos núcleo.\n\nFaz-se a seguir uma varredura dos pontos núcleo fazendo as conexões a todos os pontos que estejam a uma distância menor do que (Eps).\n\n\nCada subconjunto de pontos conectados entre si (conectividade), forma um cluster."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#vantagens-e-desvantagens-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#vantagens-e-desvantagens-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n👍\n\n\n\n\nEficiente em tratar grandes bases de dados\nMenos sensível a ruídos\nForma clusters de formato arbitrário\nUsuário não precisa determinar a quantidade de clusters\n\n\n\n\n\n👎\n\n\nSensível aos parâmetros de entrada (Eps e MinPts)"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#determinação-dos-valores-de-eps-e-minpts",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#determinação-dos-valores-de-eps-e-minpts",
+    "title": "Reconhecimento de Padrões",
+    "section": "Determinação dos valores de Eps e MinPts",
+    "text": "Determinação dos valores de Eps e MinPts\nA escolha adequada dos parâmetros Eps (epsilon) e MinPts (mínimo de pontos) é crucial para o bom desempenho do DBSCAN, já que esses parâmetros definem o que é considerado uma região densa.\n\nRegra prática para escolha de MinPts:\n\nPara dados com dimensão d, recomenda-se:\n\nMinPts ≥ d + 1\nExemplo: para dados 2D, escolha pelo menos MinPts = 3 ou mais.\n\nEm geral, valores entre 4 e 10 funcionam bem para a maioria dos casos."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#determinação-dos-valores-de-eps-e-minpts-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#determinação-dos-valores-de-eps-e-minpts-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Determinação dos valores de Eps e MinPts",
+    "text": "Determinação dos valores de Eps e MinPts\nA melhor prática para determinação de Eps é usar o gráfico da distância do k-vizinho mais próximo:\n\n\nEtapas:\n\nPara cada ponto, calcule a distância ao seu k-ésimo vizinho mais próximo (geralmente k = MinPts - 1).\nOrdene essas distâncias em ordem decrescente.\nPlote as distâncias.\nProcure o “cotovelo” no gráfico — o ponto onde a curva começa a subir rapidamente.\n\n\n\n\nEsse valor de distância costuma ser um bom Eps."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#determinação-dos-valores-de-eps-e-minpts-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#determinação-dos-valores-de-eps-e-minpts-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Determinação dos valores de Eps e MinPts",
+    "text": "Determinação dos valores de Eps e MinPts"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#problema-clusters-com-densidades-diferentes",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#problema-clusters-com-densidades-diferentes",
+    "title": "Reconhecimento de Padrões",
+    "section": "Problema: Clusters com densidades diferentes",
+    "text": "Problema: Clusters com densidades diferentes\nA Figura abaixo ilustra um desafio importante enfrentado pelo DBSCAN: a sensibilidade à variação na densidade dos dados."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#problema-clusters-com-densidades-diferentes-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#problema-clusters-com-densidades-diferentes-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Problema: Clusters com densidades diferentes",
+    "text": "Problema: Clusters com densidades diferentes\nObservamos dois conjuntos de pontos (agrupamentos), um à esquerda (com os pontos A e B) e outro à direita (com os pontos C e D). Ambos os conjuntos parecem representar clusters distintos, mas com densidades diferentes:\n\n🔴 Cluster à esquerda (A e B): Denso, com muitos pontos próximos. Aqui, os pontos A e B provavelmente atendem ao critério de serem pontos núcleo, possuem ao menos MinPts vizinhos dentro de uma distância Eps.\n\n\n🟡 Cluster à direita (C e D): Mais esparso, ou seja, os pontos estão mais afastados uns dos outros. Mesmo que C e D estejam relativamente próximos, é possível que não atendam aos critérios de densidade definidos por MinPts e Eps."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#problema-clusters-com-densidades-diferentes-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#problema-clusters-com-densidades-diferentes-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Problema: Clusters com densidades diferentes",
+    "text": "Problema: Clusters com densidades diferentes\n\n\nO algoritmo DBSCAN utiliza critérios fixos para formar agrupamentos:\n\nUm raio (Eps) que define o que é “perto”.\nUm número mínimo de pontos (MinPts) para considerar uma região densa.\n\n\n\n\nSe Eps é alto suficiente para que C e D sejam detectados como clusters então A e B e a região a sua volta se tornarão um único cluster\n\n\n\n\nSe Eps é baixo suficiente para que A e B sejam detectados como clusters separados então C e D (e os objetos a seu redor) serão considerados outliers!"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#consequência-prática",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#consequência-prática",
+    "title": "Reconhecimento de Padrões",
+    "section": "Consequência prática",
+    "text": "Consequência prática\n\n\nDBSCAN não se adapta bem a dados com clusters de densidades muito diferentes.\n\n\n\nUm único par de valores de Eps e MinPts não consegue capturar simultaneamente regiões densas e esparsas.\n\n\n\n\nEm aplicações reais (por exemplo, agrupamento geográfico ou comportamento de usuários), isso pode levar à subdetecção de padrões legítimos em regiões menos densas."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#soluções-possíveis",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#soluções-possíveis",
+    "title": "Reconhecimento de Padrões",
+    "section": "Soluções possíveis",
+    "text": "Soluções possíveis\n\n\nAjustar manualmente Eps e MinPts para diferentes partes dos dados.\n\n\n\nUsar algoritmos mais flexíveis:\n\nHDBSCAN: detecta clusters com diferentes densidades.\nOPTICS: evita a necessidade de definir Eps fixo.\n\n\n\n\n\nAplicar técnicas de redução de dimensionalidade para uniformizar densidades."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-5",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-dbscan-5",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método DBSCAN",
+    "text": "Método DBSCAN"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift\nO método Mean Shift é um algoritmo baseado em janela deslizante que tenta encontrar áreas densas no conjunto de dados.\n\nA ideia desse algoritmo é criar uma região circular, obtida através da média ponderada dos elementos presentes dentro dessa área, considerando a distância de cada ponto em relação ao ponto atual.\n\n\nA região de maior concentração em de objetos determina a direção de deslocamento deste círculo na base de dados.\n\n\nQuando o círculo não se movimentar mais na base de dados a iteração termina e o algoritmo é encerrado."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#compreendendo-o-algoritmo",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#compreendendo-o-algoritmo",
+    "title": "Reconhecimento de Padrões",
+    "section": "Compreendendo o algoritmo",
+    "text": "Compreendendo o algoritmo"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-3",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-3",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-4",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-4",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift\n\nA ideia do algoritmo é calcular a função densidade de probabilidade para um conjunto de dados. Isso é feito através do conceito de kernel density estimation (KDE)\n\nA média ponderada é calculada utilizando o kernel, que atribui pesos aos pontos de dados com base em sua proximidade ao ponto central."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-5",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-5",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-6",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-6",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-7",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-7",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-8",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-8",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift\n\nA largura de banda (bandwidth) define o raio da vizinhança que é considerado para calcular a média ponderada.\n\nSe o valor do bandwidth for muito grande, os pontos de dados de diferentes clusters podem ser misturados, levando a um agrupamento menos discriminativo.\n\n\nSe o valor do bandwidth for muito pequeno, podem surgir clusters pequenos e insignificantes ou até mesmo apenas um único cluster que englobe todos os pontos."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-9",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#método-mean-shift-9",
+    "title": "Reconhecimento de Padrões",
+    "section": "Método Mean Shift",
+    "text": "Método Mean Shift\n\nA escolha adequada do valor do bandwidth é crucial para obter resultados significativos com o algoritmo Mean Shift.\n\nGeralmente, esse valor é ajustado empiricamente ou através de métodos de validação cruzada para encontrar o valor que melhor se adapte aos dados específicos em questão.\n\n\nUma abordagem comum é experimentar diferentes valores e selecionar aquele que produzir os clusters mais relevantes e bem definidos para a tarefa em questão."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#métodos-baseados-em-densidade-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#métodos-baseados-em-densidade-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Métodos baseados em densidade",
+    "text": "Métodos baseados em densidade"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen",
+    "text": "Redes de Kohonen\nRedes de Kohonen, também conhecidas como Mapas Auto-Organizáveis (SOM - Self-Organizing Maps), são uma classe especial de algoritmos de aprendizado de máquina não supervisionado, desenvolvidas por Teuvo Kohonen em 1982.\n\nEssas redes têm como objetivo organizar e visualizar dados complexos em um espaço bidimensional ou tridimensional, de forma que padrões e estruturas ocultas possam ser facilmente identificados.\n\n\nO funcionamento das redes de Kohonen é inspirado na forma como o cérebro humano organiza informações e aprende a partir do ambiente."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#vantagens-e-desvantagens-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#vantagens-e-desvantagens-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Vantagens e Desvantagens",
+    "text": "Vantagens e Desvantagens\n\n\n👍\n\n\n\n\nNão exige número de clusters pré-definido\nCapaz de detectar formas arbitrárias\nBaseado em densidade\n\n\n\n\n\n👎\n\n\nSensível ao parâmetro de bandwidth\nAlto custo computacional\nMuitos clusters se bandwidth for pequeno"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen",
+    "text": "Redes de Kohonen\n\n\n\nCérebro respondendo a estímulos"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen",
+    "text": "Redes de Kohonen\n\nA rede é composta por um conjunto de neurônios artificialmente conectados em uma estrutura bidimensional, que representa o mapa. Cada neurônio é associado a um vetor de pesos, com mesma dimensão da entrada, que inicialmente é aleatório.\n\nPreserva a topologia: observações similares são mapeadas próximas\n\n\nO treinamento das redes de Kohonen ocorre em duas etapas: Competição e Cooperação\n\n\nPrincípio fundamental: Aprendizagem competitiva"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-conpetição",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-conpetição",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen: conpetição",
+    "text": "Redes de Kohonen: conpetição\n\nDurante essa fase, um dado de entrada é apresentado à rede, e cada neurônio calcula a sua distância em relação ao dado.\n\nO neurônio que possui os pesos mais próximos do dado de entrada é o vencedor (BMU: Best Matching Unit), ou seja, o neurônio com menor distância euclidiana."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-competição",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-competição",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen: Competição",
+    "text": "Redes de Kohonen: Competição\n\nDurante essa fase, um dado de entrada é apresentado à rede, e cada neurônio calcula a sua distância em relação ao dado.\n\nO neurônio que possui os pesos mais próximos do dado de entrada é o vencedor (BMU: Best Matching Unit), ou seja, o neurônio com menor distância euclidiana."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-cooperação",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-cooperação",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen: Cooperação",
+    "text": "Redes de Kohonen: Cooperação\n\nO neurônio vencedor, juntamente com seus neurônios vizinhos próximos, atualiza seus pesos para ficarem mais similares ao dado de entrada.\n\nEssa atualização ajuda a agrupar os dados de entrada similares em regiões próximas do mapa.\n\n\nEssas duas etapas de competição e cooperação são repetidas várias vezes durante o treinamento, e gradualmente, os neurônios se organizam em regiões distintas, formando agrupamentos e revelando padrões presentes nos dados."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-3",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-3",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen",
+    "text": "Redes de Kohonen\n\n\n\nCompetição\n\n\nCooperação"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-4",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-4",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen",
+    "text": "Redes de Kohonen\nA vizinhança de cada neurônio pode ser definida de acordo com a forma geométrica utilizada para representar os neurônios da rede"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-5",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-5",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen",
+    "text": "Redes de Kohonen\n\nHexagonal: cada neurônio possui 6 vizinhos diretos\n\n\n\nRetangular: cada neurônio possui 4 vizinhos diretos\n\n\n\n\nOs pesos são atualizados segundo a distância ao neurônio ganhador"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#considerações-finais",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#considerações-finais",
+    "title": "Reconhecimento de Padrões",
+    "section": "Considerações finais",
+    "text": "Considerações finais\n\n\nÉ uma rede de aprendizado não supervisionado\n\n\n\nOs exemplos de entrada são comparados a todos os neurônios e o mais próximo é considerado o neurônio vencedor (BMU)\n\n\n\n\nOs pesos do nerônio vencedor são atualizados para aproximar-se mais do padrão de dados que representa\n\n\n\n\nÉ uma rede ideal para detecção de agrupamentos\n\n\n\n\nO vetor de pesos para um cluster serve como um exemplar dos padrões de entrada associados com esse cluster."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-6",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#redes-de-kohonen-6",
+    "title": "Reconhecimento de Padrões",
+    "section": "Redes de Kohonen",
+    "text": "Redes de Kohonen\n\n\nÉ uma rede de aprendizado não supervisionado\n\n\n\nOs exemplos de entrada são comparados a todos os neurônios e o mais próximo é considerado o neurônio vencedor (BMU)\n\n\n\n\nOs pesos do nerônio vencedor são atualizados para aproximar-se mais do padrão de dados que representa\n\n\n\n\nÉ uma rede ideal para detecção de agrupamentos\n\n\n\n\nO vetor de pesos para um cluster serve como um exemplar dos padrões de entrada associados com esse cluster."
   }
 ]

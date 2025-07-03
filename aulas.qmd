@@ -9,7 +9,7 @@ title: "Aulas"
 
 - [Análise preditiva](/aulas/Analise_preditiva/preditiva.html "Análise preditiva"){aria-label="Análise preditiva"}
 
-- Reconhecimento de padrões
+- [Reconhecimento de padrões](/aulas/Reconhecimento_padroes/padroes.html "Reconhecimento de padrões"){aria-label="Reconhecimento de padrões"}
 
 - Regras de associação
 

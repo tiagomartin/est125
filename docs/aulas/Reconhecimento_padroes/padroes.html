@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.29">
+
+  <title>EST125 - Introdução à Mineração de Dados – Reconhecimento de Padrões</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-5389521b91c90b914e6de3488af1db39.css">
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+<meta property="og:title" content="Reconhecimento de Padrões – EST125 - Introdução à Mineração de Dados">
+<meta property="og:site_name" content="EST125 - Introdução à Mineração de Dados">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="../../images/back.jpeg" data-background-opacity="0.3" data-background-size="cover" class="quarto-title-block center">
+  <h1 class="title">Reconhecimento de Padrões</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="clusterização" class="slide level2">
+<h2>Clusterização</h2>
+<p><br></p>
+<p><br></p>
+<p>Uma das habilidades mais básicas dos organismos vivos é a capacidade de agrupar objetos similares para produzir uma <strong>taxonomia</strong>, uma <strong>classificação</strong>, ou um <strong>agrupamento</strong>.</p>
+</section>
+<section id="humanos-se-interessam-por-categorizações" class="slide level2">
+<h2><strong>Humanos</strong> se interessam por <strong>categorizações</strong>…</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<table>
+<tbody><tr>
+<th>
+Música
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/music.jpg" class="nostretch quarto-figure quarto-figure-center" width="500">
+</td>
+<td>
+<ul>
+<li>
+Rock
+</li>
+<li>
+Erudita
+</li>
+<li>
+Popular
+</li>
+<li>
+Jazz
+</li>
+<li>
+etc…
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</div><div class="column fragment" style="width:50%;">
+<table>
+<tbody><tr>
+<th>
+Filmes
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/movies.jpg" class="nostretch quarto-figure quarto-figure-center" width="500">
+</td>
+<td>
+<ul>
+<li>
+Animação
+</li>
+<li>
+Aventura
+</li>
+<li>
+Comédia
+</li>
+<li>
+Drama
+</li>
+<li>
+etc…
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</div></div>
+</section>
+<section id="humanos-se-interessam-por-categorizações-1" class="slide level2">
+<h2><strong>Humanos</strong> se interessam por <strong>categorizações</strong>…</h2>
+<p align="center">
+Diversas <strong>ciências</strong> se baseiam na organização de objetos de acordo com suas similaridades
+</p>
+<div class="fragment">
+<table>
+<tbody><tr>
+<th>
+Biologia
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/macaco_homem.jpg" class="quarto-figure quarto-figure-center" width="600">
+</td>
+<td>
+<dl>
+<dt>
+Reino: Animalia
+</dt>
+<dt>
+Ramo: Chordata
+</dt>
+<dt>
+Classe: Mammalia
+</dt>
+<dt>
+Ordem: Primatas
+</dt>
+<dt>
+Família: <em>Hominidae</em>
+</dt>
+<dt>
+Gênero: <em>Homo</em>
+</dt>
+<dt>
+Espécie: <em>Homo sapiens</em>
+</dt>
+</dl>
+</td>
+</tr>
+</tbody></table>
+</div>
+</section>
+<section id="o-que-é-clusterização" class="slide level2">
+<h2>O que é Clusterização?</h2>
+<p><br></p>
+<p>Existem muitas situações nas quais não sabemos de <strong>antemão</strong> uma maneira <strong>apropriada</strong> de agrupar uma coleção de objetos de acordo com suas <strong>similaridades</strong></p>
+<div class="fragment">
+<p>Imagine que você tem uma cesta cheia de frutas diferentes. Como você poderia agrupá-las?</p>
+</div>
+</section>
+<section id="o-que-é-clusterização-1" class="slide level2">
+<h2>O que é Clusterização?</h2>
+<table>
+<tbody><tr>
+<th>
+Como agrupá-las?
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/cesta.jpg" class="quarto-figure quarto-figure-center" width="420">
+</td>
+<td>
+<ul>
+<li>
+Pela cor?
+</li>
+<li>
+Pelo tamanho?
+</li>
+<li>
+Pelo sabor?
+</li>
+<li>
+Ou algum outro critério?
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="o-que-é-clusterização-2" class="slide level2">
+<h2>O que é Clusterização?</h2>
+<p>A <strong>clusterização</strong> é uma técnica de mineração de dados que nos permite descobrir <strong>padrões</strong> e estruturas ocultas em conjuntos de dados. Ela agrupa objetos <strong>similares</strong> e os <strong>separa</strong> dos demais, formando clusters.</p>
+<ul>
+<li>Sem rótulos previamente conhecidos.</li>
+</ul>
+<div class="fragment">
+<p>Os grupos são formados de maneira a <strong>maximizar</strong> a similaridade entre os elementos de um grupo (<strong>similaridade intra-grupo</strong>) e <strong>minimizar</strong> a similaridade entre elementos de grupos diferentes (<strong>similaridade inter-grupos</strong>)</p>
+</div>
+</section>
+<section id="o-que-é-clusterização-3" class="slide level2">
+<h2>O que é Clusterização?</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/relacoes.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section>
+<section id="aplicações-reais" class="slide level2">
+<h2>Aplicações reais</h2>
+<table>
+<tbody><tr>
+<th>
+Segmentação de clientes
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/cliente.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+<p><br></p>
+<br>
+</td>
+<td>
+<ul>
+<li>
+Identificar grupos de clientes com características semelhantes
+</li>
+<li>
+Analisar comportamentos e preferências de consumo
+</li>
+<li>
+Personalizar estratégias de marketing e comunicação
+</li>
+<li>
+Otimizar produtos e serviços para diferentes perfis
+</li>
+<li>
+Melhorar a experiência e fidelização dos clientes
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="aplicações-reais-1" class="slide level2">
+<h2>Aplicações reais</h2>
+<p><br></p>
+<table>
+<tbody><tr>
+<th>
+Análise de perfis de usuários
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/perfil_usuario.png" class="quarto-figure quarto-figure-center" width="500">
+</td>
+<td>
+<ul>
+<li>
+Identificar diferentes perfis de usuários
+</li>
+<li>
+Analisar comportamentos e preferências
+</li>
+<li>
+Detectar padrões de interação
+</li>
+<li>
+Apoiar decisões estratégicas
+</li>
+<li>
+Personalizar serviços ou produtos
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="aplicações-reais-2" class="slide level2">
+<h2>Aplicações reais</h2>
+<table>
+<tbody><tr>
+<th>
+Agrupamento de genes
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/gene.png" class="quarto-figure quarto-figure-center" width="1000">
+</td>
+<td>
+<ul>
+<li>
+Identificar grupos de genes com padrões de expressão semelhantes
+</li>
+<li>
+Inferir funções biológicas compartilhadas entre os genes do mesmo grupo
+</li>
+<li>
+Detectar relações de co-regulação entre genes
+</li>
+<li>
+Revelar possíveis vias metabólicas ou processos celulares associados
+</li>
+<li>
+Apoiar a compreensão da organização funcional do genoma
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="aplicações-reais-3" class="slide level2">
+<h2>Aplicações reais</h2>
+<table>
+<tbody><tr>
+<th>
+Agrupamento de genes
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/gene.png" class="quarto-figure quarto-figure-center" width="1000">
+</td>
+<td>
+<ul>
+<li>
+Identificar grupos de genes com padrões de expressão semelhantes
+</li>
+<li>
+Inferir funções biológicas compartilhadas entre os genes do mesmo grupo
+</li>
+<li>
+Detectar relações de co-regulação entre genes
+</li>
+<li>
+Revelar possíveis vias metabólicas ou processos celulares associados
+</li>
+<li>
+Apoiar a compreensão da organização funcional do genoma
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="aplicações-reais-4" class="slide level2">
+<h2>Aplicações reais</h2>
+<table>
+<tbody><tr>
+<th>
+Agrupamento de regiões com base em indicadores sociais
+</th>
+<th>
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/regioes.png" class="quarto-figure quarto-figure-center" width="1000">
+</td>
+<td>
+<ul>
+<li>
+Identificar regiões com características sociais parecidas
+</li>
+<li>
+Entender melhor as desigualdades entre diferentes áreas
+</li>
+<li>
+Ajudar na criação de políticas públicas mais justas
+</li>
+<li>
+Facilitar a análise de grandes quantidades de dados sociais
+</li>
+<li>
+Planejar melhor os investimentos em infraestrutura e serviços
+</li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="métodos-hierárquicos-de-clusterização" class="slide level2">
+<h2>Métodos hierárquicos de clusterização</h2>
+<p><br></p>
+<ul>
+<li>Agrupamento hierárquico é uma técnica de clusterização baseada em uma estrutura de “árvore”</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Permite identificar relações de similaridade entre observações</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Pode ser aglomerativo (bottom-up) ou divisivo (top-down)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Não é necessário especificar o número de clusters a priori</li>
+</ul>
+</div>
+</section>
+<section id="tipos-de-agrupamento-hierárquico" class="slide level2">
+<h2>Tipos de Agrupamento Hierárquico</h2>
+<ul>
+<li>Aglomerativo (HAC - Hierarchical Agglomerative Clustering)
+<ul>
+<li>Começa com cada elemento em um cluster separado</li>
+<li>Iterativamente une os pares de clusters mais semelhantes</li>
+<li>Resulta em um dendrograma</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Divisivo
+<ul>
+<li>Começa com todos os dados em um único cluster</li>
+<li>Divide recursivamente em subgrupos mais distintos</li>
+<li>Menos comum na prática devido à complexidade computacional</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="medidas-de-similaridade" class="slide level2">
+<h2>Medidas de Similaridade</h2>
+<p><br></p>
+<ul>
+<li><p>Baseadas em distância entre observações</p>
+<ul>
+<li>Euclidiana (mais comum)</li>
+<li>Manhattan</li>
+<li>Correlação (Pearson)</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Resultam em uma matriz de distância (ou dissimilaridade)</li>
+</ul>
+</div>
+</section>
+<section id="critérios-de-ligação" class="slide level2">
+<h2>Critérios de Ligação</h2>
+<p><br></p>
+<ul>
+<li>Single linkage (vizinho mais próximo)</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Complete linkage (vizinho mais distante)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Average linkage (média das distâncias)</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Ward (minimiza a variância dentro dos grupos)</li>
+</ul>
+</div>
+</section>
+<section id="dendrogramas" class="slide level2">
+<h2>Dendrogramas</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><br></p>
+<ul>
+<li><p>Representação visual do processo de fusão</p></li>
+<li><p>Permite explorar diferentes cortes para definir o número de clusters</p></li>
+<li><p>Altura dos ramos reflete a dissimilaridade entre grupos</p></li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/dendro.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="vantagens-e-desvantagens" class="slide level2">
+<h2>Vantagens e Desvantagens</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li><p>Intuitivo e visual</p></li>
+<li><p>Não exige escolha prévia do número de grupos</p></li>
+<li><p>Aplica-se a dados qualitativos e quantitativos (com dissimilaridade adequada)</p></li>
+</ul>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li><p>Sensível a outliers</p></li>
+<li><p>Complexidade computacional</p></li>
+<li><p>Dificuldade em modificar estruturas já formadas</p></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="métodos-não-hierárquicos" class="slide level2">
+<h2>Métodos não hierárquicos</h2>
+<p><br></p>
+<ul>
+<li>Agrupamento não hierárquico é uma abordagem de clusterização que não utiliza estrutura em árvore</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Mais eficiente para conjuntos de dados grandes</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Foco em descobrir grupos com base em similaridade de atributos</li>
+</ul>
+</div>
+</section>
+<section id="principais-métodos" class="slide level2">
+<h2>Principais Métodos</h2>
+<p><br></p>
+<ul>
+<li>K-means
+<ul>
+<li>Requer a definição do número de clusters (k)</li>
+<li>Agrupa observações minimizando a variância dentro dos clusters</li>
+<li>Iterativo:
+<ul>
+<li>Inicialização dos centróides</li>
+<li>Atribuição dos pontos ao cluster mais próximo</li>
+<li>Atualização dos centróides</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="principais-métodos-1" class="slide level2">
+<h2>Principais Métodos</h2>
+<p><br></p>
+<ul>
+<li>K-medoids (PAM)
+<ul>
+<li>Usa objetos reais como centróides (medoids)</li>
+<li>Mais robusto a outliers</li>
+<li>Pode ser usado com qualquer métrica de dissimilaridade</li>
+</ul></li>
+</ul>
+</section>
+<section id="k-means-vantagens-e-desvantagens" class="slide level2">
+<h2>K-means: Vantagens e Desvantagens</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<p>
+</p>
+<ul>
+<li><p>Simples e rápido</p></li>
+<li><p>Escalável para grandes conjuntos de dados</p></li>
+<li><p>Fácil de interpretar e implementar</p></li>
+</ul>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<p>
+</p>
+<ul>
+<li><p>Sensível a outliers</p></li>
+<li><p>Requer especificar o número de clusters k</p></li>
+<li><p>Funciona melhor com clusters esféricos de tamanho semelhante</p></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="k-medoids-vantagens-e-desvantagens" class="slide level2">
+<h2>K-medoids: Vantagens e Desvantagens</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<p>
+</p>
+<ul>
+<li><p>Mais robusto a outliers</p></li>
+<li><p>Pode usar qualquer métrica de dissimilaridade</p></li>
+<li><p>Resultados mais estáveis em presença de ruído</p></li>
+</ul>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<p>
+</p>
+<ul>
+<li><p>Mais lento que K-means em grandes conjuntos de dados</p></li>
+<li><p>Pode exigir mais ajustes de parâmetros</p></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section>
+<section id="métodos-baseados-em-densidade" class="title-slide slide level1 center">
+<h1>Métodos baseados em densidade</h1>
+
+</section>
+<section id="métodos-baseados-em-densidade-1" class="slide level2">
+<h2>Métodos baseados em densidade</h2>
+<p>São técnicas utilizadas na mineração de dados para identificar agrupamentos ou padrões em conjuntos de dados com base na <strong>densidade dos elementos amostrais</strong>.</p>
+<div class="fragment">
+<p>Esses métodos levam em consideração a <strong>proximidade</strong> entre os indivíduos, agrupando aqueles que estão próximos uns dos outros em <strong>regiões densas</strong>.</p>
+</div>
+<div class="fragment">
+<p>Uma <strong>região densa</strong> é uma região onde cada ponto tem <strong>muitos pontos</strong> em sua <strong>vizinhança</strong>.</p>
+</div>
+</section>
+<section id="métodos-baseados-em-densidade-2" class="slide level2">
+<h2>Métodos baseados em densidade</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/dens.jpg" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</section></section>
+<section>
+<section id="método-dbscan" class="title-slide slide level1 center">
+<h1>Método DBSCAN</h1>
+
+</section>
+<section id="método-dbscan-1" class="slide level2">
+<h2>Método DBSCAN</h2>
+<p><br></p>
+<p>O método <strong>DBSCAN</strong> (Density-Based Spatial Clustering of Applications with Noise) é um dos algoritmos baseados em <strong>densidade</strong> mais conhecidos.</p>
+<div class="fragment">
+<p>Vamos definir <strong>densidade</strong> como sendo o número de pontos dentro de um <strong>raio específico</strong></p>
+</div>
+<div class="fragment">
+<ul>
+<li>Dois principais parâmetros:
+<ul>
+<li><code>Eps</code>: raio de vizinhança.</li>
+<li><code>MinPts</code>: número mínimo de pontos para formar um cluster.</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="método-dbscan-2" class="slide level2">
+<h2>Método DBSCAN</h2>
+<p><br></p>
+<ul>
+<li>Um ponto é um <strong>ponto de núcleo</strong> (<code>core point</code>) se ele tem mais que um número especificado de pontos (<code>MinPts</code>) dentro de <code>Eps</code>
+<ul>
+<li>Estes são os pontos que estão no <strong>interior</strong> de um grupo</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Um <strong>ponto de fronteira</strong> (<code>border point</code>) tem menos que <code>MinPts</code> dentro de <code>Eps</code> mas está na vizinhança de um ponto núcleo</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Um <strong>ponto de ruído</strong> (<code>noise point</code>) é um ponto que não é nem um ponto núcleo nem um ponto de fronteira.</li>
+</ul>
+</div>
+</section>
+<section id="método-dbscan-3" class="slide level2">
+<h2>Método DBSCAN</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/points2.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section>
+<section id="método-dbscan-4" class="slide level2">
+<h2>Método DBSCAN</h2>
+<p><br></p>
+<p>Para encontrar os agrupamentos, o algoritmo DBSCAN faz uma <strong>varredura</strong> nas observações determinando <strong>todos os pontos núcleo</strong>.</p>
+<div class="fragment">
+<p>Faz-se a seguir uma varredura dos pontos núcleo fazendo as conexões a todos os pontos que estejam a uma distância menor do que (<code>Eps</code>).</p>
+</div>
+<div class="fragment">
+<p>Cada subconjunto de pontos conectados entre si (conectividade), forma um cluster.</p>
+</div>
+</section>
+<section id="método-dbscan-5" class="slide level2">
+<h2>Método DBSCAN</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/DBSCAN_tutorial.gif" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</section>
+<section id="vantagens-e-desvantagens-1" class="slide level2">
+<h2>Vantagens e Desvantagens</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<p>
+</p>
+<ul>
+<li>Eficiente em tratar grandes bases de dados</li>
+<li>Menos sensível a ruídos</li>
+<li>Forma clusters de formato arbitrário</li>
+<li>Usuário não precisa determinar a quantidade de clusters</li>
+</ul>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li>Sensível aos parâmetros de entrada (<code>Eps</code> e <code>MinPts</code>) <img data-src="../..\images/cluster/tab_par_dbscan.png" class="quarto-figure quarto-figure-center" width="1000"></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="determinação-dos-valores-de-eps-e-minpts" class="slide level2">
+<h2>Determinação dos valores de Eps e MinPts</h2>
+<p>A escolha adequada dos parâmetros <code>Eps</code> (epsilon) e <code>MinPts</code> (mínimo de pontos) é crucial para o bom desempenho do DBSCAN, já que esses parâmetros definem o que é considerado uma região densa.</p>
+<div class="fragment">
+<p>Regra prática para escolha de <code>MinPts</code>:</p>
+<ul>
+<li>Para dados com dimensão <em>d</em>, recomenda-se:
+<ul>
+<li><code>MinPts</code> ≥ <em>d</em> + 1</li>
+<li>Exemplo: para dados 2D, escolha pelo menos <code>MinPts</code> = 3 ou mais.</li>
+</ul></li>
+<li>Em geral, valores entre 4 e 10 funcionam bem para a maioria dos casos.</li>
+</ul>
+</div>
+</section>
+<section id="determinação-dos-valores-de-eps-e-minpts-1" class="slide level2">
+<h2>Determinação dos valores de Eps e MinPts</h2>
+<p>A melhor prática para determinação de <code>Eps</code> é usar o gráfico da distância do k-vizinho mais próximo:</p>
+<div class="fragment">
+<ul>
+<li>Etapas:
+<ul>
+<li>Para cada ponto, calcule a distância ao seu k-ésimo vizinho mais próximo (geralmente k = <code>MinPts</code> - 1).</li>
+<li>Ordene essas distâncias em ordem decrescente.</li>
+<li>Plote as distâncias.</li>
+<li>Procure o “cotovelo” no gráfico — o ponto onde a curva começa a subir rapidamente.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<p>Esse valor de distância costuma ser um bom <code>Eps</code>.</p>
+</div>
+</section>
+<section id="determinação-dos-valores-de-eps-e-minpts-2" class="slide level2">
+<h2>Determinação dos valores de Eps e MinPts</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/minpts_eps.jpg" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</section>
+<section id="problema-clusters-com-densidades-diferentes" class="slide level2">
+<h2>Problema: Clusters com densidades diferentes</h2>
+<p>A Figura abaixo ilustra um desafio importante enfrentado pelo DBSCAN: a sensibilidade à variação na densidade dos dados.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/problema_dbscan.jpg" class="quarto-figure quarto-figure-center" width="1300"></p>
+</figure>
+</div>
+</section>
+<section id="problema-clusters-com-densidades-diferentes-1" class="slide level2">
+<h2>Problema: Clusters com densidades diferentes</h2>
+<p>Observamos dois conjuntos de pontos (agrupamentos), um à esquerda (com os pontos A e B) e outro à direita (com os pontos C e D). Ambos os conjuntos parecem representar clusters distintos, mas com densidades diferentes:</p>
+<div class="fragment">
+<p>🔴 <strong>Cluster à esquerda (A e B):</strong> Denso, com muitos pontos próximos. Aqui, os pontos A e B provavelmente atendem ao critério de serem pontos núcleo, possuem ao menos <code>MinPts</code> vizinhos dentro de uma distância <code>Eps</code>.</p>
+</div>
+<div class="fragment">
+<p>🟡 <strong>Cluster à direita (C e D):</strong> Mais esparso, ou seja, os pontos estão mais afastados uns dos outros. Mesmo que C e D estejam relativamente próximos, é possível que não atendam aos critérios de densidade definidos por <code>MinPts</code> e <code>Eps</code>.</p>
+</div>
+</section>
+<section id="problema-clusters-com-densidades-diferentes-2" class="slide level2">
+<h2>Problema: Clusters com densidades diferentes</h2>
+<p><br></p>
+<ul>
+<li>O algoritmo DBSCAN utiliza critérios fixos para formar agrupamentos:
+<ul>
+<li>Um raio (<code>Eps</code>) que define o que é “perto”.</li>
+<li>Um número mínimo de pontos (<code>MinPts</code>) para considerar uma região densa.</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Se <code>Eps</code> é <strong>alto suficiente</strong> para que C e D sejam detectados como clusters então A e B e a região a sua volta se tornarão um <strong>único cluster</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Se <code>Eps</code> é <strong>baixo suficiente</strong> para que A e B sejam detectados como clusters separados então C e D (e os objetos a seu redor) serão considerados <strong>outliers</strong>!</li>
+</ul>
+</div>
+</section>
+<section id="consequência-prática" class="slide level2">
+<h2>Consequência prática</h2>
+<p><br></p>
+<ul>
+<li>DBSCAN não se adapta bem a dados com clusters de densidades muito diferentes.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Um único par de valores de <code>Eps</code> e <code>MinPts</code> não consegue capturar simultaneamente regiões densas e esparsas.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Em aplicações reais (por exemplo, agrupamento geográfico ou comportamento de usuários), isso pode levar à subdetecção de padrões legítimos em regiões menos densas.</li>
+</ul>
+</div>
+</section>
+<section id="soluções-possíveis" class="slide level2">
+<h2>Soluções possíveis</h2>
+<p><br></p>
+<ul>
+<li>Ajustar manualmente <code>Eps</code> e <code>MinPts</code> para diferentes partes dos dados.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Usar algoritmos mais flexíveis:
+<ul>
+<li>HDBSCAN: detecta clusters com diferentes densidades.</li>
+<li>OPTICS: evita a necessidade de definir <code>Eps</code> fixo.</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Aplicar técnicas de redução de dimensionalidade para uniformizar densidades.</li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="método-mean-shift" class="title-slide slide level1 center">
+<h1>Método Mean Shift</h1>
+
+</section>
+<section id="método-mean-shift-1" class="slide level2">
+<h2>Método Mean Shift</h2>
+<p>O método <strong>Mean Shift</strong> é um algoritmo baseado em <strong>janela deslizante</strong> que tenta encontrar áreas densas no conjunto de dados.</p>
+<div class="fragment">
+<p>A ideia desse algoritmo é criar uma <strong>região circular</strong>, obtida através da <strong>média ponderada</strong> dos elementos presentes dentro dessa área, considerando a <strong>distância</strong> de cada ponto em relação ao ponto atual.</p>
+</div>
+<div class="fragment">
+<p>A região de maior concentração em de objetos determina a <strong>direção de deslocamento</strong> deste círculo na base de dados.</p>
+</div>
+<div class="fragment">
+<p>Quando o círculo <strong>não se movimentar</strong> mais na base de dados a iteração termina e o algoritmo é encerrado.</p>
+</div>
+</section>
+<section id="método-mean-shift-2" class="slide level2">
+<h2>Método Mean Shift</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/gif02.gif" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+</section>
+<section id="método-mean-shift-3" class="slide level2">
+<h2>Método Mean Shift</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/fig01.png" class="quarto-figure quarto-figure-center" width="1100"></p>
+</figure>
+</div>
+</section>
+<section id="método-mean-shift-4" class="slide level2">
+<h2>Método Mean Shift</h2>
+<p><br></p>
+<p>A ideia do algoritmo é calcular a <strong>função densidade de probabilidade</strong> para um conjunto de dados. Isso é feito através do conceito de <strong>kernel density estimation (KDE)</strong></p>
+<div class="fragment">
+<p>A <strong>média ponderada</strong> é calculada utilizando o kernel, que atribui pesos aos pontos de dados com base em sua proximidade ao ponto central.</p>
+</div>
+</section>
+<section id="método-mean-shift-5" class="slide level2">
+<h2>Método Mean Shift</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/fig02.png" class="quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+</section>
+<section id="método-mean-shift-6" class="slide level2">
+<h2>Método Mean Shift</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/fig03.png" class="quarto-figure quarto-figure-center" width="1100"></p>
+</figure>
+</div>
+</section>
+<section id="método-mean-shift-7" class="slide level2">
+<h2>Método Mean Shift</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/gif01.gif" class="quarto-figure quarto-figure-center" width="1100"></p>
+</figure>
+</div>
+</section>
+<section id="método-mean-shift-8" class="slide level2">
+<h2>Método Mean Shift</h2>
+<p><br></p>
+<p>A <strong>largura de banda (bandwidth)</strong> define o raio da <strong>vizinhança</strong> que é considerado para calcular a média ponderada.</p>
+<div class="fragment">
+<p>Se o valor do bandwidth for <strong>muito grande</strong>, os pontos de dados de diferentes clusters podem ser misturados, levando a um agrupamento <strong>menos discriminativo</strong>.</p>
+</div>
+<div class="fragment">
+<p>Se o valor do bandwidth for <strong>muito pequeno</strong>, podem surgir <strong>clusters pequenos e insignificantes</strong> ou até mesmo apenas um <strong>único cluster</strong> que englobe todos os pontos.</p>
+</div>
+</section>
+<section id="método-mean-shift-9" class="slide level2">
+<h2>Método Mean Shift</h2>
+<p><br></p>
+<p>A <strong>escolha</strong> adequada do valor do bandwidth é <strong>crucial</strong> para obter resultados significativos com o algoritmo Mean Shift.</p>
+<div class="fragment">
+<p>Geralmente, esse valor é <strong>ajustado empiricamente</strong> ou através de <strong>métodos de validação cruzada</strong> para encontrar o valor que melhor se adapte aos dados específicos em questão.</p>
+</div>
+<div class="fragment">
+<p>Uma abordagem comum é <strong>experimentar</strong> diferentes valores e selecionar aquele que produzir os <strong>clusters mais relevantes</strong> e bem definidos para a tarefa em questão.</p>
+</div>
+</section>
+<section id="vantagens-e-desvantagens-2" class="slide level2">
+<h2>Vantagens e Desvantagens</h2>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👍</span></p>
+</div><div class="column" style="width:90%;">
+<p>
+</p>
+<ul>
+<li><p>Não exige número de clusters pré-definido</p></li>
+<li><p>Capaz de detectar formas arbitrárias</p></li>
+<li><p>Baseado em densidade</p></li>
+</ul>
+</div></div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><span style="font-size:160px;">👎</span></p>
+</div><div class="column" style="width:90%;">
+<ul>
+<li><p>Sensível ao parâmetro de <code>bandwidth</code></p></li>
+<li><p>Alto custo computacional</p></li>
+<li><p>Muitos clusters se <code>bandwidth</code> for pequeno</p></li>
+</ul>
+</div></div>
+</div>
+</section></section>
+<section>
+<section id="métodos-baseados-em-modelos" class="title-slide slide level1 center">
+<h1>Métodos baseados em modelos</h1>
+
+</section>
+<section id="redes-de-kohonen" class="slide level2">
+<h2>Redes de Kohonen</h2>
+<p><strong>Redes de Kohonen</strong>, também conhecidas como <strong>Mapas Auto-Organizáveis (SOM - Self-Organizing Maps)</strong>, são uma classe especial de algoritmos de aprendizado de máquina <strong>não supervisionado</strong>, desenvolvidas por Teuvo Kohonen em 1982.</p>
+<div class="fragment">
+<p>Essas redes têm como objetivo <strong>organizar</strong> e <strong>visualizar</strong> dados complexos em um <strong>espaço bidimensional</strong> ou tridimensional, de forma que <strong>padrões</strong> e <strong>estruturas ocultas</strong> possam ser facilmente <strong>identificados</strong>.</p>
+</div>
+<div class="fragment">
+<p>O funcionamento das redes de Kohonen é inspirado na forma como o <strong>cérebro humano</strong> organiza informações e aprende a partir do <strong>ambiente</strong>.</p>
+</div>
+</section>
+<section id="redes-de-kohonen-1" class="slide level2">
+<h2>Redes de Kohonen</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/cerebro2.gif" class="" width="1400"></p>
+<figcaption>Cérebro respondendo a estímulos</figcaption>
+</figure>
+</div>
+</section>
+<section id="redes-de-kohonen-2" class="slide level2">
+<h2>Redes de Kohonen</h2>
+<p><br></p>
+<p>A rede é composta por um <strong>conjunto de neurônios</strong> artificialmente conectados em uma estrutura <strong>bidimensional</strong>, que representa o mapa. Cada neurônio é associado a um <strong>vetor de pesos</strong>, com mesma dimensão da entrada, que inicialmente é <strong>aleatório</strong>.</p>
+<div class="fragment">
+<p>Preserva a topologia: observações similares são mapeadas próximas</p>
+</div>
+<div class="fragment">
+<p>O treinamento das redes de Kohonen ocorre em <strong>duas etapas:</strong> Competição e Cooperação</p>
+</div>
+<div class="fragment">
+<p>Princípio fundamental: <strong>Aprendizagem competitiva</strong></p>
+</div>
+</section>
+<section id="redes-de-kohonen-competição" class="slide level2">
+<h2>Redes de Kohonen: Competição</h2>
+<p><br></p>
+<p>Durante essa fase, um dado de entrada é apresentado à rede, e cada neurônio calcula a sua <strong>distância</strong> em relação ao dado.</p>
+<div class="fragment">
+<p>O neurônio que possui os pesos mais próximos do dado de entrada é o <strong>vencedor (BMU: Best Matching Unit)</strong>, ou seja, o neurônio com menor distância euclidiana.</p>
+</div>
+</section>
+<section id="redes-de-kohonen-cooperação" class="slide level2">
+<h2>Redes de Kohonen: Cooperação</h2>
+<p><br></p>
+<p>O neurônio vencedor, juntamente com seus neurônios vizinhos próximos, <strong>atualiza seus pesos</strong> para ficarem mais <strong>similares</strong> ao dado de entrada.</p>
+<div class="fragment">
+<p>Essa <strong>atualização</strong> ajuda a agrupar os dados de entrada <strong>similares</strong> em <strong>regiões próximas</strong> do mapa.</p>
+</div>
+<div class="fragment">
+<p>Essas duas etapas de competição e cooperação são repetidas várias vezes durante o treinamento, e gradualmente, os neurônios se <strong>organizam</strong> em regiões distintas, formando agrupamentos e <strong>revelando padrões</strong> presentes nos dados.</p>
+</div>
+</section>
+<section id="redes-de-kohonen-3" class="slide level2">
+<h2>Redes de Kohonen</h2>
+<table>
+<tbody><tr>
+<th>
+Competição
+</th>
+<th>
+Cooperação
+</th>
+</tr>
+<tr>
+<td>
+<img data-src="../..\images/cluster/kohonen.jpeg" class="nostretch quarto-figure quarto-figure-center" width="1000">
+</td>
+<td>
+<img data-src="../..\images/cluster/SOM.gif" class="nostretch quarto-figure quarto-figure-center" width="600">
+</td>
+</tr>
+</tbody></table>
+</section>
+<section id="redes-de-kohonen-4" class="slide level2">
+<h2>Redes de Kohonen</h2>
+<p>A <strong>vizinhança</strong> de cada neurônio pode ser definida de acordo com a <strong>forma geométrica</strong> utilizada para representar os neurônios da rede</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/topologia.png" class="quarto-figure quarto-figure-center" width="1000"></p>
+</figure>
+</div>
+</section>
+<section id="redes-de-kohonen-5" class="slide level2">
+<h2>Redes de Kohonen</h2>
+<ul>
+<li><strong>Hexagonal:</strong> cada neurônio possui 6 vizinhos diretos</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><strong>Retangular:</strong> cada neurônio possui 4 vizinhos diretos</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Os pesos são <strong>atualizados</strong> segundo a <strong>distância</strong> ao neurônio <strong>ganhador</strong></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/eq.jpg" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/eq2.jpg" class="nostretch quarto-figure quarto-figure-center" width="1200"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="redes-de-kohonen-6" class="slide level2">
+<h2>Redes de Kohonen</h2>
+<p><br></p>
+<ul>
+<li>É uma rede de <strong>aprendizado não supervisionado</strong></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Os exemplos de entrada são comparados a <strong>todos</strong> os neurônios e o <strong>mais próximo</strong> é considerado o neurônio <strong>vencedor (BMU)</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Os pesos do nerônio vencedor são <strong>atualizados</strong> para <strong>aproximar-se</strong> mais do padrão de dados que representa</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>É uma rede ideal para <strong>detecção de agrupamentos</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>O <strong>vetor de pesos</strong> para um cluster serve como um <strong>exemplar dos padrões</strong> de entrada associados com esse cluster.</li>
+</ul>
+
+
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1600,
+
+        height: 900,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp("http:\/\/professortp\.com\.br\/est1125\/");
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
