@@ -2765,7 +2765,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da Disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 03/06\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 05/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 10/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 12/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n7\nTer, 17/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 19/06\nFeriado: não haverá aula\n\n\n\n\n\n\n\n\n\n8\nTer, 24/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 26/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n9\nTer, 01/07\nConstruindo workflows preditivos usando a base de dados Space Titanic",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 03/06\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 05/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 10/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 12/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n7\nTer, 17/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 19/06\nFeriado: não haverá aula\n\n\n\n\n\n\n\n\n\n8\nTer, 24/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 26/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n9\nTer, 01/07\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 03/07\nConstruindo workflows preditivos usando a base de dados Space Titanic",
     "crumbs": [
       "Cronograma da Disciplina"
     ]
@@ -3769,5 +3769,12 @@
     "title": "Reconhecimento de Padrões",
     "section": "Redes de Kohonen",
     "text": "Redes de Kohonen\n\n\nÉ uma rede de aprendizado não supervisionado\n\n\n\nOs exemplos de entrada são comparados a todos os neurônios e o mais próximo é considerado o neurônio vencedor (BMU)\n\n\n\n\nOs pesos do nerônio vencedor são atualizados para aproximar-se mais do padrão de dados que representa\n\n\n\n\nÉ uma rede ideal para detecção de agrupamentos\n\n\n\n\nO vetor de pesos para um cluster serve como um exemplar dos padrões de entrada associados com esse cluster."
+  },
+  {
+    "objectID": "analise_dados/space_titanic_cluster.html",
+    "href": "analise_dados/space_titanic_cluster.html",
+    "title": "Reconhecimento de Padrões com tidymodels",
+    "section": "",
+    "text": "Imagine que estamos à frente de uma missão para entender os perfis dos passageiros da nave Space Titanic. Sem sabermos previamente quem sobreviveu ou não, nosso objetivo é identificar grupos de passageiros com perfis semelhantes, que possam revelar padrões ocultos, como perfis de risco, perfis de luxo, ou comportamentos de bordo.\nEsse é um clássico problema de reconhecimento de padrões não supervisionado."
   }
 ]
