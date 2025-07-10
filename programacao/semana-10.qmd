@@ -1,0 +1,8 @@
+---
+title: "Semana 10"
+---
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Reconhecimento de padrões](/aulas/Reconhecimento_padroes/padroes.html "Reconhecimento de Padrões"){aria-label="Reconhecimento de Padrões"}
