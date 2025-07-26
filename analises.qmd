@@ -7,3 +7,5 @@ title: "Análise de Dados"
 -   [Pré-processamento usando a base de dados Space Titanic](analise_dados/space_titanic.html "Script análise de dados"){aria-label="Script análise de dados"}
 
 -   [Construindo workflows preditivos usando a base de dados Space Titanic](analise_dados/space_titanic_workflow.html "Script análise de dados"){aria-label="Script análise de dados"}
+
+-   [Reconhecendo padrões usando a base de dados Space Titanic](analise_dados/space_titanic_cluster.html "Script análise de dados"){aria-label="Script análise de dados"}
