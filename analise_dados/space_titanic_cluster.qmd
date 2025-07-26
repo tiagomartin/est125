@@ -1,0 +1,840 @@
+---
+title: "Reconhecendo padrões usando a base de dados Space Titanic"
+format: html
+execute:
+  cache: true
+---
+
+Imagine que você é um cientista de dados responsável por entender os perfis dos passageiros da nave Space Titanic, que viajava em direção a uma colônia espacial. Infelizmente, parte da tripulação desapareceu misteriosamente e agora queremos entender se havia padrões ocultos entre os passageiros que possam explicar esse desfecho.
+
+A base de dados Space Titanic, inspirada no clássico Titanic e disponível no [`Kaggle`](https://www.kaggle.com), será utilizada para trabalharmos técnicas de clusterização não supervisionada, que nos permitem:
+
+- 🔍 Descobrir grupos de passageiros com perfis semelhantes;
+
+- 🧠 Analisar comportamentos e características emergentes em cada grupo;
+
+- 📊 Auxiliar em decisões estratégicas para personalização de serviços, segurança de bordo e planejamento de missões futuras.
+
+
+## Pacotes utilizados 
+
+```{r, message=FALSE, warning=FALSE}
+load <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg))
+    install.packages(new.pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+} 
+
+## Pacotes utilizados nessa análise
+
+packages = c("tidyverse",'tidymodels', 'tidyclust', 'dbscan', 'meanShiftR', 'kohonen', 'doParallel', 'tictoc', 'tidyr', 'purrr', 'cluster', 'umap', 'funModeling', 'clue', 'janitor', 'mclust', 'tictoc', 'future', 'doFuture', 'progressr', 'FactoMineR', 'factoextra', 'vegan')
+load(packages)
+```
+
+
+## Leitura dos dados
+ 
+```{r}
+dados = rio::import("https://raw.githubusercontent.com/tiagomartin/est125/refs/heads/main/dados/space_titanic.csv")
+dados %>% 
+  glimpse()
+```
+
+```{r}
+dados %>% df_status()
+```
+
+
+```{r}
+set.seed(12345)  # Escolha um número fixo qualquer
+```
+
+
+De análises anteriores, propomos as seguintes novas variáveis
+
+```{r message=FALSE, warning=FALSE}
+# Engenharia de variáveis
+dados = dados %>%
+  separate(Cabin, c("CabinDeck", "CabinNum", "CabinSide"), sep = "/", remove = TRUE) %>% 
+  separate(PassengerId, c("PassGroup", "nGroup"), sep = "_", remove = TRUE) %>% 
+  mutate(CabinDeck = as.factor(CabinDeck),
+         CabinSide = as.factor(CabinSide), 
+         PassGroup = as.numeric(PassGroup))
+```
+
+
+## Receita de pré-processamento
+
+```{r}
+receita = recipe(~ ., data = dados) %>%
+  step_rm(Name, Transported) %>%
+  step_mutate(across(where(is.character), as.factor)) %>%
+  step_mutate(
+    GroupSize = as.integer(purrr::map_dbl(PassGroup, ~ sum(PassGroup == .x))),
+    IsAlone = ifelse(GroupSize==1, 1, 0) %>% as.factor(),
+    CabinNum = as.numeric(CabinNum),
+    nGroup = as.numeric(nGroup),
+    VIP = as.factor(VIP),
+    CryoSleep = ifelse((RoomService > 0 | FoodCourt > 0 | ShoppingMall > 0 | Spa > 0 | VRDeck > 0), tidyr::replace_na(CryoSleep, FALSE),TRUE),
+    CryoSleep = as.factor(CryoSleep)) %>% 
+  step_impute_knn(CryoSleep, neighbors = 2, impute_with = imp_vars(PassGroup, CabinDeck, CabinNum, CabinSide)) %>% 
+  step_mutate(
+    RoomService = ifelse(CryoSleep==TRUE, tidyr::replace_na(RoomService, 0),RoomService),
+    FoodCourt = ifelse(CryoSleep==TRUE, tidyr::replace_na(FoodCourt, 0),FoodCourt),
+    ShoppingMall = ifelse(CryoSleep==TRUE, tidyr::replace_na(ShoppingMall, 0), ShoppingMall),
+    Spa = ifelse(CryoSleep==TRUE, tidyr::replace_na(Spa, 0), Spa),
+    VRDeck = ifelse(CryoSleep==TRUE, tidyr::replace_na(VRDeck, 0), VRDeck)
+  ) %>% 
+  step_impute_knn(RoomService, FoodCourt, ShoppingMall, Spa, VRDeck, neighbors = 2, 
+                  impute_with = imp_vars(PassGroup, CabinDeck, CabinNum, CabinSide)) %>%
+  step_impute_bag(Age, VIP, CryoSleep, Destination, HomePlanet, CabinDeck, CabinNum, 
+                  CabinSide) %>%
+  step_mutate(across(RoomService:VRDeck, ~ log10(. + 1))) %>% 
+  step_mutate(despesasSuperfluas = RoomService + Spa + VRDeck,
+              despesasBasicas = FoodCourt + ShoppingMall,
+              Isearth = ifelse(HomePlanet=='Earth', 1, 0) %>% as.factor(),
+              Iskid = ifelse(Age < 14, 1, 0) %>% as.factor()) %>% 
+  step_rm(PassGroup) %>%
+  step_corr(all_numeric_predictors(), threshold = 0.95) %>%  # Remove colineares
+  step_dummy(all_nominal_predictors()) %>%
+  step_normalize(all_numeric_predictors()) %>% 
+  step_nzv(all_predictors())
+```
+
+
+
+## Pré-processamento fora do tuning
+
+```{r}
+prep_dados <- prep(receita)
+dados_prep <- bake(prep_dados, new_data = NULL)
+```
+
+
+```{r}
+dados_prep %>% 
+  glimpse()
+```
+
+## Verificando a Estrutura de Agrupamento com PCA
+
+Antes de aplicar algoritmos de clusterização, é essencial compreender a estrutura de correlação intrínseca dos dados, ou seja, se os dados realmente apresentam indícios de agrupamentos naturais. Uma das formas mais eficazes e intuitivas de verificar isso é por meio de uma análise exploratória baseada em Análise de Componentes Principais (PCA).
+
+A PCA reduz a dimensionalidade dos dados ao projetá-los em um novo sistema de eixos ortogonais (as componentes principais) que maximizam a variância explicada. Ao analisar os dados projetados nas duas primeiras componentes principais, é possível visualizar possíveis agrupamentos naturais, outliers e sobreposições.
+
+Essa visualização também permite:
+
+- Avaliar a separabilidade dos grupos esperados;
+
+- Identificar variáveis que mais contribuem para a estrutura dos dados;
+
+- Decidir se faz sentido aplicar técnicas de clusterização.
+
+```{r}
+pca_result <- prcomp(dados_prep, center = TRUE, scale. = TRUE)
+fviz_pca_ind(pca_result, col.ind = "grey70") 
+```
+
+
+## Definição dos modelos K-means e Hierárquico
+
+Antes de ajustarmos os modelos de clusterização, é necessário definir suas configurações por meio dos *model specifications* no framework `tidymodels`, utilizando o pacote `tidyclust`. Essa etapa permite estabelecer os principais parâmetros do modelo, como o número de grupos a ser ajustado (`tune()`), o mecanismo de execução (`engine`) e o modo de operação (`partition` para métodos de agrupamento).
+
+Atualmente, o pacote `tidyclust` oferece suporte apenas a dois algoritmos de clusterização: **K-means** e **Clusterização Hierárquica Aglomerativa**. A seguir, criamos as especificações para esses dois métodos:
+
+- `kmeans_spec`: define o modelo K-means, que busca particionar os dados em grupos minimizando a variabilidade interna de cada cluster.
+
+- `hclust_spec`: define o modelo hierárquico, com ligação do tipo `ward.D`, que constrói agrupamentos de forma incremental buscando minimizar o aumento da variância total entre grupos.
+
+
+```{r}
+kmeans_spec <- k_means(num_clusters = tune()) %>%
+  set_engine("stats") %>%
+  set_mode("partition")
+
+hclust_spec <- hier_clust(num_clusters = tune(), linkage_method = "ward.D2") %>%
+  set_engine("stats") %>%
+  set_mode("partition")
+```
+
+
+Ambas as especificações usam o motor `stats`, que corresponde às implementações nativas do R. Essas definições servirão como base para a construção dos *workflows* de clusterização, permitindo a validação cruzada e o ajuste automático do número ideal de grupos com base nos dados analisados.
+
+## Tuning com validação cruzada
+
+Com as especificações dos modelos definidas, o próximo passo consiste na construção dos *workflows* e na execução do processo de ajuste dos hiperparâmetros, neste caso, o número de clusters.
+
+Primeiramente, utilizamos a função `vfold_cv()` para gerar um esquema de validação cruzada com 5 partições, garantindo uma avaliação robusta da performance dos modelos em diferentes subconjuntos dos dados (`dados_prep`).
+
+```{r}
+folds_prep <- vfold_cv(dados_prep, v = 5)
+```
+
+Em seguida, criamos dois *workflows*, um para o modelo K-means e outro para o modelo Hierárquico. Ambos são configurados para usar todos os preditores disponíveis na base de dados `(~ .)` e incorporam suas respectivas especificações (`kmeans_spec` e `hclust_spec`).
+
+
+```{r}
+wf_kmeans <- workflow() %>% add_model(kmeans_spec) %>% add_formula(~ .)
+wf_hclust <- workflow() %>% add_model(hclust_spec) %>% add_formula(~ .)
+```
+
+O grid de valores para o hiperparâmetro `num_clusters` é definido entre 2 e 10, permitindo que o processo de tuning explore diferentes possíveis quantidades de agrupamentos.
+
+```{r}
+grid <- tibble(num_clusters = 2:6)
+```
+
+Por fim, aplicamos a função `tune_cluster()` para cada modelo, realizando o ajuste do número de clusters com base na métrica de avaliação silhueta média (`silhouette_avg`), uma medida amplamente utilizada para quantificar a qualidade dos agrupamentos formados. Essa métrica avalia o quão bem cada ponto está agrupado com seus vizinhos em comparação com outros clusters.
+
+Esse processo nos permitirá comparar o desempenho dos modelos e selecionar o número ideal de grupos de forma sistemática e fundamentada.
+
+```{r}
+# 1. Plano com paralelismo
+plan(multisession, workers = parallel::detectCores() - 1)
+registerDoFuture()
+
+handlers("txtprogressbar")  # ou "progress"
+
+tic()
+with_progress({
+res_kmeans <- tune_cluster(
+  wf_kmeans,
+  resamples = folds_prep,
+  grid = grid,
+  metrics = cluster_metric_set(silhouette_avg)
+)
+})
+
+with_progress({
+res_hclust <- tune_cluster(
+  wf_hclust,
+  resamples = folds_prep,
+  grid = grid,
+  metrics = cluster_metric_set(silhouette_avg)
+)
+})
+toc()
+```
+
+## Resultados e melhor modelo
+
+Após a execução do processo de tuning com validação cruzada, o próximo passo é identificar o número ideal de clusters para cada modelo com base na métrica de avaliação escolhida, neste caso, a silhueta média (`silhouette_avg`). Essa métrica indica quão bem as observações estão agrupadas: valores próximos de 1 sugerem melhor separação entre os grupos.
+
+
+```{r}
+melhor_kmeans <- select_best(res_kmeans, metric = "silhouette_avg")
+melhor_hclust <- select_best(res_hclust, metric = "silhouette_avg")
+```
+
+
+Utilizamos a função `select_best()` para extrair, de forma automática, o valor de `num_clusters` que resultou na melhor performance para cada modelo. Em seguida, atualizamos as especificações dos modelos K-means e Hierárquico com o número de clusters ótimo encontrado.
+
+
+```{r}
+kmeans_final <- k_means(num_clusters = melhor_kmeans$num_clusters) %>%
+  set_engine("stats") %>%
+  set_mode("partition")
+
+hclust_final <- hier_clust(num_clusters = melhor_hclust$num_clusters, linkage_method = "ward.D") %>%
+  set_engine("stats") %>%
+  set_mode("partition")
+```
+
+Com os modelos atualizados, recriamos os *workflows* finais utilizando a função `update_model()`, garantindo que cada *workflow* reflita o melhor número de grupos encontrado durante o tuning.
+
+
+```{r}
+workflow_final_kmeans <- wf_kmeans %>%
+  update_model(kmeans_final)
+
+workflow_final_hclust <- wf_hclust %>%
+  update_model(hclust_final)
+```
+
+
+Por fim, ajustamos os modelos finais aos dados completos (`dados_prep`) utilizando a função `fit()`. As predições geradas (`predict()`) nos fornecem os rótulos de cluster para cada observação, permitindo identificar a qual grupo cada indivíduo foi atribuído. Esses rótulos são armazenados nas variáveis `grupos_kmeans` e `grupos_hierarquico`, que serão posteriormente utilizados para interpretação e visualização dos padrões encontrados.
+
+```{r}
+modelo_final_kmeans <- fit(workflow_final_kmeans, data = dados_prep)
+grupos_kmeans <- as.factor(predict(modelo_final_kmeans, new_data = dados_prep)$.pred_cluster)
+
+modelo_final_hclust <- fit(workflow_final_hclust, data = dados_prep)
+grupos_hierarquico <- as.factor(predict(modelo_final_hclust, new_data = dados_prep)$.pred_cluster)
+```
+
+
+Esse processo assegura que os modelos finais utilizados para análise estejam otimizados em relação à estrutura dos dados e fundamentados em uma métrica de qualidade apropriada para tarefas de clusterização.
+
+## Visualização de Grupos Gerados via PCA
+
+Em tarefas de clusterização, é comum gerar agrupamentos com base em medidas de similaridade ou distância entre observações. No entanto, como os dados frequentemente têm muitas variáveis (ou dimensões), torna-se desafiador visualizar e interpretar os agrupamentos diretamente no espaço original.
+
+Para lidar com esse problema, uma técnica amplamente utilizada é a Análise de Componentes Principais (`PCA`). A `PCA` transforma os dados originais em um novo sistema de coordenadas formado por componentes principais, isto é, combinações lineares das variáveis originais que maximizam a variância explicada. As duas primeiras componentes geralmente capturam a maior parte da estrutura dos dados, possibilitando uma visualização bidimensional informativa.
+
+
+```{r}
+fviz_pca_ind(
+  pca_result,
+  geom.ind = "point",
+  col.ind = grupos_kmeans,
+  palette = "Set2",
+  addEllipses = TRUE,
+  legend.title = "Grupo",
+  title = "Visualização dos Grupos Formados no Espaço das Componentes Principais"
+)
+
+fviz_pca_ind(
+  pca_result,
+  geom.ind = "point",
+  col.ind = grupos_hierarquico,
+  palette = "Set2",
+  addEllipses = TRUE,
+  legend.title = "Grupo",
+  title = "Visualização dos Grupos Formados no Espaço das Componentes Principais"
+)
+```
+
+Ao projetar os dados nesse plano PCA e colorir os pontos de acordo com os grupos gerados por um algoritmo de clusterização, conseguimos:
+
+- Visualizar a separação (ou sobreposição) entre os grupos;
+
+- Avaliar a qualidade da segmentação de forma intuitiva;
+
+- Identificar outliers ou observações ambíguas;
+
+- Validar visualmente se há coerência entre os agrupamentos e a estrutura intrínseca dos dados.
+
+Além disso, o uso de elipses de confiança pode reforçar a noção de centralidade e dispersão de cada grupo, tornando a visualização ainda mais interpretável.
+
+
+
+## Tuning manual de DBSCAN, MeanShift e SOM
+
+
+Diferentemente dos métodos K-means e Hierarchical Clustering, que podem ser facilmente integrados ao framework `tidyclust` e ajustados automaticamente via validação cruzada com `tune_cluster()`, os algoritmos DBSCAN, MeanShift e Redes SOM exigem uma abordagem manual de tuning dos hiperparâmetros. Isso se deve a características específicas desses modelos e às limitações atuais das interfaces automatizadas.
+
+
+
+### Tuning de DBSCAN
+
+Como o algoritmo DBSCAN não possui uma etapa automática de ajuste de hiperparâmetros integrada ao `tidyclust`, é necessário realizar o tuning manual dos dois parâmetros fundamentais do modelo:
+
+- `eps`: raio de vizinhança que define a densidade mínima em torno de um ponto;
+
+- `minPts`: número mínimo de pontos necessário para formar uma região densa (núcleo do cluster).
+
+Para facilitar esse processo, definimos a função `avaliar_dbscan()`, que recebe diferentes combinações de `eps` e `minPts` e avalia o desempenho do modelo com base na média do índice de silhueta, uma métrica que quantifica o quão bem cada observação está agrupada.
+
+
+```{r}
+avaliar_dbscan <- function(eps, minPts, dados) {
+  modelo <- dbscan::dbscan(dados, eps = eps, minPts = minPts)
+
+  # Remove ruído (cluster 0)
+  grupos <- modelo$cluster
+  grupos_validos <- grupos[grupos != 0]
+  n_clusters <- length(unique(grupos_validos))
+
+  # Calcular a silhueta apenas se houver pelo menos dois grupos distintos (além de ruído)
+  if (n_clusters > 1) {
+    sil <- silhouette(grupos, dist(dados))
+    media_sil <- mean(sil[, 3], na.rm = TRUE)
+  } else {
+    media_sil <- NA_real_
+  }
+
+  tibble(
+    eps = eps,
+    minPts = minPts,
+    n_clusters = n_clusters,
+    silhueta = media_sil
+  )
+}
+```
+
+
+Essa abordagem permite montar uma `grid` de busca com diferentes valores de `eps` e `minPts`, testando várias combinações para selecionar aquela que maximiza a separação entre os clusters e minimiza a presença de ruído.
+
+
+```{r}
+# Grid de hiperparâmetros
+eps_grid <- seq(3.0, 4.0, by = 0.1)
+minPts_grid <- seq(10, 30, by = 2)   # Mínimo de pontos mais restritivo
+```
+
+Seguindo, construimos um grid de parâmetros por meio da função `expand.grid()`, combinando todos os valores possíveis de `eps` e `minPts` definidos previamente nas variáveis `eps_grid` e `minPts_grid`. Utilizamos a função `pmap_dfr()` (do pacote `purrr`) para aplicar a função `avaliar_dbscan()` a cada combinação da grid. O argumento `.progress =` permite o acompanhamento da execução, útil especialmente em grades extensas.
+
+
+```{r}
+tic()
+dbscan_results <- expand.grid(eps = eps_grid, minPts = minPts_grid) %>%
+  mutate(silhouette = pmap_dfr(list(eps, minPts), avaliar_dbscan, dados = dados_prep, .progress = FALSE)) %>%
+  drop_na() %>%
+  arrange(desc(silhouette$silhueta))
+toc()
+```
+
+Os resultados são ordenados em ordem decrescente de acordo com a silhueta média, permitindo identificar rapidamente os conjuntos de parâmetros que produziram os melhores agrupamentos em termos de coesão e separação dos grupos.
+
+```{r}
+melhor_dbscan <- dbscan_results %>%
+  filter(!is.na(silhouette$silhueta), silhouette$n_clusters == 3) %>%
+  arrange(desc(silhouette$silhueta)) %>%
+  slice(1) %>%
+  pull(silhouette)
+```
+
+Com os valores ideais de `eps` e `minPts` em mãos, ajustamos o modelo DBSCAN final sobre os dados completos (`dados_prep`). Os rótulos de cluster atribuídos pelo modelo são armazenados em `grupos_dbscan`, e podem assumir os valores 1, 2, 3 para os grupos válidos e 0 para os pontos classificados como ruído.
+
+```{r}
+modelo_dbscan <- dbscan(dados_prep, eps = melhor_dbscan$eps, minPts = melhor_dbscan$minPts)
+grupos_dbscan <- as.factor(modelo_dbscan$cluster)
+```
+
+
+Para facilitar a interpretação visual dos agrupamentos encontrados, utilizamos novamente a projeção PCA.
+
+```{r}
+fviz_pca_ind(
+  pca_result,
+  geom.ind = "point",
+  col.ind = grupos_dbscan,
+  palette = "Set2",
+  addEllipses = TRUE,
+  legend.title = "Grupo",
+  title = "Visualização dos Grupos Formados no Espaço das Componentes Principais"
+)
+```
+
+
+
+### Tuning de MeanShift
+
+O algoritmo **MeanShift** é um método de clusterização baseado em densidade que não exige a definição prévia do número de clusters. No entanto, seu desempenho é altamente sensível à escolha do parâmetro `bandwidth`, que determina o raio de influência ao redor de cada ponto para estimar os modos da distribuição dos dados.
+
+Como o `tidyclust` ainda não oferece suporte nativo ao MeanShift, a definição do melhor modelo deve ser feita manual e empiricamente, avaliando diferentes valores de `bandwidth`.
+
+Para isso, implementamos duas funções: A função `avaliar_meanshift()`, que aplica o algoritmo `meanShiftR::meanShift()` a uma matriz de dados com um vetor de `bandwidth` (um valor para cada variável)
+
+```{r}
+avaliar_meanshift <- function(bandwidth, dados) {
+  # Aplica o MeanShift com o vetor de bandwidth
+  modelo <- meanShiftR::meanShift(dados, bandwidth = bandwidth)
+
+  # Grupos
+  grupos <- modelo$assignment + 1
+
+  # Verifica se há mais de um grupo
+  if (length(unique(grupos)) < 2) {
+    return(tibble(
+      bandwidth = list(bandwidth),
+      silhueta = NA_real_,
+      n_clusters = 1
+    ))
+  }
+
+  # Calcula silhueta
+  sil <- silhouette(grupos, dist(dados))
+  sil_media <- mean(sil[, 3])
+
+  # Retorna tibble
+  tibble(
+    bandwidth = list(bandwidth),
+    silhueta = sil_media,
+    n_clusters = length(unique(grupos))
+  )
+}
+```
+
+E a função `tuning_meanshift()`, que gera uma grid de vetores de `bandwidth` multiplicando o desvio padrão de cada variável por uma sequência de fatores escalares (de 1.5 a 5.0). Para cada vetor de `bandwidth`, aplicamos a função `avaliar_meanshift()` e armazenamos os resultados, possibilitando identificar a combinação que resulta na melhor estrutura de agrupamento com base na silhueta média.
+
+```{r}
+tuning_meanshift <- function(dados) {
+  # Grid de escalas maiores para reduzir o número de grupos
+  sd_vars <- apply(dados, 2, sd)
+  escalas <- seq(1.5, 5, by = 0.1)
+  bw_grid <- lapply(escalas, function(e) e * sd_vars)
+
+  # Avalia cada vetor de bandwidth
+  resultados <- purrr::map_dfr(bw_grid, ~avaliar_meanshift(.x, dados))
+
+  return(resultados)
+}
+```
+
+O objeto final `resultado` contém todas as combinações testadas e suas respectivas performances, servindo de base para a escolha do `bandwidth` ideal para o modelo MeanShift.
+
+```{r}
+tic()
+resultado <- tuning_meanshift(as.matrix(dados_prep))
+toc()
+```
+
+
+Após testarmos diversas combinações de `bandwidth` utilizando a função `tuning_meanshift()`, o próximo passo consiste em selecionar a melhor configuração para o modelo MeanShift com base na silhueta média.
+
+```{r}
+melhor_bw <- resultado %>%
+  filter(!is.na(silhueta), n_clusters > 1) %>%
+  arrange(desc(silhueta)) %>%
+  slice(1) %>%
+  pull(bandwidth) %>%
+  .[[1]]
+
+
+modelo_meanshift <- meanShift(as.matrix(dados_prep), bandwidth = melhor_bw)
+grupos_meanshift <- as.factor(modelo_meanshift$assignment)
+```
+
+
+Os rótulos de cluster obtidos pelo modelo são então utilizados para construir uma visualização bidimensional via PCA, facilitando a interpretação visual dos agrupamentos. No gráfico gerado, cada ponto representa uma observação, posicionada de acordo com os escores das componentes e colorida segundo o cluster ao qual pertence.
+
+
+```{r}
+fviz_pca_ind(
+  pca_result,
+  geom.ind = "point",
+  col.ind = grupos_meanshift,
+  palette = "Set2",
+  addEllipses = TRUE,
+  legend.title = "Grupo",
+  title = "Visualização dos Grupos Formados no Espaço das Componentes Principais"
+)
+```
+
+
+### Tuning de Redes SOM (Kohonen)
+
+Diferentemente de métodos clássicos como K-means, as Redes de Kohonen (SOM – Self-Organizing Maps) formam agrupamentos de forma não supervisionada a partir de uma grade de neurônios, cuja estrutura (dimensão, topologia, taxa de aprendizado, número de iterações) impacta diretamente a qualidade dos grupos formados.
+
+Como o pacote `tidyclust` ainda não oferece suporte direto para SOMs, o processo de tuning dos hiperparâmetros deve ser feito manualmente. Para isso, foi criada a função `avaliar_som()`, que recebe os principais hiperparâmetros do modelo e avalia sua performance de clusterização por meio do índice de silhueta média.
+
+```{r}
+avaliar_som <- function(xdim, ydim, topo, rlen, alpha, dados) {
+  grid <- somgrid(xdim = xdim, ydim = ydim, topo = topo)
+  
+  modelo <- som(
+    X = dados,
+    grid = grid,
+    rlen = rlen,
+    alpha = alpha,
+    keep.data = TRUE
+  )
+  
+  grupos <- modelo$unit.classif
+  
+  if (length(unique(grupos)) < 2) {
+    return(tibble(
+      xdim = xdim,
+      ydim = ydim,
+      topo = topo,
+      rlen = rlen,
+      alpha = paste(alpha, collapse = "-"),
+      silhueta = NA_real_,
+      n_clusters = length(unique(grupos))
+    ))
+  }
+  
+  sil <- silhouette(grupos, dist(dados))
+  sil_media <- mean(sil[, 3])
+  
+  tibble(
+    xdim = xdim,
+    ydim = ydim,
+    topo = topo,
+    rlen = rlen,
+    alpha = paste(alpha, collapse = "-"),
+    silhueta = sil_media,
+    n_clusters = length(unique(grupos))
+  )
+}
+```
+
+Antes de iniciar o ajuste de modelos SOM, é necessário definir uma grid de busca com diferentes combinações de hiperparâmetros, permitindo explorar sistematicamente o impacto de cada configuração na qualidade dos agrupamentos formados.
+
+```{r}
+xdim_vals <- 2:5
+ydim_vals <- 2:5
+topo_vals <- c("rectangular", "hexagonal")
+rlen_vals <- c(50, 100, 200, 400)
+alpha_vals <- list(c(0.05, 0.01), c(0.1, 0.01), c(0.15, 0.01), c(0.2, 0.01))
+
+grid_som <- expand.grid(
+  xdim = xdim_vals,
+  ydim = ydim_vals,
+  topo = topo_vals,
+  rlen = rlen_vals,
+  alpha = I(alpha_vals),  # evita descompactar a lista
+  stringsAsFactors = FALSE 
+)
+```
+
+O código acima constrói o grid utilizando a função `expand.grid()`, combinando os principais parâmetros que controlam o comportamento da rede SOM:
+
+- `xdim` e `ydim`: definem as dimensões da grade de neurônios (por exemplo, uma grade 3x3 possui 9 unidades de saída). Grades maiores permitem maior resolução nos agrupamentos, mas podem aumentar a complexidade e o risco de overfitting.
+
+- `topo`: especifica a topologia da grade, podendo ser:
+    -  `rectangular`: disposição clássica dos neurônios em linhas e colunas.
+    - `hexagonal`: cada neurônio possui mais vizinhos imediatos, o que suaviza a transição entre clusters.
+
+- `rlen`: define o número de iterações de treinamento da rede. Quanto maior o valor, maior o tempo de treinamento, mas também a chance de convergência mais estável.
+
+- `alpha`: um vetor com dois valores que especificam a taxa de aprendizado inicial e final. Taxas maiores aceleram o aprendizado no início, mas podem comprometer a estabilidade; taxas menores favorecem ajustes mais precisos no final do treinamento.
+
+
+Uma observação importante para o parâmetro `alpha` é que ele é passada como uma lista (`I(alpha_vals)`) para garantir que cada vetor `c(valor_inicial, valor_final)` seja tratado como uma unidade indivisível durante a expansão da grid. Isso evita que o `expand.grid()` desfaça os pares de taxas de aprendizado.
+
+O objeto `grid_som` resultante contém todas as possíveis combinações entre os valores de cada hiperparâmetro, e será utilizado para ajustar e avaliar diferentes modelos SOM via a função `avaliar_som()`.
+
+```{r}
+tic()
+resultado_som <- pmap_dfr(
+  grid_som,
+  function(xdim, ydim, topo, rlen, alpha) {
+    avaliar_som(xdim, ydim, topo, rlen, alpha, dados = as.matrix(dados_prep))
+  }
+)
+toc()
+```
+
+
+Após a avaliação das diversas combinações de hiperparâmetros, selecionamos agora a melhor configuração da rede SOM com base nos seguintes critérios:
+
+- Formação de no máximo 5 clusters, evitando segmentações excessivamente fragmentadas.
+
+- Maior silhueta média, indicando uma boa separação e coesão entre os grupos formados.
+
+```{r}
+melhor_som <- resultado_som %>%
+  filter(n_clusters <= 5) %>%
+  arrange(desc(silhueta)) %>%
+  slice(1)
+```
+
+Com os parâmetros selecionados, configuramos a grade de neurônios com `somgrid()`, especificando o número de neurônios (`xdim` × `ydim`) e a topologia (`topo`). Em seguida, o modelo SOM é ajustado com:
+
+- Os dados preparados (`dados_prep`);
+
+- O número de épocas de treinamento (`rlen`);
+
+- A taxa de aprendizado inicial e final (`alpha`), convertida novamente de texto para vetor numérico.
+
+```{r}
+grid <- somgrid(xdim = melhor_som$xdim, ydim = melhor_som$ydim, topo = melhor_som$topo)
+
+modelo_som <- kohonen::som(
+  X = as.matrix(dados_prep),
+  grid = grid,
+  rlen = melhor_som$rlen,
+  alpha = as.numeric(strsplit(melhor_som$alpha, "-")[[1]]),
+  keep.data = TRUE
+)
+```
+
+
+A saída `modelo_som$unit.classif` fornece os neurônios vencedores (clusters) para cada observação, representando os grupos aos quais os dados foram atribuídos.
+
+```{r}
+grupos_som <- modelo_som$unit.classif
+```
+
+
+Para interpretar os resultados, aplicamos uma projeção PCA sobre os dados e colorimos os pontos com base nos grupos atribuídos pela rede SOM. 
+
+```{r}
+fviz_pca_ind(
+  pca_result,
+  geom.ind = "point",
+  col.ind = factor(grupos_som),
+  palette = "Set2",
+  addEllipses = TRUE,
+  legend.title = "Grupo",
+  title = "Visualização dos Grupos Formados no Espaço das Componentes Principais"
+)
+```
+
+
+
+## Análise dos Clusters
+
+Após aplicar diferentes algoritmos de clusterização aos dados (K-means, DBSCAN, MeanShift, SOM e Hierárquico), é importante avaliar o grau de concordância entre os agrupamentos gerados por cada método. Para isso, utilizamos o Índice Rand Ajustado (ARI – Adjusted Rand Index), uma métrica amplamente usada para comparar partições, corrigindo a aleatoriedade esperada por acaso.
+
+Para isso, criamos o objeto `lista_grupos`, que armazena os vetores de rótulos atribuídos por cada método aos dados.
+
+```{r}
+lista_grupos <- list(
+  kmeans = grupos_kmeans,
+  dbscan = grupos_dbscan,
+  meanshift = grupos_meanshift,
+  som = grupos_som,
+  hierarquico = grupos_hierarquico
+)
+```
+
+```{r}
+# Conta o número de grupos únicos gerados por cada método
+tabela_num_grupos <- purrr::map_int(lista_grupos, ~ n_distinct(.x)) %>%
+  tibble::enframe(name = "Metodo", value = "Numero_de_Grupos")
+
+# Exibe a tabela
+tabela_num_grupos
+```
+
+
+Utilizando a função `combn()`, criamos todas as combinações possíveis de dois algoritmos para comparar seus agrupamentos entre si. Para cada par de métodos, aplicamos a função `adjustedRandIndex()` (do pacote `mclust`), que retorna um valor entre:
+
+- 1: agrupamentos idênticos;
+
+- 0: agrupamentos não mais concordantes do que o esperado ao acaso;
+
+- < 0: discordância inferior ao esperado aleatoriamente.
+
+```{r}
+# Gerar todas as combinações de pares de métodos
+comparacao_ari <- combn(names(lista_grupos), 2, simplify = FALSE, FUN = function(par) {
+  ari_val <- adjustedRandIndex(lista_grupos[[par[1]]], lista_grupos[[par[2]]])
+  tibble(
+    metodo1 = par[1],
+    metodo2 = par[2],
+    ARI = ari_val
+  )
+}) %>%
+  bind_rows() %>%
+  arrange(desc(ARI))
+
+# Visualizar resultados
+comparacao_ari
+```
+
+
+## Validação Estatística dos Agrupamentos
+
+Podemos observar que os algoritmos que aparentemente apresentaram as melhores separações em nossa base de dados foram o K-means e as redes SOM. Embora o K-means seja amplamente conhecido por sua velocidade e facilidade de interpretação, ele assume que os grupos possuem forma aproximadamente esférica e tamanho similar, o que pode limitar sua aplicabilidade em dados com estruturas mais complexas. Por outro lado, o SOM é uma técnica baseada em aprendizado não supervisionado que preserva relações topológicas e permite visualizar agrupamentos de forma intuitiva, sendo particularmente útil em bases com não linearidades ou alta dimensionalidade.
+
+
+A partir de agora, é fundamental ir além da interpretação visual e realizar uma avaliação estatística formal da validade dos grupos formados.
+
+Nesta etapa, buscamos responder à seguinte pergunta:
+
+> "Os grupos encontrados pelos métodos de clusterização representam subdivisões estatisticamente distintas com base nas variáveis originais dos dados?"
+
+
+
+Para essa finalidade, a PERMANOVA (Permutational Multivariate Analysis of Variance) é uma técnica robusta e amplamente utilizada. A PERMANOVA avalia a existência de heterogeneidade entre grupos com base em uma matriz de distâncias (como distâncias euclidianas ou de Gower), ao invés de depender de pressupostos fortes como normalidade multivariada e homogeneidade das variâncias, como ocorre na MANOVA tradicional. A lógica do teste baseia-se em permutações aleatórias dos rótulos dos grupos, calculando a distribuição empírica da estatística F sob a hipótese nula de que não há diferença entre os grupos.
+
+```{r}
+# Definir número de núcleos (ex: todos menos 1)
+n_cores <- parallel::detectCores() - 1
+
+# Registrar o cluster
+cl <- makeCluster(n_cores)
+registerDoParallel(cl)
+
+# Verificar se grupos estão no formato adequado
+grupos_kmeans <- as.factor(grupos_kmeans)
+
+# Calcular a matriz de distâncias (ou usar diretamente no adonis2)
+dist_matrix <- dist(dados_prep, method = "euclidean")
+
+# Executar PERMANOVA com paralelização
+tic()
+resultado_permanova <- adonis2(
+  formula = dist_matrix ~ grupos_kmeans,
+  permutations = how(nperm = 999, blocks = NULL),  # ou aumentar nperm = 5000+
+  parallel = cl
+)
+toc()
+# Encerrar cluster
+stopCluster(cl)
+
+# Exibir o resultado
+resultado_permanova
+```
+
+
+
+```{r}
+# Definir número de núcleos (ex: todos menos 1)
+n_cores <- parallel::detectCores() - 1
+
+# Registrar o cluster
+cl <- makeCluster(n_cores)
+registerDoParallel(cl)
+
+# Verificar se grupos estão no formato adequado
+grupos_som <- as.factor(grupos_som)
+
+# Calcular a matriz de distâncias (ou usar diretamente no adonis2)
+dist_matrix <- dist(dados_prep, method = "euclidean")
+
+# Executar PERMANOVA com paralelização
+tic()
+resultado_permanova <- adonis2(
+  formula = dist_matrix ~ grupos_som,
+  permutations = how(nperm = 999, blocks = NULL),  # ou aumentar nperm = 5000+
+  parallel = cl
+)
+toc()
+# Encerrar cluster
+stopCluster(cl)
+
+# Exibir o resultado
+resultado_permanova
+```
+
+Podemos observar que ambos os agrupamentos são estatisticamente significativos (valor-p < 0.001), indicando que há estrutura nos dados, ou seja, os grupos não são aleatórios. O agrupamento por SOM com 4 grupos explica mais variabilidade (29,9%) da estrutura de distâncias do que o K-means com 3 grupos (21,6%). O valor de F também é maior para o SOM (1233.1 vs. 1196.1), o que reforça a qualidade da separação em 4 grupos.
+
+
+## Perfis dos grupos gerados
+
+```{r warning=FALSE, message=FALSE}
+dados_com_grupos <- dados_prep %>%
+  mutate(grupo_som = factor(grupos_som))
+
+resumo_grupos <- dados_com_grupos %>%
+  group_by(grupo_som) %>%
+  summarise(across(where(is.numeric), mean, na.rm = TRUE)) %>%
+  pivot_longer(-grupo_som, names_to = "variavel", values_to = "media")
+
+ggplot(resumo_grupos, aes(x = variavel, y = media, color = grupo_som, group = grupo_som)) +
+  geom_line() + geom_point() +
+  theme_minimal() +
+  labs(title = "Perfis Médios por Variável e Grupo (SOM)", x = "", y = "Média") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+No gráfico acima, cada linha representa um dos 4 grupos gerados pela rede SOM (grupo_som de 1 a 4). O eixo x traz as variáveis originais da base de dados, enquanto que o eixo y representa a média padronizada de cada variável dentro de cada grupo. As diferenças entre as linhas ao longo do eixo x indicam variáveis que mais distinguem os grupos.
+
+Com base no gráfico, destacam-se como importantes na separação entre os grupos SOM:
+
+| Variável                                    | Observação                                                                         |
+| ------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `ShoppingMall`                              | Grupo 1 tem valores visivelmente mais altos.                                       |
+| `RoomService`, `Spa`, `VRDeck`              | Claramente mais elevados no **grupo 1**, próximos de zero ou negativos nos outros. |
+| `FoodCourt`                                 | Também destaca o grupo 1 com pico alto.                                            |
+| `IsAlone_X1`                                | Forte separação: grupo 3 com valor mínimo, grupo 1 e 4 mais elevados.              |
+| `HomePlanet_Earth`                          | Grupo 2 se diferencia nitidamente dos demais.                                      |
+| `HomePlanet_Mars`                           | Grupo 1 com valor fortemente negativo (quase -1), indicando ausência.              |
+| `Destination_TRAPPIST-1e`                   | Variação clara entre os grupos, sobretudo entre 1 e 3.                             |
+| `CryoSleep_TRUE.`                           | Separação visível entre grupos 1/3 e 2/4.                                          |
+| `CabinDeck_B`, `CabinDeck_C`, `CabinDeck_F` | Alguns grupos têm picos bem distintos, sugerindo uso diferente das cabines.        |
+
+
+### Interpretação geral dos grupos
+
+- **Grupo 1:** parece composto por passageiros com alto consumo de serviços (`RoomService`, `Spa`, `VRDeck`, `FoodCourt`, `ShoppingMall`), geralmente não dormindo em `CryoSleep`, e com valores extremos em várias variáveis.
+  - **Perfil:** Passageiros ativos, sociáveis, consumidores de serviços, não em criogenia, principalmente da Terra e viajando para TRAPPIST-1e.
+
+- **Grupo 2:** mostra valores mais centrados, destaca-se por `HomePlanet_Earth` e padrões mais equilibrados.
+  - **Perfil:** Grupo moderado, com pouca atividade em serviços pagos, viagem equilibrada entre sozinhos e acompanhados, origem majoritária da Terra, mas não se destacam por extremos.
+
+
+- **Grupo 3:** possui vários valores médios negativos, baixa presença de serviços, e maior chance de estar sozinho (`IsAlone`).
+  - **Perfil:** Passageiros com perfil econômico, viagem solitária, em criogenia, oriundos de Marte, com destino alternativo.
+
+- **Grupo 4:** flutua, mas tem valores mais elevados em algumas categorias como `CabinDeck_E` e `VRDeck`.
+  - **Perfil:** Grupo com forte localização em Deck G, com uso moderado de serviços e perfil híbrido, sem comportamento extremo.
+
+O gráfico evidencia que variáveis relacionadas ao consumo de serviços, plano de viagem (`HomePlanet`/`Destination`) e características de cabine são as principais responsáveis pela separação dos grupos SOM. Isso demonstra que a SOM foi eficaz em capturar padrões de comportamento e perfil de passageiros.
