@@ -426,7 +426,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Pacotes utilizados nessa análise</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>,<span class="st">'tidymodels'</span>, <span class="st">'tidyclust'</span>, <span class="st">'dbscan'</span>, <span class="st">'meanShiftR'</span>, <span class="st">'kohonen'</span>, <span class="st">'doParallel'</span>, <span class="st">'tictoc'</span>, <span class="st">'tidyr'</span>, <span class="st">'purrr'</span>, <span class="st">'cluster'</span>, <span class="st">'umap'</span>, <span class="st">'funModeling'</span>, <span class="st">'clue'</span>, <span class="st">'janitor'</span>, <span class="st">'mclust'</span>, <span class="st">'tictoc'</span>, <span class="st">'future'</span>, <span class="st">'doFuture'</span>, <span class="st">'progressr'</span>, <span class="st">'FactoMineR'</span>, <span class="st">'factoextra'</span>, <span class="st">'vegan'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>packages <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"tidyverse"</span>,<span class="st">'tidymodels'</span>, <span class="st">'tidyclust'</span>, <span class="st">'dbscan'</span>, <span class="st">'meanShiftR'</span>, <span class="st">'kohonen'</span>, <span class="st">'doParallel'</span>, <span class="st">'tictoc'</span>, <span class="st">'tidyr'</span>, <span class="st">'purrr'</span>, <span class="st">'cluster'</span>, <span class="st">'umap'</span>, <span class="st">'funModeling'</span>, <span class="st">'clue'</span>, <span class="st">'janitor'</span>, <span class="st">'mclust'</span>, <span class="st">'tictoc'</span>, <span class="st">'future'</span>, <span class="st">'doFuture'</span>, <span class="st">'progressr'</span>, <span class="st">'FactoMineR'</span>, <span class="st">'factoextra'</span>, <span class="st">'vegan'</span>, <span class="st">'clusterCrit'</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(packages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  tidyverse  tidymodels   tidyclust      dbscan  meanShiftR     kohonen 
@@ -435,8 +435,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
 funModeling        clue     janitor      mclust      tictoc      future 
        TRUE        TRUE        TRUE        TRUE        TRUE        TRUE 
-   doFuture   progressr  FactoMineR  factoextra       vegan 
-       TRUE        TRUE        TRUE        TRUE        TRUE </code></pre>
+   doFuture   progressr  FactoMineR  factoextra       vegan clusterCrit 
+       TRUE        TRUE        TRUE        TRUE        TRUE        TRUE </code></pre>
 </div>
 </div>
 </section>
@@ -1238,27 +1238,113 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
 <p>Podemos observar que ambos os agrupamentos são estatisticamente significativos (valor-p &lt; 0.001), indicando que há estrutura nos dados, ou seja, os grupos não são aleatórios. O agrupamento por SOM com 4 grupos explica mais variabilidade (29,9%) da estrutura de distâncias do que o K-means com 3 grupos (21,6%). O valor de F também é maior para o SOM (1233.1 vs.&nbsp;1196.1), o que reforça a qualidade da separação em 4 grupos.</p>
-</section>
-<section id="perfis-dos-grupos-gerados" class="level2">
-<h2 class="anchored" data-anchor-id="perfis-dos-grupos-gerados">Perfis dos grupos gerados</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>dados_com_grupos <span class="ot">&lt;-</span> dados_prep <span class="sc">%&gt;%</span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grupo_som =</span> <span class="fu">factor</span>(grupos_som))</span>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DBI exige labels inteiros</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>labels_som <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(grupos_som)</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>resumo_grupos <span class="ot">&lt;-</span> dados_com_grupos <span class="sc">%&gt;%</span></span>
-<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo_som) <span class="sc">%&gt;%</span></span>
-<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>grupo_som, <span class="at">names_to =</span> <span class="st">"variavel"</span>, <span class="at">values_to =</span> <span class="st">"media"</span>)</span>
-<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(resumo_grupos, <span class="fu">aes</span>(<span class="at">x =</span> variavel, <span class="at">y =</span> media, <span class="at">color =</span> grupo_som, <span class="at">group =</span> grupo_som)) <span class="sc">+</span></span>
-<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Perfis Médios por Variável e Grupo (SOM)"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Média"</span>) <span class="sc">+</span></span>
-<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>labels_km <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(grupos_kmeans)</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>dados_matrix <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(dados_prep)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular índice Davies-Bouldin</span></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>dbi_result <span class="ot">&lt;-</span> <span class="fu">intCriteria</span>(<span class="at">traj =</span> dados_matrix, <span class="at">part =</span> labels_som, <span class="at">crit =</span> <span class="st">"all"</span>)</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>dbi_result_km <span class="ot">&lt;-</span> <span class="fu">intCriteria</span>(<span class="at">traj =</span> dados_matrix, <span class="at">part =</span> labels_km, <span class="at">crit =</span> <span class="st">"all"</span>)</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Exibir resultado</span></span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>dbi_result<span class="sc">$</span>davies_bouldin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.910649</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>dbi_result<span class="sc">$</span>silhouette</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1800618</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>dbi_result_km<span class="sc">$</span>davies_bouldin</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.2268</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>dbi_result_km<span class="sc">$</span>silhouette</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1282857</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_silhouette</span>(<span class="fu">silhouette</span>(labels_som, <span class="fu">dist</span>(dados_prep)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  cluster size ave.sil.width
+1       1 1149          0.19
+2       2 3841          0.11
+3       3 1874          0.15
+4       4 1829          0.26</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="space_titanic_cluster_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fviz_silhouette</span>(<span class="fu">silhouette</span>(labels_km, <span class="fu">dist</span>(dados_prep)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  cluster size ave.sil.width
+1       1 2795          0.12
+2       2 3710          0.19
+3       3 2188          0.08</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_cluster_files/figure-html/unnamed-chunk-43-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Com base nos valores para o índice de Davies-Bouldin (DBI) e índice de Silhueta, podemos fazer a seguinte interpretação comparativa entre dois métodos de clusterização</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Métrica</th>
+<th>SOM</th>
+<th>K-means</th>
+<th>Melhor Método</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Davies-Bouldin (↓)</td>
+<td><strong>1.91</strong></td>
+<td>2.23</td>
+<td>✅ <strong>SOM</strong></td>
+</tr>
+<tr class="even">
+<td>Silhueta (↑)</td>
+<td><strong>0.180</strong></td>
+<td>0.128</td>
+<td>✅ <strong>SOM</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Podemos observar que as redes SOM apresentam desempenho superior, possuindo menor DBI (1.91), o que indica que os clusters estão mais compactos e bem separados em comparação ao K-means. Além disso, apresenta maior índice de Silhueta (0.180), o que sugere que os indivíduos estão mais bem alocados dentro de seus clusters com relação à distância entre clusters.</p>
+<p>Vale ressaltar que os valores do índice de Silhueta estão próximos de 0.1–0.2, o que indica clusters pouco definidos. Pode haver sobreposição entre grupos, indicando que talvez os dados não possuam estrutura de agrupamento forte.</p>
+</section>
+<section id="perfis-dos-grupos-gerados" class="level2">
+<h2 class="anchored" data-anchor-id="perfis-dos-grupos-gerados">Perfis dos grupos gerados</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>dados_com_grupos <span class="ot">&lt;-</span> dados_prep <span class="sc">%&gt;%</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">grupo_som =</span> <span class="fu">factor</span>(grupos_som))</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>resumo_grupos <span class="ot">&lt;-</span> dados_com_grupos <span class="sc">%&gt;%</span></span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo_som) <span class="sc">%&gt;%</span></span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), mean, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>grupo_som, <span class="at">names_to =</span> <span class="st">"variavel"</span>, <span class="at">values_to =</span> <span class="st">"media"</span>)</span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(resumo_grupos, <span class="fu">aes</span>(<span class="at">x =</span> variavel, <span class="at">y =</span> media, <span class="at">color =</span> grupo_som, <span class="at">group =</span> grupo_som)) <span class="sc">+</span></span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb72-11"><a href="#cb72-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb72-12"><a href="#cb72-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Perfis Médios por Variável e Grupo (SOM)"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Média"</span>) <span class="sc">+</span></span>
+<span id="cb72-13"><a href="#cb72-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="space_titanic_cluster_files/figure-html/unnamed-chunk-44-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -1320,7 +1406,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 <ul>
 <li><strong>Grupo 1:</strong> parece composto por passageiros com alto consumo de serviços (<code>RoomService</code>, <code>Spa</code>, <code>VRDeck</code>, <code>FoodCourt</code>, <code>ShoppingMall</code>), geralmente não dormindo em <code>CryoSleep</code>, e com valores extremos em várias variáveis.
 <ul>
-<li><strong>Perfil:</strong> Passageiros ativos, sociáveis, consumidores de serviços, não em criogenia, principalmente da Terra e viajando para TRAPPIST-1e.</li>
+<li><strong>Perfil:</strong> Passageiros mais velhos, ativos, sociáveis, consumidores de serviços, não em criogenia, principalmente da Terra e viajando para TRAPPIST-1e.</li>
 </ul></li>
 <li><strong>Grupo 2:</strong> mostra valores mais centrados, destaca-se por <code>HomePlanet_Earth</code> e padrões mais equilibrados.
 <ul>

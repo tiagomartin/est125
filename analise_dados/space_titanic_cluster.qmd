@@ -28,7 +28,7 @@ load <- function(pkg){
 
 ## Pacotes utilizados nessa análise
 
-packages = c("tidyverse",'tidymodels', 'tidyclust', 'dbscan', 'meanShiftR', 'kohonen', 'doParallel', 'tictoc', 'tidyr', 'purrr', 'cluster', 'umap', 'funModeling', 'clue', 'janitor', 'mclust', 'tictoc', 'future', 'doFuture', 'progressr', 'FactoMineR', 'factoextra', 'vegan')
+packages = c("tidyverse",'tidymodels', 'tidyclust', 'dbscan', 'meanShiftR', 'kohonen', 'doParallel', 'tictoc', 'tidyr', 'purrr', 'cluster', 'umap', 'funModeling', 'clue', 'janitor', 'mclust', 'tictoc', 'future', 'doFuture', 'progressr', 'FactoMineR', 'factoextra', 'vegan', 'clusterCrit')
 load(packages)
 ```
 
@@ -786,6 +786,43 @@ resultado_permanova
 Podemos observar que ambos os agrupamentos são estatisticamente significativos (valor-p < 0.001), indicando que há estrutura nos dados, ou seja, os grupos não são aleatórios. O agrupamento por SOM com 4 grupos explica mais variabilidade (29,9%) da estrutura de distâncias do que o K-means com 3 grupos (21,6%). O valor de F também é maior para o SOM (1233.1 vs. 1196.1), o que reforça a qualidade da separação em 4 grupos.
 
 
+```{r}
+# DBI exige labels inteiros
+labels_som <- as.integer(grupos_som)
+
+labels_km <- as.integer(grupos_kmeans)
+
+dados_matrix <- as.matrix(dados_prep)
+
+# Calcular índice Davies-Bouldin
+dbi_result <- intCriteria(traj = dados_matrix, part = labels_som, crit = "all")
+dbi_result_km <- intCriteria(traj = dados_matrix, part = labels_km, crit = "all")
+
+# Exibir resultado
+dbi_result$davies_bouldin
+dbi_result$silhouette
+
+dbi_result_km$davies_bouldin
+dbi_result_km$silhouette
+
+fviz_silhouette(silhouette(labels_som, dist(dados_prep)))
+fviz_silhouette(silhouette(labels_km, dist(dados_prep)))
+```
+
+Com base nos valores para o índice de Davies-Bouldin (DBI) e índice de Silhueta, podemos fazer a seguinte interpretação comparativa entre dois métodos de clusterização
+
+
+| Métrica            | SOM       | K-means | Melhor Método |
+| ------------------ | --------- | ------- | ------------- |
+| Davies-Bouldin (↓) | **1.91**  | 2.23    | ✅ **SOM**     |
+| Silhueta (↑)       | **0.180** | 0.128   | ✅ **SOM**     |
+
+
+Podemos observar que as redes SOM apresentam desempenho superior, possuindo menor DBI (1.91), o que indica que os clusters estão mais compactos e bem separados em comparação ao K-means. Além disso, apresenta maior índice de Silhueta (0.180), o que sugere que os indivíduos estão mais bem alocados dentro de seus clusters com relação à distância entre clusters.
+
+Vale ressaltar que os valores do índice de Silhueta estão próximos de 0.1–0.2, o que indica clusters pouco definidos. Pode haver sobreposição entre grupos, indicando que talvez os dados não possuam estrutura de agrupamento forte.
+
+
 ## Perfis dos grupos gerados
 
 ```{r warning=FALSE, message=FALSE}
@@ -825,7 +862,7 @@ Com base no gráfico, destacam-se como importantes na separação entre os grupo
 ### Interpretação geral dos grupos
 
 - **Grupo 1:** parece composto por passageiros com alto consumo de serviços (`RoomService`, `Spa`, `VRDeck`, `FoodCourt`, `ShoppingMall`), geralmente não dormindo em `CryoSleep`, e com valores extremos em várias variáveis.
-  - **Perfil:** Passageiros ativos, sociáveis, consumidores de serviços, não em criogenia, principalmente da Terra e viajando para TRAPPIST-1e.
+  - **Perfil:** Passageiros mais velhos, ativos, sociáveis, consumidores de serviços, não em criogenia, principalmente da Terra e viajando para TRAPPIST-1e.
 
 - **Grupo 2:** mostra valores mais centrados, destaca-se por `HomePlanet_Earth` e padrões mais equilibrados.
   - **Perfil:** Grupo moderado, com pouca atividade em serviços pagos, viagem equilibrada entre sozinhos e acompanhados, origem majoritária da Terra, mas não se destacam por extremos.

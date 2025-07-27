@@ -1226,9 +1226,118 @@ Cooperação
 <ul>
 <li>O <strong>vetor de pesos</strong> para um cluster serve como um <strong>exemplar dos padrões</strong> de entrada associados com esse cluster.</li>
 </ul>
-
-
 </div>
+</section></section>
+<section>
+<section id="avaliação-dos-grupos" class="title-slide slide level1 center">
+<h1>Avaliação dos grupos</h1>
+
+</section>
+<section id="por-que-avaliar-clusters" class="slide level2">
+<h2>Por que Avaliar Clusters?</h2>
+<p><br></p>
+<ul>
+<li>Clusterização é <strong>não supervisionada</strong>: não há rótulos corretos.</li>
+<li>Avaliar para:
+<ul>
+<li>Comparar algoritmos.</li>
+<li>Ajustar hiperparâmetros.</li>
+<li>Validar interpretação e coerência dos grupos.</li>
+</ul></li>
+</ul>
+</section>
+<section id="tipos-de-avaliação" class="slide level2">
+<h2>Tipos de Avaliação</h2>
+<p><br></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Requer rótulo?</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Interna</td>
+<td>❌ Não</td>
+<td>Silhueta, Davies-Bouldin</td>
+</tr>
+<tr class="even">
+<td>Externa</td>
+<td>✅ Sim</td>
+<td>ARI, NMI, Homogeneidade</td>
+</tr>
+<tr class="odd">
+<td>Relativa</td>
+<td>📂 Parcial</td>
+<td>Gap Statistic, Elbow, CH</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="avaliação-interna-índice-de-silhueta" class="slide level2">
+<h2>Avaliação Interna: Índice de Silhueta</h2>
+<ul>
+<li>Mede a <strong>coerência</strong> interna dos clusters.</li>
+<li>Intervalo: <strong>[-1, 1]</strong></li>
+</ul>
+<p><span class="math display">\[
+s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
+\]</span></p>
+<ul>
+<li>(a(i)): distância média no cluster<br>
+</li>
+<li>(b(i)): distância ao cluster mais próximo</li>
+</ul>
+</section>
+<section id="davies-bouldin-index-dbi" class="slide level2">
+<h2>Davies-Bouldin Index (DBI)</h2>
+<ul>
+<li>Mede similaridade entre clusters</li>
+</ul>
+<p><span class="math display">\[
+DBI = \frac{1}{k} \sum_{i=1}^k \max_{j \ne i} \left( \frac{s_i + s_j}{d_{ij}} \right)
+\]</span></p>
+<ul>
+<li>Menor DBI indica melhor separação e compacidade.</li>
+</ul>
+</section>
+<section id="avaliação-externa-adjusted-rand-index-ari" class="slide level2">
+<h2>Avaliação Externa: Adjusted Rand Index (ARI)</h2>
+<p><br></p>
+<ul>
+<li>Compara agrupamento com rótulos reais.</li>
+<li>Intervalo: [-1, 1]
+<ul>
+<li>1: agrupamento perfeito</li>
+<li>0: aleatório</li>
+<li>&lt;0: pior que aleatório</li>
+</ul></li>
+</ul>
+</section>
+<section id="avaliação-relativa" class="slide level2">
+<h2>Avaliação Relativa</h2>
+<p><br></p>
+<ul>
+<li><strong>Elbow Method</strong>: ponto de “cotovelo” indica número ideal de clusters.</li>
+<li><strong>Gap Statistic</strong>: compara a soma das distâncias intra-cluster (WCSS) com valor esperado sob aleatoriedade.</li>
+</ul>
+</section>
+<section id="avaliação-visual" class="slide level2">
+<h2>Avaliação Visual</h2>
+<p><br></p>
+<ul>
+<li>Redução de dimensionalidade com
+<ul>
+<li>PCA (linear)</li>
+<li>UMAP ou t-SNE (não linear)</li>
+</ul></li>
+<li>Colorir pontos conforme cluster.</li>
+<li>Identificar sobreposições e separações.</li>
+</ul>
+
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

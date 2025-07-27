@@ -1088,3 +1088,84 @@ A **vizinhança** de cada neurônio pode ser definida de acordo com a **forma ge
 - O **vetor de pesos** para um cluster serve como um **exemplar dos padrões** de entrada associados com esse cluster.
 
 
+
+
+# Avaliação dos grupos
+
+## Por que Avaliar Clusters?
+
+<br>
+ 
+- Clusterização é **não supervisionada**: não há rótulos corretos.
+- Avaliar para:
+  - Comparar algoritmos.
+  - Ajustar hiperparâmetros.
+  - Validar interpretação e coerência dos grupos.
+  
+  
+## Tipos de Avaliação
+
+<br>
+
+| Tipo     | Requer rótulo? | Exemplo                  |
+| -------- | -------------- | ------------------------ |
+| Interna  | ❌ Não          | Silhueta, Davies-Bouldin |
+| Externa  | ✅ Sim          | ARI, NMI, Homogeneidade  |
+| Relativa | 📂 Parcial     | Gap Statistic, Elbow, CH |
+
+
+## Avaliação Interna: Índice de Silhueta
+
+- Mede a **coerência** interna dos clusters.
+- Intervalo: **[-1, 1]**
+
+$$
+s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
+$$
+
+- \(a(i)\): distância média no cluster  
+- \(b(i)\): distância ao cluster mais próximo
+
+
+## Davies-Bouldin Index (DBI)
+
+- Mede similaridade entre clusters
+
+$$
+DBI = \frac{1}{k} \sum_{i=1}^k \max_{j \ne i} \left( \frac{s_i + s_j}{d_{ij}} \right)
+$$
+
+- Menor DBI indica melhor separação e compacidade.
+
+
+## Avaliação Externa: Adjusted Rand Index (ARI)
+
+<br>
+
+- Compara agrupamento com rótulos reais.
+- Intervalo: [-1, 1]
+  - 1: agrupamento perfeito
+  - 0: aleatório
+  - <0: pior que aleatório
+
+
+
+## Avaliação Relativa
+
+<br>
+
+- **Elbow Method**: ponto de "cotovelo" indica número ideal de clusters.
+- **Gap Statistic**: compara a soma das distâncias intra-cluster (WCSS) com valor esperado sob aleatoriedade.
+
+
+
+## Avaliação Visual
+
+<br>
+
+- Redução de dimensionalidade com
+  - PCA (linear)
+  - UMAP ou t-SNE (não linear)
+- Colorir pontos conforme cluster.
+- Identificar sobreposições e separações.
+
