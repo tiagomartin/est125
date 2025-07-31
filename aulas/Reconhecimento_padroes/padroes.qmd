@@ -1127,6 +1127,12 @@ $$
 - $b(i)$: distância ao cluster mais próximo
 
 
+
+## Avaliação Interna: Índice de Silhueta
+
+![](/images/cluster/silhueta.png){.nostretch fig-align="center" width="1600px"}
+
+
 ## Davies-Bouldin Index (DBI)
 
 - Mede similaridade entre clusters

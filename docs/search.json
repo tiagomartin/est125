@@ -4035,5 +4035,12 @@
     "title": "Reconhecimento de Padrões",
     "section": "Avaliação Visual",
     "text": "Avaliação Visual\n\n\nUso típico:\n\nReduzir dados de alta dimensão para 2D/3D\nPlotar clusters coloridos para inspeção visual\nAvaliar separabilidade e sobreposição entre grupos"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#avaliação-interna-índice-de-silhueta-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-interna-índice-de-silhueta-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Avaliação Interna: Índice de Silhueta",
+    "text": "Avaliação Interna: Índice de Silhueta"
   }
 ]
