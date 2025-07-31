@@ -1237,7 +1237,7 @@ Cooperação
 <h2>Por que Avaliar Clusters?</h2>
 <p><br></p>
 <ul>
-<li>Clusterização é <strong>não supervisionada</strong>: não há rótulos corretos.</li>
+<li>Clusterização é uma tarefa <strong>não supervisionada</strong>: não há rótulos corretos.</li>
 <li>Avaliar para:
 <ul>
 <li>Comparar algoritmos.</li>
@@ -1266,12 +1266,12 @@ Cooperação
 <tr class="even">
 <td>Externa</td>
 <td>✅ Sim</td>
-<td>ARI, NMI, Homogeneidade</td>
+<td>ARI, Homogeneidade, Completude</td>
 </tr>
 <tr class="odd">
 <td>Relativa</td>
-<td>📂 Parcial</td>
-<td>Gap Statistic, Elbow, CH</td>
+<td>❌ Não</td>
+<td>Gap Statistic, Elbow</td>
 </tr>
 </tbody>
 </table>
@@ -1286,9 +1286,9 @@ Cooperação
 s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
 \]</span></p>
 <ul>
-<li>(a(i)): distância média no cluster<br>
+<li><span class="math inline">\(a(i)\)</span>: distância média no cluster<br>
 </li>
-<li>(b(i)): distância ao cluster mais próximo</li>
+<li><span class="math inline">\(b(i)\)</span>: distância ao cluster mais próximo</li>
 </ul>
 </section>
 <section id="davies-bouldin-index-dbi" class="slide level2">
@@ -1300,7 +1300,7 @@ s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
 DBI = \frac{1}{k} \sum_{i=1}^k \max_{j \ne i} \left( \frac{s_i + s_j}{d_{ij}} \right)
 \]</span></p>
 <ul>
-<li>Menor DBI indica melhor separação e compacidade.</li>
+<li><strong>Menor DBI</strong> indica <strong>melhor separação</strong> e compacidade.</li>
 </ul>
 </section>
 <section id="avaliação-externa-adjusted-rand-index-ari" class="slide level2">
@@ -1316,25 +1316,98 @@ DBI = \frac{1}{k} \sum_{i=1}^k \max_{j \ne i} \left( \frac{s_i + s_j}{d_{ij}} \r
 </ul></li>
 </ul>
 </section>
+<section id="avaliação-externa-homogeneidade" class="slide level2">
+<h2>Avaliação Externa: Homogeneidade</h2>
+<ul>
+<li><p>Mede se cada cluster contém apenas membros de uma única classe.</p></li>
+<li><p>Intervalo: [0, 1] (quanto mais próximo de 1, mais puro).</p></li>
+</ul>
+<p><span class="math display">\[\text{Homogeneidade }(h) = 1 - \dfrac{H(C|K)}{H(C)}\]</span></p>
+<p>em que:</p>
+<p><span class="math inline">\(C\)</span> = classes verdadeiras, <span class="math inline">\(K\)</span> = clusters atribuídos, <span class="math inline">\(H(C|K)\)</span> = entropia condicional das classes dado os clusters, <span class="math inline">\(H(C)\)</span> = entropia das classes</p>
+<ul>
+<li><strong>Alta homogeneidade</strong> → cada cluster é formado majoritariamente por uma única classe real.</li>
+</ul>
+</section>
+<section id="avaliação-externa-completude" class="slide level2">
+<h2>Avaliação Externa: Completude</h2>
+<ul>
+<li><p>Mede se todos os membros de uma mesma classe real estão alocados no mesmo cluster.</p></li>
+<li><p>Intervalo: [0, 1] (quanto mais próximo de 1, mais completo).</p></li>
+</ul>
+<p><span class="math display">\[\text{Completude }(c) = 1 - \dfrac{H(K|C)}{H(K)}\]</span></p>
+<p>em que:</p>
+<p><span class="math inline">\(C\)</span> = classes verdadeiras, <span class="math inline">\(K\)</span> = clusters atribuídos, <span class="math inline">\(H(C|K)\)</span> = entropia condicional dos clusters dado as classes, <span class="math inline">\(H(C)\)</span> = entropia dos clusters</p>
+<ul>
+<li><strong>Alta completude</strong> → cada classe real está concentrada em um cluster.</li>
+</ul>
+</section>
 <section id="avaliação-relativa" class="slide level2">
 <h2>Avaliação Relativa</h2>
-<p><br></p>
 <ul>
 <li><strong>Elbow Method</strong>: ponto de “cotovelo” indica número ideal de clusters.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../..\images/cluster/elbow.png" class="quarto-figure quarto-figure-center" width="600"></p>
+</figure>
+</div>
+</section>
+<section id="avaliação-relativa-1" class="slide level2">
+<h2>Avaliação Relativa</h2>
+<ul>
 <li><strong>Gap Statistic</strong>: compara a soma das distâncias intra-cluster (WCSS) com valor esperado sob aleatoriedade.</li>
+</ul>
+<p><span class="math display">\[Gap(k) = E[\log(W_k)] - \log(W_k)\]</span></p>
+<p>em que:</p>
+<p>-<span class="math inline">\(W_k:\)</span> soma intra-cluster (<span class="math inline">\(WCSS\)</span>) para <span class="math inline">\(k\)</span> clusters e <span class="math inline">\(E[\log(W_k)]\)</span> é valor esperado sob dados aleatórios (referência).</p>
+<ul>
+<li>O melhor número de clusters é aquele com maior <span class="math inline">\(Gap(k)\)</span></li>
 </ul>
 </section>
 <section id="avaliação-visual" class="slide level2">
 <h2>Avaliação Visual</h2>
 <p><br></p>
 <ul>
-<li>Redução de dimensionalidade com
+<li>PCA (Principal Component Analysis)
 <ul>
-<li>PCA (linear)</li>
-<li>UMAP ou t-SNE (não linear)</li>
+<li>Técnica linear de redução de dimensionalidade</li>
+<li>Projeta dados em componentes principais que explicam maior variância</li>
+<li>Mantém estrutura global dos dados</li>
 </ul></li>
-<li>Colorir pontos conforme cluster.</li>
-<li>Identificar sobreposições e separações.</li>
+</ul>
+</section>
+<section id="avaliação-visual-1" class="slide level2">
+<h2>Avaliação Visual</h2>
+<ul>
+<li>t-SNE (t-Distributed Stochastic Neighbor Embedding)
+<ul>
+<li>Preserva relações de vizinhança local</li>
+<li>Muito bom para visualizar clusters complexos em 2D ou 3D</li>
+<li>Mais lento e sensível a hiperparâmetros</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>UMAP (Uniform Manifold Approximation and Projection)
+<ul>
+<li>Preserva estrutura global e local</li>
+<li>Mais rápido e escalável que t-SNE</li>
+<li>Indicado para redução de dimensionalidade antes de clusterização</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="avaliação-visual-2" class="slide level2">
+<h2>Avaliação Visual</h2>
+<p><br></p>
+<ul>
+<li>Uso típico:
+<ul>
+<li>Reduzir dados de alta dimensão para 2D/3D</li>
+<li>Plotar clusters coloridos para inspeção visual</li>
+<li>Avaliar separabilidade e sobreposição entre grupos</li>
+</ul></li>
 </ul>
 
 
