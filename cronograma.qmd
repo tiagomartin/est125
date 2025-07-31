@@ -44,6 +44,12 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |                           | Qui, 03/07 | Construindo workflows preditivos usando a base de dados Space Titanic | |  | | |[{{< fa brands r-project size=2xl >}}](/analise_dados/space_titanic_workflow.html#visualizando-resultados "Script análise de dados"){aria-label="Script análise de dados"} | | |
 |  [10](programacao/semana-10.html)  | Ter, 08/07 | Feriado: Não haverá aula | |  | | ||  ||
 |                           | Qui, 10/07 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html "Reconhecimento de Padrões"){aria-label="Reconhecimento de Padrões"} | | || | |
+|  [11](programacao/semana-11.html)  | Ter, 15/07 | Não haverá aula | |  | | ||  ||
+|                           | Qui, 17/07 | Não haverá aula | |  | | || | |
+|  [12](programacao/semana-12.html)  | Ter, 22/07 | Recesso Acadêmico | |  | | ||  ||
+|                           | Qui, 24/07 | Recesso Acadêmico | |  | | || | |
+|  [13](programacao/semana-13.html)  | Ter, 29/07 | Não haverá aula | |  | | ||  ||
+|                           | Qui, 31/07 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/métodos-não-hierárquicos "Métodos não hierárquicos"){aria-label="Métodos não hierárquicos"} | | || | |
 :::
 
 ```{r echo = FALSE}

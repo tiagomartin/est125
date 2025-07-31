@@ -1,0 +1,8 @@
+---
+title: "Semana 13"
+---
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Reconhecimento de padrões](/aulas/Reconhecimento_padroes/padroes.html#/métodos-não-hierárquicos "Métodos não hierárquicos"){aria-label="Métodos não hierárquicos"}
