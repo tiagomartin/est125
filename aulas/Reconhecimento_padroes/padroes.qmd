@@ -1220,6 +1220,10 @@ em que:
     - Projeta dados em componentes principais que explicam maior variância
     - Mantém estrutura global dos dados
 
+
+- **Limitação:** não captura relações não lineares entre variáveis
+
+
 ## Avaliação Visual
 
 - t-SNE (t-Distributed Stochastic Neighbor Embedding)
