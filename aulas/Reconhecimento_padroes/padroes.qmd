@@ -1096,7 +1096,7 @@ A **vizinhança** de cada neurônio pode ser definida de acordo com a **forma ge
 
 <br>
  
-- Clusterização é **não supervisionada**: não há rótulos corretos.
+- Clusterização é uma tarefa **não supervisionada**: não há rótulos corretos.
 - Avaliar para:
   - Comparar algoritmos.
   - Ajustar hiperparâmetros.
@@ -1110,8 +1110,8 @@ A **vizinhança** de cada neurônio pode ser definida de acordo com a **forma ge
 | Tipo     | Requer rótulo? | Exemplo                  |
 | -------- | -------------- | ------------------------ |
 | Interna  | ❌ Não          | Silhueta, Davies-Bouldin |
-| Externa  | ✅ Sim          | ARI, NMI, Homogeneidade  |
-| Relativa | 📂 Parcial     | Gap Statistic, Elbow, CH |
+| Externa  | ✅ Sim          | ARI, Homogeneidade, Completude| 
+| Relativa | ❌ Não       | Gap Statistic, Elbow |
 
 
 ## Avaliação Interna: Índice de Silhueta
@@ -1123,8 +1123,8 @@ $$
 s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
 $$
 
-- \(a(i)\): distância média no cluster  
-- \(b(i)\): distância ao cluster mais próximo
+- $a(i)$: distância média no cluster  
+- $b(i)$: distância ao cluster mais próximo
 
 
 ## Davies-Bouldin Index (DBI)
@@ -1135,7 +1135,7 @@ $$
 DBI = \frac{1}{k} \sum_{i=1}^k \max_{j \ne i} \left( \frac{s_i + s_j}{d_{ij}} \right)
 $$
 
-- Menor DBI indica melhor separação e compacidade.
+- **Menor DBI** indica **melhor separação** e compacidade.
 
 
 ## Avaliação Externa: Adjusted Rand Index (ARI)
@@ -1149,23 +1149,97 @@ $$
   - <0: pior que aleatório
 
 
+## Avaliação Externa: Homogeneidade
+
+- Mede se cada cluster contém apenas membros de uma única classe.
+
+- Intervalo: [0, 1] (quanto mais próximo de 1, mais puro).
+
+
+$$\text{Homogeneidade }(h) = 1 - \dfrac{H(C|K)}{H(C)}$$
+
+em que:
+
+$C$ = classes verdadeiras, $K$ = clusters atribuídos, $H(C|K)$ = entropia condicional das classes dado os clusters, $H(C)$ = entropia das classes
+
+
+- **Alta homogeneidade** → cada cluster é formado majoritariamente por uma única classe real.
+
+
+
+
+## Avaliação Externa: Completude
+
+- Mede se todos os membros de uma mesma classe real estão alocados no mesmo cluster.
+
+- Intervalo: [0, 1] (quanto mais próximo de 1, mais completo).
+
+
+$$\text{Completude }(c) = 1 - \dfrac{H(K|C)}{H(K)}$$
+
+em que:
+
+$C$ = classes verdadeiras, $K$ = clusters atribuídos, $H(C|K)$ = entropia condicional dos clusters dado as classes, $H(C)$ = entropia dos clusters
+
+
+- **Alta completude** → cada classe real está concentrada em um cluster.
+
+
+
 
 ## Avaliação Relativa
 
-<br>
+
 
 - **Elbow Method**: ponto de "cotovelo" indica número ideal de clusters.
+
+
+![](/images/cluster/elbow.png){.nostretch fig-align="center" width="600px"}
+
+## Avaliação Relativa
+
+
 - **Gap Statistic**: compara a soma das distâncias intra-cluster (WCSS) com valor esperado sob aleatoriedade.
 
+$$Gap(k) = E[\log(W_k)] - \log(W_k)$$
+
+em que:
+
+-$W_k:$  soma intra-cluster ($WCSS$) para $k$ clusters e $E[\log(W_k)]$ é valor esperado sob dados aleatórios (referência).
+
+
+- O melhor número de clusters é aquele com maior $Gap(k)$
 
 
 ## Avaliação Visual
 
 <br>
 
-- Redução de dimensionalidade com
-  - PCA (linear)
-  - UMAP ou t-SNE (não linear)
-- Colorir pontos conforme cluster.
-- Identificar sobreposições e separações.
+- PCA (Principal Component Analysis)
+    - Técnica linear de redução de dimensionalidade
+    - Projeta dados em componentes principais que explicam maior variância
+    - Mantém estrutura global dos dados
 
+## Avaliação Visual
+
+- t-SNE (t-Distributed Stochastic Neighbor Embedding)
+    - Preserva relações de vizinhança local
+    - Muito bom para visualizar clusters complexos em 2D ou 3D
+    - Mais lento e sensível a hiperparâmetros
+
+. . .
+
+- UMAP (Uniform Manifold Approximation and Projection)
+    - Preserva estrutura global e local
+    - Mais rápido e escalável que t-SNE 
+    - Indicado para redução de dimensionalidade antes de clusterização
+
+
+## Avaliação Visual
+
+<br>
+
+- Uso típico:
+    - Reduzir dados de alta dimensão para 2D/3D
+    - Plotar clusters coloridos para inspeção visual 
+    - Avaliar separabilidade e sobreposição entre grupos

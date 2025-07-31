@@ -3915,21 +3915,21 @@
     "href": "aulas/Reconhecimento_padroes/padroes.html#por-que-avaliar-clusters",
     "title": "Reconhecimento de Padrões",
     "section": "Por que Avaliar Clusters?",
-    "text": "Por que Avaliar Clusters?\n\n\nClusterização é não supervisionada: não há rótulos corretos.\nAvaliar para:\n\nComparar algoritmos.\nAjustar hiperparâmetros.\nValidar interpretação e coerência dos grupos."
+    "text": "Por que Avaliar Clusters?\n\n\nClusterização é uma tarefa não supervisionada: não há rótulos corretos.\nAvaliar para:\n\nComparar algoritmos.\nAjustar hiperparâmetros.\nValidar interpretação e coerência dos grupos."
   },
   {
     "objectID": "aulas/Reconhecimento_padroes/padroes.html#tipos-de-avaliação",
     "href": "aulas/Reconhecimento_padroes/padroes.html#tipos-de-avaliação",
     "title": "Reconhecimento de Padrões",
     "section": "Tipos de Avaliação",
-    "text": "Tipos de Avaliação\n\n\n\n\nTipo\nRequer rótulo?\nExemplo\n\n\n\n\nInterna\n❌ Não\nSilhueta, Davies-Bouldin\n\n\nExterna\n✅ Sim\nARI, NMI, Homogeneidade\n\n\nRelativa\n📂 Parcial\nGap Statistic, Elbow, CH"
+    "text": "Tipos de Avaliação\n\n\n\n\nTipo\nRequer rótulo?\nExemplo\n\n\n\n\nInterna\n❌ Não\nSilhueta, Davies-Bouldin\n\n\nExterna\n✅ Sim\nARI, Homogeneidade, Completude\n\n\nRelativa\n❌ Não\nGap Statistic, Elbow"
   },
   {
     "objectID": "aulas/Reconhecimento_padroes/padroes.html#avaliação-interna-índice-de-silhueta",
     "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-interna-índice-de-silhueta",
     "title": "Reconhecimento de Padrões",
     "section": "Avaliação Interna: Índice de Silhueta",
-    "text": "Avaliação Interna: Índice de Silhueta\n\nMede a coerência interna dos clusters.\nIntervalo: [-1, 1]\n\n\\[\ns(i) = \\frac{b(i) - a(i)}{\\max(a(i), b(i))}\n\\]\n\n(a(i)): distância média no cluster\n\n(b(i)): distância ao cluster mais próximo"
+    "text": "Avaliação Interna: Índice de Silhueta\n\nMede a coerência interna dos clusters.\nIntervalo: [-1, 1]\n\n\\[\ns(i) = \\frac{b(i) - a(i)}{\\max(a(i), b(i))}\n\\]\n\n\\(a(i)\\): distância média no cluster\n\n\\(b(i)\\): distância ao cluster mais próximo"
   },
   {
     "objectID": "aulas/Reconhecimento_padroes/padroes.html#davies-bouldin-index-dbi",
@@ -3950,14 +3950,14 @@
     "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-relativa",
     "title": "Reconhecimento de Padrões",
     "section": "Avaliação Relativa",
-    "text": "Avaliação Relativa\n\n\nElbow Method: ponto de “cotovelo” indica número ideal de clusters.\nGap Statistic: compara a soma das distâncias intra-cluster (WCSS) com valor esperado sob aleatoriedade."
+    "text": "Avaliação Relativa\n\nElbow Method: ponto de “cotovelo” indica número ideal de clusters."
   },
   {
     "objectID": "aulas/Reconhecimento_padroes/padroes.html#avaliação-visual",
     "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-visual",
     "title": "Reconhecimento de Padrões",
     "section": "Avaliação Visual",
-    "text": "Avaliação Visual\n\n\nRedução de dimensionalidade com\n\nPCA (linear)\nUMAP ou t-SNE (não linear)\n\nColorir pontos conforme cluster.\nIdentificar sobreposições e separações."
+    "text": "Avaliação Visual\n\n\nPCA (Principal Component Analysis)\n\nTécnica linear de redução de dimensionalidade\nProjeta dados em componentes principais que explicam maior variância\nMantém estrutura global dos dados"
   },
   {
     "objectID": "programacao/semana-11.html",
@@ -3986,5 +3986,54 @@
     "title": "Semana 13",
     "section": "",
     "text": "Reconhecimento de padrões"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#avaliação-externa-homogeneidade",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-externa-homogeneidade",
+    "title": "Reconhecimento de Padrões",
+    "section": "Avaliação Externa: Homogeneidade",
+    "text": "Avaliação Externa: Homogeneidade\n\nMede se cada cluster contém apenas membros de uma única classe.\nIntervalo: [0, 1] (quanto mais próximo de 1, mais puro).\n\n\\[\\text{Homogeneidade }(h) = 1 - \\dfrac{H(C|K)}{H(C)}\\]\nem que:\n\\(C\\) = classes verdadeiras, \\(K\\) = clusters atribuídos, \\(H(C|K)\\) = entropia condicional das classes dado os clusters, \\(H(C)\\) = entropia das classes\n\nAlta homogeneidade → cada cluster é formado majoritariamente por uma única classe real."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#avaliação-externa-completude",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-externa-completude",
+    "title": "Reconhecimento de Padrões",
+    "section": "Avaliação Externa: Completude",
+    "text": "Avaliação Externa: Completude\n\nMede se todos os membros de uma mesma classe real estão alocados no mesmo cluster.\nIntervalo: [0, 1] (quanto mais próximo de 1, mais completo).\n\n\\[\\text{Completude }(c) = 1 - \\dfrac{H(K|C)}{H(K)}\\]\nem que:\n\\(C\\) = classes verdadeiras, \\(K\\) = clusters atribuídos, \\(H(C|K)\\) = entropia condicional dos clusters dado as classes, \\(H(C)\\) = entropia dos clusters\n\nAlta completude → cada classe real está concentrada em um cluster."
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#avaliação-relativa-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-relativa-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Avaliação Relativa",
+    "text": "Avaliação Relativa\n\nGap Statistic: compara a soma das distâncias intra-cluster (WCSS) com valor esperado sob aleatoriedade.\n\n\\[Gap(k) = E[\\log(W_k)] - \\log(W_k)\\]\nem que:\n-\\(W_k:\\) soma intra-cluster (\\(WCSS\\)) para \\(k\\) clusters e \\(E[\\log(W_k)]\\) é valor esperado sob dados aleatórios (referência).\n\nO melhor número de clusters é aquele com maior \\(Gap(k)\\)"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#umap-e-t-sne-para-visualização",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#umap-e-t-sne-para-visualização",
+    "title": "Reconhecimento de Padrões",
+    "section": "UMAP e t-SNE para Visualização",
+    "text": "UMAP e t-SNE para Visualização\n\nt-SNE (t-Distributed Stochastic Neighbor Embedding)\n\nPreserva relações de vizinhança local\nMuito bom para visualizar clusters complexos em 2D ou 3D\nMais lento e sensível a hiperparâmetros\n\n\n\n\nUMAP (Uniform Manifold Approximation and Projection)\n\nPreserva estrutura global e local\nMais rápido e escalável que t-SNE\nIndicado para redução de dimensionalidade antes de clusterização"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#umap-e-t-sne-para-visualização-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#umap-e-t-sne-para-visualização-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "UMAP e t-SNE para Visualização",
+    "text": "UMAP e t-SNE para Visualização\n\n\nUso típico:\n\nReduzir dados de alta dimensão para 2D/3D\nPlotar clusters coloridos para inspeção visual\nAvaliar separabilidade e sobreposição entre grupos"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#avaliação-visual-1",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-visual-1",
+    "title": "Reconhecimento de Padrões",
+    "section": "Avaliação Visual",
+    "text": "Avaliação Visual\n\nt-SNE (t-Distributed Stochastic Neighbor Embedding)\n\nPreserva relações de vizinhança local\nMuito bom para visualizar clusters complexos em 2D ou 3D\nMais lento e sensível a hiperparâmetros\n\n\n\n\nUMAP (Uniform Manifold Approximation and Projection)\n\nPreserva estrutura global e local\nMais rápido e escalável que t-SNE\nIndicado para redução de dimensionalidade antes de clusterização"
+  },
+  {
+    "objectID": "aulas/Reconhecimento_padroes/padroes.html#avaliação-visual-2",
+    "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-visual-2",
+    "title": "Reconhecimento de Padrões",
+    "section": "Avaliação Visual",
+    "text": "Avaliação Visual\n\n\nUso típico:\n\nReduzir dados de alta dimensão para 2D/3D\nPlotar clusters coloridos para inspeção visual\nAvaliar separabilidade e sobreposição entre grupos"
   }
 ]
