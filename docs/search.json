@@ -3957,7 +3957,7 @@
     "href": "aulas/Reconhecimento_padroes/padroes.html#avaliação-visual",
     "title": "Reconhecimento de Padrões",
     "section": "Avaliação Visual",
-    "text": "Avaliação Visual\n\n\nPCA (Principal Component Analysis)\n\nTécnica linear de redução de dimensionalidade\nProjeta dados em componentes principais que explicam maior variância\nMantém estrutura global dos dados"
+    "text": "Avaliação Visual\n\n\nPCA (Principal Component Analysis)\n\nTécnica linear de redução de dimensionalidade\nProjeta dados em componentes principais que explicam maior variância\nMantém estrutura global dos dados\n\nLimitação: não captura relações não lineares entre variáveis"
   },
   {
     "objectID": "programacao/semana-11.html",
