@@ -1,0 +1,17 @@
+---
+title: "Semana 14"
+---
+
+
+## Script reconhecendo padrõoes usando a base de dados Space Titanic no R
+
+{{< fa brands r-project size=lg >}} [Reconhecendo padrões usando a base de dados Space Titanic](/analise_dados/space_titanic_cluster.html "Script análise de dados"){aria-label="Script análise de dados"}
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Reconhecimento de padrões](/aulas/Reconhecimento_padroes/padroes.html#/método-mean-shift "Método Mean Shift"){aria-label="Método Mean Shift"}
+
+## Projeto
+
+{{< fa list-check size=lg >}} [Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 4](/projeto/projeto_avaliativo.html#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes "Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 4"){aria-label="Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 4"}
+
