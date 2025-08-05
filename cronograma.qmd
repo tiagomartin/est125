@@ -50,8 +50,8 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |                           | Qui, 24/07 | Recesso Acadêmico | |  | | || | |
 |  [13](programacao/semana-13.html)  | Ter, 29/07 | Não haverá aula | |  | | ||  ||
 |                           | Qui, 31/07 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/métodos-não-hierárquicos "Métodos não hierárquicos"){aria-label="Métodos não hierárquicos"} | | || | |
-|  [14](programacao/semana-13.html)  | Ter, 05/08 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/método-mean-shift "Método Mean Shift"){aria-label="Método Mean Shift"} | | ||  ||
-|                           | Qui, 07/08 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/método-mean-shift "Método Mean Shift"){aria-label="Método Mean Shift"} | | |[{{< fa brands r-project size=2xl >}}](analise_dados/space_titanic_cluster.html "Script análise de dados"){aria-label="Script análise de dados"}|  |[{{< fa list-check size=2xl >}}](/projeto/projeto_avaliativo.html#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes "Projeto: fase 4"){aria-label="Projeto: fase 4"}|
+|  [14](programacao/semana-14.html)  | Ter, 05/08 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/método-mean-shift "Método Mean Shift"){aria-label="Método Mean Shift"} | | ||  ||
+|                           | Qui, 07/08 | Reconhecendo padrões usando a base de dados Space Titanic | |  | | |[{{< fa brands r-project size=2xl >}}](analise_dados/space_titanic_cluster.html "Script análise de dados"){aria-label="Script análise de dados"}|  |[{{< fa list-check size=2xl >}}](/projeto/projeto_avaliativo.html#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes "Projeto: fase 4"){aria-label="Projeto: fase 4"}|
 :::
 
 ```{r echo = FALSE}
