@@ -2765,7 +2765,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da Disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 03/06\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 05/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 10/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 12/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n7\nTer, 17/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 19/06\nFeriado: não haverá aula\n\n\n\n\n\n\n\n\n\n8\nTer, 24/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 26/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n9\nTer, 01/07\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 03/07\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n10\nTer, 08/07\nFeriado: Não haverá aula\n\n\n\n\n\n\n\n\n\n\nQui, 10/07\nReconhecimento de Padrões\n\n\n\n\n\n\n\n\n\n11\nTer, 15/07\nNão haverá aula\n\n\n\n\n\n\n\n\n\n\nQui, 17/07\nNão haverá aula\n\n\n\n\n\n\n\n\n\n12\nTer, 22/07\nRecesso Acadêmico\n\n\n\n\n\n\n\n\n\n\nQui, 24/07\nRecesso Acadêmico\n\n\n\n\n\n\n\n\n\n13\nTer, 29/07\nNão haverá aula\n\n\n\n\n\n\n\n\n\n\nQui, 31/07\nReconhecimento de Padrões",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 06/05\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 08/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n2\nTer, 13/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 15/05\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 20/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 22/05\nNão haverá aula!\n\n\n\n\n\n\n\n\n\n4\nTer, 27/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 29/05\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 03/06\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 05/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 10/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 12/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n7\nTer, 17/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 19/06\nFeriado: não haverá aula\n\n\n\n\n\n\n\n\n\n8\nTer, 24/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 26/06\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n9\nTer, 01/07\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 03/07\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n10\nTer, 08/07\nFeriado: Não haverá aula\n\n\n\n\n\n\n\n\n\n\nQui, 10/07\nReconhecimento de Padrões\n\n\n\n\n\n\n\n\n\n11\nTer, 15/07\nNão haverá aula\n\n\n\n\n\n\n\n\n\n\nQui, 17/07\nNão haverá aula\n\n\n\n\n\n\n\n\n\n12\nTer, 22/07\nRecesso Acadêmico\n\n\n\n\n\n\n\n\n\n\nQui, 24/07\nRecesso Acadêmico\n\n\n\n\n\n\n\n\n\n13\nTer, 29/07\nNão haverá aula\n\n\n\n\n\n\n\n\n\n\nQui, 31/07\nReconhecimento de Padrões\n\n\n\n\n\n\n\n\n\n14\nTer, 05/08\nReconhecimento de Padrões\n\n\n\n\n\n\n\n\n\n\nQui, 07/08\nReconhecimento de Padrões",
     "crumbs": [
       "Cronograma da Disciplina"
     ]
@@ -2914,7 +2914,7 @@
     "href": "projeto/projeto_avaliativo.html#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes",
     "title": "Projeto Avaliativo: Análise de churn em uma Empresa de Telecomunicações",
     "section": "🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes",
-    "text": "🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes"
+    "text": "🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes\n\n🔍 Objetivo\nO objetivo desta fase é aplicar técnicas de reconhecimento de padrões (clustering) para identificar grupos distintos de clientes na base de dados da ConecteMais Corp. Ao agrupar clientes com características semelhantes, a empresa poderá obter insights valiosos sobre diferentes perfis de comportamento, uso de serviço e, crucialmente, padrões associados ao churn, mesmo sem um modelo preditivo direto neste momento. Essa análise será fundamental para informar estratégias de marketing e retenção mais direcionadas.\n\n\n🧠 Tarefas e Desafios Propostos\nNesta etapa, a equipe de Análise de Dados focará em descobrir estruturas ocultas nos dados, especialmente para entender melhor os clientes e seu comportamento em relação à rotatividade.\n\n\n🤔 Questões para Discussão e Resolução:\n\nSeleção e Justificativa da Abordagem:\n\n\nConsiderando o objetivo de reconhecimento de padrões e segmentação de clientes, qual tipo de algoritmo de Machine Learning não supervisionado seria mais adequado para este problema? Sugiram pelo menos dois algoritmos de clustering e justifiquem por que cada um é uma boa escolha para identificar grupos de clientes com perfis semelhantes.\nAo contrário da Fase 3, não temos uma variável alvo explícita para “treinar” o modelo. Como o pré-processamento dos dados (especialmente padronização de variáveis numéricas e codificação de categóricas) se torna ainda mais crítico para algoritmos de clustering baseados em distância?\n\n\nPreparação de Dados para Clustering:\n\n\nPara aplicar algoritmos de clustering, é essencial que as features estejam em uma escala comparável. Além da padronização de variáveis numéricas, como vocês lidariam com as variáveis categóricas já pré-processadas (One-Hot Encoding) para que não dominem a formação dos clusters ou causem problemas de dimensionalidade excessiva?\nQuais variáveis do conjunto de dados vocês considerariam mais importantes para incluir na análise de clustering para identificar perfis de clientes, especialmente aqueles relacionados ao churn? Mencionem pelo menos cinco variáveis e justifiquem brevemente sua escolha.\n\n\nDeterminação do Número Ideal de Clusters e Avaliação:\n\n\nAo usar algoritmos de clustering, uma das decisões cruciais é definir o número ideal de grupos (clusters). Quais duas métricas ou métodos vocês utilizariam para ajudar a determinar o número “ótimo” de clusters para os dados da ConecteMais? Expliquem brevemente como cada método funciona.\nDiferente dos modelos de classificação, não há uma métrica de “precisão” direta para clustering. Como vocês avaliariam a qualidade e a interpretabilidade dos clusters formados? Mencionem pelo menos duas abordagens para analisar os resultados e extrair insights de negócio (ex: análise de características de cada cluster, proporção de churn em cada cluster).\n\n\nInterpretação de Padrões e Implicações para o Negócio:\n\n\nUma vez que os clusters sejam formados e avaliados, como vocês iriam caracterizar cada cluster para a Sra. Ana Paula e o Sr. João Silva (ex: “Cluster A: clientes de longo tempo, alto consumo, mas sem fibra óptica”)? Qual seria a relevância de identificar um cluster com uma alta concentração de clientes que deram churn?\nCom base nos padrões descobertos, quais duas ações estratégicas a ConecteMais Corp. poderia considerar para o Cluster de Alto churn identificado? Pensem em ações específicas para retenção ou ofertas personalizadas."
   },
   {
     "objectID": "projeto/projeto_avaliativo.html#fase-5-construção-de-um-sistema-de-recomendação",
@@ -4042,5 +4042,33 @@
     "title": "Reconhecimento de Padrões",
     "section": "Avaliação Interna: Índice de Silhueta",
     "text": "Avaliação Interna: Índice de Silhueta"
+  },
+  {
+    "objectID": "programacao/semana-14.html",
+    "href": "programacao/semana-14.html",
+    "title": "Semana 14",
+    "section": "",
+    "text": "Reconhecendo padrões usando a base de dados Space Titanic"
+  },
+  {
+    "objectID": "programacao/semana-14.html#script-reconhecendo-padrõoes-usando-a-base-de-dados-space-titanic-no-r",
+    "href": "programacao/semana-14.html#script-reconhecendo-padrõoes-usando-a-base-de-dados-space-titanic-no-r",
+    "title": "Semana 14",
+    "section": "",
+    "text": "Reconhecendo padrões usando a base de dados Space Titanic"
+  },
+  {
+    "objectID": "programacao/semana-14.html#slides",
+    "href": "programacao/semana-14.html#slides",
+    "title": "Semana 14",
+    "section": "Slides",
+    "text": "Slides\n Reconhecimento de padrões"
+  },
+  {
+    "objectID": "programacao/semana-14.html#projeto",
+    "href": "programacao/semana-14.html#projeto",
+    "title": "Semana 14",
+    "section": "Projeto",
+    "text": "Projeto\n Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 4"
   }
 ]
