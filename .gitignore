@@ -6,3 +6,7 @@
 /.quarto/
 "analise_dados/space_titanic_workflow_cache/" 
 "*.exe" 
+<<<<<<< HEAD
+=======
+"*.exe" 
+>>>>>>> 143188ad7369693a53c19d2d7bb90eecc756aedf
