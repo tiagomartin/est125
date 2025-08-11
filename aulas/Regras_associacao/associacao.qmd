@@ -1,0 +1,1158 @@
+---
+title: "Regras de Associação"
+format: 
+  revealjs:
+    width: 1600
+    height: 900
+    footer: ""
+    theme: quartomonothemer.scss
+    slide-number: c/t
+    show-slide-number: all
+incremental: false
+code-link: true
+bibliography: references.bib
+title-slide-attributes:
+    data-background-image: /images/back.jpeg
+    data-background-size: cover
+    data-background-opacity: "0.3"
+---
+
+
+## Introdução
+
+<br>
+
+As bases de dados apresentadas até agora compartilham uma propriedade comum: todas elas são compostas por um conjunto de objetos caracterizados por um conjunto de características (atributos).
+ 
+. . .
+
+
+Existe outro tipo de base de dados, muito comum em alguns ambientes empresariais, que relaciona conjuntos de itens que ocorrem em transações.
+
+
+## Introdução
+
+<br>
+
+Esses dados são muito valiosos para os negócios, pois permitem que sejam extraídas informações sobre o comportamento de compras de cada cliente, podendo ser usados na realização de promoções e campanhas de marketing, gestão de estoques, definição de catálogos, análise de perdas, relacionamento com clientes e muitas outras ações.
+
+. . .
+
+O exemplo típico é o do carrinho de supermercado.
+
+
+## Introdução
+
+<br>
+
+Quando alguém vai ao supermercado, faz uma compra e passa na caixa registradora, as informações de quais produtos foram comprados, a quantidade e os preços pagos ficam armazenados no banco de dados do supermercado. 
+
+
+
+. . .
+
+
+Cada registro desses é chamado de **transação** e, por isso, tais bases de dados são denominadas transacionais.
+
+
+
+## Base de dados transacionais
+
+<p align="center">  
+Exemplo de base de dados transacional.</p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:30px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:30px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7btt">TID</th>
+    <th class="tg-7btt">Itens</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">T1</td>
+    <td class="tg-0pky">Pão, Leite</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T2</td>
+    <td class="tg-0pky">Pão, Fralda, Cerveja, Ovos</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T3</td>
+    <td class="tg-0pky">Leite, Fralda, Cerveja, Coca</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T4</td>
+    <td class="tg-0pky">Pão, Leite, Fralda, Cerveja</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T5</td>
+    <td class="tg-0pky">Pão, Leite, Fralda, Coca</td>
+  </tr>
+  <tr>
+  </tr>
+</tbody>
+</table>
+
+
+. . .
+
+
+<p align="center">  
+Cada **transação** é composta por uma identificação (**TID**) e uma lista de itens.</p>
+
+
+
+
+
+
+## Base de dados transacionais
+
+<p align="center">  
+Exemplo de base de dados transacional.</p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:30px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:30px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7btt">TID</th>
+    <th class="tg-7btt">Itens</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">T1</td>
+    <td class="tg-0pky">Pão, Leite</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T2</td>
+    <td class="tg-0pky">Pão, Fralda, Cerveja, Ovos</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T3</td>
+    <td class="tg-0pky">Leite, Fralda, Cerveja, Coca</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T4</td>
+    <td class="tg-0pky">Pão, Leite, Fralda, Cerveja</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T5</td>
+    <td class="tg-0pky">Pão, Leite, Fralda, Coca</td>
+  </tr>
+  <tr>
+  </tr>
+</tbody>
+</table>
+
+
+. . .
+
+
+- **Itens:** I = {Pão, Leite, Fralda, Cerveja, Ovos, Coca}.
+
+- **Banco de dados:** D = {T1, T2, T3, T4, T5}.
+
+- **Exemplo de transação:** T3 = \{Leite, Fralda, Cerveja, Coca \}
+
+
+
+## Representação binária de uma base transacional
+
+<br>
+
+Vamos assumir que cada variável da base de dados $D$ é binária. 
+
+. . .
+
+
+| TID | Leite | Pão | Fralda | Cerveja | Ovos | Coca |
+|:---:|:-----:|:---:|:------:|:-------:|:----:|:----:|
+|  T1 |   1   |  1  |    0   |    0    |   0  |   0  |
+|  T2 |   0   |  1  |    1   |    1    |   1  |   0  |
+|  T3 |   1   |  0  |    1   |    1    |   0  |   1  |
+|  T4 |   1   |  1  |    1   |    1    |   0  |   0  |
+|  T5 |   1   |  1  |    1   |    0    |   0  |   1  |
+
+
+
+## Conceitos Importantes 
+
+<br>
+
+- **Itemset:** Conjunto de itens que ocorrem juntos em uma transação.
+    - **Exemplo:** \{Leite, Pão, Fralda\}
+    - **k-itemset:** Um conjunto que contém $k$ itens.
+
+
+. . .
+
+- **Support count ($\mathbf{\sigma}$):**  Frequência da ocorrência de um itemset
+    - **Exemplo:**} $\mathbf{\sigma}$ ({Leite, Pão,Fralda}) = 2
+    
+
+
+
+## Conceitos Importantes 
+
+
+<br>
+
+- **Suporte (sup):** Proporção de transações que contém um itemset.
+    $$ \text{sup}(X) = \frac{\text{Número de transações contendo } X}{\text{Número total de transações}} $$
+    - **Exemplo:** sup({Leite, Pão, Fralda}) = $\dfrac{2}{5}$
+
+
+
+. . .
+
+
+- **Conjunto Frequente (Frequent Itemset):** Um conjunto cujo suporte é maior ou igual a um dado limite **minsup**.
+
+
+
+## Regras de Associação
+
+<br>
+
+- Uma **regra de associação** é uma implicação da forma $(X \Rightarrow Y)$, onde $X$ e $Y$ são **conjuntos frequentes** de itens e $X \cap Y = \emptyset$.
+    - $R_1$: \{Cerveja\} $\Rightarrow$ \{Fralda\}.
+    - $R_2$: \{Cerveja, Pão\} $\Rightarrow$ \{Leite\}.
+    - $R_3$: \{Leite, Pão\} $\Rightarrow$ \{Fralda,Coca\}.
+    
+
+. . .
+
+- Queremos fazer isso eficientemente pois os bancos de dados relacionados a isso são comumente muito grandes.
+
+
+## Métricas para Avaliar as Regras
+
+- **Suporte (sup):** Proporção das transações que contém ambos $X$ e $Y$.
+
+
+$$Sup(X \Rightarrow Y) = \dfrac{\mathbf{\sigma}(X \cup Y)}{|T|}$$
+
+
+em que $|T|$ representa o número de transações da base.
+
+
+. . .
+
+
+- **Confiança (conf):** Mede a frequência de itens em $Y$ que aparece nas transações que contêm $X$.
+
+$$Conf(X \Rightarrow Y) = \dfrac{\mathbf{\sigma}(X \cup Y)}{\mathbf{\sigma}(X)}$$
+
+onde $\mathbf{\sigma}(X)$  é a contagem do suporte do antecedente da regra.
+
+
+
+## Métricas para Avaliar as Regras
+
+- **Exemplo:** Seja a regra de associação: \{Leite, Fralda\} $\Rightarrow$ \{Cerveja\}
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<p></p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:30px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:30px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7btt">TID</th>
+    <th class="tg-7btt">Itens</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">T1</td>
+    <td class="tg-0pky">Pão, Leite</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T2</td>
+    <td class="tg-0pky">Pão, Fralda, Cerveja, Ovos</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T3</td>
+    <td class="tg-0pky">Leite, Fralda, Cerveja, Coca</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T4</td>
+    <td class="tg-0pky">Pão, Leite, Fralda, Cerveja</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T5</td>
+    <td class="tg-0pky">Pão, Leite, Fralda, Coca</td>
+  </tr>
+  <tr>
+  </tr>
+</tbody>
+</table>
+:::
+
+::: {.column width="50%" .fragment}
+
+$$
+\begin{eqnarray*}
+Sup &=& \dfrac{\mathbf{\sigma}(\text{Leite}, \text{Fralda}, \text{Cerveja})}{5} \\ &=& \dfrac{2}{5} = 0,40\\ Conf &=& \dfrac{\mathbf{\sigma}(\text{Leite}, \text{Fralda}, \text{Cerveja})}{\mathbf{\sigma}(\text{Leite}, \text{Fralda})} \\ &=& \dfrac{2}{3} = 0,67
+\end{eqnarray*}
+$$
+
+
+:::
+
+::::
+
+
+
+
+## Métricas para Avaliar as Regras
+
+<br>
+
+- A regra $X \Rightarrow Y$  ocorre no conjunto de transações $T$ com **confiança** $c$ se $c\%$ das transações em $T$ em que ocorre $X$ também ocorre $Y$.
+
+. . .
+
+- A regra $X \Rightarrow Y$ tem **suporte** $s$ se em $s\%$ das transações em $D$ ocorrem $X$ e $Y$.
+
+
+## Tarefa de mineração de regras de associação
+
+- Dado um conjunto de transações $T$, a **tarefa de mineração de regras de associação** é encontrar todas as regras que:
+    - Suporte $\geqslant$ *minsup* estabelecido pelo usuário.
+    - Confiança $\geqslant$ *minconf* definido pelo usuário.
+
+
+. . . 
+
+- **Abordagem da Força Bruta:**
+    - Listar todas as regras possíveis.
+    - Calcular o suporte e a confiança para cada regra.
+    - Podar regras que não atendem os fatores *minsup* e *minconf*.
+    
+    
+. . .
+
+- **Computacionalmente proibitivo!**
+
+
+
+
+## Tarefa de mineração de regras de associação
+
+
+:::: {.columns}
+
+::: {.column width="42%"}
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:30px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:30px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <th class="tg-7btt">TID</th>
+    <th class="tg-7btt">Itens</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow">T1</td>
+    <td class="tg-0pky">Pão, Leite</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T2</td>
+    <td class="tg-0pky">Pão, Fralda, Cerveja, Ovos</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T3</td>
+    <td class="tg-0pky">Leite, Fralda, Cerveja, Coca</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T4</td>
+    <td class="tg-0pky">Pão, Leite, Fralda, Cerveja</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">T5</td>
+    <td class="tg-0pky">Pão, Leite, Fralda, Coca</td>
+  </tr>
+  <tr>
+  </tr>
+</tbody>
+</table>
+:::
+
+::: {.column width="58%" .fragment}
+
+- \{Leite, Fralda\} $\Rightarrow$ \{Cerveja\} (s = 0,4, c = 0,67)
+- \{Leite, Cerveja\} $\Rightarrow$ \{Fralda\} (s = 0,4, c = 1,00)
+- \{Fralda, Cerveja\} $\Rightarrow$ \{Leite\} (s = 0,4, c = 0,67)
+- \{Cerveja\} $\Rightarrow$ \{Fralda, Leite\} (s = 0,4, c = 0,67)
+- \{Fralda\} $\Rightarrow$ \{Cerveja, Leite\} (s = 0,4, c = 0,50)
+- \{Leite\} $\Rightarrow$ \{Fralda, Cerveja\} (s = 0,4, c = 0,50)
+
+
+:::
+
+::::
+
+. . .
+
+- Todas as regras acima são originadas do mesmo conjunto frequente: \{Leite, Fralda, Cerveja\}
+
+. . .
+
+- Regras originadas do mesmo conjunto frequente têm o mesmo **suporte**, mas diferentes valores para **confiança**.
+
+
+
+
+
+## Tarefa de mineração de regras de associação
+
+
+- Uma estratégia comum adotada pelos algoritmos de mineração de regras de associação consiste em decompor o problema em duas subtarefas:
+  - **Geração do conjunto de itens frequentes:** encontre todos os conjuntos de itens frequentes, ou seja, aqueles cujo suporte seja maior que o *minsup* especificado.
+  - **Geração das regras:** use os conjuntos de itens frequentes para gerar as regras desejadas e calcular sua confiança. Se a confiança for maior ou igual a  *minconf*, então a regra é válida.
+
+
+. . .
+
+- Geração de conjuntos de itens frequentes ainda é computacionalmente cara
+
+
+
+
+## Tarefa de mineração de regras de associação
+
+![](/images/regras/casos.png){.nostretch fig-align="center" width="1000px"}
+
+. . .
+
+
+<p align="center">  
+Dados $d$ itens, há $2^d$ possíveis conjuntos de itens candidatos</p>
+
+
+
+## Tarefa de mineração de regras de associação
+
+
+- Para um conjunto contendo $d$ itens distintos:
+    - Total de conjuntos frequentes = $2^d$
+    - Total das possíveis regras de associação:
+    
+:::: {.columns}
+
+::: {.column width="42%"}
+![](/images/regras/nregras.jpg){.nostretch fig-align="center" width="1000px"}
+:::
+
+::: {.column width="58%" .fragment}
+
+$$\begin{eqnarray*}
+R &=& \sum \limits_{k=i}^{d-1} \left[  \binom {d} {k} \ \times \sum \limits_{j = 1}^{d-k} \binom {d-k} {j} \right] \\ &=& 3^d - 2^{d-1} + 1
+\end{eqnarray*}$$
+
+<p align="center">  
+**Se d = 5, R = 228 regras**</p>
+
+:::
+
+::::
+
+
+
+# Algoritmo Apriori
+
+## Algoritmo Apriori
+
+- **O princípio do Algoritmo Apriori:** Se um itemset é frequente, os seus subconjuntos devem ser frequentes.
+    - **Exemplo:** Se \{Leite, Fralda, Cerveja\} é frequente, todos os subconjuntos desse itemset com dois itens também o são.
+    
+. . .
+
+
+- O **princípio do Apriori** assegura a seguinte propriedade para a medida suporte:
+
+$$\forall X,Y : (X \subseteq Y) \Rightarrow sup(X) \geqslant sup(Y)$$
+
+- O suporte de um conjunto frequente nunca excede o suporte de seus subconjuntos.
+
+- Essa propriedade do suporte é conhecida como **antimonotônica**.
+
+
+## Importância da Propriedade Antimonotônica no Apriori
+
+- O **algoritmo Apriori** usa essa propriedade para **podar** rapidamente os conjuntos de itens que não são relevantes.
+
+
+. . .
+
+
+- Se um itemset de tamanho *k* (como \{Pão, Leite\} não é frequente, então o algoritmo pode **descartar** todos os seus **superconjuntos de tamanho** *k+1*, sem precisar verificá-los.
+
+
+. . .
+
+- Isso reduz significativamente o número de combinações a serem verificadas, tornando o algoritmo mais eficiente.
+
+
+
+
+## Ilustrando o Princípio do Apriori
+
+
+![](/images/regras/apriori.png){.nostretch fig-align="center" width="1300px"}
+
+
+
+## Ilustrando o Princípio do Apriori
+
+
+| TID | Produtos adquiridos           |
+|-----|-------------------------------|
+| 1   | Café, Pão, Manteiga           |
+| 2   | Leite, Cerveja, Pão, Manteiga |
+| 3   | Café, Pão, Manteiga           |
+| 4   | Leite, Café, Pão, Manteiga    |
+| 5   | Cerveja                       |
+| 6   | Manteiga                      |
+| 7   | Pão                           |
+| 8   | Feijão                        |
+| 9   | Arroz, Feijão                 |
+| 10  | Arroz                         |
+|||
+
+
+
+
+## Ilustrando o Princípio do Apriori
+
+
+- **1º passo:** Calcular suporte de conjuntos com 1 item (vamos considerar *minsup* = 0,3)
+
+. . .
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-0pky">Leite</td>
+    <td class="tg-0pky">Sup(Leite) = 0,2</td>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-llyw">Café</td>
+    <td class="tg-llyw">Sup(Café) = 0,3</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Cerveja</td>
+    <td class="tg-0pky">Sup(Cerveja) = 0,2</td>
+  </tr>
+  <tr>
+    <td class="tg-llyw">Pão</td>
+    <td class="tg-llyw">Sup(Pão) = 0,5</td>
+  </tr>
+  <tr>
+    <td class="tg-llyw">Manteiga</td>
+    <td class="tg-llyw">Sup(Manteiga) = 0,5</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Arroz</td>
+    <td class="tg-0pky">Sup(Arroz) = 0,2</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Feijão</td>
+    <td class="tg-0pky">Sup(Feijão) = 0,2</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+
+
+## Ilustrando o Princípio do Apriori
+
+
+<br>
+
+- **2º passo:** Calcular suporte de conjuntos com 2 itens (*minsup* = 0,3)
+
+. . .
+
+
+- **Se um item $J$ não é frequente, um conjunto com 2 itens, um dos quais é o item $J$, não pode ser frequente. Conjuntos contendo item $J$ são ignorados.**
+
+
+. . .
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-llyw">Café, Pão</td>
+    <td class="tg-llyw">Sup(Café, Pão) = 0,3</td>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-llyw">Café, Manteiga</td>
+    <td class="tg-llyw">Sup(Café, Manteiga) = 0,3</td>
+  </tr>
+  <tr>
+    <td class="tg-llyw">Manteiga, Pão</td>
+    <td class="tg-llyw">Sup(Manteiga, Pão) = 0,4</td>
+  </tr>
+</tbody>
+</table>
+
+
+
+
+
+## Ilustrando o Princípio do Apriori
+
+
+<br>
+
+
+- **3º passo:** Calcular suporte de conjuntos com 3 itens (*minsup* = 0,3)
+
+. . .
+
+- **Se um conjunto de itens $(J,K)$ não é frequente, um conjunto com 3 itens que inclua o conjunto de itens $(J,K)$ não pode ser frequente. Conjuntos contendo itens $(J,K)$ são ignorados.**
+
+
+. . .
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-llyw">Café, Pão, Manteiga</td>
+    <td class="tg-llyw">Sup(Café, Pão, Manteiga) = 0,3</td>
+  </tr></thead>
+</table>
+
+
+
+
+## Ilustrando o Princípio do Apriori
+
+
+**Cálculo da Confiança: ** *minconf* = 0,8 
+
+
+. . .
+
+- \{Café, Pão\}
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-llyw">Regra: SE (café) ENTÃO (pão)</td>
+    <td class="tg-llyw">Confiança = 1,0</td>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Regra: SE (pão) ENTÃO (café)</td>
+    <td class="tg-0pky">Confiança = 0,6</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+
+. . .
+
+
+- \{Café, Manteiga\}
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-llyw">Regra: SE (café) ENTÃO (manteiga)</td>
+    <td class="tg-llyw">Confiança = 1,0</td>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">Regra: SE (manteiga) ENTÃO (café)</td>
+    <td class="tg-0pky">Confiança = 0,6</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+. . . 
+
+
+- \{Pão, Manteiga\}
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-llyw">Regra: SE (pão) ENTÃO (manteiga)</td>
+    <td class="tg-llyw">Confiança = 0,8</td>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-llyw">Regra: SE (manteiga) ENTÃO (pão)</td>
+    <td class="tg-llyw">Confiança = 0,8</td>
+  </tr>
+    <tr></tr>
+</tbody>
+</table>
+
+
+
+## Ilustrando o Princípio do Apriori
+
+
+**Cálculo da Confiança: ** *minconf* = 0,8 
+
+- \{Café, Pão, Manteiga\}
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-llyw{background-color:#c0c0c0;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-llyw">Regra: SE (café E pão) ENTÃO (manteiga)</td>
+    <td class="tg-llyw">Confiança = 1,0</td>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-llyw">Regra: SE (café E manteiga) ENTÃO (pão)</td>
+    <td class="tg-llyw">Confiança = 1,0</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Regra: SE (manteiga E pão) ENTÃO (café)</td>
+    <td class="tg-0pky">Confiança = 0,75</td>
+  </tr>
+  <tr>
+    <td class="tg-llyw">Regra: SE (café) ENTÃO (manteiga E pão)</td>
+    <td class="tg-llyw">Confiança = 1,0</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Regra: SE (pão) ENTÃO (manteiga E café)</td>
+    <td class="tg-0pky">Confiança = 0,6</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Regra: SE (manteiga) ENTÃO (pão E café)</td>
+    <td class="tg-0pky">Confiança = 0,6</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+
+
+## Considerações Importantes
+
+<br>
+
+- Utilizando um único valor para *minsup* implica que o algoritmo assume que todos os itens possuem frequências similares
+
+
+. . .
+
+
+- Em muitos domínios, isso não é válido, pois alguns itens aparecem muito frequentemente enquanto outros raramente aparecem
+    - Por exemplo, em um supermercado, clientes compram panelas e frigideiras muito menos frequentemente do que pão e leite
+
+
+
+## Considerações Importantes
+
+<br>
+
+
+- Escolha de *minsup*
+    - Diminuir o valor de *minsup* resulta em maior quantidade de itemsets frequentes
+    - Isso pode aumentar o número de candidatos e a dimensão máxima dos itemsets frequentes (gerando regras com mais condições/conclusões)
+
+
+. . .
+
+
+- Número de itens no conjunto de exemplos
+    - Quanto mais itens, maior o espaço necessário para armazenar o suporte de cada item
+    - Se o número de itemsets frequentes também for grande, o tempo de processamento pode aumentar consideravelmente
+    
+
+
+## Considerações Importantes
+
+- Número de transações (tamanho do banco de dados ou conjunto de exemplos)
+    - O tempo de execução pode aumentar com o aumento do número de transações, uma vez que o algoritmo Apriori efetua múltiplas varreduras
+    
+. . .
+
+
+- Se há uma grande variação na frequência dos itens, há dois problemas
+    - Se *minsup* for muito grande as regras que envolvem itens raros não serão encontradas
+    - Para encontrar regras que envolvem tanto itens frequentes como itens raros, *minsup* deve ser bem pequeno
+        - Isso pode causar uma explosão combinatória já que os itens frequentes (1-itemsets) serão associados entre si de todas as formas possíveis, anulando a poda no reticulado
+        
+        
+        
+## Considerações Importantes
+
+<p></p>
+
+- Entretanto, regras com baixo suporte são de pouco interesse sob a perspectiva do negócio, uma vez que não faz sentido promover itens que os clientes compram pouco em conjunto.
+
+. . .
+
+- Por essa razão, o suporte normalmente é usado para eliminar regras pouco interessantes.
+
+
+. . .
+
+
+- Enquanto a confiança é uma medida da acurácia da regra, o suporte corresponde à sua significância estatística.
+
+
+. . . 
+
+
+- Juntas, essas são as medidas de interesse mais usadas na literatura de mineração de regras de associação.
+
+
+
+
+## Reduzindo o número de regras
+
+
+<br>
+
+-  **Suporte** e **confiança** são usados como filtros, para diminuir o número de regras geradas, gerando apenas regras de melhor qualidade
+
+. . .
+
+
+- Mas, se considerarmos a regra: Se $X \Rightarrow Y$ com confiança de 90\%, podemos garantir que seja uma regra interessante?
+
+
+. . .
+
+
+- A regra: Se $X \Rightarrow Y$ com  confiança de $90\%$ não é interessante, se $Y$ aparece em cerca de $90\%$ das transações, pois a regra não acrescentou nada em termos de conhecimento.
+
+
+## Reduzindo o número de regras
+
+
+- Já a regra: Se $W \Rightarrow Z$ com confiança de $70\%$ é muito mais importante se $Z$ aparece, digamos, em 10\% das transações. 
+
+
+. . . 
+
+
+- Um índice estatístico comumente utilizado para definir o grau de interesse de uma regra de associação é denominado *lift*.
+
+. . .
+
+
+-  O *lift* de uma regra de associação $X \Rightarrow Y$ indica o quanto mais  frequente  torna-se $Y$, quando $X$ ocorre. 
+
+. . .
+
+
+- Esta medida é dada por:
+
+$$lift = \dfrac{Conf(X \Rightarrow Y)}{\mathbf{\sigma}(Y)} = \dfrac{\mathbf{\sigma}(X \cup Y)}{\mathbf{\sigma}(X)\mathbf{\sigma}(Y)}$$
+
+
+
+
+
+## Reduzindo o número de regras
+
+
+| TID | Produtos adquiridos           |
+|-----|-------------------------------|
+| 1   | Café, Pão, Manteiga           |
+| 2   | Leite, Cerveja, Pão, Manteiga |
+| 3   | Café, Pão, Manteiga           |
+| 4   | Leite, Café, Pão, Manteiga    |
+| 5   | Cerveja                       |
+| 6   | Manteiga                      |
+| 7   | Pão                           |
+| 8   | Feijão                        |
+| 9   | Arroz, Feijão                 |
+| 10  | Arroz                         |
+|||
+
+
+## Reduzindo o número de regras
+
+
+Voltando ao exemplo: regras finais (*minsup* = 0,3 e *minconf* = 0,8)
+
+
+. . .
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-0pky">**Regra 01:** SE (café) ENTÃO (pão)</td>
+    <td class="tg-0pky">Confiança = 1,0</td>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">**Regra 02:** SE (café) ENTÃO (manteiga)</td>
+    <td class="tg-0pky">Confiança = 1,0</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 03:** SE (pão) ENTÃO (manteiga)</td>
+    <td class="tg-0pky">Confiança = 0,8</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 04:** SE (manteiga) ENTÃO (pão)</td>
+    <td class="tg-0pky">Confiança = 0,8</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 05:** SE (café E pão) ENTÃO (manteiga)</td>
+    <td class="tg-0pky">Confiança = 1,0</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 06:** SE (café E manteiga) ENTÃO (pão)</td>
+    <td class="tg-0pky">Confiança = 1,0</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 07:** SE (café) ENTÃO (manteiga E pão)</td>
+    <td class="tg-0pky">Confiança = 1,0</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+
+## Reduzindo o número de regras
+
+Voltando ao exemplo: regras finais (*minsup* = 0,3 e *minconf* = 0,8)
+
+
+. . .
+
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:40px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg"><thead>
+  <tr>
+    <td class="tg-0pky">**Regra 01:** *lift* = $1,0 \div 0,5 = 2,0$</td>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0pky">**Regra 02:** *lift* = $1,0 \div 0,5 = 2,0$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 03:** *lift* = $0,8 \div 0,5 = 1,6$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 04:** *lift* = $0,8 \div 0,5 = 1,6$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 05:** *lift* = $1,0 \div 0,5 = 2,0$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 06:** *lift* = $1,0 \div 0,5 = 2,0$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">**Regra 07:** *lift* = $1,0 \div 0,4 = 2,5$</td>
+  </tr>
+  <tr></tr>
+</tbody>
+</table>
+
+. . .
+
+**Interpretação:** Para a regra 01, por exemplo, temos que clientes que compram café tem duas vezes mais chances de comprarem pão.
+
+
+
+## Reduzindo o número de regras
+
+<br>
+
+- Se *lift*$(X \Rightarrow Y) = 1$, então $X$ e $Y$ são independentes. Se *lift*$(X \Rightarrow Y) > 1$, então $X$ e $Y$ são positivamente dependentes. Se *lift*$(X \Rightarrow Y) < 1$, então $X$ e $Y$ são negativamente dependentes. 
+
+
+. . .
+
+- Esta medida varia entre 0 e $\infty$ e possui interpretação bastante simples: quanto maior o valor do *lift*, mais interessante a regra, pois $X$ aumentou (*“lifted”*) $Y$ numa maior taxa.
+
+
+
+## Desafios do Algoritmo Apriori
+
+<br>
+
+- **Escalabilidade**: Pode ser ineficiente com grandes conjuntos de dados.
+
+. . .
+
+
+- **Número de Regras**: Em bases de dados grandes, o número de regras geradas pode ser muito alto.
+
+. . .
+
+
+- **Ajuste de Parâmetros**: Definir o suporte e confiança mínimos pode ser desafiador e impactar os resultados.
+
+
+
+
+
+
+
+## Tipos de dados usados em Associação
+
+<br>
+
+- Somente **inteiro** ou **nominal**.
+ 
+
+. . .
+
+
+
+- Se o atributo for **contínuo**, ele precisa ser **discretizado**.
+
+
+. . .
+
+
+- Transformar atributos categóricos em variáveis binárias assimétricas
+
+
+
+
+## Aplicações no Mundo Real
+
+- **Sistemas de Recomendação**: Sugestões de produtos com base no histórico de compras.
+
+. . .
+
+
+- **Análise de Cesta de Compras**: Identificação de itens frequentemente comprados juntos.
+
+
+. . .
+
+
+- Elaboração de **catálogos de produtos**.
+
+
+
+. . .
+
+
+- Layout de prateleiras (**produtos relacionados tendem a ser colocados perto nas prateleiras**).
+
+
+. . .
+
+
+- **Marketing e Vendas**: Ofertas personalizadas para clientes com base em seu comportamento.
+
+. . .
+
+
+- **Saúde**: Identificação de padrões entre doenças e tratamentos.

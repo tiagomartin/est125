@@ -7822,5 +7822,278 @@
     "title": "Projeto Avaliativo: Análise de churn em uma Empresa de Telecomunicações",
     "section": "🧺 Fase 5: Construção de um Sistema de Recomendação",
     "text": "🧺 Fase 5: Construção de um Sistema de Recomendação"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#introdução",
+    "href": "aulas/Regras_associacao/associacao.html#introdução",
+    "title": "Regras de Associação",
+    "section": "Introdução",
+    "text": "Introdução\n\nAs bases de dados apresentadas até agora compartilham uma propriedade comum: todas elas são compostas por um conjunto de objetos caracterizados por um conjunto de características (atributos).\n\nExiste outro tipo de base de dados, muito comum em alguns ambientes empresariais, que relaciona conjuntos de itens que ocorrem em transações."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#introdução-1",
+    "href": "aulas/Regras_associacao/associacao.html#introdução-1",
+    "title": "Regras de Associação",
+    "section": "Introdução",
+    "text": "Introdução\n\nEsses dados são muito valiosos para os negócios, pois permitem que sejam extraídas informações sobre o comportamento de compras de cada cliente, podendo ser usados na realização de promoções e campanhas de marketing, gestão de estoques, definição de catálogos, análise de perdas, relacionamento com clientes e muitas outras ações.\n\nO exemplo típico é o do carrinho de supermercado."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#introdução-2",
+    "href": "aulas/Regras_associacao/associacao.html#introdução-2",
+    "title": "Regras de Associação",
+    "section": "Introdução",
+    "text": "Introdução\n\nQuando alguém vai ao supermercado, faz uma compra e passa na caixa registradora, as informações de quais produtos foram comprados, a quantidade e os preços pagos ficam armazenados no banco de dados do supermercado.\n\nCada registro desses é chamado de transação e, por isso, tais bases de dados são denominadas transacionais."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#base-de-dados-transacionais",
+    "href": "aulas/Regras_associacao/associacao.html#base-de-dados-transacionais",
+    "title": "Regras de Associação",
+    "section": "Base de dados transacionais",
+    "text": "Base de dados transacionais\n\nExemplo de base de dados transacional.\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n\nCada transação é composta por uma identificação (TID) e uma lista de itens."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#base-de-dados-transacionais-1",
+    "href": "aulas/Regras_associacao/associacao.html#base-de-dados-transacionais-1",
+    "title": "Regras de Associação",
+    "section": "Base de dados transacionais",
+    "text": "Base de dados transacionais\n\nExemplo de base de dados transacional.\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n\nItens: I = {Pão, Leite, Fralda, Cerveja, Ovos, Coca}.\nBanco de dados: D = {T1, T2, T3, T4, T5}.\nExemplo de transação: T3 = {Leite, Fralda, Cerveja, Coca }"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#representação-binária-de-uma-base-transacional",
+    "href": "aulas/Regras_associacao/associacao.html#representação-binária-de-uma-base-transacional",
+    "title": "Regras de Associação",
+    "section": "Representação binária de uma base transacional",
+    "text": "Representação binária de uma base transacional\n\nVamos assumir que cada variável da base de dados \\(D\\) é binária.\n\n\n\n\nTID\nLeite\nPão\nFralda\nCerveja\nOvos\nCoca\n\n\n\n\nT1\n1\n1\n0\n0\n0\n0\n\n\nT2\n0\n1\n1\n1\n1\n0\n\n\nT3\n1\n0\n1\n1\n0\n1\n\n\nT4\n1\n1\n1\n1\n0\n0\n\n\nT5\n1\n1\n1\n0\n0\n1"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#conceitos-importantes",
+    "href": "aulas/Regras_associacao/associacao.html#conceitos-importantes",
+    "title": "Regras de Associação",
+    "section": "Conceitos Importantes",
+    "text": "Conceitos Importantes\n\n\nItemset: Conjunto de itens que ocorrem juntos em uma transação.\n\nExemplo: {Leite, Pão, Fralda}\nk-itemset: Um conjunto que contém \\(k\\) itens.\n\n\n\n\nSupport count (\\(\\mathbf{\\sigma}\\)): Frequência da ocorrência de um itemset\n\nExemplo:} \\(\\mathbf{\\sigma}\\) ({Leite, Pão,Fralda}) = 2"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#conceitos-importantes-1",
+    "href": "aulas/Regras_associacao/associacao.html#conceitos-importantes-1",
+    "title": "Regras de Associação",
+    "section": "Conceitos Importantes",
+    "text": "Conceitos Importantes\n\n\nSuporte (sup): Proporção de transações que contém um itemset. \\[ \\text{sup}(X) = \\frac{\\text{Número de transações contendo } X}{\\text{Número total de transações}} \\]\n\nExemplo: sup({Leite, Pão, Fralda}) = \\(\\dfrac{2}{5}\\)\n\n\n\n\nConjunto Frequente (Frequent Itemset): Um conjunto cujo suporte é maior ou igual a um dado limite minsup."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#regras-de-associação",
+    "href": "aulas/Regras_associacao/associacao.html#regras-de-associação",
+    "title": "Regras de Associação",
+    "section": "Regras de Associação",
+    "text": "Regras de Associação\n\n\nUma regra de associação é uma implicação da forma \\((X \\Rightarrow Y)\\), onde \\(X\\) e \\(Y\\) são conjuntos frequentes de itens e \\(X \\cap Y = \\emptyset\\).\n\n\\(R_1\\): {Cerveja} \\(\\Rightarrow\\) {Fralda}.\n\\(R_2\\): {Cerveja, Pão} \\(\\Rightarrow\\) {Leite}.\n\\(R_3\\): {Leite, Pão} \\(\\Rightarrow\\) {Fralda,Coca}.\n\n\n\n\nQueremos fazer isso eficientemente pois os bancos de dados relacionados a isso são comumente muito grandes."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras",
+    "href": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras",
+    "title": "Regras de Associação",
+    "section": "Métricas para Avaliar as Regras",
+    "text": "Métricas para Avaliar as Regras\n\nSuporte (sup): Proporção das transações que contém ambos \\(X\\) e \\(Y\\).\n\n\\[Sup(X \\Rightarrow Y) = \\dfrac{\\mathbf{\\sigma}(X \\cup Y)}{|T|}\\]\nem que \\(|T|\\) representa o número de transações da base.\n\n\nConfiança (conf): Mede a frequência de itens em \\(Y\\) que aparece nas transações que contêm \\(X\\).\n\n\\[Conf(X \\Rightarrow Y) = \\dfrac{\\mathbf{\\sigma}(X \\cup Y)}{\\mathbf{\\sigma}(X)}\\]\nonde \\(\\mathbf{\\sigma}(X)\\) é a contagem do suporte do antecedente da regra."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras-1",
+    "href": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras-1",
+    "title": "Regras de Associação",
+    "section": "Métricas para Avaliar as Regras",
+    "text": "Métricas para Avaliar as Regras\n\nExemplo: Seja a regra de associação: {Leite, Fralda} \\(\\Rightarrow\\) {Cerveja}\n\n\n\n\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n\\[\n\\begin{eqnarray*}\nSup &=& \\dfrac{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda}, \\text{Cerveja})}{5} \\\\ &=& \\dfrac{2}{5} = 0,40\\\\ Conf &=& \\dfrac{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda}, \\text{Cerveja})}{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda})} \\\\ &=& \\dfrac{2}{3} = 0,67\n\\end{eqnarray*}\n\\]"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras-2",
+    "href": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras-2",
+    "title": "Regras de Associação",
+    "section": "Métricas para Avaliar as Regras",
+    "text": "Métricas para Avaliar as Regras\n\n\nA regra \\(X \\Rightarrow Y\\) ocorre no conjunto de transações \\(T\\) com confiança \\(c\\) se \\(c\\%\\) das transações em \\(T\\) em que ocorre \\(X\\) também ocorre \\(Y\\).\n\n\n\nA regra \\(X \\Rightarrow Y\\) tem suporte \\(s\\) se em \\(s\\%\\) das transações em \\(D\\) ocorrem \\(X\\) e \\(Y\\)."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação",
+    "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação",
+    "title": "Regras de Associação",
+    "section": "Tarefa de mineração de regras de associação",
+    "text": "Tarefa de mineração de regras de associação\n\nDado um conjunto de transações \\(T\\), a tarefa de mineração de regras de associação é encontrar todas as regras que:\n\nSuporte \\(\\geqslant\\) minsup estabelecido pelo usuário.\nConfiança \\(\\geqslant\\) minconf definido pelo usuário.\n\n\n\n\nAbordagem da Força Bruta:\n\nListar todas as regras possíveis.\nCalcular o suporte e a confiança para cada regra.\nPodar regras que não atendem os fatores minsup e minconf.\n\n\n\n\n\nComputacionalmente proibitivo!"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-1",
+    "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-1",
+    "title": "Regras de Associação",
+    "section": "Tarefa de mineração de regras de associação",
+    "text": "Tarefa de mineração de regras de associação\n\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n\n{Leite, Fralda} \\(\\Rightarrow\\) {Cerveja} (s = 0,4, c = 0,67)\n{Leite, Cerveja} \\(\\Rightarrow\\) {Fralda} (s = 0,4, c = 1,00)\n{Fralda, Cerveja} \\(\\Rightarrow\\) {Leite} (s = 0,4, c = 0,67)\n{Cerveja} \\(\\Rightarrow\\) {Fralda, Leite} (s = 0,4, c = 0,67)\n{Fralda} \\(\\Rightarrow\\) {Cerveja, Leite} (s = 0,4, c = 0,50)\n{Leite} \\(\\Rightarrow\\) {Fralda, Cerveja} (s = 0,4, c = 0,50)\n\n\n\n\nTodas as regras acima são originadas do mesmo conjunto frequente: {Leite, Fralda, Cerveja}\n\n\n\n\nRegras originadas do mesmo conjunto frequente têm o mesmo suporte, mas diferentes valores para confiança."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-2",
+    "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-2",
+    "title": "Regras de Associação",
+    "section": "Tarefa de mineração de regras de associação",
+    "text": "Tarefa de mineração de regras de associação\n\nUma estratégia comum adotada pelos algoritmos de mineração de regras de associação consiste em decompor o problema em duas subtarefas:\n\nGeração do conjunto de itens frequentes: encontre todos os conjuntos de itens frequentes, ou seja, aqueles cujo suporte seja maior que o minsup especificado.\nGeração das regras: use os conjuntos de itens frequentes para gerar as regras desejadas e calcular sua confiança. Se a confiança for maior ou igual a minconf, então a regra é válida.\n\n\n\n\nGeração de conjuntos de itens frequentes ainda é computacionalmente cara"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-3",
+    "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-3",
+    "title": "Regras de Associação",
+    "section": "Tarefa de mineração de regras de associação",
+    "text": "Tarefa de mineração de regras de associação\n\n\n\n\n\n\n\nDados \\(d\\) itens, há \\(2^d\\) possíveis conjuntos de itens candidatos"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-4",
+    "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-4",
+    "title": "Regras de Associação",
+    "section": "Tarefa de mineração de regras de associação",
+    "text": "Tarefa de mineração de regras de associação\n\nPara um conjunto contendo \\(d\\) itens distintos:\n\nTotal de conjuntos frequentes = \\(2^d\\)\nTotal das possíveis regras de associação:\n\n\n\n\n\n\n\n\n\n\n\\[\\begin{eqnarray*}\nR &=& \\sum \\limits_{k=i}^{d-1} \\left[  \\binom {d} {k} \\ \\times \\sum \\limits_{j = 1}^{d-k} \\binom {d-k} {j} \\right] \\\\ &=& 3^d - 2^{d-1} + 1\n\\end{eqnarray*}\\]\n\nSe d = 5, R = 228 regras"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#algoritmo-apriori-1",
+    "href": "aulas/Regras_associacao/associacao.html#algoritmo-apriori-1",
+    "title": "Regras de Associação",
+    "section": "Algoritmo Apriori",
+    "text": "Algoritmo Apriori\n\nO princípio do Algoritmo Apriori: Se um itemset é frequente, os seus subconjuntos devem ser frequentes.\n\nExemplo: Se {Leite, Fralda, Cerveja} é frequente, todos os subconjuntos desse itemset com dois itens também o são.\n\n\n\n\nO princípio do Apriori assegura a seguinte propriedade para a medida suporte:\n\n\\[\\forall X,Y : (X \\subseteq Y) \\Rightarrow sup(X) \\geqslant sup(Y)\\]\n\nO suporte de um conjunto frequente nunca excede o suporte de seus subconjuntos.\nEssa propriedade do suporte é conhecida como antimonotônica."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#importância-da-propriedade-antimonotônica-no-apriori",
+    "href": "aulas/Regras_associacao/associacao.html#importância-da-propriedade-antimonotônica-no-apriori",
+    "title": "Regras de Associação",
+    "section": "Importância da Propriedade Antimonotônica no Apriori",
+    "text": "Importância da Propriedade Antimonotônica no Apriori\n\nO algoritmo Apriori usa essa propriedade para podar rapidamente os conjuntos de itens que não são relevantes.\n\n\n\nSe um itemset de tamanho k (como {Pão, Leite} não é frequente, então o algoritmo pode descartar todos os seus superconjuntos de tamanho k+1, sem precisar verificá-los.\n\n\n\n\nIsso reduz significativamente o número de combinações a serem verificadas, tornando o algoritmo mais eficiente."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori",
+    "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori",
+    "title": "Regras de Associação",
+    "section": "Ilustrando o Princípio do Apriori",
+    "text": "Ilustrando o Princípio do Apriori"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-1",
+    "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-1",
+    "title": "Regras de Associação",
+    "section": "Ilustrando o Princípio do Apriori",
+    "text": "Ilustrando o Princípio do Apriori\n\n\n\nTID\nProdutos adquiridos\n\n\n\n\n1\nCafé, Pão, Manteiga\n\n\n2\nLeite, Cerveja, Pão, Manteiga\n\n\n3\nCafé, Pão, Manteiga\n\n\n4\nLeite, Café, Pão, Manteiga\n\n\n5\nCerveja\n\n\n6\nManteiga\n\n\n7\nPão\n\n\n8\nFeijão\n\n\n9\nArroz, Feijão\n\n\n10\nArroz"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-2",
+    "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-2",
+    "title": "Regras de Associação",
+    "section": "Ilustrando o Princípio do Apriori",
+    "text": "Ilustrando o Princípio do Apriori\n\n1º passo: Calcular suporte de conjuntos com 1 item (vamos considerar minsup = 0,3)\n\n\n\n\n\n\n\nLeite\n\n\nSup(Leite) = 0,2\n\n\n\n\n\n\nCafé\n\n\nSup(Café) = 0,3\n\n\n\n\nCerveja\n\n\nSup(Cerveja) = 0,2\n\n\n\n\nPão\n\n\nSup(Pão) = 0,5\n\n\n\n\nManteiga\n\n\nSup(Manteiga) = 0,5\n\n\n\n\nArroz\n\n\nSup(Arroz) = 0,2\n\n\n\n\nFeijão\n\n\nSup(Feijão) = 0,2"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-3",
+    "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-3",
+    "title": "Regras de Associação",
+    "section": "Ilustrando o Princípio do Apriori",
+    "text": "Ilustrando o Princípio do Apriori\n\n\n2º passo: Calcular suporte de conjuntos com 2 itens (minsup = 0,3)\n\n\n\nSe um item \\(J\\) não é frequente, um conjunto com 2 itens, um dos quais é o item \\(J\\), não pode ser frequente. Conjuntos contendo item \\(J\\) são ignorados.\n\n\n\n\n\n\n\n\nCafé, Pão\n\n\nSup(Café, Pão) = 0,3\n\n\n\n\n\n\nCafé, Manteiga\n\n\nSup(Café, Manteiga) = 0,3\n\n\n\n\nManteiga, Pão\n\n\nSup(Manteiga, Pão) = 0,4"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-4",
+    "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-4",
+    "title": "Regras de Associação",
+    "section": "Ilustrando o Princípio do Apriori",
+    "text": "Ilustrando o Princípio do Apriori\n\n\n3º passo: Calcular suporte de conjuntos com 3 itens (minsup = 0,3)\n\n\n\nSe um conjunto de itens \\((J,K)\\) não é frequente, um conjunto com 3 itens que inclua o conjunto de itens \\((J,K)\\) não pode ser frequente. Conjuntos contendo itens \\((J,K)\\) são ignorados.\n\n\n\n\n\n\n\n\nCafé, Pão, Manteiga\n\n\nSup(Café, Pão, Manteiga) = 0,3"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-5",
+    "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-5",
+    "title": "Regras de Associação",
+    "section": "Ilustrando o Princípio do Apriori",
+    "text": "Ilustrando o Princípio do Apriori\nCálculo da Confiança:  minconf = 0,8\n\n\n{Café, Pão}\n\n\n\n\n\n\nRegra: SE (café) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\n\n\nRegra: SE (pão) ENTÃO (café)\n\n\nConfiança = 0,6\n\n\n\n\n\n\n\n\n\n{Café, Manteiga}\n\n\n\n\n\n\nRegra: SE (café) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\n\n\nRegra: SE (manteiga) ENTÃO (café)\n\n\nConfiança = 0,6\n\n\n\n\n\n\n\n\n\n{Pão, Manteiga}\n\n\n\n\n\n\nRegra: SE (pão) ENTÃO (manteiga)\n\n\nConfiança = 0,8\n\n\n\n\n\n\nRegra: SE (manteiga) ENTÃO (pão)\n\n\nConfiança = 0,8"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-6",
+    "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-6",
+    "title": "Regras de Associação",
+    "section": "Ilustrando o Princípio do Apriori",
+    "text": "Ilustrando o Princípio do Apriori\nCálculo da Confiança:  minconf = 0,8\n\n{Café, Pão, Manteiga}\n\n\n\n\n\n\nRegra: SE (café E pão) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\n\n\nRegra: SE (café E manteiga) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra: SE (manteiga E pão) ENTÃO (café)\n\n\nConfiança = 0,75\n\n\n\n\nRegra: SE (café) ENTÃO (manteiga E pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra: SE (pão) ENTÃO (manteiga E café)\n\n\nConfiança = 0,6\n\n\n\n\nRegra: SE (manteiga) ENTÃO (pão E café)\n\n\nConfiança = 0,6"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#considerações-importantes",
+    "href": "aulas/Regras_associacao/associacao.html#considerações-importantes",
+    "title": "Regras de Associação",
+    "section": "Considerações Importantes",
+    "text": "Considerações Importantes\n\n\nUtilizando um único valor para minsup implica que o algoritmo assume que todos os itens possuem frequências similares\n\n\n\nEm muitos domínios, isso não é válido, pois alguns itens aparecem muito frequentemente enquanto outros raramente aparecem\n\nPor exemplo, em um supermercado, clientes compram panelas e frigideiras muito menos frequentemente do que pão e leite"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#considerações-importantes-1",
+    "href": "aulas/Regras_associacao/associacao.html#considerações-importantes-1",
+    "title": "Regras de Associação",
+    "section": "Considerações Importantes",
+    "text": "Considerações Importantes\n\n\nEscolha de minsup\n\nDiminuir o valor de minsup resulta em maior quantidade de itemsets frequentes\nIsso pode aumentar o número de candidatos e a dimensão máxima dos itemsets frequentes (gerando regras com mais condições/conclusões)\n\n\n\n\nNúmero de itens no conjunto de exemplos\n\nQuanto mais itens, maior o espaço necessário para armazenar o suporte de cada item\nSe o número de itemsets frequentes também for grande, o tempo de processamento pode aumentar consideravelmente"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#considerações-importantes-2",
+    "href": "aulas/Regras_associacao/associacao.html#considerações-importantes-2",
+    "title": "Regras de Associação",
+    "section": "Considerações Importantes",
+    "text": "Considerações Importantes\n\nNúmero de transações (tamanho do banco de dados ou conjunto de exemplos)\n\nO tempo de execução pode aumentar com o aumento do número de transações, uma vez que o algoritmo Apriori efetua múltiplas varreduras\n\n\n\n\nSe há uma grande variação na frequência dos itens, há dois problemas\n\nSe minsup for muito grande as regras que envolvem itens raros não serão encontradas\nPara encontrar regras que envolvem tanto itens frequentes como itens raros, minsup deve ser bem pequeno\n\nIsso pode causar uma explosão combinatória já que os itens frequentes (1-itemsets) serão associados entre si de todas as formas possíveis, anulando a poda no reticulado"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#considerações-importantes-3",
+    "href": "aulas/Regras_associacao/associacao.html#considerações-importantes-3",
+    "title": "Regras de Associação",
+    "section": "Considerações Importantes",
+    "text": "Considerações Importantes\n\n\n\nEntretanto, regras com baixo suporte são de pouco interesse sob a perspectiva do negócio, uma vez que não faz sentido promover itens que os clientes compram pouco em conjunto.\n\n\n\nPor essa razão, o suporte normalmente é usado para eliminar regras pouco interessantes.\n\n\n\n\nEnquanto a confiança é uma medida da acurácia da regra, o suporte corresponde à sua significância estatística.\n\n\n\n\nJuntas, essas são as medidas de interesse mais usadas na literatura de mineração de regras de associação."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras",
+    "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras",
+    "title": "Regras de Associação",
+    "section": "Reduzindo o número de regras",
+    "text": "Reduzindo o número de regras\n\n\nSuporte e confiança são usados como filtros, para diminuir o número de regras geradas, gerando apenas regras de melhor qualidade\n\n\n\nMas, se considerarmos a regra: Se \\(X \\Rightarrow Y\\) com confiança de 90%, podemos garantir que seja uma regra interessante?\n\n\n\n\nA regra: Se \\(X \\Rightarrow Y\\) com confiança de \\(90\\%\\) não é interessante, se \\(Y\\) aparece em cerca de \\(90\\%\\) das transações, pois a regra não acrescentou nada em termos de conhecimento."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-1",
+    "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-1",
+    "title": "Regras de Associação",
+    "section": "Reduzindo o número de regras",
+    "text": "Reduzindo o número de regras\n\nJá a regra: Se \\(W \\Rightarrow Z\\) com confiança de \\(70\\%\\) é muito mais importante se \\(Z\\) aparece, digamos, em 10% das transações.\n\n\n\nUm índice estatístico comumente utilizado para definir o grau de interesse de uma regra de associação é denominado lift.\n\n\n\n\nO lift de uma regra de associação \\(X \\Rightarrow Y\\) indica o quanto mais frequente torna-se \\(Y\\), quando \\(X\\) ocorre.\n\n\n\n\nEsta medida é dada por:\n\n\\[lift = \\dfrac{Conf(X \\Rightarrow Y)}{\\mathbf{\\sigma}(Y)} = \\dfrac{\\mathbf{\\sigma}(X \\cup Y)}{\\mathbf{\\sigma}(X)\\mathbf{\\sigma}(Y)}\\]"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-2",
+    "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-2",
+    "title": "Regras de Associação",
+    "section": "Reduzindo o número de regras",
+    "text": "Reduzindo o número de regras\n\n\n\nTID\nProdutos adquiridos\n\n\n\n\n1\nCafé, Pão, Manteiga\n\n\n2\nLeite, Cerveja, Pão, Manteiga\n\n\n3\nCafé, Pão, Manteiga\n\n\n4\nLeite, Café, Pão, Manteiga\n\n\n5\nCerveja\n\n\n6\nManteiga\n\n\n7\nPão\n\n\n8\nFeijão\n\n\n9\nArroz, Feijão\n\n\n10\nArroz"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-3",
+    "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-3",
+    "title": "Regras de Associação",
+    "section": "Reduzindo o número de regras",
+    "text": "Reduzindo o número de regras\nVoltando ao exemplo: regras finais (minsup = 0,3 e minconf = 0,8)\n\n\n\n\n\n\nRegra 01: SE (café) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\n\n\nRegra 02: SE (café) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 03: SE (pão) ENTÃO (manteiga)\n\n\nConfiança = 0,8\n\n\n\n\nRegra 04: SE (manteiga) ENTÃO (pão)\n\n\nConfiança = 0,8\n\n\n\n\nRegra 05: SE (café E pão) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 06: SE (café E manteiga) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 07: SE (café) ENTÃO (manteiga E pão)\n\n\nConfiança = 1,0"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-4",
+    "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-4",
+    "title": "Regras de Associação",
+    "section": "Reduzindo o número de regras",
+    "text": "Reduzindo o número de regras\nVoltando ao exemplo: regras finais (minsup = 0,3 e minconf = 0,8)\n\n\n\n\n\n\nRegra 01: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\n\n\nRegra 02: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 03: lift = \\(0,8 \\div 0,5 = 1,6\\)\n\n\n\n\nRegra 04: lift = \\(0,8 \\div 0,5 = 1,6\\)\n\n\n\n\nRegra 05: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 06: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 07: lift = \\(1,0 \\div 0,4 = 2,5\\)\n\n\n\n\n\n\n\n\nInterpretação: Para a regra 01, por exemplo, temos que clientes que compram café tem duas vezes mais chances de comprarem pão."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-5",
+    "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-5",
+    "title": "Regras de Associação",
+    "section": "Reduzindo o número de regras",
+    "text": "Reduzindo o número de regras\n\n\nSe lift\\((X \\Rightarrow Y) = 1\\), então \\(X\\) e \\(Y\\) são independentes. Se lift\\((X \\Rightarrow Y) &gt; 1\\), então \\(X\\) e \\(Y\\) são positivamente dependentes. Se lift\\((X \\Rightarrow Y) &lt; 1\\), então \\(X\\) e \\(Y\\) são negativamente dependentes.\n\n\n\nEsta medida varia entre 0 e \\(\\infty\\) e possui interpretação bastante simples: quanto maior o valor do lift, mais interessante a regra, pois \\(X\\) aumentou (“lifted”) \\(Y\\) numa maior taxa."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#tipos-de-dados-usados-em-associação",
+    "href": "aulas/Regras_associacao/associacao.html#tipos-de-dados-usados-em-associação",
+    "title": "Regras de Associação",
+    "section": "Tipos de dados usados em Associação",
+    "text": "Tipos de dados usados em Associação\n\n\nSomente inteiro ou nominal.\n\n\n\nSe o atributo for contínuo, ele precisa ser discretizado.\n\n\n\n\nTransformar atributos categóricos em variáveis binárias assimétricas"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#desafios-do-algoritmo-apriori",
+    "href": "aulas/Regras_associacao/associacao.html#desafios-do-algoritmo-apriori",
+    "title": "Regras de Associação",
+    "section": "Desafios do Algoritmo Apriori",
+    "text": "Desafios do Algoritmo Apriori\n\n\nEscalabilidade: Pode ser ineficiente com grandes conjuntos de dados.\n\n\n\nNúmero de Regras: Em bases de dados grandes, o número de regras geradas pode ser muito alto.\n\n\n\n\nAjuste de Parâmetros: Definir o suporte e confiança mínimos pode ser desafiador e impactar os resultados."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#aplicações-no-mundo-real",
+    "href": "aulas/Regras_associacao/associacao.html#aplicações-no-mundo-real",
+    "title": "Regras de Associação",
+    "section": "Aplicações no Mundo Real",
+    "text": "Aplicações no Mundo Real\n\nSistemas de Recomendação: Sugestões de produtos com base no histórico de compras.\n\n\n\nAnálise de Cesta de Compras: Identificação de itens frequentemente comprados juntos.\n\n\n\n\nElaboração de catálogos de produtos.\n\n\n\n\nLayout de prateleiras (produtos relacionados tendem a ser colocados perto nas prateleiras).\n\n\n\n\nMarketing e Vendas: Ofertas personalizadas para clientes com base em seu comportamento.\n\n\n\n\nSaúde: Identificação de padrões entre doenças e tratamentos."
   }
 ]
