@@ -11,6 +11,6 @@ title: "Aulas"
 
 - [Reconhecimento de padrões](/aulas/Reconhecimento_padroes/padroes.html "Reconhecimento de padrões"){aria-label="Reconhecimento de padrões"}
 
-- Regras de associação
+- [Regras de associação](/aulas/Regras_associacao/associacao.html "Regras de associação"){aria-label="Regras de associação"}
 
 - Detecção de anomalias
