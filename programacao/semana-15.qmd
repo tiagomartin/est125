@@ -1,0 +1,8 @@
+---
+title: "Semana 15"
+---
+
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Regras de associação](/aulas/Regras_associacao/associacao.html "Regras de associação"){aria-label="Regras de associação"}
