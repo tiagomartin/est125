@@ -15,6 +15,8 @@ title-slide-attributes:
     data-background-image: /images/back.jpeg
     data-background-size: cover
     data-background-opacity: "0.3"
+execute:
+  echo: true
 ---
 
 
@@ -1156,3 +1158,177 @@ Voltando ao exemplo: regras finais (*minsup* = 0,3 e *minconf* = 0,8)
 
 
 - **Saúde**: Identificação de padrões entre doenças e tratamentos.
+
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+<br>
+
+A base de dados `Groceries` está disponível no pacote `arules` e contém 9.835 transações (cestas de compras) de um supermercado, com 169 itens diferentes.
+
+. . .
+
+Nosso objetivo é descobrir regras como "se um cliente compra leite, ovos e açúcar, ele também compra farinha?".
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# 1. Carregar pacotes
+load <- function(pkg){
+  new.pkg <- pkg[!(pkg %in% installed.packages()[, "Package"])]
+  if (length(new.pkg))
+    install.packages(new.pkg, dependencies = TRUE)
+  sapply(pkg, require, character.only = TRUE)
+} 
+
+packages <- c("tidyverse","readxl", "knitr", "ggplot2", "lubridate", "arules", 
+              "arulesViz", "plyr", "dplyr", "RColorBrewer", "recommenderlab",'tidyquant')
+load(packages)
+```
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# 2. Carregar a base de dados Groceries
+# A base já vem no formato de transações, o que facilita o trabalho.
+data("Groceries")
+
+# 3. Explorar a base de dados
+# O 'Groceries' já é um objeto de transações.
+# Dimensões da base (transações x itens)
+dim(Groceries)
+
+products = itemLabels(Groceries)
+products %>% head(n=18)
+```
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# Ver as 5 primeiras transações
+inspect(Groceries[1:5])
+```
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# Plotar a frequência dos 20 itens mais comuns
+# O gráfico nos ajuda a definir o suporte mínimo
+itemFrequencyPlot(Groceries, topN = 20, type = "relative")
+```
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# 4. Aplicar o algoritmo Apriori para encontrar regras
+# Vamos usar um suporte e confiança mais baixos, pois os itens são mais variados.
+# 'support' = 0.01 significa que a regra deve aparecer em 1% das transações.
+# 'confidence' = 0.5 significa que a regra deve ser verdadeira em 50% dos casos.
+rules <- apriori(Groceries, parameter = list(support = 0.01, confidence = 0.5))
+```
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# 5. Explorar e inspecionar as regras encontradas
+# Vamos ordenar as regras por lift para encontrar as associações mais fortes.
+rules_sorted <- sort(rules, by = "lift", decreasing = TRUE)
+
+# Inspecionar as 10 melhores regras
+inspect(head(rules_sorted, n = 10))
+```
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+#| output-location: slide
+# 6. Visualizar as regras (opcional)
+plot(rules_sorted, method = "graph", engine = "htmlwidget")
+```
+
+
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# 7. Filtrar regras para um item específico
+# Vamos encontrar regras que levam à compra de "whole milk" (leite integral).
+# 'rhs' = right-hand side (consequente)
+rules_milk <- apriori(Groceries,
+                      parameter = list(support = 0.01, confidence = 0.5),
+                      appearance = list(rhs = "whole milk", default = "lhs"))
+```
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# Ordenar e inspecionar as regras sobre "whole milk"
+rules_milk_sorted <- sort(rules_milk, by = "lift", decreasing = TRUE)
+inspect(rules_milk_sorted)
+```
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# 8. Visualizar as regras (opcional)
+plot(rules_milk_sorted[1:10], method = "graph", engine = "htmlwidget")
+```
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+## Construindo um sistema de recomendação simples, baseado em regras de associação
+ratings_matrix = as(Groceries, "binaryRatingMatrix")
+
+recom = recommenderlab::Recommender(
+  ratings_matrix,
+  method = "AR",
+  param = list(supp = 0.01, conf = 0.25, verbose = TRUE))
+```
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+
+```{r}
+# Obter os nomes dos itens do modelo treinado
+items_names <- colnames(ratings_matrix)
+
+# pedido hipotetico
+# Vamos definir o número de passageiros que você quer avaliar
+num_pedidos <- 2 
+novos_pedidos <- matrix(0, nrow = num_pedidos, ncol = length(items_names))
+colnames(novos_pedidos) <- items_names
+rownames(novos_pedidos) <- c("Novo_Pedido_01", "Novo_Pedido_02")
+
+# 3. Preencher a matriz com as características de cada passageiro
+# Pedido 1: Salsicha, Café e Sobremesa
+novos_pedidos["Novo_Pedido_01", "frankfurter"] <- 1
+novos_pedidos["Novo_Pedido_01", "coffee"] <- 1
+novos_pedidos["Novo_Pedido_01", "dessert"] <- 1
+
+# Passageiro 2: Peixe, Queijo Fatiado e Leite Integral
+novos_pedidos["Novo_Pedido_02", "whole milk"] <- 1
+novos_pedidos["Novo_Pedido_02", "fish"] <- 1
+novos_pedidos["Novo_Pedido_02", "sliced cheese"] <- 1
+
+```
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+```{r}
+# 4. Converter a matriz consolidada para o formato binaryRatingMatrix
+novos_pedidos_ratings <- as(novos_pedidos, "binaryRatingMatrix")
+
+# 5. Gerar as recomendações
+recommendations <- predict(recom, novos_pedidos_ratings, n = 5)
+
+# Inspecionar as recomendações para ambos os passageiros
+as(recommendations, "list")
+```
+

@@ -7849,56 +7849,56 @@
     "href": "aulas/Regras_associacao/associacao.html#base-de-dados-transacionais",
     "title": "Regras de Associação",
     "section": "Base de dados transacionais",
-    "text": "Base de dados transacionais\n\nExemplo de base de dados transacional.\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n\nCada transação é composta por uma identificação (TID) e uma lista de itens."
+    "text": "Base de dados transacionais\n\nExemplo de base de dados transacional.\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\nCada transação é composta por uma identificação (TID) e uma lista de itens."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#base-de-dados-transacionais-1",
     "href": "aulas/Regras_associacao/associacao.html#base-de-dados-transacionais-1",
     "title": "Regras de Associação",
     "section": "Base de dados transacionais",
-    "text": "Base de dados transacionais\n\nExemplo de base de dados transacional.\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n\nItens: I = {Pão, Leite, Fralda, Cerveja, Ovos, Coca}.\nBanco de dados: D = {T1, T2, T3, T4, T5}.\nExemplo de transação: T3 = {Leite, Fralda, Cerveja, Coca }"
+    "text": "Base de dados transacionais\n\nExemplo de base de dados transacional.\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\nItens: I = {Pão, Leite, Fralda, Cerveja, Ovos, Coca}.\nBanco de dados: D = {T1, T2, T3, T4, T5}.\nExemplo de transação: T3 = {Leite, Fralda, Cerveja, Coca }"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#representação-binária-de-uma-base-transacional",
     "href": "aulas/Regras_associacao/associacao.html#representação-binária-de-uma-base-transacional",
     "title": "Regras de Associação",
     "section": "Representação binária de uma base transacional",
-    "text": "Representação binária de uma base transacional\n\nVamos assumir que cada variável da base de dados \\(D\\) é binária.\n\n\n\n\nTID\nLeite\nPão\nFralda\nCerveja\nOvos\nCoca\n\n\n\n\nT1\n1\n1\n0\n0\n0\n0\n\n\nT2\n0\n1\n1\n1\n1\n0\n\n\nT3\n1\n0\n1\n1\n0\n1\n\n\nT4\n1\n1\n1\n1\n0\n0\n\n\nT5\n1\n1\n1\n0\n0\n1"
+    "text": "Representação binária de uma base transacional\n\nVamos assumir que cada variável da base de dados \\(D\\) é binária.\n\n\n\nTID\nLeite\nPão\nFralda\nCerveja\nOvos\nCoca\n\n\n\nT1\n1\n1\n0\n0\n0\n0\n\n\nT2\n0\n1\n1\n1\n1\n0\n\n\nT3\n1\n0\n1\n1\n0\n1\n\n\nT4\n1\n1\n1\n1\n0\n0\n\n\nT5\n1\n1\n1\n0\n0\n1"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#conceitos-importantes",
     "href": "aulas/Regras_associacao/associacao.html#conceitos-importantes",
     "title": "Regras de Associação",
     "section": "Conceitos Importantes",
-    "text": "Conceitos Importantes\n\n\nItemset: Conjunto de itens que ocorrem juntos em uma transação.\n\nExemplo: {Leite, Pão, Fralda}\nk-itemset: Um conjunto que contém \\(k\\) itens.\n\n\n\n\nSupport count (\\(\\mathbf{\\sigma}\\)): Frequência da ocorrência de um itemset\n\nExemplo:} \\(\\mathbf{\\sigma}\\) ({Leite, Pão,Fralda}) = 2"
+    "text": "Conceitos Importantes\n\n\n\nItemset: Conjunto de itens que ocorrem juntos em uma transação.\n\n\nExemplo: {Leite, Pão, Fralda}\n\nk-itemset: Um conjunto que contém \\(k\\) itens.\n\n\n\n\n\n\nSupport count (\\(\\mathbf{\\sigma}\\)): Frequência da ocorrência de um itemset\n\n\nExemplo:} \\(\\mathbf{\\sigma}\\) ({Leite, Pão,Fralda}) = 2"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#conceitos-importantes-1",
     "href": "aulas/Regras_associacao/associacao.html#conceitos-importantes-1",
     "title": "Regras de Associação",
     "section": "Conceitos Importantes",
-    "text": "Conceitos Importantes\n\n\nSuporte (sup): Proporção de transações que contém um itemset. \\[ \\text{sup}(X) = \\frac{\\text{Número de transações contendo } X}{\\text{Número total de transações}} \\]\n\nExemplo: sup({Leite, Pão, Fralda}) = \\(\\dfrac{2}{5}\\)\n\n\n\n\nConjunto Frequente (Frequent Itemset): Um conjunto cujo suporte é maior ou igual a um dado limite minsup."
+    "text": "Conceitos Importantes\n\n\n\nSuporte (sup): Proporção de transações que contém um itemset. \\[ \\text{sup}(X) = \\frac{\\text{Número de transações contendo } X}{\\text{Número total de transações}} \\]\n\n\nExemplo: sup({Leite, Pão, Fralda}) = \\(\\dfrac{2}{5}\\)\n\n\n\n\n\n\n\nConjunto Frequente (Frequent Itemset): Um conjunto cujo suporte é maior ou igual a um dado limite minsup."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#regras-de-associação",
     "href": "aulas/Regras_associacao/associacao.html#regras-de-associação",
     "title": "Regras de Associação",
     "section": "Regras de Associação",
-    "text": "Regras de Associação\n\n\nUma regra de associação é uma implicação da forma \\((X \\Rightarrow Y)\\), onde \\(X\\) e \\(Y\\) são conjuntos frequentes de itens e \\(X \\cap Y = \\emptyset\\).\n\n\\(R_1\\): {Cerveja} \\(\\Rightarrow\\) {Fralda}.\n\\(R_2\\): {Cerveja, Pão} \\(\\Rightarrow\\) {Leite}.\n\\(R_3\\): {Leite, Pão} \\(\\Rightarrow\\) {Fralda,Coca}.\n\n\n\n\nQueremos fazer isso eficientemente pois os bancos de dados relacionados a isso são comumente muito grandes."
+    "text": "Regras de Associação\n\n\nUma regra de associação é uma implicação da forma \\((X \\Rightarrow Y)\\), onde \\(X\\) e \\(Y\\) são conjuntos frequentes de itens e \\(X \\cap Y = \\emptyset\\).\n\n\n\\(R_1\\): {Cerveja} \\(\\Rightarrow\\) {Fralda}.\n\n\\(R_2\\): {Cerveja, Pão} \\(\\Rightarrow\\) {Leite}.\n\n\\(R_3\\): {Leite, Pão} \\(\\Rightarrow\\) {Fralda,Coca}.\n\n\n\n\n\nQueremos fazer isso eficientemente pois os bancos de dados relacionados a isso são comumente muito grandes."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras",
     "href": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras",
     "title": "Regras de Associação",
     "section": "Métricas para Avaliar as Regras",
-    "text": "Métricas para Avaliar as Regras\n\nSuporte (sup): Proporção das transações que contém ambos \\(X\\) e \\(Y\\).\n\n\\[Sup(X \\Rightarrow Y) = \\dfrac{\\mathbf{\\sigma}(X \\cup Y)}{|T|}\\]\nem que \\(|T|\\) representa o número de transações da base.\n\n\nConfiança (conf): Mede a frequência de itens em \\(Y\\) que aparece nas transações que contêm \\(X\\).\n\n\\[Conf(X \\Rightarrow Y) = \\dfrac{\\mathbf{\\sigma}(X \\cup Y)}{\\mathbf{\\sigma}(X)}\\]\nonde \\(\\mathbf{\\sigma}(X)\\) é a contagem do suporte do antecedente da regra."
+    "text": "Métricas para Avaliar as Regras\n\n\nSuporte (sup): Proporção das transações que contém ambos \\(X\\) e \\(Y\\).\n\n\\[Sup(X \\Rightarrow Y) = \\dfrac{\\mathbf{\\sigma}(X \\cup Y)}{|T|}\\]\nem que \\(|T|\\) representa o número de transações da base.\n\n\n\nConfiança (conf): Mede a frequência de itens em \\(Y\\) que aparece nas transações que contêm \\(X\\).\n\n\\[Conf(X \\Rightarrow Y) = \\dfrac{\\mathbf{\\sigma}(X \\cup Y)}{\\mathbf{\\sigma}(X)}\\]\nonde \\(\\mathbf{\\sigma}(X)\\) é a contagem do suporte do antecedente da regra."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras-1",
     "href": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras-1",
     "title": "Regras de Associação",
     "section": "Métricas para Avaliar as Regras",
-    "text": "Métricas para Avaliar as Regras\n\nExemplo: Seja a regra de associação: {Leite, Fralda} \\(\\Rightarrow\\) {Cerveja}\n\n\n\n\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n\\[\n\\begin{eqnarray*}\nSup &=& \\dfrac{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda}, \\text{Cerveja})}{5} \\\\ &=& \\dfrac{2}{5} = 0,40\\\\ Conf &=& \\dfrac{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda}, \\text{Cerveja})}{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda})} \\\\ &=& \\dfrac{2}{3} = 0,67\n\\end{eqnarray*}\n\\]"
+    "text": "Métricas para Avaliar as Regras\n\n\nExemplo: Seja a regra de associação: {Leite, Fralda} \\(\\Rightarrow\\) {Cerveja}\n\n\n\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\\[\n\\begin{eqnarray*}\nSup &=& \\dfrac{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda}, \\text{Cerveja})}{5} \\\\ &=& \\dfrac{2}{5} = 0,40\\\\ Conf &=& \\dfrac{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda}, \\text{Cerveja})}{\\mathbf{\\sigma}(\\text{Leite}, \\text{Fralda})} \\\\ &=& \\dfrac{2}{3} = 0,67\n\\end{eqnarray*}\n\\]"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#métricas-para-avaliar-as-regras-2",
@@ -7912,42 +7912,42 @@
     "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação",
     "title": "Regras de Associação",
     "section": "Tarefa de mineração de regras de associação",
-    "text": "Tarefa de mineração de regras de associação\n\nDado um conjunto de transações \\(T\\), a tarefa de mineração de regras de associação é encontrar todas as regras que:\n\nSuporte \\(\\geqslant\\) minsup estabelecido pelo usuário.\nConfiança \\(\\geqslant\\) minconf definido pelo usuário.\n\n\n\n\nAbordagem da Força Bruta:\n\nListar todas as regras possíveis.\nCalcular o suporte e a confiança para cada regra.\nPodar regras que não atendem os fatores minsup e minconf.\n\n\n\n\n\nComputacionalmente proibitivo!"
+    "text": "Tarefa de mineração de regras de associação\n\nDado um conjunto de transações \\(T\\), a tarefa de mineração de regras de associação é encontrar todas as regras que:\n\nSuporte \\(\\geqslant\\) minsup estabelecido pelo usuário.\nConfiança \\(\\geqslant\\) minconf definido pelo usuário.\n\n\n\n\n\n\nAbordagem da Força Bruta:\n\nListar todas as regras possíveis.\nCalcular o suporte e a confiança para cada regra.\nPodar regras que não atendem os fatores minsup e minconf.\n\n\n\n\n\n\nComputacionalmente proibitivo!"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-1",
     "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-1",
     "title": "Regras de Associação",
     "section": "Tarefa de mineração de regras de associação",
-    "text": "Tarefa de mineração de regras de associação\n\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n\n{Leite, Fralda} \\(\\Rightarrow\\) {Cerveja} (s = 0,4, c = 0,67)\n{Leite, Cerveja} \\(\\Rightarrow\\) {Fralda} (s = 0,4, c = 1,00)\n{Fralda, Cerveja} \\(\\Rightarrow\\) {Leite} (s = 0,4, c = 0,67)\n{Cerveja} \\(\\Rightarrow\\) {Fralda, Leite} (s = 0,4, c = 0,67)\n{Fralda} \\(\\Rightarrow\\) {Cerveja, Leite} (s = 0,4, c = 0,50)\n{Leite} \\(\\Rightarrow\\) {Fralda, Cerveja} (s = 0,4, c = 0,50)\n\n\n\n\nTodas as regras acima são originadas do mesmo conjunto frequente: {Leite, Fralda, Cerveja}\n\n\n\n\nRegras originadas do mesmo conjunto frequente têm o mesmo suporte, mas diferentes valores para confiança."
+    "text": "Tarefa de mineração de regras de associação\n\n\n\n\n\n\nTID\n\n\nItens\n\n\n\n\n\nT1\n\n\nPão, Leite\n\n\n\n\nT2\n\n\nPão, Fralda, Cerveja, Ovos\n\n\n\n\nT3\n\n\nLeite, Fralda, Cerveja, Coca\n\n\n\n\nT4\n\n\nPão, Leite, Fralda, Cerveja\n\n\n\n\nT5\n\n\nPão, Leite, Fralda, Coca\n\n\n\n\n\n\n\n{Leite, Fralda} \\(\\Rightarrow\\) {Cerveja} (s = 0,4, c = 0,67)\n{Leite, Cerveja} \\(\\Rightarrow\\) {Fralda} (s = 0,4, c = 1,00)\n{Fralda, Cerveja} \\(\\Rightarrow\\) {Leite} (s = 0,4, c = 0,67)\n{Cerveja} \\(\\Rightarrow\\) {Fralda, Leite} (s = 0,4, c = 0,67)\n{Fralda} \\(\\Rightarrow\\) {Cerveja, Leite} (s = 0,4, c = 0,50)\n{Leite} \\(\\Rightarrow\\) {Fralda, Cerveja} (s = 0,4, c = 0,50)\n\n\n\n\nTodas as regras acima são originadas do mesmo conjunto frequente: {Leite, Fralda, Cerveja}\n\n\n\n\nRegras originadas do mesmo conjunto frequente têm o mesmo suporte, mas diferentes valores para confiança."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-2",
     "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-2",
     "title": "Regras de Associação",
     "section": "Tarefa de mineração de regras de associação",
-    "text": "Tarefa de mineração de regras de associação\n\nUma estratégia comum adotada pelos algoritmos de mineração de regras de associação consiste em decompor o problema em duas subtarefas:\n\nGeração do conjunto de itens frequentes: encontre todos os conjuntos de itens frequentes, ou seja, aqueles cujo suporte seja maior que o minsup especificado.\nGeração das regras: use os conjuntos de itens frequentes para gerar as regras desejadas e calcular sua confiança. Se a confiança for maior ou igual a minconf, então a regra é válida.\n\n\n\n\nGeração de conjuntos de itens frequentes ainda é computacionalmente cara"
+    "text": "Tarefa de mineração de regras de associação\n\nUma estratégia comum adotada pelos algoritmos de mineração de regras de associação consiste em decompor o problema em duas subtarefas:\n\n\nGeração do conjunto de itens frequentes: encontre todos os conjuntos de itens frequentes, ou seja, aqueles cujo suporte seja maior que o minsup especificado.\n\nGeração das regras: use os conjuntos de itens frequentes para gerar as regras desejadas e calcular sua confiança. Se a confiança for maior ou igual a minconf, então a regra é válida.\n\n\n\n\n\nGeração de conjuntos de itens frequentes ainda é computacionalmente cara"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-3",
     "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-3",
     "title": "Regras de Associação",
     "section": "Tarefa de mineração de regras de associação",
-    "text": "Tarefa de mineração de regras de associação\n\n\n\n\n\n\n\nDados \\(d\\) itens, há \\(2^d\\) possíveis conjuntos de itens candidatos"
+    "text": "Tarefa de mineração de regras de associação\n\n\n\n\n\n\nDados \\(d\\) itens, há \\(2^d\\) possíveis conjuntos de itens candidatos"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-4",
     "href": "aulas/Regras_associacao/associacao.html#tarefa-de-mineração-de-regras-de-associação-4",
     "title": "Regras de Associação",
     "section": "Tarefa de mineração de regras de associação",
-    "text": "Tarefa de mineração de regras de associação\n\nPara um conjunto contendo \\(d\\) itens distintos:\n\nTotal de conjuntos frequentes = \\(2^d\\)\nTotal das possíveis regras de associação:\n\n\n\n\n\n\n\n\n\n\n\\[\\begin{eqnarray*}\nR &=& \\sum \\limits_{k=i}^{d-1} \\left[  \\binom {d} {k} \\ \\times \\sum \\limits_{j = 1}^{d-k} \\binom {d-k} {j} \\right] \\\\ &=& 3^d - 2^{d-1} + 1\n\\end{eqnarray*}\\]\n\nSe d = 5, R = 228 regras"
+    "text": "Tarefa de mineração de regras de associação\n\nPara um conjunto contendo \\(d\\) itens distintos:\n\nTotal de conjuntos frequentes = \\(2^d\\)\n\nTotal das possíveis regras de associação:\n\n\n\n\n\n\n\n\n\n\n\\[\\begin{eqnarray*}\nR &=& \\sum \\limits_{k=i}^{d-1} \\left[  \\binom {d} {k} \\ \\times \\sum \\limits_{j = 1}^{d-k} \\binom {d-k} {j} \\right] \\\\ &=& 3^d - 2^{d-1} + 1\n\\end{eqnarray*}\\]\n\nSe d = 5, R = 228 regras"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#algoritmo-apriori-1",
     "href": "aulas/Regras_associacao/associacao.html#algoritmo-apriori-1",
     "title": "Regras de Associação",
     "section": "Algoritmo Apriori",
-    "text": "Algoritmo Apriori\n\nO princípio do Algoritmo Apriori: Se um itemset é frequente, os seus subconjuntos devem ser frequentes.\n\nExemplo: Se {Leite, Fralda, Cerveja} é frequente, todos os subconjuntos desse itemset com dois itens também o são.\n\n\n\n\nO princípio do Apriori assegura a seguinte propriedade para a medida suporte:\n\n\\[\\forall X,Y : (X \\subseteq Y) \\Rightarrow sup(X) \\geqslant sup(Y)\\]\n\nO suporte de um conjunto frequente nunca excede o suporte de seus subconjuntos.\nEssa propriedade do suporte é conhecida como antimonotônica."
+    "text": "Algoritmo Apriori\n\n\nO princípio do Algoritmo Apriori: Se um itemset é frequente, os seus subconjuntos devem ser frequentes.\n\n\nExemplo: Se {Leite, Fralda, Cerveja} é frequente, todos os subconjuntos desse itemset com dois itens também o são.\n\n\n\n\n\nO princípio do Apriori assegura a seguinte propriedade para a medida suporte:\n\n\\[\\forall X,Y : (X \\subseteq Y) \\Rightarrow sup(X) \\geqslant sup(Y)\\]\n\nO suporte de um conjunto frequente nunca excede o suporte de seus subconjuntos.\nEssa propriedade do suporte é conhecida como antimonotônica."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#importância-da-propriedade-antimonotônica-no-apriori",
@@ -7968,42 +7968,42 @@
     "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-1",
     "title": "Regras de Associação",
     "section": "Ilustrando o Princípio do Apriori",
-    "text": "Ilustrando o Princípio do Apriori\n\n\n\nTID\nProdutos adquiridos\n\n\n\n\n1\nCafé, Pão, Manteiga\n\n\n2\nLeite, Cerveja, Pão, Manteiga\n\n\n3\nCafé, Pão, Manteiga\n\n\n4\nLeite, Café, Pão, Manteiga\n\n\n5\nCerveja\n\n\n6\nManteiga\n\n\n7\nPão\n\n\n8\nFeijão\n\n\n9\nArroz, Feijão\n\n\n10\nArroz"
+    "text": "Ilustrando o Princípio do Apriori\n\n\nTID\nProdutos adquiridos\n\n\n\n1\nCafé, Pão, Manteiga\n\n\n2\nLeite, Cerveja, Pão, Manteiga\n\n\n3\nCafé, Pão, Manteiga\n\n\n4\nLeite, Café, Pão, Manteiga\n\n\n5\nCerveja\n\n\n6\nManteiga\n\n\n7\nPão\n\n\n8\nFeijão\n\n\n9\nArroz, Feijão\n\n\n10\nArroz"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-2",
     "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-2",
     "title": "Regras de Associação",
     "section": "Ilustrando o Princípio do Apriori",
-    "text": "Ilustrando o Princípio do Apriori\n\n1º passo: Calcular suporte de conjuntos com 1 item (vamos considerar minsup = 0,3)\n\n\n\n\n\n\n\nLeite\n\n\nSup(Leite) = 0,2\n\n\n\n\n\n\nCafé\n\n\nSup(Café) = 0,3\n\n\n\n\nCerveja\n\n\nSup(Cerveja) = 0,2\n\n\n\n\nPão\n\n\nSup(Pão) = 0,5\n\n\n\n\nManteiga\n\n\nSup(Manteiga) = 0,5\n\n\n\n\nArroz\n\n\nSup(Arroz) = 0,2\n\n\n\n\nFeijão\n\n\nSup(Feijão) = 0,2"
+    "text": "Ilustrando o Princípio do Apriori\n\n\n1º passo: Calcular suporte de conjuntos com 1 item (vamos considerar minsup = 0,3)\n\n\n\n\n\n\nLeite\n\n\nSup(Leite) = 0,2\n\n\n\n\n\nCafé\n\n\nSup(Café) = 0,3\n\n\n\n\nCerveja\n\n\nSup(Cerveja) = 0,2\n\n\n\n\nPão\n\n\nSup(Pão) = 0,5\n\n\n\n\nManteiga\n\n\nSup(Manteiga) = 0,5\n\n\n\n\nArroz\n\n\nSup(Arroz) = 0,2\n\n\n\n\nFeijão\n\n\nSup(Feijão) = 0,2"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-3",
     "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-3",
     "title": "Regras de Associação",
     "section": "Ilustrando o Princípio do Apriori",
-    "text": "Ilustrando o Princípio do Apriori\n\n\n2º passo: Calcular suporte de conjuntos com 2 itens (minsup = 0,3)\n\n\n\nSe um item \\(J\\) não é frequente, um conjunto com 2 itens, um dos quais é o item \\(J\\), não pode ser frequente. Conjuntos contendo item \\(J\\) são ignorados.\n\n\n\n\n\n\n\n\nCafé, Pão\n\n\nSup(Café, Pão) = 0,3\n\n\n\n\n\n\nCafé, Manteiga\n\n\nSup(Café, Manteiga) = 0,3\n\n\n\n\nManteiga, Pão\n\n\nSup(Manteiga, Pão) = 0,4"
+    "text": "Ilustrando o Princípio do Apriori\n\n\n\n2º passo: Calcular suporte de conjuntos com 2 itens (minsup = 0,3)\n\n\n\nSe um item \\(J\\) não é frequente, um conjunto com 2 itens, um dos quais é o item \\(J\\), não pode ser frequente. Conjuntos contendo item \\(J\\) são ignorados.\n\n\n\n\n\n\n\nCafé, Pão\n\n\nSup(Café, Pão) = 0,3\n\n\n\n\n\nCafé, Manteiga\n\n\nSup(Café, Manteiga) = 0,3\n\n\n\n\nManteiga, Pão\n\n\nSup(Manteiga, Pão) = 0,4"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-4",
     "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-4",
     "title": "Regras de Associação",
     "section": "Ilustrando o Princípio do Apriori",
-    "text": "Ilustrando o Princípio do Apriori\n\n\n3º passo: Calcular suporte de conjuntos com 3 itens (minsup = 0,3)\n\n\n\nSe um conjunto de itens \\((J,K)\\) não é frequente, um conjunto com 3 itens que inclua o conjunto de itens \\((J,K)\\) não pode ser frequente. Conjuntos contendo itens \\((J,K)\\) são ignorados.\n\n\n\n\n\n\n\n\nCafé, Pão, Manteiga\n\n\nSup(Café, Pão, Manteiga) = 0,3"
+    "text": "Ilustrando o Princípio do Apriori\n\n\n\n3º passo: Calcular suporte de conjuntos com 3 itens (minsup = 0,3)\n\n\n\nSe um conjunto de itens \\((J,K)\\) não é frequente, um conjunto com 3 itens que inclua o conjunto de itens \\((J,K)\\) não pode ser frequente. Conjuntos contendo itens \\((J,K)\\) são ignorados.\n\n\n\n\n\n\nCafé, Pão, Manteiga\n\n\nSup(Café, Pão, Manteiga) = 0,3"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-5",
     "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-5",
     "title": "Regras de Associação",
     "section": "Ilustrando o Princípio do Apriori",
-    "text": "Ilustrando o Princípio do Apriori\nCálculo da Confiança:  minconf = 0,8\n\n\n{Café, Pão}\n\n\n\n\n\n\nRegra: SE (café) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\n\n\nRegra: SE (pão) ENTÃO (café)\n\n\nConfiança = 0,6\n\n\n\n\n\n\n\n\n\n{Café, Manteiga}\n\n\n\n\n\n\nRegra: SE (café) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\n\n\nRegra: SE (manteiga) ENTÃO (café)\n\n\nConfiança = 0,6\n\n\n\n\n\n\n\n\n\n{Pão, Manteiga}\n\n\n\n\n\n\nRegra: SE (pão) ENTÃO (manteiga)\n\n\nConfiança = 0,8\n\n\n\n\n\n\nRegra: SE (manteiga) ENTÃO (pão)\n\n\nConfiança = 0,8"
+    "text": "Ilustrando o Princípio do Apriori\nCálculo da Confiança:  minconf = 0,8\n\n\n{Café, Pão}\n\n\n\n\n\nRegra: SE (café) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\n\nRegra: SE (pão) ENTÃO (café)\n\n\nConfiança = 0,6\n\n\n\n\n\n\n\n\n{Café, Manteiga}\n\n\n\n\n\nRegra: SE (café) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\n\nRegra: SE (manteiga) ENTÃO (café)\n\n\nConfiança = 0,6\n\n\n\n\n\n\n\n\n{Pão, Manteiga}\n\n\n\n\n\nRegra: SE (pão) ENTÃO (manteiga)\n\n\nConfiança = 0,8\n\n\n\n\n\nRegra: SE (manteiga) ENTÃO (pão)\n\n\nConfiança = 0,8"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-6",
     "href": "aulas/Regras_associacao/associacao.html#ilustrando-o-princípio-do-apriori-6",
     "title": "Regras de Associação",
     "section": "Ilustrando o Princípio do Apriori",
-    "text": "Ilustrando o Princípio do Apriori\nCálculo da Confiança:  minconf = 0,8\n\n{Café, Pão, Manteiga}\n\n\n\n\n\n\nRegra: SE (café E pão) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\n\n\nRegra: SE (café E manteiga) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra: SE (manteiga E pão) ENTÃO (café)\n\n\nConfiança = 0,75\n\n\n\n\nRegra: SE (café) ENTÃO (manteiga E pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra: SE (pão) ENTÃO (manteiga E café)\n\n\nConfiança = 0,6\n\n\n\n\nRegra: SE (manteiga) ENTÃO (pão E café)\n\n\nConfiança = 0,6"
+    "text": "Ilustrando o Princípio do Apriori\nCálculo da Confiança:  minconf = 0,8\n\n{Café, Pão, Manteiga}\n\n\n\n\n\nRegra: SE (café E pão) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\n\nRegra: SE (café E manteiga) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra: SE (manteiga E pão) ENTÃO (café)\n\n\nConfiança = 0,75\n\n\n\n\nRegra: SE (café) ENTÃO (manteiga E pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra: SE (pão) ENTÃO (manteiga E café)\n\n\nConfiança = 0,6\n\n\n\n\nRegra: SE (manteiga) ENTÃO (pão E café)\n\n\nConfiança = 0,6"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#considerações-importantes",
@@ -8017,14 +8017,14 @@
     "href": "aulas/Regras_associacao/associacao.html#considerações-importantes-1",
     "title": "Regras de Associação",
     "section": "Considerações Importantes",
-    "text": "Considerações Importantes\n\n\nEscolha de minsup\n\nDiminuir o valor de minsup resulta em maior quantidade de itemsets frequentes\nIsso pode aumentar o número de candidatos e a dimensão máxima dos itemsets frequentes (gerando regras com mais condições/conclusões)\n\n\n\n\nNúmero de itens no conjunto de exemplos\n\nQuanto mais itens, maior o espaço necessário para armazenar o suporte de cada item\nSe o número de itemsets frequentes também for grande, o tempo de processamento pode aumentar consideravelmente"
+    "text": "Considerações Importantes\n\n\nEscolha de minsup\n\nDiminuir o valor de minsup resulta em maior quantidade de itemsets frequentes\nIsso pode aumentar o número de candidatos e a dimensão máxima dos itemsets frequentes (gerando regras com mais condições/conclusões)\n\n\n\n\n\nNúmero de itens no conjunto de exemplos\n\nQuanto mais itens, maior o espaço necessário para armazenar o suporte de cada item\nSe o número de itemsets frequentes também for grande, o tempo de processamento pode aumentar consideravelmente"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#considerações-importantes-2",
     "href": "aulas/Regras_associacao/associacao.html#considerações-importantes-2",
     "title": "Regras de Associação",
     "section": "Considerações Importantes",
-    "text": "Considerações Importantes\n\nNúmero de transações (tamanho do banco de dados ou conjunto de exemplos)\n\nO tempo de execução pode aumentar com o aumento do número de transações, uma vez que o algoritmo Apriori efetua múltiplas varreduras\n\n\n\n\nSe há uma grande variação na frequência dos itens, há dois problemas\n\nSe minsup for muito grande as regras que envolvem itens raros não serão encontradas\nPara encontrar regras que envolvem tanto itens frequentes como itens raros, minsup deve ser bem pequeno\n\nIsso pode causar uma explosão combinatória já que os itens frequentes (1-itemsets) serão associados entre si de todas as formas possíveis, anulando a poda no reticulado"
+    "text": "Considerações Importantes\n\nNúmero de transações (tamanho do banco de dados ou conjunto de exemplos)\n\nO tempo de execução pode aumentar com o aumento do número de transações, uma vez que o algoritmo Apriori efetua múltiplas varreduras\n\n\n\n\n\nSe há uma grande variação na frequência dos itens, há dois problemas\n\nSe minsup for muito grande as regras que envolvem itens raros não serão encontradas\nPara encontrar regras que envolvem tanto itens frequentes como itens raros, minsup deve ser bem pequeno\n\nIsso pode causar uma explosão combinatória já que os itens frequentes (1-itemsets) serão associados entre si de todas as formas possíveis, anulando a poda no reticulado"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#considerações-importantes-3",
@@ -8038,7 +8038,7 @@
     "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras",
     "title": "Regras de Associação",
     "section": "Reduzindo o número de regras",
-    "text": "Reduzindo o número de regras\n\n\nSuporte e confiança são usados como filtros, para diminuir o número de regras geradas, gerando apenas regras de melhor qualidade\n\n\n\nMas, se considerarmos a regra: Se \\(X \\Rightarrow Y\\) com confiança de 90%, podemos garantir que seja uma regra interessante?\n\n\n\n\nA regra: Se \\(X \\Rightarrow Y\\) com confiança de \\(90\\%\\) não é interessante, se \\(Y\\) aparece em cerca de \\(90\\%\\) das transações, pois a regra não acrescentou nada em termos de conhecimento."
+    "text": "Reduzindo o número de regras\n\n\n\nSuporte e confiança são usados como filtros, para diminuir o número de regras geradas, gerando apenas regras de melhor qualidade\n\n\n\nMas, se considerarmos a regra: Se \\(X \\Rightarrow Y\\) com confiança de 90%, podemos garantir que seja uma regra interessante?\n\n\n\n\nA regra: Se \\(X \\Rightarrow Y\\) com confiança de \\(90\\%\\) não é interessante, se \\(Y\\) aparece em cerca de \\(90\\%\\) das transações, pois a regra não acrescentou nada em termos de conhecimento."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-1",
@@ -8052,21 +8052,21 @@
     "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-2",
     "title": "Regras de Associação",
     "section": "Reduzindo o número de regras",
-    "text": "Reduzindo o número de regras\n\n\n\nTID\nProdutos adquiridos\n\n\n\n\n1\nCafé, Pão, Manteiga\n\n\n2\nLeite, Cerveja, Pão, Manteiga\n\n\n3\nCafé, Pão, Manteiga\n\n\n4\nLeite, Café, Pão, Manteiga\n\n\n5\nCerveja\n\n\n6\nManteiga\n\n\n7\nPão\n\n\n8\nFeijão\n\n\n9\nArroz, Feijão\n\n\n10\nArroz"
+    "text": "Reduzindo o número de regras\n\n\nTID\nProdutos adquiridos\n\n\n\n1\nCafé, Pão, Manteiga\n\n\n2\nLeite, Cerveja, Pão, Manteiga\n\n\n3\nCafé, Pão, Manteiga\n\n\n4\nLeite, Café, Pão, Manteiga\n\n\n5\nCerveja\n\n\n6\nManteiga\n\n\n7\nPão\n\n\n8\nFeijão\n\n\n9\nArroz, Feijão\n\n\n10\nArroz"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-3",
     "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-3",
     "title": "Regras de Associação",
     "section": "Reduzindo o número de regras",
-    "text": "Reduzindo o número de regras\nVoltando ao exemplo: regras finais (minsup = 0,3 e minconf = 0,8)\n\n\n\n\n\n\nRegra 01: SE (café) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\n\n\nRegra 02: SE (café) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 03: SE (pão) ENTÃO (manteiga)\n\n\nConfiança = 0,8\n\n\n\n\nRegra 04: SE (manteiga) ENTÃO (pão)\n\n\nConfiança = 0,8\n\n\n\n\nRegra 05: SE (café E pão) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 06: SE (café E manteiga) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 07: SE (café) ENTÃO (manteiga E pão)\n\n\nConfiança = 1,0"
+    "text": "Reduzindo o número de regras\nVoltando ao exemplo: regras finais (minsup = 0,3 e minconf = 0,8)\n\n\n\n\n\nRegra 01: SE (café) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\n\nRegra 02: SE (café) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 03: SE (pão) ENTÃO (manteiga)\n\n\nConfiança = 0,8\n\n\n\n\nRegra 04: SE (manteiga) ENTÃO (pão)\n\n\nConfiança = 0,8\n\n\n\n\nRegra 05: SE (café E pão) ENTÃO (manteiga)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 06: SE (café E manteiga) ENTÃO (pão)\n\n\nConfiança = 1,0\n\n\n\n\nRegra 07: SE (café) ENTÃO (manteiga E pão)\n\n\nConfiança = 1,0"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-4",
     "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-4",
     "title": "Regras de Associação",
     "section": "Reduzindo o número de regras",
-    "text": "Reduzindo o número de regras\nVoltando ao exemplo: regras finais (minsup = 0,3 e minconf = 0,8)\n\n\n\n\n\n\nRegra 01: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\n\n\nRegra 02: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 03: lift = \\(0,8 \\div 0,5 = 1,6\\)\n\n\n\n\nRegra 04: lift = \\(0,8 \\div 0,5 = 1,6\\)\n\n\n\n\nRegra 05: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 06: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 07: lift = \\(1,0 \\div 0,4 = 2,5\\)\n\n\n\n\n\n\n\n\nInterpretação: Para a regra 01, por exemplo, temos que clientes que compram café tem duas vezes mais chances de comprarem pão."
+    "text": "Reduzindo o número de regras\nVoltando ao exemplo: regras finais (minsup = 0,3 e minconf = 0,8)\n\n\n\n\n\nRegra 01: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\n\nRegra 02: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 03: lift = \\(0,8 \\div 0,5 = 1,6\\)\n\n\n\n\nRegra 04: lift = \\(0,8 \\div 0,5 = 1,6\\)\n\n\n\n\nRegra 05: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 06: lift = \\(1,0 \\div 0,5 = 2,0\\)\n\n\n\n\nRegra 07: lift = \\(1,0 \\div 0,4 = 2,5\\)\n\n\n\n\n\n\n\nInterpretação: Para a regra 01, por exemplo, temos que clientes que compram café tem duas vezes mais chances de comprarem pão."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-5",
@@ -8087,14 +8087,14 @@
     "href": "aulas/Regras_associacao/associacao.html#desafios-do-algoritmo-apriori",
     "title": "Regras de Associação",
     "section": "Desafios do Algoritmo Apriori",
-    "text": "Desafios do Algoritmo Apriori\n\n\nEscalabilidade: Pode ser ineficiente com grandes conjuntos de dados.\n\n\n\nNúmero de Regras: Em bases de dados grandes, o número de regras geradas pode ser muito alto.\n\n\n\n\nAjuste de Parâmetros: Definir o suporte e confiança mínimos pode ser desafiador e impactar os resultados."
+    "text": "Desafios do Algoritmo Apriori\n\n\n\nEscalabilidade: Pode ser ineficiente com grandes conjuntos de dados.\n\n\n\n\nNúmero de Regras: Em bases de dados grandes, o número de regras geradas pode ser muito alto.\n\n\n\n\n\nAjuste de Parâmetros: Definir o suporte e confiança mínimos pode ser desafiador e impactar os resultados."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#aplicações-no-mundo-real",
     "href": "aulas/Regras_associacao/associacao.html#aplicações-no-mundo-real",
     "title": "Regras de Associação",
     "section": "Aplicações no Mundo Real",
-    "text": "Aplicações no Mundo Real\n\nSistemas de Recomendação: Sugestões de produtos com base no histórico de compras.\n\n\n\nAnálise de Cesta de Compras: Identificação de itens frequentemente comprados juntos.\n\n\n\n\nElaboração de catálogos de produtos.\n\n\n\n\nLayout de prateleiras (produtos relacionados tendem a ser colocados perto nas prateleiras).\n\n\n\n\nMarketing e Vendas: Ofertas personalizadas para clientes com base em seu comportamento.\n\n\n\n\nSaúde: Identificação de padrões entre doenças e tratamentos."
+    "text": "Aplicações no Mundo Real\n\n\nSistemas de Recomendação: Sugestões de produtos com base no histórico de compras.\n\n\n\n\nAnálise de Cesta de Compras: Identificação de itens frequentemente comprados juntos.\n\n\n\n\nElaboração de catálogos de produtos.\n\n\n\n\nLayout de prateleiras (produtos relacionados tendem a ser colocados perto nas prateleiras).\n\n\n\n\n\nMarketing e Vendas: Ofertas personalizadas para clientes com base em seu comportamento.\n\n\n\n\n\nSaúde: Identificação de padrões entre doenças e tratamentos."
   },
   {
     "objectID": "programacao/semana-15.html",
@@ -8158,5 +8158,117 @@
     "title": "Criando um sistema de recomendação baseado em regras de associação usando a base de dados Space Titanic",
     "section": "Construindo um sistema de recomendação simples, baseado em regras de associação",
     "text": "Construindo um sistema de recomendação simples, baseado em regras de associação\nAs regras de associação são uma técnica de mineração de dados que identifica padrões e relações entre itens em um grande conjunto de transações. Pense na clássica análise de cesta de compras: a regra {Pão, Manteiga} =&gt; {Geleia} sugere que clientes que compram pão e manteiga também tendem a comprar geleia.\nUm sistema de recomendação usa essa mesma lógica. Em vez de prever a compra de geleia, ele pode prever o interesse em um filme, a alocação de um passageiro em uma cabine, ou a alta probabilidade de um evento acontecer.\nO algoritmo Apriori no recommenderlab trabalha com uma matriz esparsa de avaliação binária, um tipo de estrutura de dados otimizado para sistemas de recomendação. Essa matriz representa a presença ou ausência de cada item (colunas) para cada transação ou usuário (linhas). A função as() do pacote arules é perfeita para essa tarefa, pois ela converte o objeto de transações (dados_transacoes) que criamos anteriormente para esse novo formato de forma eficiente.\n\ndados_recommender &lt;- as(dados_transacoes, \"binaryRatingMatrix\")\n\nCom os dados agora no formato correto, estamos prontos para a etapa central do nosso sistema de recomendação: a criação do modelo.\nO extrato de código a seguir usa a função Recommender() do pacote recommenderlab para treinar nosso modelo de recomendação.\n\nrecom_model &lt;- Recommender(data = dados_recommender,\n                           method = \"AR\",\n                           parameter = list(supp = 0.2, conf = 0.8, maxlen = 10))\n\nAo executar esse código, o recommenderlab irá minerar as regras de associação no nosso conjunto de dados, criando um modelo que pode ser usado para gerar previsões para novos passageiros. Depois de treinar o modelo com Recommender(), as regras de associação descobertas são armazenadas dentro do objeto recom_model.\n\n# O objeto 'recom_model' armazena as regras de associação.\n# Podemos extrair e inspecionar as regras encontradas.\nmodel_details &lt;- getModel(recom_model)\nregras_finais &lt;- model_details$rule_base\n\nregras_finais_sorted &lt;- sort(regras_finais, by = \"lift\")\n\n# Vamos inspecionar as regras encontradas pelo recommenderlab\ninspect(head(regras_finais_sorted, n = 10))\n\n     lhs                          rhs             support confidence  coverage     lift count\n[1]  {HomePlanet=Earth,                                                                      \n      FoodCourt_cat=Baixo,                                                                   \n      ShoppingMall_cat=Baixo,                                                                \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2026945  0.9260028 0.2188919 3.100443  1339\n[2]  {HomePlanet=Earth,                                                                      \n      VIP=False,                                                                             \n      FoodCourt_cat=Baixo,                                                                   \n      ShoppingMall_cat=Baixo,                                                                \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2026945  0.9260028 0.2188919 3.100443  1339\n[3]  {HomePlanet=Earth,                                                                      \n      RoomService_cat=Baixo,                                                                 \n      Spa_cat=Baixo,                                                                         \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2025431  0.9195876 0.2202543 3.078964  1338\n[4]  {HomePlanet=Earth,                                                                      \n      VIP=False,                                                                             \n      RoomService_cat=Baixo,                                                                 \n      Spa_cat=Baixo,                                                                         \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2025431  0.9195876 0.2202543 3.078964  1338\n[5]  {HomePlanet=Earth,                                                                      \n      ShoppingMall_cat=Baixo,                                                                \n      Spa_cat=Baixo,                                                                         \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2022404  0.9188446 0.2201029 3.076476  1336\n[6]  {HomePlanet=Earth,                                                                      \n      VIP=False,                                                                             \n      ShoppingMall_cat=Baixo,                                                                \n      Spa_cat=Baixo,                                                                         \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2022404  0.9188446 0.2201029 3.076476  1336\n[7]  {HomePlanet=Earth,                                                                      \n      RoomService_cat=Baixo,                                                                 \n      ShoppingMall_cat=Baixo,                                                                \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2028459  0.9184373 0.2208598 3.075112  1340\n[8]  {HomePlanet=Earth,                                                                      \n      VIP=False,                                                                             \n      RoomService_cat=Baixo,                                                                 \n      ShoppingMall_cat=Baixo,                                                                \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2028459  0.9184373 0.2208598 3.075112  1340\n[9]  {HomePlanet=Earth,                                                                      \n      FoodCourt_cat=Baixo,                                                                   \n      Spa_cat=Baixo,                                                                         \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2023918  0.9176390 0.2205571 3.072439  1337\n[10] {HomePlanet=Earth,                                                                      \n      VIP=False,                                                                             \n      FoodCourt_cat=Baixo,                                                                   \n      Spa_cat=Baixo,                                                                         \n      VRDeck_cat=Baixo}        =&gt; {CabinDeck=G} 0.2023918  0.9176390 0.2205571 3.072439  1337\n\n\nA análise do resultado deste comando nos dará os mesmos insights que obtivemos com o pacote arules, mas agora dentro do fluxo de trabalho do recommenderlab. Nosso objetivo agora é colocar o modelo que treinamos em ação e gerar recomendações. Para isso, iremos “simular” dois novos passageiros para serem apresentados ao nosso sistema de recomendação.\n\n# 1. Obter os nomes dos itens do modelo treinado\nitems_names &lt;- colnames(dados_recommender)\n\n# 2. Criar uma matriz de zeros para todos os passageiros e itens\n# Vamos definir o número de passageiros que você quer avaliar\nnum_passageiros &lt;- 2 \nnovos_passageiros_mat &lt;- matrix(0, nrow = num_passageiros, ncol = length(items_names))\ncolnames(novos_passageiros_mat) &lt;- items_names\nrownames(novos_passageiros_mat) &lt;- c(\"Novo_Passageiro_01\", \"Novo_Passageiro_02\")\n\n# 3. Preencher a matriz com as características de cada passageiro\n# Passageiro 1: da Terra, com gastos baixos\nnovos_passageiros_mat[\"Novo_Passageiro_01\", \"HomePlanet=Earth\"] &lt;- 1\nnovos_passageiros_mat[\"Novo_Passageiro_01\", \"RoomService_cat=Baixo\"] &lt;- 1\nnovos_passageiros_mat[\"Novo_Passageiro_01\", \"FoodCourt_cat=Baixo\"] &lt;- 1\n\n# Passageiro 2: VIP, Adulto e em sono criogênico\nnovos_passageiros_mat[\"Novo_Passageiro_02\", \"VIP=True\"] &lt;- 1\nnovos_passageiros_mat[\"Novo_Passageiro_02\", \"Age_cat=Adulto\"] &lt;- 1\nnovos_passageiros_mat[\"Novo_Passageiro_02\", \"CryoSleep=True\"] &lt;- 1\n\n# 4. Converter a matriz consolidada para o formato binaryRatingMatrix\nnovos_passageiros_ratings &lt;- as(novos_passageiros_mat, \"binaryRatingMatrix\")\n\n# 5. Gerar as recomendações\nrecommendations &lt;- predict(recom_model, novos_passageiros_ratings, n = 5)\n\n# Inspecionar as recomendações para ambos os passageiros\nas(recommendations, \"list\")\n\n$`0`\n[1] \"VIP=False\"              \"Spa_cat=Baixo\"          \"ShoppingMall_cat=Baixo\"\n[4] \"VRDeck_cat=Baixo\"       \"CabinDeck=G\"           \n\n$`1`\n[1] \"RoomService_cat=Baixo\"  \"FoodCourt_cat=Baixo\"    \"ShoppingMall_cat=Baixo\"\n[4] \"Spa_cat=Baixo\"          \"VRDeck_cat=Baixo\"      \n\n\nO resultado será uma lista de “recomendações” para cada um deles. Com base nas regras de associação que descobrimos, o sistema nos dirá qual item é o mais provável para cada perfil. Isso fecha o ciclo do nosso projeto, mostrando como a mineração de dados pode se traduzir em um sistema prático e preditivo.\n\nAnálise das Recomendações\nO output está em formato de lista, onde cada item ($0 e $1) corresponde a uma recomendação para um passageiro. A ordem das recomendações corresponde à ordem dos passageiros na matriz de entrada.\n\nRecomendação para o Primeiro Passageiro ($0): O modelo “recomendou” a seguinte lista de itens:\n\n\"VIP=False\" \"Spa_cat=Baixo\" \"ShoppingMall_cat=Baixo\" \"VRDeck_cat=Baixo\" \"CabinDeck=G\"\n\nO que o sistema viu: Se o seu primeiro passageiro era o que vinha da Terra com gastos baixos (RoomService, FoodCourt, etc.), o modelo identificou as regras que se aplicam a esse perfil.\nO que o sistema recomendou: O sistema listou os itens que, com base nas regras, estão mais fortemente associados a esse perfil. A recomendação mais importante aqui é CabinDeck=G. O sistema está basicamente dizendo: “Com base nas características desse passageiro (vindo da Terra, gastos baixos), a cabine mais provável para ele é no Deck G.” Os outros itens na lista são parte das regras que levaram a essa conclusão.\n\n\nRecomendação para o Segundo Passageiro ($1): O modelo “recomendou” a seguinte lista de itens:\n\n\"RoomService_cat=Baixo\" \"FoodCourt_cat=Baixo\" \"ShoppingMall_cat=Baixo\" \"Spa_cat=Baixo\" \"VRDeck_cat=Baixo\"\n\nO que o sistema viu: Se o seu segundo passageiro era o VIP, adulto e em sono criogênico, a recomendação nos dá um insight diferente.\nO que o sistema recomendou: A recomendação principal aqui é uma lista de itens que representam gastos baixos. Isso faz sentido, pois nossa análise anterior mostrou que a variável CryoSleep=True (sono criogênico) está quase sempre associada a gastos nulos ou baixos em todos os serviços. O sistema está recomendando a previsão de que, se o passageiro está em sono criogênico, ele provavelmente terá gastos baixos nesses serviços.\n\n\n\nConclusão\nO sistema de recomendação funcionou como esperado, aplicando as regras de associação para fazer previsões lógicas para cada perfil de passageiro.\n\nPara o primeiro passageiro, a recomendação foi sobre a alocação da cabine.\nPara o segundo passageiro, a recomendação foi sobre o comportamento de gastos, que é um item fortemente associado ao estado de sono criogênico.\n\nIsso demonstra como um sistema baseado em regras de associação pode ser usado para inferir diferentes tipos de informações com base nos padrões encontrados nos dados."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\nA base de dados Groceries está disponível no pacote arules e contém 9.835 transações (cestas de compras) de um supermercado, com 169 itens diferentes.\n\nNosso objetivo é descobrir regras como “se um cliente compra leite, ovos e açúcar, ele também compra farinha?”."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-1",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-1",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 1. Carregar pacotes\nload &lt;- function(pkg){\n  new.pkg &lt;- pkg[!(pkg %in% installed.packages()[, \"Package\"])]\n  if (length(new.pkg))\n    install.packages(new.pkg, dependencies = TRUE)\n  sapply(pkg, require, character.only = TRUE)\n} \n\npackages &lt;- c(\"tidyverse\",\"readxl\", \"knitr\", \"ggplot2\", \"lubridate\", \"arules\", \n              \"arulesViz\", \"plyr\", \"dplyr\", \"RColorBrewer\", \"recommenderlab\",'tidyquant')\nload(packages)\n\n     tidyverse         readxl          knitr        ggplot2      lubridate \n          TRUE           TRUE           TRUE           TRUE           TRUE \n        arules      arulesViz           plyr          dplyr   RColorBrewer \n          TRUE           TRUE           TRUE           TRUE           TRUE \nrecommenderlab      tidyquant \n          TRUE           TRUE"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-2",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-2",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 2. Carregar a base de dados Groceries\n# A base já vem no formato de transações, o que facilita o trabalho.\ndata(\"Groceries\")\n\n# 3. Explorar a base de dados\n# O 'Groceries' já é um objeto de transações.\n# Dimensões da base (transações x itens)\ndim(Groceries)\n\n[1] 9835  169\n\nproducts = itemLabels(Groceries)\nproducts %&gt;% head(n=18)\n\n [1] \"frankfurter\"       \"sausage\"           \"liver loaf\"       \n [4] \"ham\"               \"meat\"              \"finished products\"\n [7] \"organic sausage\"   \"chicken\"           \"turkey\"           \n[10] \"pork\"              \"beef\"              \"hamburger meat\"   \n[13] \"fish\"              \"citrus fruit\"      \"tropical fruit\"   \n[16] \"pip fruit\"         \"grapes\"            \"berries\""
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-3",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-3",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# Ver as 5 primeiras transações\ninspect(Groceries[1:5])\n\n    items                     \n[1] {citrus fruit,            \n     semi-finished bread,     \n     margarine,               \n     ready soups}             \n[2] {tropical fruit,          \n     yogurt,                  \n     coffee}                  \n[3] {whole milk}              \n[4] {pip fruit,               \n     yogurt,                  \n     cream cheese ,           \n     meat spreads}            \n[5] {other vegetables,        \n     whole milk,              \n     condensed milk,          \n     long life bakery product}"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-4",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-4",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# Plotar a frequência dos 20 itens mais comuns\n# O gráfico nos ajuda a definir o suporte mínimo\nitemFrequencyPlot(Groceries, topN = 20, type = \"relative\")"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-5",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-5",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 4. Aplicar o algoritmo Apriori para encontrar regras\n# Vamos usar um suporte e confiança mais baixos, pois os itens são mais variados.\n# 'support' = 0.01 significa que a regra deve aparecer em 1% das transações.\n# 'confidence' = 0.5 significa que a regra deve ser verdadeira em 50% dos casos.\nrules &lt;- apriori(Groceries, parameter = list(support = 0.01, confidence = 0.5))\n\nApriori\n\nParameter specification:\n confidence minval smax arem  aval originalSupport maxtime support minlen\n        0.5    0.1    1 none FALSE            TRUE       5    0.01      1\n maxlen target  ext\n     10  rules TRUE\n\nAlgorithmic control:\n filter tree heap memopt load sort verbose\n    0.1 TRUE TRUE  FALSE TRUE    2    TRUE\n\nAbsolute minimum support count: 98 \n\nset item appearances ...[0 item(s)] done [0.00s].\nset transactions ...[169 item(s), 9835 transaction(s)] done [0.00s].\nsorting and recoding items ... [88 item(s)] done [0.00s].\ncreating transaction tree ... done [0.00s].\nchecking subsets of size 1 2 3 4 done [0.00s].\nwriting ... [15 rule(s)] done [0.00s].\ncreating S4 object  ... done [0.00s]."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-6",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-6",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 5. Explorar e inspecionar as regras encontradas\n# Vamos ordenar as regras por lift para encontrar as associações mais fortes.\nrules_sorted &lt;- sort(rules, by = \"lift\", decreasing = TRUE)\n\n# Inspecionar as 10 melhores regras\ninspect(head(rules_sorted, n = 10))\n\n     lhs                                  rhs                support   \n[1]  {citrus fruit, root vegetables}   =&gt; {other vegetables} 0.01037112\n[2]  {tropical fruit, root vegetables} =&gt; {other vegetables} 0.01230300\n[3]  {root vegetables, rolls/buns}     =&gt; {other vegetables} 0.01220132\n[4]  {root vegetables, yogurt}         =&gt; {other vegetables} 0.01291307\n[5]  {curd, yogurt}                    =&gt; {whole milk}       0.01006609\n[6]  {other vegetables, butter}        =&gt; {whole milk}       0.01148958\n[7]  {tropical fruit, root vegetables} =&gt; {whole milk}       0.01199797\n[8]  {root vegetables, yogurt}         =&gt; {whole milk}       0.01453991\n[9]  {other vegetables, domestic eggs} =&gt; {whole milk}       0.01230300\n[10] {yogurt, whipped/sour cream}      =&gt; {whole milk}       0.01087951\n     confidence coverage   lift     count\n[1]  0.5862069  0.01769192 3.029608 102  \n[2]  0.5845411  0.02104728 3.020999 121  \n[3]  0.5020921  0.02430097 2.594890 120  \n[4]  0.5000000  0.02582613 2.584078 127  \n[5]  0.5823529  0.01728521 2.279125  99  \n[6]  0.5736041  0.02003050 2.244885 113  \n[7]  0.5700483  0.02104728 2.230969 118  \n[8]  0.5629921  0.02582613 2.203354 143  \n[9]  0.5525114  0.02226741 2.162336 121  \n[10] 0.5245098  0.02074225 2.052747 107"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-7",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-7",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 6. Visualizar as regras (opcional)\nplot(rules_sorted, method = \"graph\", engine = \"htmlwidget\")"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-8",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-8",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 7. Filtrar regras para um item específico\n# Vamos encontrar regras que levam à compra de \"whole milk\" (leite integral).\n# 'rhs' = right-hand side (consequente)\nrules_milk &lt;- apriori(Groceries,\n                      parameter = list(support = 0.01, confidence = 0.5),\n                      appearance = list(rhs = \"whole milk\", default = \"lhs\"))\n\nApriori\n\nParameter specification:\n confidence minval smax arem  aval originalSupport maxtime support minlen\n        0.5    0.1    1 none FALSE            TRUE       5    0.01      1\n maxlen target  ext\n     10  rules TRUE\n\nAlgorithmic control:\n filter tree heap memopt load sort verbose\n    0.1 TRUE TRUE  FALSE TRUE    2    TRUE\n\nAbsolute minimum support count: 98 \n\nset item appearances ...[1 item(s)] done [0.00s].\nset transactions ...[169 item(s), 9835 transaction(s)] done [0.00s].\nsorting and recoding items ... [88 item(s)] done [0.00s].\ncreating transaction tree ... done [0.00s].\nchecking subsets of size 1 2 3 4 done [0.00s].\nwriting ... [11 rule(s)] done [0.00s].\ncreating S4 object  ... done [0.00s]."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-9",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-9",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# Ordenar e inspecionar as regras sobre \"whole milk\"\nrules_milk_sorted &lt;- sort(rules_milk, by = \"lift\", decreasing = TRUE)\ninspect(rules_milk_sorted)\n\n     lhs                                       rhs          support   \n[1]  {curd, yogurt}                         =&gt; {whole milk} 0.01006609\n[2]  {other vegetables, butter}             =&gt; {whole milk} 0.01148958\n[3]  {tropical fruit, root vegetables}      =&gt; {whole milk} 0.01199797\n[4]  {root vegetables, yogurt}              =&gt; {whole milk} 0.01453991\n[5]  {other vegetables, domestic eggs}      =&gt; {whole milk} 0.01230300\n[6]  {yogurt, whipped/sour cream}           =&gt; {whole milk} 0.01087951\n[7]  {root vegetables, rolls/buns}          =&gt; {whole milk} 0.01270971\n[8]  {pip fruit, other vegetables}          =&gt; {whole milk} 0.01352313\n[9]  {tropical fruit, yogurt}               =&gt; {whole milk} 0.01514997\n[10] {other vegetables, yogurt}             =&gt; {whole milk} 0.02226741\n[11] {other vegetables, whipped/sour cream} =&gt; {whole milk} 0.01464159\n     confidence coverage   lift     count\n[1]  0.5823529  0.01728521 2.279125  99  \n[2]  0.5736041  0.02003050 2.244885 113  \n[3]  0.5700483  0.02104728 2.230969 118  \n[4]  0.5629921  0.02582613 2.203354 143  \n[5]  0.5525114  0.02226741 2.162336 121  \n[6]  0.5245098  0.02074225 2.052747 107  \n[7]  0.5230126  0.02430097 2.046888 125  \n[8]  0.5175097  0.02613116 2.025351 133  \n[9]  0.5173611  0.02928317 2.024770 149  \n[10] 0.5128806  0.04341637 2.007235 219  \n[11] 0.5070423  0.02887646 1.984385 144"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-6-output",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-6-output",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-10",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-10",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 8. Visualizar as regras (opcional)\nplot(rules_milk_sorted[1:10], method = \"graph\", engine = \"htmlwidget\")"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-7-output",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-7-output",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-11",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-11",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n## Construindo um sistema de recomendação simples, baseado em regras de associação\nratings_matrix = as(Groceries, \"binaryRatingMatrix\")\n\nrecom = recommenderlab::Recommender(\n  ratings_matrix,\n  method = \"AR\",\n  param = list(supp = 0.01, conf = 0.25, verbose = TRUE))\n\nUsed parameters:\nsupport  =  0.01\nconfidence   =  0.25\nmaxlen   =  3\nmaxtime  =  5\nsort_measure     =  confidence\nsort_decreasing  =  TRUE\napriori_control  =  list()\nverbose  =  TRUE\nApriori\n\nParameter specification:\n confidence minval smax arem  aval originalSupport maxtime support minlen\n       0.25    0.1    1 none FALSE            TRUE       5    0.01      2\n maxlen target  ext\n      3  rules TRUE\n\nAlgorithmic control:\n filter tree heap memopt load sort verbose\n    0.1 TRUE TRUE  FALSE TRUE    2    TRUE\n\nAbsolute minimum support count: 98 \n\nset item appearances ...[0 item(s)] done [0.00s].\nset transactions ...[169 item(s), 9835 transaction(s)] done [0.00s].\nsorting and recoding items ... [88 item(s)] done [0.00s].\ncreating transaction tree ... done [0.00s].\nchecking subsets of size 1 2 3 done [0.00s].\nwriting ... [170 rule(s)] done [0.00s].\ncreating S4 object  ... done [0.00s].\n\nRule base size: 170 rules."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-12",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-12",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# Obter os nomes dos itens do modelo treinado\nitems_names &lt;- colnames(ratings_matrix)\n\n# pedido hipotetico\n# Vamos definir o número de passageiros que você quer avaliar\nnum_pedidos &lt;- 2 \nnovos_pedidos &lt;- matrix(0, nrow = num_pedidos, ncol = length(items_names))\ncolnames(novos_pedidos) &lt;- items_names\nrownames(novos_pedidos) &lt;- c(\"Novo_Pedido_01\", \"Novo_Pedido_02\")\n\n# 3. Preencher a matriz com as características de cada passageiro\n# Pedido 1: Salsicha, Café e Sobremesa\nnovos_pedidos[\"Novo_Pedido_01\", \"frankfurter\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_01\", \"coffee\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_01\", \"dessert\"] &lt;- 1\n\n# Passageiro 2: Peixe, Queijo Fatiado e Leite Integral\nnovos_pedidos[\"Novo_Pedido_02\", \"whole milk\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_02\", \"fish\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_02\", \"sliced cheese\"] &lt;- 1"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-13",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-13",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 4. Converter a matriz consolidada para o formato binaryRatingMatrix\nnovos_pedidos_ratings &lt;- as(novos_pedidos, \"binaryRatingMatrix\")\n\n# 5. Gerar as recomendações\nrecommendations &lt;- predict(recom, novos_pedidos_ratings, n = 5)\n\n# Inspecionar as recomendações para ambos os passageiros\nas(recommendations, \"list\")\n\n$`0`\n[1] \"whole milk\"       \"rolls/buns\"       \"other vegetables\"\n\n$`1`\n[1] \"other vegetables\""
   }
 ]
