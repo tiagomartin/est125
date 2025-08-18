@@ -352,7 +352,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tarefas-e-desafios-propostos-3" id="toc-tarefas-e-desafios-propostos-3" class="nav-link" data-scroll-target="#tarefas-e-desafios-propostos-3">🧠 Tarefas e Desafios Propostos</a></li>
   <li><a href="#questões-para-discussão-e-resolução-2" id="toc-questões-para-discussão-e-resolução-2" class="nav-link" data-scroll-target="#questões-para-discussão-e-resolução-2">🤔 Questões para Discussão e Resolução:</a></li>
   </ul></li>
-  <li><a href="#fase-5-construção-de-um-sistema-de-recomendação" id="toc-fase-5-construção-de-um-sistema-de-recomendação" class="nav-link" data-scroll-target="#fase-5-construção-de-um-sistema-de-recomendação">🧺 Fase 5: Construção de um Sistema de Recomendação</a></li>
+  <li><a href="#fase-5-construção-de-um-sistema-de-recomendação" id="toc-fase-5-construção-de-um-sistema-de-recomendação" class="nav-link" data-scroll-target="#fase-5-construção-de-um-sistema-de-recomendação">🧺 Fase 5: Construção de um Sistema de Recomendação</a>
+  <ul class="collapse">
+  <li><a href="#objetivo-3" id="toc-objetivo-3" class="nav-link" data-scroll-target="#objetivo-3">🔍 Objetivo</a></li>
+  <li><a href="#tarefas-e-desafios-propostos-4" id="toc-tarefas-e-desafios-propostos-4" class="nav-link" data-scroll-target="#tarefas-e-desafios-propostos-4">🧠 Tarefas e Desafios Propostos</a></li>
+  <li><a href="#questões-para-discussão-e-resolução-3" id="toc-questões-para-discussão-e-resolução-3" class="nav-link" data-scroll-target="#questões-para-discussão-e-resolução-3">🤔 Questões para Discussão e Resolução:</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est125/edit/main/projeto/projeto_avaliativo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est125/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -625,27 +630,51 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="fase-5-construção-de-um-sistema-de-recomendação" class="level2">
 <h2 class="anchored" data-anchor-id="fase-5-construção-de-um-sistema-de-recomendação">🧺 Fase 5: Construção de um Sistema de Recomendação</h2>
-<!-- ### 🔍 Objetivo -->
-<!-- O objetivo desta fase é aplicar Regras de Associação nos dados da ConecteMais Corp. para descobrir padrões de coocorrência entre os serviços que os clientes assinam, ofertas aceitas, métodos de pagamento e até mesmo comportamentos que levam ao *churn*. A ideia é identificar "se um cliente tem X, ele provavelmente também tem Y" ou "se um cliente tem A e B, ele tende a fazer C". Essas regras podem ser a base para um sistema de recomendação de novos serviços, otimização de pacotes ou para entender gatilhos de *churn* em termos de combinações de produtos. -->
-<!-- ### 🧠 Tarefas e Desafios Propostos -->
-<!-- Nesta etapa, a equipe de Análise de Dados focará em descobrir relações interessantes e acionáveis entre as variáveis do conjunto de dados, que podem ser utilizadas para recomendações estratégicas. -->
-<!-- ### 🤔 Questões para Discussão e Resolução: -->
-<!-- 1) Fundamentos das Regras de Associação: -->
-<!--   - Expliquem o conceito de Regras de Associação (Itemsets Frequentes, Suporte, Confiança e Lift) para a Sra. Ana Paula. Como essas métricas ajudam a identificar padrões interessantes nos dados de serviços dos clientes? -->
-<!--   - Diferente das fases anteriores, onde o foco era prever um target ou segmentar, as regras de associação buscam relações entre múltiplos itens. Quais variáveis do conjunto de dados da ConecteMais são as mais adequadas para serem tratadas como "itens" em uma análise de regras de associação? Dêem exemplos de pelo menos cinco variáveis e justifiquem. -->
-<!-- 2) Preparação dos Dados para Regras de Associação: -->
-<!--   - Para aplicar algoritmos de regras de associação (como Apriori ou FPGrowth), os dados precisam estar em um formato transacional, onde cada linha representa uma "transação" (neste caso, um cliente) e as colunas representam os "itens" (serviços, ofertas, etc.). Como vocês transformariam as variáveis escolhidas na questão anterior (que podem ser categóricas binárias ou com múltiplas categorias) para este formato? -->
-<!--   - Algumas variáveis numéricas, como `Avg Monthly GB Download` ou `Monthly Charge`, podem conter informações valiosas. Como vocês poderiam discretizar essas variáveis numéricas para transformá-las em "itens" que possam ser incluídos na análise de regras de associação? Descrevam um método de discretização. -->
-<!-- 3) Geração e Filtragem de Regras: -->
-<!--   - Ao gerar regras de associação, é comum obter um grande número delas. Quais seriam os parâmetros mínimos de Suporte e Confiança que vocês definiriam inicialmente para filtrar as regras mais relevantes e por quê? -->
-<!--   - Além de Suporte e Confiança, o Lift é uma métrica crucial. Expliquem para que serve o Lift em regras de associação e por que uma regra com Lift > 1 é considerada mais interessante para a ConecteMais. -->
-<!-- 4) Aplicação das Regras e Insights de Negócio: -->
-<!--   - Dêem um exemplo hipotético de uma regra de associação que poderia ser descoberta nos dados da ConecteMais (ex: {Internet Service: Fiber Optic, Streaming TV} -> {Streaming Movies} com alta confiança e lift). Qual seria a implicação de negócio dessa regra? -->
-<!--   - Como as regras de associação poderiam ser utilizadas para: -->
-<!--       - Recomendar novos serviços para clientes existentes (ex: "Se um cliente tem plano X e serviço Y, recomendar serviço Z")? -->
-<!--       - Identificar combinações de serviços que precedem o *churn* (ex: "Se um cliente tem serviço A e B, e um contrato Mês-a-Mês, ele tende a dar *churn*")? -->
+<section id="objetivo-3" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-3">🔍 Objetivo</h3>
+<p>O objetivo desta fase é aplicar Regras de Associação nos dados da ConecteMais Corp.&nbsp;para descobrir padrões de coocorrência entre os serviços que os clientes assinam, ofertas aceitas, métodos de pagamento e até mesmo comportamentos que levam ao <em>churn</em>. A ideia é identificar “se um cliente tem X, ele provavelmente também tem Y” ou “se um cliente tem A e B, ele tende a fazer C”. Essas regras podem ser a base para um sistema de recomendação de novos serviços, otimização de pacotes ou para entender gatilhos de <em>churn</em> em termos de combinações de produtos.</p>
+</section>
+<section id="tarefas-e-desafios-propostos-4" class="level3">
+<h3 class="anchored" data-anchor-id="tarefas-e-desafios-propostos-4">🧠 Tarefas e Desafios Propostos</h3>
+<p>Nesta etapa, a equipe de Análise de Dados focará em descobrir relações interessantes e acionáveis entre as variáveis do conjunto de dados, que podem ser utilizadas para recomendações estratégicas.</p>
+</section>
+<section id="questões-para-discussão-e-resolução-3" class="level3">
+<h3 class="anchored" data-anchor-id="questões-para-discussão-e-resolução-3">🤔 Questões para Discussão e Resolução:</h3>
+<ol type="1">
+<li>Fundamentos das Regras de Associação:</li>
+</ol>
+<ul>
+<li><p>Expliquem o conceito de Regras de Associação (Itemsets Frequentes, Suporte, Confiança e Lift) para a Sra. Ana Paula. Como essas métricas ajudam a identificar padrões interessantes nos dados de serviços dos clientes?</p></li>
+<li><p>Diferente das fases anteriores, onde o foco era prever um target ou segmentar, as regras de associação buscam relações entre múltiplos itens. Quais variáveis do conjunto de dados da ConecteMais são as mais adequadas para serem tratadas como “itens” em uma análise de regras de associação? Dêem exemplos de pelo menos cinco variáveis e justifiquem.</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Preparação dos Dados para Regras de Associação:</li>
+</ol>
+<ul>
+<li><p>Para aplicar algoritmos de regras de associação (como Apriori), os dados precisam estar em um formato transacional, onde cada linha representa uma “transação” (neste caso, um cliente) e as colunas representam os “itens” (serviços, ofertas, etc.). Como vocês transformariam as variáveis escolhidas na questão anterior (que podem ser categóricas binárias ou com múltiplas categorias) para este formato?</p></li>
+<li><p>Algumas variáveis numéricas, como <code>Avg Monthly GB Download</code> ou <code>Monthly Charge</code>, podem conter informações valiosas. Como vocês poderiam discretizar essas variáveis numéricas para transformá-las em “itens” que possam ser incluídos na análise de regras de associação? Descrevam um método de discretização.</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Geração e Filtragem de Regras:</li>
+</ol>
+<ul>
+<li><p>Ao gerar regras de associação, é comum obter um grande número delas. Quais seriam os parâmetros mínimos de Suporte e Confiança que vocês definiriam inicialmente para filtrar as regras mais relevantes e por quê?</p></li>
+<li><p>Além de Suporte e Confiança, o Lift é uma métrica crucial. Expliquem para que serve o Lift em regras de associação e por que uma regra com Lift &gt; 1 é considerada mais interessante para a ConecteMais.</p></li>
+</ul>
+<ol start="4" type="1">
+<li>Aplicação das Regras e Insights de Negócio:</li>
+</ol>
+<ul>
+<li><p>Dêem um exemplo hipotético de uma regra de associação que poderia ser descoberta nos dados da ConecteMais (ex: {Internet Service: Fiber Optic, Streaming TV} -&gt; {Streaming Movies} com alta confiança e lift). Qual seria a implicação de negócio dessa regra?</p></li>
+<li><p>Como as regras de associação poderiam ser utilizadas para:</p>
+<ul>
+<li>Recomendar novos serviços para clientes existentes (ex: “Se um cliente tem plano X e serviço Y, recomendar serviço Z”)?</li>
+<li>Identificar combinações de serviços que precedem o <em>churn</em> (ex: “Se um cliente tem serviço A e B, e um contrato Mês-a-Mês, ele tende a dar <em>churn</em>”)?</li>
+</ul></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

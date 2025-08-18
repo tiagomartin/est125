@@ -1,0 +1,18 @@
+---
+title: "Semana 16"
+---
+
+
+## Script criando um sistema de recomendação baseado em regras de associação usando a base de dados Space Titanic no R
+
+{{< fa brands r-project size=lg >}} [Criando um sistema de recomendação baseado em regras de associação usando a base de dados Space Titanic](/analise_dados/space_titanic_regras.html "Script análise de dados"){aria-label="Script análise de dados"}
+
+## Slides
+
+{{< fa file-powerpoint size=lg >}} [Regras de associação](/aulas/Regras_associacao/associacao.html#/exemplo-de-regras-de-associação-com-a-base-de-dados-groceries "Exemplo Groceries"){aria-label="Exemplo Groceries"}
+
+
+## Projeto
+
+{{< fa list-check size=lg >}} [Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 5](/projeto/projeto_avaliativo.html#fase-5-construção-de-um-sistema-de-recomendação "Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 5"){aria-label="Projeto: Análise de Churn na Empresa ConecteMais Corp. - FASE 5"}
+
