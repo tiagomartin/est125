@@ -1,17 +1,63 @@
-*_cache/
-*_files/
+# =========================
+# 🔵 Quarto
+# =========================
 .quarto/
+*_files/
+*_cache/
+_site/
+
+# =========================
+# 🔵 R / RStudio
+# =========================
 .Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
 
-/.quarto/
-"analise_dados/space_titanic_workflow_cache/" 
-analise_dados/space_titanic_cluster_cache/
-analise_dados/space_titanic_cluster_files/
-"*.exe" 
-<<<<<<< HEAD
-=======
-"*.exe" 
->>>>>>> 143188ad7369693a53c19d2d7bb90eecc756aedf
+# =========================
+# 🔵 knitr / execução
+# =========================
+*.utf8.md
+*.knit.md
+
+# =========================
+# 🔵 Logs
+# =========================
+*.log
+
+# =========================
+# 🔵 Sistema (Windows)
+# =========================
+Thumbs.db
+desktop.ini
+
+# =========================
+# 🔵 Sistema (Mac)
+# =========================
+.DS_Store
+
+# =========================
+# 🔵 Python (caso use)
+# =========================
+__pycache__/
+*.pyc
+
+# =========================
+# 🔵 Arquivos grandes (opcional)
+# =========================
+*.rds
+*.rda
+
+# =========================
+# 🔵 VS Code (se usar)
+# =========================
+.vscode/
+
+# =========================
+# 🔵 PDFs gerados automaticamente (opcional)
+# =========================
+*.aux
+*.out
+*.toc
+*.nav
+*.snm
