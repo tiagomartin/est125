@@ -1,10 +1,10 @@
-.Rproj.user
+*_cache/
+*_files/
+.quarto/
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
-
-*_cache/
-*_files/
 
 /.quarto/
 "analise_dados/space_titanic_workflow_cache/" 
