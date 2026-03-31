@@ -8,6 +8,18 @@ format:
     theme: quartomonothemer.scss
     slide-number: c/t
     show-slide-number: all
+    preview-links: auto
+    self-contained: false
+    embed-resources: false
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+  beamer:          # Slides em PDF (LaTeX/Beamer)
+    aspectratio: 169   # 16:9
+    keep-tex: true     # opcional, guarda o .tex gerado
+    include-in-header:
+      text: |
+        \setkeys{Gin}{width=0.7\linewidth, keepaspectratio}
 incremental: false
 code-link: true
 bibliography: references.bib
@@ -15,6 +27,13 @@ title-slide-attributes:
     data-background-image: /images/back.jpeg
     data-background-size: cover
     data-background-opacity: "0.3"
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-format: png
+  freeze: auto
+  cache: true
 ---
 
 
@@ -58,7 +77,15 @@ A quantidade de dados gerados diariamente vem **aumentando exponencialmente**, t
 
 ## Muitos dados, pouco conhecimento!
 
+::: {.content-visible when-format="html"}
 ![](https://media1.giphy.com/media/xT9C25UNTwfZuk85WP/giphy-downsized-medium.gif){fig-align="center" .r-stretch}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](/images/data_every_where.png){width=70%}
+:::
+
+
 
 
 
@@ -561,7 +588,17 @@ Sócrates
 
 ## Qual metodologia utilizar?
 
+
+
+::: {.content-visible when-format="html"}
 ![](https://media1.giphy.com/media/XeH1MFu4x3etVsllUN/giphy.gif){fig-align="center" width="800"}
+:::
+
+
+::: {.content-visible when-format="pdf"}
+![](/images/drauzio.png){width=70%}
+:::
+
 
 
 
@@ -839,7 +876,16 @@ A empresa também pode monitorar o progresso e ajustar as medidas se necessário
 
 ## Importância de entender o problema
 
+
+::: {.content-visible when-format="html"}
 ![](https://media3.giphy.com/media/3ohjV3jMa3xK4Reg5G/giphy.gif){fig-align="center"}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](/images/problem.png){fig-align="center" width="60%"}
+:::
+
+
 
 <p align="center"">
 Entenda o problema e depois pense em como resolvê-lo
