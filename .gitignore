@@ -3,6 +3,9 @@
 .RData
 .Ruserdata
 
+*_cache/
+*_files/
+
 /.quarto/
 "analise_dados/space_titanic_workflow_cache/" 
 analise_dados/space_titanic_cluster_cache/
