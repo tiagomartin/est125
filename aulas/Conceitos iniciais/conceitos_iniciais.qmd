@@ -278,103 +278,111 @@ Sócrates
 
 
 
-## CRISP-DM
+
+
+## KDD
 
 <br>
 
-- CRISP-DM (**CR**oss **I**ndustry **S**tandard **P**rocess for **D**ata **M**ining) é uma metodologia de mineração de dados amplamente utilizada.
+- KDD (**K**nowledge **D**iscovery in **D**atabases) é uma metodologia mais ampla que CRISP-DM e SEMMA.
 
 
 . . .
 
 
-- Envolve **seis etapas**: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.
+- Envolve basicamente **três etapas**: pré-processamento, mineração de dados e pós-processamento.
 
-
-. . .
-
-
-
-- É uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto.
+    - **Pré-processamento** inclui limpeza, integração e transformação de dados. 
+    - A **mineração de dados** inclui seleção, pré-processamento e modelagem de dados. 
+    - O **pós-processamento** inclui interpretação e avaliação dos resultados.
 
 
 
-## CRISP-DM
+## KDD
 
-
-![](/images/crisp.png){fig-align="center" width="700"}
-
-## CRISP-DM: Compreensão do negócio
-
-<br>
-
-- Nesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.
-
-. . .
-
-
-- É importante definir claramente o escopo do projeto e entender os recursos disponíveis.
-
-
-
-## CRISP-DM: Compreensão dos Dados
-
-<br>
-
-- Nesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.
-
-. . .
-
-- É importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados.
+![](/images/kdd.png){fig-align="center" width="700"}
 
 ---
 
-## CRISP-DM: Preparação dos Dados
+## KDD: Seleção
 
 <br>
 
-- Nesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.
-
-. . .
-
-- É importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem.
-
-
-## CRISP-DM: Modelagem
-
-<br>
-
-- Nesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.
-
-. . .
-
-- É importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste.
-
-
-## CRISP-DM: Avaliação
-
-<br>
-
-- Nesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.
+- Nesta fase, o objetivo é selecionar os dados relevantes para o problema de mineração.
 
 
 . . .
 
 
-- É importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário.
+
+- É importante identificar as fontes de dados relevantes e escolher as variáveis de interesse.
 
 
 
-
-## CRISP-DM: Implantação
+## KDD: Pré-processamento
 
 <br>
 
-- Nesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.
+- Nesta fase, o objetivo é preparar os dados para análise.
+
 
 . . .
 
-- É importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários.
+
+- É importante lidar com valores ausentes, tratar outliers e realizar normalização ou padronização de variáveis.
+
+
+
+## KDD: Limpeza
+
+<br>
+
+- Nesta fase, o objetivo é identificar e corrigir erros nos dados.
+
+
+. . .
+
+
+- É importante lidar com dados duplicados, corrigir erros de digitação e identificar e tratar valores discrepantes.
+
+
+
+## KDD: Transformação
+
+<br>
+
+- Nesta fase, o objetivo é transformar os dados em uma forma que seja adequada para a análise.
+
+
+. . .
+
+
+- É importante realizar transformações como discretização, agregação, e normalização para que os dados possam ser usados com sucesso na modelagem.
+
+
+## KDD: Mineração de dados
+
+<br>
+
+- Nesta fase, o objetivo é aplicar técnicas de mineração de dados para identificar padrões e relacionamentos nos dados.
+
+. . .
+
+- É importante escolher as técnicas de mineração de dados apropriadas e avaliar a eficácia dos modelos gerados.
+
+
+## KDD: Interpretação e avaliação
+
+<br>
+
+- Nesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.
+
+
+. . .
+
+
+- É importante avaliar a eficácia dos modelos gerados e determinar se as descobertas são significativas e úteis.
+
 
 
 
@@ -482,108 +490,109 @@ Sócrates
 
 
 
-## KDD
+
+
+
+
+## CRISP-DM
 
 <br>
 
-- KDD (**K**nowledge **D**iscovery in **D**atabases) é uma metodologia mais ampla que CRISP-DM e SEMMA.
+- CRISP-DM (**CR**oss **I**ndustry **S**tandard **P**rocess for **D**ata **M**ining) é uma metodologia de mineração de dados amplamente utilizada.
 
 
 . . .
 
 
-- Envolve basicamente **três etapas**: pré-processamento, mineração de dados e pós-processamento.
-
-    - **Pré-processamento** inclui limpeza, integração e transformação de dados. 
-    - A **mineração de dados** inclui seleção, pré-processamento e modelagem de dados. 
-    - O **pós-processamento** inclui interpretação e avaliação dos resultados.
+- Envolve **seis etapas**: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.
 
 
+. . .
 
-## KDD
 
-![](/images/kdd.png){fig-align="center" width="700"}
+
+- É uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto.
+
+
+
+## CRISP-DM
+
+
+![](/images/crisp.png){fig-align="center" width="700"}
+
+## CRISP-DM: Compreensão do negócio
+
+<br>
+
+- Nesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.
+
+. . .
+
+
+- É importante definir claramente o escopo do projeto e entender os recursos disponíveis.
+
+
+
+## CRISP-DM: Compreensão dos Dados
+
+<br>
+
+- Nesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.
+
+. . .
+
+- É importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados.
 
 ---
 
-## KDD: Seleção
+## CRISP-DM: Preparação dos Dados
 
 <br>
 
-- Nesta fase, o objetivo é selecionar os dados relevantes para o problema de mineração.
+- Nesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.
+
+. . .
+
+- É importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem.
+
+
+## CRISP-DM: Modelagem
+
+<br>
+
+- Nesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.
+
+. . .
+
+- É importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste.
+
+
+## CRISP-DM: Avaliação
+
+<br>
+
+- Nesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.
 
 
 . . .
 
 
-
-- É importante identificar as fontes de dados relevantes e escolher as variáveis de interesse.
-
-
-
-## KDD: Pré-processamento
-
-<br>
-
-- Nesta fase, o objetivo é preparar os dados para análise.
-
-
-. . .
-
-
-- É importante lidar com valores ausentes, tratar outliers e realizar normalização ou padronização de variáveis.
+- É importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário.
 
 
 
-## KDD: Limpeza
+
+## CRISP-DM: Implantação
 
 <br>
 
-- Nesta fase, o objetivo é identificar e corrigir erros nos dados.
-
-
-. . .
-
-
-- É importante lidar com dados duplicados, corrigir erros de digitação e identificar e tratar valores discrepantes.
-
-
-
-## KDD: Transformação
-
-<br>
-
-- Nesta fase, o objetivo é transformar os dados em uma forma que seja adequada para a análise.
-
+- Nesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.
 
 . . .
 
-
-- É importante realizar transformações como discretização, agregação, e normalização para que os dados possam ser usados com sucesso na modelagem.
-
-
-## KDD: Mineração de dados
-
-<br>
-
-- Nesta fase, o objetivo é aplicar técnicas de mineração de dados para identificar padrões e relacionamentos nos dados.
-
-. . .
-
-- É importante escolher as técnicas de mineração de dados apropriadas e avaliar a eficácia dos modelos gerados.
+- É importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários.
 
 
-## KDD: Interpretação e avaliação
-
-<br>
-
-- Nesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.
-
-
-. . .
-
-
-- É importante avaliar a eficácia dos modelos gerados e determinar se as descobertas são significativas e úteis.
 
 
 ## Qual metodologia utilizar?
