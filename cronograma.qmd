@@ -26,8 +26,8 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |:------:|--------|--------|:------:|:------:|:------:|:------:|:------:|:------:|:------:|
 |  [1](programacao/semana-1.html)  | Ter, 31/03 | Apresentação da disciplina |  |  |  |  | | 
 |  | Qui, 02/04 | **Feriado: Semana Santa** | |  | | | | | |
-<!-- |  [2](programacao/semana-2.html)  | Ter, 13/05 | Conceitos iniciais | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Conceitos%20iniciais/conceitos_iniciais.html "Conceitos iniciais"){aria-label="Conceitos iniciais"} | | | | | |  -->
-<!-- |  | Qui, 15/05 | Conceitos iniciais | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Conceitos%20iniciais/conceitos_iniciais.html#/importância-da-definição-dos-objetivos "Conceitos iniciais"){aria-label="Conceitos iniciais"} | | | | | |  -->
+|  [2](programacao/semana-2.html)  | Ter, 07/04 | Conceitos iniciais | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Conceitos%20iniciais/conceitos_iniciais.html "Conceitos iniciais"){aria-label="Conceitos iniciais"} | | | | | |
+|  | Qui, 09/04 | Conceitos iniciais | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Conceitos%20iniciais/conceitos_iniciais.html#/importância-da-definição-dos-objetivos "Conceitos iniciais"){aria-label="Conceitos iniciais"} | | | | | |
 <!-- |  [3](programacao/semana-3.html)  | Ter, 20/05 | Pré-processamento de dados | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Pre_processamento/pre_processamento.html#/processo-de-preparação-da-base-de-dados "Pré-processamento"){aria-label="Pré-processamento"} | | | | | |  -->
 <!-- |                           | Qui, 22/05 | Não haverá aula! |  |   | |  |   [{{< fa brands r-project size=2xl >}}](analise_dados/data_science.html "Script análise de dados"){aria-label="Script análise de dados"} || -->
 <!-- |  [4](programacao/semana-4.html)  | Ter, 27/05 | Pré-processamento de dados | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Pre_processamento/pre_processamento.html#/tratamento-de-valores-inconsistentes "Tratamento de valores inconsistentes"){aria-label="Tratamento de valores inconsistentes"} | | | | | |  -->
