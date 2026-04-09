@@ -3328,111 +3328,6 @@
     "text": "CRISP-DM, SEMMA e KDD\n\n\nGerenciamento de projetos é um campo estabelecido focado no planejamento, entrega, controle e monitoramento de um projeto.\n\n\n\nExistem várias metodologias para gerenciar projetos de mineração de dados.\n\n\n\n\nTrês das metodologias mais comuns são CRISP-DM, SEMMA e KDD."
   },
   {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM\n\n\nCRISP-DM (CRoss Industry Standard Process for Data Mining) é uma metodologia de mineração de dados amplamente utilizada.\n\n\n\nEnvolve seis etapas: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.\n\n\n\n\nÉ uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM",
-    "text": "CRISP-DM"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Compreensão do negócio",
-    "text": "CRISP-DM: Compreensão do negócio\n\n\nNesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.\n\n\n\nÉ importante definir claramente o escopo do projeto e entender os recursos disponíveis."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Compreensão dos Dados",
-    "text": "CRISP-DM: Compreensão dos Dados\n\n\nNesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.\n\n\n\nÉ importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Preparação dos Dados",
-    "text": "CRISP-DM: Preparação dos Dados\n\n\nNesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.\n\n\n\nÉ importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Modelagem",
-    "text": "CRISP-DM: Modelagem\n\n\nNesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Avaliação",
-    "text": "CRISP-DM: Avaliação\n\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
-    "title": "Conceitos Iniciais",
-    "section": "CRISP-DM: Implantação",
-    "text": "CRISP-DM: Implantação\n\n\nNesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.\n\n\n\nÉ importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA",
-    "text": "SEMMA\n\n\nSEMMA (Sample, Explore, Modify, Model, Assess) é uma metodologia de mineração de dados desenvolvida pela SAS.\n\n\n\nEnvolve cinco etapas: amostragem, exploração, modificação, modelagem e avaliação.\n\n\n\n\nSEMMA é uma abordagem focada no modelo e pode ser usada em conjunção com outras metodologias de gerenciamento de projetos."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA",
-    "text": "SEMMA"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Amostragem",
-    "text": "SEMMA: Amostragem\n\n\nNesta fase, o objetivo é selecionar um subconjunto representativo dos dados originais.\n\n\n\nÉ importante garantir que a amostra seja grande o suficiente para fornecer resultados precisos e confiáveis."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Exploração",
-    "text": "SEMMA: Exploração\n\n\nNesta fase, o objetivo é explorar os dados selecionados na etapa anterior e identificar padrões ou tendências.\n\n\n\nÉ importante visualizar os dados para identificar padrões facilmente e identificar outliers."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Modificação",
-    "text": "SEMMA: Modificação\n\n\nNesta fase, o objetivo é transformar os dados de forma apropriada para que possam ser usados na modelagem.\n\n\n\nÉ importante realizar a limpeza dos dados, selecionar as variáveis relevantes e transformar os dados para que possam ser usados na modelagem."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Modelagem",
-    "text": "SEMMA: Modelagem\n\n\nNesta fase, o objetivo é criar e testar modelos usando os dados preparados na etapa anterior.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
-    "title": "Conceitos Iniciais",
-    "section": "SEMMA: Avaliação",
-    "text": "SEMMA: Avaliação\n\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de amostragem.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
-  },
-  {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#kdd",
     "title": "Conceitos Iniciais",
@@ -3489,6 +3384,111 @@
     "text": "KDD: Interpretação e avaliação\n\n\nNesta fase, o objetivo é interpretar os resultados da mineração de dados e avaliar sua relevância para o problema de negócio.\n\n\n\nÉ importante avaliar a eficácia dos modelos gerados e determinar se as descobertas são significativas e úteis."
   },
   {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA",
+    "text": "SEMMA\n\n\nSEMMA (Sample, Explore, Modify, Model, Assess) é uma metodologia de mineração de dados desenvolvida pela SAS.\n\n\n\nEnvolve cinco etapas: amostragem, exploração, modificação, modelagem e avaliação.\n\n\n\n\nSEMMA é uma abordagem focada no modelo e pode ser usada em conjunção com outras metodologias de gerenciamento de projetos."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-1",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA",
+    "text": "SEMMA"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-amostragem",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Amostragem",
+    "text": "SEMMA: Amostragem\n\n\nNesta fase, o objetivo é selecionar um subconjunto representativo dos dados originais.\n\n\n\nÉ importante garantir que a amostra seja grande o suficiente para fornecer resultados precisos e confiáveis."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-exploração",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Exploração",
+    "text": "SEMMA: Exploração\n\n\nNesta fase, o objetivo é explorar os dados selecionados na etapa anterior e identificar padrões ou tendências.\n\n\n\nÉ importante visualizar os dados para identificar padrões facilmente e identificar outliers."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modificação",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Modificação",
+    "text": "SEMMA: Modificação\n\n\nNesta fase, o objetivo é transformar os dados de forma apropriada para que possam ser usados na modelagem.\n\n\n\nÉ importante realizar a limpeza dos dados, selecionar as variáveis relevantes e transformar os dados para que possam ser usados na modelagem."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-modelagem",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Modelagem",
+    "text": "SEMMA: Modelagem\n\n\nNesta fase, o objetivo é criar e testar modelos usando os dados preparados na etapa anterior.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#semma-avaliação",
+    "title": "Conceitos Iniciais",
+    "section": "SEMMA: Avaliação",
+    "text": "SEMMA: Avaliação\n\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de amostragem.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM",
+    "text": "CRISP-DM\n\n\nCRISP-DM (CRoss Industry Standard Process for Data Mining) é uma metodologia de mineração de dados amplamente utilizada.\n\n\n\nEnvolve seis etapas: compreensão do negócio, compreensão dos dados, preparação dos dados, modelagem, avaliação e implementação.\n\n\n\n\nÉ uma abordagem iterativa e pode ser adaptada para atender a necessidades específicas do projeto."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-1",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM",
+    "text": "CRISP-DM"
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-do-negócio",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Compreensão do negócio",
+    "text": "CRISP-DM: Compreensão do negócio\n\n\nNesta fase, o objetivo é entender os objetivos do projeto, identificar as necessidades do usuário e definir os critérios de sucesso.\n\n\n\nÉ importante definir claramente o escopo do projeto e entender os recursos disponíveis."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-compreensão-dos-dados",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Compreensão dos Dados",
+    "text": "CRISP-DM: Compreensão dos Dados\n\n\nNesta fase, o objetivo é coletar, limpar, integrar e explorar os dados.\n\n\n\nÉ importante identificar a qualidade dos dados, definir as variáveis relevantes e compreender a estrutura dos dados."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-preparação-dos-dados",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Preparação dos Dados",
+    "text": "CRISP-DM: Preparação dos Dados\n\n\nNesta fase, o objetivo é selecionar as variáveis relevantes, transformar os dados e criar conjuntos de dados de treinamento e teste.\n\n\n\nÉ importante garantir que os dados estejam limpos, completos e estruturados de maneira adequada para a modelagem."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-modelagem",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Modelagem",
+    "text": "CRISP-DM: Modelagem\n\n\nNesta fase, o objetivo é construir e avaliar modelos que possam prever ou classificar novos casos.\n\n\n\nÉ importante selecionar as técnicas de modelagem apropriadas e avaliar a eficácia do modelo usando conjuntos de dados de treinamento e teste."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-avaliação",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Avaliação",
+    "text": "CRISP-DM: Avaliação\n\n\nNesta fase, o objetivo é avaliar a eficácia do modelo em relação aos critérios de sucesso definidos na fase de compreensão do negócio.\n\n\n\nÉ importante avaliar o modelo em conjuntos de dados de teste independentes e garantir que ele atenda aos requisitos do usuário."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#crisp-dm-implantação",
+    "title": "Conceitos Iniciais",
+    "section": "CRISP-DM: Implantação",
+    "text": "CRISP-DM: Implantação\n\n\nNesta fase, o objetivo é implantar o modelo em um ambiente de produção e monitorá-lo regularmente para garantir que continue a atender aos requisitos do usuário.\n\n\n\nÉ importante desenvolver um plano de implantação e treinamento para garantir que o modelo seja adotado pelos usuários."
+  },
+  {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
     "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#qual-metodologia-utilizar",
     "title": "Conceitos Iniciais",
@@ -3501,6 +3501,13 @@
     "title": "Conceitos Iniciais",
     "section": "Qual metodologia utilizar?",
     "text": "Qual metodologia utilizar?\nCRISP-DM, SEMMA e KDD são todas metodologias amplamente utilizadas para gerenciamento de projetos de mineração de dados.\n\nCRISP-DM é uma abordagem iterativa em cascata, SEMMA é uma abordagem em cascata focada no modelo e KDD é uma metodologia mais ampla com três etapas principais.\n\n\nA escolha da metodologia dependerá das necessidades específicas do projeto e dos recursos disponíveis para o gerenciamento do projeto."
+  },
+  {
+    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-aplicado-previsão-de-churn-em-telecom",
+    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-aplicado-previsão-de-churn-em-telecom",
+    "title": "Conceitos Iniciais",
+    "section": "Exemplo aplicado: previsão de churn em telecom",
+    "text": "Exemplo aplicado: previsão de churn em telecom\nProblema: prever quais clientes têm maior chance de cancelar o serviço.\n\n🔄 O mesmo processo sob diferentes metodologias\n\n\n\n\nEtapa\nKDD\nSEMMA\nCRISP-DM\n\n\n\n\nProblema\n—\n—\nEntendimento do Negócio\n\n\nDados\nSeleção\nSample / Explore\nEntendimento dos Dados\n\n\nPreparação\nPré-processamento\nModify\nPreparação dos Dados\n\n\nModelo\nMineração\nModel\nModelagem\n\n\nAvaliação\nInterpretação\nAssess\nAvaliação"
   },
   {
     "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#tarefas-e-técnicas-de-mineração-de-dados",
@@ -4311,6 +4318,13 @@
     "text": "Conceitos iniciais"
   },
   {
+    "objectID": "programacao/semana-2.html#projeto",
+    "href": "programacao/semana-2.html#projeto",
+    "title": "Semana 02",
+    "section": "Projeto",
+    "text": "Projeto\n Projeto: Análise de Churn na Empresa ConecteMais Corp."
+  },
+  {
     "objectID": "programacao/semana-4.html",
     "href": "programacao/semana-4.html",
     "title": "Semana 04",
@@ -4407,40 +4421,5 @@
     "title": "Projeto Avaliativo: Análise de churn em uma Empresa de Telecomunicações",
     "section": "🧺 Fase 5: Construção de um Sistema de Recomendação",
     "text": "🧺 Fase 5: Construção de um Sistema de Recomendação"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-aplicado-previsão-de-churn-em-uma-empresa-de-telecomunicações",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-aplicado-previsão-de-churn-em-uma-empresa-de-telecomunicações",
-    "title": "Conceitos Iniciais",
-    "section": "Exemplo aplicado: previsão de churn em uma empresa de telecomunicações",
-    "text": "Exemplo aplicado: previsão de churn em uma empresa de telecomunicações\nProblema: prever quais clientes têm maior chance de cancelar o serviço.\n\n\n\n\n\n\n\n\n\nEtapa geral\nKDD\nSEMMA\nCRISP-DM\n\n\n\n\nDefinição do problema\n—\n—\nBusiness Understanding\n\n\nConhecimento dos dados\nSeleção\nSample / Explore\nData Understanding\n\n\nPreparação dos dados\nPré-processamento / Transformação\nModify\nData Preparation\n\n\nConstrução do modelo\nMineração de dados\nModel\nModeling\n\n\nAvaliação\nInterpretação\nAssess\nEvaluation\n\n\nUso dos resultados\nConhecimento gerado\n—\nDeployment"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-aplicado-previsão-de-churn-em-uma-empresa-de-telecomunicações-1",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-aplicado-previsão-de-churn-em-uma-empresa-de-telecomunicações-1",
-    "title": "Conceitos Iniciais",
-    "section": "Exemplo aplicado: previsão de churn em uma empresa de telecomunicações",
-    "text": "Exemplo aplicado: previsão de churn em uma empresa de telecomunicações\nProblema: identificar clientes com alta probabilidade de cancelamento (churn).\n\n\n\n\n\nProblema\n↓\nNegócio\n\n\n\nDados\n↓\nColeta / Entendimento\n\n\n\nPreparação\n↓\nLimpeza / Transformação\n\n\n\nModelo\n↓\nTreinamento\n\n\n\nAvaliação\n↓\nMétricas\n\n\n\nUso\n↓\nDecisão\n\n\n\n\nTarefas e técnicas de mineração de dados\nUma tarefa de mineração de dados determina o tipo de problema que será resolvido pelo processo de mineração de dados.\n\nPodem ser descritivas ou preditivas.\n\n\nJá a técnica, representa o algoritmo que pode ser empregado para a execução da tarefa.\n\n\n\nTarefas e técnicas de mineração de dados\nAs tarefas de mineração de dados incluem: classificação, clustering, regressão, associação e detecção de anomalias.\n\nCada uma dessas tarefas tem um objetivo específico na análise de dados.\n\n\n\nClassificação\n\n\n\n\n\n\n\n\n\n\nA classificação é uma tarefa de mineração de dados que envolve a atribuição de um rótulo a um conjunto de dados com base em um conjunto de características.\n\n\n\nAs técnicas de classificação incluem: árvores de decisão, redes neurais, SVM, Naive Bayes, etc.\n\n\n\nClusterização\n\n\n\n\nClustering é uma tarefa de mineração de dados que envolve a organização de um conjunto de dados em grupos com base em suas características.\n\n\n\n\n\n\n\n\n\nAs técnicas de clustering incluem: k-means, DBSCAN, aglomeração hierárquica, etc.\n\n\nRegressão ou predição\n\n\n\n\nA regressão ou predição é uma tarefa de mineração de dados que envolve a identificação de uma relação entre uma variável dependente e uma ou mais variáveis independentes.\n\n\n\n\n\n\n\n\nAs técnicas de regressão incluem: regressão linear, regressão logística, etc.\n\n\nAssociação\n\n\n\n\n\n\n\n\n\n\nA associação é uma tarefa de mineração de dados que envolve a descoberta de relações entre itens em um conjunto de dados.\n\n\n\nAs técnicas de associação incluem: regras de associação, análise de cesta de compras, etc.\n\n\n\nDetecção de anomalias\n\n\n\n\nA detecção de anomalias é uma tarefa de mineração de dados que envolve a identificação de pontos de dados incomuns em um conjunto de dados.\n\n\n\n\n\n\n\n\n\nAs técnicas de detecção de anomalias incluem: análise de desvio, detecção de outliers, etc.\n\n\n\nImportância da definição dos objetivos\nEnquanto isso, no país das maravilhas…\n\n\n\n\n\n\n\nDefinição dos objetivos\nDefinir claramente os objetivos da análise de dados é fundamental para o sucesso do projeto.\n\nOs objetivos devem ser específicos, mensuráveis, alcançáveis, relevantes e ter um prazo estabelecido (SMART).\n\n\n\nPor exemplo, suponha que uma empresa queira aumentar as vendas em uma determinada região.\n\nUsando a metodologia SMART, a empresa pode definir o objetivo da seguinte maneira:\n\n\n\n\n\nDefinição dos objetivos\n\nEspecífico: O objetivo deve ser específico e detalhado.\n\nPor exemplo, “Aumentar as vendas de determinada categoria de produtos na região em 10% no próximo trimestre”.\n\n\n\n\nMensurável: O objetivo deve ser mensurável para que possa ser avaliado.\n\nPor exemplo, a empresa pode usar dados de vendas para medir o progresso em relação à meta.\n\n\n\n\n\nAlcançável: O objetivo deve ser alcançável para evitar frustração e desânimo da equipe.\n\nA empresa pode avaliar a capacidade da equipe, recursos disponíveis e condições de mercado para determinar se a meta é alcançável.\n\n\n\n\n\nDefinição dos objetivos\n\nRelevante: O objetivo deve ser relevante para os objetivos de negócios da empresa.\n\nA meta de aumentar as vendas em uma determinada região deve estar alinhada com os objetivos de negócios da empresa.\n\n\n\n\nTemporal: O objetivo deve ser definido em um prazo determinado.\n\nPor exemplo, a meta deve ser alcançada em três meses.\n\n\n\n\n\nDefinição dos objetivos\nCom a definição clara do objetivo usando a metodologia SMART, a empresa pode traçar um plano de ação, coletar dados relevantes, realizar análises para identificar as causas da queda nas vendas, e implementar medidas para atingir a meta.\n\nA empresa também pode monitorar o progresso e ajustar as medidas se necessário para garantir que a meta seja alcançada no prazo estabelecido.\n\n\n\nImportância de entender o problema\n\n\n\n\n\n\nEntenda o problema e depois pense em como resolvê-lo\n\n\n\nImportância de entender o problema\n\nQual o problema nessa foto?\n\n\n\n\n\n\n\n\nImportância de entender o problema\n\nSendo o cavalo, vamos trocá-lo por um avião!\n\n\n\n\n\n\n\n\nImportância de entender o problema\n\nCompre um mais potente...\n\n\n\n\n\n\n\n\nTécnica dos cinco porquês\n\n\n\n\n\n\n\n\n\n\nA técnica dos cinco porquês é uma técnica de análise de causalidade que pode ser usada para identificar a causa raiz de um problema, através de perguntas sucessivas.\n\n\n\n\nTécnica dos cinco porquês\nO processo da técnica dos cinco porquês pode ser resumido nas seguintes etapas:\n\n\nIdentificar o problema: Comece identificando o problema que precisa ser resolvido.\n\n\n\n\nFazer a primeira pergunta: Pergunte “Por que o problema ocorreu?” e identifique a causa mais provável.\n\n\n\n\nFazer a segunda pergunta: Pergunte “Por que a causa identificada na pergunta anterior ocorreu?” e identifique a causa mais provável.\n\n\n\n\nTécnica dos cinco porquês\n\nContinuar com as perguntas subsequentes: Continue fazendo perguntas sucessivas até que a causa raiz seja identificada.\n\n\n\nResolver o problema: Uma vez que a causa raiz é identificada, é possível implementar soluções para resolver o problema.\n\n\n\n👉 É importante notar que, embora a técnica dos cinco porquês seja uma técnica útil, ela não é uma solução universal para todos os problemas.\n\nÀs vezes, a causa raiz de um problema pode ser mais complexa e exigir técnicas de análise mais avançadas.\nAlém disso, é importante não se limitar a apenas cinco perguntas se necessário para chegar à causa raiz do problema.\n\n\n\n\nExemplo do uso da técnica dos cinco porquês\n\n🤔 Problema: O faturamento da empresa diminuiu no último trimestre\n\n\n\nPor que o faturamento da empresa diminuiu no último trimestre?\n\n\nResposta: Porque as vendas de um dos produtos mais vendidos caíram.\n\n\n\n\nPor que as vendas do produto mais vendido caíram?\n\n\nResposta: Porque a concorrência começou a oferecer preços mais baixos.\n\n\n\n\nPor que a concorrência começou a oferecer preços mais baixos?\n\n\nResposta: Porque um novo concorrente entrou no mercado e começou a oferecer preços mais baixos para ganhar participação de mercado.\n\n\n\n\nExemplo do uso da técnica dos cinco porquês\n\nPor que o novo concorrente conseguiu oferecer preços mais baixos?\n\n\nResposta: Porque ele tem custos de produção mais baixos do que a nossa empresa.\n\n\n\nPor que nossos custos de produção são mais altos do que os do novo concorrente?\n\n\nResposta: Porque não atualizamos nossos equipamentos de produção há anos, o que torna nosso processo menos eficiente e mais caro.\n\n\n\n\nExemplo do uso da técnica dos cinco porquês\n👉 Com essa análise, a causa raiz do problema do faturamento da empresa ter diminuído no último trimestre foi identificada: a falta de atualização dos equipamentos de produção.\n\n\nDe posse dessa informação, a empresa pode agora tomar medidas para atualizar seus equipamentos de produção e aumentar sua eficiência para voltar a ter um faturamento maior.\n\n\n\n\nReferences\n\n\nNaisbitt, J. 1982. Megatrends: Ten New Directions Transforming Our Lives. Megatrends: Ten New Directions Transforming Our Lives, Nr. 158. Warner Books."
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-aplicado-previsão-de-churn-em-telecom",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#exemplo-aplicado-previsão-de-churn-em-telecom",
-    "title": "Conceitos Iniciais",
-    "section": "Exemplo aplicado: previsão de churn em telecom",
-    "text": "Exemplo aplicado: previsão de churn em telecom\nProblema: prever quais clientes têm maior chance de cancelar o serviço.\n\n🔄 O mesmo processo sob diferentes metodologias\n\n\n\n\nEtapa\nKDD\nSEMMA\nCRISP-DM\n\n\n\n\nProblema\n—\n—\nEntendimento do Negócio\n\n\nDados\nSeleção\nSample / Explore\nEntendimento dos Dados\n\n\nPreparação\nPré-processamento\nModify\nPreparação dos Dados\n\n\nModelo\nMineração\nModel\nModelagem\n\n\nAvaliação\nInterpretação\nAssess\nAvaliação"
-  },
-  {
-    "objectID": "aulas/Conceitos iniciais/conceitos_iniciais.html#interpretação-do-exemplo",
-    "href": "aulas/Conceitos iniciais/conceitos_iniciais.html#interpretação-do-exemplo",
-    "title": "Conceitos Iniciais",
-    "section": "Interpretação do exemplo",
-    "text": "Interpretação do exemplo\n🧠 O que estamos vendo?\n\nAs três metodologias seguem o mesmo fluxo:\n\nproblema → dados → preparação → modelo → avaliação\n\n\n🔍 Diferenças principais\n\nKDD → foco em descoberta de conhecimento\n\nSEMMA → foco na modelagem\n\nCRISP-DM → foco no problema de negócio\n\n\n\n\n\n\n\nMensagem principal:\nMineração de dados não é só modelar — é um processo completo."
-  },
-  {
-    "objectID": "programacao/semana-2.html#projeto",
-    "href": "programacao/semana-2.html#projeto",
-    "title": "Semana 02",
-    "section": "Projeto",
-    "text": "Projeto\n Projeto: Análise de Churn na Empresa ConecteMais Corp."
   }
 ]
