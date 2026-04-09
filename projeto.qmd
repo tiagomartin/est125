@@ -88,13 +88,15 @@ O trabalho será dividido em cinco fases, a serem realizadas de forma sequencial
 Cada fase deverá ser entregue via [Moodle](https://moodlepresencial.ufop.br/login/index.php) conforme o cronograma abaixo, respeitando os prazos de submissão parcial. As entregas serão avaliadas individualmente e contribuirão para a nota final do projeto.
 
 
-- **Fase 1 + Fase 2 - data de entrega: 30/06/2025**
+- **Fase 1 - data de entrega: 27/04/2026**
 
-- **Fase 3 - data de entrega: 21/07/2025**
+- **Fase 2 - data de entrega: 18/05/2026**
 
-- **Fase 4 - data de entrega: 11/08/2025**
+- **Fase 3 - data de entrega: 08/06/2026**
 
-- **Fase 5 - data de entrega: 02/09/2025**
+- **Fase 4 - data de entrega: 29/06/2026**
+
+- **Fase 5 - data de entrega: 20/07/2026**
 
 
 Obs.: Este cronograma poderá sofrer mudanças e adaptações ao longo do semestre.
@@ -102,7 +104,7 @@ Obs.: Este cronograma poderá sofrer mudanças e adaptações ao longo do semest
 
 ## 🧑‍💼 Papel dos Alunos
 
-Neste projeto, vocês devem se organizar em **dois grupos (um com três e outro com quatro integrantes)** e assumir o papel de um time de cientistas de dados atuando no mundo real, lidando com um problema concreto e multidisciplinar. Além de aplicar técnicas de mineração de dados, espera-se que vocês:
+Neste projeto, vocês devem se organizar em **dois grupos com três integrantes** e assumir o papel de um time de cientistas de dados atuando no mundo real, lidando com um problema concreto e multidisciplinar. Além de aplicar técnicas de mineração de dados, espera-se que vocês:
 
 - Comuniquem suas descobertas de forma clara e orientada ao negócio.
 

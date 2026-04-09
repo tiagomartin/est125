@@ -150,37 +150,37 @@ Com base na descrição do "Conjunto de Dados de Rotatividade de Clientes Conect
 ## 🛠️ Fase 2: O Diagnóstico Técnico
 
 
-### 🔍 Objetivo
+<!-- ### 🔍 Objetivo -->
 
 
-O objetivo desta etapa é permitir que a equipe de análise compreenda profundamente o conjunto de dados da ConecteMais Corp., identifique potenciais problemas de qualidade dos dados e proponha um plano de pré-processamento para tornar os dados adequados à modelagem preditiva.
+<!-- O objetivo desta etapa é permitir que a equipe de análise compreenda profundamente o conjunto de dados da ConecteMais Corp., identifique potenciais problemas de qualidade dos dados e proponha um plano de pré-processamento para tornar os dados adequados à modelagem preditiva. -->
 
 
-### 🧠 Tarefas e Desafios Propostos
+<!-- ### 🧠 Tarefas e Desafios Propostos -->
 
-Após a reunião inicial, a equipe de Análise de Dados se reúne internamente para discutir a base de dados fornecida e planejar as próximas etapas. Nesta etapa, vocês devem identificar possíveis problemas nos dados que podem dificultar a construção de um modelo de classificação e sugerir as técnicas de pré-processamento adequadas para resolvê-los. Agora é hora de:
+<!-- Após a reunião inicial, a equipe de Análise de Dados se reúne internamente para discutir a base de dados fornecida e planejar as próximas etapas. Nesta etapa, vocês devem identificar possíveis problemas nos dados que podem dificultar a construção de um modelo de classificação e sugerir as técnicas de pré-processamento adequadas para resolvê-los. Agora é hora de: -->
 
-- Avaliar a qualidade dos dados
-    - Identificar valores faltantes, variáveis irrelevantes e problemas de codificação;
-    - Identificar variáveis com baixa variabilidade: que não agregam informação ao modelo;
-    - Identificar variáveis altamente correlacionadas: redundância que pode prejudicar modelos lineares;
-    - Avaliar distribuições assimétricas ou outliers extremos em variáveis numéricas;
-    - Avaliar se existe desbalanceamento da variável-alvo (`Churn Label`).
+<!-- - Avaliar a qualidade dos dados -->
+<!--     - Identificar valores faltantes, variáveis irrelevantes e problemas de codificação; -->
+<!--     - Identificar variáveis com baixa variabilidade: que não agregam informação ao modelo; -->
+<!--     - Identificar variáveis altamente correlacionadas: redundância que pode prejudicar modelos lineares; -->
+<!--     - Avaliar distribuições assimétricas ou outliers extremos em variáveis numéricas; -->
+<!--     - Avaliar se existe desbalanceamento da variável-alvo (`Churn Label`). -->
 
-- Propor um plano de pré-processamento para tornar os dados prontos para uso em modelos de classificação supervisionada.
-
-
-
-A diretoria precisa de resultados acionáveis. Sua análise poderá influenciar a decisão de milhões de dólares em estratégias de retenção. 
+<!-- - Propor um plano de pré-processamento para tornar os dados prontos para uso em modelos de classificação supervisionada. -->
 
 
-### 🤔 Questões para Discussão e Resolução:
 
-1) Identifique no mínimo 5 variáveis do conjunto de dados que, potencialmente, podem apresentar problemas que necessitem de pré-processamento antes de serem usadas em um modelo de classificação. Para cada variável identificada, descrevam o problema esperado.
+<!-- A diretoria precisa de resultados acionáveis. Sua análise poderá influenciar a decisão de milhões de dólares em estratégias de retenção.  -->
 
-2) Para cada um dos problemas identificados na questão anterior, sugiram uma ou mais técnicas de pré-processamento que poderiam ser aplicadas para resolvê-los. Justifiquem a escolha da técnica. Por exemplo: Se o problema for "valores ausentes na variável `Idade`, a técnica sugerida poderia ser "imputação pela média/mediana" ou "remoção das linhas com valores ausentes".
 
-3) Considerando o objetivo de construir um modelo de classificação para prever o *churn*, quais atributos do conjunto de dados vocês consideram que provavelmente não serão úteis como *features* preditivas (ou seja, não trarão valor para o modelo)? Justifiquem sua resposta.
+<!-- ### 🤔 Questões para Discussão e Resolução: -->
+
+<!-- 1) Identifique no mínimo 5 variáveis do conjunto de dados que, potencialmente, podem apresentar problemas que necessitem de pré-processamento antes de serem usadas em um modelo de classificação. Para cada variável identificada, descrevam o problema esperado. -->
+
+<!-- 2) Para cada um dos problemas identificados na questão anterior, sugiram uma ou mais técnicas de pré-processamento que poderiam ser aplicadas para resolvê-los. Justifiquem a escolha da técnica. Por exemplo: Se o problema for "valores ausentes na variável `Idade`, a técnica sugerida poderia ser "imputação pela média/mediana" ou "remoção das linhas com valores ausentes". -->
+
+<!-- 3) Considerando o objetivo de construir um modelo de classificação para prever o *churn*, quais atributos do conjunto de dados vocês consideram que provavelmente não serão úteis como *features* preditivas (ou seja, não trarão valor para o modelo)? Justifiquem sua resposta. -->
 
 
 
@@ -188,131 +188,131 @@ A diretoria precisa de resultados acionáveis. Sua análise poderá influenciar 
 ## 🎯 Fase 3: Construção e Avaliação de Modelos Preditivos
 
 
-### 🔍 Objetivo
+<!-- ### 🔍 Objetivo -->
 
-Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (*churn*) com base nos dados históricos fornecidos pela ConecteMais Corp. O foco é prever o valor da variável `Churn Label`, usando as demais variáveis como preditoras.
-
-
-### 🧠 Tarefas e Desafios Propostos
-
-- Identificar quais variáveis são mais relevantes para prever a saída de clientes;
-
-- Lidar com dados desbalanceados (caso a proporção entre *churn* e não *churn* seja desigual);
-
-- Comparar diferentes algoritmos de classificação;
-
-- Ajustar e validar os modelos com critérios adequados.
+<!-- Nesta etapa, sua equipe deverá desenvolver modelos preditivos capazes de antecipar a saída de clientes (*churn*) com base nos dados históricos fornecidos pela ConecteMais Corp. O foco é prever o valor da variável `Churn Label`, usando as demais variáveis como preditoras. -->
 
 
-### 🤔 Questões para Discussão e Resolução:
+<!-- ### 🧠 Tarefas e Desafios Propostos -->
 
-1) Divisão e Estratégia de Validação:
+<!-- - Identificar quais variáveis são mais relevantes para prever a saída de clientes; -->
 
-  - Considerando a variável alvo `Churn Label` e o provável desbalanceamento de classes (menos clientes dão *churn* do que permanecem), qual a melhor estratégia para dividir o conjunto de dados em treino e teste? Justifiquem a escolha (ex: amostragem estratificada, proporções).
+<!-- - Lidar com dados desbalanceados (caso a proporção entre *churn* e não *churn* seja desigual); -->
 
-  - Além da divisão inicial, qual técnica de validação cruzada (ex: K-Fold Cross-Validation, Stratified K-Fold) vocês recomendariam para obter uma avaliação mais robusta do desempenho do modelo e por quê?
+<!-- - Comparar diferentes algoritmos de classificação; -->
 
-
-2) Seleção e Treinamento de Modelos:
-
-  - Sugiram dois algoritmos de classificação supervisionada diferentes que seriam adequados para prever o *churn*. Para cada algoritmo, expliquem brevemente por que ele é uma boa escolha para este problema de negócio e quais suas principais vantagens e desvantagens.
-
-  - Ao treinar os modelos, quais seriam as considerações iniciais em termos de uso de algoritmos sensíveis à escala (necessidade de padronização/normalização das features numéricas)?
-
-3) Métricas de Avaliação para Churn:
-
-  - A diretoria da ConecteMais está muito interessada em identificar os clientes que realmente vão sair para intervir proativamente. Quais duas métricas de avaliação vocês consideram as mais importantes para medir o sucesso do modelo de *churn*, dado esse objetivo? Justifiquem a escolha de cada métrica e expliquem o que elas representam no contexto de previsão de *churn*.
-
-  - Como a curva ROC e a AUC (Area Under the Curve) poderiam ser utilizadas para avaliar a capacidade do modelo de distinguir entre clientes que dão *churn* e os que não dão?
+<!-- - Ajustar e validar os modelos com critérios adequados. -->
 
 
-4) Otimização e Interpretabilidade:
+<!-- ### 🤔 Questões para Discussão e Resolução: -->
 
-  - Após o treinamento inicial, o modelo pode não atingir a performance desejada. Quais seriam as duas principais estratégias para otimizar o desempenho do modelo (ex: ajuste de hiperparâmetros, engenharia de features, seleção de features)? Descrevam como essas estratégias seriam aplicadas.
+<!-- 1) Divisão e Estratégia de Validação: -->
 
-  - Assumindo que o modelo escolhido é um "black-box" (como uma Floresta Aleatória ou uma Rede Neural), como vocês poderiam apresentar insights sobre as variáveis mais importantes que influenciam o *churn* para a Sra. Ana Paula e o Sr. João Silva? Mencionem pelo menos uma técnica de interpretabilidade que poderia ser utilizada.
-  
+<!--   - Considerando a variável alvo `Churn Label` e o provável desbalanceamento de classes (menos clientes dão *churn* do que permanecem), qual a melhor estratégia para dividir o conjunto de dados em treino e teste? Justifiquem a escolha (ex: amostragem estratificada, proporções). -->
+
+<!--   - Além da divisão inicial, qual técnica de validação cruzada (ex: K-Fold Cross-Validation, Stratified K-Fold) vocês recomendariam para obter uma avaliação mais robusta do desempenho do modelo e por quê? -->
+
+
+<!-- 2) Seleção e Treinamento de Modelos: -->
+
+<!--   - Sugiram dois algoritmos de classificação supervisionada diferentes que seriam adequados para prever o *churn*. Para cada algoritmo, expliquem brevemente por que ele é uma boa escolha para este problema de negócio e quais suas principais vantagens e desvantagens. -->
+
+<!--   - Ao treinar os modelos, quais seriam as considerações iniciais em termos de uso de algoritmos sensíveis à escala (necessidade de padronização/normalização das features numéricas)? -->
+
+<!-- 3) Métricas de Avaliação para Churn: -->
+
+<!--   - A diretoria da ConecteMais está muito interessada em identificar os clientes que realmente vão sair para intervir proativamente. Quais duas métricas de avaliação vocês consideram as mais importantes para medir o sucesso do modelo de *churn*, dado esse objetivo? Justifiquem a escolha de cada métrica e expliquem o que elas representam no contexto de previsão de *churn*. -->
+
+<!--   - Como a curva ROC e a AUC (Area Under the Curve) poderiam ser utilizadas para avaliar a capacidade do modelo de distinguir entre clientes que dão *churn* e os que não dão? -->
+
+
+<!-- 4) Otimização e Interpretabilidade: -->
+
+<!--   - Após o treinamento inicial, o modelo pode não atingir a performance desejada. Quais seriam as duas principais estratégias para otimizar o desempenho do modelo (ex: ajuste de hiperparâmetros, engenharia de features, seleção de features)? Descrevam como essas estratégias seriam aplicadas. -->
+
+<!--   - Assumindo que o modelo escolhido é um "black-box" (como uma Floresta Aleatória ou uma Rede Neural), como vocês poderiam apresentar insights sobre as variáveis mais importantes que influenciam o *churn* para a Sra. Ana Paula e o Sr. João Silva? Mencionem pelo menos uma técnica de interpretabilidade que poderia ser utilizada. -->
+
   
 ## 🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes
 
 
-### 🔍 Objetivo
+<!-- ### 🔍 Objetivo -->
 
-O objetivo desta fase é aplicar técnicas de reconhecimento de padrões (clustering) para identificar grupos distintos de clientes na base de dados da ConecteMais Corp. Ao agrupar clientes com características semelhantes, a empresa poderá obter insights valiosos sobre diferentes perfis de comportamento, uso de serviço e, crucialmente, padrões associados ao *churn*, mesmo sem um modelo preditivo direto neste momento. Essa análise será fundamental para informar estratégias de marketing e retenção mais direcionadas.
+<!-- O objetivo desta fase é aplicar técnicas de reconhecimento de padrões (clustering) para identificar grupos distintos de clientes na base de dados da ConecteMais Corp. Ao agrupar clientes com características semelhantes, a empresa poderá obter insights valiosos sobre diferentes perfis de comportamento, uso de serviço e, crucialmente, padrões associados ao *churn*, mesmo sem um modelo preditivo direto neste momento. Essa análise será fundamental para informar estratégias de marketing e retenção mais direcionadas. -->
 
-### 🧠 Tarefas e Desafios Propostos
+<!-- ### 🧠 Tarefas e Desafios Propostos -->
 
-Nesta etapa, a equipe de Análise de Dados focará em descobrir estruturas ocultas nos dados, especialmente para entender melhor os clientes e seu comportamento em relação à rotatividade.
+<!-- Nesta etapa, a equipe de Análise de Dados focará em descobrir estruturas ocultas nos dados, especialmente para entender melhor os clientes e seu comportamento em relação à rotatividade. -->
 
-### 🤔 Questões para Discussão e Resolução:
+<!-- ### 🤔 Questões para Discussão e Resolução: -->
 
-1) Seleção e Justificativa da Abordagem:
+<!-- 1) Seleção e Justificativa da Abordagem: -->
 
-  - Considerando o objetivo de reconhecimento de padrões e segmentação de clientes, qual tipo de algoritmo de Machine Learning não supervisionado seria mais adequado para este problema? Sugiram pelo menos dois algoritmos de clustering e justifiquem por que cada um é uma boa escolha para identificar grupos de clientes com perfis semelhantes.
+<!--   - Considerando o objetivo de reconhecimento de padrões e segmentação de clientes, qual tipo de algoritmo de Machine Learning não supervisionado seria mais adequado para este problema? Sugiram pelo menos dois algoritmos de clustering e justifiquem por que cada um é uma boa escolha para identificar grupos de clientes com perfis semelhantes. -->
 
-  - Ao contrário da Fase 3, não temos uma variável alvo explícita para "treinar" o modelo. Como o pré-processamento dos dados (especialmente padronização de variáveis numéricas e codificação de categóricas) se torna ainda mais crítico para algoritmos de clustering baseados em distância?
-
-
-2) Preparação de Dados para Clustering:
-
-  - Para aplicar algoritmos de clustering, é essencial que as features estejam em uma escala comparável. Além da padronização de variáveis numéricas, como vocês lidariam com as variáveis categóricas já pré-processadas (One-Hot Encoding) para que não dominem a formação dos clusters ou causem problemas de dimensionalidade excessiva?
-
-  - Quais variáveis do conjunto de dados vocês considerariam mais importantes para incluir na análise de clustering para identificar perfis de clientes, especialmente aqueles relacionados ao *churn*? Mencionem pelo menos cinco variáveis e justifiquem brevemente sua escolha.
+<!--   - Ao contrário da Fase 3, não temos uma variável alvo explícita para "treinar" o modelo. Como o pré-processamento dos dados (especialmente padronização de variáveis numéricas e codificação de categóricas) se torna ainda mais crítico para algoritmos de clustering baseados em distância? -->
 
 
-3) Determinação do Número Ideal de Clusters e Avaliação:
+<!-- 2) Preparação de Dados para Clustering: -->
 
-  - Ao usar algoritmos de clustering, uma das decisões cruciais é definir o número ideal de grupos (clusters). Quais duas métricas ou métodos vocês utilizariam para ajudar a determinar o número "ótimo" de clusters para os dados da ConecteMais? Expliquem brevemente como cada método funciona.
+<!--   - Para aplicar algoritmos de clustering, é essencial que as features estejam em uma escala comparável. Além da padronização de variáveis numéricas, como vocês lidariam com as variáveis categóricas já pré-processadas (One-Hot Encoding) para que não dominem a formação dos clusters ou causem problemas de dimensionalidade excessiva? -->
 
-  - Diferente dos modelos de classificação, não há uma métrica de "precisão" direta para clustering. Como vocês avaliariam a qualidade e a interpretabilidade dos clusters formados? Mencionem pelo menos duas abordagens para analisar os resultados e extrair insights de negócio (ex: análise de características de cada cluster, proporção de *churn* em cada cluster).
+<!--   - Quais variáveis do conjunto de dados vocês considerariam mais importantes para incluir na análise de clustering para identificar perfis de clientes, especialmente aqueles relacionados ao *churn*? Mencionem pelo menos cinco variáveis e justifiquem brevemente sua escolha. -->
 
 
-4) Interpretação de Padrões e Implicações para o Negócio:
+<!-- 3) Determinação do Número Ideal de Clusters e Avaliação: -->
 
-  - Uma vez que os clusters sejam formados e avaliados, como vocês iriam caracterizar cada cluster para a Sra. Ana Paula e o Sr. João Silva (ex: "Cluster A: clientes de longo tempo, alto consumo, mas sem fibra óptica")? Qual seria a relevância de identificar um cluster com uma alta concentração de clientes que deram *churn*?
+<!--   - Ao usar algoritmos de clustering, uma das decisões cruciais é definir o número ideal de grupos (clusters). Quais duas métricas ou métodos vocês utilizariam para ajudar a determinar o número "ótimo" de clusters para os dados da ConecteMais? Expliquem brevemente como cada método funciona. -->
 
-  - Com base nos padrões descobertos, quais duas ações estratégicas a ConecteMais Corp. poderia considerar para o Cluster de Alto *churn* identificado? Pensem em ações específicas para retenção ou ofertas personalizadas.
+<!--   - Diferente dos modelos de classificação, não há uma métrica de "precisão" direta para clustering. Como vocês avaliariam a qualidade e a interpretabilidade dos clusters formados? Mencionem pelo menos duas abordagens para analisar os resultados e extrair insights de negócio (ex: análise de características de cada cluster, proporção de *churn* em cada cluster). -->
+
+
+<!-- 4) Interpretação de Padrões e Implicações para o Negócio: -->
+
+<!--   - Uma vez que os clusters sejam formados e avaliados, como vocês iriam caracterizar cada cluster para a Sra. Ana Paula e o Sr. João Silva (ex: "Cluster A: clientes de longo tempo, alto consumo, mas sem fibra óptica")? Qual seria a relevância de identificar um cluster com uma alta concentração de clientes que deram *churn*? -->
+
+<!--   - Com base nos padrões descobertos, quais duas ações estratégicas a ConecteMais Corp. poderia considerar para o Cluster de Alto *churn* identificado? Pensem em ações específicas para retenção ou ofertas personalizadas. -->
 
 
 
 ## 🧺 Fase 5: Construção de um Sistema de Recomendação
 
 
-### 🔍 Objetivo
+<!-- ### 🔍 Objetivo -->
 
-O objetivo desta fase é aplicar Regras de Associação nos dados da ConecteMais Corp. para descobrir padrões de coocorrência entre os serviços que os clientes assinam, ofertas aceitas, métodos de pagamento e até mesmo comportamentos que levam ao *churn*. A ideia é identificar "se um cliente tem X, ele provavelmente também tem Y" ou "se um cliente tem A e B, ele tende a fazer C". Essas regras podem ser a base para um sistema de recomendação de novos serviços, otimização de pacotes ou para entender gatilhos de *churn* em termos de combinações de produtos.
+<!-- O objetivo desta fase é aplicar Regras de Associação nos dados da ConecteMais Corp. para descobrir padrões de coocorrência entre os serviços que os clientes assinam, ofertas aceitas, métodos de pagamento e até mesmo comportamentos que levam ao *churn*. A ideia é identificar "se um cliente tem X, ele provavelmente também tem Y" ou "se um cliente tem A e B, ele tende a fazer C". Essas regras podem ser a base para um sistema de recomendação de novos serviços, otimização de pacotes ou para entender gatilhos de *churn* em termos de combinações de produtos. -->
 
-### 🧠 Tarefas e Desafios Propostos
+<!-- ### 🧠 Tarefas e Desafios Propostos -->
 
-Nesta etapa, a equipe de Análise de Dados focará em descobrir relações interessantes e acionáveis entre as variáveis do conjunto de dados, que podem ser utilizadas para recomendações estratégicas.
+<!-- Nesta etapa, a equipe de Análise de Dados focará em descobrir relações interessantes e acionáveis entre as variáveis do conjunto de dados, que podem ser utilizadas para recomendações estratégicas. -->
 
-### 🤔 Questões para Discussão e Resolução:
+<!-- ### 🤔 Questões para Discussão e Resolução: -->
 
-1) Fundamentos das Regras de Associação:
+<!-- 1) Fundamentos das Regras de Associação: -->
 
-  - Expliquem o conceito de Regras de Associação (Itemsets Frequentes, Suporte, Confiança e Lift) para a Sra. Ana Paula. Como essas métricas ajudam a identificar padrões interessantes nos dados de serviços dos clientes?
+<!--   - Expliquem o conceito de Regras de Associação (Itemsets Frequentes, Suporte, Confiança e Lift) para a Sra. Ana Paula. Como essas métricas ajudam a identificar padrões interessantes nos dados de serviços dos clientes? -->
 
-  - Diferente das fases anteriores, onde o foco era prever um target ou segmentar, as regras de associação buscam relações entre múltiplos itens. Quais variáveis do conjunto de dados da ConecteMais são as mais adequadas para serem tratadas como "itens" em uma análise de regras de associação? Dêem exemplos de pelo menos cinco variáveis e justifiquem.
-
-
-2) Preparação dos Dados para Regras de Associação:
-
-  - Para aplicar algoritmos de regras de associação (como Apriori), os dados precisam estar em um formato transacional, onde cada linha representa uma "transação" (neste caso, um cliente) e as colunas representam os "itens" (serviços, ofertas, etc.). Como vocês transformariam as variáveis escolhidas na questão anterior (que podem ser categóricas binárias ou com múltiplas categorias) para este formato?
-
-  - Algumas variáveis numéricas, como `Avg Monthly GB Download` ou `Monthly Charge`, podem conter informações valiosas. Como vocês poderiam discretizar essas variáveis numéricas para transformá-las em "itens" que possam ser incluídos na análise de regras de associação? Descrevam um método de discretização.
+<!--   - Diferente das fases anteriores, onde o foco era prever um target ou segmentar, as regras de associação buscam relações entre múltiplos itens. Quais variáveis do conjunto de dados da ConecteMais são as mais adequadas para serem tratadas como "itens" em uma análise de regras de associação? Dêem exemplos de pelo menos cinco variáveis e justifiquem. -->
 
 
-3) Geração e Filtragem de Regras:
+<!-- 2) Preparação dos Dados para Regras de Associação: -->
 
-  - Ao gerar regras de associação, é comum obter um grande número delas. Quais seriam os parâmetros mínimos de Suporte e Confiança que vocês definiriam inicialmente para filtrar as regras mais relevantes e por quê?
+<!--   - Para aplicar algoritmos de regras de associação (como Apriori), os dados precisam estar em um formato transacional, onde cada linha representa uma "transação" (neste caso, um cliente) e as colunas representam os "itens" (serviços, ofertas, etc.). Como vocês transformariam as variáveis escolhidas na questão anterior (que podem ser categóricas binárias ou com múltiplas categorias) para este formato? -->
 
-  - Além de Suporte e Confiança, o Lift é uma métrica crucial. Expliquem para que serve o Lift em regras de associação e por que uma regra com Lift > 1 é considerada mais interessante para a ConecteMais.
+<!--   - Algumas variáveis numéricas, como `Avg Monthly GB Download` ou `Monthly Charge`, podem conter informações valiosas. Como vocês poderiam discretizar essas variáveis numéricas para transformá-las em "itens" que possam ser incluídos na análise de regras de associação? Descrevam um método de discretização. -->
 
 
-4) Aplicação das Regras e Insights de Negócio:
+<!-- 3) Geração e Filtragem de Regras: -->
 
-  - Dêem um exemplo hipotético de uma regra de associação que poderia ser descoberta nos dados da ConecteMais (ex: {Internet Service: Fiber Optic, Streaming TV} -> {Streaming Movies} com alta confiança e lift). Qual seria a implicação de negócio dessa regra?
+<!--   - Ao gerar regras de associação, é comum obter um grande número delas. Quais seriam os parâmetros mínimos de Suporte e Confiança que vocês definiriam inicialmente para filtrar as regras mais relevantes e por quê? -->
 
-  - Como as regras de associação poderiam ser utilizadas para:
-      - Recomendar novos serviços para clientes existentes (ex: "Se um cliente tem plano X e serviço Y, recomendar serviço Z")?
-      - Identificar combinações de serviços que precedem o *churn* (ex: "Se um cliente tem serviço A e B, e um contrato Mês-a-Mês, ele tende a dar *churn*")?
+<!--   - Além de Suporte e Confiança, o Lift é uma métrica crucial. Expliquem para que serve o Lift em regras de associação e por que uma regra com Lift > 1 é considerada mais interessante para a ConecteMais. -->
+
+
+<!-- 4) Aplicação das Regras e Insights de Negócio: -->
+
+<!--   - Dêem um exemplo hipotético de uma regra de associação que poderia ser descoberta nos dados da ConecteMais (ex: {Internet Service: Fiber Optic, Streaming TV} -> {Streaming Movies} com alta confiança e lift). Qual seria a implicação de negócio dessa regra? -->
+
+<!--   - Como as regras de associação poderiam ser utilizadas para: -->
+<!--       - Recomendar novos serviços para clientes existentes (ex: "Se um cliente tem plano X e serviço Y, recomendar serviço Z")? -->
+<!--       - Identificar combinações de serviços que precedem o *churn* (ex: "Se um cliente tem serviço A e B, e um contrato Mês-a-Mês, ele tende a dar *churn*")? -->
