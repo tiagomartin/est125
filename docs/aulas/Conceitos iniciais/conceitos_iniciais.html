@@ -142,6 +142,11 @@
       margin-right: 0; 
     }
   </style>
+  <style>
+  .tabela-pequena {
+    font-size: 0.95em;
+  }
+  </style>
 <meta property="og:title" content="Conceitos Iniciais – EST125 - Introdução à Mineração de Dados">
 <meta property="og:site_name" content="EST125 - Introdução à Mineração de Dados">
 </head>
@@ -628,6 +633,86 @@ Sócrates
 </div>
 <div class="fragment">
 <p>A escolha da metodologia dependerá das necessidades específicas do projeto e dos recursos disponíveis para o gerenciamento do projeto.</p>
+</div>
+</section>
+<section id="exemplo-aplicado-previsão-de-churn-em-telecom" class="slide level2">
+<h2>Exemplo aplicado: previsão de churn em telecom</h2>
+<p><strong>Problema:</strong> prever quais clientes têm maior chance de cancelar o serviço.</p>
+<p><br></p>
+<h3 id="o-mesmo-processo-sob-diferentes-metodologias">🔄 O mesmo processo sob diferentes metodologias</h3>
+<div class="tabela-pequena">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Etapa</strong></th>
+<th><strong>KDD</strong></th>
+<th><strong>SEMMA</strong></th>
+<th><strong>CRISP-DM</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Problema</strong></td>
+<td>—</td>
+<td>—</td>
+<td>Entendimento do Negócio</td>
+</tr>
+<tr class="even">
+<td><strong>Dados</strong></td>
+<td>Seleção</td>
+<td>Sample / Explore</td>
+<td>Entendimento dos Dados</td>
+</tr>
+<tr class="odd">
+<td><strong>Preparação</strong></td>
+<td>Pré-processamento</td>
+<td>Modify</td>
+<td>Preparação dos Dados</td>
+</tr>
+<tr class="even">
+<td><strong>Modelo</strong></td>
+<td>Mineração</td>
+<td>Model</td>
+<td>Modelagem</td>
+</tr>
+<tr class="odd">
+<td><strong>Avaliação</strong></td>
+<td>Interpretação</td>
+<td>Assess</td>
+<td>Avaliação</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class="slide level2">
+
+<h3 id="o-que-estamos-vendo">🧠 O que estamos vendo?</h3>
+<ul>
+<li>As três metodologias seguem o mesmo fluxo:
+<ul>
+<li>problema → dados → preparação → modelo → avaliação</li>
+</ul></li>
+</ul>
+<p><br></p>
+<h3 id="diferenças-principais">🔍 Diferenças principais</h3>
+<ul>
+<li><strong>KDD</strong> → foco em descoberta de conhecimento<br>
+</li>
+<li><strong>SEMMA</strong> → foco na modelagem<br>
+</li>
+<li><strong>CRISP-DM</strong> → foco no problema de negócio</li>
+</ul>
+<div class="callout callout-important callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>Mensagem principal:</strong><br>
+Mineração de dados não é só modelar: é um processo completo.</p>
+</div>
+</div>
 </div>
 </section>
 <section id="tarefas-e-técnicas-de-mineração-de-dados" class="slide level2">

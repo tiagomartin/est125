@@ -14,6 +14,13 @@ format:
     code-link: true
     highlight-style: a11y
     chalkboard: true
+    include-in-header:
+      text: |
+        <style>
+        .tabela-pequena {
+          font-size: 0.95em;
+        }
+        </style>
   beamer:          # Slides em PDF (LaTeX/Beamer)
     aspectratio: 169   # 16:9
     keep-tex: true     # opcional, guarda o .tex gerado
@@ -626,6 +633,53 @@ CRISP-DM é uma abordagem iterativa em cascata, SEMMA é uma abordagem em cascat
 
 
 A escolha da metodologia dependerá das necessidades específicas do projeto e dos recursos disponíveis para o gerenciamento do projeto.
+
+
+## Exemplo aplicado: previsão de churn em telecom
+
+**Problema:** prever quais clientes têm maior chance de cancelar o serviço.
+
+<br>
+
+### 🔄 O mesmo processo sob diferentes metodologias
+
+::: {.tabela-pequena}
+
+| **Etapa** | **KDD** | **SEMMA** | **CRISP-DM** |
+|---|---|---|---|
+| **Problema** | — | — | Entendimento do Negócio |
+| **Dados** | Seleção | Sample / Explore | Entendimento dos Dados |
+| **Preparação** | Pré-processamento | Modify | Preparação dos Dados |
+| **Modelo** | Mineração | Model | Modelagem |
+| **Avaliação** | Interpretação | Assess | Avaliação |
+
+:::
+
+---
+
+### 🧠 O que estamos vendo?
+
+- As três metodologias seguem o mesmo fluxo:
+  - problema → dados → preparação → modelo → avaliação
+
+<br>
+
+### 🔍 Diferenças principais
+
+- **KDD** → foco em descoberta de conhecimento  
+- **SEMMA** → foco na modelagem  
+- **CRISP-DM** → foco no problema de negócio  
+
+
+
+::: {.callout-important appearance="simple"}
+**Mensagem principal:**  
+Mineração de dados não é só modelar: é um processo completo.
+:::
+
+
+
+
 
 
 ## Tarefas e técnicas de mineração de dados
