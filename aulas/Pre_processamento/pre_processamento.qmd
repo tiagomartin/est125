@@ -8,6 +8,25 @@ format:
     theme: quartomonothemer.scss
     slide-number: c/t
     show-slide-number: all
+    preview-links: auto
+    self-contained: false
+    embed-resources: false
+    code-link: true
+    highlight-style: a11y
+    chalkboard: true
+    include-in-header:
+      text: |
+        <style>
+        .tabela-pequena {
+          font-size: 0.95em;
+        }
+        </style>
+  beamer:          # Slides em PDF (LaTeX/Beamer)
+    aspectratio: 169   # 16:9
+    keep-tex: true     # opcional, guarda o .tex gerado
+    include-in-header:
+      text: |
+        \setkeys{Gin}{width=0.7\linewidth, keepaspectratio}
 incremental: false
 code-link: true
 bibliography: references.bib
@@ -15,6 +34,13 @@ title-slide-attributes:
     data-background-image: /images/back.jpeg
     data-background-size: cover
     data-background-opacity: "0.3"
+execute:
+  echo: false
+  warning: false
+  message: false
+  fig-format: png
+  freeze: auto
+  cache: true
 ---
 
 
@@ -107,7 +133,16 @@ O pré-processamento de dados é uma etapa importante e crítica no processo de 
 
 ## Importância do pré-processamento
 
+::: {.content-visible when-format="html"}
 ![[Fonte: Giphy](https://gph.is/g/Eq2rpxa)](https://media3.giphy.com/media/9u514UZd57mRhnBCEk/giphy.gif){fig-align="center" .r-stretch}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](/images/impor_pre_process.png){width=70%}
+:::
+
+
+
 
 
 ## O que há de errado nessa base?
@@ -360,7 +395,23 @@ Com o aumento da quantidade de dados gerados diariamente, a análise de **dados 
 ## Tratamento de dados faltantes
 
 
+::: {.content-visible when-format="html"}
 ![[Fonte: Giphy](https://gph.is/2Tz7gn7)](https://media2.giphy.com/media/3s0OTExhi8qzSC3nHC/giphy.gif){fig-align="center" .r-stretch}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](/images/missing.png){width=70%}
+:::
+
+
+
+
+
+
+
+
+
+
 
 
 ## Tratamento de dados faltantes
@@ -687,7 +738,17 @@ Algumas técnicas comuns para lidar com valores inconsistentes incluem:
 
 ## Tratamento de ruídos
 
-![[Fonte: Giphy](https://gph.is/g/ZPBYYOp)](https://media2.giphy.com/media/QFuBzoQdijNFztFEp6/giphy.gif){fig-align="center" .r-stretch}
+::: {.content-visible when-format="html"}
+![[Fonte: Giphy](https://giphy.com/gifs/ndr-esc-eurovision-eurovisionde-7JHtjml53hhMgCGFgO)](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2p6YjM3enR1eWZ3Y2lsMGloZ3JuMmtvMjJpcXk3cW9kZGE2NG5neCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7JHtjml53hhMgCGFgO/giphy.gif){fig-align="center" .r-stretch}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](/images/ruidosos.png){width=70%}
+:::
+
+
+
+
 
 
 ## Tratamento de ruídos
@@ -894,8 +955,13 @@ O **objetivo da integração de dados** é criar um conjunto de dados mais **com
 
 ## Transformação de dados
 
+::: {.content-visible when-format="html"}
 ![[Fonte: Giphy](http://gph.is/1Vp16TL)](https://media3.giphy.com/media/P4TqKx6NHyLnO/giphy.gif){fig-align="center" .r-stretch}
+:::
 
+::: {.content-visible when-format="pdf"}
+![](/images/fusion.png){width=70%}
+:::
 
 
 ## Transformação de dados

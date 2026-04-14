@@ -1,13 +1,120 @@
 ---
-title: "Análise de Dados"
+title: "Análises de Dados"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        /* Estilos visuais EST304 sem quebrar tipografia do Quarto */
+        .aulas-list .list-group-item {
+          border-left: 4px solid #2761E3;
+          padding-top: 0.8rem;
+          padding-bottom: 0.8rem;
+        }
+        .aulas-list .list-group-item:hover {
+          background-color: #F2F2F2;
+        }
+        .disciplina-badge {
+          background-color: #2761E3;
+        }
+        .btn-est304-main {
+          background-color: #2761E3;
+          border-color: #2761E3;
+          color: #fff;
+        }
+        .btn-est304-main:hover {
+          background-color: #789CEB;
+          border-color: #789CEB;
+          color: #fff;
+        }
+        .btn-est304-outline {
+          color: #2761E3;
+          border-color: #2761E3;
+        }
+        .btn-est304-outline:hover {
+          background-color: #2761E3;
+          color: #fff;
+        }
+        </style>
 ---
+Esta página contém análises de dados que serão apresentadas ao longo do semestre. 
 
--   [EDA: Salários em Ciência de Dados](analise_dados/data_science.html "Script análise de dados"){aria-label="Script análise de dados"}
+::: {.list-group .aulas-list}
 
--   [Pré-processamento usando a base de dados Space Titanic](analise_dados/space_titanic.html "Script análise de dados"){aria-label="Script análise de dados"}
+::: {.list-group-item .d-flex .justify-content-between .align-items-center}
+<span class="fw-bold">
+  EDA: Salários em Ciência de Dados
+</span>
 
--   [Construindo workflows preditivos usando a base de dados Space Titanic](analise_dados/space_titanic_workflow.html "Script análise de dados"){aria-label="Script análise de dados"}
+<span>
+[Ver análise](/analise_dados/data_science.html){.btn .btn-est304-main .btn-sm}
+<!-- [PDF](/aulas/Conceitos%20iniciais/conceitos_iniciais.pdf){.btn .btn-est304-outline .btn-sm} -->
+</span>
+:::
 
--   [Reconhecendo padrões usando a base de dados Space Titanic](analise_dados/space_titanic_cluster.html "Script análise de dados"){aria-label="Script análise de dados"}
 
--   [Criando um sistema de recomendação baseado em regras de associação usando a base de dados Space Titanic](analise_dados/space_titanic_regras.html "Script análise de dados"){aria-label="Script análise de dados"}
+<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
+<!-- <span class="fw-bold"> -->
+<!--   Pré-processamento de dados -->
+<!-- </span> -->
+
+<!-- <span> -->
+<!-- [Ver slides](/aulas/Pre_processamento/pre_processamento.html#/title-slide){.btn .btn-est304-main .btn-sm} -->
+<!-- [PDF](/aulas/Pre_processamento/pre_processamento.pdf){.btn .btn-est304-outline .btn-sm} -->
+<!-- </span> -->
+<!-- ::: -->
+
+<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
+<!-- <span class="fw-bold"> -->
+<!--   Função Geradora de Momentos -->
+<!-- </span> -->
+
+<!-- <span> -->
+<!-- [Ver slides](/aulas/func_geradora_momentos/func_gera_momentos.html#/title-slide){.btn .btn-est304-main .btn-sm} -->
+<!-- [PDF](/aulas/func_geradora_momentos/func_gera_momentos.pdf){.btn .btn-est304-outline .btn-sm} -->
+<!-- </span> -->
+<!-- ::: -->
+
+<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
+<!-- <span class="fw-bold"> -->
+<!--   Integral Dupla e Tripla -->
+<!-- </span> -->
+
+<!-- <span> -->
+<!-- [Ver slides](/aulas/integrais_dup_trip/integrais_dup_trip.html){.btn .btn-est304-main .btn-sm} -->
+<!-- [PDF](/aulas/integrais_dup_trip/integrais_dup_trip.pdf){.btn .btn-est304-outline .btn-sm} -->
+<!-- </span> -->
+<!-- ::: -->
+
+<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
+<!-- <span class="fw-bold"> -->
+<!--   Vetores Aleatórios -->
+<!-- </span> -->
+
+<!-- <span> -->
+<!-- [Ver slides](/aulas/Vetores_aleatorios/vetores_aleatorios.html){.btn .btn-est304-main .btn-sm} -->
+<!-- [PDF](/aulas/Vetores_aleatorios/vetores_aleatorios.pdf){.btn .btn-est304-outline .btn-sm} -->
+<!-- </span> -->
+<!-- ::: -->
+
+:::
+
+
+
+
+
+
+
+<!-- --- -->
+<!-- title: "Análise de Dados" -->
+<!-- --- -->
+
+<!-- -   [EDA: Salários em Ciência de Dados](analise_dados/data_science.html "Script análise de dados"){aria-label="Script análise de dados"} -->
+
+<!-- -   [Pré-processamento usando a base de dados Space Titanic](analise_dados/space_titanic.html "Script análise de dados"){aria-label="Script análise de dados"} -->
+
+<!-- -   [Construindo workflows preditivos usando a base de dados Space Titanic](analise_dados/space_titanic_workflow.html "Script análise de dados"){aria-label="Script análise de dados"} -->
+
+<!-- -   [Reconhecendo padrões usando a base de dados Space Titanic](analise_dados/space_titanic_cluster.html "Script análise de dados"){aria-label="Script análise de dados"} -->
+
+<!-- -   [Criando um sistema de recomendação baseado em regras de associação usando a base de dados Space Titanic](analise_dados/space_titanic_regras.html "Script análise de dados"){aria-label="Script análise de dados"} -->

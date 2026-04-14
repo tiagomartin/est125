@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Análise de Dados – EST125 - Introdução à Mineração de Dados</title>
+<title>Análises de Dados – EST125 - Introdução à Mineração de Dados</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,6 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./cronograma.html" rel="next">
+<link href="./aulas.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -70,9 +72,42 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<style>
+/* Estilos visuais EST304 sem quebrar tipografia do Quarto */
+.aulas-list .list-group-item {
+  border-left: 4px solid #2761E3;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+.aulas-list .list-group-item:hover {
+  background-color: #F2F2F2;
+}
+.disciplina-badge {
+  background-color: #2761E3;
+}
+.btn-est304-main {
+  background-color: #2761E3;
+  border-color: #2761E3;
+  color: #fff;
+}
+.btn-est304-main:hover {
+  background-color: #789CEB;
+  border-color: #789CEB;
+  color: #fff;
+}
+.btn-est304-outline {
+  color: #2761E3;
+  border-color: #2761E3;
+}
+.btn-est304-outline:hover {
+  background-color: #2761E3;
+  color: #fff;
+}
+</style>
 
 
-<meta property="og:title" content="Análise de Dados – EST125 - Introdução à Mineração de Dados">
+<meta property="og:title" content="Análises de Dados – EST125 - Introdução à Mineração de Dados">
+<meta property="og:description" content="Homepage da disciplina EST125 - Introdução à Mineração de Dados, 2025/1.">
 <meta property="og:site_name" content="EST125 - Introdução à Mineração de Dados">
 </head>
 
@@ -246,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Análise de Dados</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./analises.html">Análises de Dados</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -283,6 +318,12 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./analises.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Análises de Dados</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./cronograma.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Cronograma da Disciplina</span></a>
   </div>
@@ -313,7 +354,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Análise de Dados</h1>
+<h1 class="title">Análises de Dados</h1>
 </div>
 
 
@@ -330,13 +371,57 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<ul>
-<li><p><a href="analise_dados/data_science.html" aria-label="Script análise de dados" title="Script análise de dados">EDA: Salários em Ciência de Dados</a></p></li>
-<li><p><a href="analise_dados/space_titanic.html" aria-label="Script análise de dados" title="Script análise de dados">Pré-processamento usando a base de dados Space Titanic</a></p></li>
-<li><p><a href="analise_dados/space_titanic_workflow.html" aria-label="Script análise de dados" title="Script análise de dados">Construindo workflows preditivos usando a base de dados Space Titanic</a></p></li>
-<li><p><a href="analise_dados/space_titanic_cluster.html" aria-label="Script análise de dados" title="Script análise de dados">Reconhecendo padrões usando a base de dados Space Titanic</a></p></li>
-<li><p><a href="analise_dados/space_titanic_regras.html" aria-label="Script análise de dados" title="Script análise de dados">Criando um sistema de recomendação baseado em regras de associação usando a base de dados Space Titanic</a></p></li>
-</ul>
+<p>Esta página contém análises de dados que serão apresentadas ao longo do semestre.</p>
+<div class="list-group aulas-list">
+<div class="list-group-item d-flex justify-content-between align-items-center">
+<p><span class="fw-bold"> EDA: Salários em Ciência de Dados </span></p>
+<p><span> <a href=".\analise_dados/data_science.html" class="btn btn-est304-main btn-sm">Ver análise</a> <!-- [PDF](/aulas/Conceitos%20iniciais/conceitos_iniciais.pdf){.btn .btn-est304-outline .btn-sm} --> </span></p>
+</div>
+<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
+<!-- <span class="fw-bold"> -->
+<!--   Pré-processamento de dados -->
+<!-- </span> -->
+<!-- <span> -->
+<!-- [Ver slides](/aulas/Pre_processamento/pre_processamento.html#/title-slide){.btn .btn-est304-main .btn-sm} -->
+<!-- [PDF](/aulas/Pre_processamento/pre_processamento.pdf){.btn .btn-est304-outline .btn-sm} -->
+<!-- </span> -->
+<!-- ::: -->
+<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
+<!-- <span class="fw-bold"> -->
+<!--   Função Geradora de Momentos -->
+<!-- </span> -->
+<!-- <span> -->
+<!-- [Ver slides](/aulas/func_geradora_momentos/func_gera_momentos.html#/title-slide){.btn .btn-est304-main .btn-sm} -->
+<!-- [PDF](/aulas/func_geradora_momentos/func_gera_momentos.pdf){.btn .btn-est304-outline .btn-sm} -->
+<!-- </span> -->
+<!-- ::: -->
+<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
+<!-- <span class="fw-bold"> -->
+<!--   Integral Dupla e Tripla -->
+<!-- </span> -->
+<!-- <span> -->
+<!-- [Ver slides](/aulas/integrais_dup_trip/integrais_dup_trip.html){.btn .btn-est304-main .btn-sm} -->
+<!-- [PDF](/aulas/integrais_dup_trip/integrais_dup_trip.pdf){.btn .btn-est304-outline .btn-sm} -->
+<!-- </span> -->
+<!-- ::: -->
+<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
+<!-- <span class="fw-bold"> -->
+<!--   Vetores Aleatórios -->
+<!-- </span> -->
+<!-- <span> -->
+<!-- [Ver slides](/aulas/Vetores_aleatorios/vetores_aleatorios.html){.btn .btn-est304-main .btn-sm} -->
+<!-- [PDF](/aulas/Vetores_aleatorios/vetores_aleatorios.pdf){.btn .btn-est304-outline .btn-sm} -->
+<!-- </span> -->
+<!-- ::: -->
+</div>
+<!-- --- -->
+<!-- title: "Análise de Dados" -->
+<!-- --- -->
+<!-- -   [EDA: Salários em Ciência de Dados](analise_dados/data_science.html "Script análise de dados"){aria-label="Script análise de dados"} -->
+<!-- -   [Pré-processamento usando a base de dados Space Titanic](analise_dados/space_titanic.html "Script análise de dados"){aria-label="Script análise de dados"} -->
+<!-- -   [Construindo workflows preditivos usando a base de dados Space Titanic](analise_dados/space_titanic_workflow.html "Script análise de dados"){aria-label="Script análise de dados"} -->
+<!-- -   [Reconhecendo padrões usando a base de dados Space Titanic](analise_dados/space_titanic_cluster.html "Script análise de dados"){aria-label="Script análise de dados"} -->
+<!-- -   [Criando um sistema de recomendação baseado em regras de associação usando a base de dados Space Titanic](analise_dados/space_titanic_regras.html "Script análise de dados"){aria-label="Script análise de dados"} -->
 
 
 
@@ -753,6 +838,18 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./aulas.html" class="pagination-link" aria-label="Aulas">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Aulas</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./cronograma.html" class="pagination-link" aria-label="Cronograma da Disciplina">
+        <span class="nav-page-text">Cronograma da Disciplina</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

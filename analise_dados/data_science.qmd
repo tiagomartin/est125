@@ -2,7 +2,8 @@
 title: "Análise de dados: Explorando a base de dados **Data Science Salaries 2023** do **Kaggle**"
 lang: pt
 toc: true
-format: html
+format: 
+  html: default
 execute:
   echo: true
   warning: false
