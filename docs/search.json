@@ -966,21 +966,21 @@
     "href": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-3",
     "title": "Pré-processamento de dados",
     "section": "Tratamento de ruídos",
-    "text": "Tratamento de ruídos\n\n\nIdentificação e remoção de valores atípicos: valores que são muito diferentes dos outros valores no conjunto de dados podem ser identificados como valores atípicos.\n\nEsses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise.\n\n\n\n\nCorreção de erros de entrada de dados: erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros."
+    "text": "Tratamento de ruídos\n\n\nO sinal contém a estrutura que queremos aprender\n\nO ruído dificulta a identificação dessa estrutura\n\nUm modelo ruim pode confundir ruído com padrão\n\n\n\n\n\n\n\nOverfitting ocorre quando o modelo aprende o ruído em vez do sinal."
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-4",
     "href": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-4",
     "title": "Pré-processamento de dados",
     "section": "Tratamento de ruídos",
-    "text": "Tratamento de ruídos\n\n\nNormalização ou padronização de dados: a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes.\n\n\n\nUtilização de técnicas de agrupamento: técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído."
+    "text": "Tratamento de ruídos\nComo lidar com variações indesejadas nos dados? \n\n\n\n\n\n\nO objetivo não é eliminar o ruído, mas reduzir seu impacto sem perder o sinal.\n\n\n\n\nLimpeza de dados\n\nTransformações\n\nSuavização\n\nModelagem robusta"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-5",
     "href": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-5",
     "title": "Pré-processamento de dados",
     "section": "Tratamento de ruídos",
-    "text": "Tratamento de ruídos\n\nUtilização de técnicas de suavização de dados: técnicas de suavização, como média móvel ou suavização exponencial, podem ser usadas para reduzir o impacto do ruído nos dados."
+    "text": "Tratamento de ruídos\nValores atípicos (outliers)\nValores muito distantes do padrão dos dados\n\n\n❌ Remover\nQuando:\n\nerro de medição\n\nerro de digitação\n\nvalor impossível\n\n👉 Ex: idade = 250\n\n⚠️ Manter\nQuando:\n\nobservação real\n\nevento raro importante\n\ncomportamento relevante\n\n👉 Ex: cliente que gasta muito"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#como-identificar-um-valor-atípico",
@@ -4424,5 +4424,89 @@
     "title": "Projeto Avaliativo: Análise de churn em uma Empresa de Telecomunicações",
     "section": "🧺 Fase 5: Construção de um Sistema de Recomendação",
     "text": "🧺 Fase 5: Construção de um Sistema de Recomendação"
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-6",
+    "href": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-6",
+    "title": "Pré-processamento de dados",
+    "section": "Tratamento de ruídos",
+    "text": "Tratamento de ruídos\nSuavização de dados\nReduz variações aleatórias mantendo o padrão\n\nMédia móvel\n\nLOESS\n\nSuavização exponencial \n\n\n\n\n\n\n\nImportante\n\n\nSuavizar não remove dados: revela o comportamento subjacente."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#valores-atípicos-outliers",
+    "href": "aulas/Pre_processamento/pre_processamento.html#valores-atípicos-outliers",
+    "title": "Pré-processamento de dados",
+    "section": "Valores atípicos (outliers)",
+    "text": "Valores atípicos (outliers)\nValores muito distantes do padrão dos dados\n\n\n✔️ O que fazer?\n\nRemover (se erro)\nTratar separadamente\nManter (se relevante)\n\n\n⚠️ Cuidado\nNem todo outlier é ruído\nPode ser informação importante"
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#erros-de-entrada-de-dados",
+    "href": "aulas/Pre_processamento/pre_processamento.html#erros-de-entrada-de-dados",
+    "title": "Pré-processamento de dados",
+    "section": "Erros de entrada de dados",
+    "text": "Erros de entrada de dados\nProblemas comuns:\n\nDigitação incorreta\n\nValores impossíveis\n\nInconsistências\n\n\n\n\n\n\n\nNote\n\n\nCorrigir erros melhora diretamente a qualidade da análise."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#padronização-e-normalização",
+    "href": "aulas/Pre_processamento/pre_processamento.html#padronização-e-normalização",
+    "title": "Pré-processamento de dados",
+    "section": "Padronização e normalização",
+    "text": "Padronização e normalização\nTornam os dados comparáveis\n\nEscalas diferentes → distorcem análise\n\nImportante para modelos e clustering\n\n\n\n\n\n\n\nImportant\n\n\nModelos baseados em distância são muito sensíveis à escala."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#redução-de-ruído-via-agrupamento",
+    "href": "aulas/Pre_processamento/pre_processamento.html#redução-de-ruído-via-agrupamento",
+    "title": "Pré-processamento de dados",
+    "section": "Redução de ruído via agrupamento",
+    "text": "Redução de ruído via agrupamento\nIdeia:\n\nIdentificar padrões\n\nAgrupar observações semelhantes\n\nResultado:\n\nMenos impacto de variações aleatórias\n\nMelhor interpretação dos dados"
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#suavização-de-dados",
+    "href": "aulas/Pre_processamento/pre_processamento.html#suavização-de-dados",
+    "title": "Pré-processamento de dados",
+    "section": "Suavização de dados",
+    "text": "Suavização de dados\nReduz variações aleatórias mantendo o padrão\n\nMédia móvel\n\nLOESS\n\nSuavização exponencial\n\n\n\n\n\n\n\nImportant\n\n\nSuavizar não remove dados — revela o comportamento subjacente."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#como-escolher-a-abordagem",
+    "href": "aulas/Pre_processamento/pre_processamento.html#como-escolher-a-abordagem",
+    "title": "Pré-processamento de dados",
+    "section": "Como escolher a abordagem?",
+    "text": "Como escolher a abordagem?\n\n\n\nSituação\nEstratégia\n\n\n\n\nErros de digitação\nCorreção\n\n\nOutliers suspeitos\nRemoção ou análise\n\n\nAlta variabilidade\nSuavização\n\n\nEscalas diferentes\nNormalização \n\n\n\n\n\n\n\n\n\nImportante\n\n\nA escolha depende do tipo de ruído e do objetivo da análise."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-7",
+    "href": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-7",
+    "title": "Pré-processamento de dados",
+    "section": "Tratamento de ruídos",
+    "text": "Tratamento de ruídos\nNormalização\nTornam os dados comparáveis\n\nEscalas diferentes → distorcem análise\n\nImportante para modelos e clustering\n\n\n\n\n\n\n\nImportante\n\n\nModelos baseados em distância são muito sensíveis à escala."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#normalização",
+    "href": "aulas/Pre_processamento/pre_processamento.html#normalização",
+    "title": "Pré-processamento de dados",
+    "section": "Normalização",
+    "text": "Normalização\nTornam os dados comparáveis\n\nEscalas diferentes → distorcem análise\n\nImportante para modelos e clustering\n\n\n\n\n\n\n\nImportant\n\n\nModelos baseados em distância são muito sensíveis à escala."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-8",
+    "href": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-8",
+    "title": "Pré-processamento de dados",
+    "section": "Tratamento de ruídos",
+    "text": "Tratamento de ruídos\nRedução de ruído via agrupamento\nIdeia:\n\nIdentificar padrões\n\nAgrupar observações semelhantes\n\nResultado:\n\nMenos impacto de variações aleatórias\n\nMelhor interpretação dos dados"
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-9",
+    "href": "aulas/Pre_processamento/pre_processamento.html#tratamento-de-ruídos-9",
+    "title": "Pré-processamento de dados",
+    "section": "Tratamento de ruídos",
+    "text": "Tratamento de ruídos\nSuavização de dados\nReduz variações aleatórias mantendo o padrão\n\nMédia móvel\n\nLOESS\n\nSuavização exponencial \n\n\n\n\n\n\n\nImportante\n\n\nSuavizar não remove dados: revela o comportamento subjacente."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#o-que-fazer-com-valores-atípicos",
+    "href": "aulas/Pre_processamento/pre_processamento.html#o-que-fazer-com-valores-atípicos",
+    "title": "Pré-processamento de dados",
+    "section": "O que fazer com valores atípicos?",
+    "text": "O que fazer com valores atípicos?\n\n\n❌ Remover\nQuando:\n\nerro de medição\n\nerro de digitação\n\nvalor impossível\n\n👉 Ex: idade = 250\n\n⚠️ Manter\nQuando:\n\nobservação real\n\nevento raro importante\n\ncomportamento relevante\n\n👉 Ex: cliente que gasta muito\n\n\n\n🔧 Transformar\n\nlog, raiz, Box-Cox\n\nreduz impacto extremo\n\n\n🤖 Modelar de forma robusta\n\nregressão robusta\n\nárvores / random forest\n\nmenos sensíveis a outliers\n\n\n\n\n\n\n\n\nImportant\n\n\nA decisão depende do contexto do problema."
   }
 ]

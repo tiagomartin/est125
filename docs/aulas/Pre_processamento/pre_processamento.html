@@ -861,68 +861,215 @@ Esses métodos são <strong>simples</strong> e <strong>rápidos</strong>, mas po
 </section>
 <section id="tratamento-de-ruídos-2" class="slide level2">
 <h2>Tratamento de ruídos</h2>
+<!-- ![](/images/ruido2.png){fig-align="center" width="600"} -->
+<!-- ## -->
 
-<img data-src="../..\images/ruido2.png" class="quarto-figure quarto-figure-center r-stretch" width="600"></section>
+<img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-1-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="tratamento-de-ruídos-3" class="slide level2">
 <h2>Tratamento de ruídos</h2>
 <p><br></p>
 <ul>
-<li><p><strong>Identificação e remoção de valores atípicos:</strong> valores que são muito diferentes dos outros valores no conjunto de dados podem ser identificados como valores atípicos.</p>
-<ul>
-<li>Esses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise.</li>
-</ul></li>
+<li>O <strong>sinal</strong> contém a estrutura que queremos aprender<br>
+</li>
+<li>O <strong>ruído</strong> dificulta a identificação dessa estrutura<br>
+</li>
+<li>Um modelo ruim pode confundir ruído com padrão</li>
 </ul>
-<div class="fragment">
-<ul>
-<li><strong>Correção de erros de entrada de dados:</strong> erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros.</li>
-</ul>
+<div class="callout callout-important callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p><strong>Overfitting ocorre quando o modelo aprende o ruído em vez do sinal.</strong></p>
+</div>
+</div>
 </div>
 </section>
 <section id="tratamento-de-ruídos-4" class="slide level2">
 <h2>Tratamento de ruídos</h2>
-<p><br></p>
-<ul>
-<li><strong>Normalização ou padronização de dados:</strong> a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Utilização de técnicas de agrupamento:</strong> técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído.</li>
-</ul>
+<p>Como lidar com variações indesejadas nos dados? <br><br></p>
+<div class="callout callout-important callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-content">
+<p>O objetivo não é eliminar o ruído, mas reduzir seu impacto sem perder o sinal.</p>
+</div>
+</div>
+</div>
+<ul>
+<li>Limpeza de dados<br>
+</li>
+<li>Transformações<br>
+</li>
+<li>Suavização<br>
+</li>
+<li>Modelagem robusta</li>
+</ul>
 </section>
 <section id="tratamento-de-ruídos-5" class="slide level2">
 <h2>Tratamento de ruídos</h2>
+<h3 id="valores-atípicos-outliers">Valores atípicos (outliers)</h3>
+<p>Valores muito distantes do padrão dos dados<br><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="remover">❌ Remover</h3>
+<p>Quando:</p>
 <ul>
-<li><strong>Utilização de técnicas de suavização de dados:</strong> técnicas de suavização, como média móvel ou suavização exponencial, podem ser usadas para reduzir o impacto do ruído nos dados.</li>
+<li>erro de medição<br>
+</li>
+<li>erro de digitação<br>
+</li>
+<li>valor impossível</li>
 </ul>
+<p>👉 Ex: idade = 250</p>
+</div><div class="column" style="width:50%;">
+<h3 id="manter">⚠️ Manter</h3>
+<p>Quando:</p>
+<ul>
+<li>observação real<br>
+</li>
+<li>evento raro importante<br>
+</li>
+<li>comportamento relevante</li>
+</ul>
+<p>👉 Ex: cliente que gasta muito</p>
+</div></div>
+</section>
+<section class="slide level2">
 
-<img data-src="../..\images/suavizacao.png" class="quarto-figure quarto-figure-center r-stretch" width="400"></section>
-<section id="como-identificar-um-valor-atípico" class="slide level2">
-<h2>Como identificar um valor atípico?</h2>
-<ul>
-<li><strong>Gráfico box-plot</strong></li>
-</ul>
-<div class="fragment">
-<ul>
-<li><strong>Z-score:</strong> valores com um z-score maior do que um limite (geralmente 3) são considerados valores atípicos.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Intervalo interquartil (IQR):</strong> valores abaixo de Q1 - 1,5 x IQR ou acima de Q3 + 1,5 x IQR são considerados valores atípicos.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><strong>Método de DBSCAN:</strong> é um algoritmo de clusterização que agrupa pontos de dados que estão próximos uns dos outros e identifica valores que não estão próximos a nenhum cluster, o que pode ser um sinal de valores atípicos.</li>
-</ul>
-</div>
-</section>
-<section id="como-identificar-um-valor-atípico-1" class="slide level2">
-<h2>Como identificar um valor atípico?</h2>
 <p><br></p>
-<p>Quaisquer que sejam as técnicas empregadas, a <strong>documentação</strong> e o <strong>registro das etapas de limpeza de dados</strong> são <strong>essenciais</strong> para garantir a <strong>reprodutibilidade</strong>, <strong>transparência</strong>, <strong>colaboração</strong>, <strong>auditabilidade</strong> e <strong>controle de qualidade em análises de dados</strong>.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="transformar">🔧 Transformar</h3>
+<ul>
+<li>log, raiz, Box-Cox<br>
+</li>
+<li>reduz impacto extremo</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="modelar-de-forma-robusta">🤖 Modelar de forma robusta</h3>
+<ul>
+<li>regressão robusta, árvores de decisão, random forest
+<ul>
+<li>menos sensíveis a outliers</li>
+</ul></li>
+</ul>
+</div></div>
+<p><br></p>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Importante</strong></p>
+</div>
+<div class="callout-content">
+<p>A decisão depende do contexto do problema.</p>
+</div>
+</div>
+</div>
 </section>
+<section class="slide level2">
+
+<h3 id="como-identificar-valores-atípicos">Como identificar valores atípicos?</h3>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="métodos-estatísticos">📊 Métodos estatísticos</h4>
+<ul>
+<li><strong>Boxplot</strong><br>
+</li>
+<li><strong>Z-score</strong>
+<ul>
+<li>|z| &gt; 3 → possível outlier</li>
+</ul></li>
+<li><strong><span class="math inline">\(IQR:\)</span></strong> <span class="math inline">\(Q_3 - Q_1\)</span>
+<ul>
+<li><span class="math inline">\(&lt; Q_1 − 1,5 \times IQR\)</span><br>
+</li>
+<li><span class="math inline">\(&gt; Q_3 + 1,5 \times IQR\)</span></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h4 id="métodos-baseados-em-dados">🤖 Métodos baseados em dados</h4>
+<ul>
+<li><strong>DBSCAN</strong>
+<ul>
+<li>identifica pontos isolados<br>
+</li>
+<li>fora de clusters</li>
+</ul></li>
+</ul>
+<p>👉 útil em dados complexos</p>
+</div></div>
+<p><br></p>
+<div class="callout callout-warning callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Valores atípicos podem ser <strong>erro</strong> ou <strong>informação relevante</strong>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>Documente sempre as decisões de tratamento de dados.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="tratamento-de-ruídos-6" class="slide level2">
+<h2>Tratamento de ruídos</h2>
+<h3 id="suavização-de-dados">Suavização de dados</h3>
+<p>Reduz variações aleatórias mantendo o padrão</p>
+<ul>
+<li>Média móvel<br>
+</li>
+<li>LOESS<br>
+</li>
+<li>Suavização exponencial <br><br></li>
+</ul>
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Importante</strong></p>
+</div>
+<div class="callout-content">
+<p>Suavizar não remove dados: revela o comportamento subjacente.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+
+<!-- ## Tratamento de ruídos -->
+<!-- <br> -->
+<!-- - **Identificação e remoção de valores atípicos:** valores que são muito diferentes dos outros valores no conjunto de dados podem ser identificados como valores atípicos.  -->
+<!--   - Esses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise. -->
+<!-- . . . -->
+<!-- - **Correção de erros de entrada de dados:** erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros. -->
+<!-- ## Tratamento de ruídos -->
+<!-- <br> -->
+<!-- - **Normalização ou padronização de dados:** a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes. -->
+<!-- . . . -->
+<!-- - **Utilização de técnicas de agrupamento:** técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído. -->
+<!-- ## Tratamento de ruídos -->
+<!--   - **Utilização de técnicas de suavização de dados:** técnicas de suavização, como média móvel ou suavização exponencial, podem ser usadas para reduzir o impacto do ruído nos dados. -->
+<!-- ![](/images/suavizacao.png){fig-align="center" width="400"}   -->
+<img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-2-1.png" class="quarto-figure quarto-figure-center r-stretch" style="width:90.0%"></section>
 <section id="integração-de-dados" class="slide level2">
 <h2>Integração de dados</h2>
 <div class="columns">
@@ -1333,7 +1480,7 @@ Distância interquartílica
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-1-1.png"></p>
+<p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-3-1.png"></p>
 </figure>
 </div>
 </div>
@@ -1364,7 +1511,7 @@ y = \log(x)
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-2-1.png"></p>
+<p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-4-1.png"></p>
 </figure>
 </div>
 </div>
@@ -1395,7 +1542,7 @@ y = \sqrt x
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-3-1.png"></p>
+<p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-5-1.png"></p>
 </figure>
 </div>
 </div>
@@ -1433,7 +1580,7 @@ y =
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-4-1.png"></p>
+<p><img data-src="pre_processamento_files/figure-revealjs/unnamed-chunk-6-1.png"></p>
 </figure>
 </div>
 </div>

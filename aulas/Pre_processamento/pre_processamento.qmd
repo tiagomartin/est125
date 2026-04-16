@@ -768,69 +768,384 @@ O ruído pode ser considerado um **fator indesejado** que compromete a **precis�
 
 
 
-![](/images/ruido2.png){fig-align="center" width="600"}
+<!-- ![](/images/ruido2.png){fig-align="center" width="600"} -->
+
+<!-- ## -->
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 8
+#| fig-height: 4.8
+#| out-width: "90%"
+#| fig-align: "center"
+
+library(ggplot2)
+
+set.seed(123)
+
+x <- seq(0, 10, length.out = 180)
+sinal <- sin(x) + 0.15 * x
+y <- sinal + rnorm(length(x), sd = 0.45)
+
+dados <- data.frame(
+  x = x,
+  y = y,
+  sinal = sinal,
+  li = sinal - 0.45,
+  ls = sinal + 0.45
+)
+
+ggplot(dados, aes(x = x)) +
+  geom_ribbon(aes(ymin = li, ymax = ls), alpha = 0.18, fill = "#C93C3C") +
+  geom_point(aes(y = y), alpha = 0.45, size = 1.7, color = "#8FB9F4") +
+  geom_line(aes(y = sinal), linewidth = 1.5, color = "#C93C3C") +
+  labs(
+    title = "Sinal e ruído nos dados",
+    subtitle = "Dados observados variam ao redor do padrão devido ao ruído",
+    x = "X",
+    y = "Y"
+  ) +
+  annotate(
+    "segment",
+    x = 7.6, xend = 6.8, y = 1.95, yend = 1.45,
+    linewidth = 0.5, color = "grey30"
+  ) +
+  annotate(
+    "text",
+    x = 8.2, y = 2.0,
+    label = "Sinal",
+    color = "#C93C3C", size = 5
+  ) +
+  annotate(
+    "segment",
+    x = 2.2, xend = 2.2, y = 0.1, yend = -0.55,
+    linewidth = 0.5, color = "grey30"
+  ) +
+  annotate(
+    "text",
+    x = 3.4, y = 0.2,
+    label = "Ruído",
+    color = "#4C78A8", size = 5
+  ) +
+  theme_minimal(base_size = 18) +
+  theme(
+    plot.title = element_text(face = "bold", size = 20),
+    plot.subtitle = element_text(size = 13, color = "grey30"),
+    axis.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank(),
+    panel.grid.major = element_line(linewidth = 0.35, color = "grey85"),
+    plot.margin = margin(10, 15, 10, 15)
+  )
+```
+
+
+
 
 ## Tratamento de ruídos
 
 <br>
 
-- **Identificação e remoção de valores atípicos:** valores que são muito diferentes dos outros valores no conjunto de dados podem ser identificados como valores atípicos. 
+- O **sinal** contém a estrutura que queremos aprender  
+- O **ruído** dificulta a identificação dessa estrutura  
+- Um modelo ruim pode confundir ruído com padrão  
 
-  - Esses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise.
-
-. . .
-  
-- **Correção de erros de entrada de dados:** erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros.
-
-## Tratamento de ruídos
-
-<br>
-
-- **Normalização ou padronização de dados:** a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes.
-
-. . .
-  
-
-- **Utilização de técnicas de agrupamento:** técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído.
+::: {.callout-important appearance="simple"}
+**Overfitting ocorre quando o modelo aprende o ruído em vez do sinal.**
+:::
 
 
 
 
 ## Tratamento de ruídos
 
-  - **Utilização de técnicas de suavização de dados:** técnicas de suavização, como média móvel ou suavização exponencial, podem ser usadas para reduzir o impacto do ruído nos dados.
-  
-  
-![](/images/suavizacao.png){fig-align="center" width="400"}  
-  
-## Como identificar um valor atípico?
-  
-  
-  - **Gráfico box-plot**
-  
-. . .
-  
-  - **Z-score:** valores com um z-score maior do que um limite (geralmente 3) são considerados valores atípicos.
-
-. . .
-  
-  - **Intervalo interquartil (IQR):** valores abaixo de Q1 - 1,5 x IQR ou acima de Q3 + 1,5 x IQR são considerados valores atípicos.
-
-
-. . .
-
-  - **Método de DBSCAN:** é um algoritmo de clusterização que agrupa pontos de dados que estão próximos uns dos outros e identifica valores que não estão próximos a nenhum cluster, o que pode ser um sinal de valores atípicos.
+Como lidar com variações indesejadas nos dados? <br><br>
 
 
 
-## Como identificar um valor atípico?
+::: {.callout-important appearance="simple"}
+O objetivo não é eliminar o ruído, mas reduzir seu impacto sem perder o sinal.
+:::
+
+
+
+- Limpeza de dados  
+- Transformações  
+- Suavização  
+- Modelagem robusta  
+
+
+## Tratamento de ruídos
+
+### Valores atípicos (outliers)
+
+Valores muito distantes do padrão dos dados<br><br>
+
+
+::: columns
+:::: {.column width="50%"}
+
+### ❌ Remover
+
+Quando:
+
+- erro de medição  
+- erro de digitação  
+- valor impossível  
+
+👉 Ex: idade = 250  
+
+::::
+
+:::: {.column width="50%"}
+
+### ⚠️ Manter
+
+Quando:
+
+- observação real  
+- evento raro importante  
+- comportamento relevante  
+
+👉 Ex: cliente que gasta muito
+
+::::
+:::
+
+
+---
+
 
 <br>
 
-Quaisquer que sejam as técnicas empregadas, a **documentação** e o **registro das etapas de limpeza de dados** são **essenciais** para garantir a **reprodutibilidade**, **transparência**, **colaboração**, **auditabilidade** e **controle de qualidade em análises de dados**.
+::: columns
+:::: {.column width="50%"}
+
+### 🔧 Transformar
+
+- log, raiz, Box-Cox  
+- reduz impacto extremo  
+
+::::
+
+:::: {.column width="50%"}
+
+### 🤖 Modelar de forma robusta
+
+- regressão robusta, árvores de decisão, random forest  
+    - menos sensíveis a outliers  
+
+::::
+:::
+
+<br>
+
+::: {.callout-important}
+
+## Importante
+
+A decisão depende do contexto do problema.
+:::
 
 
+
+---
+
+### Como identificar valores atípicos?
+
+::: columns
+:::: {.column width="50%"}
+
+#### 📊 Métodos estatísticos
+
+- **Boxplot**  
+- **Z-score**  
+  - |z| > 3 → possível outlier  
+
+- **$IQR:$** $Q_3 - Q_1$  
+  - $< Q_1 − 1,5 \times IQR$  
+  - $> Q_3 + 1,5 \times IQR$  
+
+::::
+
+:::: {.column width="50%"}
+
+#### 🤖 Métodos baseados em dados
+
+- **DBSCAN**  
+  - identifica pontos isolados  
+  - fora de clusters  
+
+👉 útil em dados complexos
+
+::::
+:::
+
+<br>
+
+::: {.callout-warning appearance="simple"}
+Valores atípicos podem ser **erro** ou **informação relevante**.
+:::
+
+::: {.callout-tip appearance="simple"}
+Documente sempre as decisões de tratamento de dados.
+:::
+
+
+
+
+## Tratamento de ruídos
+
+### Suavização de dados
+
+Reduz variações aleatórias mantendo o padrão
+
+- Média móvel  
+- LOESS  
+- Suavização exponencial <br><br> 
+
+
+
+::: {.callout-important}
+
+## Importante
+
+Suavizar não remove dados: revela o comportamento subjacente.
+:::
+
+
+
+---
+
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 8
+#| fig-height: 5
+#| out-width: "90%"
+#| fig-align: "center"
+
+library(ggplot2)
+library(zoo)
+library(forecast)
+library(splines)
+
+set.seed(123)
+
+# -----------------------------
+# Dados simulados (com tendência + ruído)
+# -----------------------------
+x <- 1:200
+sinal <- sin(x/10) + 0.05 * x
+y <- sinal + rnorm(length(x), sd = 0.6)
+
+dados <- data.frame(x = x, y = y)
+
+# -----------------------------
+# MÉTODOS
+# -----------------------------
+
+# Média móvel
+dados$ma <- zoo::rollmean(dados$y, k = 7, fill = NA)
+
+# LOESS
+fit_loess <- loess(y ~ x, data = dados, span = 0.2)
+dados$loess <- predict(fit_loess)
+
+# Suavização exponencial
+fit_exp <- forecast::ets(dados$y)
+dados$exp <- fitted(fit_exp)
+
+# -----------------------------
+# Gráfico
+# -----------------------------
+ggplot(dados, aes(x, y)) +
   
+  # dados brutos
+  geom_point(alpha = 0.3, color = "grey60") +
+  
+  # métodos
+  geom_line(aes(y = ma, color = "Média móvel"), linewidth = 1) +
+  geom_line(aes(y = loess, color = "LOESS"), linewidth = 1.2) +
+  geom_line(aes(y = exp, color = "Exponencial"), linewidth = 1.2) +
+  
+  scale_color_manual(
+    values = c(
+      "Média móvel" = "#4C78A8",
+      "LOESS" = "#C93C3C",
+      "Exponencial" = "#2E8B57"
+    )
+  ) +
+  
+  labs(
+    title = "Comparação de métodos de suavização",
+    subtitle = "Cada método reduz o ruído de forma diferente",
+    x = "Tempo / Observação",
+    y = "Valor",
+    color = "Método"
+  ) +
+  
+  theme_minimal(base_size = 16) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ## Tratamento de ruídos -->
+
+<!-- <br> -->
+
+<!-- - **Identificação e remoção de valores atípicos:** valores que são muito diferentes dos outros valores no conjunto de dados podem ser identificados como valores atípicos.  -->
+
+<!--   - Esses valores podem ser removidos do conjunto de dados ou tratados separadamente para minimizar o impacto no resultado da análise. -->
+
+<!-- . . . -->
+
+<!-- - **Correção de erros de entrada de dados:** erros de entrada de dados podem ser corrigidos por meio da revisão manual dos dados ou por meio de algoritmos de detecção e correção automática de erros. -->
+
+<!-- ## Tratamento de ruídos -->
+
+<!-- <br> -->
+
+<!-- - **Normalização ou padronização de dados:** a normalização ou a padronização de dados pode ser usada para tornar os dados comparáveis e interpretáveis, especialmente quando os dados têm unidades diferentes ou escalas diferentes. -->
+
+<!-- . . . -->
+
+
+<!-- - **Utilização de técnicas de agrupamento:** técnicas de agrupamento, como análise de cluster, podem ser usadas para identificar padrões em um conjunto de dados e reduzir o impacto do ruído. -->
+
+
+
+
+<!-- ## Tratamento de ruídos -->
+
+<!--   - **Utilização de técnicas de suavização de dados:** técnicas de suavização, como média móvel ou suavização exponencial, podem ser usadas para reduzir o impacto do ruído nos dados. -->
+
+
+<!-- ![](/images/suavizacao.png){fig-align="center" width="400"}   -->
+  
+
 ## Integração de dados
   
 :::: {.columns}
