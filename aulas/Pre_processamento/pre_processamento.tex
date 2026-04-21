@@ -152,6 +152,22 @@
 
 \setkeys{Gin}{width=0.7\linewidth, keepaspectratio}
 \makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
 \ifdefined\contentsname
@@ -1091,120 +1107,260 @@ estatísticas.
 \begin{frame}{Tratamento de ruídos}
 \phantomsection\label{tratamento-de-ruuxeddos-2}
 \begin{center}
-\includegraphics[width=6.25in,height=\textheight,keepaspectratio]{../../images/ruido2.png}
+\includegraphics[width=0.9\linewidth,height=\textheight,keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-1-1.png}
 \end{center}
 \end{frame}
 
 \begin{frame}{Tratamento de ruídos}
 \phantomsection\label{tratamento-de-ruuxeddos-3}
 \begin{itemize}
-\item
-  \textbf{Identificação e remoção de valores atípicos:} valores que são
-  muito diferentes dos outros valores no conjunto de dados podem ser
-  identificados como valores atípicos.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Esses valores podem ser removidos do conjunto de dados ou tratados
-    separadamente para minimizar o impacto no resultado da análise.
-  \end{itemize}
-\end{itemize}
-
-\pause
-
-\begin{itemize}
 \tightlist
 \item
-  \textbf{Correção de erros de entrada de dados:} erros de entrada de
-  dados podem ser corrigidos por meio da revisão manual dos dados ou por
-  meio de algoritmos de detecção e correção automática de erros.
+  O \textbf{sinal} contém a estrutura que queremos aprender\\
+\item
+  O \textbf{ruído} dificulta a identificação dessa estrutura\\
+\item
+  Um modelo ruim pode confundir ruído com padrão
 \end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, colframe=quarto-callout-important-color-frame, breakable, left=2mm, colback=white, arc=.35mm, toprule=.15mm, leftrule=.75mm, opacityback=0]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-important-color}{\faExclamation}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+\textbf{Overfitting ocorre quando o modelo aprende o ruído em vez do
+sinal.}
+
+\end{minipage}%
+\end{tcolorbox}
 \end{frame}
 
 \begin{frame}{Tratamento de ruídos}
 \phantomsection\label{tratamento-de-ruuxeddos-4}
+Como lidar com variações indesejadas nos dados?
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, colframe=quarto-callout-important-color-frame, breakable, left=2mm, colback=white, arc=.35mm, toprule=.15mm, leftrule=.75mm, opacityback=0]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-important-color}{\faExclamation}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+O objetivo não é eliminar o ruído, mas reduzir seu impacto sem perder o
+sinal.
+
+\end{minipage}%
+\end{tcolorbox}
+
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Normalização ou padronização de dados:} a normalização ou a
-  padronização de dados pode ser usada para tornar os dados comparáveis
-  e interpretáveis, especialmente quando os dados têm unidades
-  diferentes ou escalas diferentes.
-\end{itemize}
-
-\pause
-
-\begin{itemize}
-\tightlist
+  Limpeza de dados\\
 \item
-  \textbf{Utilização de técnicas de agrupamento:} técnicas de
-  agrupamento, como análise de cluster, podem ser usadas para
-  identificar padrões em um conjunto de dados e reduzir o impacto do
-  ruído.
+  Transformações\\
+\item
+  Suavização\\
+\item
+  Modelagem robusta
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Tratamento de ruídos}
 \phantomsection\label{tratamento-de-ruuxeddos-5}
+\begin{block}{Valores atípicos (outliers)}
+\phantomsection\label{valores-atuxedpicos-outliers}
+Valores muito distantes do padrão dos dados
+\end{block}
+
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{block}{❌ Remover}
+\phantomsection\label{remover}
+Quando:
+
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Utilização de técnicas de suavização de dados:} técnicas de
-  suavização, como média móvel ou suavização exponencial, podem ser
-  usadas para reduzir o impacto do ruído nos dados.
+  erro de medição\\
+\item
+  erro de digitação\\
+\item
+  valor impossível
 \end{itemize}
 
+👉 Ex: idade = 250
+\end{block}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\begin{block}{⚠️ Manter}
+\phantomsection\label{manter}
+Quando:
+
+\begin{itemize}
+\tightlist
+\item
+  observação real\\
+\item
+  evento raro importante\\
+\item
+  comportamento relevante
+\end{itemize}
+
+👉 Ex: cliente que gasta muito
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{block}{🔧 Transformar}
+\phantomsection\label{transformar}
+\begin{itemize}
+\tightlist
+\item
+  log, raiz, Box-Cox\\
+\item
+  reduz impacto extremo
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\begin{block}{🤖 Modelar de forma robusta}
+\phantomsection\label{modelar-de-forma-robusta}
+\begin{itemize}
+\tightlist
+\item
+  regressão robusta, árvores de decisão, random forest
+
+  \begin{itemize}
+  \tightlist
+  \item
+    menos sensíveis a outliers
+  \end{itemize}
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white, titlerule=0mm, coltitle=black, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white]
+
+A decisão depende do contexto do problema.
+
+\end{tcolorbox}
+\end{frame}
+
+\begin{frame}
+\begin{block}{Como identificar valores atípicos?}
+\phantomsection\label{como-identificar-valores-atuxedpicos}
+\begin{columns}[T]
+\begin{column}{0.5\linewidth}
+\begin{block}{📊 Métodos estatísticos}
+\phantomsection\label{muxe9todos-estatuxedsticos}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Boxplot}\\
+\item
+  \textbf{Z-score}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbar z\textbar{} \textgreater{} 3 → possível outlier
+  \end{itemize}
+\item
+  \textbf{\(IQR:\)} \(Q_3 - Q_1\)
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \(< Q_1 − 1,5 \times IQR\)\\
+  \item
+    \(> Q_3 + 1,5 \times IQR\)
+  \end{itemize}
+\end{itemize}
+\end{block}
+\end{column}
+
+\begin{column}{0.5\linewidth}
+\begin{block}{🤖 Métodos baseados em dados}
+\phantomsection\label{muxe9todos-baseados-em-dados}
+\begin{itemize}
+\tightlist
+\item
+  \textbf{DBSCAN}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    identifica pontos isolados\\
+  \item
+    fora de clusters
+  \end{itemize}
+\end{itemize}
+
+👉 útil em dados complexos
+\end{block}
+\end{column}
+\end{columns}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, colframe=quarto-callout-warning-color-frame, breakable, left=2mm, colback=white, arc=.35mm, toprule=.15mm, leftrule=.75mm, opacityback=0]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+Valores atípicos podem ser \textbf{erro} ou \textbf{informação
+relevante}.
+
+\end{minipage}%
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, bottomrule=.15mm, colframe=quarto-callout-tip-color-frame, breakable, left=2mm, colback=white, arc=.35mm, toprule=.15mm, leftrule=.75mm, opacityback=0]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-tip-color}{\faLightbulb}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+Documente sempre as decisões de tratamento de dados.
+
+\end{minipage}%
+\end{tcolorbox}
+\end{block}
+\end{frame}
+
+\begin{frame}{Tratamento de ruídos}
+\phantomsection\label{tratamento-de-ruuxeddos-6}
+\begin{block}{Suavização de dados}
+\phantomsection\label{suavizauxe7uxe3o-de-dados}
+Reduz variações aleatórias mantendo o padrão
+
+\begin{itemize}
+\tightlist
+\item
+  Média móvel\\
+\item
+  LOESS\\
+\item
+  Suavização exponencial
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, rightrule=.15mm, opacitybacktitle=0.6, left=2mm, colback=white, titlerule=0mm, coltitle=black, bottomtitle=1mm, colframe=quarto-callout-important-color-frame, breakable, arc=.35mm, toptitle=1mm, toprule=.15mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, opacityback=0, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white]
+
+Suavizar não remove dados: revela o comportamento subjacente.
+
+\end{tcolorbox}
+\end{block}
+\end{frame}
+
+\begin{frame}
 \begin{center}
-\includegraphics[width=4.16667in,height=\textheight,keepaspectratio]{../../images/suavizacao.png}
+\includegraphics[width=0.9\linewidth,height=\textheight,keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-2-1.png}
 \end{center}
-\end{frame}
-
-\begin{frame}{Como identificar um valor atípico?}
-\phantomsection\label{como-identificar-um-valor-atuxedpico}
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Gráfico box-plot}
-\end{itemize}
-
-\pause
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Z-score:} valores com um z-score maior do que um limite
-  (geralmente 3) são considerados valores atípicos.
-\end{itemize}
-
-\pause
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Intervalo interquartil (IQR):} valores abaixo de Q1 - 1,5 x
-  IQR ou acima de Q3 + 1,5 x IQR são considerados valores atípicos.
-\end{itemize}
-
-\pause
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Método de DBSCAN:} é um algoritmo de clusterização que agrupa
-  pontos de dados que estão próximos uns dos outros e identifica valores
-  que não estão próximos a nenhum cluster, o que pode ser um sinal de
-  valores atípicos.
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Como identificar um valor atípico?}
-\phantomsection\label{como-identificar-um-valor-atuxedpico-1}
-Quaisquer que sejam as técnicas empregadas, a \textbf{documentação} e o
-\textbf{registro das etapas de limpeza de dados} são \textbf{essenciais}
-para garantir a \textbf{reprodutibilidade}, \textbf{transparência},
-\textbf{colaboração}, \textbf{auditabilidade} e \textbf{controle de
-qualidade em análises de dados}.
 \end{frame}
 
 \begin{frame}{Integração de dados}
@@ -1646,7 +1802,7 @@ a variância dos dados.
 \end{column}
 
 \begin{column}{0.5\linewidth}
-\pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-1-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-3-1.png}}
 \end{column}
 \end{columns}
 
@@ -1684,7 +1840,7 @@ facilitando a interpretação.
 \end{column}
 
 \begin{column}{0.5\linewidth}
-\pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-2-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-4-1.png}}
 \end{column}
 \end{columns}
 
@@ -1724,7 +1880,7 @@ a qualidade da modelagem e a precisão das previsões.
 \end{column}
 
 \begin{column}{0.5\linewidth}
-\pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-3-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-5-1.png}}
 \end{column}
 \end{columns}
 
@@ -1770,7 +1926,7 @@ semelhante à transformação de Box-Cox.
 \end{column}
 
 \begin{column}{0.5\linewidth}
-\pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-4-1.png}}
+\pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-6-1.png}}
 \end{column}
 \end{columns}
 
