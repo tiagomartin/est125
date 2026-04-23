@@ -5,8 +5,8 @@ project:
 website:
   page-navigation: true
   title: "EST125 - Introdução à Mineração de Dados"
-  description: "Homepage da disciplina EST125 - Introdução à Mineração de Dados, 2025/1."
-  site-url: "http://professortp.com.br/est1125/"
+  description: "Homepage da disciplina EST125 - Introdução à Mineração de Dados, 2026/1."
+  site-url: "http://professortp.com.br/est125/"
 
   repo-url: "https://github.com/tiagomartin/est125"
   repo-actions: [edit, issue]
@@ -15,7 +15,7 @@ website:
   
   page-footer:
     right: "Página construída usando [Quarto](https://quarto.org/)."
-    left: "&copy; Copyright 2025, Tiago Pereira"
+    left: "&copy; Copyright 2026, Tiago Pereira"
 
 
   sidebar:
