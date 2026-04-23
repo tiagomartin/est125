@@ -1552,7 +1552,7 @@ Trata-se de uma transformação **monotônica**, isto é, não afeta a **ordem d
 
 ::: {.column width="50%"}
  
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r}
 #| echo: false
 #| fig-width: 7
 #| fig-height: 3.8
@@ -1626,6 +1626,7 @@ Assim como a transformação logarítimica, a transformação de raiz quadrada �
 
 - transformação **paramétrica**  
 - depende do parâmetro $\lambda$ 
+
 :::
 
 ::: {.column width="55%"}
@@ -1666,6 +1667,7 @@ p1 + p2
 ```
 
 :::
+
 ::::
 
 <p align="center"> 
@@ -1712,6 +1714,7 @@ Esta é uma técnica de transformação de dados útil usada para estabilizar a 
 
 :::: {.columns}
 ::: {.column width="50%"}
+
 ### 👉 Yeo-Johnson
 
 - semelhante ao **Box-Cox**  
@@ -1723,6 +1726,7 @@ Esta é uma técnica de transformação de dados útil usada para estabilizar a 
 ✔ funciona com **valores negativos**  
 ✔ mais flexível que Box-Cox  
 :::
+
 ::: {.column width="50%"}
 ```{r}
 #| echo: false
@@ -1759,7 +1763,9 @@ p2 <- ggplot(df, aes(x = transformado, y = after_stat(density))) +
 p1 + p2
 ```
 :::
+
 ::::
+
 <p align="center"> 
 🚀 **Insight:** Yeo-Johnson = Box-Cox sem restrição de positividade
 </p>
