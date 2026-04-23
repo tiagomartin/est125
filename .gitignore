@@ -62,3 +62,4 @@ __pycache__/
 *.nav
 *.snm
 /.quarto/
+.positai
