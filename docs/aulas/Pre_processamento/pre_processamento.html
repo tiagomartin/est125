@@ -1474,7 +1474,12 @@ Distância interquartílica
 <h2>Transformação de dados</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>👉 <strong>Transformação logarítmica:</strong> Usada para reduzir a assimetria e a variância dos dados.</p>
+<h3 id="transformação-logarítmica">👉 <strong>Transformação logarítmica</strong></h3>
+<ul>
+<li>reduz <strong>assimetria</strong></li>
+<li>estabiliza a <strong>variância</strong></li>
+<li>comprime valores extremos</li>
+</ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
@@ -1505,7 +1510,12 @@ y = \log(x)
 <h2>Transformação de dados</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>👉 <strong>Transformação de raiz quadrada:</strong> Similar à transformação logarítmica, com o benefício de manter a escala original dos dados, facilitando a interpretação.</p>
+<h3 id="raiz-quadrada">👉 Raiz quadrada</h3>
+<ul>
+<li>reduz <strong>assimetria</strong></li>
+<li>diminui a <strong>variância</strong></li>
+<li>mantém melhor a <strong>escala original</strong></li>
+</ul>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
@@ -1535,9 +1545,20 @@ y = \sqrt x
 <section id="transformação-de-dados-7" class="slide level2">
 <h2>Transformação de dados</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<p>👉 A <strong>transformação de Box-Cox</strong> é uma técnica para transformar variáveis em modelos preditivos que é amplamente utilizada para melhorar a qualidade da modelagem e a precisão das previsões.</p>
-</div><div class="column" style="width:50%;">
+<div class="column" style="width:45%;">
+<h3 id="box-cox">👉 Box-Cox</h3>
+<ul>
+<li>reduz <strong>assimetria</strong></li>
+<li>estabiliza a <strong>variância</strong></li>
+<li>melhora o ajuste de modelos<br><br></li>
+</ul>
+<h3 id="característica">💡 Característica</h3>
+<ul>
+<li>transformação <strong>paramétrica</strong><br>
+</li>
+<li>depende do parâmetro <span class="math inline">\(\lambda\)</span></li>
+</ul>
+</div><div class="column" style="width:55%;">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -1549,7 +1570,7 @@ y = \sqrt x
 </div>
 </div></div>
 <p align="center">
-É uma <strong>técnica paramétrica</strong> que depende de um <strong>parâmetro lambda</strong> que é estimado a partir dos dados, podendo ser usada apenas com <strong>variáveis não negativas</strong>.
+⚠️ <strong>Restrição:</strong> Só pode ser aplicada a dados positivos
 </p>
 </section>
 <section id="transformação-de-dados-8" class="slide level2">
@@ -1574,7 +1595,17 @@ y =
 <h2>Transformação de dados</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><br> 👉 A <strong>transformação Yeo-Johnson</strong> é uma técnica de transformação semelhante à transformação de Box-Cox.</p>
+<h3 id="yeo-johnson">👉 Yeo-Johnson</h3>
+<ul>
+<li>semelhante ao <strong>Box-Cox</strong><br>
+</li>
+<li>reduz <strong>assimetria</strong><br>
+</li>
+<li>estabiliza a <strong>variância</strong><br><br></li>
+</ul>
+<h3 id="diferença-chave">💡 Diferença chave</h3>
+<p>✔ funciona com <strong>valores negativos</strong><br>
+✔ mais flexível que Box-Cox</p>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
@@ -1587,7 +1618,7 @@ y =
 </div>
 </div></div>
 <p align="center">
-No entanto, a transformação Yeo-Johnson é mais flexível porque pode ser usada para <strong>variáveis que podem assumir valores negativos</strong>.
+🚀 <strong>Insight:</strong> Yeo-Johnson = Box-Cox sem restrição de positividade
 </p>
 </section>
 <section id="transformação-de-dados-10" class="slide level2">
@@ -1603,6 +1634,48 @@ y =
   \end{cases}
 \]</span></p>
 <p>onde <span class="math inline">\(x\)</span> é a variável a ser transformada e <span class="math inline">\(y\)</span> é a variável transformada.</p>
+</section>
+<section id="qual-transformação-usar" class="slide level2">
+<h2>Qual transformação usar?</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<h3 id="logx">🔵 log(x)</h3>
+<p><strong>Quando usar</strong></p>
+<ul>
+<li>caudas longas<br>
+</li>
+<li>alta assimetria</li>
+</ul>
+<p>✔ comprime extremos</p>
+<p>❌ apenas valores positivos</p>
+</div><div class="column" style="width:25%;">
+<h3 id="sqrtx">🟢 <span class="math inline">\(\sqrt{x}\)</span></h3>
+<p><strong>Quando usar</strong></p>
+<ul>
+<li>variação moderada</li>
+</ul>
+<p>✔ mantém escala<br>
+✔ fácil interpretação</p>
+<p>❌ menos potente</p>
+</div><div class="column" style="width:25%;">
+<h3 id="box-cox-1">🟣 Box-Cox</h3>
+<p><strong>Quando usar</strong></p>
+<ul>
+<li>dados positivos</li>
+</ul>
+<p>✔ escolha automática<br>
+✔ melhora o ajuste</p>
+<p>❌ apenas positivos</p>
+</div><div class="column" style="width:25%;">
+<h3 id="yeo-johnson-1">🟠 Yeo-Johnson</h3>
+<p><strong>Quando usar</strong></p>
+<ul>
+<li>dados gerais</li>
+</ul>
+<p>✔ aceita negativos<br>
+✔ mais flexível<br>
+✔ alternativa moderna</p>
+</div></div>
 </section>
 <section id="discretização-de-dados" class="slide level2">
 <h2>Discretização de dados</h2>

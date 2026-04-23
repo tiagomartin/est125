@@ -1123,7 +1123,7 @@ estatísticas.
   Um modelo ruim pode confundir ruído com padrão
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, colframe=quarto-callout-important-color-frame, opacityback=0, breakable, rightrule=.15mm, leftrule=.75mm, left=2mm, bottomrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomrule=.15mm, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-important-color-frame, colback=white, breakable, left=2mm, leftrule=.75mm, opacityback=0]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-important-color}{\faExclamation}
 \end{minipage}%
@@ -1140,7 +1140,7 @@ sinal.}
 \phantomsection\label{tratamento-de-ruuxeddos-4}
 Como lidar com variações indesejadas nos dados?
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, colframe=quarto-callout-important-color-frame, opacityback=0, breakable, rightrule=.15mm, leftrule=.75mm, left=2mm, bottomrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomrule=.15mm, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-important-color-frame, colback=white, breakable, left=2mm, leftrule=.75mm, opacityback=0]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-important-color}{\faExclamation}
 \end{minipage}%
@@ -1246,7 +1246,7 @@ Quando:
 \end{column}
 \end{columns}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, coltitle=black, breakable, toptitle=1mm, rightrule=.15mm, left=2mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, colback=white, colframe=quarto-callout-important-color-frame, opacityback=0, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, titlerule=0mm, rightrule=.15mm, colframe=quarto-callout-important-color-frame, breakable, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, bottomrule=.15mm, arc=.35mm, left=2mm, colback=white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, opacityback=0, bottomtitle=1mm, opacitybacktitle=0.6]
 
 A decisão depende do contexto do problema.
 
@@ -1308,7 +1308,7 @@ A decisão depende do contexto do problema.
 \end{column}
 \end{columns}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, colframe=quarto-callout-warning-color-frame, opacityback=0, breakable, rightrule=.15mm, leftrule=.75mm, left=2mm, bottomrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomrule=.15mm, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-warning-color-frame, colback=white, breakable, left=2mm, leftrule=.75mm, opacityback=0]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-warning-color}{\faExclamationTriangle}
 \end{minipage}%
@@ -1320,7 +1320,7 @@ relevante}.
 \end{minipage}%
 \end{tcolorbox}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, colback=white, colframe=quarto-callout-tip-color-frame, opacityback=0, breakable, rightrule=.15mm, leftrule=.75mm, left=2mm, bottomrule=.15mm]
+\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, bottomrule=.15mm, arc=.35mm, rightrule=.15mm, colframe=quarto-callout-tip-color-frame, colback=white, breakable, left=2mm, leftrule=.75mm, opacityback=0]
 \begin{minipage}[t]{5.5mm}
 \textcolor{quarto-callout-tip-color}{\faLightbulb}
 \end{minipage}%
@@ -1349,7 +1349,7 @@ Reduz variações aleatórias mantendo o padrão
   Suavização exponencial
 \end{itemize}
 
-\begin{tcolorbox}[enhanced jigsaw, toprule=.15mm, arc=.35mm, coltitle=black, breakable, toptitle=1mm, rightrule=.15mm, left=2mm, opacitybacktitle=0.6, colbacktitle=quarto-callout-important-color!10!white, colback=white, colframe=quarto-callout-important-color-frame, opacityback=0, titlerule=0mm, leftrule=.75mm, bottomtitle=1mm, bottomrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}]
+\begin{tcolorbox}[enhanced jigsaw, coltitle=black, toprule=.15mm, titlerule=0mm, rightrule=.15mm, colframe=quarto-callout-important-color-frame, breakable, leftrule=.75mm, colbacktitle=quarto-callout-important-color!10!white, toptitle=1mm, bottomrule=.15mm, arc=.35mm, left=2mm, colback=white, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Importante}, opacityback=0, bottomtitle=1mm, opacitybacktitle=0.6]
 
 Suavizar não remove dados: revela o comportamento subjacente.
 
@@ -1797,8 +1797,18 @@ Distância interquartílica
 \phantomsection\label{transformauxe7uxe3o-de-dados-3}
 \begin{columns}[T]
 \begin{column}{0.5\linewidth}
-👉 \textbf{Transformação logarítmica:} Usada para reduzir a assimetria e
-a variância dos dados.
+\begin{block}{👉 \textbf{Transformação logarítmica}}
+\phantomsection\label{transformauxe7uxe3o-logaruxedtmica}
+\begin{itemize}
+\tightlist
+\item
+  reduz \textbf{assimetria}
+\item
+  estabiliza a \textbf{variância}
+\item
+  comprime valores extremos
+\end{itemize}
+\end{block}
 \end{column}
 
 \begin{column}{0.5\linewidth}
@@ -1834,9 +1844,18 @@ capturar a relação entre as variáveis.
 \phantomsection\label{transformauxe7uxe3o-de-dados-5}
 \begin{columns}[T]
 \begin{column}{0.5\linewidth}
-👉 \textbf{Transformação de raiz quadrada:} Similar à transformação
-logarítmica, com o benefício de manter a escala original dos dados,
-facilitando a interpretação.
+\begin{block}{👉 Raiz quadrada}
+\phantomsection\label{raiz-quadrada}
+\begin{itemize}
+\tightlist
+\item
+  reduz \textbf{assimetria}
+\item
+  diminui a \textbf{variância}
+\item
+  mantém melhor a \textbf{escala original}
+\end{itemize}
+\end{block}
 \end{column}
 
 \begin{column}{0.5\linewidth}
@@ -1873,20 +1892,38 @@ ordem dos dados.
 \begin{frame}{Transformação de dados}
 \phantomsection\label{transformauxe7uxe3o-de-dados-7}
 \begin{columns}[T]
-\begin{column}{0.5\linewidth}
-👉 A \textbf{transformação de Box-Cox} é uma técnica para transformar
-variáveis em modelos preditivos que é amplamente utilizada para melhorar
-a qualidade da modelagem e a precisão das previsões.
+\begin{column}{0.45\linewidth}
+\begin{block}{👉 Box-Cox}
+\phantomsection\label{box-cox}
+\begin{itemize}
+\tightlist
+\item
+  reduz \textbf{assimetria}
+\item
+  estabiliza a \textbf{variância}
+\item
+  melhora o ajuste de modelos
+\end{itemize}
+\end{block}
+
+\begin{block}{💡 Característica}
+\phantomsection\label{caracteruxedstica}
+\begin{itemize}
+\tightlist
+\item
+  transformação \textbf{paramétrica}\\
+\item
+  depende do parâmetro \(\lambda\)
+\end{itemize}
+\end{block}
 \end{column}
 
-\begin{column}{0.5\linewidth}
+\begin{column}{0.55\linewidth}
 \pandocbounded{\includegraphics[keepaspectratio]{pre_processamento_files/figure-beamer/unnamed-chunk-5-1.png}}
 \end{column}
 \end{columns}
 
-É uma \textbf{técnica paramétrica} que depende de um \textbf{parâmetro
-lambda} que é estimado a partir dos dados, podendo ser usada apenas com
-\textbf{variáveis não negativas}.
+⚠️ \textbf{Restrição:} Só pode ser aplicada a dados positivos
 \end{frame}
 
 \begin{frame}{Transformação de dados}
@@ -1921,8 +1958,24 @@ a variância, tornar os dados mais semelhantes à distribuição normal.
 \phantomsection\label{transformauxe7uxe3o-de-dados-9}
 \begin{columns}[T]
 \begin{column}{0.5\linewidth}
-👉 A \textbf{transformação Yeo-Johnson} é uma técnica de transformação
-semelhante à transformação de Box-Cox.
+\begin{block}{👉 Yeo-Johnson}
+\phantomsection\label{yeo-johnson}
+\begin{itemize}
+\tightlist
+\item
+  semelhante ao \textbf{Box-Cox}\\
+\item
+  reduz \textbf{assimetria}\\
+\item
+  estabiliza a \textbf{variância}
+\end{itemize}
+\end{block}
+
+\begin{block}{💡 Diferença chave}
+\phantomsection\label{diferenuxe7a-chave}
+✔ funciona com \textbf{valores negativos}\\
+✔ mais flexível que Box-Cox
+\end{block}
 \end{column}
 
 \begin{column}{0.5\linewidth}
@@ -1930,8 +1983,7 @@ semelhante à transformação de Box-Cox.
 \end{column}
 \end{columns}
 
-No entanto, a transformação Yeo-Johnson é mais flexível porque pode ser
-usada para \textbf{variáveis que podem assumir valores negativos}.
+🚀 \textbf{Insight:} Yeo-Johnson = Box-Cox sem restrição de positividade
 \end{frame}
 
 \begin{frame}{Transformação de dados}
@@ -1950,6 +2002,83 @@ y =
 
 onde \(x\) é a variável a ser transformada e \(y\) é a variável
 transformada.
+\end{frame}
+
+\begin{frame}{Qual transformação usar?}
+\phantomsection\label{qual-transformauxe7uxe3o-usar}
+\begin{columns}[T]
+\begin{column}{0.25\linewidth}
+\begin{block}{🔵 log(x)}
+\phantomsection\label{logx}
+\textbf{Quando usar}
+
+\begin{itemize}
+\tightlist
+\item
+  caudas longas\\
+\item
+  alta assimetria
+\end{itemize}
+
+✔ comprime extremos
+
+❌ apenas valores positivos
+\end{block}
+\end{column}
+
+\begin{column}{0.25\linewidth}
+\begin{block}{🟢 \(\sqrt{x}\)}
+\phantomsection\label{sqrtx}
+\textbf{Quando usar}
+
+\begin{itemize}
+\tightlist
+\item
+  variação moderada
+\end{itemize}
+
+✔ mantém escala\\
+✔ fácil interpretação
+
+❌ menos potente
+\end{block}
+\end{column}
+
+\begin{column}{0.25\linewidth}
+\begin{block}{🟣 Box-Cox}
+\phantomsection\label{box-cox-1}
+\textbf{Quando usar}
+
+\begin{itemize}
+\tightlist
+\item
+  dados positivos
+\end{itemize}
+
+✔ escolha automática\\
+✔ melhora o ajuste
+
+❌ apenas positivos
+\end{block}
+\end{column}
+
+\begin{column}{0.25\linewidth}
+\begin{block}{🟠 Yeo-Johnson}
+\phantomsection\label{yeo-johnson-1}
+\textbf{Quando usar}
+
+\begin{itemize}
+\tightlist
+\item
+  dados gerais
+\end{itemize}
+
+✔ aceita negativos\\
+✔ mais flexível\\
+✔ alternativa moderna
+\end{block}
+\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Discretização de dados}

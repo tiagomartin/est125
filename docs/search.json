@@ -1113,7 +1113,7 @@
     "href": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-3",
     "title": "Pré-processamento de dados",
     "section": "Transformação de dados",
-    "text": "Transformação de dados\n\n\n👉 Transformação logarítmica: Usada para reduzir a assimetria e a variância dos dados.\n\n\n\n\n\n\n\n\n\n\n\n\nÉ especialmente útil quando os dados estão distribuídos de forma exponencial ou quando há um grande intervalo de valores entre as observações."
+    "text": "Transformação de dados\n\n\n👉 Transformação logarítmica\n\nreduz assimetria\nestabiliza a variância\ncomprime valores extremos\n\n\n\n\n\n\n\n\n\n\n\n\n\nÉ especialmente útil quando os dados estão distribuídos de forma exponencial ou quando há um grande intervalo de valores entre as observações."
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-4",
@@ -1127,7 +1127,7 @@
     "href": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-5",
     "title": "Pré-processamento de dados",
     "section": "Transformação de dados",
-    "text": "Transformação de dados\n\n\n👉 Transformação de raiz quadrada: Similar à transformação logarítmica, com o benefício de manter a escala original dos dados, facilitando a interpretação.\n\n\n\n\n\n\n\n\n\n\n\n\nA transformação logarítmica é mais adequada para dados com caudas longas e uma grande variação, enquanto a transformação da raiz quadrada é mais adequada para dados com uma variação moderada. Além disso, a o uso de logarítmos tem o efeito de estabilizar a variância dos dados, enquanto a o uso da raiz quadrada tem o efeito de reduzir a variância dos dados."
+    "text": "Transformação de dados\n\n\n👉 Raiz quadrada\n\nreduz assimetria\ndiminui a variância\nmantém melhor a escala original\n\n\n\n\n\n\n\n\n\n\n\n\n\nA transformação logarítmica é mais adequada para dados com caudas longas e uma grande variação, enquanto a transformação da raiz quadrada é mais adequada para dados com uma variação moderada. Além disso, a o uso de logarítmos tem o efeito de estabilizar a variância dos dados, enquanto a o uso da raiz quadrada tem o efeito de reduzir a variância dos dados."
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-6",
@@ -1141,7 +1141,7 @@
     "href": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-7",
     "title": "Pré-processamento de dados",
     "section": "Transformação de dados",
-    "text": "Transformação de dados\n\n\n👉 A transformação de Box-Cox é uma técnica para transformar variáveis em modelos preditivos que é amplamente utilizada para melhorar a qualidade da modelagem e a precisão das previsões.\n\n\n\n\n\n\n\n\n\n\n\n\nÉ uma técnica paramétrica que depende de um parâmetro lambda que é estimado a partir dos dados, podendo ser usada apenas com variáveis não negativas."
+    "text": "Transformação de dados\n\n\n👉 Box-Cox\n\nreduz assimetria\nestabiliza a variância\nmelhora o ajuste de modelos\n\n💡 Característica\n\ntransformação paramétrica\n\ndepende do parâmetro \\(\\lambda\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n⚠️ Restrição: Só pode ser aplicada a dados positivos"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-8",
@@ -1155,7 +1155,7 @@
     "href": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-9",
     "title": "Pré-processamento de dados",
     "section": "Transformação de dados",
-    "text": "Transformação de dados\n\n\n 👉 A transformação Yeo-Johnson é uma técnica de transformação semelhante à transformação de Box-Cox.\n\n\n\n\n\n\n\n\n\n\n\n\nNo entanto, a transformação Yeo-Johnson é mais flexível porque pode ser usada para variáveis que podem assumir valores negativos."
+    "text": "Transformação de dados\n\n\n👉 Yeo-Johnson\n\nsemelhante ao Box-Cox\n\nreduz assimetria\n\nestabiliza a variância\n\n💡 Diferença chave\n✔ funciona com valores negativos\n✔ mais flexível que Box-Cox\n\n\n\n\n\n\n\n\n\n\n\n\n🚀 Insight: Yeo-Johnson = Box-Cox sem restrição de positividade"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-10",
@@ -1163,6 +1163,13 @@
     "title": "Pré-processamento de dados",
     "section": "Transformação de dados",
     "text": "Transformação de dados\nA transformação Yeo-Johnson é definida pela seguinte equação:\n\\[\ny =\n  \\begin{cases}\n      \\dfrac{(x + 1)^\\lambda - 1}{\\lambda}, & se \\ x \\geq  0, \\ \\lambda \\neq 0 \\\\\n      \\ln(x + 1), & se \\ x \\geq 0 \\ \\lambda = 0 \\\\\n      \\dfrac{-((-x + 1)^{(2 - \\lambda)} - 1)}{(2 - \\lambda)}, & se \\ x &lt;  0, \\ \\lambda \\neq 2 \\\\\n      -\\ln(-x+1) & se \\ x &lt;  0, \\ \\lambda = 2\n  \\end{cases}\n\\]\nonde \\(x\\) é a variável a ser transformada e \\(y\\) é a variável transformada."
+  },
+  {
+    "objectID": "aulas/Pre_processamento/pre_processamento.html#qual-transformação-usar",
+    "href": "aulas/Pre_processamento/pre_processamento.html#qual-transformação-usar",
+    "title": "Pré-processamento de dados",
+    "section": "Qual transformação usar?",
+    "text": "Qual transformação usar?\n\n\n🔵 log(x)\nQuando usar\n\ncaudas longas\n\nalta assimetria\n\n✔ comprime extremos\n❌ apenas valores positivos\n\n🟢 \\(\\sqrt{x}\\)\nQuando usar\n\nvariação moderada\n\n✔ mantém escala\n✔ fácil interpretação\n❌ menos potente\n\n🟣 Box-Cox\nQuando usar\n\ndados positivos\n\n✔ escolha automática\n✔ melhora o ajuste\n❌ apenas positivos\n\n🟠 Yeo-Johnson\nQuando usar\n\ndados gerais\n\n✔ aceita negativos\n✔ mais flexível\n✔ alternativa moderna"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#discretização-de-dados",
