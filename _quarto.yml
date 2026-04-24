@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "**/*.qmd"
+    - "!aulas/Analise_preditiva/python-env/**"
 
 website:
   page-navigation: true
@@ -36,7 +39,7 @@ website:
       #- exercicios.qmd
       - analises.qmd
       - cronograma.qmd
-      #- material.qmd
+      - material.qmd
       - plano.qmd
       - projeto.qmd
 
@@ -52,7 +55,6 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
-    embed-resources: true
 
 freeze: auto
 

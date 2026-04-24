@@ -379,7 +379,7 @@ A **avaliação de modelos** de machine learning é como um **detetive investiga
 <span style='font-size:70px;'>&#129300;</span> O nosso modelo é um **herói** ou um **impostor**?
 </p>
 
-![](https://media4.giphy.com/media/ek4CUx2FONgHaMz9V5/giphy-downsized-medium.gif){fig-align="center" width="1000px"}
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTY3YnFzZTRlcjdzeHc1azR3amcweHp4aXpjbml6ZXR0OTFpNHA4NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tRbArwMAYUvy52WTo8/giphy.gif){fig-align="center" width="1000px"}
 
 
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://professortp.com.br/est125/projeto.html</loc>
-    <lastmod>2026-04-09T18:55:36.678Z</lastmod>
+    <loc>http://professortp.com.br/est125/projeto/projeto_avaliativo.html</loc>
+    <lastmod>2026-04-24T15:07:44.620Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est125/programacao/semana-9.html</loc>
@@ -46,31 +46,23 @@
   </url>
   <url>
     <loc>http://professortp.com.br/est125/material.html</loc>
-    <lastmod>2025-06-17T00:38:03.170Z</lastmod>
+    <lastmod>2026-04-24T15:05:59.385Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est125/cronograma.html</loc>
-    <lastmod>2026-04-21T12:28:01.531Z</lastmod>
+    <lastmod>2026-04-24T15:09:44.602Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/aulas/regras_associacao/associacao.html</loc>
-    <lastmod>2025-08-12T19:27:48.951Z</lastmod>
+    <loc>http://professortp.com.br/est125/aulas/Reconhecimento_padroes/padroes.html</loc>
+    <lastmod>2025-07-31T13:20:41.528Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/aulas/pre_processamento/pre_processamento.html</loc>
-    <lastmod>2026-04-23T15:43:53.206Z</lastmod>
+    <loc>http://professortp.com.br/est125/aulas/Conceitos iniciais/conceitos_iniciais.html</loc>
+    <lastmod>2026-04-09T13:47:39.618Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/aulas/analise_preditiva/python-env/Tools/scripts/reindent.html</loc>
-    <lastmod>2025-04-08T15:21:55.000Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est125/aulas/analise_preditiva/python-env/Lib/site-packages/pandas/tests/indexes/period/test_constructors.html</loc>
-    <lastmod>2025-04-12T04:11:02.233Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est125/aulas/analise_preditiva/python-env/Lib/site-packages/numpy/random/LICENSE.html</loc>
-    <lastmod>2024-11-22T22:35:48.578Z</lastmod>
+    <loc>http://professortp.com.br/est125/aulas.html</loc>
+    <lastmod>2026-04-24T14:40:41.680Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est125/analise_dados/space_titanic_workflow.html</loc>
@@ -89,40 +81,28 @@
     <lastmod>2025-05-02T22:18:53.023Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/analises.html</loc>
-    <lastmod>2026-04-14T18:38:59.610Z</lastmod>
-  </url>
-  <url>
     <loc>http://professortp.com.br/est125/analise_dados/space_titanic.html</loc>
-    <lastmod>2025-06-28T14:55:52.711Z</lastmod>
+    <lastmod>2026-04-24T14:07:28.883Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est125/analise_dados/space_titanic_regras.html</loc>
     <lastmod>2025-08-12T18:34:08.147Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/aulas/analise_preditiva/preditiva.html</loc>
-    <lastmod>2025-06-23T17:48:20.392Z</lastmod>
+    <loc>http://professortp.com.br/est125/analises.html</loc>
+    <lastmod>2026-04-24T15:12:23.034Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/aulas/analise_preditiva/python-env/Lib/site-packages/pandas/tests/indexes/datetimes/test_indexing.html</loc>
-    <lastmod>2025-04-12T04:11:02.202Z</lastmod>
+    <loc>http://professortp.com.br/est125/aulas/Analise_preditiva/preditiva.html</loc>
+    <lastmod>2026-04-24T14:31:40.676Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/aulas/analise_preditiva/python-env/Lib/site-packages/pandas/tests/indexes/period/test_indexing.html</loc>
-    <lastmod>2025-04-12T04:11:02.233Z</lastmod>
+    <loc>http://professortp.com.br/est125/aulas/Pre_processamento/pre_processamento.html</loc>
+    <lastmod>2026-04-23T19:38:13.510Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/aulas/conceitos iniciais/conceitos_iniciais.html</loc>
-    <lastmod>2026-04-09T13:47:39.618Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est125/aulas/reconhecimento_padroes/padroes.html</loc>
-    <lastmod>2025-07-31T13:20:41.528Z</lastmod>
-  </url>
-  <url>
-    <loc>http://professortp.com.br/est125/aulas.html</loc>
-    <lastmod>2026-04-14T17:42:29.095Z</lastmod>
+    <loc>http://professortp.com.br/est125/aulas/Regras_associacao/associacao.html</loc>
+    <lastmod>2025-08-12T19:27:48.951Z</lastmod>
   </url>
   <url>
     <loc>http://professortp.com.br/est125/index.html</loc>
@@ -169,7 +149,7 @@
     <lastmod>2025-06-23T22:18:16.796Z</lastmod>
   </url>
   <url>
-    <loc>http://professortp.com.br/est125/projeto/projeto_avaliativo.html</loc>
-    <lastmod>2026-04-09T19:01:22.959Z</lastmod>
+    <loc>http://professortp.com.br/est125/projeto.html</loc>
+    <lastmod>2026-04-09T18:55:36.678Z</lastmod>
   </url>
 </urlset>

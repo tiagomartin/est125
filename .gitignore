@@ -1,65 +1,73 @@
 # =========================
-# 🔵 Quarto
+# Quarto / Render
 # =========================
 .quarto/
+_quarto/
+_freeze/
 *_files/
-*_cache/
-_site/
+*.nb.html
 
 # =========================
-# 🔵 R / RStudio
+# R
 # =========================
-.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
+.Rproj.user/
+*.Rproj
+
+# renv (opcional: manter lockfile)
+renv/library/
+renv/python/
+renv/staging/
+renv/cache/
+!renv.lock
 
 # =========================
-# 🔵 knitr / execução
+# Python
 # =========================
-*.utf8.md
-*.knit.md
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambientes Python
+.venv/
+venv/
+env/
+python-env/
+**/python-env/
+**/.venv/
+
+# Jupyter
+.ipynb_checkpoints/
 
 # =========================
-# 🔵 Logs
+# Sistema
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
 # =========================
 *.log
 
 # =========================
-# 🔵 Sistema (Windows)
-# =========================
-Thumbs.db
-desktop.ini
-
-# =========================
-# 🔵 Sistema (Mac)
-# =========================
-.DS_Store
-
-# =========================
-# 🔵 Python (caso use)
-# =========================
-__pycache__/
-*.pyc
-
-# =========================
-# 🔵 Arquivos grandes (opcional)
-# =========================
-*.rds
-*.rda
-
-# =========================
-# 🔵 VS Code (se usar)
+# IDE
 # =========================
 .vscode/
+.idea/
 
 # =========================
-# 🔵 PDFs gerados automaticamente (opcional)
+# Build / temporários
 # =========================
 *.aux
-*.out
 *.toc
-*.nav
+*.out
 *.snm
+*.nav
+*.fls
+*.fdb_latexmk
 /.quarto/
 .positai

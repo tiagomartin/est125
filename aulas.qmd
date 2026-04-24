@@ -37,7 +37,9 @@ format:
         }
         </style>
 ---
-Esta página contém aulas que serão apresentadas ao longo do semestre. Você pode baixar as aulas em uma versão PDF.
+<!-- Esta página contém aulas que serão apresentadas ao longo do semestre. Você pode baixar as aulas em uma versão PDF. -->
+
+Esta página contém aulas que serão apresentadas ao longo do semestre.
 
 ::: {.list-group .aulas-list}
 
@@ -48,7 +50,7 @@ Esta página contém aulas que serão apresentadas ao longo do semestre. Você p
 
 <span>
 [Ver slides](/aulas/Conceitos%20iniciais/conceitos_iniciais.html){.btn .btn-est304-main .btn-sm}
-[PDF](/aulas/Conceitos%20iniciais/conceitos_iniciais.pdf){.btn .btn-est304-outline .btn-sm}
+<!-- [PDF](/aulas/Conceitos%20iniciais/conceitos_iniciais.pdf){.btn .btn-est304-outline .btn-sm} -->
 </span>
 :::
 
@@ -60,20 +62,20 @@ Esta página contém aulas que serão apresentadas ao longo do semestre. Você p
 
 <span>
 [Ver slides](/aulas/Pre_processamento/pre_processamento.html#/title-slide){.btn .btn-est304-main .btn-sm}
-[PDF](/aulas/Pre_processamento/pre_processamento.pdf){.btn .btn-est304-outline .btn-sm}
+<!-- [PDF](/aulas/Pre_processamento/pre_processamento.pdf){.btn .btn-est304-outline .btn-sm} -->
 </span>
 :::
 
-<!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
-<!-- <span class="fw-bold"> -->
-<!--   Função Geradora de Momentos -->
-<!-- </span> -->
+::: {.list-group-item .d-flex .justify-content-between .align-items-center}
+<span class="fw-bold">
+  Análise Preditiva
+</span>
 
-<!-- <span> -->
-<!-- [Ver slides](/aulas/func_geradora_momentos/func_gera_momentos.html#/title-slide){.btn .btn-est304-main .btn-sm} -->
-<!-- [PDF](/aulas/func_geradora_momentos/func_gera_momentos.pdf){.btn .btn-est304-outline .btn-sm} -->
-<!-- </span> -->
-<!-- ::: -->
+<span>
+[Ver slides](/aulas/Analise_preditiva/preditiva.html#/title-slide){.btn .btn-est304-main .btn-sm}
+<!-- [PDF](/aulas/Analise_preditiva/preditiva.pdf){.btn .btn-est304-outline .btn-sm} -->
+</span>
+:::
 
 <!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
 <!-- <span class="fw-bold"> -->

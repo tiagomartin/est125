@@ -150,37 +150,37 @@ Com base na descrição do "Conjunto de Dados de Rotatividade de Clientes Conect
 ## 🛠️ Fase 2: O Diagnóstico Técnico
 
 
-<!-- ### 🔍 Objetivo -->
+### 🔍 Objetivo
 
 
-<!-- O objetivo desta etapa é permitir que a equipe de análise compreenda profundamente o conjunto de dados da ConecteMais Corp., identifique potenciais problemas de qualidade dos dados e proponha um plano de pré-processamento para tornar os dados adequados à modelagem preditiva. -->
+O objetivo desta etapa é permitir que a equipe de análise compreenda profundamente o conjunto de dados da ConecteMais Corp., identifique potenciais problemas de qualidade dos dados e proponha um plano de pré-processamento para tornar os dados adequados à modelagem preditiva.
 
 
-<!-- ### 🧠 Tarefas e Desafios Propostos -->
+### 🧠 Tarefas e Desafios Propostos
 
-<!-- Após a reunião inicial, a equipe de Análise de Dados se reúne internamente para discutir a base de dados fornecida e planejar as próximas etapas. Nesta etapa, vocês devem identificar possíveis problemas nos dados que podem dificultar a construção de um modelo de classificação e sugerir as técnicas de pré-processamento adequadas para resolvê-los. Agora é hora de: -->
+Após a reunião inicial, a equipe de Análise de Dados se reúne internamente para discutir a base de dados fornecida e planejar as próximas etapas. Nesta etapa, vocês devem identificar possíveis problemas nos dados que podem dificultar a construção de um modelo de classificação e sugerir as técnicas de pré-processamento adequadas para resolvê-los. Agora é hora de:
 
-<!-- - Avaliar a qualidade dos dados -->
-<!--     - Identificar valores faltantes, variáveis irrelevantes e problemas de codificação; -->
-<!--     - Identificar variáveis com baixa variabilidade: que não agregam informação ao modelo; -->
-<!--     - Identificar variáveis altamente correlacionadas: redundância que pode prejudicar modelos lineares; -->
-<!--     - Avaliar distribuições assimétricas ou outliers extremos em variáveis numéricas; -->
-<!--     - Avaliar se existe desbalanceamento da variável-alvo (`Churn Label`). -->
+- Avaliar a qualidade dos dados
+    - Identificar valores faltantes, variáveis irrelevantes e problemas de codificação;
+    - Identificar variáveis com baixa variabilidade: que não agregam informação ao modelo;
+    - Identificar variáveis altamente correlacionadas: redundância que pode prejudicar modelos lineares;
+    - Avaliar distribuições assimétricas ou outliers extremos em variáveis numéricas;
+    - Avaliar se existe desbalanceamento da variável-alvo (`Churn Label`).
 
-<!-- - Propor um plano de pré-processamento para tornar os dados prontos para uso em modelos de classificação supervisionada. -->
-
-
-
-<!-- A diretoria precisa de resultados acionáveis. Sua análise poderá influenciar a decisão de milhões de dólares em estratégias de retenção.  -->
+- Propor um plano de pré-processamento para tornar os dados prontos para uso em modelos de classificação supervisionada.
 
 
-<!-- ### 🤔 Questões para Discussão e Resolução: -->
 
-<!-- 1) Identifique no mínimo 5 variáveis do conjunto de dados que, potencialmente, podem apresentar problemas que necessitem de pré-processamento antes de serem usadas em um modelo de classificação. Para cada variável identificada, descrevam o problema esperado. -->
+A diretoria precisa de resultados acionáveis. Sua análise poderá influenciar a decisão de milhões de dólares em estratégias de retenção.
 
-<!-- 2) Para cada um dos problemas identificados na questão anterior, sugiram uma ou mais técnicas de pré-processamento que poderiam ser aplicadas para resolvê-los. Justifiquem a escolha da técnica. Por exemplo: Se o problema for "valores ausentes na variável `Idade`, a técnica sugerida poderia ser "imputação pela média/mediana" ou "remoção das linhas com valores ausentes". -->
 
-<!-- 3) Considerando o objetivo de construir um modelo de classificação para prever o *churn*, quais atributos do conjunto de dados vocês consideram que provavelmente não serão úteis como *features* preditivas (ou seja, não trarão valor para o modelo)? Justifiquem sua resposta. -->
+### 🤔 Questões para Discussão e Resolução:
+
+1) Identifique no mínimo 5 variáveis do conjunto de dados que, potencialmente, podem apresentar problemas que necessitem de pré-processamento antes de serem usadas em um modelo de classificação. Para cada variável identificada, descrevam o problema esperado.
+
+2) Para cada um dos problemas identificados na questão anterior, sugiram uma ou mais técnicas de pré-processamento que poderiam ser aplicadas para resolvê-los. Justifiquem a escolha da técnica. Por exemplo: Se o problema for "valores ausentes na variável `Idade`, a técnica sugerida poderia ser "imputação pela média/mediana" ou "remoção das linhas com valores ausentes".
+
+3) Considerando o objetivo de construir um modelo de classificação para prever o *churn*, quais atributos do conjunto de dados vocês consideram que provavelmente não serão úteis como *features* preditivas (ou seja, não trarão valor para o modelo)? Justifiquem sua resposta.
 
 
 
