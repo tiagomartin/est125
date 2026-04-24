@@ -3722,7 +3722,7 @@
     "href": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-7",
     "title": "Pré-processamento de dados",
     "section": "Transformação de dados",
-    "text": "Transformação de dados\n\n\n👉 Box-Cox\n\nreduz assimetria\nestabiliza a variância\nmelhora o ajuste de modelos\n\n💡 Característica\n\ntransformação paramétrica\n\ndepende do parâmetro \\(\\lambda\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n⚠️ Restrição: Só pode ser aplicada a dados positivos"
+    "text": "Transformação de dados\n\n\n👉 Box-Cox\n\nreduz assimetria\nestabiliza a variância\nmelhora o ajuste de modelos\n\n💡 Característica\n\ntransformação paramétrica\n\ndepende do parâmetro \\(\\lambda\\)\n\n\n\n\n\n⚠️ Restrição: Só pode ser aplicada a dados positivos"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-8",
@@ -3736,7 +3736,7 @@
     "href": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-9",
     "title": "Pré-processamento de dados",
     "section": "Transformação de dados",
-    "text": "Transformação de dados\n\n\n👉 Yeo-Johnson\n\nsemelhante ao Box-Cox\n\nreduz assimetria\n\nestabiliza a variância\n\n💡 Diferença chave\n✔ funciona com valores negativos\n✔ mais flexível que Box-Cox\n\n\n\n\n\n\n\n\n\n\n\n\n🚀 Insight: Yeo-Johnson = Box-Cox sem restrição de positividade"
+    "text": "Transformação de dados\n\n\n👉 Yeo-Johnson\n\nsemelhante ao Box-Cox\n\nreduz assimetria\n\nestabiliza a variância\n\n💡 Diferença chave\n✔ funciona com valores negativos\n✔ mais flexível que Box-Cox\n\n\n\n\n🚀 Insight: Yeo-Johnson = Box-Cox sem restrição de positividade"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#transformação-de-dados-10",
