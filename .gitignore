@@ -77,4 +77,5 @@ Thumbs.db
 # Quarto/R cache
 *_cache/
 **/*_cache/
-.cache/
+.cache/*_cache/
+**/*_cache/
