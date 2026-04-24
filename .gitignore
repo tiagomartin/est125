@@ -71,3 +71,10 @@ Thumbs.db
 *.fdb_latexmk
 /.quarto/
 .positai
+
+
+
+# Quarto/R cache
+*_cache/
+**/*_cache/
+.cache/
