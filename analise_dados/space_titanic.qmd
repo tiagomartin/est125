@@ -105,42 +105,74 @@ dados = dados %>%
 A função `ggscatmat()` é uma função do pacote `GGally` do R que cria uma matriz de gráficos de dispersão para visualizar a relação entre várias variáveis numéricas em um conjunto de dados. Essa função é útil para visualizar rapidamente as correlações entre as variáveis, bem como para detectar padrões e tendências. No gráfico abaixo, ainda separamos os elementos de acordo com a sua classe, descrita pela variável **Transported**.
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  mutate(Transported = as.numeric(Transported)) %>% 
-  select_if(is.numeric) %>% 
-  GGally::ggscatmat(color = "Transported", corMethod = "pearson")+
-  theme_pubclean()
+p = dados %>% 
+      mutate(Transported = as.numeric(Transported)) %>% 
+      select_if(is.numeric) %>% 
+      GGally::ggscatmat(color = "Transported", corMethod = "pearson")+
+      theme_pubclean()
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf01.png", p)
+```
+
+
+![](../images/graf01.png)
+
 
 
 Note que fica clara a necessidade de transformações para as variáveis **RoomService**, **FoodCourt**, **ShoppingMall**, **Spa** e **VRDeck**, devido à sua distribuição assimétrica. Um fato interessante acontece com a variável **Age**:
 
 ```{r message=FALSE, warning=FALSE}
 # Age 
-dados %>% 
-  ggplot(aes(x=Age, fill = Transported))+
-  geom_density(alpha =0.5)+
-  theme(legend.position='bottom')
+p = dados %>% 
+      ggplot(aes(x=Age, fill = Transported))+
+      geom_density(alpha =0.5)+
+      theme(legend.position='bottom')
 ```
+
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf02.png", p)
+```
+
+
+![](../images/graf02.png)
 
 Observe que, para passageiros com idade menor de 10 anos, aproximadamente, a probabilidade do passageiro ser transportado é maior que não ser transportado. Isso sugere, talvez, a criação de um atributo captando essa informação.
 
 ### De onde vieram os passageiros e qual a relação disso com ser transportado ou não?
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  ggplot(aes(x=HomePlanet))+
-  geom_bar(stat = "count", fill="steelblue")
+p = dados %>% 
+      ggplot(aes(x=HomePlanet))+
+      geom_bar(stat = "count", fill="steelblue")
 ```
+
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf03.png", p)
+```
+
+
+![](../images/graf03.png)
+
 
 Note que a maioria dos passageiros embarcaram na Terra (Earth). Além disso, existem observações ausentes. Qual a relação da origem dos passageiros com o fato de ser transportado ou não?
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  ggplot(aes(x=HomePlanet, fill = Transported))+
-  geom_bar(stat = "count")+
-  theme(legend.position='bottom')
+p = dados %>% 
+      ggplot(aes(x=HomePlanet, fill = Transported))+
+      geom_bar(stat = "count")+
+      theme(legend.position='bottom')
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf04.png", p)
+```
+
+
+![](../images/graf04.png)
 
 Quem veio da Terra tem menos chances de ser transportado?
 
@@ -154,9 +186,15 @@ p1 = dados %>%
 p2 = dados %>% 
   ggplot((aes(x=CabinSide))) +
   geom_bar(stat = 'count', fill= 'steelblue')
-
-p1 + p2
 ```
+
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf05.png", p1 + p2)
+```
+
+
+![](../images/graf05.png)
 
 
 A maioria dos passageiros estavam alocados nos decks F e G. Existem observações faltantes. Os passageiros foram alocados em ambos os lados (estibordo e bombordo) de forma semelhante. Qual a relação disso com ser transportado ou não?
@@ -170,28 +208,51 @@ p2 = dados %>%
   ggplot((aes(x=CabinSide, fill = Transported))) +
   geom_bar(stat = 'count')
 
-p1 + p2 + plot_layout(guides = "collect") +
-  theme(legend.position='bottom')
+p = p1 + p2 + plot_layout(guides = "collect") 
 ```
+
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf06.png", p)
+```
+
+
+![](../images/graf06.png)
+
 
 Aparentemente, quem está alocando nos decks B e C tem mais chance de ser transportado. O mesmo acontece para quem está situado no estibordo.
 
 ## Para onde iriam os passageiros e qual a relação disso com ser transportado ou não?
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  ggplot((aes(x=Destination))) +
-  geom_bar(stat = 'count', fill= 'steelblue')
+p = dados %>% 
+      ggplot((aes(x=Destination))) +
+      geom_bar(stat = 'count', fill= 'steelblue')
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf07.png", p)
+```
+
+
+![](../images/graf07.png)
+
 
 A maioria dos passageiros tinham como destino o Planeta "TRAPPIST-1e". Qual a relação disso com ser transportado ou não?
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  ggplot((aes(x=Destination, fill= Transported))) +
-  geom_bar(stat = 'count')+
-  theme(legend.position='bottom')
+p = dados %>% 
+      ggplot((aes(x=Destination, fill= Transported))) +
+      geom_bar(stat = 'count')+
+      theme(legend.position='bottom')
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf08.png", p)
+```
+
+
+![](../images/graf08.png)
 
 Quem iria para o Planeta "55 Cancri e" teria mais chances de ser transportado?
 
@@ -199,22 +260,38 @@ Quem iria para o Planeta "55 Cancri e" teria mais chances de ser transportado?
 
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% add_count(PassGroup, name = "GroupSize") %>% 
-  mutate(IsAlone = ifelse(GroupSize==1, 'yes', 'no')) %>% 
-  ggplot(aes(x=IsAlone))+
-  geom_bar(stat = "count", fill= 'steelblue')
+p = dados %>% add_count(PassGroup, name = "GroupSize") %>% 
+      mutate(IsAlone = ifelse(GroupSize==1, 'yes', 'no')) %>% 
+      ggplot(aes(x=IsAlone))+
+      geom_bar(stat = "count", fill= 'steelblue')
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf09.png", p)
+```
+
+
+![](../images/graf09.png)
 
 
 A maioria dos passageiros estavam viajando sozinho. Viajar sozinho influencia no fato de ser transportado?
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% add_count(PassGroup, name = "GroupSize") %>% 
-  mutate(IsAlone = ifelse(GroupSize==1, 'yes', 'no')) %>% 
-  ggplot(aes(x=IsAlone, fill= Transported))+
-  geom_bar(stat = "count")+
-  theme(legend.position='bottom')
+p = dados %>% add_count(PassGroup, name = "GroupSize") %>% 
+      mutate(IsAlone = ifelse(GroupSize==1, 'yes', 'no')) %>% 
+      ggplot(aes(x=IsAlone, fill= Transported))+
+      geom_bar(stat = "count")+
+      theme(legend.position='bottom')
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf10.png", p)
+```
+
+
+![](../images/graf10.png)
+
+
 
 Talvez seja uma boa estar sozinho neste momento! 😃
 
@@ -225,19 +302,36 @@ Talvez seja uma boa estar sozinho neste momento! 😃
 
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  ggplot(aes(x=CryoSleep))+
-  geom_bar(stat = "count", fill= 'steelblue')
+p = dados %>% 
+      ggplot(aes(x=CryoSleep))+
+      geom_bar(stat = "count", fill= 'steelblue')
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf11.png", p)
+```
+
+
+![](../images/graf11.png)
+
  
 A maioria dos passageiros não estavam em sono profundo. Isso influenciou no fato de ser transportado? 
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  ggplot(aes(x=CryoSleep, fill= Transported))+
-  geom_bar(stat = "count")+
-  theme(legend.position='bottom')
+p = dados %>% 
+      ggplot(aes(x=CryoSleep, fill= Transported))+
+      geom_bar(stat = "count")+
+      theme(legend.position='bottom')
 ```
+
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf12.png", p)
+```
+
+
+![](../images/graf12.png)
+
 
 
 Estar em sono profundo não me pereceu ser uma boa ideia!
@@ -246,19 +340,36 @@ Estar em sono profundo não me pereceu ser uma boa ideia!
 ## Passageiros VIP tem menor risco de ser transportado?
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  ggplot(aes(x=VIP))+
-  geom_bar(stat = "count", fill= 'steelblue')
+p = dados %>% 
+      ggplot(aes(x=VIP))+
+      geom_bar(stat = "count", fill= 'steelblue')
 ```
+
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf13.png", p)
+```
+
+
+![](../images/graf13.png)
 
 A grande maioria dos passageiros não eram VIPs. Isso influenciou no fato de ser transportado?
 
 ```{r message=FALSE, warning=FALSE}
-dados %>% 
-  ggplot(aes(x=VIP, fill= Transported))+
-  geom_bar(stat = "count")+
-  theme(legend.position='bottom')
+p = dados %>% 
+      ggplot(aes(x=VIP, fill= Transported))+
+      geom_bar(stat = "count")+
+      theme(legend.position='bottom')
 ```
+
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf14.png", p)
+```
+
+
+![](../images/graf14.png)
+
 
 O fato de ser VIP aparentemente não possui relação com o fato de ser transportado!
 
@@ -283,11 +394,18 @@ p2 = dados %>%
 p3 = dados %>% 
   mutate(VRDeck = log10(VRDeck)) %>% 
   ggplot(aes(x=VRDeck, fill = Transported))+
-  geom_density(alpha =0.5) 
+  geom_density(alpha =0.5)
 
-p1 + p2 + p3 + plot_layout(guides = "collect") +
-  theme(legend.position='bottom')
+ 
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf15.png", p1 + p2 + p3 + plot_layout(guides = "collect"))
+```
+
+
+![](../images/graf15.png)
+
 
 Gastos com RoomService, Spa e VRDeck aumentam a chance do passageiro não ser transportado!
 
@@ -303,22 +421,34 @@ p2 = dados %>%
   mutate(ShoppingMall = log10(ShoppingMall)) %>% 
   ggplot(aes(x=ShoppingMall, fill = Transported))+
   geom_density(alpha =0.5)
-
-p1 + p2 + plot_layout(guides = "collect") +
-  theme(legend.position='bottom')
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf16.png", p1 + p2 + plot_layout(guides = "collect"))
+```
+
+
+![](../images/graf16.png)
 
 Já os gastos com FoodCourt e ShoppingMall aumentam a chance do passageiro ser transportado. Outra informação interessante pode ser obtida quando analisamos as variáveis HomePlanet e CryoSleep.
 
 
 ```{r message=FALSE, warning=FALSE}
 # HomePlanet e CryoSleep
-dados %>% 
-  ggplot(aes(x=HomePlanet, fill= Transported))+
-  geom_bar(stat = "count")+
-  facet_grid(~CryoSleep)+
-  theme(legend.position='bottom')
+p = dados %>% 
+      ggplot(aes(x=HomePlanet, fill= Transported))+
+      geom_bar(stat = "count")+
+      facet_grid(~CryoSleep)+
+      theme(legend.position='bottom')
 ```
+
+```{r, echo=FALSE,message=FALSE, warning=FALSE}
+ggsave("../images/graf17.png", p)
+```
+
+
+![](../images/graf17.png)
+
 
 Note que, para os passageiros em suspensão profunda, o fato de não terem embarcados em Earth aumenta muito a chance de ser transportado para a dimesão alternativa! 
 
