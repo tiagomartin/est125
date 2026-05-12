@@ -273,7 +273,7 @@
     "href": "material.html",
     "title": "Material Complementar",
     "section": "",
-    "text": "Esta página contém materiais complementares das aulas que serão apresentadas ao longo do semestre.\n\n\n Desvendando o pacote tidymodels \n Ver material",
+    "text": "Esta página contém materiais complementares das aulas que serão apresentadas ao longo do semestre.\n\n\n Desvendando o pacote tidymodels \n Ver material  \n\n\n Desbalanceamento de Classes: Um Problema Real em Ciência de Dados \n Ver material  \n\n\n Vazamento de dados: O inimigo oculto da predição confiável \n Ver material",
     "crumbs": [
       "Material Complementar"
     ]
@@ -283,7 +283,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da Disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 31/03\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 02/04\nFeriado: Semana Santa\n\n\n\n\n\n\n\n\n\n2\nTer, 07/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 09/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 14/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 16/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n4\nTer, 21/04\nFeriado: Tiradentes\n\n\n\n\n\n\n\n\n\n\nQui, 23/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 28/04\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 30/04\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 05/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 07/05\nAnálise Preditiva",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 31/03\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 02/04\nFeriado: Semana Santa\n\n\n\n\n\n\n\n\n\n2\nTer, 07/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 09/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 14/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 16/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n4\nTer, 21/04\nFeriado: Tiradentes\n\n\n\n\n\n\n\n\n\n\nQui, 23/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 28/04\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 30/04\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 05/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n7\nTer, 12/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 14/05\nAnálise Preditiva",
     "crumbs": [
       "Cronograma da Disciplina"
     ]
@@ -1776,7 +1776,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#as-duas-culturas",
     "title": "Análise Preditiva",
     "section": "As duas culturas…",
-    "text": "As duas culturas…\n\n\nData Modeling Culture: Domina a comunidade estatística. Nela se assume que o modelo utilizado é correto. Testar suposições é fundamental. Foco em inferência e na interpretação dos parâmetros.\n\n\n\nAlgorithmic Modeling Culture: Domina a comunidade de machine learning. Nela não se assume que o modelo utilizado é correto; o modelo é utilizado apenas para criar bons algoritmos preditivos. Podemos interpretar os resultados, mas esse, em geral, não é o foco."
+    "text": "As duas culturas…\n\n\n\nData Modeling Culture: Domina a comunidade estatística. Nela se assume que o modelo utilizado é correto. Testar suposições é fundamental. Foco em inferência e na interpretação dos parâmetros.\n\n\n\n\nAlgorithmic Modeling Culture: Domina a comunidade de machine learning. Nela não se assume que o modelo utilizado é correto; o modelo é utilizado apenas para criar bons algoritmos preditivos. Podemos interpretar os resultados, mas esse, em geral, não é o foco."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplos-práticos-de-aplicações-de-ml-no-dia-a-dia.",
@@ -1797,14 +1797,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#componentes-do-aprendizado-de-máquina",
     "title": "Análise Preditiva",
     "section": "Componentes do aprendizado de máquina",
-    "text": "Componentes do aprendizado de máquina\n\n\n\n\n\n\nhttps://vas3k.com/blog/machine_learning/\n\n\n\n\n\n\n\nDados\nCaracterísticas/Features\nAlgoritmos"
+    "text": "Componentes do aprendizado de máquina\n\n\n\n\n\nhttps://vas3k.com/blog/machine_learning/\n\n\n\n\n\n\nDados\nCaracterísticas/Features\nAlgoritmos"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina",
     "href": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina",
     "title": "Análise Preditiva",
     "section": "O mapa da aprendizagem de máquina",
-    "text": "O mapa da aprendizagem de máquina\n\n\n\n\n\n\n👉 Nunca há uma única maneira de resolver um problema no mundo do aprendizado de máquina.\n👉 Sempre existem vários algoritmos que se encaixam, e você deve escolher qual deles se encaixa melhor.\n👉 Tudo pode ser resolvido com uma rede neural? Sim, mas quem pagará por todo esse custo?"
+    "text": "O mapa da aprendizagem de máquina\n\n\n\n\n\n\n\n👉 Nunca há uma única maneira de resolver um problema no mundo do aprendizado de máquina.\n👉 Sempre existem vários algoritmos que se encaixam, e você deve escolher qual deles se encaixa melhor.\n👉 Tudo pode ser resolvido com uma rede neural? Sim, mas quem pagará por todo esse custo?"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#o-mapa-da-aprendizagem-de-máquina-1",
@@ -1825,49 +1825,49 @@
     "href": "aulas/Analise_preditiva/preditiva.html#aprendizado-de-máquina-clássico-1",
     "title": "Análise Preditiva",
     "section": "Aprendizado de Máquina Clássico",
-    "text": "Aprendizado de Máquina Clássico\n👉 O aprendizado de máquina clássico é frequentemente dividido em duas categorias – Aprendizado Supervisionado e Não Supervisionado.\n\n\nAprendizado Supervisionado: usa um algoritmo que precisa de exemplos rotulados para desempenhar suas tarefas.\n\n\n\n\nAprendizado Não-supervisionado: os dados não são rotulados, não há professor e a máquina está tentando encontrar padrões por conta própria."
+    "text": "Aprendizado de Máquina Clássico\n👉 O aprendizado de máquina clássico é frequentemente dividido em duas categorias – Aprendizado Supervisionado e Não Supervisionado.\n\n\n\nAprendizado Supervisionado: usa um algoritmo que precisa de exemplos rotulados para desempenhar suas tarefas.\n\n\n\n\n\nAprendizado Não-supervisionado: os dados não são rotulados, não há professor e a máquina está tentando encontrar padrões por conta própria."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#aprendizado-supervisionado",
     "href": "aulas/Analise_preditiva/preditiva.html#aprendizado-supervisionado",
     "title": "Análise Preditiva",
     "section": "Aprendizado Supervisionado",
-    "text": "Aprendizado Supervisionado\n\n💡 Claramente, a máquina aprenderá mais rápido com um professor. Por isso, é mais comum encontrarmos esse caso nas tarefas da vida real.\n\n\nExistem dois tipos de tarefas:\n\nclassificação: predição de categoria de um objeto e\nregressão: predição de um ponto específico em um eixo numérico."
+    "text": "Aprendizado Supervisionado\n\n💡 Claramente, a máquina aprenderá mais rápido com um professor. Por isso, é mais comum encontrarmos esse caso nas tarefas da vida real.\n\n\n\nExistem dois tipos de tarefas:\n\n\nclassificação: predição de categoria de um objeto e\n\nregressão: predição de um ponto específico em um eixo numérico."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação",
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação",
     "title": "Análise Preditiva",
     "section": "Tarefa de classificação",
-    "text": "Tarefa de classificação\n\nOs algoritmos de classificação dividem os objetos com base em um dos atributos conhecidos de antemão.\n\n\n\n\n\nUsados nos dias de hoje para:\n\nFiltragem de spam;\nDetecção de idioma;\nPesquisa por documentos semelhantes;\nAnálise de sentimentos;\nReconhecimento de caracteres;\nDetecção de fraude."
+    "text": "Tarefa de classificação\n\nOs algoritmos de classificação dividem os objetos com base em um dos atributos conhecidos de antemão.\n\n\n\n\n\n\nUsados nos dias de hoje para:\n\nFiltragem de spam;\nDetecção de idioma;\nPesquisa por documentos semelhantes;\nAnálise de sentimentos;\nReconhecimento de caracteres;\nDetecção de fraude."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-1",
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-classificação-1",
     "title": "Análise Preditiva",
     "section": "Tarefa de classificação",
-    "text": "Tarefa de classificação\n \n\nAlgoritmos populares: Naive Bayes, Decision Tree, Logistic Regression, K-Nearest Neighbours, Support Vector Machine."
+    "text": "Tarefa de classificação\n\n\nAlgoritmos populares: Naive Bayes, Decision Tree, Logistic Regression, K-Nearest Neighbours, Support Vector Machine."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão",
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão",
     "title": "Análise Preditiva",
     "section": "Tarefa de regressão",
-    "text": "Tarefa de regressão\n\nSe a variável resposta é quantitativa, temos um problema de análise de regressão\n\n\n\n\n\nUsados nos dias de hoje para:\n\nPrevisões do preço das ações;\nAnálise de demanda e volume de vendas;\nDiagnóstico médico."
+    "text": "Tarefa de regressão\n\nSe a variável resposta é quantitativa, temos um problema de análise de regressão\n\n\n\n\n\n\nUsados nos dias de hoje para:\n\nPrevisões do preço das ações;\nAnálise de demanda e volume de vendas;\nDiagnóstico médico."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão-1",
     "href": "aulas/Analise_preditiva/preditiva.html#tarefa-de-regressão-1",
     "title": "Análise Preditiva",
     "section": "Tarefa de regressão",
-    "text": "Tarefa de regressão\n \n\nAlgoritmos populares: Decision Tree, Regressão Linear e Regressão Polinomial, K-Nearest Neighbours, Support Vector Machine."
+    "text": "Tarefa de regressão\n\n\nAlgoritmos populares: Decision Tree, Regressão Linear e Regressão Polinomial, K-Nearest Neighbours, Support Vector Machine."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos",
     "href": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos",
     "title": "Análise Preditiva",
     "section": "Avaliação de modelos",
-    "text": "Avaliação de modelos\n💡 Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!\n\n\n\n\n\n\n\n\n\n\nA avaliação de modelos de machine learning é como um detetive investigando um caso."
+    "text": "Avaliação de modelos\n💡 Independente do modelo escolhido, é importante saber se um modelo de machine learning está realmente funcionando. É aí que entra a avaliação de modelos!\n\n\n\n\n\n\n\n\n\nA avaliação de modelos de machine learning é como um detetive investigando um caso."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-1",
@@ -1895,7 +1895,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão-1",
     "title": "Análise Preditiva",
     "section": "Matriz de confusão",
-    "text": "Matriz de confusão\n\n\nVP (Verdadeiro Positivo): objeto da classe positiva classificado como positivo\n\n\n\nVN (Verdadeiro Negativo): objeto da classe negativa classificado como negativo\n\n\n\n\nFP (Falso Positivo): objeto da classe negativa classificado como positivo. Também conhecido como alarme falso ou Erro tipo 1\n\n\n\n\nFN (Falso Negativo): objeto da classe positiva classificado como negativo. É também conhecido como Erro Tipo 2"
+    "text": "Matriz de confusão\n\n\n\nVP (Verdadeiro Positivo): objeto da classe positiva classificado como positivo\n\n\n\n\nVN (Verdadeiro Negativo): objeto da classe negativa classificado como negativo\n\n\n\n\n\nFP (Falso Positivo): objeto da classe negativa classificado como positivo. Também conhecido como alarme falso ou Erro tipo 1\n\n\n\n\n\n\nFN (Falso Negativo): objeto da classe positiva classificado como negativo. É também conhecido como Erro Tipo 2"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#matriz-de-confusão-2",
@@ -1909,14 +1909,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#acurácia",
     "title": "Análise Preditiva",
     "section": "Acurácia",
-    "text": "Acurácia\n\n\n\n\n\n\n\n\n\n\nMede a proporção de previsões corretas do modelo em relação ao total de previsões feitas.\n\n\n\nÉ como sua nota em uma prova!"
+    "text": "Acurácia\n\n\n\n\n\n\n\n\n\nMede a proporção de previsões corretas do modelo em relação ao total de previsões feitas.\n\n\n\nÉ como sua nota em uma prova!"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#acurácia-1",
     "href": "aulas/Analise_preditiva/preditiva.html#acurácia-1",
     "title": "Análise Preditiva",
     "section": "Acurácia",
-    "text": "Acurácia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA Taxa de Erro Aparente do classificador é dada por\n\\[TEA = 1 - ACC\\]"
+    "text": "Acurácia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nA Taxa de Erro Aparente do classificador é dada por\n\\[TEA = 1 - ACC\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#acurácia-2",
@@ -1937,14 +1937,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#precisão",
     "title": "Análise Preditiva",
     "section": "Precisão",
-    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\n\nEla nos diz quantas das previsões positivas foram realmente corretas."
+    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\nEla nos diz quantas das previsões positivas foram realmente corretas."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#precisão-1",
     "href": "aulas/Analise_preditiva/preditiva.html#precisão-1",
     "title": "Análise Preditiva",
     "section": "Precisão",
-    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPorcentagem de verdadeiros positivos dentre todos os objetos classificados como positivos"
+    "text": "Precisão\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPorcentagem de verdadeiros positivos dentre todos os objetos classificados como positivos"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#precisão-2",
@@ -1958,14 +1958,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#sensibilidade",
     "title": "Análise Preditiva",
     "section": "Sensibilidade",
-    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\n\nMede a proporção de casos positivos reais que foram encontrados pelo modelo"
+    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\nMede a proporção de casos positivos reais que foram encontrados pelo modelo"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#sensibilidade-1",
     "href": "aulas/Analise_preditiva/preditiva.html#sensibilidade-1",
     "title": "Análise Preditiva",
     "section": "Sensibilidade",
-    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Recall ou Taxa de Verdadeiros Positivos (TVP)"
+    "text": "Sensibilidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Recall ou Taxa de Verdadeiros Positivos (TVP)"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#sensibilidade-2",
@@ -1979,14 +1979,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#especificidade",
     "title": "Análise Preditiva",
     "section": "Especificidade",
-    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\n\nAjuda a identificar a capacidade do modelo em reconhecer corretamente as amostras negativas"
+    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\nAjuda a identificar a capacidade do modelo em reconhecer corretamente as amostras negativas"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#especificidade-1",
     "href": "aulas/Analise_preditiva/preditiva.html#especificidade-1",
     "title": "Análise Preditiva",
     "section": "Especificidade",
-    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Taxa de Verdadeiros Negativos (TVN)"
+    "text": "Especificidade\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTambém conhecida por Taxa de Verdadeiros Negativos (TVN)"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#especificidade-2",
@@ -2000,7 +2000,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo",
     "title": "Análise Preditiva",
     "section": "Taxa de Falso Positivo",
-    "text": "Taxa de Falso Positivo\n\n\n\n\n\n\n\n\n\n\n\n\nEla mede a proporção de amostras negativas classificadas como positivas pelo modelo"
+    "text": "Taxa de Falso Positivo\n\n\n\n\n\n\n\n\n\n\n\nEla mede a proporção de amostras negativas classificadas como positivas pelo modelo"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#taxa-de-falso-positivo-1",
@@ -2020,14 +2020,14 @@
     "objectID": "aulas/Analise_preditiva/preditiva.html#f_1-score",
     "href": "aulas/Analise_preditiva/preditiva.html#f_1-score",
     "title": "Análise Preditiva",
-    "section": "\\(F_1\\)-Score",
-    "text": "\\(F_1\\)-Score\n\n\n\n\n\n\n\n\n\n\n\n\n\nEle leva em consideração tanto precisão quanto a sensibilidade, dando uma medida balanceada do desempenho do modelo."
+    "section": "\n\\(F_1\\)-Score",
+    "text": "\\(F_1\\)-Score\n\n\n\n\n\n\n\n\n\n\n\n\nEle leva em consideração tanto precisão quanto a sensibilidade, dando uma medida balanceada do desempenho do modelo."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#f_1-score-1",
     "href": "aulas/Analise_preditiva/preditiva.html#f_1-score-1",
     "title": "Análise Preditiva",
-    "section": "\\(F_1\\)-Score",
+    "section": "\n\\(F_1\\)-Score",
     "text": "\\(F_1\\)-Score\n\n\n\\[F_1 \\text{-score} = 2 \\times \\dfrac{\\text{Precisão} \\times \\text{Sensibilidade}}{\\text{Precisão} + \\text{Sensibilidade}}\\]\n\n\nO \\(F_1\\)-Score é como um equilibrista em uma corda bamba."
   },
   {
@@ -2042,7 +2042,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#curva-roc-1",
     "title": "Análise Preditiva",
     "section": "Curva ROC",
-    "text": "Curva ROC\n\nRepresenta o número de vezes que o classificador acertou a predição contra o número de vezes que o classificador errou a predição\n\n\n\nA área sob a curva ROC, conhecida como AUC-ROC, é uma métrica comumente utilizada para avaliar o desempenho global do modelo.\n\n\n\n\nQuanto maior a AUC-ROC, melhor é o desempenho do modelo em discriminar corretamente as classes."
+    "text": "Curva ROC\n\nRepresenta o número de vezes que o classificador acertou a predição contra o número de vezes que o classificador errou a predição\n\n\n\n\nA área sob a curva ROC, conhecida como AUC-ROC, é uma métrica comumente utilizada para avaliar o desempenho global do modelo.\n\n\n\n\nQuanto maior a AUC-ROC, melhor é o desempenho do modelo em discriminar corretamente as classes."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#avaliação-de-modelos-de-predição",
@@ -2154,7 +2154,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância",
     "title": "Análise Preditiva",
     "section": "Trade-off bias-variância",
-    "text": "Trade-off bias-variância\nImagine que você está tentando acertar um alvo com dardos. Seus arremessos podem ser agrupados de três maneiras diferentes:\n\nGrupo de alto viés (bias): Seus arremessos são consistentemente agrupados longe do alvo, mas próximos uns dos outros. Isso indica um alto viés, pois você está fazendo arremessos incorretos, mas de forma consistente.\n\n\n\nGrupo de alta variância: Seus arremessos estão espalhados por toda a área, longe do alvo e uns dos outros. Isso indica alta variância, pois seus arremessos são inconsistentes e imprevisíveis.\n\n\n\n\nGrupo equilibrado: Seus arremessos estão agrupados próximo ao alvo e também estão próximos uns dos outros. Isso é o equilíbrio entre viés e variância, onde você está acertando o alvo de forma consistente e precisa."
+    "text": "Trade-off bias-variância\nImagine que você está tentando acertar um alvo com dardos. Seus arremessos podem ser agrupados de três maneiras diferentes:\n\n\nGrupo de alto viés (bias): Seus arremessos são consistentemente agrupados longe do alvo, mas próximos uns dos outros. Isso indica um alto viés, pois você está fazendo arremessos incorretos, mas de forma consistente.\n\n\n\n\nGrupo de alta variância: Seus arremessos estão espalhados por toda a área, longe do alvo e uns dos outros. Isso indica alta variância, pois seus arremessos são inconsistentes e imprevisíveis.\n\n\n\n\n\nGrupo equilibrado: Seus arremessos estão agrupados próximo ao alvo e também estão próximos uns dos outros. Isso é o equilíbrio entre viés e variância, onde você está acertando o alvo de forma consistente e precisa."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-1",
@@ -2175,21 +2175,21 @@
     "href": "aulas/Analise_preditiva/preditiva.html#trade-off-bias-variância-3",
     "title": "Análise Preditiva",
     "section": "Trade-off bias-variância",
-    "text": "Trade-off bias-variância\n\n\nBias (Viés): Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.\n\n\n\nVariância: Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.\n\n\n\n\nErro Irredutível: Ruído inerente aos dados que não pode ser reduzido por nenhum modelo."
+    "text": "Trade-off bias-variância\n\n\n\nBias (Viés): Erro devido a suposições simplificadoras no modelo. Um modelo com alto bias tende a subajustar (underfit) os dados de treinamento, perdendo relações importantes entre as variáveis.\n\n\n\n\nVariância: Sensibilidade do modelo a pequenas variações nos dados de treinamento. Um modelo com alta variância tende a sobreajustar (overfit) os dados de treinamento, aprendendo até mesmo o ruído presente neles.\n\n\n\n\n\nErro Irredutível: Ruído inerente aos dados que não pode ser reduzido por nenhum modelo."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#o-problema-do-subajuste-underfitting",
     "href": "aulas/Analise_preditiva/preditiva.html#o-problema-do-subajuste-underfitting",
     "title": "Análise Preditiva",
     "section": "O Problema do Subajuste (Underfitting)",
-    "text": "O Problema do Subajuste (Underfitting)\n\nModelos com alto bias fazem suposições fortes sobre a forma da função que mapeia as entradas para as saídas. São tipicamente modelos mais simples, com poucos parâmetros.\n\n\nConsequências:\n\nDesempenho ruim tanto nos dados de treinamento quanto nos dados de teste.\nIncapacidade de capturar a complexidade real dos dados."
+    "text": "O Problema do Subajuste (Underfitting)\n\nModelos com alto bias fazem suposições fortes sobre a forma da função que mapeia as entradas para as saídas. São tipicamente modelos mais simples, com poucos parâmetros.\n\n\n\nConsequências:\n\nDesempenho ruim tanto nos dados de treinamento quanto nos dados de teste.\nIncapacidade de capturar a complexidade real dos dados."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#o-problema-do-sobreajuste-overfitting",
     "href": "aulas/Analise_preditiva/preditiva.html#o-problema-do-sobreajuste-overfitting",
     "title": "Análise Preditiva",
     "section": "O Problema do Sobreajuste (Overfitting)",
-    "text": "O Problema do Sobreajuste (Overfitting)\n\nModelos com alta variância aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.\n\nConsequências:\n\nExcelente desempenho nos dados de treinamento.\nDesempenho significativamente pior em dados de teste não vistos. O modelo “decorou” os dados de treinamento em vez de aprender padrões gerais."
+    "text": "O Problema do Sobreajuste (Overfitting)\n\nModelos com alta variância aprendem os dados de treinamento muito bem, incluindo o ruído presente neles. São tipicamente modelos mais complexos, com muitos parâmetros.\n\n\nConsequências:\n\nExcelente desempenho nos dados de treinamento.\nDesempenho significativamente pior em dados de teste não vistos. O modelo “decorou” os dados de treinamento em vez de aprender padrões gerais."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#underfitting-e-overfitting",
@@ -2252,21 +2252,21 @@
     "href": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff",
     "title": "Análise Preditiva",
     "section": "Como Lidar com o Tradeoff?",
-    "text": "Como Lidar com o Tradeoff?\n\n\nSeleção de Modelos: Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).\n\n\n\nAjuste de Hiperparâmetros: Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).\n\n\n\n\nValidação Cruzada: Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.\n\n\n\n\nEngenharia de Features: Criar features mais informativas pode reduzir o bias."
+    "text": "Como Lidar com o Tradeoff?\n\n\n\nSeleção de Modelos: Experimentar diferentes tipos de modelos (lineares, não lineares, árvores, redes neurais, etc.).\n\n\n\n\nAjuste de Hiperparâmetros: Controlar a complexidade do modelo ajustando seus hiperparâmetros (ex: profundidade máxima de uma árvore, número de neurônios em uma camada).\n\n\n\n\n\nValidação Cruzada: Usar técnicas de validação cruzada para estimar o desempenho do modelo em dados não vistos de forma mais robusta e ajudar a identificar overfitting.\n\n\n\n\n\nEngenharia de Features: Criar features mais informativas pode reduzir o bias."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff-1",
     "href": "aulas/Analise_preditiva/preditiva.html#como-lidar-com-o-tradeoff-1",
     "title": "Análise Preditiva",
     "section": "Como Lidar com o Tradeoff?",
-    "text": "Como Lidar com o Tradeoff?\n\n\nRegularização: Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).\n\n\n\nMais Dados: Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.\n\n\n\n\nEnsemble Methods: Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância."
+    "text": "Como Lidar com o Tradeoff?\n\n\n\nRegularização: Técnicas como L1 e L2 adicionam uma penalidade à complexidade do modelo, ajudando a reduzir a variância (overfitting).\n\n\n\n\nMais Dados: Em alguns casos, aumentar a quantidade de dados de treinamento pode ajudar a reduzir a variância.\n\n\n\n\n\nEnsemble Methods: Combinar múltiplos modelos (ex: Random Forest, Gradient Boosting) pode ajudar a reduzir tanto o bias quanto a variância."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmos-de-predição-1",
     "href": "aulas/Analise_preditiva/preditiva.html#algoritmos-de-predição-1",
     "title": "Análise Preditiva",
     "section": "Algoritmos de predição",
-    "text": "Algoritmos de predição\n\n\nAlgoritmos mais comuns usados para problemas de predição:\n\nK-Nearest Neighbors (KNN)\nNaive Bayes\nÁrvores de decisão\nRandom Forests\nMáquinas de Vetores de Suporte (SVM)\nRedes Neurais Artificiais (ANN)"
+    "text": "Algoritmos de predição\n\n\n\nAlgoritmos mais comuns usados para problemas de predição:\n\nK-Nearest Neighbors (KNN)\nNaive Bayes\nÁrvores de decisão\nRandom Forests\nMáquinas de Vetores de Suporte (SVM)\nRedes Neurais Artificiais (ANN)"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#k-nearest-neighbors-knn",
@@ -2301,14 +2301,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#métricas-de-distância",
     "title": "Análise Preditiva",
     "section": "Métricas de Distância",
-    "text": "Métricas de Distância\n\nDistância Euclidiana: A mais comum.\n\n\\[d_{ij} = \\displaystyle{\\sqrt{(\\mathbf{x}_i - \\mathbf{x}_j)^t(\\mathbf{x}_i - \\mathbf{x}_j)}} = \\sqrt{\\displaystyle{\\sum_{k=1}^p(x_{ik} - x_{jk})^2}}\\]\n\nDistância de Minkowski: Soma das diferenças absolutas entre as coordenadas.\n\n\\[d_{ij} = \\left( \\displaystyle{\\sum_{k=1}^P} |X_{ik} - X_{jk}|^{\\lambda}\\right)^{\\frac{1}{\\lambda}}\\]"
+    "text": "Métricas de Distância\n\n\nDistância Euclidiana: A mais comum.\n\n\\[d_{ij} = \\displaystyle{\\sqrt{(\\mathbf{x}_i - \\mathbf{x}_j)^t(\\mathbf{x}_i - \\mathbf{x}_j)}} = \\sqrt{\\displaystyle{\\sum_{k=1}^p(x_{ik} - x_{jk})^2}}\\]\n\n\nDistância de Minkowski: Soma das diferenças absolutas entre as coordenadas.\n\n\\[d_{ij} = \\left( \\displaystyle{\\sum_{k=1}^P} |X_{ik} - X_{jk}|^{\\lambda}\\right)^{\\frac{1}{\\lambda}}\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#métricas-de-distância-1",
     "href": "aulas/Analise_preditiva/preditiva.html#métricas-de-distância-1",
     "title": "Análise Preditiva",
     "section": "Métricas de Distância",
-    "text": "Métricas de Distância\n\n\nPara a distância de Minkowski:\n\nSe \\(\\lambda = 1\\), temos a chamada métrica de Manhattan. É também conhecida como city block.\n\nSe \\(\\lambda = 2\\), temos a distância euclidiana.\nA métrica de Minkowski é menos afetada pela presença de valores discrepantes na amostra do que a distância Euclidiana.\n\n\n\n\nSe os dados forem textuais: usar cosseno"
+    "text": "Métricas de Distância\n\n\n\nPara a distância de Minkowski:\n\nSe \\(\\lambda = 1\\), temos a chamada métrica de Manhattan. É também conhecida como city block.\n\nSe \\(\\lambda = 2\\), temos a distância euclidiana.\nA métrica de Minkowski é menos afetada pela presença de valores discrepantes na amostra do que a distância Euclidiana.\n\n\n\n\n\nSe os dados forem textuais: usar cosseno"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens",
@@ -2329,7 +2329,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-knn",
     "title": "Análise Preditiva",
     "section": "Pré-processamento de Dados para KNN",
-    "text": "Pré-processamento de Dados para KNN\n\n\n\n💻\n\n\nEscalonamento de features: Padronização (média zero, desvio padrão um) ou normalização (escala entre 0 e 1) para garantir que todas as features contribuam igualmente para o cálculo da distância.\nTratamento de valores ausentes: Imputação ou remoção.\nSeleção de features: Reduzir a dimensionalidade para melhorar o desempenho."
+    "text": "Pré-processamento de Dados para KNN\n\n\n\n💻\n\n\n\nEscalonamento de features: Padronização (média zero, desvio padrão um) ou normalização (escala entre 0 e 1) para garantir que todas as features contribuam igualmente para o cálculo da distância.\n\nTratamento de valores ausentes: Imputação ou remoção.\n\nSeleção de features: Reduzir a dimensionalidade para melhorar o desempenho."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador",
@@ -2343,7 +2343,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-1",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\nJoão possui as seguintes características\n\nmenos de 30 anos\nrenda média\né estudante\npossuí um bom crédito na praça!"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\nJoão possui as seguintes características\n\nmenos de 30 anos\nrenda média\né estudante\npossuí um bom crédito na praça!"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-2",
@@ -2357,7 +2357,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-3",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\nQuem é o João?\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\nQuem é o João?\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-4",
@@ -2378,21 +2378,21 @@
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-6",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\nJoão comprará o computador?\n\n\nDe acordo com o KNN: SIM!"
+    "text": "Exemplo: Compra de um computador\n\n\nJoão comprará o computador?\n\nDe acordo com o KNN: SIM!"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#knn-para-classificação-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#knn-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "KNN para classificação no R e Python",
-    "text": "KNN para classificação no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;% \n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"classification\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.974359\n\n\n\n\n\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX_train, X_test, y_train, y_test = train_test_split(\n    iris.data, iris.target, stratify=iris.target, random_state=12345\n)\n\nknn = KNeighborsClassifier(n_neighbors=5)\nknn.fit(X_train, y_train)\n\nKNeighborsClassifier()In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.KNeighborsClassifierKNeighborsClassifier()\n\ny_pred = knn.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9473684210526315"
+    "text": "KNN para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;% \n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"classification\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.974359\n\n\n\n\n\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.metrics import accuracy_score\n\niris = load_iris()\nX_train, X_test, y_train, y_test = train_test_split(\n    iris.data, iris.target, stratify=iris.target, random_state=12345\n)\n\nknn = KNeighborsClassifier(n_neighbors=5)\nknn.fit(X_train, y_train)\n\n\n\n\nKNeighborsClassifier()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nKNeighborsClassifierKNeighborsClassifier()\n\n\n\ny_pred = knn.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9473684210526315"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#knn-para-regressão-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#knn-para-regressão-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "KNN para regressão no R e Python",
-    "text": "KNN para regressão no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;%\n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"regression\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.069807\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nknn_reg = KNeighborsRegressor(n_neighbors=5)\nknn_reg.fit(X_train, y_train)\n\nKNeighborsRegressor()In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.KNeighborsRegressorKNeighborsRegressor()\n\ny_pred = knn_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n1.1408296168142682"
+    "text": "KNN para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nknn_spec &lt;- nearest_neighbor(neighbors = 5) %&gt;%\n  set_engine(\"kknn\") %&gt;%\n  set_mode(\"regression\")\n\nknn_fit &lt;- workflow() %&gt;%\n  add_model(knn_spec) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(knn_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.069807\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neighbors import KNeighborsRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nknn_reg = KNeighborsRegressor(n_neighbors=5)\nknn_reg.fit(X_train, y_train)\n\n\n\n\nKNeighborsRegressor()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nKNeighborsRegressorKNeighborsRegressor()\n\n\n\ny_pred = knn_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n1.1408296168142682"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#algoritmo-naive-bayes",
@@ -2420,28 +2420,28 @@
     "href": "aulas/Analise_preditiva/preditiva.html#tipos-de-naive-bayes",
     "title": "Análise Preditiva",
     "section": "Tipos de Naive Bayes",
-    "text": "Tipos de Naive Bayes\n\n\nGaussian Naive Bayes: Para características contínuas. Assume que as características são distribuídas de acordo com uma distribuição Gaussiana (Normal).\n\n\n\nMultinomial Naive Bayes: Ideal para contagens de ocorrências (ex: contagem de palavras em documentos, usado em classificação de texto).\n\n\n\n\nBernoulli Naive Bayes: Adequado para dados binários (presença/ausência de uma característica)."
+    "text": "Tipos de Naive Bayes\n\n\n\nGaussian Naive Bayes: Para características contínuas. Assume que as características são distribuídas de acordo com uma distribuição Gaussiana (Normal).\n\n\n\n\nMultinomial Naive Bayes: Ideal para contagens de ocorrências (ex: contagem de palavras em documentos, usado em classificação de texto).\n\n\n\n\n\nBernoulli Naive Bayes: Adequado para dados binários (presença/ausência de uma característica)."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-2",
     "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-2",
     "title": "Análise Preditiva",
     "section": "Vantagens e Desvantagens",
-    "text": "Vantagens e Desvantagens\n\n\n\n\n👍\n\n\nSimplicidade: Fácil de entender e implementar.\nEficiência: Muito rápido para treinar e prever, especialmente em grandes conjuntos de dados.\nBom desempenho: Surpreendentemente eficaz em muitos problemas reais, mesmo com a suposição de independência.\nProcessamento de texto: Excelente para classificação de documentos e filtragem de spam.\nNão requer muitos dados: Pode funcionar bem com conjuntos de dados menores."
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👍\n\n\n\nSimplicidade: Fácil de entender e implementar.\n\nEficiência: Muito rápido para treinar e prever, especialmente em grandes conjuntos de dados.\n\nBom desempenho: Surpreendentemente eficaz em muitos problemas reais, mesmo com a suposição de independência.\n\nProcessamento de texto: Excelente para classificação de documentos e filtragem de spam.\n\nNão requer muitos dados: Pode funcionar bem com conjuntos de dados menores."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-3",
     "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-3",
     "title": "Análise Preditiva",
     "section": "Vantagens e Desvantagens",
-    "text": "Vantagens e Desvantagens\n\n\n\n\n👎\n\n\nSuposição de independência: A suposição de independência entre as características raramente é verdadeira no mundo real, o que pode limitar a precisão.\nProblema de “zero frequência”: Se uma categoria de característica não aparecer no conjunto de treinamento para uma determinada classe, a probabilidade para essa característica será zero, o que leva a uma probabilidade posterior zero. (para resolver: Laplace Smoothing)\nEstimativa de Probabilidades: Pode ter um desempenho ruim quando há características numéricas com distribuições complexas (a suposição Gaussiana pode não se aplicar)."
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👎\n\n\n\nSuposição de independência: A suposição de independência entre as características raramente é verdadeira no mundo real, o que pode limitar a precisão.\n\nProblema de “zero frequência”: Se uma categoria de característica não aparecer no conjunto de treinamento para uma determinada classe, a probabilidade para essa característica será zero, o que leva a uma probabilidade posterior zero. (para resolver: Laplace Smoothing)\n\nEstimativa de Probabilidades: Pode ter um desempenho ruim quando há características numéricas com distribuições complexas (a suposição Gaussiana pode não se aplicar)."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-naive-bayes",
     "href": "aulas/Analise_preditiva/preditiva.html#pré-processamento-de-dados-para-naive-bayes",
     "title": "Análise Preditiva",
     "section": "Pré-processamento de Dados para Naive Bayes",
-    "text": "Pré-processamento de Dados para Naive Bayes\n\n\n\n💻\n\n\nDados Categóricos: Transformar para formato numérico (One-Hot Encoding ou Label Encoding, dependendo do tipo de NB).\nDados Numéricos:\n\nGaussianNB: Assumir distribuição normal. Normalização/padronização pode ajudar, mas não é estritamente necessária como em KNN, já que não se baseia em distância.\nDiscretização: Converter dados numéricos em categóricos (bins) para usar Multinomial ou Bernoulli NB.\n\nTratamento de Valores Ausentes: Imputação ou remoção.\nTextuais: Tokenização, remoção de stop words, stemização/lema, TF-IDF, CountVectorizer."
+    "text": "Pré-processamento de Dados para Naive Bayes\n\n\n\n💻\n\n\n\nDados Categóricos: Transformar para formato numérico (One-Hot Encoding ou Label Encoding, dependendo do tipo de NB).\n\nDados Numéricos:\n\n\nGaussianNB: Assumir distribuição normal. Normalização/padronização pode ajudar, mas não é estritamente necessária como em KNN, já que não se baseia em distância.\n\nDiscretização: Converter dados numéricos em categóricos (bins) para usar Multinomial ou Bernoulli NB.\n\n\n\nTratamento de Valores Ausentes: Imputação ou remoção.\n\nTextuais: Tokenização, remoção de stop words, stemização/lema, TF-IDF, CountVectorizer."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-7",
@@ -2455,42 +2455,42 @@
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-8",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\nVoltando ao Joãozinho…\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\nVoltando ao Joãozinho…\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-9",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-9",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\nProbabilidade de ocorrência das classes\n\n\n\\[ P(\\text{classe = Sim}) = \\dfrac{9}{14}\\] \\[P(\\text{classe = Não}) = \\dfrac{5}{14}\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\nProbabilidade de ocorrência das classes\n\n\n\\[ P(\\text{classe = Sim}) = \\dfrac{9}{14}\\] \\[P(\\text{classe = Não}) = \\dfrac{5}{14}\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-10",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-10",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Idade:\n\\[ P(\\text{Idade} \\leq 30 | \\text{classe = Sim}) = \\dfrac{2}{9} \\\\ P(\\text{Idade} \\leq 30 | \\text{classe = Não}) = \\dfrac{3}{5}\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Idade:\n\\[ P(\\text{Idade} \\leq 30 | \\text{classe = Sim}) = \\dfrac{2}{9} \\\\ P(\\text{Idade} \\leq 30 | \\text{classe = Não}) = \\dfrac{3}{5}\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-11",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-11",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Renda:\n\\[ P(\\text{Renda = Média} | \\text{classe = Sim}) = \\dfrac{4}{9} \\\\ P(\\text{Renda = Média} | \\text{classe = Não}) = \\dfrac{2}{5}\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Renda:\n\\[ P(\\text{Renda = Média} | \\text{classe = Sim}) = \\dfrac{4}{9} \\\\ P(\\text{Renda = Média} | \\text{classe = Não}) = \\dfrac{2}{5}\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-12",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-12",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Estudante:\n\\[ P(\\text{Estudante = Sim} | \\text{classe = Sim}) = \\dfrac{6}{9} \\\\ P(\\text{Estudante = Sim} | \\text{classe = Não}) = \\dfrac{2}{5}\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Estudante:\n\\[ P(\\text{Estudante = Sim} | \\text{classe = Sim}) = \\dfrac{6}{9} \\\\ P(\\text{Estudante = Sim} | \\text{classe = Não}) = \\dfrac{2}{5}\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-13",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-13",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Crédito:\n\\[ P(\\text{Crédito = Bom} | \\text{classe = Sim}) = \\dfrac{6}{9} \\\\ P(\\text{Crédito = Bom} | \\text{classe = Não}) = \\dfrac{3}{5}\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)\n\n\nPara o atributo Crédito:\n\\[ P(\\text{Crédito = Bom} | \\text{classe = Sim}) = \\dfrac{6}{9} \\\\ P(\\text{Crédito = Bom} | \\text{classe = Não}) = \\dfrac{3}{5}\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-14",
@@ -2518,14 +2518,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-17",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\nJoão comprará o computador?\n\n\nDe acordo com o Naive Bayes: SIM!"
+    "text": "Exemplo: Compra de um computador\n\n\nJoão comprará o computador?\n\nDe acordo com o Naive Bayes: SIM!"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#naive-bayes-para-classificação-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#naive-bayes-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Naive Bayes para classificação no R e Python",
-    "text": "Naive Bayes para classificação no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nnb_model &lt;- naive_Bayes() %&gt;% \n  set_engine(\"klaR\") %&gt;%\n  set_mode(\"classification\")\n\nnb_fit &lt;- workflow() %&gt;%\n  add_model(nb_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(nb_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.9487179\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.naive_bayes import GaussianNB # Para dados contínuos como Iris\nfrom sklearn.metrics import accuracy_score, confusion_matrix\nfrom sklearn.datasets import load_iris # Para carregar o dataset Iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nmodel_nb = GaussianNB()\nmodel_nb.fit(X_train, y_train)\n\nGaussianNB()In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.GaussianNBGaussianNB()\n\ny_pred = model_nb.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9555555555555556"
+    "text": "Naive Bayes para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nnb_model &lt;- naive_Bayes() %&gt;% \n  set_engine(\"klaR\") %&gt;%\n  set_mode(\"classification\")\n\nnb_fit &lt;- workflow() %&gt;%\n  add_model(nb_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(nb_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.9487179\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.naive_bayes import GaussianNB # Para dados contínuos como Iris\nfrom sklearn.metrics import accuracy_score, confusion_matrix\nfrom sklearn.datasets import load_iris # Para carregar o dataset Iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nmodel_nb = GaussianNB()\nmodel_nb.fit(X_train, y_train)\n\n\n\n\nGaussianNB()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nGaussianNBGaussianNB()\n\n\n\ny_pred = model_nb.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9555555555555556"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão",
@@ -2539,7 +2539,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-1",
     "title": "Análise Preditiva",
     "section": "Árvores de decisão",
-    "text": "Árvores de decisão\n\n\n\n\n\n\n\n\n\n\nAo percorrer a árvore da raiz até uma folha, os dados de entrada são avaliados de acordo com os testes em cada nó, seguindo o caminho apropriado até alcançar uma folha, onde é tomada a decisão final."
+    "text": "Árvores de decisão\n\n\n\n\n\n\n\n\n\nAo percorrer a árvore da raiz até uma folha, os dados de entrada são avaliados de acordo com os testes em cada nó, seguindo o caminho apropriado até alcançar uma folha, onde é tomada a decisão final."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#principais-algoritmos",
@@ -2686,7 +2686,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#controle-de-overfitting-podas-1",
     "title": "Análise Preditiva",
     "section": "Controle de Overfitting (Podas)",
-    "text": "Controle de Overfitting (Podas)\n\nTipos de Poda:\n\nPré-poda: Parar o crescimento da árvore antecipadamente com base em critérios (ex: profundidade máxima, número mínimo de amostras por nó).\n\nMais eficiente computacionalmente; pode levar ao underfitting\n\n\n\n\nPós-poda: Construir a árvore completa e depois remover nós que não melhoram o desempenho em um conjunto de validação.\n\nÁrvores com melhor capacidade de generalização; mais intensiva computacionalmente"
+    "text": "Controle de Overfitting (Podas)\n\nTipos de Poda:\n\n\nPré-poda: Parar o crescimento da árvore antecipadamente com base em critérios (ex: profundidade máxima, número mínimo de amostras por nó).\n\nMais eficiente computacionalmente; pode levar ao underfitting\n\n\n\n\n\n\nPós-poda: Construir a árvore completa e depois remover nós que não melhoram o desempenho em um conjunto de validação.\n\nÁrvores com melhor capacidade de generalização; mais intensiva computacionalmente"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-18",
@@ -2700,35 +2700,35 @@
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-19",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\nCálculo da Entropia\n\n\\[ \\text{E(S)} = \\sum_{i=1}^c -p_i\\log_2 p_i\\]\n\n\\[ \\text{E(S)} = -\\dfrac{9}{14}\\log_2 (\\dfrac{9}{14}) - \\dfrac{5}{14}\\log_2 (\\dfrac{5}{14}) = 0,940\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\nCálculo da Entropia\n\n\\[ \\text{E(S)} = \\sum_{i=1}^c -p_i\\log_2 p_i\\]\n\n\\[ \\text{E(S)} = -\\dfrac{9}{14}\\log_2 (\\dfrac{9}{14}) - \\dfrac{5}{14}\\log_2 (\\dfrac{5}{14}) = 0,940\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-20",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-20",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{|\\leq 30|}{|S|}\\times \\text{E}(\\leq 30)\\\\\n+ \\dfrac{|31...40|}{|S|}\\times \\text{E}(31...40) \\\\ +  \\dfrac{|&gt;40|}{|S|}\\times \\text{E}(&gt;40)\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{|\\leq 30|}{|S|}\\times \\text{E}(\\leq 30)\\\\\n+ \\dfrac{|31...40|}{|S|}\\times \\text{E}(31...40) \\\\ +  \\dfrac{|&gt;40|}{|S|}\\times \\text{E}(&gt;40)\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-21",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-21",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{5}{14}\\times \\text{E}(\\leq 30) \\\\ + \\dfrac{4}{14}\\times \\text{E}(31...40) \\\\ +  \\dfrac{5}{14}\\times \\text{E}(&gt;40)\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{5}{14}\\times \\text{E}(\\leq 30) \\\\ + \\dfrac{4}{14}\\times \\text{E}(31...40) \\\\ +  \\dfrac{5}{14}\\times \\text{E}(&gt;40)\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-22",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-22",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E}(\\leq 30) = -\\dfrac{2}{5}\\log_2 (\\dfrac{2}{5}) - \\dfrac{3}{5}\\log_2 (\\dfrac{3}{5}) = 0,971\\] \\[ \\text{E}(31...40) = 0\\,\\,\\,\\,\\,\\,\\,\\, \\text{e} \\,\\,\\,\\,\\,\\,\\,\\, \\text{E}(&gt;40) = 0,971\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E}(\\leq 30) = -\\dfrac{2}{5}\\log_2 (\\dfrac{2}{5}) - \\dfrac{3}{5}\\log_2 (\\dfrac{3}{5}) = 0,971\\] \\[ \\text{E}(31...40) = 0\\,\\,\\,\\,\\,\\,\\,\\, \\text{e} \\,\\,\\,\\,\\,\\,\\,\\, \\text{E}(&gt;40) = 0,971\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-23",
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-23",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{5}{|14|}\\times 0,971  + \\dfrac{4}{|14|}\\times 0 \\\\ +  \\dfrac{5}{14}\\times 0,971 = 0,693\\]\n\\[ \\text{G}(S, \\text{Idade}) = \\text{E}(S) - \\text{E}(S,\\text{Idade})\\\\ = 0,940 - 0,693 = 0,247\\]"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\n\n\nClasse\n\n\n\n\n\n\n\n\n\n\n\nSim\n\n\nNão\n\n\n\n\n\n\nIdade\n\n\n=&lt; 30\n\n\n2\n\n\n3\n\n\n5\n\n\n\n\n31…40\n\n\n4\n\n\n0\n\n\n4\n\n\n\n\n&gt;40\n\n\n3\n\n\n2\n\n\n5\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nGanho de informação para o atributo idade\n\n\\[ \\text{E(S, Idade)} = \\dfrac{5}{|14|}\\times 0,971  + \\dfrac{4}{|14|}\\times 0 \\\\ +  \\dfrac{5}{14}\\times 0,971 = 0,693\\]\n\\[ \\text{G}(S, \\text{Idade}) = \\text{E}(S) - \\text{E}(S,\\text{Idade})\\\\ = 0,940 - 0,693 = 0,247\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-24",
@@ -2756,7 +2756,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-27",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\n\nVoltando ao Joãozinho…\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
+    "text": "Exemplo: Compra de um computador\n\n\n\n\n\n\n\n\n\nVoltando ao Joãozinho…\n\n   \n\n\n\\(x_0 = (\\leq 30, \\text{ Média}, \\text{ Sim}, \\text{ Bom})\\)"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-28",
@@ -2770,21 +2770,21 @@
     "href": "aulas/Analise_preditiva/preditiva.html#exemplo-compra-de-um-computador-29",
     "title": "Análise Preditiva",
     "section": "Exemplo: Compra de um computador",
-    "text": "Exemplo: Compra de um computador\n\n\n\n\nJoão comprará o computador?\n\n\nDe acordo com Árvores de Decisão: SIM!"
+    "text": "Exemplo: Compra de um computador\n\n\nJoão comprará o computador?\n\nDe acordo com Árvores de Decisão: SIM!"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-para-classificação-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Árvores de Decisão para classificação no R e Python",
-    "text": "Árvores de Decisão para classificação no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\ntree_model &lt;- decision_tree() %&gt;% \n  set_engine(\"rpart\") %&gt;%\n  set_mode(\"classification\")\n\ntree_fit &lt;- workflow() %&gt;%\n  add_model(tree_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(tree_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\ntree = DecisionTreeClassifier(random_state=12345)\ntree.fit(X_train, y_train)\n\nDecisionTreeClassifier(random_state=12345)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.DecisionTreeClassifierDecisionTreeClassifier(random_state=12345)\n\ny_pred = tree.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
+    "text": "Árvores de Decisão para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\ntree_model &lt;- decision_tree() %&gt;% \n  set_engine(\"rpart\") %&gt;%\n  set_mode(\"classification\")\n\ntree_fit &lt;- workflow() %&gt;%\n  add_model(tree_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(tree_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\ntree = DecisionTreeClassifier(random_state=12345)\ntree.fit(X_train, y_train)\n\n\n\n\nDecisionTreeClassifier(random_state=12345)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nDecisionTreeClassifierDecisionTreeClassifier(random_state=12345)\n\n\n\ny_pred = tree.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-para-regressão-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#árvores-de-decisão-para-regressão-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Árvores de Decisão para regressão no R e Python",
-    "text": "Árvores de Decisão para regressão no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\ntree_model &lt;- decision_tree() %&gt;% \n  set_engine(\"rpart\") %&gt;%\n  set_mode(\"regression\")\n\ntree_fit &lt;- workflow() %&gt;%\n  add_model(tree_model) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(tree_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 17.00174\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\ntree = DecisionTreeRegressor(random_state=12345)\ntree.fit(X_train, y_train)\n\nDecisionTreeRegressor(random_state=12345)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.DecisionTreeRegressorDecisionTreeRegressor(random_state=12345)\n\ny_pred = tree.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.5445212937679262"
+    "text": "Árvores de Decisão para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\ntree_model &lt;- decision_tree() %&gt;% \n  set_engine(\"rpart\") %&gt;%\n  set_mode(\"regression\")\n\ntree_fit &lt;- workflow() %&gt;%\n  add_model(tree_model) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(tree_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 17.00174\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\ntree = DecisionTreeRegressor(random_state=12345)\ntree.fit(X_train, y_train)\n\n\n\n\nDecisionTreeRegressor(random_state=12345)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nDecisionTreeRegressorDecisionTreeRegressor(random_state=12345)\n\n\n\ny_pred = tree.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.5445212937679262"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests",
@@ -2805,7 +2805,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests",
     "title": "Análise Preditiva",
     "section": "Construção de um Random Forests",
-    "text": "Construção de um Random Forests\n\nAmostras são geradas com substituição (bootstrap)\n\n\n\nPara cada amostra, os dados são divididos utilizando os atributos que maximizem a pureza dos nós\n\nCritérios de divisão: Gini Index, Entropia, Ganho de Informação, etc.\n\n\n\n\n\nA cada divisão da árvore, uma amostra aleatória de variáveis é usada\n\nConstrução recursiva até atingir critérios de parada (profundidade máxima, pureza mínima)\n\n\n\n\n\nPrevisão final: Cada árvore possui um peso igual na votação final\n\nClassificação: maioria dos votos\nRegressão: média das previsões"
+    "text": "Construção de um Random Forests\n\nAmostras são geradas com substituição (bootstrap)\n\n\n\nPara cada amostra, os dados são divididos utilizando os atributos que maximizem a pureza dos nós\n\n\nCritérios de divisão: Gini Index, Entropia, Ganho de Informação, etc.\n\n\n\n\n\n\nA cada divisão da árvore, uma amostra aleatória de variáveis é usada\n\nConstrução recursiva até atingir critérios de parada (profundidade máxima, pureza mínima)\n\n\n\n\n\n\nPrevisão final: Cada árvore possui um peso igual na votação final\n\nClassificação: maioria dos votos\nRegressão: média das previsões"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests-1",
@@ -2819,7 +2819,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#construção-de-um-random-forests-2",
     "title": "Análise Preditiva",
     "section": "Construção de um Random Forests",
-    "text": "Construção de um Random Forests\n\n\n\n\n\n\n\n\n\n\n\n\nQual a classe predita?\n\n\nPela regra da maioria: classe 1"
+    "text": "Construção de um Random Forests\n\n\n\n\n\n\n\n\n\nQual a classe predita?\n\nPela regra da maioria: classe 1"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#hiperparâmetros-principais",
@@ -2833,28 +2833,28 @@
     "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-6",
     "title": "Análise Preditiva",
     "section": "Vantagens e Desvantagens",
-    "text": "Vantagens e Desvantagens\n\n\n\n\n👍\n\n\nTrata efetivamente problemas de overfitting\nLida bem com ruídos, dados ausentes e valores discrepantes\nLida com classificações multiclasses\nPouco ajuste de parâmetros\nCapaz de lidar com atributos de diferentes tipos (numéricos, categóricos)\nReduz a variância e melhora a precisão em comparação com uma única árvore"
+    "text": "Vantagens e Desvantagens\n\n\n\n\n👍\n\n\nTrata efetivamente problemas de overfitting\n\nLida bem com ruídos, dados ausentes e valores discrepantes\n\nLida com classificações multiclasses\nPouco ajuste de parâmetros\nCapaz de lidar com atributos de diferentes tipos (numéricos, categóricos)\nReduz a variância e melhora a precisão em comparação com uma única árvore"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-7",
     "href": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-7",
     "title": "Análise Preditiva",
     "section": "Vantagens e Desvantagens",
-    "text": "Vantagens e Desvantagens\n \n\n\n👎\n\n\n\n\nMenos interpretável que uma árvore única\nMais custoso computacionalmente"
+    "text": "Vantagens e Desvantagens\n\n\n\n👎\n\n\n\n\nMenos interpretável que uma árvore única\nMais custoso computacionalmente"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Random Forests para classificação no R e Python",
-    "text": "Random Forests para classificação no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\nRandomForestClassifier(max_features=2, n_estimators=500)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.RandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
+    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Random Forests para regressão no R e Python",
-    "text": "Random Forests para regressão no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\nRandomForestRegressor(max_features=6)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.RandomForestRegressorRandomForestRegressor(max_features=6)\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.25914641355874296"
+    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.25914641355874296"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis",
@@ -2868,7 +2868,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis-1",
     "title": "Análise Preditiva",
     "section": "Importância das variáveis",
-    "text": "Importância das variáveis\n\nRPython\n\n\n\n\nlibrary(vip)\nextract_fit_parsnip(rf_fit) %&gt;% vip(num_features = 4)\n\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Criar DataFrame com variáveis e importâncias\nfeat_imp = pd.DataFrame({\n    \"Variável\": iris.feature_names,\n    \"Importância\": rf_model.feature_importances_\n})\n\n# Ordenar pela importância\nfeat_imp = feat_imp.sort_values(by=\"Importância\", ascending=False)\n\n# Plotar gráfico ordenado\nsns.barplot(x=\"Importância\", y=\"Variável\", data=feat_imp, palette=\"viridis\")\nplt.title(\"Importância das variáveis\")\nplt.tight_layout()\nplt.show()"
+    "text": "Importância das variáveis\n\n\nR\nPython\n\n\n\n\n\nlibrary(vip)\nextract_fit_parsnip(rf_fit) %&gt;% vip(num_features = 4)\n\n\n\n\n\n\n\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nimport pandas as pd\n\n# Criar DataFrame com variáveis e importâncias\nfeat_imp = pd.DataFrame({\n    \"Variável\": iris.feature_names,\n    \"Importância\": rf_model.feature_importances_\n})\n\n# Ordenar pela importância\nfeat_imp = feat_imp.sort_values(by=\"Importância\", ascending=False)\n\n# Plotar gráfico ordenado\nsns.barplot(x=\"Importância\", y=\"Variável\", data=feat_imp, palette=\"viridis\")\nplt.title(\"Importância das variáveis\")\nplt.tight_layout()\nplt.show()"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#support-vector-machine-svm",
@@ -2896,7 +2896,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#hiperplano-de-separação",
     "title": "Análise Preditiva",
     "section": "Hiperplano de Separação",
-    "text": "Hiperplano de Separação\n\n\n\n\n\n\nTemos aqui 4 hiperplanos (A, B, C e D). Qual o melhor?"
+    "text": "Hiperplano de Separação\n\n\n\n\n\nTemos aqui 4 hiperplanos (A, B, C e D). Qual o melhor?"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#conceitos-de-vetores-de-suporte-e-margem-máxima",
@@ -2910,7 +2910,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#conceitos-de-vetores-de-suporte-e-margem-máxima-1",
     "title": "Análise Preditiva",
     "section": "Conceitos de vetores de suporte e Margem Máxima",
-    "text": "Conceitos de vetores de suporte e Margem Máxima\n\n\n\n\n\n\n\n\n\nMargem = \\(d_1 + d_2\\)\n\n\n\n\n👉 Para encontrar o hiperplano ótimo, caímos em um problema de otimização com restrição, que pode ser resolvido utilizando a técnica dos Multiplicadores de Lagrange!"
+    "text": "Conceitos de vetores de suporte e Margem Máxima\n\n\n\n\n\n\n\n\nMargem = \\(d_1 + d_2\\)\n\n\n\n\n👉 Para encontrar o hiperplano ótimo, caímos em um problema de otimização com restrição, que pode ser resolvido utilizando a técnica dos Multiplicadores de Lagrange!"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick-separando-o-inseparável",
@@ -2966,7 +2966,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#svm-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "SVM para classificação no R e Python",
-    "text": "SVM para classificação no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris &lt;- iris %&gt;% filter(Species != \"setosa\") %&gt;% mutate(Species = factor(Species))\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nsvm_model &lt;- svm_rbf() %&gt;%\n  set_engine(\"kernlab\") %&gt;%\n  set_mode(\"classification\")\n\nsvm_fit &lt;- workflow() %&gt;%\n  add_model(svm_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(svm_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8461538\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVC\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = iris.data[iris.target != 0, :2]\ny = iris.target[iris.target != 0]\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nsvm_model = SVC(kernel=\"rbf\")\nsvm_model.fit(X_train, y_train)\n\nSVC()In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.SVCSVC()\n\ny_pred = svm_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.6666666666666666"
+    "text": "SVM para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris &lt;- iris %&gt;% filter(Species != \"setosa\") %&gt;% mutate(Species = factor(Species))\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nsvm_model &lt;- svm_rbf() %&gt;%\n  set_engine(\"kernlab\") %&gt;%\n  set_mode(\"classification\")\n\nsvm_fit &lt;- workflow() %&gt;%\n  add_model(svm_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(svm_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8461538\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVC\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = iris.data[iris.target != 0, :2]\ny = iris.target[iris.target != 0]\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nsvm_model = SVC(kernel=\"rbf\")\nsvm_model.fit(X_train, y_train)\n\n\n\n\nSVC()\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nSVCSVC()\n\n\n\ny_pred = svm_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.6666666666666666"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#svm-para-regressão",
@@ -2980,21 +2980,21 @@
     "href": "aulas/Analise_preditiva/preditiva.html#svr-para-regressão-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "SVR para regressão no R e Python",
-    "text": "SVR para regressão no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nsvr_reg &lt;- svm_rbf() %&gt;%\n  set_engine(\"kernlab\") %&gt;%\n  set_mode(\"regression\")\n\nsvr_reg_fit &lt;- workflow() %&gt;%\n  add_model(svr_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(svr_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 8.124458\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVR\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nsvr_reg = SVR(kernel='rbf', C=100, epsilon=0.1)\nsvr_reg.fit(X_train, y_train)\n\nSVR(C=100)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.SVRSVR(C=100)\n\ny_pred = svr_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.6697473584156818"
+    "text": "SVR para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nsvr_reg &lt;- svm_rbf() %&gt;%\n  set_engine(\"kernlab\") %&gt;%\n  set_mode(\"regression\")\n\nsvr_reg_fit &lt;- workflow() %&gt;%\n  add_model(svr_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(svr_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 8.124458\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.svm import SVR\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nsvr_reg = SVR(kernel='rbf', C=100, epsilon=0.1)\nsvr_reg.fit(X_train, y_train)\n\n\n\n\nSVR(C=100)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nSVRSVR(C=100)\n\n\n\ny_pred = svr_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.6697473584156818"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#principais-hiperparâmetros-do-svm",
     "href": "aulas/Analise_preditiva/preditiva.html#principais-hiperparâmetros-do-svm",
     "title": "Análise Preditiva",
     "section": "Principais Hiperparâmetros do SVM",
-    "text": "Principais Hiperparâmetros do SVM\n\n🔧 C (Custo da penalização)\n\nControla o equilíbrio entre margem ampla e erros de classificação.\nValores baixos → margem maior, mais tolerância ao erro.\n\nValores altos → menos erros, margem mais estreita (pode causar overfitting).\n\n\n\n\n🌐 Kernel\n\nFunção que transforma os dados para um espaço de maior dimensão:\n\n\"linear\": separação linear.\n\"rbf\" (radial basis function): não linear, padrão.\n\"poly\": polinomial, útil para interações complexas."
+    "text": "Principais Hiperparâmetros do SVM\n\n🔧 C (Custo da penalização)\n\nControla o equilíbrio entre margem ampla e erros de classificação.\nValores baixos → margem maior, mais tolerância ao erro.\n\nValores altos → menos erros, margem mais estreita (pode causar overfitting).\n\n\n\n\n\n🌐 Kernel\n\nFunção que transforma os dados para um espaço de maior dimensão:\n\n\n\"linear\": separação linear.\n\n\"rbf\" (radial basis function): não linear, padrão.\n\n\"poly\": polinomial, útil para interações complexas."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#principais-hiperparâmetros-do-svm-1",
     "href": "aulas/Analise_preditiva/preditiva.html#principais-hiperparâmetros-do-svm-1",
     "title": "Análise Preditiva",
     "section": "Principais Hiperparâmetros do SVM",
-    "text": "Principais Hiperparâmetros do SVM\n\n⚙️ Gamma (usado com RBF e poly)\n\nDefine a influência de um ponto de treino:\n\nValores altos → influência local → mais complexidade.\nValores baixos → influência global → modelo mais suave.\n\n\n\n\n\n📏 Epsilon (para regressão - SVR)\n\nDefine a zona de tolerância onde nenhuma penalização é aplicada.\nControla a sensibilidade do modelo a pequenas variações nos dados."
+    "text": "Principais Hiperparâmetros do SVM\n\n⚙️ Gamma (usado com RBF e poly)\n\nDefine a influência de um ponto de treino:\n\nValores altos → influência local → mais complexidade.\nValores baixos → influência global → modelo mais suave.\n\n\n\n\n\n\n\n📏 Epsilon (para regressão - SVR)\n\nDefine a zona de tolerância onde nenhuma penalização é aplicada.\nControla a sensibilidade do modelo a pequenas variações nos dados."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#pré-processamento-para-svm",
@@ -3036,7 +3036,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#neurônio-artificial",
     "title": "Análise Preditiva",
     "section": "Neurônio Artificial",
-    "text": "Neurônio Artificial\n\n\n\n\n\n\n\n\n\n\n\n\\[ \\nu_k = \\sum_{i=1}^p w_{ki}x_i +b_k\\]\n\\[ y_k = \\varphi(\\nu_k)\\]"
+    "text": "Neurônio Artificial\n\n\n\n\n\n\n\n\n\n\n\\[ \\nu_k = \\sum_{i=1}^p w_{ki}x_i +b_k\\]\n\\[ y_k = \\varphi(\\nu_k)\\]"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#funções-de-ativação",
@@ -3050,7 +3050,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#função-threshold",
     "title": "Análise Preditiva",
     "section": "Função Threshold",
-    "text": "Função Threshold\n\n\n\n\\[\\varphi(\\nu) = \\begin{cases}1 & \\text{se } \\nu \\geq 0, \\\\\n0 & \\text{se }\\nu &lt; 0\\end{cases}\\]\n\n\n\n\n\n\n\n\n\n\n👉 Útil em problemas onde se deseja atribuir uma saída binária, como 0 ou 1, com base em um limite."
+    "text": "Função Threshold\n\n\n\n\\[\\varphi(\\nu) = \\begin{cases}1 & \\text{se } \\nu \\geq 0, \\\\\n0 & \\text{se }\\nu &lt; 0\\end{cases}\\]\n\n\n\n\n\n\n\n\n\n👉 Útil em problemas onde se deseja atribuir uma saída binária, como 0 ou 1, com base em um limite."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#função-sigmoidal",
@@ -3064,28 +3064,28 @@
     "href": "aulas/Analise_preditiva/preditiva.html#função-sinal",
     "title": "Análise Preditiva",
     "section": "Função Sinal",
-    "text": "Função Sinal\n\n\n\n\\[\\varphi(\\nu) = \\begin{cases}1 & \\text{se } \\nu &gt; 0, \\\\\n0 & \\text{se }\\nu = 0, \\\\\n-1 & \\text{se } \\nu &lt; 0 \\end{cases}\\]\n\n\n\n\n\n\n\n\n\n\n👉 Útil em problemas onde se deseja atribuir uma saída discreta de -1 ou 1 com base na polaridade do valor de entrada."
+    "text": "Função Sinal\n\n\n\n\\[\\varphi(\\nu) = \\begin{cases}1 & \\text{se } \\nu &gt; 0, \\\\\n0 & \\text{se }\\nu = 0, \\\\\n-1 & \\text{se } \\nu &lt; 0 \\end{cases}\\]\n\n\n\n\n\n\n\n\n\n👉 Útil em problemas onde se deseja atribuir uma saída discreta de -1 ou 1 com base na polaridade do valor de entrada."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#função-tangente-hiperbólica",
     "href": "aulas/Analise_preditiva/preditiva.html#função-tangente-hiperbólica",
     "title": "Análise Preditiva",
     "section": "Função Tangente Hiperbólica",
-    "text": "Função Tangente Hiperbólica\n\n\n\n\\[\\varphi(\\nu) = \\dfrac{1-\\exp(-\\beta \\nu)}{1+\\exp(-\\beta \\nu)}\\]\n\n\n\n\n\n\n\n\n\n\n👉 É comumente usada em redes neurais para classificação binária ou regressão."
+    "text": "Função Tangente Hiperbólica\n\n\n\n\\[\\varphi(\\nu) = \\dfrac{1-\\exp(-\\beta \\nu)}{1+\\exp(-\\beta \\nu)}\\]\n\n\n\n\n\n\n\n\n\n👉 É comumente usada em redes neurais para classificação binária ou regressão."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#função-relu",
     "href": "aulas/Analise_preditiva/preditiva.html#função-relu",
     "title": "Análise Preditiva",
     "section": "Função ReLU",
-    "text": "Função ReLU\n\n\n\n\\[\\varphi(\\nu) = \\max(0, \\nu)\\]\n\n\n\n\n\n\n\n\n\n\n👉 Amplamente usada em camadas ocultas de redes neurais devido à sua simplicidade computacional"
+    "text": "Função ReLU\n\n\n\n\\[\\varphi(\\nu) = \\max(0, \\nu)\\]\n\n\n\n\n\n\n\n\n\n👉 Amplamente usada em camadas ocultas de redes neurais devido à sua simplicidade computacional"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#função-softmax",
     "href": "aulas/Analise_preditiva/preditiva.html#função-softmax",
     "title": "Análise Preditiva",
     "section": "Função Softmax",
-    "text": "Função Softmax\n\n\n\n\\[\\varphi(\\nu) = \\dfrac{\\exp({\\nu})}{\\sum_{k=1}^K \\exp(\\nu_k) }\\]\n\n\n\n\n\n\n\n\n\n\n👉 Usada para classificação multiclasse. As saídas são normalizadas, representando probabilidades."
+    "text": "Função Softmax\n\n\n\n\\[\\varphi(\\nu) = \\dfrac{\\exp({\\nu})}{\\sum_{k=1}^K \\exp(\\nu_k) }\\]\n\n\n\n\n\n\n\n\n\n👉 Usada para classificação multiclasse. As saídas são normalizadas, representando probabilidades."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#arquiteturas-de-redes",
@@ -3113,7 +3113,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp",
     "title": "Análise Preditiva",
     "section": "Multi-Layer Perceptron (MLP)",
-    "text": "Multi-Layer Perceptron (MLP)\n\nO MLP é uma arquitetura de rede neural feedforward com várias camadas ocultas entre a camada de entrada e a camada de saída.\n\n\nCamada de Entrada: Recebe os dados de entrada.\n\n\n\n\nCamadas Ocultas: Realizam o processamento das entradas.\n\n\n\n\nCamada de Saída: Fornece a saída do modelo.\n\n\n\nCada camada possui vários neurônios interconectados."
+    "text": "Multi-Layer Perceptron (MLP)\n\nO MLP é uma arquitetura de rede neural feedforward com várias camadas ocultas entre a camada de entrada e a camada de saída.\n\n\n\nCamada de Entrada: Recebe os dados de entrada.\n\n\n\n\n\nCamadas Ocultas: Realizam o processamento das entradas.\n\n\n\n\n\nCamada de Saída: Fornece a saída do modelo.\n\n\n\nCada camada possui vários neurônios interconectados."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp-1",
@@ -3127,7 +3127,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#multi-layer-perceptron-mlp-2",
     "title": "Análise Preditiva",
     "section": "Multi-Layer Perceptron (MLP)",
-    "text": "Multi-Layer Perceptron (MLP)\n\n\n\n\n\n\n\nO MLP é capaz de aprender e modelar relações complexas nos dados e é amplamente usado em problemas de classificação e regressão."
+    "text": "Multi-Layer Perceptron (MLP)\n\n\n\n\n\n\nO MLP é capaz de aprender e modelar relações complexas nos dados e é amplamente usado em problemas de classificação e regressão."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-das-redes-neurais",
@@ -3141,7 +3141,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#treinamento-das-redes-neurais-1",
     "title": "Análise Preditiva",
     "section": "Treinamento das Redes Neurais",
-    "text": "Treinamento das Redes Neurais\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👉 Treinamento supervisionado"
+    "text": "Treinamento das Redes Neurais\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n👉 Treinamento supervisionado"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron",
@@ -3155,7 +3155,7 @@
     "href": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron-1",
     "title": "Análise Preditiva",
     "section": "Treinamento do perceptron",
-    "text": "Treinamento do perceptron\nA atualização dos pesos é dada por:\n\\[\\mathbf{w}(n+1) = \\mathbf{w}(n) + \\eta[\\hat{y}(n)-y(n)]\\mathbf{x}(n)\\]\n\nE a atualização do bias:\n\\[b(n+1) = b(n) + \\eta y(n)\\]\nem que:\n\n\\(\\hat{y}(n)\\) é a saída alvo\n\\(y(n)\\) é a saída da rede\n\\(\\eta\\) é a taxa de aprendizado"
+    "text": "Treinamento do perceptron\nA atualização dos pesos é dada por:\n\\[\\mathbf{w}(n+1) = \\mathbf{w}(n) + \\eta[\\hat{y}(n)-y(n)]\\mathbf{x}(n)\\]\n\nE a atualização do bias:\n\\[b(n+1) = b(n) + \\eta y(n)\\]\nem que:\n\n\n\\(\\hat{y}(n)\\) é a saída alvo\n\n\\(y(n)\\) é a saída da rede\n\n\\(\\eta\\) é a taxa de aprendizado"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-do-perceptron-2",
@@ -3169,14 +3169,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp",
     "title": "Análise Preditiva",
     "section": "Treinamento de redes MLP",
-    "text": "Treinamento de redes MLP\n\nO algoritmo de aprendizado da MLP é chamado backpropagation e é composto, basicamente, de duas etapas\n\n\nPropagação: Recebimento dos estímulos que é aplicado aos neurônios da rede, onde seu efeito se propaga camada por camada até produzir uma saída como resposta da rede. Neste passo não há alteração nos pesos sinápticos."
+    "text": "Treinamento de redes MLP\n\nO algoritmo de aprendizado da MLP é chamado backpropagation e é composto, basicamente, de duas etapas\n\n\n\nPropagação: Recebimento dos estímulos que é aplicado aos neurônios da rede, onde seu efeito se propaga camada por camada até produzir uma saída como resposta da rede. Neste passo não há alteração nos pesos sinápticos."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp-1",
     "href": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp-1",
     "title": "Análise Preditiva",
     "section": "Treinamento de redes MLP",
-    "text": "Treinamento de redes MLP\n\nA saída prevista pela rede MLP é comparada com a saída desejada usando uma função de custo. A função de custo mede o quão bem a rede MLP está performando em relação ao objetivo desejado.\n\n\nRetropropagação: Após a saída, os pesos sinápticos são ajustados de acordo com a regra de correção de erro. Este sinal é propagado então para toda rede da saída para o entrada (caminho inverso), ou seja, o erro é retropropagado."
+    "text": "Treinamento de redes MLP\n\nA saída prevista pela rede MLP é comparada com a saída desejada usando uma função de custo. A função de custo mede o quão bem a rede MLP está performando em relação ao objetivo desejado.\n\n\n\nRetropropagação: Após a saída, os pesos sinápticos são ajustados de acordo com a regra de correção de erro. Este sinal é propagado então para toda rede da saída para o entrada (caminho inverso), ou seja, o erro é retropropagado."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#treinamento-de-redes-mlp-2",
@@ -3190,35 +3190,35 @@
     "href": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros",
     "title": "Análise Preditiva",
     "section": "Ajuste de Hiperparâmetros",
-    "text": "Ajuste de Hiperparâmetros\n\n\nNúmero de Camadas Ocultas: Determina a complexidade da rede.\n\nMais camadas: Maior capacidade de modelar relações complexas. Contudo, pode resultar em redes mais lentas para treinar e maior risco de overfitting se não controlado.\nMenos camadas: Menor capacidade de abstração, podendo falhar em aprender padrões complexos dos dados."
+    "text": "Ajuste de Hiperparâmetros\n\n\n\nNúmero de Camadas Ocultas: Determina a complexidade da rede.\n\n\nMais camadas: Maior capacidade de modelar relações complexas. Contudo, pode resultar em redes mais lentas para treinar e maior risco de overfitting se não controlado.\n\nMenos camadas: Menor capacidade de abstração, podendo falhar em aprender padrões complexos dos dados."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros-1",
     "href": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros-1",
     "title": "Análise Preditiva",
     "section": "Ajuste de Hiperparâmetros",
-    "text": "Ajuste de Hiperparâmetros\n\n\nNúmero de Neurônios: Controla a capacidade de aprendizagem da rede.\n\nMais neurônios: Maior capacidade de aprendizagem e representação dos dados, mas pode levar ao overfitting (modelo “memorizando” os dados de treinamento em vez de generalizar bem).\nMenos neurônios: Pode resultar em um modelo muito simples, incapaz de capturar as relações complexas dos dados."
+    "text": "Ajuste de Hiperparâmetros\n\n\n\nNúmero de Neurônios: Controla a capacidade de aprendizagem da rede.\n\n\nMais neurônios: Maior capacidade de aprendizagem e representação dos dados, mas pode levar ao overfitting (modelo “memorizando” os dados de treinamento em vez de generalizar bem).\n\nMenos neurônios: Pode resultar em um modelo muito simples, incapaz de capturar as relações complexas dos dados."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros-2",
     "href": "aulas/Analise_preditiva/preditiva.html#ajuste-de-hiperparâmetros-2",
     "title": "Análise Preditiva",
     "section": "Ajuste de Hiperparâmetros",
-    "text": "Ajuste de Hiperparâmetros\n\n\nTaxa de Aprendizado: Define o quanto os pesos são atualizados a cada iteração.\n\nTaxa muito alta: O modelo pode “saltar” a solução ótima, resultando em um treinamento instável.\nTaxa muito baixa: O treinamento será mais lento, podendo até ficar preso em um ótimo local (máximo ou mínimo)."
+    "text": "Ajuste de Hiperparâmetros\n\n\n\nTaxa de Aprendizado: Define o quanto os pesos são atualizados a cada iteração.\n\n\nTaxa muito alta: O modelo pode “saltar” a solução ótima, resultando em um treinamento instável.\n\nTaxa muito baixa: O treinamento será mais lento, podendo até ficar preso em um ótimo local (máximo ou mínimo)."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-dropout",
     "href": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-dropout",
     "title": "Análise Preditiva",
     "section": "Evitando Overfitting: Dropout",
-    "text": "Evitando Overfitting: Dropout\n\nDropout é uma técnica de regularização onde, durante o treinamento, neurônios são aleatoriamente “desconectados” (ou desligados) de cada vez. Isso impede que o modelo dependa demais de neurônios específicos.\n\n👉 Reduz a co-adaptação dos neurônios, forçando o modelo a aprender representações mais robustas. Aumenta a generalização do modelo e melhora o desempenho em dados não vistos.\n\n\nDurante o treinamento, uma fração dos neurônios (tipicamente 20%-50%) é removida aleatoriamente a cada iteração, dificultando a adaptação excessiva a um único conjunto de características."
+    "text": "Evitando Overfitting: Dropout\n\n\nDropout é uma técnica de regularização onde, durante o treinamento, neurônios são aleatoriamente “desconectados” (ou desligados) de cada vez. Isso impede que o modelo dependa demais de neurônios específicos.\n\n👉 Reduz a co-adaptação dos neurônios, forçando o modelo a aprender representações mais robustas. Aumenta a generalização do modelo e melhora o desempenho em dados não vistos.\n\n\nDurante o treinamento, uma fração dos neurônios (tipicamente 20%-50%) é removida aleatoriamente a cada iteração, dificultando a adaptação excessiva a um único conjunto de características."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-regularização-l2",
     "href": "aulas/Analise_preditiva/preditiva.html#evitando-overfitting-regularização-l2",
     "title": "Análise Preditiva",
     "section": "Evitando Overfitting: Regularização L2",
-    "text": "Evitando Overfitting: Regularização L2\n\nA regularização L2 penaliza os pesos grandes ao adicionar uma soma dos quadrados dos pesos à função de custo do modelo. Isso evita que os neurônios se especializem demais em dados específicos.\n\n👉 Ao forçar os pesos a permanecerem pequenos, o modelo tende a ter uma capacidade de generalização maior, reduzindo o risco de overfitting. Penaliza fortemente pesos grandes, incentivando uma solução mais “suave” com menos variação nos parâmetros.\n\n\nA regularização L2 é muito eficaz para problemas com muitos atributos e ajuda a melhorar a estabilidade do modelo."
+    "text": "Evitando Overfitting: Regularização L2\n\n\nA regularização L2 penaliza os pesos grandes ao adicionar uma soma dos quadrados dos pesos à função de custo do modelo. Isso evita que os neurônios se especializem demais em dados específicos.\n\n👉 Ao forçar os pesos a permanecerem pequenos, o modelo tende a ter uma capacidade de generalização maior, reduzindo o risco de overfitting. Penaliza fortemente pesos grandes, incentivando uma solução mais “suave” com menos variação nos parâmetros.\n\n\nA regularização L2 é muito eficaz para problemas com muitos atributos e ajuda a melhorar a estabilidade do modelo."
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#vantagens-e-desvantagens-9",
@@ -3246,14 +3246,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#rna-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "RNA para classificação no R e Python",
-    "text": "RNA para classificação no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(nnet)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris &lt;- iris %&gt;% filter(Species != \"setosa\") %&gt;% mutate(Species = factor(Species))\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nnn_model &lt;- mlp() %&gt;%\n  set_engine(\"nnet\") %&gt;%\n  set_mode(\"classification\")\n\nnn_fit &lt;- workflow() %&gt;%\n  add_model(nn_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(nn_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8846154\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neural_network import MLPClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = iris.data[iris.target != 0, :2]\ny = iris.target[iris.target != 0]\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nnn_model = MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)\nnn_model.fit(X_train, y_train)\n\nMLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.MLPClassifierMLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)\n\ny_pred = nn_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.43333333333333335"
+    "text": "RNA para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(nnet)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris &lt;- iris %&gt;% filter(Species != \"setosa\") %&gt;% mutate(Species = factor(Species))\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nnn_model &lt;- mlp() %&gt;%\n  set_engine(\"nnet\") %&gt;%\n  set_mode(\"classification\")\n\nnn_fit &lt;- workflow() %&gt;%\n  add_model(nn_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(nn_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8846154\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neural_network import MLPClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = iris.data[iris.target != 0, :2]\ny = iris.target[iris.target != 0]\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nnn_model = MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)\nnn_model.fit(X_train, y_train)\n\n\n\n\nMLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nMLPClassifierMLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000, random_state=12345)\n\n\n\ny_pred = nn_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.43333333333333335"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#rna-para-regressão-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#rna-para-regressão-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "RNA para regressão no R e Python",
-    "text": "RNA para regressão no R e Python\n\nRPython\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nnn_reg &lt;- mlp() %&gt;%\n  set_engine(\"nnet\") %&gt;%\n  set_mode(\"regression\")\n\nnn_reg_fit &lt;- workflow() %&gt;%\n  add_model(nn_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(nn_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 15.50235\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neural_network import MLPRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nnn_reg = MLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)\nnn_reg.fit(X_train, y_train)\n\nMLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.MLPRegressorMLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)\n\ny_pred = nn_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.7468737160368192"
+    "text": "RNA para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nnn_reg &lt;- mlp() %&gt;%\n  set_engine(\"nnet\") %&gt;%\n  set_mode(\"regression\")\n\nnn_reg_fit &lt;- workflow() %&gt;%\n  add_model(nn_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(nn_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 15.50235\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.neural_network import MLPRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nnn_reg = MLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)\nnn_reg.fit(X_train, y_train)\n\n\n\n\nMLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nMLPRegressorMLPRegressor(hidden_layer_sizes=(50, 25), max_iter=1000, random_state=12345)\n\n\n\ny_pred = nn_reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.7468737160368192"
   },
   {
     "objectID": "aulas/Pre_processamento/pre_processamento.html#pré-processamento-de-dados",

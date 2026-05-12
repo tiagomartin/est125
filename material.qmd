@@ -54,6 +54,30 @@ Esta página contém materiais complementares das aulas que serão apresentadas 
 </span>
 :::
 
+
+::: {.list-group-item .d-flex .justify-content-between .align-items-center}
+<span class="fw-bold">
+  Desbalanceamento de Classes: Um Problema Real em Ciência de Dados
+</span>
+
+<span>
+[Ver material](/material_complementar/desbalanceamento.html){.btn .btn-est304-main .btn-sm}
+<!-- [PDF](/aulas/Conceitos%20iniciais/conceitos_iniciais.pdf){.btn .btn-est304-outline .btn-sm} -->
+</span>
+:::
+
+
+::: {.list-group-item .d-flex .justify-content-between .align-items-center}
+<span class="fw-bold">
+  Vazamento de dados: O inimigo oculto da predição confiável
+</span>
+
+<span>
+[Ver material](/material_complementar/vazamento.html){.btn .btn-est304-main .btn-sm}
+<!-- [PDF](/aulas/Conceitos%20iniciais/conceitos_iniciais.pdf){.btn .btn-est304-outline .btn-sm} -->
+</span>
+:::
+
 :::
 
 
