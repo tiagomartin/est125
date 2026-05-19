@@ -3665,14 +3665,14 @@ Margem = $d_1 + d_2$
 
 
 
-## Kernel Trick: separando o inseparável
+## Kernel Trick
 
 Mas e se tivermos problemas **não linearmente separáveis**?
 
 ![](/images/rf/nLin.png){.nostretch fig-align="center" width="800px"}
 
 
-## Kernel Trick: separando o inseparável
+## Kernel Trick
 
 O SVM é um algoritmo que inicialmente trabalha com dados **linearmente separáveis**. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um **hiperplano linear**. É aí que entra o **Kernel Trick**.
 
@@ -3689,13 +3689,13 @@ O **Kernel Trick** (Truque do Kernel) nos permite **mapear os dados** para um es
 Isso é feito através de uma **função** chamada **kernel**, que calcula o produto interno entre dois vetores nesse espaço de características.
 
 
-## Kernel Trick: separando o inseparável
+## Kernel Trick
 
 
 ![](/images/rf/kernelTrick.png){.nostretch fig-align="center" width="1400px"}
 
 
-## Kernel Trick: separando o inseparável
+## Kernel Trick
 
 
 

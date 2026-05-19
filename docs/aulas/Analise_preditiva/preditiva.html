@@ -3014,7 +3014,7 @@ Idade<br>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a></a>y_pred <span class="op">=</span> rf_model.predict(X_test)</span>
 <span id="cb29-2"><a></a>accuracy_score(y_test, y_pred)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.9777777777777777</code></pre>
+<pre><code>0.9555555555555556</code></pre>
 </div>
 </div>
 </div>
@@ -3084,7 +3084,7 @@ Idade<br>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>y_pred <span class="op">=</span> reg.predict(X_test)</span>
 <span id="cb34-2"><a></a>mean_squared_error(y_test, y_pred, squared<span class="op">=</span><span class="va">True</span>)  <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.25914641355874296</code></pre>
+<pre><code>0.25822356505164296</code></pre>
 </div>
 </div>
 </div>
@@ -3228,13 +3228,13 @@ Margem = <span class="math inline">\(d_1 + d_2\)</span>
 <span style="font-size:70px;">👉</span> Para encontrar o <strong>hiperplano ótimo</strong>, caímos em um problema de otimização com restrição, que pode ser resolvido utilizando a técnica dos <strong>Multiplicadores de Lagrange</strong>!
 </p>
 </div></div>
-</section><section id="kernel-trick-separando-o-inseparável" class="slide level2"><h2>Kernel Trick: separando o inseparável</h2>
+</section><section id="kernel-trick" class="slide level2"><h2>Kernel Trick</h2>
 <p>Mas e se tivermos problemas <strong>não linearmente separáveis</strong>?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="../..\images/rf/nLin.png" class="quarto-figure quarto-figure-center" width="800"></p>
 </figure>
 </div>
-</section><section id="kernel-trick-separando-o-inseparável-1" class="slide level2"><h2>Kernel Trick: separando o inseparável</h2>
+</section><section id="kernel-trick-1" class="slide level2"><h2>Kernel Trick</h2>
 <p>O SVM é um algoritmo que inicialmente trabalha com dados <strong>linearmente separáveis</strong>. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um <strong>hiperplano linear</strong>. É aí que entra o <strong>Kernel Trick</strong>.</p>
 <div class="fragment">
 <p>O <strong>Kernel Trick</strong> (Truque do Kernel) nos permite <strong>mapear os dados</strong> para um espaço de características de <strong>dimensão superior</strong>, onde se tornam linearmente separáveis.</p>
@@ -3242,12 +3242,12 @@ Margem = <span class="math inline">\(d_1 + d_2\)</span>
 <div class="fragment">
 <p>Isso é feito através de uma <strong>função</strong> chamada <strong>kernel</strong>, que calcula o produto interno entre dois vetores nesse espaço de características.</p>
 </div>
-</section><section id="kernel-trick-separando-o-inseparável-2" class="slide level2"><h2>Kernel Trick: separando o inseparável</h2>
+</section><section id="kernel-trick-2" class="slide level2"><h2>Kernel Trick</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure><p><img data-src="../..\images/rf/kernelTrick.png" class="quarto-figure quarto-figure-center" width="1400"></p>
 </figure>
 </div>
-</section><section id="kernel-trick-separando-o-inseparável-3" class="slide level2"><h2>Kernel Trick: separando o inseparável</h2>
+</section><section id="kernel-trick-3" class="slide level2"><h2>Kernel Trick</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
 <p><br></p>

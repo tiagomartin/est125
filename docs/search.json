@@ -283,7 +283,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da Disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 31/03\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 02/04\nFeriado: Semana Santa\n\n\n\n\n\n\n\n\n\n2\nTer, 07/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 09/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 14/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 16/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n4\nTer, 21/04\nFeriado: Tiradentes\n\n\n\n\n\n\n\n\n\n\nQui, 23/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 28/04\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 30/04\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 05/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n7\nTer, 12/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 14/05\nAnálise Preditiva",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 31/03\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 02/04\nFeriado: Semana Santa\n\n\n\n\n\n\n\n\n\n2\nTer, 07/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 09/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 14/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 16/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n4\nTer, 21/04\nFeriado: Tiradentes\n\n\n\n\n\n\n\n\n\n\nQui, 23/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 28/04\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 30/04\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 05/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n7\nTer, 12/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 14/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n8\nTer, 19/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 21/05\nAnálise Preditiva",
     "crumbs": [
       "Cronograma da Disciplina"
     ]
@@ -2847,14 +2847,14 @@
     "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-classificação-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Random Forests para classificação no R e Python",
-    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9777777777777777"
+    "text": "Random Forests para classificação no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(discrim)\nlibrary(Metrics)\n\nset.seed(12345)\ndata(iris)\niris_split &lt;- initial_split(iris, strata = Species)\ntrain_data &lt;- training(iris_split)\ntest_data &lt;- testing(iris_split)\n\nrf_model &lt;- rand_forest(mtry = 2, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"classification\")\n\nrf_fit &lt;- workflow() %&gt;%\n  add_model(rf_model) %&gt;%\n  add_formula(Species ~ .) %&gt;%\n  fit(data = train_data)\n\nsp_predict &lt;- predict(rf_fit, new_data = test_data)\n\nMetrics::accuracy(test_data$Species, sp_predict$.pred_class)\n\n[1] 0.8974359\n\n\n\n\n\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score, classification_report, confusion_matrix\nfrom sklearn.datasets import load_iris\n\niris = load_iris()\nX = pd.DataFrame(iris.data, columns=iris.feature_names)\ny = pd.Series(iris.target_names[iris.target], name='species') # Mapear números para nomes de espécies\n\n# Split dos dados em treino e teste\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=12345)\n\nrf_model = RandomForestClassifier(n_estimators=500, max_features=2)\nrf_model.fit(X_train, y_train)\n\n\n\n\nRandomForestClassifier(max_features=2, n_estimators=500)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestClassifierRandomForestClassifier(max_features=2, n_estimators=500)\n\n\n\ny_pred = rf_model.predict(X_test)\naccuracy_score(y_test, y_pred)\n\n0.9555555555555556"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
     "href": "aulas/Analise_preditiva/preditiva.html#random-forests-para-regressão-no-r-e-python",
     "title": "Análise Preditiva",
     "section": "Random Forests para regressão no R e Python",
-    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.25914641355874296"
+    "text": "Random Forests para regressão no R e Python\n\n\nR\nPython\n\n\n\n\nlibrary(tidymodels)\nlibrary(Metrics)\n\ndata(\"mtcars\")\nset.seed(12345)\nmtcars_split &lt;- initial_split(mtcars, strata = mpg)\ntrain_data &lt;- training(mtcars_split)\ntest_data &lt;- testing(mtcars_split)\n\nrf_reg &lt;- rand_forest(mtry = 3, trees = 500) %&gt;%\n  set_engine(\"ranger\", importance = \"impurity\") %&gt;%\n  set_mode(\"regression\")\n\nrf_reg_fit &lt;- workflow() %&gt;%\n  add_model(rf_reg) %&gt;%\n  add_formula(mpg ~ .) %&gt;%\n  fit(data = train_data)\n\nmpg_predict &lt;- predict(rf_reg_fit, test_data)\n\nMetrics::mse(test_data$mpg, mpg_predict$.pred) # MSE\n\n[1] 6.18105\n\n\n\n\n\nfrom sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import mean_squared_error\n\ndata = fetch_california_housing()\nX_train, X_test, y_train, y_test = train_test_split(\n    data.data, data.target, random_state=12345\n)\n\nreg = RandomForestRegressor(n_estimators=100, max_features=6)\nreg.fit(X_train, y_train)\n\n\n\n\nRandomForestRegressor(max_features=6)\nIn a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.\n\n\nRandomForestRegressorRandomForestRegressor(max_features=6)\n\n\n\ny_pred = reg.predict(X_test)\nmean_squared_error(y_test, y_pred, squared=True)  # MSE\n\n0.25822356505164296"
   },
   {
     "objectID": "aulas/Analise_preditiva/preditiva.html#importância-das-variáveis",
@@ -4420,5 +4420,33 @@
     "crumbs": [
       "Projeto Avaliativo"
     ]
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick",
+    "href": "aulas/Analise_preditiva/preditiva.html#kernel-trick",
+    "title": "Análise Preditiva",
+    "section": "Kernel Trick",
+    "text": "Kernel Trick\nMas e se tivermos problemas não linearmente separáveis?"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick-1",
+    "href": "aulas/Analise_preditiva/preditiva.html#kernel-trick-1",
+    "title": "Análise Preditiva",
+    "section": "Kernel Trick",
+    "text": "Kernel Trick\nO SVM é um algoritmo que inicialmente trabalha com dados linearmente separáveis. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um hiperplano linear. É aí que entra o Kernel Trick.\n\nO Kernel Trick (Truque do Kernel) nos permite mapear os dados para um espaço de características de dimensão superior, onde se tornam linearmente separáveis.\n\n\nIsso é feito através de uma função chamada kernel, que calcula o produto interno entre dois vetores nesse espaço de características."
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick-2",
+    "href": "aulas/Analise_preditiva/preditiva.html#kernel-trick-2",
+    "title": "Análise Preditiva",
+    "section": "Kernel Trick",
+    "text": "Kernel Trick"
+  },
+  {
+    "objectID": "aulas/Analise_preditiva/preditiva.html#kernel-trick-3",
+    "href": "aulas/Analise_preditiva/preditiva.html#kernel-trick-3",
+    "title": "Análise Preditiva",
+    "section": "Kernel Trick",
+    "text": "Kernel Trick\n\n\n\n👉 Exemplos comuns:\n\nLinear\nPolinomial\nRadial Basis Function (RBF ou Gaussiano)\nSigmoide"
   }
 ]
