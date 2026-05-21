@@ -3084,7 +3084,7 @@ Idade<br>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a></a>y_pred <span class="op">=</span> reg.predict(X_test)</span>
 <span id="cb34-2"><a></a>mean_squared_error(y_test, y_pred, squared<span class="op">=</span><span class="va">True</span>)  <span class="co"># MSE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0.25822356505164296</code></pre>
+<pre><code>0.25714895218033923</code></pre>
 </div>
 </div>
 </div>
@@ -3192,10 +3192,10 @@ Idade<br>
 <p><br></p>
 <p>O objetivo do SVM é encontrar um <strong>hiperplano de separação ótimo</strong> que <strong>maximize a margem</strong> entre as classes.</p>
 <div class="fragment">
-<p>Para problemas de classificação binária, um <strong>hiperplano de separação</strong> é uma superfície que divide o espaço de características em duas regiões, uma para cada classe. Neste caso, esse hiperplano é uma <strong>reta</strong>!</p>
+<p>Para problemas de classificação binária, um <strong>hiperplano de separação</strong> é uma superfície que divide o espaço de características em duas regiões, uma para cada classe.</p>
 </div>
 <div class="fragment">
-<p>Em problemas <strong>multiclasse</strong>, pode ser um plano ou uma superfície mais complexa.</p>
+<p>Em problemas <strong>multiclasse</strong>, pode ser uma superfície mais complexa.</p>
 </div>
 </section><section id="hiperplano-de-separação" class="slide level2"><h2>Hiperplano de Separação</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -3235,7 +3235,7 @@ Margem = <span class="math inline">\(d_1 + d_2\)</span>
 </figure>
 </div>
 </section><section id="kernel-trick-1" class="slide level2"><h2>Kernel Trick</h2>
-<p>O SVM é um algoritmo que inicialmente trabalha com dados <strong>linearmente separáveis</strong>. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um <strong>hiperplano linear</strong>. É aí que entra o <strong>Kernel Trick</strong>.</p>
+<p>O SVM é um algoritmo que inicialmente trabalha com dados <strong>linearmente separáveis</strong>. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um <strong>hiperplano linear</strong>.</p>
 <div class="fragment">
 <p>O <strong>Kernel Trick</strong> (Truque do Kernel) nos permite <strong>mapear os dados</strong> para um espaço de características de <strong>dimensão superior</strong>, onde se tornam linearmente separáveis.</p>
 </div>

@@ -3603,11 +3603,11 @@ O objetivo do SVM é encontrar um **hiperplano de separação ótimo** que **max
 . . .
 
 
-Para problemas de classificação binária, um **hiperplano de separação** é uma superfície que divide o espaço de características em duas regiões, uma para cada classe. Neste caso, esse hiperplano é uma **reta**!
+Para problemas de classificação binária, um **hiperplano de separação** é uma superfície que divide o espaço de características em duas regiões, uma para cada classe.
 
 . . .
 
-Em problemas **multiclasse**, pode ser um plano ou uma superfície mais complexa.
+Em problemas **multiclasse**, pode ser uma superfície mais complexa.
 
 
 
@@ -3674,7 +3674,7 @@ Mas e se tivermos problemas **não linearmente separáveis**?
 
 ## Kernel Trick
 
-O SVM é um algoritmo que inicialmente trabalha com dados **linearmente separáveis**. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um **hiperplano linear**. É aí que entra o **Kernel Trick**.
+O SVM é um algoritmo que inicialmente trabalha com dados **linearmente separáveis**. No entanto, muitas vezes encontramos conjuntos de dados que não podem ser separados por um **hiperplano linear**.
 
 
 . . .
