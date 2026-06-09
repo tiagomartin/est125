@@ -2,5 +2,6 @@
 title: "Semana 11"
 ---
 
+## Slides
 
-Não haverá aula!
+{{< fa file-powerpoint size=lg >}} [Reconhecimento de padrões](/aulas/Reconhecimento_padroes/padroes.html "Reconhecimento de Padrões"){aria-label="Reconhecimento de Padrões"}

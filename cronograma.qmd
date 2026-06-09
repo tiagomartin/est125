@@ -44,8 +44,8 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |                           | Qui, 28/05 | Construindo workflows preditivos usando a base de dados Space Titanic | |  | | |[{{< fa brands r-project size=2xl >}}](/analise_dados/space_titanic_workflow.html#visualizando-resultados "Script análise de dados"){aria-label="Script análise de dados"} | | |
 |  [10](programacao/semana-10.html)  | Ter, 02/06 | **Não haverá aula** | |  | | ||  ||
 |                           | Qui, 04/06 | **Feriado: Corpus Christi** | |  | | || | |
-<!-- |  [11](programacao/semana-11.html)  | Ter, 15/07 | Não haverá aula | |  | | ||  || -->
-<!-- |                           | Qui, 17/07 | Não haverá aula | |  | | || | | -->
+|  [11](programacao/semana-11.html)  | Ter, 09/06 | Reconhecimento de Padrões | |[{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/title-slide "Reconhecimento de padrões"){aria-label="Reconhecimento de padrões"}  | | ||  ||
+|                           | Qui, 11/06 | Reconhecimento de Padrões | |[{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/title-slide "Reconhecimento de padrões"){aria-label="Reconhecimento de padrões"}  | | || | |
 <!-- |  [12](programacao/semana-12.html)  | Ter, 22/07 | Recesso Acadêmico | |  | | ||  || -->
 <!-- |                           | Qui, 24/07 | Recesso Acadêmico | |  | | || | | -->
 <!-- |  [13](programacao/semana-13.html)  | Ter, 29/07 | Não haverá aula | |  | | ||  || -->

@@ -283,7 +283,7 @@
     "href": "cronograma.html",
     "title": "Cronograma da Disciplina",
     "section": "",
-    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 31/03\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 02/04\nFeriado: Semana Santa\n\n\n\n\n\n\n\n\n\n2\nTer, 07/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 09/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 14/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 16/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n4\nTer, 21/04\nFeriado: Tiradentes\n\n\n\n\n\n\n\n\n\n\nQui, 23/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 28/04\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 30/04\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 05/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n7\nTer, 12/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 14/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n8\nTer, 19/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 21/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n9\nTer, 26/05\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 28/05\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n10\nTer, 02/06\nNão haverá aula\n\n\n\n\n\n\n\n\n\n\nQui, 04/06\nFeriado: Corpus Christi",
+    "text": "Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semestre. Este cronograma será atualizado conforme o semestre avança.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSemana\nData\nTópico\nArtigo\nSlides\nEC\nLE\nScript\nMC\nProjeto\n\n\n\n\n1\nTer, 31/03\nApresentação da disciplina\n\n\n\n\n\n\n\n\n\n\nQui, 02/04\nFeriado: Semana Santa\n\n\n\n\n\n\n\n\n\n2\nTer, 07/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n\nQui, 09/04\nConceitos iniciais\n\n\n\n\n\n\n\n\n\n3\nTer, 14/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n\nQui, 16/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n4\nTer, 21/04\nFeriado: Tiradentes\n\n\n\n\n\n\n\n\n\n\nQui, 23/04\nPré-processamento de dados\n\n\n\n\n\n\n\n\n\n5\nTer, 28/04\nPré-processamento usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 30/04\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n6\nTer, 05/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 07/05\nNão haverá aula\n\n\n\n\n\n\n\n\n\n7\nTer, 12/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 14/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n8\nTer, 19/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n\nQui, 21/05\nAnálise Preditiva\n\n\n\n\n\n\n\n\n\n9\nTer, 26/05\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n\nQui, 28/05\nConstruindo workflows preditivos usando a base de dados Space Titanic\n\n\n\n\n\n\n\n\n\n10\nTer, 02/06\nNão haverá aula\n\n\n\n\n\n\n\n\n\n\nQui, 04/06\nFeriado: Corpus Christi\n\n\n\n\n\n\n\n\n\n11\nTer, 09/06\nReconhecimento de Padrões\n\n\n\n\n\n\n\n\n\n\nQui, 11/06\nReconhecimento de Padrões",
     "crumbs": [
       "Cronograma da Disciplina"
     ]
@@ -1245,7 +1245,7 @@
     "href": "aulas.html",
     "title": "Aulas",
     "section": "",
-    "text": "Esta página contém aulas que serão apresentadas ao longo do semestre.\n\n\n Conceitos Iniciais \n Ver slides  \n\n\n Pré-processamento de dados \n Ver slides  \n\n\n Análise Preditiva \n Ver slides",
+    "text": "Esta página contém aulas que serão apresentadas ao longo do semestre.\n\n\n Conceitos Iniciais \n Ver slides  \n\n\n Pré-processamento de dados \n Ver slides  \n\n\n Análise Preditiva \n Ver slides  \n\n\n Reconhecimento de Padrões \n Ver slides",
     "crumbs": [
       "Aulas"
     ]
@@ -4261,7 +4261,7 @@
     "href": "programacao/semana-11.html",
     "title": "Semana 11",
     "section": "",
-    "text": "Não haverá aula!"
+    "text": "Reconhecimento de padrões"
   },
   {
     "objectID": "programacao/semana-13.html",
@@ -4448,5 +4448,12 @@
     "title": "Análise Preditiva",
     "section": "Kernel Trick",
     "text": "Kernel Trick\n\n\n\n👉 Exemplos comuns:\n\nLinear\nPolinomial\nRadial Basis Function (RBF ou Gaussiano)\nSigmoide"
+  },
+  {
+    "objectID": "programacao/semana-11.html#slides",
+    "href": "programacao/semana-11.html#slides",
+    "title": "Semana 11",
+    "section": "",
+    "text": "Reconhecimento de padrões"
   }
 ]
