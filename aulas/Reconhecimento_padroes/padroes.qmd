@@ -257,28 +257,7 @@ Os grupos são formados de maneira a **maximizar** a similaridade entre os eleme
 
 
 
-## Aplicações reais
 
-<table>
-<tr>
-<th>Agrupamento de genes</th>
-<th></th>
-</tr>
-<tr>
-<td>
-![](/images/cluster/gene.png){.nostretch fig-align="center" width="1000px"}
-</td>
-<td>
-<ul>
-  <li>Identificar grupos de genes com padrões de expressão semelhantes</li>
-  <li>Inferir funções biológicas compartilhadas entre os genes do mesmo grupo</li>
-  <li>Detectar relações de co-regulação entre genes</li>
-  <li>Revelar possíveis vias metabólicas ou processos celulares associados</li>
-  <li>Apoiar a compreensão da organização funcional do genoma</li>
-</ul>
-</td>
-</tr>
-</table>
 
 
 ## Aplicações reais
