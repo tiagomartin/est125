@@ -44,10 +44,10 @@ Esta página contém um esboço dos tópicos, conteúdos e tarefas para o semest
 |                           | Qui, 28/05 | Construindo workflows preditivos usando a base de dados Space Titanic | |  | | |[{{< fa brands r-project size=2xl >}}](/analise_dados/space_titanic_workflow.html#visualizando-resultados "Script análise de dados"){aria-label="Script análise de dados"} | | |
 |  [10](programacao/semana-10.html)  | Ter, 02/06 | **Não haverá aula** | |  | | ||  ||
 |                           | Qui, 04/06 | **Feriado: Corpus Christi** | |  | | || | |
-|  [11](programacao/semana-11.html)  | Ter, 09/06 | Reconhecimento de Padrões | |[{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/title-slide "Reconhecimento de padrões"){aria-label="Reconhecimento de padrões"}  | | ||  ||
+|  [11](programacao/semana-11.html)  | Ter, 09/06 |**Não haverá aula** | |  | | ||  ||
 |                           | Qui, 11/06 | Reconhecimento de Padrões | |[{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/title-slide "Reconhecimento de padrões"){aria-label="Reconhecimento de padrões"}  | | || | |
-<!-- |  [12](programacao/semana-12.html)  | Ter, 22/07 | Recesso Acadêmico | |  | | ||  || -->
-<!-- |                           | Qui, 24/07 | Recesso Acadêmico | |  | | || | | -->
+|  [12](programacao/semana-12.html)  | Ter, 16/06 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/método-mean-shift "Métodos baseados em densidade"){aria-label="Métodos baseados em densidade"} | | ||  ||
+|                           | Qui, 18/06 | **Não haverá aula** | |  | | || | |
 <!-- |  [13](programacao/semana-13.html)  | Ter, 29/07 | Não haverá aula | |  | | ||  || -->
 <!-- |                           | Qui, 31/07 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/métodos-não-hierárquicos "Métodos não hierárquicos"){aria-label="Métodos não hierárquicos"} | | || | | -->
 <!-- |  [14](programacao/semana-14.html)  | Ter, 05/08 | Reconhecimento de Padrões | | [{{< fa file-powerpoint size=2xl >}}](/aulas/Reconhecimento_padroes/padroes.html#/método-mean-shift "Método Mean Shift"){aria-label="Método Mean Shift"} | | ||  || -->
