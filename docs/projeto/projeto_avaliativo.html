@@ -346,7 +346,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#tarefas-e-desafios-propostos-2" id="toc-tarefas-e-desafios-propostos-2" class="nav-link" data-scroll-target="#tarefas-e-desafios-propostos-2">🧠 Tarefas e Desafios Propostos</a></li>
   <li><a href="#questões-para-discussão-e-resolução-1" id="toc-questões-para-discussão-e-resolução-1" class="nav-link" data-scroll-target="#questões-para-discussão-e-resolução-1">🤔 Questões para Discussão e Resolução:</a></li>
   </ul></li>
-  <li><a href="#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes" id="toc-fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes" class="nav-link" data-scroll-target="#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes">🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes</a></li>
+  <li><a href="#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes" id="toc-fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes" class="nav-link" data-scroll-target="#fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes">🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes</a>
+  <ul class="collapse">
+  <li><a href="#objetivo-2" id="toc-objetivo-2" class="nav-link" data-scroll-target="#objetivo-2">🔍 Objetivo</a></li>
+  <li><a href="#tarefas-e-desafios-propostos-3" id="toc-tarefas-e-desafios-propostos-3" class="nav-link" data-scroll-target="#tarefas-e-desafios-propostos-3">🧠 Tarefas e Desafios Propostos</a></li>
+  <li><a href="#questões-para-discussão-e-resolução-2" id="toc-questões-para-discussão-e-resolução-2" class="nav-link" data-scroll-target="#questões-para-discussão-e-resolução-2">🤔 Questões para Discussão e Resolução:</a></li>
+  </ul></li>
   <li><a href="#fase-5-construção-de-um-sistema-de-recomendação" id="toc-fase-5-construção-de-um-sistema-de-recomendação" class="nav-link" data-scroll-target="#fase-5-construção-de-um-sistema-de-recomendação">🧺 Fase 5: Construção de um Sistema de Recomendação</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/tiagomartin/est125/edit/main/projeto/projeto_avaliativo.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/tiagomartin/est125/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -578,23 +583,45 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes" class="level2">
 <h2 class="anchored" data-anchor-id="fase-4-reconhecimento-de-padrões-e-segmentação-de-clientes">🛍️ Fase 4: Reconhecimento de Padrões e Segmentação de Clientes</h2>
-<!-- ### 🔍 Objetivo -->
-<!-- O objetivo desta fase é aplicar técnicas de reconhecimento de padrões (clustering) para identificar grupos distintos de clientes na base de dados da ConecteMais Corp. Ao agrupar clientes com características semelhantes, a empresa poderá obter insights valiosos sobre diferentes perfis de comportamento, uso de serviço e, crucialmente, padrões associados ao *churn*, mesmo sem um modelo preditivo direto neste momento. Essa análise será fundamental para informar estratégias de marketing e retenção mais direcionadas. -->
-<!-- ### 🧠 Tarefas e Desafios Propostos -->
-<!-- Nesta etapa, a equipe de Análise de Dados focará em descobrir estruturas ocultas nos dados, especialmente para entender melhor os clientes e seu comportamento em relação à rotatividade. -->
-<!-- ### 🤔 Questões para Discussão e Resolução: -->
-<!-- 1) Seleção e Justificativa da Abordagem: -->
-<!--   - Considerando o objetivo de reconhecimento de padrões e segmentação de clientes, qual tipo de algoritmo de Machine Learning não supervisionado seria mais adequado para este problema? Sugiram pelo menos dois algoritmos de clustering e justifiquem por que cada um é uma boa escolha para identificar grupos de clientes com perfis semelhantes. -->
-<!--   - Ao contrário da Fase 3, não temos uma variável alvo explícita para "treinar" o modelo. Como o pré-processamento dos dados (especialmente padronização de variáveis numéricas e codificação de categóricas) se torna ainda mais crítico para algoritmos de clustering baseados em distância? -->
-<!-- 2) Preparação de Dados para Clustering: -->
-<!--   - Para aplicar algoritmos de clustering, é essencial que as features estejam em uma escala comparável. Além da padronização de variáveis numéricas, como vocês lidariam com as variáveis categóricas já pré-processadas (One-Hot Encoding) para que não dominem a formação dos clusters ou causem problemas de dimensionalidade excessiva? -->
-<!--   - Quais variáveis do conjunto de dados vocês considerariam mais importantes para incluir na análise de clustering para identificar perfis de clientes, especialmente aqueles relacionados ao *churn*? Mencionem pelo menos cinco variáveis e justifiquem brevemente sua escolha. -->
-<!-- 3) Determinação do Número Ideal de Clusters e Avaliação: -->
-<!--   - Ao usar algoritmos de clustering, uma das decisões cruciais é definir o número ideal de grupos (clusters). Quais duas métricas ou métodos vocês utilizariam para ajudar a determinar o número "ótimo" de clusters para os dados da ConecteMais? Expliquem brevemente como cada método funciona. -->
-<!--   - Diferente dos modelos de classificação, não há uma métrica de "precisão" direta para clustering. Como vocês avaliariam a qualidade e a interpretabilidade dos clusters formados? Mencionem pelo menos duas abordagens para analisar os resultados e extrair insights de negócio (ex: análise de características de cada cluster, proporção de *churn* em cada cluster). -->
-<!-- 4) Interpretação de Padrões e Implicações para o Negócio: -->
-<!--   - Uma vez que os clusters sejam formados e avaliados, como vocês iriam caracterizar cada cluster para a Sra. Ana Paula e o Sr. João Silva (ex: "Cluster A: clientes de longo tempo, alto consumo, mas sem fibra óptica")? Qual seria a relevância de identificar um cluster com uma alta concentração de clientes que deram *churn*? -->
-<!--   - Com base nos padrões descobertos, quais duas ações estratégicas a ConecteMais Corp. poderia considerar para o Cluster de Alto *churn* identificado? Pensem em ações específicas para retenção ou ofertas personalizadas. -->
+<section id="objetivo-2" class="level3">
+<h3 class="anchored" data-anchor-id="objetivo-2">🔍 Objetivo</h3>
+<p>O objetivo desta fase é aplicar técnicas de reconhecimento de padrões (clustering) para identificar grupos distintos de clientes na base de dados da ConecteMais Corp.&nbsp;Ao agrupar clientes com características semelhantes, a empresa poderá obter insights valiosos sobre diferentes perfis de comportamento, uso de serviço e, crucialmente, padrões associados ao <em>churn</em>, mesmo sem um modelo preditivo direto neste momento. Essa análise será fundamental para informar estratégias de marketing e retenção mais direcionadas.</p>
+</section>
+<section id="tarefas-e-desafios-propostos-3" class="level3">
+<h3 class="anchored" data-anchor-id="tarefas-e-desafios-propostos-3">🧠 Tarefas e Desafios Propostos</h3>
+<p>Nesta etapa, a equipe de Análise de Dados focará em descobrir estruturas ocultas nos dados, especialmente para entender melhor os clientes e seu comportamento em relação à rotatividade.</p>
+</section>
+<section id="questões-para-discussão-e-resolução-2" class="level3">
+<h3 class="anchored" data-anchor-id="questões-para-discussão-e-resolução-2">🤔 Questões para Discussão e Resolução:</h3>
+<ol type="1">
+<li>Seleção e Justificativa da Abordagem:</li>
+</ol>
+<ul>
+<li><p>Considerando o objetivo de reconhecimento de padrões e segmentação de clientes, qual tipo de algoritmo de Machine Learning não supervisionado seria mais adequado para este problema? Sugiram pelo menos dois algoritmos de clustering e justifiquem por que cada um é uma boa escolha para identificar grupos de clientes com perfis semelhantes.</p></li>
+<li><p>Ao contrário da Fase 3, não temos uma variável alvo explícita para “treinar” o modelo. Como o pré-processamento dos dados (especialmente padronização de variáveis numéricas e codificação de categóricas) se torna ainda mais crítico para algoritmos de clustering baseados em distância?</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Preparação de Dados para Clustering:</li>
+</ol>
+<ul>
+<li><p>Para aplicar algoritmos de clustering, é essencial que as features estejam em uma escala comparável. Além da padronização de variáveis numéricas, como vocês lidariam com as variáveis categóricas já pré-processadas (One-Hot Encoding) para que não dominem a formação dos clusters ou causem problemas de dimensionalidade excessiva?</p></li>
+<li><p>Quais variáveis do conjunto de dados vocês considerariam mais importantes para incluir na análise de clustering para identificar perfis de clientes, especialmente aqueles relacionados ao <em>churn</em>? Mencionem pelo menos cinco variáveis e justifiquem brevemente sua escolha.</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Determinação do Número Ideal de Clusters e Avaliação:</li>
+</ol>
+<ul>
+<li><p>Ao usar algoritmos de clustering, uma das decisões cruciais é definir o número ideal de grupos (clusters). Quais duas métricas ou métodos vocês utilizariam para ajudar a determinar o número “ótimo” de clusters para os dados da ConecteMais? Expliquem brevemente como cada método funciona.</p></li>
+<li><p>Diferente dos modelos de classificação, não há uma métrica de “precisão” direta para clustering. Como vocês avaliariam a qualidade e a interpretabilidade dos clusters formados? Mencionem pelo menos duas abordagens para analisar os resultados e extrair insights de negócio (ex: análise de características de cada cluster, proporção de <em>churn</em> em cada cluster).</p></li>
+</ul>
+<ol start="4" type="1">
+<li>Interpretação de Padrões e Implicações para o Negócio:</li>
+</ol>
+<ul>
+<li><p>Uma vez que os clusters sejam formados e avaliados, como vocês iriam caracterizar cada cluster para a Sra. Ana Paula e o Sr.&nbsp;João Silva (ex: “Cluster A: clientes de longo tempo, alto consumo, mas sem fibra óptica”)? Qual seria a relevância de identificar um cluster com uma alta concentração de clientes que deram <em>churn</em>?</p></li>
+<li><p>Com base nos padrões descobertos, quais duas ações estratégicas a ConecteMais Corp.&nbsp;poderia considerar para o Cluster de Alto <em>churn</em> identificado? Pensem em ações específicas para retenção ou ofertas personalizadas.</p></li>
+</ul>
+</section>
 </section>
 <section id="fase-5-construção-de-um-sistema-de-recomendação" class="level2">
 <h2 class="anchored" data-anchor-id="fase-5-construção-de-um-sistema-de-recomendação">🧺 Fase 5: Construção de um Sistema de Recomendação</h2>
