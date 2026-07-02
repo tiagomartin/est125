@@ -205,7 +205,7 @@ Vamos assumir que cada variável da base de dados $D$ é binária.
 . . .
 
 - **Support count ($\mathbf{\sigma}$):**  Frequência da ocorrência de um itemset
-    - **Exemplo:**} $\mathbf{\sigma}$ ({Leite, Pão,Fralda}) = 2
+    - **Exemplo:** $\mathbf{\sigma}$ ({Leite, Pão,Fralda}) = 2
     
 
 
