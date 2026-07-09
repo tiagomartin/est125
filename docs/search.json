@@ -4009,7 +4009,7 @@
     "href": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-1",
     "title": "Regras de Associação",
     "section": "Reduzindo o número de regras",
-    "text": "Reduzindo o número de regras\n\nJá a regra: Se \\(W \\Rightarrow Z\\) com confiança de \\(70\\%\\) é muito mais importante se \\(Z\\) aparece, digamos, em 10% das transações.\n\n\n\nUm índice estatístico comumente utilizado para definir o grau de interesse de uma regra de associação é denominado lift.\n\n\n\n\nO lift de uma regra de associação \\(X \\Rightarrow Y\\) indica o quanto mais frequente torna-se \\(Y\\), quando \\(X\\) ocorre.\n\n\n\n\nEsta medida é dada por:\n\n\\[lift = \\dfrac{Conf(X \\Rightarrow Y)}{\\mathbf{\\sigma}(Y)} = \\dfrac{\\mathbf{\\sigma}(X \\cup Y)}{\\mathbf{\\sigma}(X)\\mathbf{\\sigma}(Y)}\\]"
+    "text": "Reduzindo o número de regras\n\nJá a regra: Se \\(W \\Rightarrow Z\\) com confiança de \\(70\\%\\) é muito mais importante se \\(Z\\) aparece, digamos, em 10% das transações.\n\n\n\nUm índice estatístico comumente utilizado para definir o grau de interesse de uma regra de associação é denominado lift.\n\n\n\n\nO lift de uma regra de associação \\(X \\Rightarrow Y\\) indica o quanto mais frequente torna-se \\(Y\\), quando \\(X\\) ocorre.\n\n\n\n\nEsta medida é dada por:\n\n\\[lift = \\dfrac{Conf(X \\Rightarrow Y)}{Sup(Y)} = \\dfrac{Sup(X \\cup Y)}{Sup(X)Sup(Y)}\\]"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#reduzindo-o-número-de-regras-2",
@@ -4051,7 +4051,7 @@
     "href": "aulas/Regras_associacao/associacao.html#tipos-de-dados-usados-em-associação",
     "title": "Regras de Associação",
     "section": "Tipos de dados usados em Associação",
-    "text": "Tipos de dados usados em Associação\n\n\nSomente inteiro ou nominal.\n\n\n\nSe o atributo for contínuo, ele precisa ser discretizado.\n\n\n\n\nTransformar atributos categóricos em variáveis binárias assimétricas"
+    "text": "Tipos de dados usados em Associação\n\n\n\n\n\n\nOs algoritmos de associação não trabalham com números, mas sim com conjuntos de itens presentes em cada transação. Por isso, antes da mineração de regras, é necessário transformar os dados em um formato transacional, seguindo três etapas principais:\n\n\nVariáveis nominais podem ser usadas diretamente como itens.\nVariáveis contínuas devem ser discretizadas em categorias ou intervalos.\nCada categoria é convertida em um item binário (0/1), no qual apenas a presença (1) é considerada relevante para a descoberta das regras de associação. Esse formato é conhecido como representação por variáveis binárias assimétricas."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#aplicações-no-mundo-real",
@@ -4114,7 +4114,7 @@
     "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-7",
     "title": "Regras de Associação",
     "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
-    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 6. Visualizar as regras (opcional)\nplot(rules_sorted, method = \"graph\", engine = \"htmlwidget\")"
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n\nPrimeira regra: {citrus fruit, root vegetables} ⇒ {other vegetables}\n\n\nClientes que compram frutas cítricas e legumes de raiz também costumam comprar outros vegetais.\n\nInterpretação: Das 9.855 compras, apenas 102 continham simultaneamente frutas cítricas, legumes de raiz e outros vegetais (support = 0,01037112). Entretanto, sempre que alguém comprou frutas cítricas e legumes de raiz, 58,6% das vezes também comprou outros vegetais (confidence = 0,5862069). Além disso, essa probabilidade é aproximadamente 3 vezes maior do que a observada para um consumidor qualquer (lift = 3,029608), indicando uma associação positiva entre esses produtos."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-7-output",
@@ -4128,42 +4128,42 @@
     "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-8",
     "title": "Regras de Associação",
     "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
-    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 7. Filtrar regras para um item específico\n# Vamos encontrar regras que levam à compra de \"whole milk\" (leite integral).\n# 'rhs' = right-hand side (consequente)\nrules_milk &lt;- apriori(Groceries,\n                      parameter = list(support = 0.01, confidence = 0.5),\n                      appearance = list(rhs = \"whole milk\", default = \"lhs\"))\n\nApriori\n\nParameter specification:\n confidence minval smax arem  aval originalSupport maxtime support minlen\n        0.5    0.1    1 none FALSE            TRUE       5    0.01      1\n maxlen target  ext\n     10  rules TRUE\n\nAlgorithmic control:\n filter tree heap memopt load sort verbose\n    0.1 TRUE TRUE  FALSE TRUE    2    TRUE\n\nAbsolute minimum support count: 98 \n\nset item appearances ...[1 item(s)] done [0.00s].\nset transactions ...[169 item(s), 9835 transaction(s)] done [0.00s].\nsorting and recoding items ... [88 item(s)] done [0.00s].\ncreating transaction tree ... done [0.00s].\nchecking subsets of size 1 2 3 4 done [0.00s].\nwriting ... [11 rule(s)] done [0.00s].\ncreating S4 object  ... done [0.00s]."
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 6. Visualizar as regras (opcional)\nplot(rules_sorted, method = \"graph\", engine = \"htmlwidget\")"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-9",
     "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-9",
     "title": "Regras de Associação",
     "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
-    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# Ordenar e inspecionar as regras sobre \"whole milk\"\nrules_milk_sorted &lt;- sort(rules_milk, by = \"lift\", decreasing = TRUE)\ninspect(rules_milk_sorted)\n\n     lhs                                       rhs          support   \n[1]  {curd, yogurt}                         =&gt; {whole milk} 0.01006609\n[2]  {other vegetables, butter}             =&gt; {whole milk} 0.01148958\n[3]  {tropical fruit, root vegetables}      =&gt; {whole milk} 0.01199797\n[4]  {root vegetables, yogurt}              =&gt; {whole milk} 0.01453991\n[5]  {other vegetables, domestic eggs}      =&gt; {whole milk} 0.01230300\n[6]  {yogurt, whipped/sour cream}           =&gt; {whole milk} 0.01087951\n[7]  {root vegetables, rolls/buns}          =&gt; {whole milk} 0.01270971\n[8]  {pip fruit, other vegetables}          =&gt; {whole milk} 0.01352313\n[9]  {tropical fruit, yogurt}               =&gt; {whole milk} 0.01514997\n[10] {other vegetables, yogurt}             =&gt; {whole milk} 0.02226741\n[11] {other vegetables, whipped/sour cream} =&gt; {whole milk} 0.01464159\n     confidence coverage   lift     count\n[1]  0.5823529  0.01728521 2.279125  99  \n[2]  0.5736041  0.02003050 2.244885 113  \n[3]  0.5700483  0.02104728 2.230969 118  \n[4]  0.5629921  0.02582613 2.203354 143  \n[5]  0.5525114  0.02226741 2.162336 121  \n[6]  0.5245098  0.02074225 2.052747 107  \n[7]  0.5230126  0.02430097 2.046888 125  \n[8]  0.5175097  0.02613116 2.025351 133  \n[9]  0.5173611  0.02928317 2.024770 149  \n[10] 0.5128806  0.04341637 2.007235 219  \n[11] 0.5070423  0.02887646 1.984385 144"
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\nInterpretação:\n\nWhole milk e other vegetables são os principais consequentes, aparecendo como destino de diversas regras.\nRoot vegetables é o principal item de ligação (hub), participando de várias combinações no antecedente.\nYogurt também aparece em múltiplas regras, enquanto citrus fruit, butter, domestic eggs, pip fruit e outros itens participam apenas de associações específicas."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-10",
     "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-10",
     "title": "Regras de Associação",
     "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
-    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 8. Visualizar as regras (opcional)\nplot(rules_milk_sorted[1:10], method = \"graph\", engine = \"htmlwidget\")"
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\nConclusão: a rede evidencia que leite integral e outros vegetais desempenham papel central nas cestas de compras. Essas associações podem orientar estratégias de cross-selling, promoções conjuntas, organização das gôndolas e sistemas de recomendação de produtos."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-11",
     "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-11",
     "title": "Regras de Associação",
     "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
-    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n## Construindo um sistema de recomendação simples, baseado em regras de associação\nratings_matrix = as(Groceries, \"binaryRatingMatrix\")\n\nrecom = recommenderlab::Recommender(\n  ratings_matrix,\n  method = \"AR\",\n  param = list(supp = 0.01, conf = 0.25, verbose = TRUE))\n\nUsed parameters:\nsupport  =  0.01\nconfidence   =  0.25\nmaxlen   =  3\nmaxtime  =  5\nsort_measure     =  confidence\nsort_decreasing  =  TRUE\napriori_control  =  list()\nverbose  =  TRUE\nApriori\n\nParameter specification:\n confidence minval smax arem  aval originalSupport maxtime support minlen\n       0.25    0.1    1 none FALSE            TRUE       5    0.01      2\n maxlen target  ext\n      3  rules TRUE\n\nAlgorithmic control:\n filter tree heap memopt load sort verbose\n    0.1 TRUE TRUE  FALSE TRUE    2    TRUE\n\nAbsolute minimum support count: 98 \n\nset item appearances ...[0 item(s)] done [0.00s].\nset transactions ...[169 item(s), 9835 transaction(s)] done [0.00s].\nsorting and recoding items ... [88 item(s)] done [0.00s].\ncreating transaction tree ... done [0.00s].\nchecking subsets of size 1 2 3 done [0.00s].\nwriting ... [170 rule(s)] done [0.00s].\ncreating S4 object  ... done [0.00s].\n\nRule base size: 170 rules."
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 7. Filtrar regras para um item específico\n# Vamos encontrar regras que levam à compra de \"whole milk\" (leite integral).\n# 'rhs' = right-hand side (consequente)\nrules_milk &lt;- apriori(Groceries,\n                      parameter = list(support = 0.01, confidence = 0.5),\n                      appearance = list(rhs = \"whole milk\", default = \"lhs\"))\n\nApriori\n\nParameter specification:\n confidence minval smax arem  aval originalSupport maxtime support minlen\n        0.5    0.1    1 none FALSE            TRUE       5    0.01      1\n maxlen target  ext\n     10  rules TRUE\n\nAlgorithmic control:\n filter tree heap memopt load sort verbose\n    0.1 TRUE TRUE  FALSE TRUE    2    TRUE\n\nAbsolute minimum support count: 98 \n\nset item appearances ...[1 item(s)] done [0.00s].\nset transactions ...[169 item(s), 9835 transaction(s)] done [0.00s].\nsorting and recoding items ... [88 item(s)] done [0.00s].\ncreating transaction tree ... done [0.00s].\nchecking subsets of size 1 2 3 4 done [0.00s].\nwriting ... [11 rule(s)] done [0.00s].\ncreating S4 object  ... done [0.00s]."
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-12",
     "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-12",
     "title": "Regras de Associação",
     "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
-    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# Obter os nomes dos itens do modelo treinado\nitems_names &lt;- colnames(ratings_matrix)\n\n# pedido hipotetico\n# Vamos definir o número de passageiros que você quer avaliar\nnum_pedidos &lt;- 2 \nnovos_pedidos &lt;- matrix(0, nrow = num_pedidos, ncol = length(items_names))\ncolnames(novos_pedidos) &lt;- items_names\nrownames(novos_pedidos) &lt;- c(\"Novo_Pedido_01\", \"Novo_Pedido_02\")\n\n# 3. Preencher a matriz com as características de cada passageiro\n# Pedido 1: Salsicha, Café e Sobremesa\nnovos_pedidos[\"Novo_Pedido_01\", \"frankfurter\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_01\", \"coffee\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_01\", \"dessert\"] &lt;- 1\n\n# Passageiro 2: Peixe, Queijo Fatiado e Leite Integral\nnovos_pedidos[\"Novo_Pedido_02\", \"whole milk\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_02\", \"fish\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_02\", \"sliced cheese\"] &lt;- 1"
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# Ordenar e inspecionar as regras sobre \"whole milk\"\nrules_milk_sorted &lt;- sort(rules_milk, by = \"lift\", decreasing = TRUE)\ninspect(rules_milk_sorted)\n\n     lhs                                       rhs          support   \n[1]  {curd, yogurt}                         =&gt; {whole milk} 0.01006609\n[2]  {other vegetables, butter}             =&gt; {whole milk} 0.01148958\n[3]  {tropical fruit, root vegetables}      =&gt; {whole milk} 0.01199797\n[4]  {root vegetables, yogurt}              =&gt; {whole milk} 0.01453991\n[5]  {other vegetables, domestic eggs}      =&gt; {whole milk} 0.01230300\n[6]  {yogurt, whipped/sour cream}           =&gt; {whole milk} 0.01087951\n[7]  {root vegetables, rolls/buns}          =&gt; {whole milk} 0.01270971\n[8]  {pip fruit, other vegetables}          =&gt; {whole milk} 0.01352313\n[9]  {tropical fruit, yogurt}               =&gt; {whole milk} 0.01514997\n[10] {other vegetables, yogurt}             =&gt; {whole milk} 0.02226741\n[11] {other vegetables, whipped/sour cream} =&gt; {whole milk} 0.01464159\n     confidence coverage   lift     count\n[1]  0.5823529  0.01728521 2.279125  99  \n[2]  0.5736041  0.02003050 2.244885 113  \n[3]  0.5700483  0.02104728 2.230969 118  \n[4]  0.5629921  0.02582613 2.203354 143  \n[5]  0.5525114  0.02226741 2.162336 121  \n[6]  0.5245098  0.02074225 2.052747 107  \n[7]  0.5230126  0.02430097 2.046888 125  \n[8]  0.5175097  0.02613116 2.025351 133  \n[9]  0.5173611  0.02928317 2.024770 149  \n[10] 0.5128806  0.04341637 2.007235 219  \n[11] 0.5070423  0.02887646 1.984385 144"
   },
   {
     "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-13",
     "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-13",
     "title": "Regras de Associação",
     "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
-    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 4. Converter a matriz consolidada para o formato binaryRatingMatrix\nnovos_pedidos_ratings &lt;- as(novos_pedidos, \"binaryRatingMatrix\")\n\n# 5. Gerar as recomendações\nrecommendations &lt;- predict(recom, novos_pedidos_ratings, n = 5)\n\n# Inspecionar as recomendações para ambos os passageiros\nas(recommendations, \"list\")\n\n$`0`\n[1] \"whole milk\"       \"rolls/buns\"       \"other vegetables\"\n\n$`1`\n[1] \"other vegetables\""
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 8. Visualizar as regras (opcional)\nplot(rules_milk_sorted[1:10], method = \"graph\", engine = \"htmlwidget\")"
   },
   {
     "objectID": "index.html",
@@ -4462,5 +4462,47 @@
     "title": "Semana 12",
     "section": "",
     "text": "Reconhecimento de padrões"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#tipos-de-dados-utilizados-em-associação",
+    "href": "aulas/Regras_associacao/associacao.html#tipos-de-dados-utilizados-em-associação",
+    "title": "Regras de Associação",
+    "section": "Tipos de dados utilizados em Associação",
+    "text": "Tipos de dados utilizados em Associação\nOs algoritmos de associação trabalham com itens presentes nas transações, e não com valores numéricos diretamente.\nPreparação dos dados\n➡️ 1. Variáveis nominais\n\nUtilizadas diretamente como itens.\nEx.: Sexo = Masculino, Estado = SP, Produto = Leite.\n\n➡️ 2. Variáveis contínuas\n\nDevem ser discretizadas em categorias ou intervalos.\nEx.: Idade → Jovem | Adulto | Idoso."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#tipos-de-dados-utilizados-em-associação-1",
+    "href": "aulas/Regras_associacao/associacao.html#tipos-de-dados-utilizados-em-associação-1",
+    "title": "Regras de Associação",
+    "section": "Tipos de dados utilizados em Associação",
+    "text": "Tipos de dados utilizados em Associação\n➡️ 3. Representação binária\n\nCada categoria é convertida em um item binário (0/1).\nApenas a presença (1) é considerada na mineração.\nEssa representação é denominada variáveis binárias assimétricas.\n\n\nPré-processamento: antes da mineração de regras, todos os dados devem ser convertidos para um formato transacional, composto por conjuntos de itens presentes em cada transação."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-8-output",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-8-output",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-14",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-14",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n## Construindo um sistema de recomendação simples, baseado em regras de associação\nratings_matrix = as(Groceries, \"binaryRatingMatrix\")\n\nrecom = recommenderlab::Recommender(\n  ratings_matrix,\n  method = \"AR\",\n  param = list(supp = 0.01, conf = 0.25, verbose = TRUE))\n\nUsed parameters:\nsupport  =  0.01\nconfidence   =  0.25\nmaxlen   =  3\nmaxtime  =  5\nsort_measure     =  confidence\nsort_decreasing  =  TRUE\napriori_control  =  list()\nverbose  =  TRUE\nApriori\n\nParameter specification:\n confidence minval smax arem  aval originalSupport maxtime support minlen\n       0.25    0.1    1 none FALSE            TRUE       5    0.01      2\n maxlen target  ext\n      3  rules TRUE\n\nAlgorithmic control:\n filter tree heap memopt load sort verbose\n    0.1 TRUE TRUE  FALSE TRUE    2    TRUE\n\nAbsolute minimum support count: 98 \n\nset item appearances ...[0 item(s)] done [0.00s].\nset transactions ...[169 item(s), 9835 transaction(s)] done [0.00s].\nsorting and recoding items ... [88 item(s)] done [0.00s].\ncreating transaction tree ... done [0.00s].\nchecking subsets of size 1 2 3 done [0.00s].\nwriting ... [170 rule(s)] done [0.00s].\ncreating S4 object  ... done [0.00s].\n\nRule base size: 170 rules."
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-15",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-15",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# Obter os nomes dos itens do modelo treinado\nitems_names &lt;- colnames(ratings_matrix)\n\n# pedido hipotetico\n# Vamos definir o número de pedidos que você quer avaliar\nnum_pedidos &lt;- 2 \nnovos_pedidos &lt;- matrix(0, nrow = num_pedidos, ncol = length(items_names))\ncolnames(novos_pedidos) &lt;- items_names\nrownames(novos_pedidos) &lt;- c(\"Novo_Pedido_01\", \"Novo_Pedido_02\")\n\n# 3. Preencher a matriz com as características de cada passageiro\n# Pedido 1: Salsicha, Café e Sobremesa\nnovos_pedidos[\"Novo_Pedido_01\", \"frankfurter\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_01\", \"coffee\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_01\", \"dessert\"] &lt;- 1\n\n# Pedido 2: Peixe, Queijo Fatiado e Leite Integral\nnovos_pedidos[\"Novo_Pedido_02\", \"whole milk\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_02\", \"fish\"] &lt;- 1\nnovos_pedidos[\"Novo_Pedido_02\", \"sliced cheese\"] &lt;- 1"
+  },
+  {
+    "objectID": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-16",
+    "href": "aulas/Regras_associacao/associacao.html#exemplo-de-regras-de-associação-com-a-base-de-dados-groceries-16",
+    "title": "Regras de Associação",
+    "section": "Exemplo de Regras de Associação com a Base de Dados Groceries\n",
+    "text": "Exemplo de Regras de Associação com a Base de Dados Groceries\n\n\n# 4. Converter a matriz consolidada para o formato binaryRatingMatrix\nnovos_pedidos_ratings &lt;- as(novos_pedidos, \"binaryRatingMatrix\")\n\n# 5. Gerar as recomendações\nrecommendations &lt;- predict(recom, novos_pedidos_ratings, n = 5)\n\n# Inspecionar as recomendações para ambos os passageiros\nas(recommendations, \"list\")\n\n$`0`\n[1] \"whole milk\"       \"rolls/buns\"       \"other vegetables\"\n\n$`1`\n[1] \"other vegetables\""
   }
 ]

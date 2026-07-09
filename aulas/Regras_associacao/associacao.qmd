@@ -945,7 +945,7 @@ $$\forall X,Y : (X \subseteq Y) \Rightarrow sup(X) \geqslant sup(Y)$$
 
 - Esta medida é dada por:
 
-$$lift = \dfrac{Conf(X \Rightarrow Y)}{\mathbf{\sigma}(Y)} = \dfrac{\mathbf{\sigma}(X \cup Y)}{\mathbf{\sigma}(X)\mathbf{\sigma}(Y)}$$
+$$lift = \dfrac{Conf(X \Rightarrow Y)}{Sup(Y)} = \dfrac{Sup(X \cup Y)}{Sup(X)Sup(Y)}$$
 
 
 
@@ -1104,24 +1104,36 @@ Voltando ao exemplo: regras finais (*minsup* = 0,3 e *minconf* = 0,8)
 
 
 
-## Tipos de dados usados em Associação
-
-<br>
-
-- Somente **inteiro** ou **nominal**.
- 
-
-. . .
 
 
 
-- Se o atributo for **contínuo**, ele precisa ser **discretizado**.
+## Tipos de dados utilizados em Associação
+
+Os algoritmos de associação trabalham com **itens presentes nas transações**, e não com valores numéricos diretamente.<br><br>
+
+### Preparação dos dados
+
+➡️ **1. Variáveis nominais**
+
+- Utilizadas diretamente como itens.
+- Ex.: Sexo = Masculino, Estado = SP, Produto = Leite.
+
+➡️ **2. Variáveis contínuas**
+
+- Devem ser **discretizadas** em categorias ou intervalos.
+- Ex.: Idade → Jovem | Adulto | Idoso.
 
 
-. . .
+## Tipos de dados utilizados em Associação
 
 
-- Transformar atributos categóricos em variáveis binárias assimétricas
+➡️ **3. Representação binária**
+
+- Cada categoria é convertida em um item binário (0/1).
+- Apenas a **presença (1)** é considerada na mineração.
+- Essa representação é denominada **variáveis binárias assimétricas**.
+
+> **Pré-processamento:** antes da mineração de regras, todos os dados devem ser convertidos para um **formato transacional**, composto por conjuntos de itens presentes em cada transação.
 
 
 
@@ -1243,12 +1255,41 @@ inspect(head(rules_sorted, n = 10))
 
 ## Exemplo de Regras de Associação com a Base de Dados `Groceries`
 
+- **Primeira regra:** {citrus fruit, root vegetables}  ⇒   {other vegetables}
+
+> Clientes que compram frutas cítricas e legumes de raiz também costumam comprar outros vegetais.
+
+
+**Interpretação:** Das 9.855 compras, apenas 102 continham simultaneamente frutas cítricas, legumes de raiz e outros vegetais (support = 0,01037112). Entretanto, sempre que alguém comprou frutas cítricas e legumes de raiz, 58,6% das vezes também comprou outros vegetais (confidence = 0,5862069). Além disso, essa probabilidade é aproximadamente 3 vezes maior do que a observada para um consumidor qualquer (lift = 3,029608), indicando uma associação positiva entre esses produtos.
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
 ```{r}
 #| output-location: slide
 # 6. Visualizar as regras (opcional)
 plot(rules_sorted, method = "graph", engine = "htmlwidget")
 ```
 
+
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+
+**Interpretação:**
+
+- **Whole milk** e **other vegetables** são os principais consequentes, aparecendo como destino de diversas regras.
+
+- **Root vegetables** é o principal item de ligação (hub), participando de várias combinações no antecedente.
+
+- **Yogurt** também aparece em múltiplas regras, enquanto **citrus fruit**, **butter**, **domestic eggs**, **pip fruit** e outros itens participam apenas de associações específicas.
+
+
+## Exemplo de Regras de Associação com a Base de Dados `Groceries`
+
+
+> **Conclusão:** a rede evidencia que **leite integral** e **outros vegetais** desempenham papel central nas cestas de compras. Essas associações podem orientar estratégias de **cross-selling**, promoções conjuntas, organização das gôndolas e sistemas de recomendação de produtos.
 
 
 
@@ -1299,7 +1340,7 @@ recom = recommenderlab::Recommender(
 items_names <- colnames(ratings_matrix)
 
 # pedido hipotetico
-# Vamos definir o número de passageiros que você quer avaliar
+# Vamos definir o número de pedidos que você quer avaliar
 num_pedidos <- 2 
 novos_pedidos <- matrix(0, nrow = num_pedidos, ncol = length(items_names))
 colnames(novos_pedidos) <- items_names
@@ -1311,7 +1352,7 @@ novos_pedidos["Novo_Pedido_01", "frankfurter"] <- 1
 novos_pedidos["Novo_Pedido_01", "coffee"] <- 1
 novos_pedidos["Novo_Pedido_01", "dessert"] <- 1
 
-# Passageiro 2: Peixe, Queijo Fatiado e Leite Integral
+# Pedido 2: Peixe, Queijo Fatiado e Leite Integral
 novos_pedidos["Novo_Pedido_02", "whole milk"] <- 1
 novos_pedidos["Novo_Pedido_02", "fish"] <- 1
 novos_pedidos["Novo_Pedido_02", "sliced cheese"] <- 1
