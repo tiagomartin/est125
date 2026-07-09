@@ -87,6 +87,19 @@ Reconhecendo padrões usando a base de dados Space Titanic
 </span>
 :::
 
+
+::: {.list-group-item .d-flex .justify-content-between .align-items-center}
+<span class="fw-bold">
+Criando um sistema de recomendação baseado em regras de associação usando a base de dados  
+Space Titanic
+</span>
+
+<span>
+[Ver análise](/analise_dados/space_titanic_regras.html){.btn .btn-est304-main .btn-sm}
+<!-- [PDF](/aulas/Pre_processamento/pre_processamento.pdf){.btn .btn-est304-outline .btn-sm} -->
+</span>
+:::
+
 <!-- ::: {.list-group-item .d-flex .justify-content-between .align-items-center} -->
 <!-- <span class="fw-bold"> -->
 <!--   Função Geradora de Momentos -->
